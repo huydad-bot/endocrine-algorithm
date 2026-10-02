@@ -2,6 +2,14 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8RM1HWKB9B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8RM1HWKB9B');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>갑상선결절 검사 및 치료 알고리즘 (KTA 2024)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +61,9 @@ body{
   box-shadow:inset 0 -3px 0 var(--hdr-rule);
 }
 .fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:12px; bottom:4px; margin:0; padding-left:1.1em; font-size:13px; line-height:1.55; color:var(--muted)}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
 .top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
 .top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
 .top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
@@ -203,6 +214,7 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
       <div>
         <h1>갑상선결절 검사 및 치료 알고리즘</h1>
         <p class="src">대한갑상선학회 갑상선결절 진료권고안 2024, <a href="https://doi.org/10.11106/ijt.2024.17.1.208" target="_blank" rel="noopener noreferrer">Int J Thyroidol 2024;17(1):208-244</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by KTA</p>
       </div>
     </div>
   </header>
@@ -223,6 +235,10 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
           </defs>
           <g id="edges"></g>
         </svg>
+        <ul class="chart-note">
+          <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+          <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -628,11 +644,11 @@ ${fnBox('e')}
 <li>동반 질환으로 수술 위험이 큰 경우</li>
 <li>남은 여생이 짧을 것으로 예상되는 경우(심한 심혈관질환, 다른 악성 종양, 고령)</li>
 <li>수술 전에 해결해야 할 내과·외과적 질환이 있는 경우</li></ul>
-<h4>질병 진행의 정의</h4>
+<h4>질병 진행의 정의 (적극적 관찰 시)</h4>
 <ul><li>종양 최대 길이 3 mm 이상 증가, 또는 새로운 경부 림프절·원격전이·갑상선외부침범</li>
 <li>부피 기준은 50% 이상(과대평가 우려로 72–100%를 쓰기도 함), 또는 2개 이상 직경이 각 2 mm 이상 증가</li>
 <li>증가 소견은 측정 오차를 고려해 3–6개월 간격 초음파로 확인한다.</li></ul>
-<h4>근거 요약</h4>
+<h4>적극적 관찰 근거 요약</h4>
 <ul class="small"><li>1–2 cm 이하 저위험 유두암 9개 연구: 길이 3 mm 이상 증가 2.2–10.8%, 부피 50% 이상 증가 16.0–28.8%, 새 림프절전이 0–4.5%</li>
 <li>일본 3222명 장기 추적: 10년·20년 크기 증가 4.7%·6.6%, 림프절전이 1.0%·1.6%</li>
 <li>진행 관련 인자(국내): 30세 미만, 남성, 6 mm 이상, 기저 TSH 7 mIU/L 이상, 종양 내 혈류, 미만성 갑상선질환 소견. 9 mm 이상에서 진행 위험 증가(HR 1.79). 1–2 cm 종양의 적극적 관찰은 추가 연구가 필요하다.</li>
