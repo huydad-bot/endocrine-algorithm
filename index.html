@@ -179,6 +179,15 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .fnl li::marker{font-weight:700; color:var(--fn)}
 .kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
 .fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
 /* drawer */
 .backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
 .backdrop.open{opacity:1; pointer-events:auto}
@@ -699,7 +708,19 @@ ${R('3.5.B',3,'임상적인 소견과 초음파 소견을 참고하여 초음파
 <li>FNA의 6.1%가 여포종양이며, 수술 후 악성은 성인 28.9%, 소아 41.4%였다.</li>
 <li>크기별 암 위험도: ≥2 cm 1.63배, ≥3 cm 2.39배, ≥4 cm 2.29배. 기준 미만이라도 18–25%가 악성이었다.</li>
 <li>여포암과 NIFTP는 수술로만 확진되지만 62–70%에서 불필요한 수술이 발생하므로, 양성 가능성과 합병증을 수술 전 충분히 설명한다.</li>
-<li>NGS 패널은 단일 유전자검사보다 양성진단율이 높지만(40.3–63.4% vs 2.2–12.2%) 양성 결절에서도 변이가 발견되어 단독으로 결론적이지 않다.</li></ul>`},
+<li><button type="button" class="term" aria-expanded="false" aria-controls="pop-ngs">NGS 패널</button>은 단일 유전자검사보다 검사 양성률(변이 검출률, rate of positive test)이 높지만(40.3–63.4% vs 2.2–12.2%) 양성 결절에서도 변이가 발견되어 단독으로 결론적이지 않다.
+<div class="pop" id="pop-ngs" hidden>
+<b class="pop-h">NGS 패널: 여포종양에서의 의의와 한계</b>
+<ul>
+<li><b>무엇을 보나</b>: 여러 유전자의 점 돌연변이(BRAF<sup>V600E</sup> 포함, RAS, TERT, TP53, EIF1AX, DICER1 등)와 융합 유전자(RET, NTRK, ALK, PAX8-PPARG, BRAF 융합 등)를 한 번에 분석한다. 패널에 따라 유전자 발현과 복제수 변화까지 본다.</li>
+<li><b>확진(rule-in)으로는 약하다</b>: 여포종양의 주요 변이(RAS, EIF1AX, PAX8-PPARG, DICER1)는 여포선종에서도 비슷한 빈도로 발견된다. 권고안도 분자표지자검사는 여포종양의 악성 여부를 결정하는 데 결론적이지 않다고 명시한다.</li>
+<li><b>의의 ① 배제(rule-out)</b>: 의미 있는 변이가 없으면 악성 가능성이 낮아(음성예측도 92–97%) 수술 대신 추적관찰의 근거가 된다. 단, 이 수치는 발현·복제수까지 분석하는 패널의 성적이며 기관의 악성 유병률에 따라 달라진다.</li>
+<li><b>의의 ② 고위험 변이 식별</b>: TERT 프로모터, TP53, 2개 이상의 변이가 확인되면 적극적 수술이나 수술 범위 결정에 참고한다.</li>
+<li><b>의의 ③ RAS 양성</b>: 양성 종양이라도 진행 가능성이 있어 관찰보다 진단·치료 목적의 수술 쪽으로 판단을 기울이는 정보가 된다.</li>
+<li><b>국내 상황</b>: 국내 갑상선암에서 BRAF<sup>V600E</sup>는 고전형 유두암에 많고(약 71%), 여포선종·여포암은 RAS가 주된 변이(약 30–38%)이며 BRAF<sup>V600E</sup>는 거의 없다(0–4%). TERT 프로모터 변이는 유두암에서 다른 나라보다 낮지만(2.8% vs 10%), 여포암에서는 비슷하다(18.4% vs 17%). 특히 광범위 침윤 여포암에서 높다. 수술 전 생검 검체의 진단 목적 NGS 검사는 국내에서 허용되지 않았고, 권고안도 NGS 패널은 주로 서구에서 사용된다고 기술한다. 비용-효과에 대해서는 추가 연구가 필요하다.</li>
+</ul>
+<p class="pop-src">출처: KTA 갑상선결절 진료권고안 2024 3.5·3.8절; Song YS, Park YJ. Endocrinol Metab 2019;34:1-10; Yang H, et al. Endocrinol Metab 2022;37:652-63; Jung CK. J Pathol Transl Med 2023</p>
+</div></li></ul>`},
 
 b2:{kind:'병리 결과', title:'양성 (Bethesda II)', next:['fu2'], body:`
 ${R('3.3.A',1,'병리진단검사에서 양성인 결절은 즉각적인 추가 검사나 치료가 필요하지 않다.')}
@@ -874,6 +895,12 @@ function close(){
   lastFocus = null; current = null;
 }
 dClose.addEventListener('click', close);
+dBody.addEventListener('click', e=>{
+  const t = e.target.closest('.term'); if (!t) return;
+  const box = document.getElementById(t.getAttribute('aria-controls')); if (!box) return;
+  const show = box.hidden; box.hidden = !show; t.setAttribute('aria-expanded', String(show));
+  if (show) box.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
 backdrop.addEventListener('click', close);
 document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
 
