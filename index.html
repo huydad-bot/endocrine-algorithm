@@ -61,7 +61,7 @@ body{
   box-shadow:inset 0 -3px 0 var(--hdr-rule);
 }
 .fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
-.chart-note{position:absolute; right:12px; bottom:4px; margin:0; padding-left:1.1em; font-size:13px; line-height:1.55; color:var(--muted)}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
 .chart-note a{color:var(--accent)}
 .top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
 .top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
@@ -90,7 +90,7 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 
 .chart-wrap{
   background:var(--surface); border:1px solid var(--border); border-radius:10px;
-  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
 }
 .chart-size{flex:none}
 .fig{width:fit-content; max-width:100%; margin:0 auto}
@@ -234,6 +234,10 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
       <span><i class="sw ben"></i>양성 결과</span>
       <span><i class="sw tx"></i>기능 이상 치료</span>
     </div>
+    <ul class="chart-note">
+      <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+      <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+    </ul>
     <div class="chart-size" id="chartSize">
       <div class="chart" id="chart" role="group" aria-label="갑상선결절 알고리즘 순서도">
         <svg viewBox="0 0 760 720" aria-hidden="true">
@@ -244,10 +248,6 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
           </defs>
           <g id="edges"></g>
         </svg>
-        <ul class="chart-note">
-          <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
-          <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
-        </ul>
       </div>
     </div>
   </div>
