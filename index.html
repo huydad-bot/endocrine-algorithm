@@ -264,13 +264,13 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
   </div>
 
   <div class="below">
+    <div class="extras"><button type="button" data-id="levels">권고수준의 정의</button></div>
     <button type="button" class="fn-toggle" id="fnToggle">각주 a–e 보기</button>
     <span class="sep" aria-hidden="true"></span>
     <div class="extras" id="extras" role="group" aria-label="순서도 밖의 권고">
       <button type="button" data-id="screen">고위험군 선별검사</button>
       <button type="button" data-id="benigntx">양성 결절의 치료</button>
       <button type="button" data-id="preg">임신부의 갑상선결절</button>
-      <button type="button" data-id="levels">권고수준의 정의</button>
     </div>
     <button type="button" class="abbr-toggle" id="abbrToggle">약어</button>
   </div>
@@ -832,7 +832,7 @@ D.abbr = {kind:'참고', title:'약어', next:[],
 document.getElementById('fnToggle').addEventListener('click', e=>open('footnotes', e.currentTarget));
 document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
 
-document.querySelectorAll('#extras button').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
 
 /* ---------- 세부 창 ---------- */
 const drawer = document.getElementById('drawer');
