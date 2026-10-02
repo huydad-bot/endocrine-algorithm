@@ -370,7 +370,7 @@ const KTIRADS = `<div class="tbl"><table class="kt">
 <tr><td>5 높은의심</td><td>암 의심 초음파 소견<sup>c</sup>이 있는 저에코 고형결절</td><td>&gt;60</td><td>&gt;1 cm<sup>d</sup></td></tr>
 <tr><td>4 중간의심<sup>e</sup></td><td>1) 암 의심 초음파 소견이 없는 저에코 고형결절 혹은<br>2) 암 의심 초음파 소견이 있는 부분 낭성 혹은 등/고에코 결절<br>3) 완전히 석회화된 형태를 보이는 결절<sup>f</sup></td><td>10–40</td><td>&gt;1–1.5 cm<sup>g</sup></td></tr>
 <tr><td>3 낮은의심</td><td>암 의심 초음파 소견이 없는 부분 낭성 혹은 등/고에코 결절</td><td>3–10</td><td>&gt;2 cm</td></tr>
-<tr><td>2 양성<sup>h</sup></td><td>1) 등/고에코의 해면모양 결절<br>2) 낭성 부분 내에 혜성꼬리 인공음영(comet-tail artifact)을 보이는 고에코 병소(echogenic foci)를 동반한 부분 낭성 결절<br>3) 순수 낭종</td><td>&lt;3</td><td>해당하지 않음<sup>i</sup></td></tr>
+<tr><td>2 양성<sup>h</sup></td><td>1) 등/고에코(iso/hyperechoic)의 해면모양 결절(spongiform nodule)<br>2) 낭성 부분 내에 혜성꼬리 인공음영(comet-tail artifact)을 보이는 고에코 병소(echogenic foci)를 동반한 부분 낭성 결절(partially cystic nodule)<br>3) 순수 낭종(pure cyst)</td><td>&lt;3</td><td>해당하지 않음<sup>i</sup></td></tr>
 <tr><td>1 무결절</td><td>–</td><td>–</td><td></td></tr>
 </tbody></table></div>
 <ol class="fnl small" type="a">
@@ -524,7 +524,7 @@ ${FIG42A}`},
 
 benus:{kind:'초음파 결과', title:'결절이 아니거나 양성 결절 소견', next:['tshnl2','tshup2'], body:`
 <ul><li><b>결절이 아님(K-TIRADS 1)</b>: 촉진 이상이 실제 결절이 아닌 경우</li>
-<li><b>양성(K-TIRADS 2, 암 위험도 &lt;3%)</b>: 등/고에코 해면모양 결절, 혜성꼬리 인공음영을 동반한 부분 낭성 결절, 순수 낭종</li></ul>
+<li><b>양성(K-TIRADS 2, 암 위험도 &lt;3%)</b>: 등/고에코(iso/hyperechoic) 해면모양 결절(spongiform nodule), 혜성꼬리 인공음영(comet-tail artifact)을 동반한 부분 낭성 결절(partially cystic nodule), 순수 낭종(pure cyst)</li></ul>
 <p>암 가능성이 거의 없어 진단 목적의 병리진단검사는 필요하지 않다. 지속적으로 커져 치료를 계획하는 경우에는 시행할 수 있다.</p>
 ${R('4.2.C',3,'양성 초음파 소견: 악성 위험을 고려한 추적 초음파검사는 필요하지 않으나, 결절의 크기와 임상 소견에 따라 2-5년 이후에 초음파 추적검사를 고려할 수 있다.')}`},
 
@@ -743,7 +743,7 @@ ${fnBox('e')}
 <h4>수술을 우선 고려하는 경우</h4>
 <ul><li>임상적으로 림프절전이 또는 원격전이가 의심되는 경우</li>
 <li>육안적 갑상선외부침범, 또는 기관이나 되돌이후두신경 침범이 의심·우려되는 경우</li>
-<li>공격적 조직아형(긴세포, 원주세포, hobnail 등)이 관찰되는 경우</li></ul>
+<li>공격적 조직아형(긴세포[tall cell], 원주세포[columnar cell], hobnail 아형 등)이 관찰되는 경우</li></ul>
 <h4>적극적 관찰을 고려할 수 있는 경우</h4>
 <ul><li>매우 낮은 위험도 종양(전이와 육안적 외부침범이 없고 공격적 아형 근거가 없는 미세유두암 등)</li>
 <li>동반 질환으로 수술 위험이 큰 경우</li>
@@ -920,7 +920,7 @@ const ABBR = [
   ['KTA','Korean Thyroid Association, 대한갑상선학회'],
   ['MEN2','Multiple endocrine neoplasia type 2, 다발성 내분비샘종양 2형'],
   ['NGS','Next-generation sequencing, 차세대염기서열분석'],
-  ['NIFTP','Non-invasive follicular thyroid neoplasm with papillary-like nuclear features'],
+  ['NIFTP','Non-invasive follicular thyroid neoplasm with papillary-like nuclear features, 유두암 유사 핵 특징을 가진 비침습성 여포성 갑상선 종양'],
   ['MIBG','Metaiodobenzylguanidine'],
   ['FDG PET/CT','<sup>18</sup>F-fluorodeoxyglucose PET/CT'],
   ['PTMC','Papillary thyroid microcarcinoma, 미세갑상선유두암'],
