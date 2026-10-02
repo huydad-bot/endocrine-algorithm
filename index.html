@@ -188,6 +188,8 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .pop ul{margin:.2rem 0; padding-left:1.1rem}
 .pop li{font-size:.9rem; margin:.3rem 0}
 .pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
 /* drawer */
 .backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
 .backdrop.open{opacity:1; pointer-events:auto}
@@ -581,7 +583,33 @@ ${FIG31A}`},
 
 b1:{kind:'병리 결과', title:'비진단적 (Bethesda I)', next:['repeat'], body:`
 ${R('3.2.A',1,'초기 FNA에서 비진단적으로 진단된 결절은 초음파유도하에 병리진단검사를 재시행한다.')}
-<ul><li>정의: 보존이 잘 된 10개 이상 여포세포로 이루어진 세포 군집이 6개 이상이라는 적절성 기준에 미흡한 경우. 뚜렷한 비정형 세포가 있으면 세포가 적어도 비진단적으로 하지 않는다.</li>
+<ul><li>정의: 보존이 잘 된 10개 이상 여포세포로 이루어진 세포 군집이 6개 이상이라는 적절성 기준에 미흡한 경우. 뚜렷한 비정형 세포가 있으면 세포가 적어도 비진단적으로 하지 않는다. <button type="button" class="term" aria-expanded="false" aria-controls="pop-nd">비진단적 결과의 원인</button>
+<div class="pop" id="pop-nd" hidden>
+<b class="pop-h">비진단적 결과는 왜 생기나</b>
+<ul>
+<li><b>권고안 (3.2절)</b>: 충분한 여포세포를 얻지 못해 적절성 기준에 미달한 경우이다. 심한 염증을 동반한 고형결절이나 콜로이드 결절은 세포가 적어도 양성으로 진단할 수 있다. 재검 시 낭성 부분이 많을수록 다시 비진단적일 가능성이 높다. CNB는 갑상선 바깥 조직만 채취되었거나, 석회화·섬유화로 종양세포가 보이지 않을 때 비진단적이 된다.</li>
+<li><b>결절 특성 (가장 중요)</b>: 낭성 우세가 가장 일관된 예측인자이다(비진단 비율: 낭성 &lt;50% 에서 16% vs 낭성 &gt;50% 에서는 72%). 거친 석회화, 특히 테두리(rim) 석회화(OR 5.7), 깊이 &gt;15 mm(OR 7.1), 결절 내부 혈류 증가, 1 cm 미만의 작은 크기도 비진단적 결과와 관련된 예측인자로 보고되었다.</li>
+<li><b>시술 요인</b>: 시술자 경험의 영향은 연구마다 결과가 엇갈린다(경험 부족이 관련 요인이라는 연구와 차이가 없다는 연구가 공존). <button type="button" class="term" aria-expanded="false" aria-controls="pop-needle">바늘 굵기와 흡인 기법</button>도 연관이 보고되었다.
+<div class="pop" id="pop-needle" hidden>
+<b class="pop-h">바늘 굵기와 흡인 기법</b>
+<h5>1. 두 가지 흡인 기법</h5>
+<ul>
+<li><b>흡인법(aspiration)</b>: 바늘에 주사기를 연결하고 음압을 걸어 세포를 빨아들인다.</li>
+<li><b>비흡인법(capillary/non-aspiration)</b>: 주사기 없이 바늘만 결절 안에서 앞뒤로 움직여, 모세관 현상으로 세포가 바늘 안으로 들어오게 한다. 음압이 없어 혈액이 덜 섞이는 것이 장점이다.</li>
+</ul>
+<h5>2. 바늘 굵기</h5>
+<ul>
+<li>보통 22–25 게이지(G)를 쓴다. 숫자가 클수록 가늘어서 25G가 가장 가늘다.</li>
+<li><b>굵은 바늘(22–23G)</b>: 세포를 더 많이 얻지만 출혈도 많다.</li>
+<li><b>가는 바늘(25G)</b>: 혈액 혼입은 적지만 세포량이 부족할 수 있다.</li>
+<li>관행도 지역마다 다르다. 미국은 25G가 표준이고, 아시아는 주로 21–23G를 쓴다.</li>
+</ul>
+</div></li>
+<li><b>검체 처리 요인</b>: 너무 두꺼운 도말, 혈액에 가려진 여포세포, 불량한 고정이나 부적절한 염색</li>
+<li><b>대응</b>: 초음파유도하 재시행과 현장 세포학적 평가로 적절성을 높이고, 반복되면 CNB를 고려한다(재검 비진단 비율 FNA 28.1–40.0% vs CNB 1.1–3.8%).</li>
+</ul>
+<p class="pop-src">출처: KTA 갑상선결절 진료권고안 2024 3.2절; Choi SH, et al. (연세대, US-FNAB 부적절 검체 요인); 비진단 세포검사 예측인자에 관한 단일기관 연구들(Acta Cytol 2016, Clin Hemorheol Microcirc 2017, Head Neck Pathol 2017, J Otolaryngol Head Neck Surg 2014)</p>
+</div></li>
 <li>재검 시점: 3개월 대기의 필요성은 불확실하며, 임상·영상에서 악성이 의심되면 더 짧은 기간 내에 시행한다(비정형으로 재검할 때는 3개월 이상 대기가 낫다는 연구가 있다).</li>
 <li>재검 시 낭성 부분이 50% 이하이면 진단율이 60–80%이다.</li>
 <li>FNA 재시행 시 28.1–40.0%가 다시 비진단적이지만, CNB는 1.1–3.8%에 그친다.</li>
