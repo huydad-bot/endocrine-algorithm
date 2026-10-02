@@ -23,6 +23,7 @@
   --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
   --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
   --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
   --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -36,7 +37,9 @@
     --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
     --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
     --border:#2E3E4A;
-    --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
   }
 }
 :root[data-theme="dark"]{
@@ -114,7 +117,7 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
   padding:2px 8px; cursor:pointer;
   transition:box-shadow .15s ease, border-color .15s ease;
 }
-.node sup{font-size:10px; margin-left:1px; color:var(--accent); font-weight:600}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
 .node.test{background:var(--test); color:var(--test-ink); font-weight:600}
 .node.mal{border-color:var(--mal); background:var(--mal-bg)}
 .node.ben{border-color:var(--ben); background:var(--ben-bg)}
@@ -169,6 +172,13 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
 @media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
 .d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
 /* drawer */
 .backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
 .backdrop.open{opacity:1; pointer-events:auto}
@@ -354,25 +364,26 @@ const LV = {
 const R = (id, lv, t) => `<div class="rec"><span class="rid">${id}</span><p>${t}</p><span class="lv l${lv}" tabindex="0" title="${LV[lv]}">권고수준 ${lv}</span></div>`;
 
 /* ---------- 표 ---------- */
-const KTIRADS = `<div class="tbl"><table>
-<thead><tr><th>카테고리</th><th>초음파 유형</th><th>암 위험도</th><th>FNA/CNB 기준</th></tr></thead>
+const KTIRADS = `<div class="tbl"><table class="kt">
+<thead><tr><th>카테고리</th><th>초음파 유형</th><th>암 위험도(%)</th><th>FNA/CNB<sup>b</sup></th></tr></thead>
 <tbody>
-<tr><td>5 높은의심</td><td>암 의심 초음파 소견이 있는 저에코 고형결절</td><td>&gt;60%</td><td>&gt;1 cm<sup>d</sup></td></tr>
-<tr><td>4 중간의심<sup>e</sup></td><td>① 암 의심 소견이 없는 저에코 고형결절<br>② 암 의심 소견이 있는 부분 낭성 또는 등/고에코 결절<br>③ 완전히 석회화된 결절<sup>f</sup></td><td>10–40%</td><td>&gt;1–1.5 cm<sup>g</sup></td></tr>
-<tr><td>3 낮은의심</td><td>암 의심 소견이 없는 부분 낭성 또는 등/고에코 결절</td><td>3–10%</td><td>&gt;2 cm</td></tr>
-<tr><td>2 양성<sup>h</sup></td><td>① 등/고에코의 해면모양 결절<br>② 낭성 부분 내 혜성꼬리 인공음영을 보이는 고에코 병소를 동반한 부분 낭성 결절<br>③ 순수 낭종</td><td>&lt;3%</td><td>해당하지 않음<sup>i</sup></td></tr>
-<tr><td>1 무결절</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>5 높은의심</td><td>암 의심 초음파 소견<sup>c</sup>이 있는 저에코 고형결절</td><td>&gt;60</td><td>&gt;1 cm<sup>d</sup></td></tr>
+<tr><td>4 중간의심<sup>e</sup></td><td>1) 암 의심 초음파 소견이 없는 저에코 고형결절 혹은<br>2) 암 의심 초음파 소견이 있는 부분 낭성 혹은 등/고에코 결절<br>3) 완전히 석회화된 형태를 보이는 결절<sup>f</sup></td><td>10–40</td><td>&gt;1–1.5 cm<sup>g</sup></td></tr>
+<tr><td>3 낮은의심</td><td>암 의심 초음파 소견이 없는 부분 낭성 혹은 등/고에코 결절</td><td>3–10</td><td>&gt;2 cm</td></tr>
+<tr><td>2 양성<sup>h</sup></td><td>1) 등/고에코의 해면모양 결절<br>2) 낭성 부분 내에 혜성꼬리 인공음영(comet-tail artifact)을 보이는 고에코 병소(echogenic foci)를 동반한 부분 낭성 결절<br>3) 순수 낭종</td><td>&lt;3</td><td>해당하지 않음<sup>i</sup></td></tr>
+<tr><td>1 무결절</td><td>–</td><td>–</td><td></td></tr>
 </tbody></table></div>
-<ul class="small">
-<li><b>암 의심 소견<sup>c</sup></b>: 점상 고에코 병소 또는 미세석회화, 비평행 방향성(앞뒤가 긴 모양), 불규칙 경계(침상 또는 소엽성)</li>
-<li><b>a</b> 경부 림프절전이 의심, 주변 구조물(기도, 후두, 인두, 되돌이후두신경, 주위 혈관)로의 명백한 침범, 원격전이, 수질암 의심 등 불량 예후 인자가 있으면 크기와 무관하게 가장 의심스러운 결절에서 병리진단검사를 시행한다.</li>
-<li><b>d</b> &gt;0.5–≤1 cm 높은의심 결절: 되돌이후두신경 경로를 따라 기도 또는 후내측 피막에 부착이 의심되면 병리진단검사를 권고한다. 고위험 특성이 없으면 적극적 관찰 등 치료 계획을 위해 성인에서 고려할 수 있다. 소아는 임상 소견을 고려하여 시행을 고려한다.</li>
-<li><b>e</b> 광범위한 실질 내 점상 고에코 병소로 미만성 경화 아형 유두암이 의심되거나, 미만성 침습적 병소(전이, 림프종 의심)는 K-TIRADS 4로 간주한다.</li>
-<li><b>f</b> 후방음향음영으로 내부 특성을 확인하기 어려운 완전 석회화 결절</li>
-<li><b>g</b> 초음파 소견, 위치, 임상 위험 인자, 환자 특성(연령, 동반질환, 선호도)을 고려해 1–1.5 cm 범위에서 결정한다.</li>
-<li><b>h</b> 암 의심 소견이 동반된 결절도 포함된다.</li>
-<li><b>i</b> 지속적으로 의미 있게 커지거나 수술을 계획하는 경우 시행할 수 있고, 고주파·에탄올절제술 예정 결절은 치료 전 반드시 시행한다.</li>
-</ul>`;
+<ol class="fnl small" type="a">
+<li>경부 림프절전이 의심, 명백한 주변 구조물로의 갑상선외부침범(기도, 후두, 인두, 되돌이 후두신경, 또는 갑상선 주위 혈관), 확인된 원격전이, 또는 갑상선수질암 의심 등의 불량한 예후 인자를 가진 경우에는 결절의 크기와 무관하게 가장 의심스러운 결절에서 병리진단검사를 시행한다.</li>
+<li>FNA는 가장 많이 사용되는 일차적 병리진단검사법이며, CNB는 FNA의 보완적 병리진단검사법으로 숙련된 외과의에 의해 선택적으로 시행될 수 있다.</li>
+<li>점상 고에코 병소(punctate echogenic foci) 혹은 미세석회화(microcalcification), 비평행 방향성(nonparallel orientation) 혹은 앞뒤가 긴 모양(taller than wide), 불규칙적 경계(irregular margin: 침상[spiculated] 혹은 소엽성[microlobulated] 경계).</li>
+<li>크기가 작은(&gt;0.5 cm 및 ≤1 cm) 높은의심 결절에서 되돌이 후두신경의 경로를 따라 기도 또는 후내측 피막에 부착이 의심되는 경우 수술이 필요한 고위험 갑상선암일 수 있어 병리진단검사가 권고된다. 크기가 작은(&gt;0.5 cm 및 ≤1 cm) 높은의심 결절에서 임상적 고위험 특성이 동반되지 않는 경우 적극적 관찰 등 치료 계획 수립을 위해 성인에서 병리진단검사가 고려될 수 있다. 소아의 경우 임상적인 소견을 고려하여 크기가 작은(&gt;0.5 cm 및 ≤1 cm) 높은의심 결절에서 병리진단검사가 고려되어야 한다.</li>
+<li>명확히 구분되는 결절 없이 광범위한 실질내 점상 고에코 병소(parenchymal punctate echogenic foci) 혹은 미세석회화를 보여 미만성 경화 아형(diffuse sclerosing subtype) 유두암이 의심되는 경우와 미만성 침습적 병소(전이나 림프종과 같은 침습적 악성 종양 의심)는 중간의심(K-TIRADS 4) 결절로 간주한다.</li>
+<li>초음파 영상에서 후방음향음영으로 인해 결절의 초음파 특성을 확인하기 어려운 완전히 석회화된 형태를 보이는 결절(entirely calcified nodules).</li>
+<li>병리진단검사의 결절 크기 기준은 초음파 소견, 결절 위치, 임상적 위험 인자, 환자 특성(연령, 동반질환, 선호도)을 고려하여 1–1.5 cm의 범위 안에서 결정한다.</li>
+<li>암 의심 초음파 소견이 동반된 결절도 포함된다.</li>
+<li>일반적으로 병리진단검사 대상에 해당하지 않으나, 지속적으로 의미 있게 크기가 커지는 결절 또는 수술적 치료를 계획하는 결절에서 생검이 시행될 수 있으며, 고주파 혹은 에탄올절제술 치료 예정인 결절은 치료 전 병리진단검사를 시행해야 한다.</li>
+</ol>`;
 
 const BETHESDA = `<div class="tbl"><table>
 <thead><tr><th>진단 범주 (Bethesda 2023)</th><th>성인 암 위험도 % (범위)</th><th>소아 % (범위)</th><th>NIFTP 제외 시 %</th></tr></thead>
@@ -490,7 +501,7 @@ ${fnBox('c')}`},
 us:{kind:'검사 단계', title:'진단 초음파', next:['susp','benus'], body:`
 ${R('2.2.A',1,'갑상선결절이 존재하거나 의심되는 모든 환자에서 경부 림프절 평가를 포함한 갑상선 초음파검사를 권고한다.')}
 <p>국내에서는 2021 K-TIRADS(대한갑상선영상의학회)에 따라 암 위험도와 병리진단검사 기준을 적용한다. 암 의심 소견은 특이도는 높으나 민감도는 낮으며, 주로 유두암을 예측하고 여포암에서는 드물다.</p>
-<h4>Table 2.2.A 2021 K-TIRADS 암 위험도와 병리진단검사 기준</h4>
+<h4>Table 2.2.A 2021 K-TIRADS에 기초한 갑상선결절의 암 위험도 및 병리진단검사 기준<sup>a</sup></h4>
 ${KTIRADS}
 <h4>다결절성 갑상선종</h4>
 ${R('3.9.A',1,'크기가 1 cm를 초과하는 결절이 2개 이상 있는 다결절성 갑상선종 환자는 단일 결절 환자와 동일하게 평가되어야 하며, 결절마다 독립적으로 악성 위험이 있을 수 있기 때문에 초음파 소견에 근거하여 1개 이상의 결절에서 FNA를 고려할 수 있다.')}
