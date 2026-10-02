@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>갑상선결절 검사 및 치료 알고리즘 (KTA 2024)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--surface); border-bottom:1px solid var(--border);
+}
+.top-inner{max-width:1080px; margin:0 auto; padding:.75rem 1.25rem; display:flex; justify-content:center; align-items:center; gap:1rem; flex-wrap:wrap; text-align:center}
+.top h1{font-size:1.15rem; margin:0; font-weight:700; letter-spacing:-.01em}
+.top .src{font-size:.82rem; color:var(--muted); margin:0}
+.top .src a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .spacer{flex:1}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:.75rem 1.25rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; width:760px; height:720px; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; width:760px; height:720px; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:10px; margin-left:1px; color:var(--accent); font-weight:600}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div>
+      <h1>갑상선결절 검사 및 치료 알고리즘</h1>
+      <p class="src">대한갑상선학회 갑상선결절 진료권고안 2024, <a href="https://doi.org/10.11106/ijt.2024.17.1.208" target="_blank" rel="noopener noreferrer">Int J Thyroidol 2024;17(1):208-244</a></p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="fig" id="fig">
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <span><i class="sw test"></i>검사·시술 단계</span>
+      <span><i class="sw mal"></i>악성 가능성이 높은 결과</span>
+      <span><i class="sw ben"></i>양성 결과</span>
+      <span><i class="sw tx"></i>기능 이상 치료</span>
+    </div>
+    <div class="chart-size" id="chartSize">
+      <div class="chart" id="chart" role="group" aria-label="갑상선결절 알고리즘 순서도">
+        <svg viewBox="0 0 760 720" aria-hidden="true">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z"/>
+            </marker>
+          </defs>
+          <g id="edges"></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="below">
+    <button type="button" class="fn-toggle" id="fnToggle">각주 a–e 보기</button>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" id="extras" role="group" aria-label="순서도 밖의 권고">
+      <button type="button" data-id="screen">고위험군 선별검사</button>
+      <button type="button" data-id="benigntx">양성 결절의 치료</button>
+      <button type="button" data-id="preg">임신부의 갑상선결절</button>
+      <button type="button" data-id="levels">권고수준의 정의</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle">약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+/* ---------- 노드 배치 (원 그림 레이아웃 재현) ---------- */
+const NODES = [
+  {id:'nodule',   x:245,y:10, w:270,h:40, label:'갑상선결절(촉진 혹은 영상 진단)'},
+  {id:'eval',     x:220,y:80, w:320,h:40, label:'병력 및 신체검사, 혈청 TSH, 유리 T<sub>4</sub>', cls:'test'},
+  {id:'tshlow',   x:10, y:80, w:180,h:40, label:'TSH 감소<sup>a</sup>'},
+  {id:'tshnormal',x:570,y:80, w:180,h:40, label:'TSH 정상 또는 증가'},
+  {id:'scan',     x:10, y:145,w:180,h:40, label:'갑상선스캔', cls:'test'},
+  {id:'nonauto',  x:215,y:145,w:190,h:40, label:'자율기능성 결절이 아님'},
+  {id:'auto',     x:10, y:210,w:180,h:40, label:'자율기능성 결절<sup>b</sup>'},
+  {id:'us',       x:300,y:210,w:170,h:40, label:'진단 초음파', cls:'test'},
+  {id:'hypertx',  x:10, y:275,w:180,h:40, label:'기능항진증에 대한 치료', cls:'tx'},
+  {id:'susp',     x:210,y:285,w:200,h:40, label:'높은/중간/낮은의심 결절'},
+  {id:'benus',    x:430,y:285,w:260,h:40, label:'결절이 아니거나 양성 결절 소견', cls:'ben'},
+  {id:'tshnl2',   x:425,y:350,w:95, h:34, label:'TSH 정상'},
+  {id:'tshup2',   x:565,y:350,w:120,h:34, label:'TSH 증가'},
+  {id:'fu1',      x:425,y:405,w:95, h:34, label:'추적관찰'},
+  {id:'hypotx',   x:530,y:405,w:190,h:34, label:'기능저하증에 대한 치료', cls:'tx'},
+  {id:'fna',      x:235,y:345,w:150,h:40, label:'병리진단검사<sup>c</sup>', cls:'test'},
+  {id:'b1',       x:10, y:478,w:100,h:38, label:'비진단적'},
+  {id:'b3',       x:120,y:478,w:100,h:38, label:'비정형'},
+  {id:'b56',      x:235,y:478,w:190,h:38, label:'악성 혹은 악성의심', cls:'mal'},
+  {id:'b4',       x:445,y:478,w:120,h:38, label:'여포종양', cls:'mal'},
+  {id:'b2',       x:590,y:478,w:110,h:38, label:'양성', cls:'ben'},
+  {id:'repeat',   x:10, y:540,w:210,h:40, label:'병리진단검사 반복<sup>c,d</sup>', cls:'test'},
+  {id:'r1',       x:10, y:605,w:100,h:38, label:'비진단적'},
+  {id:'r3',       x:120,y:605,w:100,h:38, label:'비정형'},
+  {id:'close',    x:10, y:670,w:220,h:40, label:'면밀한 추적관찰 혹은 수술'},
+  {id:'surg',     x:250,y:605,w:330,h:40, label:'수술(또는 면밀한 추적관찰<sup>e</sup>)'},
+  {id:'fu2',      x:590,y:605,w:110,h:40, label:'추적관찰', cls:'ben'}
+];
+
+/* ---------- 연결선 ---------- */
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const EDGES = [
+  [A(380,50,380,80),1],[A(220,100,190,100),1],[A(540,100,570,100),1],
+  [A(100,120,100,145),1],[A(190,165,215,165),1],[A(100,185,100,210),1],[A(370,185,370,210),1],
+  ['M660 120 V230 H470',1],
+  ['M190 230 H300',1,'dot'],
+  [A(100,250,100,275),1],
+  ['M385 250 V267',0],['M310 267 H560',0],[A(310,267,310,285),1],[A(560,267,560,285),1],
+  [A(310,325,310,345),1],
+  ['M560 325 V337',0],['M472 337 H625',0],[A(472,337,472,350),1],[A(625,337,625,350),1],
+  [A(472,384,472,405),1],[A(625,384,625,405),1],
+  ['M310 385 V460',0],['M60 460 H645',0],
+  [A(60,460,60,478),1],[A(170,460,170,478),1],[A(330,460,330,478),1],[A(505,460,505,478),1],[A(645,460,645,478),1],
+  [A(60,516,60,540),1],[A(170,516,170,540),1],
+  [A(60,580,60,605),1],[A(170,580,170,605),1],
+  [A(60,643,60,670),1],[A(170,643,170,670),1],
+  [A(330,516,330,605),1],[A(505,516,505,605),1],[A(645,516,645,605),1]
+];
+
+/* ---------- 각주 (원문) ---------- */
+const FN = {
+  a:'갑상선중독증의 원인 질환에 대한 추가적인 검사 및 치료가 필요할 수 있다.',
+  b:'초음파 소견이 있는 경우에는 이에 따라 병리진단검사 시행 여부를 결정한다.',
+  c:'병리진단검사로는 세침흡인검사(FNA)가 정확하고 비용 대비 효율이 가장 커서 일차적으로 권고된다. 중심바늘생검(CNB)은 FNA의 보완적 수단으로서 숙련된 시술자에 의해 선택적으로 고려될 수 있다. TSH가 증가된 경우에는 기능저하증에 대한 진단 및 치료를 병행한다.',
+  d:'병리진단결과에 보조적으로 악성 위험도를 계층화하기 위해 면역화학염색검사, 단일유전자변이검사 및 차세대염기서열을 기반으로 하는 유전자패널검사가 고려될 수 있다.',
+  e:'저위험군의 미세갑상선유두암 등에서는 임상상과 환자 선호도 등을 고려하여 즉각적인 수술 대신 면밀한 적극적 관찰(active surveillance)을 고려할 수 있다.'
+};
+const fnBox = k => `<div class="box fn"><b>각주 ${k}</b>${FN[k]}</div>`;
+const tip = t => `<div class="box tip"><b>임상 메모</b>${t}</div>`;
+const note = t => `<div class="box verify"><b>참고</b>${t}</div>`;
+
+/* 권고수준 (Table 1) */
+const LV = {
+  1:'강력히 권고함/권고하지 않음: 중요한 건강상 이득 또는 손실에 대한 충분하고 객관적인 근거가 있음',
+  2:'일반적으로 권고함/권고하지 않음: 근거가 있으나 확실하지 않거나 간접적임',
+  3:'전문가 합의 권고: 임상적 근거는 부족하나 환자 상황과 전문가 합의에 따름',
+  4:'권고 보류: 근거가 없거나 이견이 많아 찬성도 반대도 하지 않음'
+};
+const R = (id, lv, t) => `<div class="rec"><span class="rid">${id}</span><p>${t}</p><span class="lv l${lv}" tabindex="0" title="${LV[lv]}">권고수준 ${lv}</span></div>`;
+
+/* ---------- 표 ---------- */
+const KTIRADS = `<div class="tbl"><table>
+<thead><tr><th>카테고리</th><th>초음파 유형</th><th>암 위험도</th><th>FNA/CNB 기준</th></tr></thead>
+<tbody>
+<tr><td>5 높은의심</td><td>암 의심 초음파 소견이 있는 저에코 고형결절</td><td>&gt;60%</td><td>&gt;1 cm<sup>d</sup></td></tr>
+<tr><td>4 중간의심<sup>e</sup></td><td>① 암 의심 소견이 없는 저에코 고형결절<br>② 암 의심 소견이 있는 부분 낭성 또는 등/고에코 결절<br>③ 완전히 석회화된 결절<sup>f</sup></td><td>10–40%</td><td>&gt;1–1.5 cm<sup>g</sup></td></tr>
+<tr><td>3 낮은의심</td><td>암 의심 소견이 없는 부분 낭성 또는 등/고에코 결절</td><td>3–10%</td><td>&gt;2 cm</td></tr>
+<tr><td>2 양성<sup>h</sup></td><td>① 등/고에코의 해면모양 결절<br>② 낭성 부분 내 혜성꼬리 인공음영을 보이는 고에코 병소를 동반한 부분 낭성 결절<br>③ 순수 낭종</td><td>&lt;3%</td><td>해당하지 않음<sup>i</sup></td></tr>
+<tr><td>1 무결절</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<ul class="small">
+<li><b>암 의심 소견<sup>c</sup></b>: 점상 고에코 병소 또는 미세석회화, 비평행 방향성(앞뒤가 긴 모양), 불규칙 경계(침상 또는 소엽성)</li>
+<li><b>a</b> 경부 림프절전이 의심, 주변 구조물(기도, 후두, 인두, 되돌이후두신경, 주위 혈관)로의 명백한 침범, 원격전이, 수질암 의심 등 불량 예후 인자가 있으면 크기와 무관하게 가장 의심스러운 결절에서 병리진단검사를 시행한다.</li>
+<li><b>d</b> &gt;0.5–≤1 cm 높은의심 결절: 되돌이후두신경 경로를 따라 기도 또는 후내측 피막에 부착이 의심되면 병리진단검사를 권고한다. 고위험 특성이 없으면 적극적 관찰 등 치료 계획을 위해 성인에서 고려할 수 있다. 소아는 임상 소견을 고려하여 시행을 고려한다.</li>
+<li><b>e</b> 광범위한 실질 내 점상 고에코 병소로 미만성 경화 아형 유두암이 의심되거나, 미만성 침습적 병소(전이, 림프종 의심)는 K-TIRADS 4로 간주한다.</li>
+<li><b>f</b> 후방음향음영으로 내부 특성을 확인하기 어려운 완전 석회화 결절</li>
+<li><b>g</b> 초음파 소견, 위치, 임상 위험 인자, 환자 특성(연령, 동반질환, 선호도)을 고려해 1–1.5 cm 범위에서 결정한다.</li>
+<li><b>h</b> 암 의심 소견이 동반된 결절도 포함된다.</li>
+<li><b>i</b> 지속적으로 의미 있게 커지거나 수술을 계획하는 경우 시행할 수 있고, 고주파·에탄올절제술 예정 결절은 치료 전 반드시 시행한다.</li>
+</ul>`;
+
+const BETHESDA = `<div class="tbl"><table>
+<thead><tr><th>진단 범주 (Bethesda 2023)</th><th>성인 암 위험도 % (범위)</th><th>소아 % (범위)</th><th>NIFTP 제외 시 %</th></tr></thead>
+<tbody>
+<tr><td>I 비진단적</td><td>13 (5–20)</td><td>14 (0–33)</td><td>12</td></tr>
+<tr><td>II 양성</td><td>4 (2–7)</td><td>6 (0–27)</td><td>2</td></tr>
+<tr><td>III 비정형(AUS)</td><td>22 (13–30)</td><td>28 (11–54)</td><td>16</td></tr>
+<tr><td>IV 여포종양</td><td>30 (23–34)</td><td>50 (28–100)</td><td>23</td></tr>
+<tr><td>V 악성의심</td><td>74 (67–83)</td><td>81 (40–100)</td><td>65</td></tr>
+<tr><td>VI 악성</td><td>97 (97–100)</td><td>98 (86–100)</td><td>94</td></tr>
+</tbody></table></div>`;
+
+const FIG31A = `<div class="tbl"><table>
+<thead><tr><th>병리 결과</th><th>다음 단계 (Fig. 3.1.A)</th></tr></thead>
+<tbody>
+<tr><td>I 비진단적</td><td>K-TIRADS 3/4: 12개월 내 반복<br>K-TIRADS 5: 6개월 내 반복<br>반복에서도 I이면 추적검사 또는 수술</td></tr>
+<tr><td>II 양성</td><td>K2: 필요 시 2–5년 후 초음파<br>K3/4: 1–2년 후 초음파<br>K5: 6–12개월 내 초음파, 작아지지 않으면 반복 병리진단(≤1 cm는 추적검사 고려)<br>유의하게 커지거나 치료 계획 시 병리진단검사</td></tr>
+<tr><td>III 비정형</td><td>K3/4: 12개월 내 반복 또는 분자표지자검사<br>K5: 6개월 내 반복<br>반복에서도 III이면 추적검사 또는 수술</td></tr>
+<tr><td>IV 여포종양<br>V 악성의심</td><td>수술(또는 분자표지자검사)</td></tr>
+<tr><td>VI 악성</td><td>&gt;1 cm: 수술<br>≤1 cm: 수술(또는 적극적 관찰)</td></tr>
+</tbody></table></div>`;
+
+const CNBTBL = `<div class="tbl"><table>
+<thead><tr><th>CNB 진단 범주 (KTA)</th><th>진단 빈도 %</th><th>실제 암 비율 %</th><th>NIFTP 반영 시</th></tr></thead>
+<tbody>
+<tr><td>I 비진단적</td><td>2–3</td><td>18–50</td><td>변화 없음</td></tr>
+<tr><td>II 양성</td><td>40–52</td><td>2–6</td><td>변화 없음</td></tr>
+<tr><td>III 비정형(indeterminate)</td><td>7–14</td><td>32–45</td><td>24% 감소</td></tr>
+<tr><td>IV 여포종양</td><td>5–9</td><td>46–57</td><td>20% 감소</td></tr>
+<tr><td>V 악성의심</td><td>2–3</td><td>96–100</td><td>변화 없음</td></tr>
+<tr><td>VI 악성</td><td>23–34</td><td>100</td><td>변화 없음</td></tr>
+</tbody></table></div>`;
+
+const FIG42A = `<div class="tbl"><table>
+<thead><tr><th>K-TIRADS</th><th>병리진단 기준 미달 시 초음파 추적 (Fig. 4.2.A)</th></tr></thead>
+<tbody>
+<tr><td>5 높은의심 (≤1 cm)</td><td>첫 1–2년 6–12개월 주기, 이후 1년 주기</td></tr>
+<tr><td>4 중간의심 (≤1–1.5 cm)</td><td>1–1.5 cm: 1–2년 주기, ≤1 cm: 2–5년 주기</td></tr>
+<tr><td>3 낮은의심 (≤2 cm)</td><td>1–2 cm: 1–2년 주기, ≤1 cm: 2–5년 주기</td></tr>
+<tr><td>2 양성</td><td>필요 시 2–5년 후</td></tr>
+</tbody></table></div>
+<p class="small">치료를 계획하거나 크기 증가(직경 ≥20%이면서 2개 축에서 ≥2 mm 증가, 또는 용적 ≥50% 증가)를 보이면 병리진단검사를 시행한다.</p>`;
+
+const GROWTH = '적어도 두 방향에서 2 mm 이상이면서 20% 이상의 직경 증가, 또는 용적 50% 이상 증가';
+
+/* ---------- 세부 내용 ---------- */
+const D = {
+nodule:{kind:'출발점', title:'갑상선결절(촉진 혹은 영상 진단)', next:['eval'], body:`
+<p>촉진 또는 초음파검사로 주변 정상 갑상선조직과 뚜렷하게 구별되는 병소이다. 촉진되는 결절성 병소가 영상 이상 소견과 일치하지 않으면 결절의 정의에 맞지 않는다.</p>
+<h4>역학</h4>
+<ul><li>고해상도 초음파로 국내 성인의 30–40%, 촉진으로 약 5%에서 발견된다.</li>
+<li>임상적 중요성은 일부(2–6%)가 갑상선암이라는 점과, 악성 여부와 무관하게 커지면 압박 증상을 일으킬 수 있다는 점에 있다.</li></ul>
+<h4>우연종</h4>
+<ul><li>촉진되지 않고 영상검사에서 발견된 결절도 같은 크기의 촉진되는 결절과 동등한 악성 위험이 있다.</li></ul>
+<h4>FDG PET/CT 우연 섭취</h4>
+${R('2.3.A',1,'FDG PET/CT에서 우연히 발견된 국소 섭취 병소는 갑상선암 가능성이 높으므로 초음파 소견을 고려하여 병리진단검사를 시행한다. 미만 섭취이면서 초음파·임상검사가 만성 림프구성 갑상선염에 합당하면 추가 영상검사나 병리진단검사는 추천되지 않는다.')}
+<ul><li>PET 검사자의 1–2%에서 국소 섭취, 약 2%에서 미만 섭취가 우연히 발견된다.</li>
+<li>국소 섭취 결절의 악성률은 국내 연구에서 K-TIRADS 2 0%, 3 10.2%, 4 52.1%, 5 93.5%였다.</li>
+<li>전형적 미만성 갑상선질환이 아닌 미만 섭취는 전이암이나 림프종 감별을 위해 병리진단이 필요할 수 있다.</li></ul>`},
+
+eval:{kind:'초기 평가', title:'병력 및 신체검사, 혈청 TSH, 유리 T₄', next:['tshlow','tshnormal'], body:`
+<p>결절이 발견되면 갑상선과 주위 경부 림프절에 관심을 둔 병력청취와 신체검사로 고위험군을 감별한다.</p>
+<h4>병력·신체검사의 위험 신호</h4>
+<ul><li>급격한 크기 증가, 쉰 목소리, 성대 마비, 동측 경부 림프절 종대, 주위 조직에 고정된 결절은 반드시 초음파가 필요하다.</li>
+<li>두경부 방사선조사, 골수이식 전 전신 방사선조사, 14세 이전 방사능 낙진 노출</li>
+<li>갑상선암 가족력, 유전성 종양증후군(PTEN/Cowden, FAP, Carney complex, Werner, DICER1, MEN2)</li></ul>
+<h4>혈액검사</h4>
+${R('2.1.A',1,'초기 검사에 TSH를 포함한 갑상선기능검사를 시행하고, TSH가 정상보다 낮으면 갑상선스캔을 시행한다.')}
+${R('2.1.B',1,'모든 결절에 대한 일률적인 혈청 갑상선글로불린 측정은 권고하지 않는다.')}
+${R('2.1.C',2,'수술이나 비수술적 치료를 시행하기 전에는 혈청 칼시토닌 측정을 고려할 수 있다.')}
+<ul class="small"><li>Tg는 양성·악성 대부분의 갑상선질환에서 증가할 수 있어 민감도와 특이도가 낮다.</li>
+<li>칼시토닌: 결절 환자 메타분석에서 수질암 유병률 0.32%, 10 pg/mL 기준 민감도 100%, 특이도 97.2%였다. 100 pg/mL 이상이면 거의 모두 수질암이고, 10–20 pg/mL에서는 5%였다. 독일 수술 등록 자료에서 남성 &gt;15, 여성 &gt;7.9 pg/mL가 유용한 기준이었다.</li>
+<li>칼시토닌은 염증, 만성신부전, 폐질환, 외상, 패혈증 등에서도 상승하고 수질암 유병률이 낮아 일률적 측정은 비용 효율적이지 않다.</li></ul>`},
+
+tshlow:{kind:'TSH 분기', title:'TSH 감소', next:['scan'], body:`
+<p>TSH가 정상보다 낮으면 결절이 자율기능성 결절인지 냉결절인지 알기 위해 갑상선스캔을 시행한다.</p>
+${R('2.1.A',1,'TSH가 정상보다 낮으면 갑상선스캔을 시행한다.')}
+${R('3.9.D',3,'다결절성 갑상선종에서 혈청 TSH가 낮으면 자율기능성 결절이 있을 수 있으므로 갑상선스캔을 시행해야 한다.')}
+${fnBox('a')}
+${tip('임신 중에는 갑상선스캔이 금기이다. 임신 초기 이후에도 TSH가 계속 낮으면 스캔이 가능해지는 출산 이후로 병리진단검사를 미룰 수 있다(6.A, 권고수준 1).')}`},
+
+scan:{kind:'검사 단계', title:'갑상선스캔', next:['auto','nonauto'], body:`
+<p>결절이 자율기능성(열결절)인지 냉결절인지 판정한다.</p>
+<ul><li><b>열결절</b>: 자율기능성 결절. 냉결절에 비해 악성 가능성이 낮다.</li>
+<li><b>등결절·냉결절</b>: 자율기능성 결절이 아니므로 진단 초음파로 진행한다.</li></ul>
+<p>자율기능성 결절에서도 암 위험이 일부 보고되므로, 열결절이라도 초음파 소견의 암 위험도에 따라 병리진단검사 시행을 고려한다.</p>`},
+
+nonauto:{kind:'스캔 결과', title:'자율기능성 결절이 아님', next:['us'], body:`
+<p>TSH가 낮지만 결절은 냉결절 또는 등결절인 경우이다. TSH가 정상인 결절과 동일하게 진단 초음파로 암 위험도를 평가한다.</p>
+${fnBox('a')}`},
+
+auto:{kind:'스캔 결과', title:'자율기능성 결절', next:['hypertx','us'], body:`
+<p>자율기능성 결절은 냉결절에 비해 악성 가능성이 낮지만, 초음파를 시행했다면 초음파 소견에 근거하여 필요에 따라 병리진단검사를 시행한다. 순서도의 점선이 이 경로이다.</p>
+${fnBox('b')}
+${tip('비수술적절제 치료 대상 기준에서 자율기능성 결절은 1회의 양성 진단 결과로도 치료 대상이 될 수 있다.')}`},
+
+hypertx:{kind:'치료', title:'기능항진증에 대한 치료', next:[], body:`
+${R('5.I',1,'현성 자율기능성 갑상선결절의 치료는 방사성요오드 치료 또는 수술이 일차적으로 고려된다.')}
+${R('5.D',3,'반복 병리진단에서 양성이라도 압박증상, 미용적 문제가 있거나 자율기능성 결절이면 치료가 필요할 수 있다. 수술, 방사성요오드, 비수술적절제(에탄올·고주파·레이저)를 임상 특성, 동반 질환, 장단점, 환자 선호, 실행 가능성을 고려해 선택한다.')}
+<h4>치료별 특징</h4>
+<ul><li><b>방사성요오드</b>: 2–3년 내 60–70%에서 기능이 정상화되고, 장기적으로 4–75%에서 기능저하증이 발생한다. 그레이브스병과 달리 갑상선안병증 위험은 증가하지 않는다. 임신·수유 중 금기이며, 섭취율이 낮은 결절은 우선 고려하지 않는다.</li>
+<li><b>수술</b>: 10–44%에서 기능저하가 발생하고 수술 합병증이 있을 수 있다.</li>
+<li><b>비수술적절제(고주파 등)</b>: 방사성요오드나 수술을 거부하거나 시행이 어려운 경우 고려한다. 전독성·무증상의 비교적 작은(10–20 mL 이하) 단일 결절, 특히 젊은 나이에서 방사성요오드 후 기능저하 위험이 높을 때 고려될 수 있다.</li>
+<li>절제 후 12개월 TSH 정상화: &lt;10 mL 74%, 10–30 mL 49%, &gt;30 mL 19%. 15–20 mL 이상에서는 비수술적절제가 우선 치료로 권고되지 않는다.</li>
+<li>크기가 크거나 다발성이어서 효과적 치료가 어려운 자율기능성 결절은 방사성요오드 또는 수술을 일차로 고려한다.</li></ul>`},
+
+tshnormal:{kind:'TSH 분기', title:'TSH 정상 또는 증가', next:['us'], body:`
+<p>혈청 TSH가 낮지 않으면 갑상선 초음파를 시행한다. 초음파는 촉진된 이상이 실제 결절인지 확인하고, 초음파 소견으로 악성 위험도를 예측하며, 병리진단이 필요한 다른 결절을 추가로 발견할 수 있게 한다.</p>
+${fnBox('c')}`},
+
+us:{kind:'검사 단계', title:'진단 초음파', next:['susp','benus'], body:`
+${R('2.2.A',1,'갑상선결절이 존재하거나 의심되는 모든 환자에서 경부 림프절 평가를 포함한 갑상선 초음파검사를 권고한다.')}
+<p>국내에서는 2021 K-TIRADS(대한갑상선영상의학회)에 따라 암 위험도와 병리진단검사 기준을 적용한다. 암 의심 소견은 특이도는 높으나 민감도는 낮으며, 주로 유두암을 예측하고 여포암에서는 드물다.</p>
+<h4>Table 2.2.A 2021 K-TIRADS 암 위험도와 병리진단검사 기준</h4>
+${KTIRADS}
+<h4>다결절성 갑상선종</h4>
+${R('3.9.A',1,'1 cm를 초과하는 결절이 2개 이상이면 단일 결절과 동일하게 평가하며, 초음파 소견에 근거하여 1개 이상의 결절에서 FNA를 고려할 수 있다.')}
+${R('3.9.B',1,'1 cm 초과 결절이 다수이면 초음파 소견과 크기 기준에 따라 악성 가능성이 가장 높은 결절부터 FNA를 시행할 수 있다.')}
+${R('3.9.C',3,'의심 결절이 없고 정상 조직 없이 유사한 융합성 결절들이 다수이면 악성 가능성이 낮으므로, 가장 큰 결절(&gt;2 cm)에서 FNA를 하거나 FNA 없이 관찰할 수 있다.')}`},
+
+susp:{kind:'초음파 결과', title:'높은/중간/낮은의심 결절', next:['fna'], body:`
+<p>K-TIRADS 3–5 결절이다. 병리진단검사 기준은 암 위험도와 크기로 결정한다.</p>
+<ul><li>높은의심(K5): &gt;1 cm</li>
+<li>중간의심(K4): 임상·초음파·환자 요인을 고려해 &gt;1 cm 또는 &gt;1.5 cm</li>
+<li>낮은의심(K3): &gt;2 cm</li></ul>
+<h4>1 cm 이하 결절</h4>
+<ul><li>병리진단 기준에 이견이 많다. 다만 림프절전이 의심, 명백한 갑상선외부침범, 원격전이, 수질암 의심이 있으면 크기와 무관하게 가장 의심스러운 결절에서 시행한다.</li>
+<li>기도 또는 되돌이후두신경 경로를 따라 후내측 피막에 붙은 &gt;0.5–≤1 cm 높은의심 결절은 병리진단을 권고한다.</li>
+<li>그 외 &gt;0.5–≤1 cm 높은의심 결절은 적극적 관찰 등 치료 결정을 위해 성인에서 고려할 수 있다.</li></ul>
+<h4>기준 미달 결절의 추적</h4>
+${R('4.2.A',2,'높은의심: 초기 1–2년은 6–12개월 간격으로 초음파 추적, 크기 증가가 없으면 이후 1년 간격으로 추적한다.')}
+${R('4.2.B',3,'낮은·중간의심: 1–2년 이상 간격으로 초음파 추적을 고려한다. 1 cm 이하 낮은의심은 2–5년 이후 추적을 고려할 수 있다.')}
+${FIG42A}`},
+
+benus:{kind:'초음파 결과', title:'결절이 아니거나 양성 결절 소견', next:['tshnl2','tshup2'], body:`
+<ul><li><b>결절이 아님(K-TIRADS 1)</b>: 촉진 이상이 실제 결절이 아닌 경우</li>
+<li><b>양성(K-TIRADS 2, 암 위험도 &lt;3%)</b>: 등/고에코 해면모양 결절, 혜성꼬리 인공음영을 동반한 부분 낭성 결절, 순수 낭종</li></ul>
+<p>암 가능성이 거의 없어 진단 목적의 병리진단검사는 필요하지 않다. 지속적으로 커져 치료를 계획하는 경우에는 시행할 수 있다.</p>
+${R('4.2.C',3,'양성 초음파 소견: 악성 위험을 고려한 추적 초음파는 필요하지 않으나, 크기와 임상 소견에 따라 2–5년 이후 추적을 고려할 수 있다.')}`},
+
+tshnl2:{kind:'TSH 분기', title:'TSH 정상', next:['fu1'], body:`<p>기능이 정상이고 초음파에서 결절이 아니거나 양성 소견이면 추가 검사 없이 추적관찰한다.</p>`},
+
+fu1:{kind:'관리', title:'추적관찰 (양성 초음파 소견)', next:['benigntx'], body:`
+${R('4.2.C',3,'악성 위험을 고려한 추적 초음파는 필요하지 않으나, 결절의 크기와 임상 소견에 따라 2–5년 이후 초음파 추적을 고려할 수 있다.')}
+<ul><li>초음파 양성 또는 FNA 양성 결절 992명을 5년간 추적한 연구에서 89%는 크기 변화가 없거나 감소했고, 11%가 커졌다(5년간 장경 평균 4.9 mm 증가). 결절 수는 88%에서 늘지 않았다.</li>
+<li>압박 증상, 미용 문제가 생기면 양성 결절 치료 항목을 참조한다.</li></ul>`},
+
+tshup2:{kind:'TSH 분기', title:'TSH 증가', next:['hypotx'], body:`<p>원발성 갑상선기능저하증 상태이다. 결절 평가와 별개로 기능저하증의 진단과 치료를 병행한다.</p>${fnBox('c')}`},
+
+hypotx:{kind:'치료', title:'기능저하증에 대한 치료', next:[], body:`
+<p>본 권고안은 기능저하증 치료의 세부를 다루지 않는다. 일반 원칙에 따라 현성 기능저하증은 레보티록신으로 치료하고, 무증상 기능저하증은 TSH 수준, 증상, 연령, 임신 계획 등을 고려해 결정한다.</p>
+${R('5.A',1,'양성 결절에 대한 일률적인 갑상선호르몬 억제 치료는 권고되지 않는다. 억제요법의 잠재적 위해가 이득을 상회한다.')}
+<p class="small">TSH를 0.1–0.2 mIU/L 미만으로 억제하면 증상을 유발할 뿐 아니라 부정맥과 골다공증 위험이 높아진다. 기능저하증 교정을 위한 대체요법과 결절 축소 목적의 억제요법은 구분한다.</p>`},
+
+fna:{kind:'검사 단계', title:'병리진단검사', next:['b1','b3','b56','b4','b2'], body:`
+${fnBox('c')}
+${R('3.1.A',1,'세침흡인검사(FNA)는 갑상선결절의 병리 진단에 있어 가장 좋은 검사이다.')}
+${R('3.1.B',1,'FNA 결과는 Bethesda system의 진단 범주에 따라 보고한다.')}
+${R('3.1.C',2,'CNB 결과는 대한갑상선학회 병리진단 권고안의 진단 범주에 따라 보고한다.')}
+${R('3.1.D',3,'암 위험도 평가와 수술 여부 결정에 도움을 얻기 위해 임상 위험 요소, 초음파 소견, 환자 선호도를 고려하여 분자표지자검사를 시행할 수 있다.')}
+<h4>Table 3.1.A Bethesda 2023 범주와 암 위험도</h4>
+${BETHESDA}
+<p class="small">Bethesda 제3판은 6개 범주 모두 한 가지 용어만 사용한다(범주 1 nondiagnostic, 범주 3 AUS, 범주 4 여포종양). 범주 3·4에서 핵 비정형이 있는 아형은 암 위험도가 2–3배 높아 세부 아형 구분이 권장된다.</p>
+<h4>병리 결과에 따른 다음 단계</h4>
+${FIG31A}`},
+
+b1:{kind:'병리 결과', title:'비진단적 (Bethesda I)', next:['repeat'], body:`
+${R('3.2.A',1,'초기 FNA에서 비진단적인 결절은 초음파유도하에 병리진단검사를 재시행한다.')}
+<ul><li>정의: 보존이 잘 된 10개 이상 여포세포로 이루어진 세포 군집이 6개 이상이라는 적절성 기준에 미흡한 경우. 뚜렷한 비정형 세포가 있으면 세포가 적어도 비진단적으로 하지 않는다.</li>
+<li>재검 시점: 3개월 대기의 필요성은 불확실하며, 임상·영상에서 악성이 의심되면 더 짧은 기간 내에 시행한다(비정형으로 재검할 때는 3개월 이상 대기가 낫다는 연구가 있다).</li>
+<li>재검 시 낭성 부분이 50% 이하이면 진단율이 60–80%이다.</li>
+<li>FNA 재시행 시 28.1–40.0%가 다시 비진단적이지만, CNB는 1.1–3.8%에 그친다.</li>
+<li>재검 간격: K-TIRADS 3/4는 12개월 내, K-TIRADS 5는 6개월 내(Fig. 3.1.A).</li></ul>`},
+
+b3:{kind:'병리 결과', title:'비정형 (Bethesda III, AUS)', next:['repeat'], body:`
+${R('3.4.A',3,'임상 위험 인자, 초음파 소견, 환자 선호도와 실행 가능성을 고려하여 초음파 추적관찰을 하거나, 진단적 수술 결정을 위해 반복 FNA, CNB 또는 분자표지자검사를 시행해 볼 수 있다.')}
+<ul><li>성인 FNA의 8.0%가 비정형으로 진단되며, 수술 시 악성 비율은 성인 30.5%, 소아 37.0%였다.</li>
+<li>경험 많은 병리과 전문의의 슬라이드 재판독으로 많은 예가 양성 또는 비진단적으로 재분류된다.</li>
+<li>FNA를 반복하면 대부분 진단적 결과를 얻지만 10–30%는 다시 비정형이다. CNB는 반복 비정형 비율을 줄일 수 있다.</li>
+<li>BRAF<sup>V600E</sup> 단독 검사: 빈도가 높은 아시아에서는 이 검사만으로 암 위험도가 33.4–56.5%에서 71.1–87.9%로 높아진다.</li>
+<li>NGS 패널(비정형·여포종양 대상): 민감도 74–94%, 특이도 68–85%, 음성예측도 92–97%, 양성예측도 43–74%</li>
+<li>높은의심 초음파 소견이 있으면 암 위험도가 높다. 재검 간격은 K3/4 12개월 내, K5 6개월 내(Fig. 3.1.A).</li></ul>
+${fnBox('d')}`},
+
+repeat:{kind:'검사 단계', title:'병리진단검사 반복', next:['r1','r3'], body:`
+${fnBox('c')}
+${fnBox('d')}
+${R('3.8.A',3,'분자표지자검사는 임상 위험 요소, 세포검사 결과, 초음파 소견에 기반한 암 위험도와 실행 가능성, 환자 선호도를 고려하여 시행한다.')}
+${R('3.8.B',3,'FNA 미결정 결절의 평가를 위해 일률적인 FDG PET/CT 검사를 권고하지 않는다.')}
+<h4>분자표지자검사의 해석</h4>
+<ul><li><b>BRAF<sup>V600E</sup> 또는 BRAF 융합</b>: 발견되면 악성을 의미한다. 다른 BRAF 변이는 양성 종양에서도 발견된다. 비정형·여포종양 범주에서는 민감도가 낮다.</li>
+<li><b>RAS</b>: 악성, NIFTP, 양성 종양 모두에서 발견되며 악성 양성예측도는 약 66%이다. 진단·치료 목적의 수술 대상이 된다.</li>
+<li><b>TERT 프로모터</b>: 고령, 림프절·원격전이, 방사성요오드 내성과 관련된다. BRAF<sup>V600E</sup> 또는 RAS와 동반 시 예후가 더 나쁘다. 특이도는 매우 높으나 민감도가 낮다.</li>
+<li>분자검사 후 암 위험도 변화는 서구(22.7–34.6% vs 24.4–30.2%)보다 아시아(40.1–88.2% vs 27.5–38.1%)에서 크다.</li>
+<li>시행 전 이익, 한계, 결과의 불확실성을 환자에게 설명한다.</li></ul>
+<h4>Table 3.1.B CNB 진단 범주</h4>
+${CNBTBL}`},
+
+r1:{kind:'반복 검사 결과', title:'반복 비진단적', next:['close'], body:`
+${R('3.2.B',3,'반복 병리진단에서도 비진단적인 낭성 결절(높은의심 초음파 소견이 없는 경우)은 주의 깊게 추적관찰하거나 수술적 절제가 필요할 수 있다.')}
+${R('3.2.C',3,'반복 비진단적 결과에서 초음파상 악성이 강력히 의심되거나, 추적 중 20% 이상 커지거나, 임상적으로 암 위험도가 있으면 진단을 위해 수술적 절제를 고려한다.')}
+<p class="small">2회 비진단적 결절 중 높은의심 초음파 소견이 있으면 25%, 없으면 4%가 악성이었다.</p>`},
+
+r3:{kind:'반복 검사 결과', title:'반복 비정형', next:['close'], body:`
+${R('3.4.B',2,'반복 병리진단에서 결론에 이르지 못하고 분자표지자검사를 시행하지 않았거나 결론에 이르지 못하면, 임상 위험 인자, 결절 크기, 초음파 소견, 환자 선호도에 따라 초음파 추적관찰 또는 수술을 시행할 수 있다.')}`},
+
+close:{kind:'관리', title:'면밀한 추적관찰 혹은 수술', next:[], body:`
+<h4>수술 쪽으로 판단하는 경우</h4>
+<ul><li>초음파상 악성이 강력히 의심될 때(3.2.C)</li>
+<li>추적 중 20% 이상 크기 증가(3.2.C)</li>
+<li>임상적으로 암 위험도가 있을 때(3.2.C)</li>
+<li>분자표지자검사에서 고위험 변이가 확인될 때</li></ul>
+<h4>추적관찰을 선택할 수 있는 경우</h4>
+<ul><li>높은의심 소견이 없는 낭성 결절(3.2.B)</li>
+<li>임상 위험 인자, 크기, 초음파 소견, 환자 선호도상 수술 이득이 크지 않을 때(3.4.B)</li></ul>`},
+
+b56:{kind:'병리 결과', title:'악성 혹은 악성의심 (Bethesda V, VI)', next:['surg'], body:`
+<h4>악성의심 (V)</h4>
+${R('3.6.A',2,'유두암의심(악성의심)은 악성과 유사하게 임상 위험 요소, 초음파 소견, 환자 선호도를 고려하여 수술적 절제를 시행한다.')}
+${R('3.6.B',3,'유전자변이검사 결과에 따라 수술 결정이 바뀔 수 있는 경우 분자표지자검사를 고려해 볼 수 있다.')}
+<ul class="small"><li>FNA의 1–6%를 차지하며 수술 후 암 위험도는 성인 79.6%, 소아 90.5%였다.</li>
+<li>TERT 프로모터와 BRAF<sup>V600E</sup> 동반 시 BRAF 단독보다 높은 병기(4.2배), 원격전이(11.7배), 재발(4.3배), 사망(15배)과 관련된다. 2개 이상 변이나 불량 예후 변이가 있으면 적극적 수술을 고려한다.</li>
+<li>수질암, 림프종 등 드문 암이 의심되면 CNB 후 면역조직화학염색 또는 분자검사로 정확도를 높일 수 있다.</li></ul>
+<h4>악성 (VI)</h4>
+${R('3.7.A',1,'병리진단 결과가 악성이면 일반적으로 수술을 권고한다.')}
+${R('3.7.B',2,'저위험군 미세갑상선유두암으로 진단된 성인 환자에서 적극적 관찰을 고려할 수 있다.')}
+${fnBox('e')}`},
+
+b4:{kind:'병리 결과', title:'여포종양 (Bethesda IV)', next:['surg'], body:`
+${R('3.5.A',2,'여포종양으로 진단되면 수술을 우선적으로 고려한다. 치료 결정 시 크기가 2 cm 이상으로 커질수록 암 위험도가 증가함을 고려한다.')}
+${R('3.5.B',3,'임상·초음파 소견을 참고하여 초음파 추적관찰, 또는 암 위험도 평가와 수술 결정을 위한 분자표지자검사를 진행할 수 있다. 환자 선호도와 실행 가능성을 고려한다.')}
+<ul><li>세포 밀도가 높은 검체로, 유두암 핵 특징 없는 구조적 변화, 유두암 핵 특징을 보이는 소포 형태 군집, 또는 거의 호산성세포로만 구성된 경우이다.</li>
+<li>FNA의 6.1%가 여포종양이며, 수술 후 악성은 성인 28.9%, 소아 41.4%였다.</li>
+<li>크기별 암 위험도: ≥2 cm 1.63배, ≥3 cm 2.39배, ≥4 cm 2.29배. 기준 미만이라도 18–25%가 악성이었다.</li>
+<li>여포암과 NIFTP는 수술로만 확진되지만 62–70%에서 불필요한 수술이 발생하므로, 양성 가능성과 합병증을 수술 전 충분히 설명한다.</li>
+<li>NGS 패널은 단일 유전자검사보다 양성진단율이 높지만(40.3–63.4% vs 2.2–12.2%) 양성 결절에서도 변이가 발견되어 단독으로 결론적이지 않다.</li></ul>`},
+
+b2:{kind:'병리 결과', title:'양성 (Bethesda II)', next:['fu2'], body:`
+${R('3.3.A',1,'병리진단검사에서 양성인 결절은 즉각적인 추가 검사나 치료가 필요하지 않다.')}
+<ul><li>FNA 양성 결절의 악성 위험도는 1–3%이다. 결절 병리진단 전체의 위음성률은 약 5%로, 양성이어도 추적관찰이 필요하다.</li>
+<li>4 cm 초과 결절의 위음성에 대해서는 결과가 엇갈리며, 크기보다 높은의심 초음파 소견에서 위음성률이 더 높다.</li></ul>`},
+
+fu2:{kind:'관리', title:'추적관찰 (세포학적 양성)', next:['benigntx'], body:`
+${R('4.1.A',1,'높은의심 초음파 소견: 6–12개월 이내에 초음파를 시행하고 크기 감소가 없으면 병리진단검사를 반복한다. [임상적 고려사항] 1 cm 이하는 반복 병리진단 없이 초음파 추적을 고려할 수 있다.')}
+${R('4.1.B',3,'낮은·중간의심: 12–24개월 시점에 초음파를 시행한다. 크기 증가 또는 새로운 의심 소견이 있으면 병리진단검사를 하거나 지속 관찰할 수 있고, 지속적으로 커지면 병리진단검사를 시행할 수 있다.')}
+${R('4.1.C',2,'양성 초음파 소견: 치료 목적으로 병리진단 후 양성이면 악성 위험을 고려한 추적 초음파는 필요하지 않다.')}
+${R('4.1.D',1,'반복 병리진단에서 양성이고 악성의심 소견의 변화가 없으면 추적 병리진단검사는 필요하지 않다.')}
+<ul class="small"><li>결절 성장의 정의: ${GROWTH}. 크기 증가 자체가 악성을 시사하지는 않지만 반복 병리진단의 적응증이 된다.</li>
+<li>FNA 양성인 높은의심 결절의 위음성률은 3.1–18.2%로 상대적으로 높다. CNB에서 양성이면 위음성률이 약 3% 이하여서 반복 병리진단 없이 초음파 추적을 고려할 수 있다.</li>
+<li>낮은·중간의심 결절과 2회 이상 양성 결절은 추적 초음파에서 변화가 없으면 반복 병리진단이 필요하지 않다.</li></ul>`},
+
+benigntx:{kind:'치료', title:'갑상선 양성 결절의 치료', next:[], body:`
+${R('5.A',1,'양성 결절에 대한 일률적인 갑상선호르몬 억제 치료는 권고되지 않는다.')}
+${R('5.B',2,'크기가 증가하지만 반복 세포검사에서 양성이면 주기적으로 추적관찰한다. 약간 커지는 대부분의 무증상 결절은 치료 없이 관찰한다.')}
+${R('5.C',4,'크기가 증가하는 양성 결절에서 갑상선호르몬 억제 치료에 대한 자료는 없다.')}
+${R('5.D',3,'반복 병리진단에서 양성이라도 압박증상, 미용적 문제, 자율기능성 결절이면 치료가 필요할 수 있다.')}
+${R('5.E',3,'크기가 증가하는 4 cm보다 큰 결절은 압박증상이 심하거나 악성 우려가 있으면 수술을 고려한다.')}
+${R('5.F',2,'압박·미용 문제가 있는 정상 기능의 양성 고형결절은 비수술적절제 또는 수술을 고려할 수 있다.')}
+${R('5.G',2,'양성 고형결절의 비수술적절제로는 고주파 또는 레이저절제술이 권고된다.')}
+${R('5.H',1,'재발하는 양성 낭성 결절은 압박·미용 문제가 있으면 에탄올절제술이 일차 치료법이다.')}
+<h4>비수술적절제의 대상</h4>
+<ul><li>FNA 또는 CNB에서 2회 이상 양성인 결절. K-TIRADS 2 결절과 자율기능성 결절은 1회 양성으로도 대상이 되고, 순수 낭종은 비진단적 결과여도 에탄올절제술이 가능하다.</li>
+<li>여포성 종양 진단 민감도가 높은 CNB를 치료 전 병리진단에 포함하는 것이 권고된다.</li>
+<li>제외: 범주 4·5·6 이력, K-TIRADS 5, 암 또는 여포종양 의심, 흉골뒤갑상선종. 약 6–7 cm 이상의 매우 큰 결절은 수술을 우선 고려한다.</li>
+<li>양엽 결절은 최소 2 cm보다 크면서 압박·미용 문제가 있을 때 대상이 된다. 협부 결절은 연관성이 확인되면 작아도 대상이 될 수 있다.</li>
+<li>낭성 결절은 단순 흡인을 먼저 시도하고, 재발하면 에탄올절제술을 시행한다. 에탄올은 고형결절에서 효과가 낮고 누출 위험이 있어 권고되지 않는다.</li></ul>`},
+
+tshnl2b:{},
+
+surg:{kind:'치료', title:'수술 (또는 면밀한 추적관찰)', next:[], body:`
+<p>수술 범위는 종양 크기, 병리진단 결과, 영상검사를 포함한 임상상을 종합하여 결정한다(대한갑상선학회 갑상선분화암 진료권고안 2024 'I.2.2' 참조).</p>
+${fnBox('e')}
+<h4>수술을 우선 고려하는 경우</h4>
+<ul><li>임상적으로 림프절전이 또는 원격전이가 의심되는 경우</li>
+<li>육안적 갑상선외부침범, 또는 기관이나 되돌이후두신경 침범이 의심·우려되는 경우</li>
+<li>공격적 조직아형(긴세포, 원주세포, hobnail 등)이 관찰되는 경우</li></ul>
+<h4>적극적 관찰을 고려할 수 있는 경우</h4>
+<ul><li>매우 낮은 위험도 종양(전이와 육안적 외부침범이 없고 공격적 아형 근거가 없는 미세유두암 등)</li>
+<li>동반 질환으로 수술 위험이 큰 경우</li>
+<li>남은 여생이 짧을 것으로 예상되는 경우(심한 심혈관질환, 다른 악성 종양, 고령)</li>
+<li>수술 전에 해결해야 할 내과·외과적 질환이 있는 경우</li></ul>
+<h4>질병 진행의 정의</h4>
+<ul><li>종양 최대 길이 3 mm 이상 증가, 또는 새로운 경부 림프절·원격전이·갑상선외부침범</li>
+<li>부피 기준은 50% 이상(과대평가 우려로 72–100%를 쓰기도 함), 또는 2개 이상 직경이 각 2 mm 이상 증가</li>
+<li>증가 소견은 측정 오차를 고려해 3–6개월 간격 초음파로 확인한다.</li></ul>
+<h4>근거 요약</h4>
+<ul class="small"><li>1–2 cm 이하 저위험 유두암 9개 연구: 길이 3 mm 이상 증가 2.2–10.8%, 부피 50% 이상 증가 16.0–28.8%, 새 림프절전이 0–4.5%</li>
+<li>일본 3222명 장기 추적: 10년·20년 크기 증가 4.7%·6.6%, 림프절전이 1.0%·1.6%</li>
+<li>진행 관련 인자(국내): 30세 미만, 남성, 6 mm 이상, 기저 TSH 7 mIU/L 이상, 종양 내 혈류, 미만성 갑상선질환 소견. 9 mm 이상에서 진행 위험 증가(HR 1.79). 1–2 cm 종양의 적극적 관찰은 추가 연구가 필요하다.</li>
+<li>고령에서는 기대수명과 수술 합병증을 고려해 적극적 관찰을 고려해 볼 수 있다.</li>
+<li>임신 중 적극적 관찰 50명: 3 mm 이상 증가 8%, 림프절전이 없음. 임신을 원하는 환자에게 추천할 수 없다는 근거는 없으며, 임신 시 면밀한 추적이 필요하다.</li>
+<li>삶의 질과 불안감은 적극적 관찰군에서 지속적으로 양호했고, 직접의료비는 약 16년 후부터 적극적 관찰군에서 더 높았다. 환자와의 공유의사결정이 중요하다.</li></ul>`},
+
+fu2b:{}
+};
+delete D.tshnl2b; delete D.fu2b;
+
+/* ---------- 추가 참고 (순서도 밖 권고) ---------- */
+const EXTRA = {
+screen:{kind:'추가 참고', title:'고위험군과 갑상선암 선별검사', next:[], body:`
+${R('1.A',4,'직계 가족 중 3명 이상의 갑상선분화암 환자가 있는 경우, 이환율과 사망률을 낮춘다는 증거가 없으므로 선별 목적의 초음파를 일률적으로 권고하지는 않는다.')}
+${R('1.B',2,'가족성 갑상선암이나 유전성 종양증후군 환자의 가족은 유전상담을 받고 변이 유무에 따라 선별검사와 치료를 시행해야 한다.')}
+${R('1.C',4,'그레이브스병, 하시모토갑상선염, 부갑상선기능항진증 환자에게 선별 초음파를 일률적으로 권고하지는 않는다.')}
+${R('1.D',2,'1.A–C의 경우 신체검진에서 결절, 비대칭적 갑상선종대, 림프절 종대가 의심되면 초음파를 고려한다.')}
+<ul class="small"><li>가족성 분화암: 가계 내 2명이면 4.6%, 3명 이상이면 22.7%에서 암이 발견되었다.</li>
+<li>그레이브스병: 결절이 있으면 암 위험 4–5배이나 예후가 더 불량하다는 근거는 없다. 방사성요오드나 수술 전에는 초음파를 시행한다.</li>
+<li>하시모토갑상선염: 암 위험 1.5–1.8배이나 예후는 오히려 양호하다.</li>
+<li>소아기 방사선치료(또는 <sup>131</sup>I-MIBG) 생존자: 5년 후부터 1–2년 간격 촉진 또는 3–5년 간격 초음파(국제 권고)</li></ul>`},
+preg:{kind:'추가 참고', title:'임신부의 갑상선결절', next:[], body:`
+${R('6.A',1,'임신부도 비임신부와 마찬가지로 초음파 소견에 근거하여 FNA를 고려한다. 임신 초기 이후에도 TSH가 지속적으로 낮으면 스캔이 가능해지는 출산 이후로 병리진단검사를 미룰 수 있다.')}
+${R('6.B',3,'임신 초기에 진단된 갑상선암은 초음파 추적이 필요하며, 임신 24주까지 의미 있는 성장 또는 경부 림프절전이가 발견되면 수술을 고려한다. 임신 중기까지 변화가 없거나 임신 후기에 처음 진단되면 분만 후 수술할 수 있다. 진행된 암은 임신 중기 수술이 바람직하다.')}
+<ul class="small"><li>의미 있는 성장: ${GROWTH}</li>
+<li>갑상선스캔이 금기라는 점 외에 검사법은 비임신부와 같다.</li>
+<li>임신 중 수술과 분만 후 수술 사이에 재발률과 생존율 차이가 없었다. 수술한다면 24주 이전 임신 중기가 좋다.</li></ul>`},
+levels:{kind:'추가 참고', title:'권고수준의 정의 (Table 1)', next:[], body:`
+${[1,2,3,4].map(l=>`<div class="rec"><span class="lv l${l}">권고수준 ${l}</span><p>${LV[l]}</p></div>`).join('')}`}
+};
+Object.assign(D, EXTRA);
+
+/* ---------- 렌더링 ---------- */
+const chart = document.getElementById('chart');
+const edges = document.getElementById('edges');
+EDGES.forEach(([d,arrow,cls])=>{
+  const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+  p.setAttribute('d', d);
+  if (arrow) p.setAttribute('marker-end','url(#ah)');
+  if (cls) p.setAttribute('class', cls);
+  edges.appendChild(p);
+});
+const nodeEls = {};
+NODES.forEach(n=>{
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+  b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+  b.innerHTML = n.label;
+  b.addEventListener('click', ()=>open(n.id, b));
+  chart.appendChild(b);
+  nodeEls[n.id] = b;
+});
+
+/* 각주 목록 (세부 창) */
+const FN_LINK = {a:'tshlow', b:'auto', c:'fna', d:'repeat', e:'surg'};
+D.footnotes = {kind:'순서도 각주', title:'각주 a–e', next:['tshlow','auto','fna','repeat','surg'], nextLabel:'관련 단계',
+  body:`<ul class="fn-list">${Object.keys(FN).map(k=>`<li><button type="button" data-go="${FN_LINK[k]}"><b>${k}</b><span>${FN[k]}</span></button></li>`).join('')}</ul>
+<p class="caption">원 그림: Fig. 2.A 갑상선결절에 대한 검사 및 치료 알고리즘 (Park YJ, et al. <a href="https://doi.org/10.11106/ijt.2024.17.1.208" target="_blank" rel="noopener noreferrer">Int J Thyroidol 2024;17(1):208-244</a>, CC BY-NC 4.0)</p>
+<p class="small" style="color:var(--muted)">각주를 누르면 해당 단계의 세부 내용으로 이동한다.</p>`,
+  onOpen(){ dBody.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.go))); }
+};
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 또는 뜻으로 찾기" aria-label="약어 검색"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const render = q => { q=(q||'').trim().toLowerCase();
+      dl.innerHTML = ABBR.filter(([a,b])=>!q || a.toLowerCase().includes(q) || b.toLowerCase().includes(q))
+        .map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('fnToggle').addEventListener('click', e=>open('footnotes', e.currentTarget));
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+
+document.querySelectorAll('#extras button').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const size = document.getElementById('chartSize');
+const CW = 760, CH = 720, NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function layout(){
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / CW, Math.max(availH, 320) / CH);
+  chart.style.transform = `scale(${scale})`;
+  size.style.width = (CW * scale) + 'px';
+  size.style.height = (CH * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+layout();
+
+/* ---------- 약어 ---------- */
+const ABBR = [
+  ['AUS','Atypia of undetermined significance, 비정형'],
+  ['CNB','Core needle biopsy, 중심바늘생검'],
+  ['FNA','Fine-needle aspiration, 세침흡인검사'],
+  ['FAP','Familial adenomatous polyposis, 가족성 선종성 용종증'],
+  ['IHC','Immunohistochemistry, 면역조직화학염색'],
+  ['K-TIRADS','Korean Thyroid Imaging Reporting and Data System'],
+  ['KTA','Korean Thyroid Association, 대한갑상선학회'],
+  ['MEN2','Multiple endocrine neoplasia type 2, 다발성 내분비샘종양 2형'],
+  ['NGS','Next-generation sequencing, 차세대염기서열분석'],
+  ['NIFTP','Non-invasive follicular thyroid neoplasm with papillary-like nuclear features'],
+  ['MIBG','Metaiodobenzylguanidine'],
+  ['FDG PET/CT','<sup>18</sup>F-fluorodeoxyglucose PET/CT'],
+  ['PTMC','Papillary thyroid microcarcinoma, 미세갑상선유두암'],
+  ['RFA','Radiofrequency ablation, 고주파절제술'],
+  ['Tg','Thyroglobulin, 티로글로불린'],
+  ['TPO','Thyroid peroxidase, 갑상선과산화효소'],
+  ['TRAb','TSH receptor antibody, TSH 수용체 항체'],
+  ['TSH','Thyroid-stimulating hormone, 갑상선자극호르몬']
+];
+</script>
+</body>
+</html>
