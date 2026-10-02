@@ -15,6 +15,7 @@
   --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
   --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
   --border:#C9D3DA;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -27,6 +28,7 @@
     --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
     --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
     --border:#2E3E4A;
+    --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
   }
 }
 :root[data-theme="dark"]{
@@ -36,6 +38,7 @@
   --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
   --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
   --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
 }
 *,*::before,*::after{box-sizing:inherit}
 html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -45,15 +48,17 @@ body{
   line-height:1.6; -webkit-text-size-adjust:100%;
 }
 .top{
-  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
-  background:var(--surface); border-bottom:1px solid var(--border);
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
 }
-.top-inner{max-width:1080px; margin:0 auto; padding:.75rem 1.25rem; display:flex; justify-content:center; align-items:center; gap:1rem; flex-wrap:wrap; text-align:center}
-.top h1{font-size:1.15rem; margin:0; font-weight:700; letter-spacing:-.01em}
-.top .src{font-size:.82rem; color:var(--muted); margin:0}
-.top .src a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
 .top .src a:hover{text-decoration-thickness:2px}
-.top .spacer{flex:1}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
 .btn{
   font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
   border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
@@ -61,7 +66,7 @@ body{
 .btn:hover{border-color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent); outline-offset:2px}
 
-main{max-width:1180px; margin:0 auto; padding:.75rem 1.25rem}
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
 .legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
 .legend span{white-space:nowrap}
@@ -190,18 +195,17 @@ main{max-width:1180px; margin:0 auto; padding:.75rem 1.25rem}
 </style>
 </head>
 <body>
-<header class="top">
-  <div class="top-inner">
-    <div>
-      <h1>갑상선결절 검사 및 치료 알고리즘</h1>
-      <p class="src">대한갑상선학회 갑상선결절 진료권고안 2024, <a href="https://doi.org/10.11106/ijt.2024.17.1.208" target="_blank" rel="noopener noreferrer">Int J Thyroidol 2024;17(1):208-244</a></p>
-    </div>
-  </div>
-</header>
-
 <main>
 
   <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>갑상선결절 검사 및 치료 알고리즘</h1>
+        <p class="src">대한갑상선학회 갑상선결절 진료권고안 2024, <a href="https://doi.org/10.11106/ijt.2024.17.1.208" target="_blank" rel="noopener noreferrer">Int J Thyroidol 2024;17(1):208-244</a></p>
+      </div>
+    </div>
+  </header>
   <div class="chart-wrap" id="chartWrap">
     <div class="legend" id="legend" aria-label="범례">
       <span><i class="sw test"></i>검사·시술 단계</span>
