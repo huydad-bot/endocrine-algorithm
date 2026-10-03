@@ -234,6 +234,21 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 @media (prefers-reduced-motion: reduce){
   .drawer,.backdrop,.node{transition:none}
 }
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
 </style>
 </head>
 <body>
@@ -251,10 +266,10 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
   </header>
   <div class="chart-wrap" id="chartWrap">
     <div class="legend" id="legend" aria-label="범례">
-      <span><i class="sw test"></i>검사·시술 단계</span>
-      <span><i class="sw mal"></i>악성 가능성이 높은 결과</span>
-      <span><i class="sw ben"></i>양성 결과</span>
-      <span><i class="sw tx"></i>기능 이상 치료</span>
+      <button type="button" class="lg" data-cls="test" aria-label="검사·시술 단계 박스 강조"><i class="sw test"></i>검사·시술 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="악성 가능성이 높은 결과 박스 강조"><i class="sw mal"></i>악성 가능성이 높은 결과</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="양성 결과 박스 강조"><i class="sw ben"></i>양성 결과</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="기능 이상 치료 박스 강조"><i class="sw tx"></i>기능 이상 치료</button>
     </div>
     <ul class="chart-note">
       <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
@@ -891,6 +906,24 @@ document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', 
 
 document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
 
+
+/* ---------- 범례 클릭: 해당 종류 박스 2.4초 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  NODES.forEach(n=>{ if (n.cls === cls) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
 /* ---------- 세부 창 ---------- */
 const drawer = document.getElementById('drawer');
 const backdrop = document.getElementById('backdrop');
