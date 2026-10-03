@@ -376,6 +376,16 @@ button.go-link{font:inherit; font-size:.82rem; cursor:pointer; margin:.15rem .3r
 .legend .chart-note{position:static; white-space:normal; max-width:170px; margin-top:1rem}
 .legend .chart-note li{display:list-item}
 .d-sec{font-size:.8rem; color:var(--muted); margin:.1rem 0 0}
+
+/* 하단 버튼 강조 */
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -418,13 +428,13 @@ button.go-link{font:inherit; font-size:.82rem; cursor:pointer; margin:.15rem .3r
   </div>
 
   <div class="below">
-    <div class="extras"><button type="button" data-id="levels">권고수준의 정의</button></div>
+    <div class="extras"><button type="button" data-id="levels" class="bt-lv"><span class="bt-ic" aria-hidden="true">★</span>권고수준의 정의</button></div>
     <span class="sep" aria-hidden="true"></span>
     <div class="extras" role="group" aria-label="흐름도 밖의 권고">
-      <button type="button" data-id="preg">임신 중 갑상선암 (IV)</button>
-      <button type="button" data-id="peds">소아 갑상선분화암 (V)</button>
+      <button type="button" data-id="preg" class="bt-preg"><span class="bt-ic" aria-hidden="true">＋</span>임신 중 갑상선암 (IV)</button>
+      <button type="button" data-id="peds" class="bt-peds"><span class="bt-ic" aria-hidden="true">＋</span>소아 갑상선분화암 (V)</button>
     </div>
-    <button type="button" class="abbr-toggle" id="abbrToggle">약어</button>
+    <button type="button" class="abbr-toggle bt-abbr" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
   </div>
   </div>
 </main>
