@@ -287,6 +287,26 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
 .rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
 @media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+
+/* 병기 계산기 */
+.stg{border:1px solid var(--border); border-radius:8px; padding:.7rem .8rem; background:var(--surface); margin:.4rem 0 1rem}
+.stg-row{display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .6rem; margin:.35rem 0}
+.stg-lb{width:2.6rem; font-weight:700; color:var(--ink); flex:none}
+.stg-opts{display:flex; flex-wrap:wrap; gap:.3rem}
+.stg-opts button{font:inherit; font-size:.86rem; padding:.28rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink); cursor:pointer; min-width:2.8rem}
+.stg-opts button:hover{border-color:var(--accent)}
+.stg-opts button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600}
+.stg-src{display:inline-block; margin-top:.2rem; font-size:.78rem; color:var(--muted)}
+.stg-note{font-size:.78rem; color:var(--muted); align-self:center; margin-left:.2rem}
+.stg-age{font-size:.82rem; color:var(--muted); display:inline-flex; align-items:center; gap:.3rem}
+.stg-age input{width:4.2rem; font:inherit; font-size:.86rem; padding:.22rem .4rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.stg-out{display:flex; align-items:center; gap:.8rem; margin-top:.6rem; padding:.55rem .75rem; border-radius:8px; background:var(--bg); border:1px dashed var(--border)}
+.stg-out.done{border:1.5px solid var(--accent); background:var(--accent-soft)}
+.stg-res{font-size:1.5rem; font-weight:700; color:var(--accent); min-width:3.6rem; text-align:center}
+.stg-why{font-size:.86rem; color:var(--ink)}
+.stg-reset{font:inherit; font-size:.78rem; margin-top:.45rem; padding:.2rem .6rem; border:1px solid var(--border); border-radius:6px; background:transparent; color:var(--muted); cursor:pointer}
+.stg-reset:hover{color:var(--ink); border-color:var(--ink)}
+.d-body tr.stg-hl td{background:var(--accent-soft); font-weight:600}
 .en{color:var(--muted); font-size:.92em}
 .go-link{display:inline-block; margin-left:.3rem; padding:.15rem .6rem; border:1px solid var(--accent); border-radius:6px; background:var(--surface); color:var(--accent); font-size:.82rem; font-weight:600; text-decoration:none; white-space:nowrap; vertical-align:baseline}
 .go-link:hover{background:var(--accent); color:#fff}
@@ -544,28 +564,38 @@ patho:{kind:'Part I. 초기 치료', sec:'I.4.1, I.4.3', title:'수술 후 병�
 <li>Ki67 표지지수 5% 이상이면 악성도 증가, 저분화암 10% 이상, 역형성암 30% 이상 보고</li>
 <li>피막형성 여포아형암(여포암, IEFVPTC, 호산성암)은 최소침습형, 피막형성혈관침습형, 광범위침습형으로 구분</li></ul>`},
 stage:{kind:'Part I. 초기 치료', sec:'I.4.2', title:'수술 후 병기 결정 (TNM)', next:['prog','risk'], body:`${R('I.4.2.A',1,'갑상선분화암의 예후 예측과 추후 치료방침의 결정을 위해서 모든 갑상선분화암 환자에서 수술 후 임상적, 병리적 병기 결정을 시행한다.')}${R('I.4.2.B',1,'갑상선분화암의 병기 결정에는 질병의 사망률 예측과 국가암등록을 위하여 AJCC/UICC 병기 분류를 권장한다.')}
+<h4>병기 계산기 (AJCC 8판)</h4>
+<div class="stg" id="stg">
+  <div class="stg-row"><span class="stg-lb">연령</span><div class="stg-opts" data-k="age"><button type="button" data-v="y">55세 미만</button><button type="button" data-v="o">55세 이상</button><span class="stg-note">진단 시 나이 기준</span></div></div>
+  <div class="stg-row"><span class="stg-lb">T</span><div class="stg-opts" data-k="t"><button type="button" data-v="T1a">T1a</button><button type="button" data-v="T1b">T1b</button><button type="button" data-v="T2">T2</button><button type="button" data-v="T3a">T3a</button><button type="button" data-v="T3b">T3b</button><button type="button" data-v="T4a">T4a</button><button type="button" data-v="T4b">T4b</button></div></div>
+  <div class="stg-row"><span class="stg-lb">N</span><div class="stg-opts" data-k="n"><button type="button" data-v="N0">N0 (a/b)</button><button type="button" data-v="NX">NX</button><button type="button" data-v="N1a">N1a</button><button type="button" data-v="N1b">N1b</button></div></div>
+  <div class="stg-row"><span class="stg-lb">M</span><div class="stg-opts" data-k="m"><button type="button" data-v="M0">M0</button><button type="button" data-v="M1">M1</button></div></div>
+  <div class="stg-out" id="stgOut" aria-live="polite"><span class="stg-res">–</span><span class="stg-why">연령과 TNM을 선택하면 병기가 표시된다.</span></div>
+  <button type="button" class="stg-reset" id="stgReset">초기화</button>
+</div>
 <h4>TNM 정의 (AJCC 8판)</h4>
 <div class="tbl"><table><thead><tr><th>구분</th><th>정의</th></tr></thead><tbody>
-<tr><td>T1a / T1b</td><td>≤1 cm / 1–2 cm, 갑상선외부침범 없음</td></tr>
-<tr><td>T2</td><td>2–4 cm, 갑상선외부침범 없음</td></tr>
-<tr><td>T3a</td><td>&gt;4 cm, 갑상선외부침범 없음</td></tr>
-<tr><td>T3b</td><td>크기 무관, 띠근육에 국한된 육안적 외부침범</td></tr>
-<tr><td>T4a</td><td>피하 연부조직, 후두, 기도, 식도, 되돌이후두신경 침범</td></tr>
-<tr><td>T4b</td><td>prevertebral fascia 침범, 경동맥·종격동 혈관을 둘러쌈</td></tr>
-<tr><td>N0a / N0b</td><td>세포·조직학적 전이 없음 / 영상·임상적 전이 없음</td></tr>
-<tr><td>N1a</td><td>level VI 또는 VII (기도전, 기도주위, 전후두, 상종격동), 일측·양측</td></tr>
-<tr><td>N1b</td><td>일측·양측·반대편 측경부(level I–V), 후인두 림프절</td></tr>
-<tr><td>M1</td><td>원격전이</td></tr></tbody></table></div>
+<tr data-t="T1a T1b"><td>T1a / T1b</td><td>≤1 cm / 1–2 cm, 갑상선외부침범 없음</td></tr>
+<tr data-t="T2"><td>T2</td><td>2–4 cm, 갑상선외부침범 없음</td></tr>
+<tr data-t="T3a"><td>T3a</td><td>&gt;4 cm, 갑상선외부침범 없음</td></tr>
+<tr data-t="T3b"><td>T3b</td><td>크기 무관, 띠근육에 국한된 육안적 외부침범</td></tr>
+<tr data-t="T4a"><td>T4a</td><td>피하 연부조직, 후두, 기도, 식도, 되돌이후두신경 침범</td></tr>
+<tr data-t="T4b"><td>T4b</td><td>prevertebral fascia 침범, 경동맥·종격동 혈관을 둘러쌈</td></tr>
+<tr data-n="N0"><td>N0a / N0b</td><td>세포·조직학적 전이 없음 / 영상·임상적 전이 없음</td></tr>
+<tr data-n="NX"><td>NX</td><td>수술 당시 림프절전이를 평가하지 않은 경우</td></tr>
+<tr data-n="N1a"><td>N1a</td><td>level VI 또는 VII (기도전, 기도주위, 전후두, 상종격동), 일측·양측</td></tr>
+<tr data-n="N1b"><td>N1b</td><td>일측·양측·반대편 측경부(level I–V), 후인두 림프절</td></tr>
+<tr data-m="M1"><td>M1</td><td>원격전이</td></tr></tbody></table></div>
 <h4>병기 (AJCC 8판)</h4>
 <div class="tbl"><table><thead><tr><th>연령</th><th>병기</th><th>T</th><th>N</th><th>M</th></tr></thead><tbody>
-<tr><td rowspan="2">55세 미만</td><td>I</td><td>Any</td><td>Any</td><td>M0</td></tr>
-<tr><td>II</td><td>Any</td><td>Any</td><td>M1</td></tr>
-<tr><td rowspan="6">55세 이상</td><td>I</td><td>T1–2</td><td>N0</td><td>M0</td></tr>
-<tr><td rowspan="2">II</td><td>T1–2</td><td>N1</td><td>M0</td></tr>
-<tr><td>T3a/b</td><td>Any</td><td>M0</td></tr>
-<tr><td>III</td><td>T4a</td><td>Any</td><td>M0</td></tr>
-<tr><td>IVA</td><td>T4b</td><td>Any</td><td>M0</td></tr>
-<tr><td>IVB</td><td>Any</td><td>Any</td><td>M1</td></tr></tbody></table></div>`},
+<tr data-row="y-I"><td rowspan="2">55세 미만</td><td>I</td><td>Any</td><td>Any</td><td>M0</td></tr>
+<tr data-row="y-II"><td>II</td><td>Any</td><td>Any</td><td>M1</td></tr>
+<tr data-row="o-I"><td rowspan="6">55세 이상</td><td>I</td><td>T1–2</td><td>N0</td><td>M0</td></tr>
+<tr data-row="o-IIa"><td rowspan="2">II</td><td>T1–2</td><td>N1</td><td>M0</td></tr>
+<tr data-row="o-IIb"><td>T3a/b</td><td>Any</td><td>M0</td></tr>
+<tr data-row="o-III"><td>III</td><td>T4a</td><td>Any</td><td>M0</td></tr>
+<tr data-row="o-IVA"><td>IVA</td><td>T4b</td><td>Any</td><td>M0</td></tr>
+<tr data-row="o-IVB"><td>IVB</td><td>Any</td><td>Any</td><td>M1</td></tr></tbody></table></div>`},
 prog:{kind:'예후', sec:'I.4.2, I.5.2', title:'예후', next:['risk'], body:`<h4>병기와 사망 위험</h4>
 <ul><li>AJCC/UICC 병기는 사망 위험을 예측하며, 대부분의 환자(70–85%)를 저위험군으로 구별한다.</li>
 <li>예후를 가장 잘 반영하는 인자는 원격전이 여부, 진단 시 연령(55세 기준), 종양의 국소 진행 정도이다.</li>
@@ -889,6 +919,59 @@ function annotateEN(root){
     }
   }
 }
+
+/* ---------- 병기 계산기 ---------- */
+function stageOf(st){
+  const {age,t,n,m} = st;
+  if (!age) return {need:'연령'};
+  if (age === 'y'){
+    if (!m) return {need:'M'};
+    return m === 'M1' ? {stage:'II', row:'y-II', why:'55세 미만, 원격전이(M1) → T·N과 무관하게 II기'}
+                      : {stage:'I',  row:'y-I',  why:'55세 미만, 원격전이 없음(M0) → T·N과 무관하게 I기'};
+  }
+  if (m === 'M1') return {stage:'IVB', row:'o-IVB', why:'55세 이상, 원격전이(M1) → T·N과 무관하게 IVB기'};
+  if (t === 'T4b' && m) return {stage:'IVA', row:'o-IVA', why:'55세 이상, T4b M0 → N과 무관하게 IVA기'};
+  if (t === 'T4a' && m) return {stage:'III', row:'o-III', why:'55세 이상, T4a M0 → N과 무관하게 III기'};
+  if ((t === 'T3a' || t === 'T3b') && m) return {stage:'II', row:'o-IIb', why:`55세 이상, ${t} M0 → N과 무관하게 II기`};
+  const miss = [!t && 'T', !n && /^T[12]/.test(t||'T1') && 'N', !m && 'M'].filter(Boolean);
+  if (miss.length) return {need:miss.join(', ')};
+  if (n === 'N1a' || n === 'N1b') return {stage:'II', row:'o-IIa', why:`55세 이상, ${t} ${n} M0 → II기`};
+  return {stage:'I', row:'o-I', why:`55세 이상, ${t} ${n} M0 → I기` + (n === 'NX' ? '<br><span class="stg-src">NX는 AJCC 8판 원본 기준으로 N0와 같이 분류한다(권고안 병기표에는 N0만 표기).</span>' : '')};
+}
+function initStageCalc(){
+  const root = document.getElementById('stg'); if (!root) return;
+  const st = {age:null,t:null,n:null,m:null};
+  const out = document.getElementById('stgOut');
+  const setSel = (k,v)=>{
+    st[k] = v;
+    root.querySelectorAll(`.stg-opts[data-k="${k}"] button`).forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+  };
+  const render = ()=>{
+    const r = stageOf(st);
+    dBody.querySelectorAll('tr.stg-hl').forEach(tr=>tr.classList.remove('stg-hl'));
+    if (st.t) dBody.querySelectorAll('tr[data-t]').forEach(tr=>{ if (tr.dataset.t.split(' ').includes(st.t)) tr.classList.add('stg-hl'); });
+    if (st.n) dBody.querySelectorAll('tr[data-n]').forEach(tr=>{ if (tr.dataset.n.split(' ').includes(st.n)) tr.classList.add('stg-hl'); });
+    if (st.m === 'M1') dBody.querySelectorAll('tr[data-m="M1"]').forEach(tr=>tr.classList.add('stg-hl'));
+    if (r.stage){
+      out.className = 'stg-out done';
+      out.innerHTML = `<span class="stg-res">${r.stage}기</span><span class="stg-why">${r.why}</span>`;
+      const row = dBody.querySelector(`tr[data-row="${r.row}"]`); if (row) row.classList.add('stg-hl');
+    } else {
+      out.className = 'stg-out';
+      out.innerHTML = `<span class="stg-res">–</span><span class="stg-why">${r.need} 선택이 필요하다.</span>`;
+    }
+  };
+  root.querySelectorAll('.stg-opts button').forEach(b=>b.addEventListener('click', ()=>{
+    const k = b.parentElement.dataset.k;
+    setSel(k, st[k] === b.dataset.v ? null : b.dataset.v);
+    render();
+  }));
+  document.getElementById('stgReset').addEventListener('click', ()=>{
+    ['age','t','n','m'].forEach(k=>setSel(k,null)); render();
+  });
+  render();
+}
+D.stage.onOpen = initStageCalc;
 /* ---------- 세부 창 ---------- */
 const drawer = document.getElementById('drawer');
 const backdrop = document.getElementById('backdrop');
