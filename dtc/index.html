@@ -289,7 +289,7 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 @media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
 
 /* 병기 계산기 */
-.stg{margin:.5rem 0 1rem}
+.stg{margin:.45rem 0 1rem}
 .stg-row{display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .6rem; margin:.35rem 0}
 .stg-lb{width:2.6rem; font-weight:700; color:var(--ink); flex:none}
 .stg-opts{display:flex; flex-wrap:wrap; gap:.3rem}
@@ -301,19 +301,19 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .pk-head h4{margin:0}
 .pk-head .stg-reset{margin:0; flex:none}
 .pk-lb small{font-weight:500; font-size:.78rem; color:var(--muted); margin-left:.45rem}
-.pk-wrap{display:flex; flex-direction:column; gap:.9rem; margin:.3rem 0 .2rem}
-.pk-grp{border-radius:8px; padding:.5rem .6rem .6rem}
-.pk-grp.g-age{background:var(--accent-soft)} .pk-grp.g-t{background:var(--ben-bg)} .pk-grp.g-n{background:var(--tx-bg)} .pk-grp.g-m{background:var(--warn-bg)}
-.pk-lb{font-weight:700; font-size:.85rem; color:var(--ink); margin:0 0 .35rem .1rem}
-.pk-items{display:grid; gap:.4rem; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr))}
+.pk-wrap{display:flex; flex-direction:column; gap:.45rem; margin:.25rem 0 .1rem}
+.pk-grp{--g:var(--accent); border-radius:8px; padding:.35rem .5rem .45rem; border-left:5px solid var(--g); background:color-mix(in srgb, var(--g) 13%, var(--surface))}
+.pk-grp.g-age{--g:var(--accent)} .pk-grp.g-t{--g:var(--ben)} .pk-grp.g-n{--g:var(--tx)} .pk-grp.g-m{--g:var(--warn)}
+.pk-lb{font-weight:700; font-size:.85rem; color:var(--g); margin:0 0 .25rem .1rem; filter:brightness(.85)}
+.pk-items{display:grid; gap:.3rem; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr))}
 .pk-age, .pk-m{grid-template-columns:1fr 1fr}
-.d-body .pick{font:inherit; text-align:left; display:flex; flex-direction:column; gap:.1rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--surface); color:var(--ink); cursor:pointer; line-height:1.35}
-.d-body .pick b{font-size:.92rem}
-.d-body .pick span{font-size:.78rem; color:var(--muted)}
-.d-body .pick:hover{border-color:var(--accent)}
-.d-body .pick:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
-.d-body .pick[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
-.d-body .pick[aria-pressed="true"] span{color:#fff; opacity:.9}
+.d-body .pick{font:inherit; text-align:left; display:flex; flex-direction:column; gap:0; padding:.25rem .55rem; border:1px solid color-mix(in srgb, var(--g) 35%, var(--border)); border-radius:6px; background:var(--surface); color:var(--ink); cursor:pointer; line-height:1.3}
+.d-body .pick b{font-size:.9rem}
+.d-body .pick span{font-size:.76rem; color:var(--muted)}
+.d-body .pick:hover{border-color:var(--g)}
+.d-body .pick:focus-visible{outline:2px solid var(--g); outline-offset:1px}
+.d-body .pick[aria-pressed="true"]{background:var(--g); border-color:var(--g); color:var(--surface)}
+.d-body .pick[aria-pressed="true"] span{color:var(--surface); opacity:.92}
 .stg-tip{color:var(--muted); margin:-.2rem 0 .4rem}
 @keyframes outPulse{0%{box-shadow:0 0 0 0 var(--accent)}100%{box-shadow:0 0 0 6px transparent}}
 .stg-out.pulse{animation:outPulse .6s ease-out}
@@ -322,13 +322,17 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .stg-note{font-size:.78rem; color:var(--muted); align-self:center; margin-left:.2rem}
 .stg-age{font-size:.82rem; color:var(--muted); display:inline-flex; align-items:center; gap:.3rem}
 .stg-age input{width:4.2rem; font:inherit; font-size:.86rem; padding:.22rem .4rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
-.stg-out{display:flex; align-items:center; gap:.8rem; margin-top:.6rem; padding:.55rem .75rem; border-radius:8px; background:var(--bg); border:1px dashed var(--border)}
-.stg-out.done{border:1.5px solid var(--accent); background:var(--accent-soft)}
+.stg-out{display:flex; align-items:center; gap:.8rem; margin-top:.3rem; padding:.5rem .75rem; border-radius:8px; background:var(--bg); border:1px dashed var(--border)}
+.stg-out.done{border:0; background:var(--test-ink); color:var(--surface)}
+.stg-lbl{font-weight:700; font-size:.95rem; color:var(--muted)}
+.stg-out.done .stg-res{color:var(--test-ink); background:var(--surface); border-radius:8px; padding:.15rem .6rem; font-size:1.7rem; font-weight:800; line-height:1.2; box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.stg-out.done .stg-why{color:var(--surface)}
+.stg-out.done .stg-src{color:var(--surface); opacity:.85}
 .stg-res{font-size:1.5rem; font-weight:700; color:var(--accent); min-width:3.6rem; text-align:center}
 .stg-why{font-size:.86rem; color:var(--ink)}
 .stg-reset{font:inherit; font-size:.78rem; margin-top:.45rem; padding:.2rem .6rem; border:1px solid var(--border); border-radius:6px; background:transparent; color:var(--muted); cursor:pointer}
 .stg-reset:hover{color:var(--ink); border-color:var(--ink)}
-.d-body tr.stg-hl td{background:var(--accent-soft); font-weight:600}
+.d-body tr.stg-hl td, .d-body td.stg-hl-cell{background:color-mix(in srgb, var(--mal) 12%, var(--surface)); color:var(--mal); font-weight:700}
 .body-btn{font:inherit; font-size:.8rem; font-weight:600; margin-left:.3rem; padding:.18rem .3rem .18rem .6rem; border:1px solid var(--accent); border-radius:999px; background:var(--surface); color:var(--accent); cursor:pointer; display:inline-flex; align-items:center; gap:.35rem}
 .body-btn:hover{background:var(--accent-soft)}
 .body-btn .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.25rem; height:1.25rem; border-radius:50%; background:var(--accent); color:#fff; transition:transform .2s}
@@ -550,8 +554,8 @@ as:{kind:'Part I. 초기 치료', sec:'I.2.3', title:'저위험군 미세갑상�
 <li>40세 미만은 60세 이상보다 크기 증가(5.9% vs. 2.2%)와 림프절전이(5.3% vs. 0.4%)가 많아, 고령에서 적극적 관찰을 더 고려해 볼 수 있다.</li>
 <li>가임기 여성은 적극적 관찰 중 임신에 대한 고려가 필요하다.</li></ul>`},
 surg:{kind:'Part I. 초기 치료', sec:'I.2.1–I.2.2', title:'초기 수술 (수술범위 결정)', next:['lnd','robot','local','comp'], body:`<h4>병리진단검사에서 암으로 진단된 경우 (I.2.2)</h4>${R('I.2.2.A',1,'갑상선암의 크기가 1 cm 이하이고 임상적으로 육안적 갑상선외부침범이 없으며(cT1a), 경부 림프절전이의 증거가 없는 경우(cN0), 반대쪽 엽을 절제해야 하는 분명한 이유가 없다면 갑상선엽절제술을 시행한다.')}${R('I.2.2.B',1,'갑상선암의 크기가 1-2 cm이면서 임상적으로 육안적 갑상선외부침범이 없고(cT1b), 경부 림프절전이의 증거가 없는 경우에는(cN0) 갑상선엽절제술을 우선적으로 고려한다. 단, 수술 후 방사성요오드 치료 계획, 추적 검사의 효율, 환자의 선호도 등을 고려하여 갑상선전절제술을 시행할 수 있다.')}${R('I.2.2.C',2,'갑상선암의 크기가 2-4 cm이면서 임상적으로 육안적 갑상선외부침범이 없고(cT2), 경부 림프절전이의 증거가 없는 경우(cN0), 재발과 합병증에 미치는 영향을 고려하여 갑상선엽절제술 또는 갑상선전절제술을 선택하여 시행할 수 있다.')}${R('I.2.2.D',2,'크기가 4 cm를 초과하는 갑상선분화암이 임상적으로 띠근육과 주요 기관에 대한 육안적 갑상선외부침범이 없고(cT3a), 경부 림프절전이의 증거가 없는 경우, 재발 감소 효과와 합병증 증가 위험을 고려하여 일반적으로 갑상선전절제술을 권고한다.')}${R('I.2.2.E',2,'갑상선암의 크기에 상관없이 임상적으로 종양의 띠근육에 국한된 육안적 갑상선외부침범이 확인되는 경우(cT3b), 재발 또는 사망 감소 효과와 합병증 증가 위험을 고려하여 갑상선전절제술을 선택적으로 시행할 수 있다.')}${R('I.2.2.F',2,'갑상선암의 크기에 상관없이 임상적으로 주요 기관에 대한 육안적 갑상선외부침범(cT4), 또는 경부 림프절전이(cN1)나 원격전이(M1)가 분명한 경우에서는 특별한 금기가 없는 한 처음 수술 시 갑상선전절제와 원발암의 완전한 육안적 제거를 시행하여야 한다.')}
-<h4>임상 병기별 수술범위 요약</h4>
-<div class="tbl"><table><thead><tr><th>임상 병기</th><th>권고 수술범위</th><th>권고수준</th></tr></thead><tbody>
+<h4>수술 전 임상 TNM(cTNM)에 따른 수술범위 요약</h4>
+<div class="tbl"><table><thead><tr><th>임상 TNM</th><th>권고 수술범위</th><th>권고수준</th></tr></thead><tbody>
 <tr><td>cT1a N0 (≤1 cm)</td><td>엽절제술 (적극적 관찰 가능)</td><td>1</td></tr>
 <tr><td>cT1b N0 (1–2 cm)</td><td>엽절제술 우선, 상황에 따라 전절제술</td><td>1</td></tr>
 <tr><td>cT2 N0 (2–4 cm)</td><td>엽절제술 또는 전절제술 선택</td><td>2</td></tr>
@@ -593,17 +597,17 @@ patho:{kind:'Part I. 초기 치료', sec:'I.4.1, I.4.3', title:'수술 후 병�
 <li>피막형성 여포아형암(여포암, IEFVPTC, 호산성암)은 최소침습형, 피막형성혈관침습형, 광범위침습형으로 구분</li></ul>`},
 stage:{kind:'Part I. 초기 치료', sec:'I.4.2', title:'수술 후 병기 결정 (TNM)', next:['prog','risk'], body:`${R('I.4.2.A',1,'갑상선분화암의 예후 예측과 추후 치료방침의 결정을 위해서 모든 갑상선분화암 환자에서 수술 후 임상적, 병리적 병기 결정을 시행한다.')}${R('I.4.2.B',1,'갑상선분화암의 병기 결정에는 질병의 사망률 예측과 국가암등록을 위하여 AJCC/UICC 병기 분류를 권장한다.')}
 <div class="pk-head"><h4>TNM 선택 및 병기 판정 (AJCC 8판)</h4><button type="button" class="stg-reset" id="stgReset">선택 초기화</button></div>
-<p class="small stg-tip">선택시 계산기로 입력되어 병기가 판정됨</p>
+<p class="small stg-tip">※ 아래 해당 항목 선택시 계산기를 통해 자동 병기 판정.<br>※ 수술 후 병리 소견(pTNM) 기준. (임상 TNM(cTNM)은 수술범위 결정시).</p>
 <div class="pk-wrap"><div class="pk-grp g-age" role="group" aria-label="연령"><div class="pk-lb">연령 <small>Age at diagnosis, 진단 시 나이 (55세 기준)</small></div><div class="pk-items pk-age"><button type="button" class="pick" data-pk="age" data-pv="y" aria-pressed="false"><b>55세 미만</b></button><button type="button" class="pick" data-pk="age" data-pv="o" aria-pressed="false"><b>55세 이상</b></button></div></div><div class="pk-grp g-t" role="group" aria-label="T"><div class="pk-lb">T <small>Primary tumor, 원발 종양의 크기 및 갑상선외부침범 유무</small></div><div class="pk-items pk-t"><button type="button" class="pick" data-pk="t" data-pv="T1a" aria-pressed="false"><b>T1a</b><span>≤1 cm, 갑상선외부침범 없음</span></button><button type="button" class="pick" data-pk="t" data-pv="T1b" aria-pressed="false"><b>T1b</b><span>1–2 cm, 갑상선외부침범 없음</span></button><button type="button" class="pick" data-pk="t" data-pv="T2" aria-pressed="false"><b>T2</b><span>2–4 cm, 갑상선외부침범 없음</span></button><button type="button" class="pick" data-pk="t" data-pv="T3a" aria-pressed="false"><b>T3a</b><span>&gt;4 cm, 갑상선외부침범 없음</span></button><button type="button" class="pick" data-pk="t" data-pv="T3b" aria-pressed="false"><b>T3b</b><span>크기 무관, 띠근육에 국한된 육안적 외부침범</span></button><button type="button" class="pick" data-pk="t" data-pv="T4a" aria-pressed="false"><b>T4a</b><span>피하 연부조직, 후두, 기도, 식도, 되돌이후두신경 침범</span></button><button type="button" class="pick" data-pk="t" data-pv="T4b" aria-pressed="false"><b>T4b</b><span>prevertebral fascia 침범, 경동맥·종격동 혈관을 둘러쌈</span></button></div></div><div class="pk-grp g-n" role="group" aria-label="N"><div class="pk-lb">N <small>Regional lymph nodes, 경부 림프절전이 유무 및 위치</small></div><div class="pk-items pk-n"><button type="button" class="pick" data-pk="n" data-pv="N0" aria-pressed="false"><b>N0a / N0b</b><span>세포·조직학적 전이 없음 / 영상·임상적 전이 없음</span></button><button type="button" class="pick" data-pk="n" data-pv="NX" aria-pressed="false"><b>NX</b><span>수술 당시 림프절전이를 평가하지 않은 경우</span></button><button type="button" class="pick" data-pk="n" data-pv="N1a" aria-pressed="false"><b>N1a</b><span>level VI 또는 VII (기도전, 기도주위, 전후두, 상종격동), 일측·양측</span></button><button type="button" class="pick" data-pk="n" data-pv="N1b" aria-pressed="false"><b>N1b</b><span>일측·양측·반대편 측경부(level I–V), 후인두 림프절</span></button></div></div><div class="pk-grp g-m" role="group" aria-label="M"><div class="pk-lb">M <small>Distant metastasis, 원격전이 유무</small></div><div class="pk-items pk-m"><button type="button" class="pick" data-pk="m" data-pv="M0" aria-pressed="false"><b>M0</b><span>원격전이 없음</span></button><button type="button" class="pick" data-pk="m" data-pv="M1" aria-pressed="false"><b>M1</b><span>원격전이</span></button></div></div></div>
 <div class="stg" id="stg">
-  <div class="stg-out" id="stgOut" aria-live="polite"><span class="stg-res">–</span><span class="stg-why">연령과 TNM을 선택하면 병기가 표시된다.</span></div>
+  <div class="stg-out" id="stgOut" aria-live="polite"><span class="stg-lbl">병기 판정</span><span class="stg-res">–</span></div>
 </div>
 <h4>병기 (AJCC 8판)</h4>
 <div class="tbl"><table><thead><tr><th>연령</th><th>병기</th><th>T</th><th>N</th><th>M</th></tr></thead><tbody>
-<tr data-row="y-I"><td rowspan="2">55세 미만</td><td>I</td><td>Any</td><td>Any</td><td>M0</td></tr>
+<tr data-row="y-I"><td rowspan="2" data-agecell="y">55세 미만</td><td>I</td><td>Any</td><td>Any</td><td>M0</td></tr>
 <tr data-row="y-II"><td>II</td><td>Any</td><td>Any</td><td>M1</td></tr>
-<tr data-row="o-I"><td rowspan="6">55세 이상</td><td>I</td><td>T1–2</td><td>N0</td><td>M0</td></tr>
-<tr data-row="o-IIa"><td rowspan="2">II</td><td>T1–2</td><td>N1</td><td>M0</td></tr>
+<tr data-row="o-I"><td rowspan="6" data-agecell="o">55세 이상</td><td>I</td><td>T1–2</td><td>N0</td><td>M0</td></tr>
+<tr data-row="o-IIa"><td rowspan="2" data-stagecell="o-II">II</td><td>T1–2</td><td>N1</td><td>M0</td></tr>
 <tr data-row="o-IIb"><td>T3a/b</td><td>Any</td><td>M0</td></tr>
 <tr data-row="o-III"><td>III</td><td>T4a</td><td>Any</td><td>M0</td></tr>
 <tr data-row="o-IVA"><td>IVA</td><td>T4b</td><td>Any</td><td>M0</td></tr>
@@ -961,14 +965,18 @@ function initStageCalc(){
   const render = ()=>{
     const r = stageOf(st);
     dBody.querySelectorAll('tr.stg-hl').forEach(tr=>tr.classList.remove('stg-hl'));
+    dBody.querySelectorAll('td.stg-hl-cell').forEach(td=>td.classList.remove('stg-hl-cell'));
     dBody.querySelectorAll('.pick').forEach(tr=>{ const on = st[tr.dataset.pk] === tr.dataset.pv; tr.classList.toggle('stg-hl', on); tr.setAttribute('aria-pressed', String(on)); });
     if (r.stage){
       out.className = 'stg-out done';
       out.innerHTML = `<span class="stg-res">${r.stage}기</span><span class="stg-why">${r.why}</span>`;
       const row = dBody.querySelector(`tr[data-row="${r.row}"]`); if (row) row.classList.add('stg-hl');
+      dBody.querySelectorAll('td.stg-hl-cell').forEach(td=>td.classList.remove('stg-hl-cell'));
+      const ac = dBody.querySelector(`td[data-agecell="${r.row[0]}"]`); if (ac) ac.classList.add('stg-hl-cell');
+      if (r.row.startsWith('o-II')) { const sc = dBody.querySelector('td[data-stagecell="o-II"]'); if (sc) sc.classList.add('stg-hl-cell'); }
     } else {
       out.className = 'stg-out';
-      out.innerHTML = `<span class="stg-res">–</span><span class="stg-why">${r.need} 선택이 필요하다.</span>`;
+      out.innerHTML = `<span class="stg-lbl">병기 판정</span><span class="stg-res">–</span>`;
     }
   };
   root.querySelectorAll('.stg-opts button').forEach(b=>b.addEventListener('click', ()=>{
