@@ -339,6 +339,13 @@ main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
 .body-btn .lv-ic::after{content:"▸"; font-size:.9rem; line-height:1; margin-left:.1rem}
 .body-box{border-top:1px solid var(--border); border-radius:6px; margin-top:.3rem}
 button.go-link{font:inherit; font-size:.82rem; cursor:pointer; margin:.15rem .3rem .15rem 0}
+.inline-link{font:inherit; color:var(--accent); background:var(--accent-soft); border:0; border-bottom:1.5px dotted var(--accent); border-radius:3px; padding:0 .2rem; cursor:pointer; font-weight:600}
+.inline-link:hover{background:var(--test)}
+.inline-link::after{content:" ▸"; font-size:.8em}
+.inline-link[aria-expanded="true"]::after{content:" ▾"}
+.pop-box{border:1px solid var(--accent); border-radius:8px; background:var(--bg); padding:.55rem .8rem .5rem; margin:.4rem 0 .7rem}
+.pop-box .exp-h{position:static; margin:-.55rem -.8rem .4rem; background:var(--accent-soft)}
+.pop-box .tbl{font-size:.84rem}
 .en{color:var(--muted); font-size:.92em}
 .go-link{display:inline-block; margin-left:.3rem; padding:.15rem .6rem; border:1px solid var(--accent); border-radius:6px; background:var(--surface); color:var(--accent); font-size:.82rem; font-weight:600; text-decoration:none; white-space:nowrap; vertical-align:baseline}
 .go-link:hover{background:var(--accent); color:#fff}
@@ -519,7 +526,8 @@ function renderExp(rid){
   const g = EXP[EXPMAP[rid]];
   const paras = g.p.map(t => (/^\(\d+\)\s/.test(t) && t.length < 130) ? `<h5>${t}</h5>` : /^[가-하]\.\s/.test(t) ? `<p class="exp-li">${t}</p>` : `<p>${t}</p>`).join('');
   const shared = g.ids.length > 1 ? `<p class="exp-note">이 설명은 ${rangeLabel(g.ids)}에 공통으로 해당한다.</p>` : '';
-  return `<div class="exp-h"><b>권고안 본문 설명</b><span class="exp-r">${rangeLabel(g.ids)}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${shared}${paras}<p class="exp-src">대한갑상선학회 갑상선분화암 진료권고안 2024 본문에서 발췌. 참고문헌 번호와 표·그림은 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+  const paras2 = paras.replace('별도의 재발 위험군 분류 체계', '<button type="button" class="inline-link" data-pop="risk" aria-expanded="false">별도의 재발 위험군 분류 체계</button>');
+  return `<div class="exp-h"><b>권고안 본문 설명</b><span class="exp-r">${rangeLabel(g.ids)}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${shared}${paras2}<p class="exp-src">대한갑상선학회 갑상선분화암 진료권고안 2024 본문에서 발췌. 참고문헌 번호와 표·그림은 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
 }
 const CC = t => `<div class="box tip cc"><b>임상적 고려사항</b>${t}</div>`;
 
@@ -1069,6 +1077,35 @@ function toggleExp(rid, force){
   if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
   else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
 }
+/* 본문 속 링크: '별도의 재발 위험군 분류 체계' → 재발 위험군 분류표(Table I.5.1.A) 펼침 */
+function riskPopHTML(){
+  const tmp = document.createElement('div'); tmp.innerHTML = D.risk.body;
+  const tbl = tmp.querySelector('.tbl');
+  const notes = tbl && tbl.nextElementSibling && tbl.nextElementSibling.matches('ul') ? tbl.nextElementSibling.outerHTML : '';
+  return `<div class="exp-h"><b>재발 위험군 분류 체계 (Table I.5.1.A)</b><button type="button" class="exp-close pop-close" aria-label="닫기">닫기 ✕</button></div>
+  <p>수술 후 잔존병소의 존재나 재발위험에 따라 재발 위험도를 평가하여 저·중간·고위험군으로 분류하고, 이에 따라 TSH 목표농도와 추가 치료전략(방사성요오드 치료 등)을 결정한다. AJCC/UICC 병기가 사망 위험을 예측하는 것과 달리, 이 분류는 재발 위험을 예측한다.</p>
+  ${tbl ? tbl.outerHTML : ''}${notes}`;
+}
+dBody.addEventListener('click', e=>{
+  const lk = e.target.closest('.inline-link');
+  const pc = e.target.closest('.pop-close');
+  if (!lk && !pc) return;
+  e.stopImmediatePropagation();
+  const host = (lk || pc).closest('.exp');
+  const link = lk || host.querySelector('.inline-link');
+  let box = host.querySelector('.pop-box');
+  if (lk && !box){
+    box = document.createElement('div'); box.className = 'pop-box'; box.hidden = true;
+    box.innerHTML = riskPopHTML();
+    link.closest('p').after(box);
+  }
+  if (!box) return;
+  const show = lk ? box.hidden : false;
+  box.hidden = !show; link.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show){ annotateEN(box); box.scrollIntoView({behavior:smooth, block:'nearest'}); }
+  else { link.scrollIntoView({behavior:smooth, block:'nearest'}); link.focus({preventScroll:true}); }
+}, true);
 dBody.addEventListener('click', e=>{
   const bb = e.target.closest('.body-btn');
   if (!bb) return;
