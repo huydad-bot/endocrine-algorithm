@@ -355,9 +355,10 @@ button.go-link{font:inherit; font-size:.82rem; cursor:pointer; margin:.15rem .3r
 .en{color:var(--muted); font-size:.92em}
 .go-link{display:inline-block; margin-left:.3rem; padding:.15rem .6rem; border:1px solid var(--accent); border-radius:6px; background:var(--surface); color:var(--accent); font-size:.82rem; font-weight:600; text-decoration:none; white-space:nowrap; vertical-align:baseline}
 .go-link:hover{background:var(--accent); color:#fff}
-.edge-link{position:absolute; font:inherit; font-size:14px; font-weight:700; line-height:1.2; color:var(--accent); background:var(--surface); border:0; border-bottom:1.5px dotted var(--accent); padding:1px 3px; cursor:pointer; z-index:2}
-.edge-link:hover{background:var(--accent-soft)}
-.edge-link.is-active{background:var(--accent-soft); box-shadow:0 0 0 2px var(--accent)}
+.edge-link{position:absolute; display:inline-flex; align-items:center; gap:5px; font:inherit; font-size:13px; font-weight:600; line-height:1; color:var(--ink); background:color-mix(in srgb, var(--ben) 12%, var(--surface)); border:1px solid var(--ben); border-radius:6px; padding:5px 10px 5px 6px; cursor:pointer; z-index:2; transition:background .12s, box-shadow .12s}
+.edge-link .bt-ic{display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; background:var(--ben); color:var(--surface); font-size:10px; font-weight:700}
+.edge-link:hover{background:color-mix(in srgb, var(--ben) 24%, var(--surface)); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.edge-link.is-active{background:color-mix(in srgb, var(--ben) 24%, var(--surface)); box-shadow:0 0 0 2px var(--ben)}
 .chart.hl .edge-link{opacity:.3}
 /* 범례 클릭 시 해당 박스 깜빡임 */
 .legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
@@ -997,8 +998,8 @@ document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',(
 /* 점선 라벨 '주기적 재평가' 버튼 */
 const reevalBtn = document.createElement('button');
 reevalBtn.type = 'button'; reevalBtn.className = 'edge-link';
-reevalBtn.style.cssText = 'left:20px;top:555px';
-reevalBtn.textContent = '주기적 재평가';
+reevalBtn.style.cssText = 'left:14px;top:547px';
+reevalBtn.innerHTML = '<span class="bt-ic" aria-hidden="true">↻</span>주기적 재평가';
 reevalBtn.addEventListener('click', ()=>open('reeval', reevalBtn));
 chart.appendChild(reevalBtn);
 nodeEls.reeval = reevalBtn;
