@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js): 이 도구 전용 GA4 측정 ID로 교체하여 사용 -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>갑상선 수질암 관리 알고리즘 (ATA 2015)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node .nt{display:inline}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>갑상선 수질암(MTC) 관리 알고리즘</h1>
+        <p class="src">Revised American Thyroid Association Guidelines, Wells SA Jr, et al. <a href="https://doi.org/10.1089/thy.2014.0335" target="_blank" rel="noopener noreferrer">Thyroid 2015;25:567–610</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the American Thyroid Association</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="고위험·이상 소견 박스 강조"><i class="sw mal"></i>고위험·이상 소견</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="정상·관찰 박스 강조"><i class="sw ben"></i>정상·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 요약이 펼쳐짐</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>권고 등급</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 권고">
+      <button type="button" data-id="risk"><span class="bt-ic" aria-hidden="true">＋</span>RET 위험도 (Table 4)</button>
+      <button type="button" data-id="tnm"><span class="bt-ic" aria-hidden="true">＋</span>TNM (Table 5)</button>
+      <button type="button" data-id="topics"><span class="bt-ic" aria-hidden="true">＋</span>주제별 권고</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+/* ---------- 권고 등급 (Table 3, USPSTF/AHRQ 변형) ---------- */
+const LV = {
+ A:'A: 강력히 권고한다. 건강 결과를 개선한다는 좋은 근거(잘 설계된 연구의 일관된 결과)에 기반',
+ B:'B: 권고한다. 건강 결과를 개선한다는 상당한(fair) 근거에 기반하나 연구의 수·질·일관성, 일반화 가능성 또는 간접성으로 근거 강도가 제한됨',
+ C:'C: 권고한다. 전문가 의견에 기반',
+ D:'D: 반대를 권고한다. 전문가 의견에 기반',
+ E:'E: 반대를 권고한다. 건강 결과를 개선하지 않거나 해가 이득보다 크다는 상당한 근거에 기반',
+ F:'F: 강력히 반대를 권고한다. 건강 결과를 개선하지 않거나 해가 이득보다 크다는 좋은 근거에 기반',
+ I:'I: 찬성도 반대도 권고하지 않는다. 근거가 없거나 질이 낮거나 상충하여 이득과 해의 균형을 판단할 수 없음'
+};
+const LVTXT = {A:'A · 강력 권고', B:'B · 권고', C:'C · 권고(전문가 의견)', D:'D · 반대(전문가 의견)', E:'E · 반대', F:'F · 강력 반대', I:'I · 판단 보류'};
+const LVCLS = {A:'l1', B:'l1', C:'l2', D:'l3', E:'l3', F:'l3', I:'l4'};
+
+/* ---------- 권고문 67개 (원문 번호) ---------- */
+const REC = {
+1:['C','유전성 MTC에 대한 현행 ATA 위험 범주를 변경해야 한다. 현행 D 등급은 MEN2B와 RET 코돈 M918T 변이 환자를 포함하는 새로운 범주 ‘최고 위험(highest risk, HST)’으로, 현행 C 등급은 RET 코돈 C634 변이와 RET 코돈 A883F 변이 환자를 포함하는 새로운 범주 ‘고위험(high risk, H)’으로 바꾸어야 한다. 현행 A와 B 등급은 M918T, C634, A883F 이외의 RET 코돈 변이를 가진 유전성 MTC 환자를 포함하는 새로운 범주 ‘중등도 위험(moderate risk, MOD)’으로 통합해야 한다.'],
+2:['C','MEN2 증후군은 MEN2A와 MEN2B의 두 가지로 한다. MEN2 증례의 95%를 차지하는 MEN2A에는 4가지 변이형을 둔다: 고전적 MEN2A(MTC가 균일하게 있고 PHEO 또는 HPTH 또는 둘 다가 덜 흔하게 동반), CLA를 동반한 MEN2A, HD를 동반한 MEN2A, FMTC(RET 생식세포 변이가 있고 MTC는 있으나 PHEO와 HPTH가 모두 없는 가족 또는 개인).'],
+3:['B','MEN2A에 대한 초기 검사로 권장하는 방법은 엑손 10(코돈 609, 611, 618, 620), 엑손 11(코돈 630, 634), 그리고 엑손 8, 13, 14, 15, 16의 RET 변이를 검출하는 단일 또는 다단계 분석이다.'],
+4:['B','전체 코딩 영역 염기서열분석은 RET 변이가 확인되지 않거나 MEN2 표현형과 예상 유전형 사이에 불일치가 있는 상황에 한정해야 한다.'],
+5:['B','MEN2B 표현형 환자는 RET 코돈 M918T 변이(엑손 16)를 검사하고, 음성이면 RET 코돈 A883F 변이(엑손 15)를 검사해야 한다. 이 두 엑손에서 변이가 확인되지 않으면 RET 전체 코딩 영역의 염기서열을 분석해야 한다.'],
+6:['B','산발성으로 추정되는 MTC 환자는 RET 생식세포 변이를 검출하기 위한 유전검사를 받아야 한다. RET 변이가 발견되면 환자는 유전검사를 받아야 한다.'],
+7:['B','RET 생식세포 변이에 대한 유전상담과 유전검사를 다음에게 제공해야 한다: a) 유전성 MTC가 입증된 환자의 1촌, b) 영아나 어린 자녀가 MEN2B의 고전적 표현형을 가진 부모, c) CLA 환자, d) HD와 엑손 10 RET 생식세포 변이를 가진 영아나 어린 소아, 그리고 HD를 시사하는 증상이 있는 MEN2A와 엑손 10 변이를 가진 성인.'],
+8:['C','학술적 이유나 의사의 선호를 제외하면, 산발성 MTC 환자의 종양에서 체세포 HRAS, KRAS, NRAS 변이나 RET M918T 변이를 분석하는 것은 표준 진료가 아니다.'],
+9:['C','MEN2A 또는 2B의 임상 기준을 충족하지만 RET 전체 코딩 영역 염기서열분석이 음성인 매우 드문 가족에서는, 위험이 있는 친척을 MTC, PHEO, HPTH에 대한 기존 방법으로 주기적으로 선별해야 한다. 초기 평가 후 선별은 1–3년 간격으로 계속해야 한다.'],
+10:['A','유전성 MTC와 관련하여, 판단 능력이 있는 환자 또는 대리 의사결정자에게 유전된 RET 변이가 가족 구성원에게 미칠 수 있는 위험을 경고할 의무(duty to warn)는 표준 진료이다. 이 경고는 이상적으로 유전상담의 맥락에서 이루어져야 하며, 위험이 있는 친척을 찾는 데 환자가 참여하도록 요청하는 것을 포함해야 한다. ‘경고 의무’ 논의는 질환의 심각성과 가능한 예방·치료 방법을 완전히 공개하는 설명동의 과정의 일부여야 한다. 환자가 친척이나 법적 피부양자에게 위험을 알리기를 거부하면, 의사는 위험에 처한 가족에게 경고할 윤리적 의무가 있는지 고려해야 한다. 의사는 소속 기관이나 다른 의료기관의 숙련된 임상윤리 전문가와 상의하거나 ATA 윤리위원회에 지침을 요청해야 한다.'],
+11:['A','동의 연령에 이르지 않은 소아 환자의 경우, 부모가 자녀에게 악성종양 발생 위험을 알리기를 거부하면 위해를 막기 위해 의사가 국가의 개입을 구해야 할 수 있다. 소아 환자를 진료하는 의료인은 발표된 문서를 참고해야 한다.'],
+12:['A','유전적 위험을 경고할 의무는 임신 전과 산전 상황 모두로 확장된다. 가임 연령의 모든 RET 변이 보인자, 특히 MEN2B 보인자에게 착상 전 또는 산전 진단검사의 선택지에 대한 유전상담을 고려해야 한다. 산전 RET 변이 검사를 원하지 않는 부모에게는 유전상담을 제공하고 자녀의 RET 변이 대립유전자 검출을 위한 유전검사가 가능함을 알려야 한다. 이는 5세 이전 MTC 발병과 관련된 변이에서 특히 중요하다.'],
+13:['C','임상의는 MTC 이외의 다양한 임상 질환에서 혈청 Ctn이 거짓으로 높거나 낮을 수 있음을 알아야 한다. 혈청 Ctn이 예상되는 임상 소견과 비례하지 않을 때 이 가능성을 고려해야 한다.'],
+14:['B','혈청 Ctn 해석 시, 3세 미만, 특히 6개월 미만 소아에서는 Ctn이 현저히 높고, 남성이 여성보다 높다는 점을 알아야 한다.'],
+15:['B','기저 혈청 Ctn과 CEA는 함께 측정해야 한다. 진행된 MTC 환자에서 낮은 혈청 Ctn에 비해 불균형하게 현저한 CEA 상승, 또는 Ctn과 CEA가 모두 정상이거나 낮은 경우는 저분화 MTC를 시사한다.'],
+16:['B','MTC를 시사하는 소견이 있는 갑상선 종양의 평가에는 Ctn, chromogranin, CEA 등 표지자의 존재와 thyroglobulin의 부재를 확인하는 면역조직화학(IHC) 분석을 포함해야 한다.'],
+17:['B','모든 MTC의 특징은 미국병리학회(CAP)의 갑상선암 검체 검사 프로토콜의 종합 보고(synoptic reporting) 지침에 따라 완전히 기록해야 한다.'],
+18:['C','MTC 환자에서는 C세포 과형성(CCH) 또는 다발성 신생물의 존재를 확인하기 위해 갑상선 전체의 형태학적 검사를 권고한다.'],
+19:['B','1 cm 이상의 갑상선결절은 초음파 소견에 따라 FNA로 평가해야 한다. FNA 소견이 불확정이거나 MTC를 시사하면 FNA 세척액에서 calcitonin을 측정하고, FNA 검체에서 Ctn, chromogranin, CEA 등 표지자의 존재와 thyroglobulin의 부재를 확인하는 IHC 염색을 시행해야 한다.'],
+20:['I','결절성 갑상선종 환자에서 혈청 Ctn 측정의 유용성에 대해 전문가 의견이 다름을 인정하며, 태스크포스는 이 방법이 자신의 진료에서 유용한지 의사가 결정하도록 권고한다.'],
+21:['B','갑상선결절과 MTC의 세포학적 또는 조직학적 진단이 있는 환자는 진찰, 혈청 Ctn과 CEA 측정, RET 생식세포 변이 유전검사를 받아야 한다. 유전성 MTC 환자에서는 PHEO와 HPTH의 존재를 배제해야 한다.'],
+22:['C','모든 MTC 환자에서 경부 초음파를 시행해야 한다. 광범위한 경부 질환과 국소 또는 원격전이의 징후나 증상이 있는 환자, 그리고 혈청 Ctn &gt;500 pg/mL인 모든 환자에서는 경부·흉부 조영증강 CT, 3기 조영증강 다중검출 간 CT 또는 간 조영증강 MRI, 축골격 MRI와 골스캔을 권고한다.'],
+23:['E','원격전이 검출을 위해 FDG-PET/CT나 F-DOPA-PET/CT를 권고하지 않는다.'],
+24:['B','초음파상 경부 림프절 전이와 원격전이의 근거가 없는 MTC 환자는 갑상선 전절제술과 중앙 구획(level VI) 림프절 절제술을 받아야 한다.'],
+25:['I','초음파상 경부 전이와 원격전이가 없는 MTC 환자에서 혈청 Ctn에 근거하여 측경부 구획(level II–V) 림프절 절제를 고려할 수 있다. 태스크포스는 이 권고에 대해 합의에 이르지 못했다.'],
+26:['C','경부와 경부 림프절에 국한된 MTC 환자는 갑상선 전절제술, 중앙 림프절 구획(level VI) 절제, 침범된 측경부 구획(level II–V) 절제를 받아야 한다. 수술 전 영상에서 동측 측경부 구획은 양성이지만 반대측은 음성이면, 기저 혈청 calcitonin이 200 pg/mL를 넘을 때 반대측 경부 절제를 고려해야 한다.'],
+27:['C','광범위한 국소 또는 전이 질환이 있으면 발성, 연하, 부갑상선 기능, 어깨 운동성을 보존하기 위해 중앙 및 측경부의 덜 공격적인 수술이 적절할 수 있다. 국소 종양 조절을 위해 외부방사선치료(EBRT), 전신 약물치료, 기타 비수술적 치료를 고려해야 한다.'],
+28:['B','산발성으로 추정된 MTC에 대한 갑상선 일엽절제 후, RET 생식세포 변이, 수술 후 혈청 Ctn 상승, 또는 잔존 MTC를 시사하는 영상 소견이 있는 환자에게 완결 갑상선절제술을 권고한다. 혈청 Ctn이 정상이면서 커진 림프절이 있는 것은 재수술의 적응이 아니다.'],
+29:['C','초기 갑상선절제술에서 림프절 절제가 불충분했던 환자에서, 수술 전 기저 혈청 Ctn이 1000 pg/mL 미만이고 초기 수술에서 전이 림프절이 5개 이하로 제거되었다면 구획 중심 림프절 절제를 포함한 재수술을 고려해야 한다.'],
+30:['B','MTC에 대한 갑상선 전절제술 중 정상 부갑상선은 혈관경에 붙은 채 제자리에 보존해야 한다. 모든 정상 부갑상선이 절제되었거나 수술 종료 시 생존 가능한 것이 없으면, 산발성 MTC, MEN2B, 또는 HPTH와 드물게 관련된 RET 변이를 가진 MEN2A 환자에서는 부갑상선 절편을 흉쇄유돌근에 이식해야 한다. HPTH 발생률이 높은 RET 변이를 가진 MEN2A 환자에서는 부갑상선 조직을 이소성 근육층에 이식해야 한다.'],
+31:['B','수술 후 4–6주 이내에 혈청 TSH를 측정해야 한다. 혈청 TSH를 정상 갑상선 범위로 유지하는 것을 목표로 levothyroxine 보충을 시행해야 한다.'],
+32:['B','수술 후 혈청 칼슘을 모니터링해야 한다. 증상성 저칼슘혈증이 생긴 환자에게는 경구 칼슘과 비타민 D를 투여해야 한다. 약물을 끊을 수 없는 환자에게는 만성 보충요법이 적응된다.'],
+33:['B','MEN2A 또는 MEN2B 소아의 관리는 3차 의료기관의 경험 많은 의사와 외과의가 맡아야 한다.'],
+34:['C','RET 코돈 M918T 변이를 가진 ATA-HST 범주의 소아는 생후 1년 이내, 경우에 따라 생후 첫 수개월 내에 갑상선절제술을 받아야 한다. 의심 림프절이 없으면 중앙 경부 절제 시행 여부는 부갑상선을 식별하여 제자리에 두거나 자가이식할 수 있는지에 근거해야 한다. 갑상선절제술의 시기는 담당 외과의와 소아과의가 부모와 상의하여 결정해야 한다.'],
+35:['B','ATA-H 범주의 소아는 5세에, 또는 혈청 Ctn 상승이 발견되면 더 일찍 갑상선절제술을 받아야 한다. 혈청 Ctn이 40 pg/mL를 넘거나 영상 또는 직접 관찰로 림프절 전이의 근거가 있는 소아에서는 중앙 경부 절제를 시행해야 한다. 갑상선절제술의 시기는 담당 외과의와 소아과의가 부모와 상의하여 결정해야 한다.'],
+36:['B','ATA-MOD 범주의 소아는 약 5세부터 진찰, 경부 초음파, 혈청 Ctn 측정을 시작해야 한다. 갑상선절제술의 시기는 혈청 Ctn 상승의 발견에 근거해야 하나, 6개월 또는 연간 평가가 수년에서 수십 년까지 이어질 수 있다. 장기 평가 프로그램을 우려하는 부모는 약 5세에 자녀의 갑상선 제거를 선택할 수 있다. 갑상선절제술의 시기는 담당 외과의와 소아과의가 부모와 상의하여 결정해야 한다.'],
+37:['C','PHEO 선별은 ATA-H 및 ATA-HST 범주 소아에서 11세까지, ATA-MOD 범주 소아에서 16세까지 시작해야 한다. 선별은 혈장 유리 metanephrine·normetanephrine 또는 24시간 소변 metanephrine·normetanephrine 측정으로 한다. 생화학 결과가 양성이면 CT 또는 MRI 부신 영상이 적응된다.'],
+38:['C','MTC의 조직학적 진단이 있는 MEN2A 또는 MEN2B 환자는 연령과 증상에 관계없이 모든 중재 시술 전에 PHEO를 배제해야 한다. 임신을 계획 중이거나 임신한 MEN2A·MEN2B 여성에서는 PHEO를 반드시 배제해야 한다. PHEO가 발견되면 가능하면 3삼분기 이전에 치료해야 한다.'],
+39:['B','함께 있다면 PHEO는 MTC 또는 HPTH 수술 전에 제거해야 한다.'],
+40:['B','적절한 수술 전 준비 후 PHEO는 복강경 또는 후복막경 부신절제술로 절제해야 한다. 부신피질 기능을 보존하는 부분 부신절제술을 대안 술식으로 고려해야 한다.'],
+41:['B','부신이 없는 환자는 글루코코르티코이드와 미네랄로코르티코이드 보충이 필요하며 스테로이드 용량이 적절한지 주의 깊게 모니터링해야 한다. 환자에게 부신위기의 위험을 교육하고, 부신이 없고 코르티코스테로이드 보충 중임을 나타내는 팔찌나 목걸이를 착용하게 해야 한다. 중증 질환이나 손상 시 글루코코르티코이드 추가 투여가 필요하다.'],
+42:['C','ATA-H와 ATA-MOD 범주 환자는 PHEO 선별 시점에 HPTH를 선별해야 한다(ATA-H는 11세까지, ATA-MOD는 16세까지).'],
+43:['C','HPTH 환자에서는 육안으로 커진 부갑상선만 절제해야 한다. 4개 선이 모두 커져 있으면 한 선의 일부를 혈관경에 붙여 남기는 부분 부갑상선절제술 또는 이소성 자가이식을 동반한 전부갑상선절제술이 수술 선택지이다.'],
+44:['C','MTC에 대한 갑상선절제술 후 HPTH가 생긴 환자는 경부 재수술 전에 국소화 검사를 시행해야 한다. 재수술 시 커진 부갑상선은 모두 제거하고 정상 크기 부갑상선은 제자리에 남겨야 한다. 커진 부갑상선이 하나만 확인되고 이전에 3개가 제거되었다는 조직학적 기록이 있으면, 커진 선의 일부를 적절한 혈류와 함께 제자리에 남기거나 이소성 부위에 이식해야 한다.'],
+45:['C','MTC로 갑상선절제술을 받은 환자의 예후 예측과 장기 추적 계획 수립 시 TNM 분류, 림프절 전이 개수, 수술 후 혈청 Ctn을 고려해야 한다.'],
+46:['C','혈청 Ctn과 CEA는 수술 후 3개월에 측정해야 하며, 검출되지 않거나 정상 범위이면 1년간 6개월마다, 이후에는 매년 측정해야 한다.'],
+47:['C','수술 후 혈청 Ctn이 상승했으나 150 pg/mL 미만인 환자는 진찰과 경부 초음파를 받아야 한다. 이 검사들이 음성이면 6개월마다 진찰, 혈청 Ctn·CEA 측정, 초음파로 추적해야 한다.'],
+48:['C','수술 후 혈청 Ctn이 150 pg/mL를 넘으면 경부 초음파, 흉부 CT, 간 조영증강 MRI 또는 3기 조영증강 CT, 골스캔, 골반 및 축골격 MRI 등 영상검사로 평가해야 한다.'],
+49:['B','갑상선절제술 후 혈청 Ctn과 CEA가 검출되는 환자에서는 배가시간을 결정하기 위해 최소 6개월마다 표지자를 측정해야 한다.'],
+50:['C','원격전이가 없는 지속성 또는 재발성 국소 MTC의 수술적 절제에는 중앙(level VI) 또는 측경부(level II–V) 구획에서 영상 양성 또는 생검 양성 질환의 구획 절제를 포함해야 한다. 이전에 해당 구획에 광범위한 수술을 받은 경우가 아니라면, 육안 전이 림프절만 제거하는 제한적 수술은 피해야 한다.'],
+51:['E','MTC에 대한 갑상선절제술 후 방사성요오드(RAI) 치료는 적응되지 않는다. 다만 국소 또는 원격전이에 MTC가 PTC 또는 FTC와 혼재된 환자에서는 고려해야 한다.'],
+52:['C','국소 재발 고위험 환자(현미경적 또는 육안적 잔존 MTC, 갑상선 외 침범, 광범위한 림프절 전이)와 기도 폐쇄 위험이 있는 환자에서는 경부와 종격동에 대한 수술 후 보조 EBRT를 고려해야 한다. 잠재적 이득을 치료의 급성 및 만성 독성과 비교해야 한다.'],
+53:['C','혈청 Ctn과 CEA가 상승하지만 전이 질환이 입증되지 않은 환자에게 전신치료를 시행해서는 안 된다. 또한 영상검사와 혈청 Ctn·CEA 배가시간 &gt;2년으로 판단한 안정적인 저용적 전이 질환 환자에게도 전신치료를 시행해서는 안 된다.'],
+54:['C','갑상선절제술 후 지속성 또는 재발성 MTC 환자에서는 길고 힘든 경부 재수술을 하기 전에 잠복 전이를 배제하기 위해 간의 복강경 또는 개복 평가와 생검을 고려해야 한다.'],
+55:['C','신경학적 증상이 있는 전이성 MTC 환자, 전신치료 후보인 환자를 포함하여, 뇌 영상검사를 시행해야 한다. 단독 뇌전이 환자는 수술적 절제 또는 EBRT(정위적 방사선수술 포함)의 대상이다. 다발성 뇌전이에는 전뇌 EBRT가 적응된다.'],
+56:['C','척수 압박 환자는 글루코코르티코이드 치료와 수술적 감압으로 긴급히 치료해야 한다. 수술 대상이 아니면 EBRT 단독을 시행해야 한다.'],
+57:['C','골절 또는 골절이 임박한 MTC 환자는 치료가 필요하다. 치료 선택지는 수술, 열소작(고주파 또는 냉동), 시멘트 주입, EBRT이다.'],
+58:['C','통증성 골전이 환자에게 denosumab 또는 bisphosphonate 치료를 권고한다.'],
+59:['C','큰 단발성 폐전이 환자에서는 수술적 절제를 고려해야 한다. 전이가 말초에 있고 작으면 고주파 소작술을 고려해야 한다. 크기가 점차 커지는 다발성 전이 환자에서는 전신치료를 고려해야 한다.'],
+60:['C','큰 단독 간전이 환자에서는 수술적 절제를 고려해야 한다. 30 mm 미만이고 간의 1/3 미만을 침범한 파종성 종양 환자에서는 화학색전술을 고려해야 한다.'],
+61:['C','가능하면 피부 전이는 수술로 절제해야 한다. 다발성 피부 병변은 EBRT 또는 에탄올 주입으로 치료하는 것이 가장 좋다.'],
+62:['C','통증, 기계적 압박, 또는 호르몬 과다의 징후와 증상을 일으키는 전이가 있는 환자에서는 수술, EBRT, 전신치료를 포함한 고식적 치료를 고려해야 한다.'],
+63:['D','낮은 반응률과 유망한 새로운 치료 선택지의 등장을 고려할 때, 지속성 또는 재발성 MTC 환자에게 단독 또는 병합 세포독성 항암화학요법을 일차 치료로 투여해서는 안 된다.'],
+64:['C','방사성 표지 분자 또는 사전표적 방사면역치료는 선택된 환자에서, 이상적으로는 잘 설계된 임상시험의 맥락에서 고려할 수 있다.'],
+65:['A','상당한 종양 부담과 RECIST에 따른 증상성 또는 진행성 전이 질환이 있는 환자에서는 RET와 VEGFR 티로신키나제를 모두 표적하는 TKI 치료를 전신치료로 고려해야 한다. TKI인 vandetanib 또는 cabozantinib은 진행된(advanced) 진행성 MTC 환자에서 단독 일차 전신치료로 사용할 수 있다.'],
+66:['C','진행된 MTC와 설사가 있는 환자는 우선 지사제(장운동 억제제)로 치료해야 한다. 대안 치료로 소마토스타틴 유사체와 수술이나 화학색전술 같은 국소 치료가 있다.'],
+67:['C','ACTH 또는 CRH의 이소성 생성에 의한 쿠싱증후군을 동반한 전이성 MTC 환자는 흔히 현저히 쇠약하며, 불량한 예후에도 불구하고 치료해야 한다. 치료 선택지는 ketoconazole, mifepristone, aminoglutethimide, metyrapone, mitotane 약물치료이다. 약물치료에 불응하면 양측 부신절제술이 선택지이다.']
+};
+const RID = id => 'R' + id;
+
+/* ---------- 소제목별 본문 요약 (원문 번역·요약, 참고문헌 생략) ---------- */
+const EXP = {
+B:{t:'[B] 산발성·유전성 MTC의 원인', ids:[1], p:[
+'RET 원종양유전자(염색체 10q11.2)는 티로신키나제 계열의 단일 막관통 수용체를 암호화한다. MEN2A, MEN2B, FMTC 환자는 사실상 모두 RET 생식세포 변이를 가지며, 산발성 MTC의 약 50%는 체세포 RET 변이를 가진다. 체세포 RET 변이가 없는 산발성 MTC의 18–80%에는 체세포 HRAS, KRAS 또는 드물게 NRAS 변이가 있다.',
+'산발성 MTC의 체세포 RET M918T 변이는 공격적 경과와 불량한 예후를 시사한다. 160명 연구에서 M918T 유병률은 종양 크기에 따라 &lt;1 cm 11.3%, 1–2 cm 11.8%, 2–3 cm 31.8%, &gt;3 cm 58.8%였다.',
+'기존 ATA 지침은 A–D 등급으로 MTC 공격성의 위험 범주를 정의했으나 혼란이 있어, D를 ‘최고 위험(HST)’, C를 ‘고위험(H)’, A와 B를 통합하여 ‘중등도 위험(MOD)’으로 바꾸었다. ATA-HST에는 MEN2B와 RET M918T, ATA-H에는 RET C634와 A883F, ATA-MOD에는 그 밖의 RET 코돈 변이가 속한다(Table 4). 산발성 MTC의 위험은 AJCC TNM 범주에 근거한다.']},
+C:{t:'[C] 임상 특성과 유전형–표현형', ids:[2], p:[
+'산발성 MTC는 대개 40–60대에 발생한다. 중앙·측경부 림프절 전이는 T1 종양에서 각각 14%와 11%, T4 종양에서 86%와 93%이다. 촉지되는 결절로 발견된 MTC의 70%는 경부 전이, 10%는 원격전이가 있다. 다변량 분석에서 진단 시 연령과 병기만이 독립적 예후 인자이며, 10년 생존율은 I–IV기 각각 100%, 93%, 71%, 21%이다.',
+'MEN2A(발생률 1/1,973,500)는 MTC, PHEO, HPTH가 특징이며 CLA와 HD 동반 변이형이 있다. MEN2B(1/38,750,000)는 유전성 MTC의 5%이다. FMTC의 엄격한 원래 기준을 충족하는 가족은 3가족뿐이며, G533C 가족에서 뒤늦게 PHEO가 발견된 사례처럼 FMTC로의 조기 분류는 PHEO를 놓칠 위험이 있어, 태스크포스는 FMTC를 독립 증후군이 아닌 MEN2A의 변이형으로 본다.',
+'#고전적 MEN2A',
+'95%에서 엑손 10의 609, 611, 618, 620 또는 엑손 11의 634 코돈 변이가 있다. 거의 모두 MTC가 생기며 PHEO·HPTH 빈도는 변이에 따라 다르다. 코돈 634에서 PHEO 침투도는 30세 25%, 50세 52%, 77세 88%이고 엑손 10 변이에서는 4–26%로 낮다. PHEO는 거의 항상 양성이며 다발성·양측성이고, 일측 PHEO 환자는 대개 10년 내 반대측 PHEO가 생긴다. HPTH는 대개 경미하며, 코돈 634에서 침투도 최대 30%, 엑손 10 코돈에서 2–12%이다. HPTH 선별은 PHEO 선별과 함께 한다.',
+'#MEN2A와 CLA, HD',
+'CLA는 견갑부(T2–T6 피부분절)의 심한 소양감이 특징이며 MTC 이전에 나타날 수 있고, 거의 전적으로 코돈 634 변이에서 발생한다(코돈 634 환자의 36%). HD는 MEN2A의 약 7%에서 발생하며 엑손 10 변이(609, 611, 618, 620)와 관련된다. HD 환자의 2–5%가 MEN2A를 가진다.',
+'#MEN2B',
+'MTC가 영아기에 나타나고 매우 공격적이다. 약 75%가 de novo 변이이며, 약 95%가 M918T, 5% 미만이 A883F이다(A883F는 덜 공격적일 수 있음). 약 50%에서 PHEO가 생기며, 특징적 얼굴, 안과 이상(영아기 눈물 없음, 두꺼운 눈꺼풀, 각막신경 돌출), 마르판양 체형 등 골격 이상, 위장관 신경절신경종증이 있다. 대부분 MTC가 진행된 후 진단되므로 조기 진단이 중요하다.']},
+D:{t:'[D] RET 유전자 직접 DNA 분석', ids:[3,4,5,6,7,8,9], p:[
+'RET 서열 변화가 MEN2 표현형을 가진 최소 2명의 이환자를 포함한 가족 내에서 질환과 함께 분리되면 원인 변이로 본다. G691S, L769L, S836S, S904S 등은 양성 다형성이며, 정보가 불충분하면 ‘의미 불명 변이’로 잠정 분류한다.',
+'가족 변이를 알면 표적 검사로 충분하다. 새 가족에서는 흔한 시스테인 코돈(엑손 10·11)과 엑손 13–16(일부 검사실은 엑손 8 포함)을 먼저 분석하거나 전체 코딩 영역을 분석한다. 다단계 접근은 드문 이중·다중 변이(예: V804M 동반 변이)를 놓칠 수 있다.',
+'#산발성으로 보이는 MTC',
+'산발성으로 추정된 MTC의 1–7%는 실제로 유전성이다. 따라서 산발성 MTC 환자도 유전상담과 RET 직접 DNA 분석을 받아야 하며, 변이가 발견되면 1촌에게 유전상담과 검사를 제공한다. CLA, 엑손 10 변이가 있는 HD 같은 고위험군도 고려한다. MEN2A의 5–9%와 MEN2B 대부분에서 변이는 de novo이며 거의 항상 부계 대립유전자에서 발생한다. 현재 산발성 MTC 종양에서 체세포 RAS나 RET M918T 변이를 평가할 적응은 없다.']},
+E:{t:'[E] 유전 선별검사의 윤리적 고려', ids:[10,11,12], p:[
+'Tarasoff 판결은 예견 가능한 위해에 대해 제3자에게 경고할 의무를 확립했고, Pate v. Threlkel 판결은 유전성 MTC 환자의 자녀에게 위험을 알리지 않은 외과의의 과실을 인정했으며, Safer v. Pack 판결은 환자에게 알리는 것만으로는 경고 의무가 충족되지 않는다고 보았다. 환자가 친척 연락을 거부할 때만 윤리적 딜레마가 생기며, 이 경우 임상윤리 전문가, 사회복지사, 법률 자문이 참여하는 사례 기반 접근이 필요하다. 유전성 MTC는 경고 의무 허용성의 모든 기준(위해의 중대성·확률·임박성, 대상 특정 가능성, 중재로 위해 완화 가능성 등)을 충족한다.',
+'#소아',
+'부모가 자녀에게 위험을 알리기를 거부하면 아동 보호를 위해 국가기관과 법원의 개입이 필요할 수 있다. 소아의 설명동의에 관해서는 유전성 MTC 소아 윤리 지침 등 발표된 문서를 참고한다.',
+'#생식 선택지',
+'산전 검사(1삼분기 융모막 생검, 2삼분기 양수천자, 모체 혈액의 태아 세포)와 착상 전 유전진단(PGD)이 가능하다. MTC 평균 발병 연령이 30세 미만이고 PHEO 위험이 최대 50%이므로 특히 코돈 634와 918 변이 부모에게 PGD가 선택지가 될 수 있으나 실제 이용은 적다. MEN2B 부모에게는 반드시 시험관 시술과 PGD의 가능성을 알려야 한다. Molloy v. Meier 판결에 따라 의사는 산전 상황에서도 경고 의무가 있다.']},
+F:{t:'[F] MTC의 분비 산물: Ctn과 CEA', ids:[13,14,15], p:[
+'C세포는 ACTH, Ctn, CEA, chromogranin 등을 분비하며, 이 중 Ctn과 CEA가 C세포 양에 비례하는 유용한 종양표지자이다.',
+'#Calcitonin',
+'최신 면역화학발광측정법(ICMA)은 procalcitonin과의 교차반응이 거의 없다. 만성 신부전, HPTH, 자가면역 갑상선염, 폐암, 전립선암, 비만세포증, 신경내분비종양에서 Ctn이 상승할 수 있으며, 이종친화항체는 거짓 상승, 극히 높은 농도에서는 갈고리 효과에 의한 거짓 저하가 생길 수 있다. 정상인의 56–88%는 검출 한계 미만, 3–10%는 &gt;10 pg/mL이다. 남성의 참고범위가 더 높다(한 측정법에서 95백분위수 여성 5.2, 남성 11.7 ng/L). 측정법 간 차이가 있으므로 같은 측정법으로 추적해야 한다. 소아 참고범위로 6개월 미만 &lt;40 pg/mL, 6개월–3세 &lt;15 pg/mL가 제안되었으며, 3세 이후는 성인과 같다. 칼슘 또는 pentagastrin 자극검사의 필요성에 대해서는 의견이 나뉜다.',
+'#CEA',
+'CEA는 MTC에 특이적이지 않고 자극에 반응하지 않아 조기 진단에는 유용하지 않으나, 진행 평가와 수술 후 추적에 유용하다. 흡연, 위장관 염증 등으로 거짓 상승할 수 있다. Ctn이 안정적이거나 감소하는데 CEA가 증가하면 저분화 MTC를 시사한다. 드물게 진행된 MTC에서 Ctn과 CEA가 모두 정상이거나 낮으면(839명 중 0.83%) 오진 또는 진행된 탈분화를 의미하며 예후가 불량하다.']},
+G:{t:'[G] 절제 검체의 형태학적 검사', ids:[16,17,18], p:[
+'MTC는 여포세포가 아닌 C세포에서 기원한 신경내분비종양이다. 산발성은 대개 단발·일측성, 유전성은 다발·양측성이다. 절반 이상에서 Ctn으로 구성된 아밀로이드가 있다. PTC, FTC, 부신경절종, 림프종, 육종과 혼동될 수 있다. 가장 중요한 진단 표지자는 Ctn과 CEA이며, Ctn 염색이 없으면 MTC 진단을 의심해야 한다. MTC와 PTC의 동시 발생은 독일 3.6%, 이탈리아 13.8%, 한국 19%로 보고되었다.',
+'유전성 MTC에서 C세포 과형성(CCH)은 MTC에 선행하며, 실제로는 다발성 클론 증식이므로 ‘C세포 상피내암’ 등의 용어가 더 적절하다. 산발성으로 추정된 MTC에서 CCH나 다발성 병변이 있으면 RET 생식세포 변이를 평가해야 한다. 부갑상선기능항진증, 만성 림프구성 갑상선염, 신부전, 노화에 동반된 이차성 CCH는 전암 병변이 아니다. 미세암(&lt;1 cm)에서 크기가 커질수록 림프절 전이가 증가했으나(유전성 6%→62%), 원격전이는 1.3%였다.']},
+H:{t:'[H] 갑상선결절 환자의 MTC 진단', ids:[19,20], p:[
+'#FNA',
+'MTC 세포는 흩어지거나 약하게 응집하며 방추형, 형질세포양, 상피양 등 다양하고 ‘salt and pepper’ 염색질이 특징이다. 아밀로이드는 콜로이드로 오인될 수 있다. 15개 연구 메타분석에서 FNA의 MTC 진단 정확도는 50% 미만이었으나, IHC와 FNA 세척액 Ctn 측정으로 정확도가 현저히 높아진다.',
+'#결절성 갑상선 질환에서 혈청 Ctn 측정',
+'10,864명의 결절 환자에서 MTC가 0.40%에서 발견되었고, 혈청 Ctn은 FNA보다 민감도와 특이도가 높았다. Ctn 선별군은 더 이른 병기에서 진단되고 완전관해가 많았다(59% 대 2.7%). 그러나 결절 환자의 MTC 유병률이 0.3–1.4%에 불과하여 비용효과성과 불필요한 갑상선절제술의 우려가 있고, 무작위 전향 연구가 없다. 유럽 일부 기관에서는 표준이나 미국에서는 논란이 있으며, 태스크포스 의견도 출신 국가에 따라 갈렸다.']},
+I1:{t:'[I-1] 수술 전 영상검사', ids:[21,22,23], p:[
+'MTC로 확진된 결절 환자는 진찰과 RET 생식세포 변이 DNA 분석을 받아야 하며, 유전성이면 PHEO와 HPTH를 배제한다. 산발성 MTC에서도 0–9%는 양측성이므로 양측성이 유전성을 보장하지는 않는다. 300명 연구에서 기저 Ctn &lt;500 pg/mL이면 원격전이가 없었으나, 광범위한 경부 질환이나 원격전이 징후가 있으면 Ctn과 관계없이 전신 영상이 적응된다.',
+'경부 초음파가 가장 중요한 수술 전 영상이다. 폐·종격동 전이는 CT, 간전이는 3기 조영증강 간 CT와 조영증강 MRI, 골전이는 축골격 MRI와 골스캔이 상호보완적으로 가장 민감하다. FDG-PET/CT와 F-DOPA-PET/CT는 다른 영상보다 민감도가 낮다. 단일 검사로 최적의 전신 영상을 얻을 수는 없다.']},
+I2:{t:'[I-2] 초기 수술 및 [J] 갑상선절제술 결과', ids:[24,25,26], p:[
+'갑상선 전절제술과 혈청 Ctn·초음파 소견에 따른 경부 림프절 구획 절제가 표준 치료이다. 촉지 결절 환자는 수술 전·중에 발견되지 않는 림프절 전이가 흔하다(75% 이상). 일측 갑상선내 종양에서 림프절 전이는 중앙 81%, 동측 측경부 81%, 반대측 측경부 44%였고, 원발 종양이 &lt;1 cm이든 &gt;4 cm이든 50–75%였다. 수술 중 외과의 판단의 민감도는 64%, 특이도는 71%였다.',
+'중앙 구획 전이 개수가 측경부 전이를 예측한다: 동측 측경부 전이율은 중앙 전이 0개 10.1%, 1–3개 77%, ≥4개 98%; 반대측 측경부는 0개 4.9%, 1–9개 38%, ≥10개 77%이다. 반대측 측경부 전이는 완치 불가능한 질환을 예고한다.',
+'수술 전 기저 Ctn도 림프절 전이 범위를 예측한다(정상 &lt;10 pg/mL): &lt;20 pg/mL이면 림프절 전이 위험이 거의 없고, 20, 50, 200, 500 pg/mL를 넘으면 각각 동측 중앙·측경부, 반대측 중앙, 반대측 측경부, 상부 종격동 림프절 전이와 관련된다. 양측 구획 절제로 Ctn ≤1000 pg/mL인 환자의 절반 이상에서 생화학적 완치를 얻었으나 &gt;10,000 pg/mL에서는 불가능했다. 수술 후 기저 Ctn이 정상이면 10년 생존율 97.7%이나 3%는 7.5년 내 생화학적 재발한다. 수술 전 CEA가 높을수록(&gt;100 ng/mL) 광범위 림프절 전이, 원격전이가 많고 생화학적 완치가 적다.',
+'측경부 청소술에는 림프 누출(0.5–8%)과 부신경 손상에 의한 어깨 기능장애(25–50%) 합병증이 있다. 초음파 음성이면 구획 절제를 하지 않는 입장과, Ctn &gt;20 pg/mL이면 초음파 정상인 동측 중앙·측경부를, &gt;200 pg/mL이면 반대측 측경부를 예방적으로 절제하는 입장이 있다.',
+'#[J] 결과',
+'국소 림프절 전이가 있는 MTC 환자 대부분은 전신 질환을 가지며 전절제술과 양측 경부 절제로 완치되지 않는다. 10개 이상의 림프절 전이 또는 2개 넘는 구획 침범은 Ctn 정상화를 어렵게 한다. 그럼에도 국소 전이 절제는 국소 재발과 반회후두신경·기도·식도 침범 등 향후 합병증을 줄일 수 있다.']},
+K:{t:'[K] 국소 진행 또는 전이성 MTC', ids:[27], p:['진행된 질환에서 수술 목표는 합병증을 최소화하는 고식적 목적이 된다. 기관, 갑상연골, 식도를 침범한 MTC의 절제 범위(고식적 감량술, 후두절제, 식도절제 등)는 발성·연하 유지 능력과 질환 범위·동반질환에 따른 기대여명을 평가하여, 환자를 포함한 경험 많은 다학제팀이 개별적으로 결정한다.']},
+L:{t:'[L] 불완전 갑상선절제·림프절 절제 후 관리', ids:[28,29], p:[
+'유전성 MTC에서는 반대엽에 MTC가 있거나 생길 가능성이 100%에 가까우므로 반대엽을 제거해야 한다. 산발성 MTC의 양측성은 0–9%이며, 일엽절제 15명 중 80%가 생화학적 완치를 보였다. 완결 절제술은 RET 생식세포 변이, 수술 후 기저 또는 자극 Ctn의 의미 있는 상승, 잔존 MTC의 영상 소견이 없으면 적응되지 않는다. 추적 중 기저 Ctn이 150 pg/mL를 넘어 점차 상승하면 추가 영상이 필요하다.',
+'지속성 MTC로 재수술한 334명 연구에서, 이전 수술에서 림프절 전이가 없었으면 44%, 1–5개였으면 18%, 5개를 넘었으면 5%가 생화학적 완치되었고, 수술 전 Ctn &gt;1000 pg/mL이면 완치가 예외적이었다(76명 중 1명). 18%는 일측 반회후두신경 마비 상태로 의뢰되었다. 따라서 Ctn &lt;1000 pg/mL이고 이전 전이 림프절이 5개 이하이면 체계적 림프절 절제가 가치가 있으며, 그 이상에서는 경부의 국소 조절 유지가 목표가 된다.']},
+M:{t:'[M] 절제 또는 혈류 차단된 정상 부갑상선의 관리', ids:[30], p:['외과의는 부갑상선 식별과 자가이식에 숙련되어야 한다. 가능하면 생존 가능한 부갑상선 조직을 혈관경에 붙은 채 제자리에 남긴다. 혈류를 보존할 수 없으면, 산발성 MTC, MEN2B, HPTH와 드물게 관련된 RET 변이의 MEN2A에서는 흉쇄유돌근에, 그 밖의 경우에는 이식편 의존 부갑상선기능항진증 발생 시 일부를 제거할 수 있도록 상완요골근 같은 이소성 근육층에 이식한다.']},
+N:{t:'[N] 갑상선절제 후 호르몬 보충', ids:[31,32], p:['MTC는 여포세포 종양이 아니므로 TSH를 억제할 이유가 없으며, levothyroxine으로 TSH를 정상 범위로 유지한다. 저칼슘혈증은 거의 항상 일시적이나, 증상이 있거나 지속되면 경구 칼슘과 calcitriol을 투여하고 혈청 칼슘을 반복 측정하며 감량한다.']},
+O:{t:'[O] 유전성 MTC 소아의 예방적 갑상선절제술', ids:[33,34,35,36], p:[
+'MEN2A와 MEN2B는 예방적 수술의 5가지 기준(완전에 가까운 침투도, 신뢰할 수 있는 변이 검사, 장기 기능 대체 가능, 최소 이환율, 완치 판정 검사 존재)을 모두 충족한다. 유전성 MTC는 CCH → MTC → 국소 림프절 → 원격전이로 진행하므로 갑상선이 암이 되기 전 또는 암이 갑상선에 국한된 시기에 제거할 수 있다. 문제는 수술 여부가 아니라 시기이며, 이제 시기는 DNA 분석만이 아니라 기저 또는 자극 혈청 Ctn 등 임상 자료로 결정한다. 소아, 특히 영아는 부갑상선기능저하증 위험이 높아 2세 미만에서는 수술 지연을 고려할 수 있으나, 지연은 완치 실패의 위험과 균형을 이루어야 하고 장기 추적에서 이탈할 위험도 있다(L790F 가족 예).',
+'#MEN2A',
+'ATA-H(코돈 634) 소아는 생후 수년 내 MTC가 흔하므로 3세부터 매년 진찰, 경부 초음파, Ctn 측정을 시작한다. ATA-MOD는 대개 더 늦고 덜 공격적이나 변이가 크므로(코돈 804 소아가 12세에 사망한 예) 5세부터 시작한다. 수술 전 기저 Ctn &lt;30–40 pg/mL이거나 종양 &lt;10 mm이면 림프절 전이가 없었고, 11세 이전에는 드물었다. 따라서 기저 Ctn &lt;40 pg/mL이면 중앙 경부 절제 없는 전절제술로 충분하다. ATA-H는 5세 이전, ATA-MOD는 소아기 또는 청년기에 Ctn에 따라 수술한다.',
+'#MEN2B',
+'ATA-HST(M918T)에서 MTC는 매우 공격적이어서 생후 첫해에 육안 MTC와 림프절 전이가 생길 수 있으므로 위험 영아는 출생 직후 유전검사를 한다. 영아의 Ctn은 매우 높아 시기 결정에 가치가 제한적이고 부갑상선 식별이 어렵다. 부갑상선을 식별할 수 없으면 중앙 경부 절제를 생략하는 것을 고려한다. de novo MEN2B는 대개 결절로 진단되며(평균 14.2세), 비내분비 증상으로 일찍 발견된 환자가 생화학적 완치율이 높았다(58% 대 0%). 4세 이전 수술한 9명은 모두 완치, 5세 이후 35명 중 1명만 완치되었다. A883F나 V804M 이중 변이는 덜 공격적인 것으로 보인다.']},
+P:{t:'[P] MEN2A·MEN2B의 갈색세포종 관리', ids:[37,38,39,40,41], p:[
+'PHEO는 대개 30–40대에 MTC와 동시 또는 이후 진단된다. 진단되지 않은 PHEO는 갑상선절제술 중 중대한 이환과 사망을 일으킬 수 있으므로, 유전성 MTC에서는 수술 전 혈장 유리 또는 소변 분획 metanephrine으로 반드시 배제한다. RET 결과가 늦으면 상태 미상 MTC에서도 수술 전 배제한다. 함께 있으면 거의 항상 PHEO를 먼저 제거한다. 임신 중 진단되면 가능하면 3삼분기 전에 절제한다.',
+'단발 PHEO는 대부분 10년 내 반대측에 생기더라도 부신기능저하증 위험 때문에 일측 부신절제술을 한다. 양측 PHEO는 수술 중·후 코르티코스테로이드를 보충하며 절제한다. 복강경 또는 후복막경 부신절제술이 표준이다. 피질의 10–15%를 남기는 부분 부신절제술은 80% 이상에서 스테로이드 보충이 필요 없게 하지만 20년 내 재발 위험이 20%이다.',
+'PHEO는 ATA-H 8세, ATA-HST 12세, ATA-MOD 19세에 발생한 예가 있으며, 평균 진단 연령은 25–32세이다. 474명 분석(PHEO 17.8%, HPTH 4.2%)에 근거하여 선별 시작 연령을 ATA-HST·H 11세, ATA-MOD 16세로 정했다.']},
+Q:{t:'[Q] MEN2A의 부갑상선기능항진증 관리', ids:[42,43,44], p:[
+'HPTH 감시는 알부민 보정 또는 이온화 칼슘(± intact PTH)으로 ATA-H 11세, ATA-MOD 16세부터 시작한다. 주로 엑손 11(특히 코돈 634) 변이에서 발생하며, MEN1과 달리 경미하고 흔히 무증상이다. 이전 경부 수술이 없는 경우 선택지는 (1) 한 선(또는 일부)을 남기는 부분 부갑상선절제, (2) 이소성 자가이식을 동반한 전절제, (3) 수술 중 PTH 모니터링하에 커진 선만 절제이며, 현재는 (3)이 선호된다.',
+'갑상선절제 후 HPTH가 생기면 재수술 전 sestamibi, 초음파, CT로 국소화하고 PTH 모니터링하에 커진 선을 절제한다. 이전에 3개가 제거되었다는 조직학적 기록이 있으면 커진 선의 일부를 제자리에 남기거나 이소성 이식(또는 냉동보존)한다. 재수술 후에도 지속되거나 수술 대상이 아니면 calcimimetic 약물치료를 고려한다.']},
+R:{t:'[R] 갑상선절제 후 평가', ids:[45,46,47,48], p:[
+'수술 후 병기는 저위험과 고위험 환자를 구분하는 데 쓰인다. AJCC TNM은 연령 구간과 수술 후 Ctn 같은 중요한 예후 인자가 없고 림프절 전이를 개수가 아닌 위치(N1a/N1b)로만 분류하므로, 태스크포스는 림프절 전이를 0, 1–10, 11–20, &gt;20개의 4군으로 나눌 것을 제안한다.',
+'MTC 외 질환으로 전절제술을 받은 환자의 97%는 Ctn이 검출되지 않았으므로 완전 제거 후 Ctn은 검출되지 않아야 한다. Ctn 최저치 도달 시점은 논란이 있으나 3개월이 제안되며, CEA는 반감기가 길어 더 오래 걸릴 수 있다. 수술 후 기저 Ctn &lt;10 pg/mL인 환자의 3·5년 무재발 생존은 94%·90%로, &gt;10 pg/mL인 환자(78%·61%)보다 좋았다. 수술 후 기저 Ctn &lt;150 pg/mL이면 지속·재발 질환은 거의 항상 경부 림프절에 국한된다.',
+'지속·재발 MTC 탐지는 경부 초음파부터 시작하며, FNA와 세척액 Ctn 측정이 확진에 유용하다. 영상의 민감도는 50–80%이나 Ctn이 경도 상승한 경우 훨씬 낮다. 부위별 가장 효율적인 영상은 경부 초음파, 흉부 CT, 간 MRI, 축골격 MRI와 골스캔이다. F-DOPA PET/CT는 종양량 탐지 민감도가, FDG-PET/CT는 진행성 질환 식별이 우수하나 비싸서 일상적 사용 전에 선택 기준과 경제성 평가가 필요하다.']},
+R1:{t:'[R-1] Ctn·CEA 배가시간', ids:[49], p:['종양 성장 속도는 RECIST에 따른 연속 영상 또는 Ctn·CEA 배가시간으로 추정할 수 있다. 65명 연구에서 Ctn 배가시간 &lt;6개월이면 5·10년 생존율 25%·8%, 6–24개월이면 92%·37%였고, &gt;24개월이면 모두 생존했다. 다변량 분석에서 Ctn 배가시간만이 독립적 생존 예측인자였으며 CEA 배가시간보다 우수했다. 두 표지자의 배가시간이 모두 ≤25개월이면 94%, 모두 ≥25개월이면 14%에서 진행이 있었다. 신뢰할 만한 추정에는 최소 2년간 4개 이상의 측정값이 필요하나 &lt;6개월의 배가시간은 수술 후 12개월 내에도 추정할 수 있다. ATA 웹사이트에 배가시간 계산기가 있다.']},
+S1:{t:'[S-1] 경부 재수술', ids:[50], p:['림프절 전이는 초기 수술 시 기저 Ctn 40 pg/mL, 재수술 시 10 pg/mL부터 나타났다. 재수술 시 림프절 전이가 있는 환자에서 원격전이는 Ctn &gt;150 pg/mL부터 나타나 5000 pg/mL에서 50%를 넘고 &gt;20,000 pg/mL에서는 거의 항상 있었다. 경부에 국한된 지속·재발 MTC는 재수술 대상이며, 약 1/3에서 Ctn이 ‘정상 범위’로 감소하나 검출 불가는 드물다. 중앙 경부 재발 예방 효과는 우수하다.']},
+S2:{t:'[S-2] 수술 후 방사성요오드', ids:[51], p:['여포세포의 RAI 섭취가 인접 MTC 세포를 손상시킬 것이라는 ‘방관자 효과’가 제안되었으나, 293명 연구에서 RAI를 받은 61명과 받지 않은 232명의 질환특이 생존에 차이가 없었다. 따라서 RAI는 적응되지 않으나, 전이에 MTC와 PTC 또는 FTC가 혼재된 드문 경우에는 고려한다.']},
+S3:{t:'[S-3] 경부 보조 외부방사선치료', ids:[52], p:[
+'무작위 전향 연구는 없다. 51명 연구에서 5년 국소 조절률은 잔존 질환 없음 100%, 현미경적 잔존 65%, 육안적 잔존 24%였다. SEER 분석에서 보조 EBRT는 림프절 양성 MTC의 전체 생존 이득이 없었으나, 목적은 생존이 아닌 재발 고위험군의 국소 조절이며 여러 연구가 효과를 시사한다(5년 국소 무재발 생존 87%).',
+'급성 독성은 피부 홍반, 점막염, 식도염, 후두부종이며 일부는 PEG 튜브가 필요하다. 만기 독성은 색소침착, 모세혈관확장, 쉰 목소리, 골방사선괴사, 개구장애, 동맥 손상, 구강건조 등이다. EBRT 후에는 재수술이 기술적으로 어렵고 합병증이 많으므로 시행 전 재수술 대상이 아닌지 확인해야 한다. 통상 수술 후 60–66 Gy를 6주에 걸쳐 갑상선상에 조사하며, 육안 잔존 질환은 70 Gy 이상이 필요하다. 척수 인접 부위에는 IMRT를 사용한다.']},
+T:{t:'[T] 원격전이 환자의 평가', ids:[53,54], p:[
+'모든 암 환자, 특히 완치 불가능한 환자는 심리적 지지가 도움이 된다. 체세포 M918T나 빠른 배가시간은 유용한 예후 지표이지만, 전이가 검출되지 않는 무증상 환자에서는 아무것도 하지 않는 것이 최선이다. 전이성 MTC는 완치되지 않으므로 목표는 국소 조절, 호르몬 과다 증상(설사, 쿠싱증후군) 완화, 증상성 전이(통증, 골절) 완화, 생명을 위협하는 전이(기관지 폐쇄, 척수 압박) 조절이다.',
+'#[T-1] 간의 복강경·개복 평가와 정맥 채혈',
+'수술 후 Ctn이 상승한 41명에서 복강경 또는 개복 간 평가와 생검만이 잠복 전이 발견에 유용했다(19.5%, 5 mm 미만의 작은 흰 결절, CT는 8명 중 1명만 발견). 간정맥 채혈은 도움이 되지 않았다. Ctn과 CEA 배가시간이 2년을 넘으면 비교적 예후가 좋으므로 대부분의 무증상 잠복 전이 환자는 수술 대상이 아니다.']},
+U1:{t:'[U-1] 뇌전이', ids:[55], p:['임상적 뇌전이는 MTC의 1–5%에서 발생하나, 진행된 MTC에서 중추신경계 영상이 드물게 시행되어 과소 보고되었을 것이다. 수술, EBRT, 정위적 방사선수술은 국소 조절과 삶의 질 개선을 줄 수 있으나, 환자는 대개 진단 후 짧은 기간 내 전신 질환 진행으로 사망한다.']},
+U2:{t:'[U-2] 골전이', ids:[56,57,58], p:['치료로 척추성형술, 수술적 절제, 열소작(고주파·냉동), 시멘트 주입, EBRT가 있다. 척수 압박의 급성 증상은 코르티코스테로이드와 긴급 수술적 안정화가 필요하다. 골전이 환자가 질환에서 자유로워지는 경우는 극히 드물지만, EBRT를 받은 환자의 70%에서 수개월간 의미 있는 통증 감소가 있었다. 정맥 bisphosphonate(zoledronic acid, pamidronate)와 RANKL 억제제 denosumab은 갑상선암 골전이의 통증 완화와 골격 관련 사건 예방에 효과적이며, 부작용으로 턱뼈 괴사, 비정형 대퇴골 골절, 저칼슘혈증이 있다. MTC에서의 bisphosphonate 경험은 적다.']},
+U3:{t:'[U-3] 폐·종격동 전이', ids:[59], p:['폐전이는 대개 다발성이며 종격동 림프절 전이를 흔히 동반한다. 기도 압박이나 출혈을 일으키는 병변은 절제가 필요할 수 있다. 그 밖의 선택지는 EBRT와 고주파 소작이며, 중심 기도를 침범한 MTC에는 레이저, 광역학 치료, 기도 스텐트가 가능하다. 진행하는 광범위 전이에는 전신치료가 적응된다.']},
+U4:{t:'[U-4] 간전이', ids:[60], p:['간전이는 진행된 MTC의 45%에서 발생한다. 크거나 커지거나 설사·통증 같은 증상을 동반하면 치료가 적응된다. 단일 큰 전이는 가능하면 절제한다. 대부분 다발·파종성이어서 수술, 에탄올, 고주파 소작이 어려우므로 화학색전술 또는 전신치료가 최선일 수 있다. 화학색전술 12명 연구에서 부분 반응 42%, 안정 42%였고 반응 기간은 16개월을 넘었으며, 간 침범 &lt;30%이고 개별 전이 &lt;30 mm에서 반응했다. 시술 전 신·간기능을 평가해야 하며, 예상치 못한 PHEO로 1명이 사망한 예가 있다.']},
+U5:{t:'[U-5] 피부 전이', ids:[61], p:['드물며 상흉부, 경부, 두피의 홍반성 반구진 또는 결절로 나타나고, 흔히 이전 수술 반흔 근처에 있거나 광범위 전이의 일부이다. 경피 에탄올 주입과 EBRT에 반응하나 대부분 진단 후 1년 내 사망하여 예후가 불량하다.']},
+U6:{t:'[U-6] 진행된 MTC의 고식적 치료', ids:[62], p:['고식적 수술은 통증성이며 약물에 저항하는 전이에 효과적일 수 있다. 척수 압박, 기도·식도 폐쇄를 일으키는 공간점유 전이는 절제, EBRT, 전신치료로 개선될 수 있다. 종양 감량술은 진행된 MTC의 설사 증후군 완화에 흔히 효과적이다.']},
+V:{t:'[V] 전신치료: 세포독성 항암제와 방사성 치료', ids:[63,64], p:['세포독성 항암화학요법은 반응률이 15–20%로 낮고 지속 기간이 짧다(가장 효과적인 것은 doxorubicin 병합 또는 5-FU와 dacarbazine). [90Y-DOTA]-TOC 2상 시험에서 31명 중 29%가 Ctn 감소 반응을 보였고 반응자의 생존이 더 길었으나(74.5 대 10.8개월) 혈액·신독성이 있었다. 사전표적 방사면역치료는 초기 결과가 유망하나 무작위 시험이 없다. 131I-MIBG는 대개 효과가 없는 것으로 본다. 방사성동위원소 기반 치료는 임상시험의 맥락에서만 고려한다.']},
+V1:{t:'[V-1] TKI 표적치료', ids:[65], p:[
+'MEN2A·MEN2B는 사실상 모두 RET 생식세포 변이를, 산발성 MTC의 약 절반은 체세포 RET 변이를 가지며, VEGFR이 흔히 과발현된다. VEGFR-2 억제제의 다수가 RET도 억제한다. 3상 시험에 근거하여 FDA와 EMA는 vandetanib과 cabozantinib을 진행된 진행성 MTC 치료제로 승인하였다.',
+'#Vandetanib',
+'RET, EGFR, VEGFR 억제제. 3상 시험(331명, 300 mg/일)에서 무진행생존(PFS)이 위약 19.3개월에서 예측 중앙값 30.5개월로 연장되었다(HR 0.46). 부분 반응 45%. 부작용은 설사, 피로, 발진, 광과민, 고혈압, QTc 연장이며 12%가 중단, 35%가 감량하였다. FDA는 2011년 4월 REMS와 함께 승인했다.',
+'#Cabozantinib',
+'RET, c-MET, VEGFR 억제제. 3상 시험(330명, 140 mg/일)에서 PFS가 4.0개월에서 11.2개월로 개선되었다(HR 0.28). 반응률 28%. 부작용은 설사, 복부 불편, 피로, 고혈압, 수족증후군, 위장관 누공이며 16%가 중단, 79%가 감량하였다. RET 또는 RAS 변이 종양 모두에서 이득이 있었다.',
+'두 약제는 매일 지속 투여해야 하고 단기 독성이 상당하며 장기 독성과 전체 생존 자료가 없다. 따라서 상당한 종양 부담과 진행이 입증된 환자에서만 적응된다. TKI 치료 중에는 갑상선호르몬 요구량 증가에 의한 TSH 상승을 모니터링해야 한다. 미해결 과제: 어느 약을 일차로 쓸지, cabozantinib 140 mg 시작 용량이 너무 독한지(40–100 mg?), 내성 기전, 전체 생존 개선 여부, 안정 질환에서 중단 시점.']},
+W1:{t:'[W-1] 설사', ids:[66], p:['설사는 진행된 질환과 간전이 환자에서 가장 흔하며, 과분비 또는 장운동 항진 기전이다. 음주를 피하고 고섬유 식품을 제한한다. loperamide, diphenoxylate/atropine, codeine 같은 지사제가 일차 치료이다. 소마토스타틴 유사체(± interferon-α)는 일부에서 증상을 개선하나 결과가 일정하지 않다. 큰 간전이의 화학색전술과 종양 감량도 사용된다.']},
+W2:{t:'[W-2] 이소성 쿠싱증후군', ids:[67], p:['MTC는 이소성 쿠싱증후군의 1–3%를 차지하며 CRH 또는 ACTH를 분비한다. 큰 간전이의 감량(수술·화학색전술), 약물치료(ketoconazole, mifepristone, aminoglutethimide, metyrapone, mitotane), 또는 양측 부신절제술로 조절한다. 생존이 불량하지만 증상이 심하므로 광범위 전이에서도 치료를 고려하며, 저칼륨혈증, 고혈압, 당뇨, 위염도 치료한다. vandetanib 투여 후 쿠싱증후군이 호전된 보고가 3건 있다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+dx:{tab:'MTC 진단 후 관리', fig:'Fig. 1', aria:'갑상선결절에서 MTC 진단 후 관리 순서도', w:760, h:710,
+ nodes:[
+  {id:'f_fna',  x:250,y:10, w:260,h:40, label:'갑상선결절: FNA로 MTC 진단'},
+  {id:'f_wu',   x:220,y:75, w:320,h:70, label:'초기 평가<small>경부 초음파 · 혈청 Ctn·CEA · RET 생식세포 변이 DNA 분석</small>', cls:'test fac'},
+  {id:'f_retp', x:290,y:175,w:120,h:40, label:'RET 양성', cls:'mal'},
+  {id:'f_pheo', x:270,y:245,w:160,h:56, label:'갈색세포종(PHEO) 평가', cls:'test'},
+  {id:'f_hpth', x:130,y:325,w:140,h:56, label:'부갑상선기능항진증 평가', cls:'test'},
+  {id:'f_retn', x:10, y:430,w:110,h:44, label:'RET 음성', cls:'ben'},
+  {id:'f_absent',x:130,y:430,w:100,h:44, label:'없음', cls:'ben'},
+  {id:'f_hpres',x:240,y:430,w:130,h:44, label:'있음<small>TTX 때 치료</small>', cls:'tx fac'},
+  {id:'f_ppres',x:380,y:420,w:150,h:64, label:'있음<small>TTX 전 일측/양측 부신절제</small>', cls:'tx fac'},
+  {id:'f_lt500',x:170,y:510,w:170,h:40, label:'Ctn &lt;500 pg/mL'},
+  {id:'f_gt500',x:350,y:510,w:170,h:40, label:'Ctn &gt;500 pg/mL', cls:'mal'},
+  {id:'f_ttx',  x:60, y:575,w:340,h:56, label:'TTX ± 경부 림프절 절제<small>초음파·혈청 Ctn·수술 중 소견에 따라</small>', cls:'tx fac'},
+  {id:'f_ebrt1',x:60, y:650,w:340,h:52, label:'경부 EBRT 고려<small>광범위 림프절·잔존 MTC·갑상선 외 침범 시</small>', cls:'fac'},
+  {id:'f_img',  x:560,y:175,w:190,h:56, label:'전이 MTC 배제를 위한 영상검사', cls:'test'},
+  {id:'f_m0',   x:545,y:260,w:120,h:80, label:'M0<small>TTX ± 경부 LND (US·Ctn에 따라)</small>', cls:'tx fac'},
+  {id:'f_m1',   x:675,y:260,w:80, h:44, label:'M1, TTX', cls:'mal'},
+  {id:'f_ebrt2',x:545,y:365,w:120,h:44, label:'경부 EBRT 고려'},
+  {id:'f_reg',  x:675,y:330,w:80, h:50, label:'국소 질환 치료', cls:'tx'},
+  {id:'f_prog', x:580,y:430,w:175,h:50, label:'진행성 전신 질환', cls:'mal'},
+  {id:'f_tki',  x:560,y:510,w:110,h:50, label:'TKI 전신치료', cls:'tx'},
+  {id:'f_trial',x:680,y:510,w:75, h:50, label:'임상시험', cls:'tx'}
+ ],
+ edges:[
+  [A(380,50,380,75),1],[A(350,145,350,175),1],['M220 110 H65 V430',1],
+  [A(350,215,350,245),1],['M310 301 V313 H200 V325',1],['M430 273 H455 V420',1],
+  [A(180,381,180,430),1],['M250 381 V405 H305 V430',1],
+  [A(65,474,65,490),0],[A(180,474,180,490),0],[A(305,474,305,490),0],[A(455,484,455,490),0],['M65 490 H455',0],
+  [A(255,490,255,510),1],[A(435,490,435,510),1],
+  [A(255,550,255,575),1],[A(230,631,230,650),1],
+  ['M520 530 H538 V203 H560',1],
+  ['M655 231 V245 H605 V260',1],['M655 245 H715 V260',1],
+  [A(605,340,605,365),1],[A(715,304,715,330),1],[A(715,380,715,430),1],
+  ['M630 480 V495 H615 V510',1],[A(717,480,717,510),1]
+ ], labels:[]},
+ret:{tab:'RET 보인자', fig:'Fig. 2', aria:'유전자 선별검사로 RET 생식세포 변이가 발견된 환자의 관리 순서도', w:760, h:580,
+ nodes:[
+  {id:'r_ret',  x:10, y:10, w:160,h:40, label:'RET 생식세포 변이'},
+  {id:'r_init', x:10, y:70, w:160,h:90, label:'초기 평가<small>정상 진찰·경부 초음파 · 혈청 Ctn·CEA 측정</small>', cls:'test fac'},
+  {id:'r_child',x:185,y:145,w:80, h:40, label:'소아'},
+  {id:'r_adult',x:185,y:400,w:80, h:40, label:'성인'},
+  {id:'r_hst',  x:280,y:40, w:115,h:50, label:'MEN2B<small>ATA-HST</small>', cls:'mal fac'},
+  {id:'r_h',    x:280,y:140,w:115,h:50, label:'MEN2A<small>ATA-H</small>', cls:'mal fac'},
+  {id:'r_mod',  x:280,y:245,w:115,h:50, label:'MEN2A<small>ATA-MOD</small>', cls:'fac'},
+  {id:'r_hst_tx',x:410,y:10, w:160,h:110,label:'생후 1년 이내 TTX<small>첫 수개월도 고려 · VI 림프절 절제는 부갑상선 식별·보존 가능 여부에 따라</small>', cls:'tx fac'},
+  {id:'r_hst_fu',x:585,y:10, w:165,h:110,label:'추적<small>진찰·경부 US·Ctn·CEA: 1년간 6개월마다, 이후 매년 · 11세부터 PHEO 선별</small>', cls:'test fac'},
+  {id:'r_h_tx', x:410,y:135,w:160,h:60, label:'5세 이전 TTX<small>혈청 Ctn에 따라</small>', cls:'tx fac'},
+  {id:'r_h_fu', x:585,y:135,w:165,h:60, label:'추적<small>위와 동일</small>', cls:'test fac'},
+  {id:'r_mod_tx',x:410,y:210,w:160,h:120,label:'Ctn 상승 시 TTX<small>장기 평가를 원치 않으면 소아기에 시행</small>', cls:'tx fac'},
+  {id:'r_mod_fu',x:585,y:210,w:165,h:120,label:'추적<small>1년간 6개월마다, Ctn 검출 불가·정상이면 이후 매년 · 16세부터 PHEO 선별</small>', cls:'test fac'},
+  {id:'r_an',   x:280,y:350,w:115,h:50, label:'정상 Ctn', cls:'ben'},
+  {id:'r_ae',   x:280,y:440,w:115,h:50, label:'Ctn 상승', cls:'mal'},
+  {id:'r_an_fu',x:410,y:350,w:160,h:50, label:'매년 검사<small>Ctn 상승 시 ↓</small>', cls:'test fac'},
+  {id:'r_ae_tx',x:410,y:420,w:160,h:100,label:'PHEO 배제 후 TTX<small>US·술전 Ctn에 따른 림프절 구획 절제</small>', cls:'tx fac'},
+  {id:'r_final',x:585,y:350,w:165,h:220,label:'Ctn이 상승하면<small>&lt;150 pg/mL: 3–6개월마다 Ctn·CEA로 배가시간 결정<br>&gt;150 pg/mL: 전이 탐지 영상검사<br>전이 발견 시 부위별 치료, 전신 질환이면 전신치료 고려</small>', cls:'test fac'}
+ ],
+ edges:[
+  [A(90,50,90,70),1],['M170 115 H176 V165 H185',1],['M176 165 V420 H185',1],
+  ['M265 165 H272',0],['M272 65 V270',0],[A(272,65,280,65),1],[A(272,165,280,165),1],[A(272,270,280,270),1],
+  ['M265 420 H272',0],['M272 375 V465',0],[A(272,375,280,375),1],[A(272,465,280,465),1],
+  [A(395,65,410,65),1],[A(395,165,410,165),1],[A(395,270,410,270),1],[A(395,375,410,375),1],[A(395,465,410,465),1],
+  [A(570,65,585,65),1],[A(570,165,585,165),1],[A(570,270,585,270),1],
+  [A(490,400,490,420),1],
+  ['M750 65 H756 V460 H750',1],['M750 165 H756',0],['M750 270 H756',0],
+  [A(570,470,585,470),1]
+ ], labels:[]},
+post:{tab:'수술 후 추적', fig:'Fig. 3', aria:'갑상선절제 후 지속·재발 MTC 관리 순서도', w:760, h:530,
+ nodes:[
+  {id:'p_ttx',  x:10, y:240,w:80, h:44, label:'TTX 후'},
+  {id:'p_eval', x:105,y:200,w:150,h:124,label:'진찰·경부 US<small>Ctn·CEA·갑상선기능·TSH 6–12개월마다</small>', cls:'test fac'},
+  {id:'p_low',  x:275,y:70, w:160,h:100,label:'Ctn 검출되나 &lt;150 pg/mL<small>진찰·US에서 지속·재발 근거 없음</small>', cls:'fac'},
+  {id:'p_hi',   x:275,y:262,w:160,h:44, label:'Ctn &gt;150 pg/mL', cls:'mal'},
+  {id:'p_und',  x:275,y:400,w:160,h:56, label:'Ctn 검출 불가 또는 정상범위', cls:'ben'},
+  {id:'p_low_fu',x:455,y:50,w:150,h:140,label:'추적<small>진찰·경부 US 6개월마다 · Ctn·CEA 3–6개월마다(배가시간) · Ctn &gt;150이면 재발 탐지 영상</small>', cls:'test fac'},
+  {id:'p_und_fu',x:455,y:390,w:150,h:76,label:'추적<small>진찰·US 정상이면 1년간 6개월마다, 이후 매년</small>', cls:'ben fac'},
+  {id:'p_img',  x:620,y:260,w:135,h:50, label:'전이 탐지 영상검사', cls:'test'},
+  {id:'p_pos',  x:640,y:190,w:115,h:40, label:'영상 양성', cls:'mal'},
+  {id:'p_tx',   x:620,y:10, w:135,h:160,label:'치료<small>국소 질환: 수술·EBRT 등 · 진행성 전신 질환: 전신치료(TKI 우선) 또는 임상시험</small>', cls:'tx fac'},
+  {id:'p_neg',  x:640,y:340,w:115,h:40, label:'영상 음성', cls:'ben'},
+  {id:'p_negfu',x:620,y:400,w:135,h:120,label:'추적<small>진찰·영상 6–12개월마다 · Ctn·CEA 3–6개월마다(배가시간)</small>', cls:'test fac'}
+ ],
+ edges:[
+  [A(90,262,105,262),1],['M255 262 H265',0],['M265 120 V428',0],
+  [A(265,120,275,120),1],[A(265,284,275,284),1],[A(265,428,275,428),1],
+  [A(435,120,455,120),1],[A(435,428,455,428),1],[A(435,284,620,284),1],
+  [A(605,120,620,120),1],
+  [A(697,260,697,230),1],[A(697,190,697,170),1],[A(697,310,697,340),1],[A(697,380,697,400),1]
+ ], labels:[]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[String(id)] = k; }));
+const R = id => {
+  id = String(id);
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const RG = (a,b) => { let s=''; for (let i=a;i<=b;i++) s+=R(i); return s; };
+const rangeLabel = ids => ids.length === 1 ? RID(ids[0]) : RID(ids[0]) + '–' + ids[ids.length-1];
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+  const shared = g.ids.length > 1 ? `<p class="exp-note">이 설명은 ${rangeLabel(g.ids)}에 공통으로 해당한다.</p>` : '';
+  return `<div class="exp-h"><b>본문 요약 · ${g.t}</b><span class="exp-r">${rangeLabel(g.ids)}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${shared}${paras}<p class="exp-src">Wells SA Jr, et al. Thyroid 2015;25:567–610 해당 소제목 본문의 번역·요약. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+
+const TAB4 = `<div class="tbl"><table><thead><tr><th>RET 변이</th><th>엑손</th><th>MTC 위험</th><th>PHEO</th><th>HPTH</th><th>CLA</th><th>HD</th></tr></thead><tbody>
+${[['G533C',8,'MOD','+','−','N','N'],['C609F/G/R/S/Y',10,'MOD','+/++','+','N','Y'],['C611F/G/S/Y/W',10,'MOD','+/++','+','N','Y'],['C618F/R/S',10,'MOD','+/++','+','N','Y'],['C620F/R/S',10,'MOD','+/++','+','N','Y'],['C630R/Y',11,'MOD','+/++','+','N','N'],['D631Y',11,'MOD','+++','−','N','N'],['C634F/G/R/S/W/Y',11,'<b>H</b>','+++','++','Y','N'],['K666E',11,'MOD','+','−','N','N'],['E768D',13,'MOD','−','−','N','N'],['L790F',13,'MOD','+','−','N','N'],['V804L',14,'MOD','+','+','N','N'],['V804M',14,'MOD','+','+','Y','N'],['A883F',15,'<b>H</b>','+++','−','N','N'],['S891A',15,'MOD','+','+','N','N'],['R912P',16,'MOD','−','−','N','N'],['M918T',16,'<b>HST</b>','+++','−','N','N']].map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}
+</tbody></table></div><p class="small" style="color:var(--muted)">Table 4. MTC 공격성 위험: MOD 중등도, H 고위험, HST 최고 위험. PHEO·HPTH 발생률: + 약 10%, ++ 약 20–30%, +++ 약 50%. Y 발생 보고 있음, N 없음. 모든 보고된 RET 변이는 원문 Supplementary Information과 ARUP 데이터베이스 참조.</p>`;
+
+const TAB5 = `<div class="tbl"><table><thead><tr><th>구분</th><th>정의</th></tr></thead><tbody>
+<tr><td>T1a / T1b</td><td>≤1 cm / &gt;1–2 cm, 갑상선에 국한</td></tr><tr><td>T2</td><td>&gt;2–4 cm, 갑상선에 국한</td></tr>
+<tr><td>T3</td><td>&gt;4 cm 갑상선에 국한, 또는 최소 갑상선 외 침범(흉골갑상근, 갑상선 주위 연조직)</td></tr>
+<tr><td>T4a</td><td>피막을 넘어 피하 연조직, 후두, 기관, 식도, 반회후두신경 침범</td></tr>
+<tr><td>T4b</td><td>척추전근막 침범 또는 경동맥·종격동 혈관을 둘러쌈</td></tr>
+<tr><td>N1a</td><td>level VI(기관전, 기관주위, 후두전/Delphian) 림프절 전이</td></tr>
+<tr><td>N1b</td><td>일측·양측·반대측 경부(level I–V), 인두후, 상부 종격동(level VII) 림프절 전이</td></tr>
+<tr><td>M1</td><td>원격전이</td></tr>
+<tr><td><b>I기</b></td><td>T1 N0 M0</td></tr><tr><td><b>II기</b></td><td>T2–3 N0 M0</td></tr><tr><td><b>III기</b></td><td>T1–3 N1a M0</td></tr>
+<tr><td><b>IVA기</b></td><td>T4a N0–1a M0, T1–4a N1b M0</td></tr><tr><td><b>IVB기</b></td><td>T4b, 모든 N, M0</td></tr><tr><td><b>IVC기</b></td><td>모든 T, 모든 N, M1</td></tr>
+</tbody></table></div><p class="small" style="color:var(--muted)">Table 5. AJCC 7판 TNM(갑상선암). 10년 생존율 I–IV기: 100%, 93%, 71%, 21%. 태스크포스는 림프절 전이를 0, 1–10, 11–20, &gt;20개로 나누어 반영할 것을 제안하였다.</p>`;
+
+const CTNTBL = `<div class="tbl"><table><thead><tr><th>수술 전 기저 Ctn</th><th>관련 림프절 전이 범위</th></tr></thead><tbody>
+<tr><td>&lt;20 pg/mL</td><td>림프절 전이 위험 거의 없음</td></tr><tr><td>&gt;20</td><td>동측 중앙·동측 측경부</td></tr>
+<tr><td>&gt;50</td><td>반대측 중앙</td></tr><tr><td>&gt;200</td><td>반대측 측경부</td></tr><tr><td>&gt;500</td><td>상부 종격동 (원격전이 영상 적응)</td></tr>
+<tr><td>≤1000 / &gt;10,000</td><td>양측 구획 절제로 절반 이상 생화학적 완치 / 완치 불가</td></tr></tbody></table></div>`;
+
+const D = {
+/* ===== Fig. 1 ===== */
+f_fna:{kind:'출발점', title:'갑상선결절: FNA로 MTC 진단', next:['f_wu'], body:`${RR(19,16)}
+${tip('세포학 소견','흩어진 다각형·삼각형 세포, 호아줄 과립, 편심성 핵과 거친 과립 염색질(salt and pepper), 아밀로이드. IHC와 세척액 Ctn으로 정확도가 높아진다.')}`},
+f_wu:{kind:'평가', title:'초기 평가', next:['f_retp','f_retn'], body:`${RR(21,22,23,15)}`},
+f_retp:{kind:'유전검사', title:'RET 생식세포 변이 양성', next:['f_pheo'], body:`<p>유전성 MTC이므로 PHEO와 HPTH를 배제하고, 1촌에게 유전상담과 검사를 제공한다.</p>${RR(21,7,10)}<h4>Table 4. RET 변이별 위험</h4>${TAB4}`},
+f_retn:{kind:'유전검사', title:'RET 생식세포 변이 음성', next:['f_lt500','f_gt500'], body:`${RR(6,8)}<p>산발성으로 추정된 MTC의 1–7%는 실제 유전성이다.</p>`},
+f_pheo:{kind:'평가', title:'갈색세포종(PHEO) 평가', next:['f_ppres','f_hpth'], body:`${RR(38,39,40)}`},
+f_hpth:{kind:'평가', title:'부갑상선기능항진증 평가', next:['f_absent','f_hpres'], body:`${RR(42,43)}`},
+f_absent:{kind:'결과', title:'PHEO·HPTH 없음', next:['f_lt500','f_gt500'], body:`<p>혈청 Ctn에 따라 수술 전 영상 범위를 정한다.</p>${R(22)}`},
+f_hpres:{kind:'결과', title:'HPTH 있음: 갑상선절제 때 치료', next:['f_lt500','f_gt500'], body:`${RR(43,30)}`},
+f_ppres:{kind:'결과', title:'PHEO 있음: 갑상선절제 전 부신절제', next:['f_lt500','f_gt500'], body:`${RR(39,40,41)}`},
+f_lt500:{kind:'Ctn', title:'혈청 Ctn <500 pg/mL', next:['f_ttx'], body:`<p>300명 연구에서 기저 Ctn &lt;500 pg/mL이면 원격전이가 없었다. 단, 광범위 경부 질환이나 원격전이 징후가 있으면 전신 영상이 필요하다.</p>${R(22)}`},
+f_gt500:{kind:'Ctn', title:'혈청 Ctn >500 pg/mL', next:['f_img'], body:`${R(22)}`},
+f_ttx:{kind:'수술', title:'갑상선 전절제술 ± 경부 림프절 절제', next:['f_ebrt1'], body:`${RR(24,25,26)}<h4>수술 전 기저 Ctn과 림프절 전이 범위</h4>${CTNTBL}${RR(30,31,32)}`},
+f_ebrt1:{kind:'보조 치료', title:'경부 EBRT 고려', next:[], body:`${R(52)}`},
+f_img:{kind:'영상', title:'전이 MTC 배제를 위한 영상검사', next:['f_m0','f_m1'], body:`${RR(22,23)}<ul><li>폐·종격동: CT</li><li>간: 3기 조영증강 간 CT, 조영증강 MRI</li><li>뼈: 축골격 MRI와 골스캔(상호보완)</li><li>FDG-PET/CT, F-DOPA-PET/CT는 민감도가 낮다.</li></ul>`},
+f_m0:{kind:'M0', title:'M0: TTX ± 경부 림프절 절제', next:['f_ebrt2'], body:`${RR(24,25,26)}`},
+f_ebrt2:{kind:'보조 치료', title:'경부 EBRT 고려', next:[], body:`<p>광범위 림프절 질환, 잔존 MTC, 갑상선 외 침범 시.</p>${R(52)}`},
+f_m1:{kind:'M1', title:'M1: 갑상선 전절제술', next:['f_reg'], body:`${R(27)}<p>진행된 질환에서 수술 목표는 합병증을 최소화하는 고식적 목적이 된다.</p>`},
+f_reg:{kind:'치료', title:'국소 질환 치료', next:['f_prog'], body:`${RR(27,50,52)}`},
+f_prog:{kind:'진행', title:'진행성 전신 질환', next:['f_tki','f_trial'], body:`${RR(53,62)}`},
+f_tki:{kind:'전신치료', title:'TKI 전신치료', next:[], body:`${RR(65,63)}<div class="tbl"><table><thead><tr><th></th><th>Vandetanib</th><th>Cabozantinib</th></tr></thead><tbody>
+<tr><td>표적</td><td>RET, EGFR, VEGFR</td><td>RET, c-MET, VEGFR</td></tr><tr><td>3상 용량</td><td>300 mg/일</td><td>140 mg/일</td></tr>
+<tr><td>PFS (위약 대비)</td><td>30.5 vs 19.3개월, HR 0.46</td><td>11.2 vs 4.0개월, HR 0.28</td></tr><tr><td>반응률</td><td>45%</td><td>28%</td></tr>
+<tr><td>중단 / 감량</td><td>12% / 35%</td><td>16% / 79%</td></tr><tr><td>주요 부작용</td><td>설사, 발진, 광과민, 고혈압, QTc 연장</td><td>설사, 수족증후군, 고혈압, 위장관 누공</td></tr></tbody></table></div>`},
+f_trial:{kind:'전신치료', title:'임상시험', next:[], body:`${R(64)}`},
+
+/* ===== Fig. 2 ===== */
+r_ret:{kind:'출발점', title:'RET 생식세포 변이 (유전 선별검사)', next:['r_init'], body:`${RR(3,4,5,7,9)}<h4>Table 4</h4>${TAB4}`},
+r_init:{kind:'평가', title:'초기 평가', next:['r_child','r_adult'], body:`<p>정상 진찰과 경부 초음파, 혈청 Ctn과 CEA 측정.</p>${RR(14,13)}`},
+r_child:{kind:'연령', title:'소아', next:['r_hst','r_h','r_mod'], body:`${RR(33,1)}`},
+r_adult:{kind:'연령', title:'성인', next:['r_an','r_ae'], body:`<p>혈청 Ctn 결과에 따라 관리한다.</p>${R(38)}`},
+r_hst:{kind:'위험 범주', title:'MEN2B (ATA-HST)', next:['r_hst_tx'], body:`<p>RET M918T. MTC가 영아기에 나타나 매우 공격적이며 생후 첫해에 림프절 전이가 생길 수 있다. 위험 영아는 출생 직후 유전검사를 한다.</p>${R(1)}`},
+r_hst_tx:{kind:'수술', title:'생후 1년 이내 갑상선 전절제술', next:['r_hst_fu'], body:`${RR(34,30)}${tip('결과','4세 이전에 수술한 9명은 모두 생화학적 완치, 5세 이후 수술한 35명 중에서는 1명만 완치되었다.')}`},
+r_hst_fu:{kind:'추적', title:'추적 (ATA-HST)', next:['r_final'], body:`${RRf()}`},
+r_h:{kind:'위험 범주', title:'MEN2A (ATA-H)', next:['r_h_tx'], body:`<p>RET C634 또는 A883F. 3세부터 매년 진찰, 경부 초음파, Ctn 측정을 시작한다.</p>${R(1)}`},
+r_h_tx:{kind:'수술', title:'5세 이전 갑상선 전절제술', next:['r_h_fu'], body:`${R(35)}<p>기저 Ctn &lt;40 pg/mL이면 중앙 경부 절제 없는 전절제술로 충분하다.</p>`},
+r_h_fu:{kind:'추적', title:'추적 (ATA-H)', next:['r_final'], body:`${RRf()}`},
+r_mod:{kind:'위험 범주', title:'MEN2A (ATA-MOD)', next:['r_mod_tx'], body:`<p>M918T, C634, A883F 이외의 RET 변이. 대개 늦게 발생하고 덜 공격적이나 가족 간 변이가 크다.</p>${R(1)}`},
+r_mod_tx:{kind:'수술', title:'Ctn 상승 시 갑상선 전절제술', next:['r_mod_fu'], body:`${R(36)}`},
+r_mod_fu:{kind:'추적', title:'추적 (ATA-MOD)', next:['r_final'], body:`${RR(46,37,42)}`},
+r_an:{kind:'성인', title:'정상 Ctn', next:['r_an_fu'], body:`<p>매년 검사하고 Ctn이 상승하면 PHEO 배제 후 수술한다.</p>`},
+r_an_fu:{kind:'추적', title:'매년 검사', next:['r_ae_tx'], body:`${RR(37,42)}`},
+r_ae:{kind:'성인', title:'Ctn 상승', next:['r_ae_tx'], body:`${RR(38,24,26)}`},
+r_ae_tx:{kind:'수술', title:'PHEO 배제 후 TTX와 림프절 구획 절제', next:['r_final'], body:`${RR(39,24,25,26)}${CTNTBL}`},
+r_final:{kind:'추적', title:'Ctn이 상승하면', next:['p_ttx'], nextLabel:'수술 후 추적으로', body:`${RR(47,48,49)}`},
+
+/* ===== Fig. 3 ===== */
+p_ttx:{kind:'출발점', title:'갑상선 전절제술 후', next:['p_eval'], body:`${RR(45,31,32)}<h4>Table 5. AJCC TNM</h4>${TAB5}`},
+p_eval:{kind:'평가', title:'진찰·경부 초음파·혈청 표지자', next:['p_low','p_hi','p_und'], body:`${RR(46,31)}<p>Ctn 최저치 도달은 약 3개월, CEA는 반감기가 길어 더 오래 걸릴 수 있다.</p>`},
+p_low:{kind:'Ctn', title:'Ctn 검출되나 <150 pg/mL', next:['p_low_fu'], body:`${R(47)}<p>수술 후 기저 Ctn &lt;150 pg/mL이면 지속·재발 질환은 거의 항상 경부 림프절에 국한된다.</p>`},
+p_low_fu:{kind:'추적', title:'추적', next:['p_tx'], body:`${RR(47,49,53)}<div class="tbl"><table><thead><tr><th>Ctn 배가시간</th><th>5년 / 10년 생존</th></tr></thead><tbody><tr><td>&lt;6개월</td><td>25% / 8%</td></tr><tr><td>6–24개월</td><td>92% / 37%</td></tr><tr><td>&gt;24개월</td><td>연구 종료 시 전원 생존</td></tr></tbody></table></div>`},
+p_hi:{kind:'Ctn', title:'Ctn >150 pg/mL', next:['p_img'], body:`${R(48)}`},
+p_img:{kind:'영상', title:'전이 탐지 영상검사', next:['p_pos','p_neg'], body:`${RR(48,23,54)}`},
+p_pos:{kind:'영상', title:'영상 양성', next:['p_tx'], body:`${RR(50,54)}`},
+p_tx:{kind:'치료', title:'국소·전신 치료', next:[], body:`${RR(50,52,62,65,53)}`},
+p_neg:{kind:'영상', title:'영상 음성', next:['p_negfu'], body:`${R(53)}`},
+p_negfu:{kind:'추적', title:'추적', next:[], body:`${RR(49,53)}`},
+p_und:{kind:'Ctn', title:'Ctn 검출 불가 또는 정상범위', next:['p_und_fu'], body:`${R(46)}<p>수술 후 기저 Ctn이 정상이면 10년 생존율 97.7%이나, 3%는 7.5년 내 생화학적 재발한다.</p>`},
+p_und_fu:{kind:'추적', title:'1년간 6개월마다, 이후 매년', next:[], body:`${R(46)}`}
+};
+function RRf(){ return RR(46,37,42); }
+
+const SPECIAL = [
+ ['men2','MEN2 분류와 임상 특성 (B·C)'],['gene','RET 유전검사 (D)'],['ethic','유전 선별의 윤리 (E)'],
+ ['marker','Ctn·CEA 해석 (F)'],['path','병리 검사 (G)'],['nodule','결절 평가와 Ctn 선별 (H)'],
+ ['reop','불완전 수술 후 관리 (K·L)'],['parathy','부갑상선 보존·호르몬 보충 (M·N)'],
+ ['peds','소아 예방적 갑상선절제 (O)'],['pheo','갈색세포종 (P)'],['hpth','부갑상선기능항진증 (Q)'],
+ ['adj','재수술·RAI·EBRT (S)'],['dist','원격전이 평가와 장기별 치료 (T·U)'],['sys','전신치료 (V)'],['horm','호르몬 활성 전이 (W)']];
+const EXTRA = {
+levels:{kind:'참고', title:'권고 등급 (Table 3)', next:[], body:`
+${['A','B','C','D','E','F','I'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}
+<p class="small" style="color:var(--muted)">미국 예방서비스 태스크포스(USPSTF)·AHRQ 기준을 변형하였다. 이 지침의 67개 권고에는 F 등급이 없다.</p>
+${note('표시 방식','권고 번호(R1–R67)는 원문 번호이다. 권고문 상자를 누르면 해당 소제목 본문의 번역·요약이 펼쳐진다. 이 지침은 권고별 근거 단락이 따로 없어, 소제목 본문을 핵심 수치 중심으로 요약하였다.')}`},
+risk:{kind:'Table 4', title:'RET 변이와 MTC 위험·동반 질환', next:[], body:`${TAB4}${R(1)}`},
+tnm:{kind:'Table 5', title:'AJCC TNM 분류', next:[], body:`${TAB5}${R(45)}`},
+topics:{kind:'주제별', title:'주제별 권고', next:[], body:`<ul class="fn-list">${SPECIAL.map(([k,t])=>`<li><button type="button" data-go="${k}"><b>▸</b><span>${t}</span></button></li>`).join('')}</ul>`,
+ onOpen(){ dBody.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.go))); }},
+men2:{kind:'주제', title:'MEN2 분류와 임상 특성', next:['topics'], body:`${RR(1,2)}${TAB4}`},
+gene:{kind:'주제', title:'RET 유전검사', next:['topics'], body:`${RG(3,9)}`},
+ethic:{kind:'주제', title:'유전 선별의 윤리', next:['topics'], body:`${RG(10,12)}`},
+marker:{kind:'주제', title:'Ctn·CEA 해석', next:['topics'], body:`${RG(13,15)}`},
+path:{kind:'주제', title:'병리 검사', next:['topics'], body:`${RG(16,18)}`},
+nodule:{kind:'주제', title:'결절 평가와 Ctn 선별', next:['topics'], body:`${RG(19,20)}`},
+reop:{kind:'주제', title:'국소 진행 질환과 불완전 수술 후 관리', next:['topics'], body:`${RG(27,29)}`},
+parathy:{kind:'주제', title:'부갑상선 보존과 호르몬 보충', next:['topics'], body:`${RG(30,32)}`},
+peds:{kind:'주제', title:'소아 예방적 갑상선절제', next:['topics','r_child'], body:`${RG(33,36)}`},
+pheo:{kind:'주제', title:'갈색세포종', next:['topics'], body:`${RG(37,41)}`},
+hpth:{kind:'주제', title:'부갑상선기능항진증', next:['topics'], body:`${RG(42,44)}`},
+adj:{kind:'주제', title:'경부 재수술, RAI, 보조 EBRT', next:['topics'], body:`${RG(50,52)}`},
+dist:{kind:'주제', title:'원격전이 평가와 장기별 치료', next:['topics'], body:`${RG(53,62)}`},
+sys:{kind:'주제', title:'전신치료', next:['topics'], body:`${RG(63,65)}`},
+horm:{kind:'주제', title:'호르몬 활성 전이', next:['topics'], body:`${RG(66,67)}`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['ACTH','Adrenocorticotropic hormone, 부신피질자극호르몬'],['AJCC','American Joint Committee on Cancer, 미국암연합위원회'],
+ ['ATA','American Thyroid Association, 미국갑상선학회'],['ATA-HST / H / MOD','ATA 최고 위험 / 고위험 / 중등도 위험 범주'],
+ ['CAP','College of American Pathologists, 미국병리학회'],['CCH','C-cell hyperplasia, C세포 과형성'],
+ ['CEA','Carcinoembryonic antigen, 암태아성항원'],['CLA','Cutaneous lichen amyloidosis, 피부 태선 아밀로이드증'],
+ ['CRH','Corticotropin-releasing hormone, 부신피질자극호르몬분비호르몬'],['CT','Computed tomography, 전산화단층촬영'],
+ ['Ctn','Calcitonin, 칼시토닌'],['EBRT','External beam radiation therapy, 외부방사선치료'],
+ ['EMA','European Medicines Agency, 유럽의약품청'],['FDA','U.S. Food and Drug Administration, 미국 식품의약국'],
+ ['FDG-PET','<sup>18</sup>F-fluorodeoxyglucose PET, 불소-18 플루오로데옥시포도당 양전자방출단층촬영'],['F-DOPA','<sup>18</sup>F-dihydroxyphenylalanine (PET)'],
+ ['FMTC','Familial medullary thyroid cancer, 가족성 수질암'],['FNA','Fine-needle aspiration, 세침흡인'],
+ ['FTC','Follicular thyroid carcinoma, 여포암'],['HD','Hirschsprung’s disease, 히르슈슈프룽병'],
+ ['HIPAA','Health Insurance Portability and Accountability Act'],['HPTH','Hyperparathyroidism, 부갑상선기능항진증'],
+ ['HR','Hazard ratio, 위험비'],['ICMA','Immunochemiluminometric assay, 면역화학발광측정법'],
+ ['IHC','Immunohistochemical, 면역조직화학'],['IMRT','Intensity-modulated radiation therapy, 세기조절방사선치료'],
+ ['LND','Lymph node dissection, 림프절 절제'],['MEN','Multiple endocrine neoplasia, 다발성 내분비샘종양'],
+ ['MIBG','Metaiodobenzylguanidine'],['MRI','Magnetic resonance imaging, 자기공명영상'],
+ ['MTC','Medullary thyroid carcinoma, 갑상선 수질암'],['OMIM','Online Mendelian Inheritance in Man'],
+ ['PEG','Percutaneous gastrostomy, 경피적 위루술'],['PFS','Progression-free survival, 무진행생존'],
+ ['PGD','Preimplantation genetic diagnosis, 착상 전 유전진단'],['PHEO','Pheochromocytoma, 갈색세포종'],
+ ['PTC','Papillary thyroid carcinoma, 유두암'],['PTH','Parathyroid hormone, 부갑상선호르몬'],
+ ['RAI','Radioactive iodine, 방사성요오드'],['RANKL','Receptor activator of nuclear factor κB ligand'],
+ ['RECIST','Response Evaluation Criteria in Solid Tumors, 고형종양 반응평가기준'],['REMS','Risk Evaluation and Mitigation Strategies'],
+ ['RET','REarranged during Transfection 원종양유전자'],['SEER','Surveillance, Epidemiology, and End Results'],
+ ['TKI','Tyrosine kinase inhibitor, 티로신키나제 억제제'],['TNM','Tumor, node, metastasis'],
+ ['TSH','Thyrotropin, 갑상선자극호르몬'],['TTX','Total thyroidectomy, 갑상선 전절제술'],
+ ['US','Ultrasound, 초음파'],['VEGF(R)','Vascular endothelial growth factor (receptor), 혈관내피성장인자(수용체)']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (cm|nmol|pg)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: C, RET)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function layout(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
