@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>선천부신과형성(CAH) — Endocrine Reviews 2022</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>선천부신과형성(CAH): 병태생리·진단·관리</h1>
+        <p class="src">Congenital Adrenal Hyperplasia—Current Insights, Claahsen-van der Grinten HL, et al. <a href="https://doi.org/10.1210/endrev/bnab016" target="_blank" rel="noopener noreferrer">Endocr Rev 2022;43:91–159</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Endocrine Society</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>세 탭 모두 본문·표로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>요점·진술 전체</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 3–7</button>
+      <button type="button" data-id="nc"><span class="bt-ic" aria-hidden="true">＋</span>비고전형</button>
+      <button type="button" data-id="pre"><span class="bt-ic" aria-hidden="true">＋</span>산전 Dex</button>
+      <button type="button" data-id="sx"><span class="bt-ic" aria-hidden="true">＋</span>수술·심리</button>
+      <button type="button" data-id="lt"><span class="bt-ic" aria-hidden="true">＋</span>장기 후유증</button>
+      <button type="button" data-id="nw"><span class="bt-ic" aria-hidden="true">＋</span>새로운 치료</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {E:'Essential Points: 저자들이 제시한 핵심 요점', K:'본문 핵심 진술: 이 종설은 등급화된 권고를 제시하지 않는다. 근거 수준은 2018 미국내분비학회 지침을 따르며 대부분 낮거나 중등도이다'};
+const LVTXT = {E:'핵심 요점', K:'본문 진술'};
+const LVCLS = {E:'l1', K:'l2'};
+const REC = {
+'E1':['E','선천부신과형성(CAH)은 대부분 <i>CYP21A2</i>가 암호화하는 스테로이드 21-수산화효소의 결핍에 의해 발생한다.'],
+'E2':['E','대립유전자 변이는 연속적인 스펙트럼의 표현형과 관련된다.'],
+'E3':['E','중증 고전형 CAH는 코르티솔과 알도스테론 결핍, 그리고 안드로겐 과다를 포함한다.'],
+'E4':['E','스테로이드 생합성에 관한 새로운 개념, 호르몬·유전 진단 도구, 새로운 치료법이 CAH에 대한 이해를 넓혔다.'],
+'E5':['E','이 질환의 장기 후유증이 상세히 보고되었으며 환자의 삶의 질을 개선하기 위한 전략이 개발되고 있다.'],
+'D1':['K','신생아 선별검사는 고전형 CAH의 진단 시점을 크게 앞당겨 이환율과 사망률을 줄인다. 미숙아는 높은 기준값(가능하면 재태주수 기준)이 필요하며, 생후 2일 이내는 정확도가 낮아 며칠 뒤 두 번째 검체를 검사하면 민감도와 양성예측도가 개선된다.'],
+'D2':['K','LC-MS/MS를 이용한 2차 선별(21-deoxycortisol 측정, (17OHP+안드로스테네디온)/코르티솔 등 스테로이드 비)은 면역측정의 특이도 문제를 줄여 양성예측도를 높일 수 있다.'],
+'D3':['K','직접 염기서열분석과 결실·키메라 유전자 검출법(MLPA 등)을 함께 사용해야 <i>CYP21A2</i> 변이 대립유전자를 거의 100% 검출할 수 있다. 가능하면 부모 보인자 검사로 phase를 확인한다.'],
+'D4':['K','침습적 산전진단은 결과가 접근이나 치료를 바꿀 때에만 시행해야 한다. 모체 혈장의 세포유리 태아 DNA로 임신 6–9주에 성별(SRY)을 판정할 수 있다.'],
+'T1':['K','성장기 소아에서는 반감기가 짧아 성장 억제가 적은 hydrocortisone(HC)이 선호되며, cortisone acetate는 권장하지 않는다. HC는 하루 10–15 mg/m²를 3–4회 분할 투여한다.'],
+'T2':['K','고전형 CAH 신생아에게는 저나트륨혈증이 생기기 전이라도 fludrocortisone을 투여한다. 신생아·영아는 더 높은 용량(대개 100–200 μg/일)이 필요하며, 흔히 염화나트륨 1–2 g/일 보충이 필요하다.'],
+'T3':['K','소아의 목표 17OHP는 아침 투약 전 100–1200 ng/dL(3–36 nmol/L) 및/또는 연령에 맞는 안드로스테네디온이다. 의인성 쿠싱증후군 위험 때문에 17OHP를 정상화하려 해서는 안 된다.'],
+'T4':['K','사춘기에는 HC 청소율 증가로 더 높은 용량이 필요하나, 사춘기 초기 GC 용량은 최종 키와 음의 상관이 있어 17 mg/m²/일을 넘는 용량은 주의한다. 다학제 전환기 진료가 순응도를 높일 수 있다.'],
+'T5':['K','성인에서는 부신위기 위험을 최소화하고 안드로겐 과다를 조절하는 최저 용량을 처방한다. 즉시방출 HC가 선호되며, 순응이 어려우면 prednisolone/prednisone 1일 2회를 사용할 수 있다. Dexamethasone은 태반을 통과하므로 임신 중 피하며, TART 치료에는 단기간 사용한다.'],
+'T6':['K','추적에는 키, 체중, 혈압, 진찰과 일정한 시간의 17OHP, 안드로스테네디온, 혈장 레닌을 측정하며 ACTH는 필요 없다. 2세 이후 골연령 X선이 도움이 되며, 용량 조정은 검사 결과만이 아니라 임상 증상을 함께 고려한다.'],
+'A1':['K','부신위기 예방은 ‘sick day rules’에 대한 반복적·구조화된 환자 교육으로 가장 잘 이루어진다. 모든 환자는 의료 경고 식별표나 응급 카드를 지녀야 한다. Fludrocortisone은 질병 시 증량할 필요가 없다.'],
+'A2':['K','GC 치료를 받는 비고전형(NC) CAH 환자는 스트레스 용량이 권장된다. 치료받지 않는 NC CAH에서 ACTH 자극 검사 결과가 불충분하면(성인 코르티솔 14–18 μg/dL 미만) 중증 질환, 대수술, 중증 외상, 분만 시 HC 스트레스 용량을 제안한다.'],
+'N1':['K','NC CAH의 치료 시작은 주로 임상 증상에 근거하여 개별화하며, 미국내분비학회 지침은 무증상자에게 GC 치료를 일상적으로 권하지 않는다. GC가 필요하면 HC를 선호하며 fludrocortisone은 필요 없다.'],
+'N2':['K','NC CAH 여성에서 다모증이 주 증상이면 경구피임제가 선호 치료이며, 지속되는 다모증에는 항안드로겐을 추가할 수 있다. NC CAH 남성은 대개 치료가 필요 없고 TART가 드물어 일상적 음낭 초음파는 권하지 않는다.'],
+'N3':['K','NC CAH 여성의 난임 또는 반복 유산에는 일시적 GC 치료의 명확한 적응이 있다. GC 치료는 임신까지의 기간을 약 1년에서 6개월 미만으로 줄이고 유산율을 정상화한다.'],
+'P1':['K','위험 임신에서 산전 dexamethasone 치료(20 μg/kg/일, 최대 1.5 mg/일, 임신 6–7주까지 시작)는 여아의 외부생식기 남성화를 완화하지만, 이득을 볼 여아 1명당 8건의 위험 임신을 치료해야 한다. 내분비학회들은 이를 실험적 치료로 보고 장기 연구에 참여하는 센터에서만 시행해야 한다고 밝혔다.'],
+'S1':['K','여아 생식기 수술은 더 이상 응급 시술로 보지 않는다. 가족에게 수술하지 않거나 연기하는 선택지를 포함한 수술 선택지를 알리고, 가족, 내분비내과의, 외과의, 정신건강 전문가가 참여하는 공동 의사결정을 거쳐 숙련된 외과의가 시행해야 한다.'],
+'S2':['K','심리사회적 선별은 일반적(정신과 증상, 질병 대처)이고 특이적(신체상, 낙인, 성기능, 가임 우려)이어야 하며, 의학심리사를 포함한 포괄적·통합적 진료가 권장된다.'],
+'L1':['K','TART는 정기적 고환 초음파(작고 안정적이면 2–5년마다)로 감시하며, TART 부담이 증가하면 GC 치료를 최적화하고 정자 동결보존을 제안한다.'],
+'L2':['K','임신을 원하는 여성은 먼저 GC 치료를 최적화하여 안드로겐과 난포기 프로게스테론(&lt;0.6 ng/mL, &lt;2 nmol/L)을 정상화하고, 무기질코르티코이드 치료도 최적화하며, 실패하면 보조생식술을 사용한다.'],
+'L3':['K','체중 증가 억제, 비만 예방, 당뇨병(특히 임신성)과 이상지질혈증 선별을 위한 정기 추적과 생활습관 중재가 필요하다. 장기간 평균 이상의 GC 용량을 받았거나 비외상성 골절이 있으면 골밀도 선별이 권장되며, 성인 진료 전환 시와 이후 2–5년마다 선별하자는 제안도 있다.'],
+'X1':['K','CRHR1 길항제 등 새로운 치료는 대부분 GC 대체와 그 적정성 감시의 필요를 없애지 못한다. 양측 부신절제술은 부신위기와 부신잔여종양 위험으로 선호되지 않게 되었고, 성장호르몬(± GnRH 유사체)은 일반적으로 권고할 수 없다.']
+};
+const RID = id => id;
+
+const EXP = {
+bas:{t:'질환 개요와 임상형', ids:['E1','E2','E3','E4','E5'], p:[
+'CAH는 코르티솔을 합성하지 못하는 상염색체 열성 질환군으로, 90–99%가 <i>CYP21A2</i> 변이에 의한 21-수산화효소 결핍(21OHD)이다. 고전형은 신생아 선별 기준 1/14,000–18,000이며, 효소 활성이 심하게 감소하거나 없어 신생아기에 코르티솔 생성 장애가 나타난다. 가장 중증인 염분소실형은 잔여 활성이 거의 없어 코르티솔과 알도스테론이 결핍되고, 시상하부–뇌하수체–부신 축의 음성 되먹임 소실로 부신 안드로겐이 과다 생성된다. 치료하지 않으면 저나트륨혈증, 고칼륨혈증, 산증, 쇼크를 동반한 치명적 염분소실 위기가 빠르게 온다. 알도스테론을 조금 더 만드는 단순남성화형은 잔여 활성 1–5%이다.',
+'성선 발생은 정상이지만 산전 부신 안드로겐 과다로 46,XX 여아의 외부생식기가 다양하게 남성화된다(음핵 비대, 음순 융합). 뮐러관 발생은 정상이어서 생식 잠재력이 있다. 남아는 외부생식기가 정상이다. 안드로겐 과다는 빠른 성장과 골성숙 촉진으로 최종 키를 낮추며(메타분석에서 부모 중간키 대비 −1.03 SD, 약 7 cm), 조절이 불량하면 중추성 성조숙증, 여성의 다모증·월경불순·난임, 남성의 TART가 생긴다.',
+'비고전형(NC)은 잔여 활성 20–50%로 기저 코르티솔과 알도스테론은 정상이고 부신 안드로겐이 경도 상승하나, ACTH 자극 후 코르티솔이 불충분한 경우가 최대 30%이다. 소아는 조기 음모, 여드름, 골성숙 촉진, 청소년·성인 여성은 다모증, 희발월경, 여드름, 난임으로 나타나며, 남성은 흔히 무증상이다. 백인에서 유병률은 약 1/200로 추정된다.']},
+dx:{t:'신생아 선별과 진단', ids:['D1','D2','D3','D4'], p:[
+'#신생아 선별',
+'미국 50개 주와 35개국 이상이 선별을 시행한다. 1차는 건조혈반 17OHP 면역측정(대부분 DELFIA)이며 위양성률이 높다. 미숙아·질병·스트레스 영아는 17OHP가 높고(재태 29주에 효소 기능 최저인 ‘부신 미성숙’), 스웨덴 26년 자료에서 양성예측도는 만삭아 25%, 미숙아 1.4%였다. 17OHP는 정상 신생아에서 생후 며칠간 빠르게 감소하지만 21OHD에서는 증가하므로 두 번째 검체가 도움이 되며, 2회 선별 지역에서 발생률이 더 높았다. 산전 스테로이드는 위음성을 늘릴 수 있다. 선별로 진단된 영아는 저나트륨혈증이 덜 심하고 입원이 짧으며 중증 남성화 여아의 성별 결정 지연도 줄어든다.',
+'2차 선별: LC-MS/MS로 면역측정의 교차반응(17-OH 프레그네놀론 황산염, 15β-수산화 화합물)을 피할 수 있다. 21-deoxycortisol 측정과 (17OHP+안드로스테네디온)/코르티솔, 17OHP/11-deoxycortisol, (17OHP+21-deoxycortisol)/코르티솔 같은 비로 양성예측도가 최대 67–71%까지 보고되었다. 같은 건조혈반에서 <i>CYP21A2</i> 유전형 분석도 가능하나 대규모 검증은 없다.',
+'#생화학 검사',
+'질량분석은 가장 다재다능하고 정확한 스테로이드 분석법이다. GC-MS는 소변 스테로이드 대사체 분석에 특히 유용하여 효소 결함별 고유 패턴(대사형)을 보여주며 대개 무작위 소변으로 충분하다. LC-MS/MS는 처리량이 많아 혈청·혈장 스테로이드 측정의 표준이 되었으며 두 방법은 상호보완적이다.',
+'#유전 검사',
+'유사유전자 <i>CYP21A1P</i>와의 높은 서열 유사성 때문에 유전자 특이적 PCR 설계가 중요하다. MLPA로 결실·재배열·융합 유전자를, 직접 염기서열분석으로 점돌연변이를 검출한다.',
+'#산전진단',
+'융모막 채취(임신 10–11주)나 양수천자(12–14주)는 소량의 태아 소실 위험이 있다. 세포유리 태아 DNA의 표적 대량 병렬 염기서열분석으로 부모 일배체형을 구성하는 방법이 유망하나 아직 일상 진료는 아니다. 착상 전 유전진단(PGD)은 체외수정으로 변이 없는 배아만 이식할 수 있다.']},
+tx:{t:'고전형 CAH의 호르몬 치료', ids:['T1','T2','T3','T4','T5','T6'], p:[
+'치료 목표는 GC와 필요 시 무기질코르티코이드를 보충하여 부신·염분소실 위기를 예방하고 과도한 ACTH에 의한 부신 안드로겐 분비를 줄이는 것이다. 대규모 무작위 시험은 없어 근거는 대체로 낮거나 중등도이다. GC 보충은 세 가지 어려움이 있다: 일주기 리듬 재현, 스트레스 적응 재현, 그리고 ACTH 억제를 위해 생리적 용량 이상이 필요하다는 점이다. 따라서 과치료(성장, 대사, 심혈관, 골 부작용)와 저치료(부신위기, 남성화, 골성숙 촉진) 사이에서 균형을 잡아야 한다.',
+'#신생아·영아',
+'일부 임상의는 안드로겐을 빨리 낮추려 초기에 권장 용량을 넘기기도 하나 그 경우 더 자주 감시하여 빠르게 감량해야 한다. 몇 달 후에는 대개 HC 하루 약 3–4 mg(1–2 mg 1일 3회)이면 충분하다. 영아는 안드로겐 감수성이 낮아 첫해에 완전한 억제를 목표로 하지 않는다. 상용 HC 정제를 부수어 음식에 섞는 방법이 조제약보다 선호되며, 즉시방출 과립 제형(Infacort/Alkindi)이 승인되었다. Fludrocortisone 0.1 mg은 HC 약 1 mg의 GC 효력이 있어 고용량이면 HC를 줄일 수 있다. 전해질, 혈장 레닌, 혈압을 자주 감시하며 의인성 고혈압을 피하도록 감량한다.',
+'#소아',
+'18개월 미만은 최소 3개월마다, 이후 4–6개월마다 또는 용량 변경 후 더 자주 감시한다. 장기작용 GC는 호르몬 조절 회복을 위한 짧은 기간이나 HC를 쓸 수 없을 때가 아니면 피한다. 영아기 이후 fludrocortisone은 대개 50–200 μg이며, 반감기가 18–36시간이어서 하루 1회 투여할 수 있다.',
+'#사춘기와 전환기',
+'사춘기에는 11β-HSD1 활성 감소로 HC 청소율이 증가한다. 성장 완료 무렵 장기작용 GC를 고려할 수 있으나 선호되지 않는다. 여성은 비만과 고안드로겐혈증이 흔하여 전환기에 부인과 평가를 제공하고, 남성은 사춘기 완료 시 고환 초음파를 시행한다. 무기질코르티코이드 요구량도 재평가한다.',
+'#성인',
+'HC는 dexamethasone보다 골밀도와 대사·심혈관 결과가 좋으며 prednisolone/prednisone은 중간이다. 순응이 어려우면 prednisolone/prednisone(1회 1–5 mg, 총량은 이전 HC의 20–25%) 1일 2회를 쓸 수 있고, 임신 유도에도 사용되며 임신 중 지속할 수 있다. 변형방출 HC(Plenadren)는 CAH 자료가 없고, 지연·지속방출 HC(Chronocort)는 23시와 7시 투여로 아침 안드로겐 조절이 우수했다.',
+'#모니터링',
+'소아는 신장 속도, 체중 증가, 피부 과색소침착, 남성화, 음모, 아포크린 체취, 중추성 성조숙 징후를 본다. 혈장 레닌은 변동이 커 기립 혈압과 전해질과 함께 무기질코르티코이드 용량 조정에 사용한다. 21-deoxycortisol과 11-산소화 안드로겐이 더 직접적인 지표로 제안되었다.']},
+ac:{t:'부신위기', ids:['A1','A2'], p:[
+'스웨덴 연구에서 부신위기는 CAH 사망의 42%를 차지했고 염분소실형이 특히 위험했다. 영국 연구에서 CAH의 평균 사망 연령은 54.8세로 대조군 72.8세보다 낮았다. 성인 부신기능저하증의 부신위기 발생은 100환자년당 5–10건, 사망률은 0.5건이며, 소아에서도 신생아기 이후 4.9–6.5건으로 비슷하다. 감염, 특히 위장관·상기도 질환이 가장 흔한 유발 요인이다. 학령 전 소아, 청소년, 남성, 염분소실형에서 스트레스 용량이 필요한 날이 많았다.',
+'저혈당은 예기치 않게 발생하여 경련과 영구 신경학적 후유증을 남길 수 있으며, 염분소실형은 부신수질 기능 장애로 에피네프린이 결핍되어 저혈당 위험이 높다. 소아의 나쁜 결과는 전해질 이상보다 저혈당과 더 관련되므로 탄수화물을 자주 섭취하는 것이 중요하다. NC CAH 환자의 약 1/3은 경미한 무증상 코르티솔 장애가 있으며, 부신위기는 GC 치료로 시상하부–뇌하수체–부신 축이 억제된 NC 환자에서만 보고되었다.']},
+nc:{t:'비고전형 CAH의 치료', ids:['N1','N2','N3'], p:[
+'NC CAH는 고전형과 달리 일반 지침이 없고 근거 수준이 낮다. 소아는 키, 체중, 안드로겐 과다, 사춘기, 골연령을 정기적으로 관찰한다. 미치료 단순남성화형과 달리 NC 소아는 성장 속도가 빠르지 않을 수 있으나 골연령이 앞서 최종 키가 줄 수 있다. 그러나 대부분 연구는 거의 정상인 최종 키를 보고한다. GC는 안드로겐 과다가 있는 환자에 한정하며, 고전형과 비슷한 초생리적 용량이 필요할 수 있고, 최종 키 도달 후 무증상이면 중단할 수 있다. 사춘기 여성에서는 저안드로겐성 프로게스틴을 함유한 경구피임제가 대안이다.',
+'성인 여성의 치료 목표는 부신 안드로겐과 그 증상을 줄이는 것이며, 치료를 원하는 증상성 환자에서만 시작한다. 다모증에는 경구피임제, 국소 eflornithine, 미용 처치의 병합이 가장 효과적일 수 있다. Cyproterone acetate, chlormadinone acetate, dienogest, drospirenone 함유 경구피임제가 효과적이며, 30명 무작위 연구에서 cyproterone acetate가 HC보다 다모증에 더 효과적이었다. Spironolactone, flutamide, finasteride는 기형유발성이 있다.',
+'NC CAH 여성의 53–68%는 치료 없이 자연 임신한다. 유산율은 일부 연구에서 25%로 일반 인구(6%)보다 높았으나, 임신 전과 임신 중 저–중등도 용량의 HC, prednisolone, prednisone으로 정상화할 수 있다.']},
+pre:{t:'산전 dexamethasone 치료', ids:['P1'], p:[
+'임신 6–7주까지 시작하면 효과가 있는데, 대부분의 센터에서는 태아 진단 이전이다. 융모막 채취(10–11주)로 고전형 CAH 여아로 확인되면 만삭까지 지속하고 아니면 중단한다. 무작위 연구는 없으며 안전성 우려로 논란이 크다. 동물 연구에서 뇌, 심혈관, 신장, 생식, 갑상선, 대사 기능의 이상이 보고되었다. 1삼분기 GC 노출과 구순구개열의 오즈비는 1.41이었다. 치료받은 신생아는 출생체중이 평균 약 400 g 낮았다. 인지·행동에 대한 장기 영향은 일관되지 않으나, 스웨덴 연구에서 1삼분기만 노출된 비CAH 아동에서 언어 작업기억 저하가 관찰되었고 만삭까지 치료한 CAH 여아에서 광범위한 인지 결손이 보고되었다.']},
+sx:{t:'생식기 수술과 심리사회적 진료', ids:['S1','S2'], p:[
+'여아 남성화는 Prader 분류로 표시하며 수술 시기, 1단계·2단계 여부, 기법에 영향을 준다. 조기 수술 지지 근거는 조직 탄력성, 수질자궁질 예방, 부모 고통 감소이고, 반대 근거는 신체 온전성, 아동의 동의 불가, 음핵 감각·성기능 결과 불만족, 성별 비이분적 정체성의 수용이다. 29개 관찰연구(1178명) 메타분석에서 수술받은 여성의 88.7%가 여성 성정체성, 76.2%가 이성애였고, 여성성기능지수는 25.13(위험 기준 26)으로 낮았으며 질 협착이 가장 흔한 합병증이었다. 환자 79.4%와 의료진 71.8%가 결과에 만족했다. 조기 대 지연 수술을 비교한 연구는 없다.',
+'심리적 위험 요인은 일반적 요인(만성질환)과 CAH 특이적 요인(산전 안드로겐, 생식기 차이, 반복 진찰과 사진 촬영)이 있다. CAH에 특화된 정신건강 중재는 없으며, 발달 단계에 맞춘 반복적 심리교육 상담이 필요하다.']},
+lt:{t:'장기 후유증', ids:['L1','L2','L3'], p:[
+'#남성 생식',
+'TART는 양측성(70–100%)이고 통증이 없으며, 유병률은 청소년 평균 25%, 성인 46%이다. 2 cm 미만은 촉진으로 찾기 어려우며 초음파와 MRI의 민감도가 비슷하나 초음파가 저렴하다. 중심부 위치로 정세관을 막아 무정자증과 비가역적 섬유화를 일으킬 수 있다. 악성 가능성이 있는 라이디히세포종양(대개 일측성, 에스트로겐 생성, Reinke 결정체)과 감별해야 한다. 고환보존 수술은 대개 성선 기능을 개선하지 못한다. 조절 불량 시 부신 안드로겐의 방향화로 저생식샘자극호르몬 생식샘저하증이 생긴다. 스웨덴 자료에서 신생아 선별 이전 출생자만 자녀 출산이 감소했다.',
+'#여성 생식',
+'잘 조절되면 초경 연령은 정상이다. 다낭성난소 양상이 성인 20–50%에서 보고된다. 여성의 출산율 감소의 주요 원인은 모성 추구가 적은 것이며, 시도하면 성공률은 높아지고 있다. 임신 결과는 좋으며 태반 방향화효소가 태아를 보호한다. 3삼분기에 GC와 fludrocortisone 증량이 흔히 필요하고 임신성 당뇨병이 비교적 흔하다.',
+'#심혈관·대사·골',
+'비만과 복부 내장지방이 증가하고, 메타분석에서 HOMA-IR, 수축기·이완기 혈압(4.44/2.35 mmHg), 경동맥 내중막 두께가 약간 높았다. 스웨덴 연구에서 고혈압, 이상지질혈증, 심방세동, 정맥혈전색전증이 증가했고 심혈관 사망은 부신위기 다음으로 흔한 사망 원인이었다. 메타분석에서 골밀도가 약간 낮았고 성인 여성은 골절이 더 많았다. HC는 장기작용 GC, 특히 dexamethasone보다 골밀도에 덜 영향을 준다.']},
+nw:{t:'새로운 치료', ids:['X1'], p:['Fig. 5의 새로운 접근: 변형방출 GC나 피하 HC 지속 주입으로 일주기 코르티솔을 재현하고, CRHR1 길항제(tildacerfont, crinecerfont), ACTH 항체, MC2R 길항제, 부신용해제, 스테로이드 생성 효소·수용체 억제제로 초생리적 GC 노출 없이 안드로겐을 줄이려 한다. Flutamide와 testolactone을 HC 8 mg/m²/일과 병용한 2년 무작위 시험에서 성장과 골성숙이 정상화되었다. Abiraterone acetate는 6명 여성에서 안드로스테네디온을 정상화했으며 사춘기 전 소아 시험이 진행 중이다. Nevanimibe는 1차 목표 달성 20%로 ‘내과적 부신절제술’을 지지하지 않는다. 양측 부신절제술 48예 중 71%가 증상 호전을 보였으나 장기 부작용(부신위기, 부신잔여종양)으로 선호되지 않는다. 세포 재프로그래밍과 AAV 유전자 치료는 동물 모델에서 시험 중이다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+dx:{tab:'진단', fig:'본문 구성', aria:'21-수산화효소 결핍 CAH 진단 순서도', w:760, h:560,
+ nodes:[
+  {id:'n_nbs', x:230,y:10, w:300,h:56, label:'신생아 선별검사<small>건조혈반 17OHP 면역측정(DELFIA)</small>', cls:'test fac'},
+  {id:'n_adj', x:560,y:10, w:190,h:90, label:'위양성·위음성 요인<small>미숙아·질병·스트레스 · 생후 2일 이내 · 산전 스테로이드</small>', cls:'fac'},
+  {id:'n_pos', x:230,y:100,w:300,h:44, label:'1차 양성', cls:'mal'},
+  {id:'n_t2',  x:230,y:175,w:300,h:70, label:'2차 선별<small>LC-MS/MS 스테로이드 비(21-deoxycortisol 등) 또는 <i>CYP21A2</i> 유전형</small>', cls:'test fac'},
+  {id:'n_cl',  x:10, y:275,w:195,h:90, label:'선별 외 경로<small>여아 생식기 남성화 · 염분소실 위기 · 소아·성인기 안드로겐 과다</small>', cls:'fac'},
+  {id:'n_conf',x:230,y:280,w:300,h:70, label:'확진 평가<small>혈청 스테로이드(LC-MS/MS·GC-MS) · 전해질 · 외부생식기 진찰</small>', cls:'test fac'},
+  {id:'n_gen', x:230,y:385,w:300,h:70, label:'<i>CYP21A2</i> 유전 검사<small>MLPA + 직접 염기서열 · 부모 보인자 검사로 phase 확인</small>', cls:'test fac'},
+  {id:'n_pd',  x:560,y:385,w:190,h:70, label:'산전진단<small>융모막·양수 · 세포유리 태아 DNA</small>', cls:'fac'},
+  {id:'n_sw',  x:10, y:490,w:230,h:60, label:'고전형 염분소실형<small>잔여 활성 거의 없음</small>', cls:'mal fac'},
+  {id:'n_sv',  x:265,y:490,w:230,h:60, label:'고전형 단순남성화형<small>잔여 활성 1–5%</small>', cls:'mal fac'},
+  {id:'n_nc',  x:520,y:490,w:230,h:60, label:'비고전형<small>잔여 활성 20–50%</small>', cls:'fac'}
+ ],
+ edges:[
+  [A(380,66,380,100),1],[A(530,38,560,38),1,'dot'],[A(380,144,380,175),1],[A(380,245,380,280),1],[A(205,315,230,315),1],
+  [A(380,350,380,385),1],[A(530,420,560,420),1,'dot'],
+  [A(380,455,380,472),0],['M125 472 H635',0],[A(125,472,125,490),1],[A(380,472,380,490),1],[A(635,472,635,490),1]
+ ], labels:[]},
+st:{tab:'스테로이드 생성', fig:'Fig. 1 요약', aria:'부신 스테로이드 생성 경로', w:760, h:560,
+ nodes:[
+  {id:'s_chol', x:290,y:10, w:180,h:40, label:'콜레스테롤'},
+  {id:'s_preg', x:30, y:95, w:170,h:44, label:'프레그네놀론'},
+  {id:'s_17p',  x:295,y:95, w:170,h:44, label:'17OH-프레그네놀론'},
+  {id:'s_dhea', x:560,y:95, w:170,h:44, label:'DHEA'},
+  {id:'s_prog', x:30, y:210,w:170,h:44, label:'프로게스테론'},
+  {id:'s_17ohp',x:295,y:210,w:170,h:44, label:'17OHP', cls:'mal'},
+  {id:'s_a4',   x:560,y:210,w:170,h:44, label:'안드로스테네디온', cls:'mal'},
+  {id:'s_doc',  x:30, y:325,w:170,h:44, label:'11-데옥시코르티코스테론'},
+  {id:'s_11dc', x:295,y:325,w:170,h:44, label:'11-데옥시코르티솔'},
+  {id:'s_t',    x:560,y:325,w:170,h:44, label:'테스토스테론', cls:'mal'},
+  {id:'s_aldo', x:30, y:440,w:170,h:56, label:'알도스테론<small>사구대 · 21OHD에서 감소</small>', cls:'fac'},
+  {id:'s_cort', x:295,y:440,w:170,h:56, label:'코르티솔<small>속상대 · 21OHD에서 감소</small>', cls:'fac'},
+  {id:'s_dht',  x:560,y:440,w:170,h:56, label:'DHT · 11-oxo 안드로겐<small>망상대·말초</small>', cls:'mal fac'},
+  {id:'s_def',  x:200,y:515,w:360,h:40, label:'효소 결핍별 비교', cls:'test'}
+ ],
+ edges:[
+  ['M380 50 V70 H115 V95',1],
+  [A(200,117,295,117),1],[A(465,117,560,117),1],
+  [A(115,139,115,210),1],[A(380,139,380,210),1],[A(645,139,645,210),1],
+  [A(200,232,295,232),1],[A(465,232,560,232),1,'dot'],
+  [A(115,254,115,325),1],[A(380,254,380,325),1],[A(645,254,645,325),1],
+  [A(115,369,115,440),1],[A(380,369,380,440),1],[A(645,369,645,440),1],
+  ['M465 248 H520 V470 H560',1,'dot']
+ ], labels:[[206,110,'CYP17A1 17α'],[470,110,'17,20-분해'],[122,180,'3β-HSD2'],[387,180,'3β-HSD2'],[652,180,'3β-HSD2'],
+  [208,225,'CYP17A1'],[470,226,'(미약)'],[122,295,'CYP21A2','sec'],[387,295,'CYP21A2','sec'],[652,295,'HSD17B'],
+  [122,410,'CYP11B2'],[387,410,'CYP11B1'],[652,410,'SRD5A'],[526,400,'backdoor'],[388,64,'StAR · CYP11A1']]},
+tx:{tab:'치료·관리', fig:'Table 3·5·7', aria:'고전형 CAH 치료와 관리 순서도', w:760, h:600,
+ nodes:[
+  {id:'t_cl',  x:230,y:10, w:300,h:44, label:'고전형 CAH'},
+  {id:'t_inf', x:10, y:90, w:235,h:150,label:'신생아·영아<small>HC 10–15 mg/m²/일 3–4회(수개월 후 1–2 mg 1일 3회) · fludrocortisone 100–200 μg/일 · NaCl 1–2 g/일</small>', cls:'tx fac'},
+  {id:'t_ch',  x:262,y:90, w:235,h:150,label:'소아<small>HC 10–15 mg/m²/일 3–4회 · fludrocortisone 50–200 μg · 장기작용 GC 피함</small>', cls:'tx fac'},
+  {id:'t_ad',  x:515,y:90, w:235,h:150,label:'사춘기·성인<small>사춘기 증량(&gt;17 mg/m² 주의) · 성인 HC 15–25 mg 2–3회 또는 prednisolone 4–6 mg · 전환기 진료</small>', cls:'tx fac'},
+  {id:'t_mon', x:150,y:280,w:460,h:90, label:'모니터링<small>키·체중·혈압·진찰 · 아침 투약 전 17OHP·안드로스테네디온·레닌 · 2세 이후 골연령 · ACTH 불필요</small>', cls:'test fac'},
+  {id:'t_st',  x:10, y:410,w:360,h:110,label:'스트레스 용량 (sick day)<small>고열·중증 질환: 평소 HC 3배 · 경미한 질환: 2–3배 · 구토 반복 시 HC 100 mg 근주(소아 50–100 mg/m²)</small>', cls:'mal fac'},
+  {id:'t_cr',  x:400,y:410,w:350,h:110,label:'부신위기<small>생리식염수 1 L/1시간(소아 20 mL/kg) · HC 100 mg 정주(소아 50–100 mg/m²) 후 200 mg/24시간 · 저혈당 교정</small>', cls:'mal fac'},
+  {id:'t_lt',  x:150,y:545,w:460,h:50, label:'장기 합병증 감시', cls:'test'}
+ ],
+ edges:[
+  [A(380,54,380,72),0],['M127 72 H632',0],[A(127,72,127,90),1],[A(380,72,380,90),1],[A(632,72,632,90),1],
+  ['M127 240 V260 H632 V240',0],[A(380,260,380,280),1],
+  ['M300 370 V390 H190 V410',1],['M470 370 V390 H575 V410',1],[A(370,465,400,465),1,'dot'],[A(385,370,385,545),1]
+ ], labels:[]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paras}<p class="exp-src">Claahsen-van der Grinten HL, et al. Endocr Rev 2022;43:91–159 본문 번역·요약. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows, cap) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${cap?`<p class="small" style="color:var(--muted)">${cap}</p>`:''}`;
+const TAB3 = tbl(['약물','하루 총 권장 용량','분할 횟수'],[['<b>소아</b>','',''],['Hydrocortisone','10–15 mg/m²','3–4'],['Fludrocortisone','0.05–0.2 mg','1–2'],['염화나트륨 보충','영아기 1–2 g (17–24 mEq/일)','여러 번'],['<b>성인</b>','',''],['Hydrocortisone','15–25 mg','2–3'],['Prednisone','5–7.5 mg','2'],['Prednisolone','4–6 mg','2'],['Methylprednisolone','4–6 mg','2'],['변형방출 HC (Plenadren)','15–25 mg','CAH 자료 없음, 경험상 아침 외에 저녁 투여 필요'],['지연·변형방출 HC (Chronocort)<sup>a</sup>','15–25 mg','2 (23시 2/3, 7시 1/3)'],['Dexamethasone<sup>b</sup>','0.25–0.5 mg','1'],['Fludrocortisone','0.05–0.2 mg','1']],'Table 3. 고전형 CAH의 유지 치료. a 당시 미출시, 3상 연장 연구에서만 사용. b 가능하면 피하거나 단기간으로 제한. 본문은 영아 NaCl을 “1–2 g(4–8 mEq/kg/일)”로 표기한다.');
+const TAB4 = tbl(['약제','적응','장점','단점'],[['Hydrocortisone','GC 보충의 선호 선택','대사·심혈관·골 건강 장기 결과가 가장 좋음','반감기 짧아 1일 3회, 야간 부신 안드로겐 억제 실패 가능'],['Prednisolone (prednisone)','월경주기 조절, 임신 유도, 1일 3회 HC 순응 불량 시','반감기 길어 1일 2회, 순응도 개선 가능','HC보다 대사·심혈관·골 부작용 가능성 높음'],['Dexamethasone','임신 유도, TART 치료','강한 부신 억제, 가장 긴 반감기, 흔히 1일 1회','대사·골 부작용 가장 많음, 태반 통과']],'Table 4. GC 제제별 적응');
+const TAB5 = tbl(['검체','지표','목표와 해설<sup>a</sup>'],[['혈청','안드로스테네디온','성별·연령 정상값(남성은 테스토스테론과 함께)'],['','테스토스테론','성별·연령 정상값(생식샘자극호르몬, 안드로스테네디온과 함께)'],['','SHBG','유리·생체이용 테스토스테론 계산용'],['','DHEAS','낮거나 억제됨, 조절 지표로는 부적합하나 순응도 확인에 사용'],['','17OHP','정상값은 과치료를 뜻함, ULN–400–1200 ng/dL(12–36 nmol/L)을 목표'],['','ACTH','조절 지표로 유용하지 않음, 정상값은 과치료를 뜻함'],['','안드로스테네디온/테스토스테론 비','건강한 여성 &lt;2, CAH 여성 &gt;4면 주로 부신 기원 · 건강한 남성 &lt;0.2, CAH 남성 &gt;0.5면 주로 부신 기원, &gt;1.0 + LH·FSH 억제면 조절 불량으로 전적으로 부신 기원'],['','프로게스테론(여성)','임신 시도 여성은 난포기 &lt;2 nmol/L(&lt;0.6 ng/mL)'],['','11-산소화 C19 스테로이드','연구 단계, 진료 미확립'],['타액','안드로스테네디온','성별·연령 정상값'],['','17OHP','정상 상한의 약 3배까지'],['소변','GC-MS 스테로이드 대사체','연구 단계, 진료 미확립']],'Table 5. GC 보충의 생화학적 모니터링. a 확립된 최적 지표와 목표값이 없어 임상 경험과 전문가 의견에 근거함. 소아 목표 17OHP는 본문에서 100–1200 ng/dL(3–36 nmol/L)로 제시된다.');
+const TAB6 = tbl(['항목','목표'],[['부신기능저하 증상(피로, 두통, 오심, 복통, 기립성 어지럼, 잦은 스트레스 용량)','부신기능저하 징후 없음'],['부신위기 예방','sick day 지식과 준비가 갖춰진 환자'],['월경주기, 성욕·발기, 성 건강','규칙적 월경, 통증 없는 성교'],['키(소아), 사춘기 발달','목표 범위 내 선형 성장, 정상 사춘기'],['혈압, BMI','연령·성별 참고범위 내'],['쿠싱 양상, 피부선조','고코르티솔혈증 징후 없음'],['고환 초음파(남성)','성선 종괴 없음'],['골밀도','정상(WHO 기준)'],['부인과 평가','필요 시에만 · 난소 초음파는 설명되지 않는 고안드로겐혈증에서만'],['정액검사','필요 시(예: TART 있는 남성)'],['유전 평가와 상담','']],'Table 6. 병력과 진찰에 의한 모니터링 (성인 4–6개월, 18개월 초과 소아 3–4개월마다)');
+const TAB7 = tbl(['상황','GC 관리','추가 고려'],[['중증 질환·고열(소아 &gt;39°C)','소아: 평소 HC 3배를 4회(6시간마다) · 성인: HC 20 mg 1일 3회 추가 또는 평소의 3배','수분과 탄수화물 섭취(소아 15 g, 성인 30 g), 성인 중증 감염은 6시간마다 분할, 조기 비경구 HC 고려'],['경미한 질환·미열(소아 &gt;38°C)','소아: 평소 HC 2–3배를 3–4회 · 성인: HC 10 mg 1일 3회 추가 또는 평소의 2배','회복 후 1일 내 평소 용량'],['설사 ± 구토 위장염','소아: 3배 4회 · 성인: HC 10–20 mg 3–4회 추가 또는 2–3배','투약 1시간 내 구토 시 반복, 재발 시 HC 100 mg 비경구(소아 50–100 mg/m²), 수분 섭취 불가 시 응급 연락'],['격렬한 운동','소아 평소 1회분 또는 성인 HC 10 mg을 30–60분 전 추가','일상 운동에는 사용하지 않음'],['대수술','HC 50–100 mg 정주(소아 50–100 mg/m²) 후 100–200 mg/24시간 지속(소아 100 mg/m²)','2–3일에 걸쳐 감량'],['단시간 수술','전신마취 직전 HC 50–100 mg 근주·정주(소아 50 mg/m²) 또는 아침 용량 3배','빠르게 경구로 복귀'],['분만','수술과 같음',''],['대장 처치(밤새 하제)','하제 전 평소의 2–3배, 6시간마다 반복 또는 HC 50–100 mg 근주','회복에 따라 반복'],['치과 수술','HC 50 mg(소아 50 mg/m²) 근주·정주','일상 치과 처치는 추가 불필요'],['진정 없는 소시술','수술 1시간 전 아침 용량 추가 · 조정 불필요',''],['급성 응급','0.9% NaCl 1000 mL(소아 20 mL/kg, 최대 60 mL/kg) 첫 1시간 · HC 100 mg(소아 50–100 mg/m²) 정주 후 200 mg/24시간 지속 또는 50 mg 6시간마다, 다음 날 100 mg/24시간','저혈당: 포도당 0.5–1 g/kg 또는 D25W 2–4 mL/kg(최대 25 g) 천천히, 12세 미만은 D10W 5–10 mL/kg · 혈당·전해질, 심전도 감시, 항생제 고려']],'Table 7. 스테로이드 스트레스 용량. HC sodium succinate가 없으면 동등 용량의 다른 비경구 GC를 사용한다. HC가 하루 50 mg을 넘으면 fludrocortisone은 필요 없다.');
+const DEF = tbl(['결핍','주요 스테로이드 변화','임상 양상'],[['21-수산화효소(<i>CYP21A2</i>)','17OHP, 21-deoxycortisol, 안드로겐 증가 · 코르티솔·알도스테론 감소','CAH의 90–99%. 여아 남성화, 염분소실, 11-oxo 안드로겐이 비교적 특이적'],['11β-수산화효소(<i>CYP11B1</i>)','DOC 증가, 코르티솔 감소, 부신 성스테로이드 증가','여아 남성화, 무기질코르티코이드 고혈압, 신생아 17OHP 상승으로 21OHD로 오진 가능'],['17α-수산화효소/17,20-분해효소(<i>CYP17A1</i>)','DOC·코르티코스테론 증가, 성스테로이드 결핍','46,XY 여성 표현형, 성적 유치증, 고혈압 · 브라질·중국 외 드묾'],['3β-HSD2(<i>HSD3B2</i>)','Δ5/Δ4 비(17OH-Preg/17OHP) 정상의 +8 SD 초과','양성 모두 DSD, 간 HSD3B1로 17OHP가 올라 신생아 선별 위양성'],['P450 산화환원효소(<i>POR</i>)','17OHP 증가, 성스테로이드 낮음, 전해질 정상','양성 모두 DSD, Antley–Bixler 골격 기형, 임신부 남성화 가능'],['StAR / <i>CYP11A1</i>','거의 모든 스테로이드 결핍','46,XY 여성 표현형, 지질 CAH는 부신이 매우 큼'],['알도스테론 합성효소(<i>CYP11B2</i>)','알도스테론만 결핍','저나트륨·고칼륨혈증, 코르티솔 정상, 21OHD보다 경함']],'본문 “Basic principles of steroid synthesis” 요약');
+const D = {
+n_nbs:{kind:'출발점', title:'신생아 선별검사', next:['n_pos','n_adj'], body:`${R('D1')}`},
+n_adj:{kind:'주의', title:'위양성·위음성 요인', next:[], body:`<ul><li>미숙아(재태 29주에 효소 기능 최저), 질병, 스트레스: 17OHP 상승</li><li>생후 2일 이내: 정상아도 17OHP가 높음</li><li>산전 스테로이드: 위음성 가능</li><li>여아: 평균 17OHP가 낮아 민감도 약간 저하</li><li>면역측정 교차반응: 17-OH 프레그네놀론 황산염, 15β-수산화 화합물</li></ul>`},
+n_pos:{kind:'결과', title:'1차 양성', next:['n_t2'], body:`<p>희귀 질환이어서 민감도와 특이도가 높아도 양성예측도는 낮다.</p>`},
+n_t2:{kind:'2차 선별', title:'2차 선별', next:['n_conf'], body:`${R('D2')}`},
+n_cl:{kind:'임상 경로', title:'선별 외 진단 경로', next:['n_conf'], body:`<p>남아는 생식기 모호성이 없어 진단이 늦어지기 쉽다. 중증 남성화 여아도 진찰에서 놓칠 수 있다. 단순남성화형 남아와 경도 남성화 여아는 소아기 후반까지 진단되지 않아 키가 이미 손해를 볼 수 있다.</p>${R('E3')}`},
+n_conf:{kind:'확진', title:'확진 평가', next:['n_gen'], body:`<p>질량분석이 가장 정확하다. GC-MS 소변 스테로이드 대사체는 효소 결함별 고유 패턴을 보이며 무작위 소변으로 충분하다. 다른 효소 결핍과의 감별은 ‘스테로이드 생성’ 탭의 효소 결핍 비교를 참조한다.</p>`},
+n_gen:{kind:'유전', title:'CYP21A2 유전 검사', next:['n_sw','n_sv','n_nc'], body:`${RR('D3','E2')}`},
+n_pd:{kind:'산전', title:'산전진단', next:[], body:`${RR('D4','P1')}`},
+n_sw:{kind:'임상형', title:'고전형 염분소실형', next:['t_cl'], body:`<p>코르티솔과 알도스테론이 모두 결핍되고, 치료하지 않으면 저나트륨혈증, 고칼륨혈증, 산증, 쇼크를 동반한 염분소실 위기가 빠르게 온다.</p>${R('E3')}`},
+n_sv:{kind:'임상형', title:'고전형 단순남성화형', next:['t_cl'], body:`<p>알도스테론을 조금 더 생성하여 급성 염분소실 위기는 덜하지만 코르티솔 결핍과 부신 안드로겐 과다는 현저하다. 고전형 모두 적어도 첫해에는 GC와 보조적 무기질코르티코이드 치료가 이롭다. 알도스테론 결핍은 고전형의 75–90%에서 보고되며 이제는 연속적 표현형으로 본다.</p>`},
+n_nc:{kind:'임상형', title:'비고전형', next:[], body:`${RR('N1','N2','N3','A2')}`},
+
+s_chol:{kind:'출발점', title:'콜레스테롤과 StAR·CYP11A1', next:['s_preg'], body:`<p>스테로이드 생성은 콜레스테롤이 StAR에 의해 미토콘드리아 내막으로 들어가 CYP11A1(P450scc)에 의해 프레그네놀론으로 전환되면서 시작된다. StAR 변이는 지질 CAH, CYP11A1 결함은 임상·호르몬상 구별되지 않으며 지질 CAH만 부신이 매우 크다.</p>${DEF}`},
+s_preg:{kind:'스테로이드', title:'프레그네놀론', next:['s_prog','s_17p'], body:`<p>3β-HSD2에 의해 프로게스테론으로, CYP17A1의 17α-수산화효소 활성에 의해 17OH-프레그네놀론으로 전환된다. CYP17A1은 사구대에는 없어 무기질코르티코이드가, 속상대에는 17α-수산화효소만 있어 코르티솔이, 망상대에는 두 활성 모두 있어 C19 성스테로이드 전구체가 만들어진다.</p>`},
+s_17p:{kind:'스테로이드', title:'17OH-프레그네놀론', next:['s_17ohp','s_dhea'], body:`<p>CYP17A1의 17,20-분해효소 활성으로 DHEA가 된다. 17,20-분해효소 활성은 POR과 시토크롬 b5에 의한 전자 전달로 조절된다.</p>`},
+s_dhea:{kind:'스테로이드', title:'DHEA', next:['s_a4'], body:`<p>망상대의 주요 C19 산물은 DHEA와 DHEAS이며, DHEA는 안드로스테네디온으로 효율적으로 전환된다.</p>`},
+s_prog:{kind:'스테로이드', title:'프로게스테론', next:['s_doc'], body:`<p>사구대에서 CYP21A2가 프로게스테론을 21-수산화하여 11-데옥시코르티코스테론(DOC)을 만든다. 간의 다른 효소도 약간의 21-수산화 활성이 있으나 고전형의 GC 결핍을 보상하지 못한다.</p>`},
+s_17ohp:{kind:'21OHD 핵심', title:'17OHP', next:['s_11dc','s_dht'], body:`<p>CYP21A2의 주 기질로 속상대에서 11-데옥시코르티솔로 전환된다. 21OHD에서 17OHP가 축적되어 (1) 21-deoxycortisol이 생기고, (2) 인간 CYP17A1은 17OHP를 안드로스테네디온으로 잘 전환하지 못하지만 일부 전환되며, (3) ‘backdoor’ 경로로 DHT가 만들어져 태아 여아 남성화의 주요 기여 요인이 된다.</p>${R('T3')}`},
+s_a4:{kind:'21OHD에서 증가', title:'안드로스테네디온', next:['s_t'], body:`<p>모니터링의 핵심 지표이다(Table 5).</p>${TAB5}`},
+s_doc:{kind:'스테로이드', title:'11-데옥시코르티코스테론(DOC)', next:['s_aldo'], body:`<p>11β-수산화효소 결핍과 17α-수산화효소 결핍에서 증가하여 무기질코르티코이드 고혈압을 일으킨다.</p>`},
+s_11dc:{kind:'스테로이드', title:'11-데옥시코르티솔', next:['s_cort'], body:`<p>CYP11B1이 코르티솔로 전환한다. CYP11B1은 망상대에서 11-oxo 경로도 시작한다.</p>`},
+s_t:{kind:'21OHD에서 증가', title:'테스토스테론', next:['s_dht'], body:`<p>부신에서는 망상대의 AKR1C3(HSD17B5)가 소량의 테스토스테론을 만든다. 남성에서는 안드로스테네디온/테스토스테론 비로 부신 기원을 판단할 수 있다.</p>`},
+s_aldo:{kind:'최종 산물', title:'알도스테론', next:[], body:`<p>사구대에서 CYP11B2가 11β-수산화, 18-수산화, 18-메틸산화를 거쳐 DOC를 알도스테론으로 전환한다. 21OHD 염분소실형에서는 결핍된다.</p>${R('T2')}`},
+s_cort:{kind:'최종 산물', title:'코르티솔', next:[], body:`<p>21OHD에서 결핍되어 ACTH가 증가하고 부신이 만성적으로 과자극된다.</p>${R('T1')}`},
+s_dht:{kind:'21OHD에서 증가', title:'DHT와 11-oxo 안드로겐', next:[], body:`<p>21OHD에서 안드로겐은 세 경로 모두로 생성된다: 고전 경로의 증가, 17OHP에서 시작하는 backdoor 경로(태아기에 가장 활발, 신생아에서 대사물이 가장 뚜렷), 그리고 11-oxo 안드로겐 경로. 11-oxo 안드로겐(11-ketotestosterone 등)은 21OHD에 비교적 특이적이며 성인기까지 조절 지표로 유용할 수 있고, NC CAH에서 다른 안드로겐 과다 여성보다 약 2배 높지만 단독 진단에는 쓸 수 없다.</p>`},
+s_def:{kind:'비교', title:'효소 결핍별 비교', next:[], body:`${DEF}`},
+
+t_cl:{kind:'출발점', title:'고전형 CAH의 치료', next:['t_inf','t_ch','t_ad'], body:`${TAB3}`},
+t_inf:{kind:'연령', title:'신생아·영아', next:['t_mon'], body:`${RR('T1','T2')}`},
+t_ch:{kind:'연령', title:'소아', next:['t_mon'], body:`${RR('T1','T3')}`},
+t_ad:{kind:'연령', title:'사춘기·성인', next:['t_mon'], body:`${RR('T4','T5')}<h4>Table 4</h4>${TAB4}`},
+t_mon:{kind:'모니터링', title:'모니터링', next:['t_st','t_lt'], body:`${R('T6')}<h4>Table 5</h4>${TAB5}<h4>Table 6</h4>${TAB6}`},
+t_st:{kind:'예방', title:'스트레스 용량', next:['t_cr'], body:`${RR('A1','A2')}<h4>Table 7</h4>${TAB7}`},
+t_cr:{kind:'응급', title:'부신위기', next:[], body:`${R('A1')}${TAB7}`},
+t_lt:{kind:'장기', title:'장기 합병증 감시', next:[], body:`${RR('L1','L2','L3','S2')}`}
+};
+const SPECIAL = [['nc','비고전형 CAH'],['pre','산전 dexamethasone'],['sx','생식기 수술·심리'],['lt','장기 후유증'],['nw','새로운 치료'],['tabs','Table 3–7']];
+const EXTRA = {
+levels:{kind:'참고', title:'이 종설과 도구에 대하여', next:[], body:`${['E','K'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','원문은 등급화된 권고가 없는 70쪽 종설(Endocrine Reviews)이며 임상 순서도 그림이 없다. 세 탭은 모두 본문과 표를 바탕으로 본 도구에서 구성했고, ‘스테로이드 생성’ 탭은 원문 Fig. 1을 단순화한 것이다. Essential Points 5개와 본문 핵심 진술 23개(번호는 본 도구에서 부여)를 수록했으며, 본문 설명은 핵심 내용 중심의 번역·요약이다.')}`},
+nc:{kind:'특수', title:'비고전형 CAH', next:[], body:`${RR('N1','N2','N3','A2')}`},
+pre:{kind:'특수', title:'산전 dexamethasone 치료', next:[], body:`${RR('P1','D4')}`},
+sx:{kind:'특수', title:'생식기 수술과 심리사회적 진료', next:[], body:`${RR('S1','S2')}`},
+lt:{kind:'장기', title:'장기 후유증', next:[], body:`${RR('L1','L2','L3')}`},
+nw:{kind:'미래', title:'새로운 치료', next:[], body:`${R('X1')}`},
+tabs:{kind:'표', title:'Table 3–7', next:[], body:`<h4>Table 3</h4>${TAB3}<h4>Table 4</h4>${TAB4}<h4>Table 5</h4>${TAB5}<h4>Table 6</h4>${TAB6}<h4>Table 7</h4>${TAB7}`},
+all:{kind:'전체', title:'핵심 요점과 진술 전체', next:[], body:`<h4>Essential Points</h4>${RR('E1','E2','E3','E4','E5')}<h4>진단</h4>${RR('D1','D2','D3','D4')}<h4>치료</h4>${RR('T1','T2','T3','T4','T5','T6','A1','A2')}<h4>비고전형·산전·수술</h4>${RR('N1','N2','N3','P1','S1','S2')}<h4>장기·새로운 치료</h4>${RR('L1','L2','L3','X1')}`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['11KT','11-Ketotestosterone'],['11OHD / 17OHD / 21OHD','11β- / 17α- / 21-수산화효소 결핍'],['17OH-Preg','17-Hydroxypregnenolone'],['17OHP','17-Hydroxyprogesterone, 17-수산화프로게스테론'],
+ ['AAV','Adeno-associated virus'],['ACTH','Adrenocorticotropic hormone, 부신피질자극호르몬'],['BMD','Bone mineral density, 골밀도'],['CAH','Congenital adrenal hyperplasia, 선천부신과형성'],
+ ['CRH(R1)','Corticotropin-releasing hormone (receptor 1)'],['DELFIA','Dissociation-enhanced lanthanide fluoroimmunoassay'],['DHEA(S)','Dehydroepiandrosterone (sulfate)'],
+ ['DHT','5α-Dihydrotestosterone'],['DOC','11-Deoxycorticosterone, 11-데옥시코르티코스테론'],['DSD','Differences of sex development, 성발달 차이'],['GC','Glucocorticoid (또는 gas chromatography)'],
+ ['GC-MS / LC-MS/MS','Gas chromatography–mass spectrometry / liquid chromatography–tandem mass spectrometry'],['HC','Hydrocortisone'],['HSD3B2 / HSD17B','3β- / 17β-Hydroxysteroid dehydrogenase'],
+ ['MC2R','ACTH receptor, 멜라노코르틴 2 수용체'],['MLPA','Multiplex ligation-dependent probe amplification'],['NC','Nonclassic, 비고전형'],['PGD','Preimplantation genetic diagnosis, 착상 전 유전진단'],
+ ['POR','P450 oxidoreductase, P450 산화환원효소'],['SRD5A','5α-Reductase'],['StAR','Steroidogenic acute regulatory protein'],['SV / SW','Simple virilizing / salt wasting, 단순남성화형 / 염분소실형'],
+ ['TART','Testicular adrenal rest tumor, 고환 부신잔여종양']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mg|μg|g\/|mL)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: 1, TART)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
