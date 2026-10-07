@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MEN1 진료지침 (JCEM 2012)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>다발성 내분비샘종양 1형(MEN1) 진료지침</h1>
+        <p class="src">Clinical Practice Guidelines for MEN1, Thakker RV, et al. <a href="https://doi.org/10.1210/jc.2012-1230" target="_blank" rel="noopener noreferrer">J Clin Endocrinol Metab 2012;97:2990–3011</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Endocrine Society</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>Fig. 1·2는 원 그림 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>권고 등급</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>권고 요약 전체</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 1–3</button>
+      <button type="button" data-id="oth"><span class="bt-ic" aria-hidden="true">＋</span>기타 동반 종양</button>
+      <button type="button" data-id="fut"><span class="bt-ic" aria-hidden="true">＋</span>향후 방향</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const Q = {QQQQ:'⊕⊕⊕⊕', QQQE:'⊕⊕⊕○', QQEE:'⊕⊕○○', QEEE:'⊕○○○'};
+const QTXT = {QQQQ:'높은 질', QQQE:'중등도 질', QQEE:'낮은 질', QEEE:'매우 낮은 질'};
+const LV = {'1':'강한 권고(1): “we recommend”', '2':'약한 권고(2): “we suggest”'};
+const REC = {
+'G1':['2','QQEE','MEN1 환자와 가족은 내분비종양 관리 경험이 있는 관련 전문가로 구성된 다학제팀(MDT)이 관리해야 한다.'],
+'G2':['2','QQEE','MDT에는 신경내분비종양(NET) 관리 전문의(내분비내과, 소화기내과, 종양내과), 내분비외과의, NET 전문 병리의, 영상의학과의(핵의학 포함), 임상유전학자가 포함되어야 한다.'],
+'GT1':['1','QQQE','MEN1 생식세포 변이 검사는 MEN1 지표 환자와 그 1촌에게 제공해야 한다. 여기에는 무증상이거나 MEN1 임상 양상이 있는 친척이 모두 포함된다.'],
+'GT2':['2','QQEE','MEN1 양상이 5세에 나타날 수 있으므로 무증상 친척의 MEN1 생식세포 변이 검사는 가능한 한 빨리 제공해야 한다.'],
+'GT3':['2','QQEE','비전형 MEN1 표현형(예: 다선 부갑상선기능항진증)인 사람에서 MEN1 생식세포 변이 검사를 권할 수 있다.'],
+'GT4':['1','QQQQ','MEN1 변이 검사를 제안받는 모든 사람에게 검사 전 유전상담을 제공해야 한다.'],
+'GT5':['1','QQQQ','MEN1 생식세포 변이 검사는 MEN1 유전자 변이 분석 인증을 받은 임상유전 검사실에서 시행해야 한다.'],
+'GT6':['1','QQQE','코딩 영역에서 MEN1 변이가 확인되지 않으면 부분 또는 전체 유전자 결실 검사, MEN1 유전자좌의 일배체형 분석, 또는 다른 유전자 분석을 고려해야 한다.'],
+'GT7':['1','QQQE','알려진 MEN1 변이를 가진 환자의 친척에게는 여러 검사의 부담과 비용을 줄이기 위해 MEN1 종양 발견을 위한 생화학·영상 선별검사 전에 MEN1 생식세포 변이 분석을 제공해야 한다.'],
+'GT8':['1','QQQE','MEN1 생식세포 변이가 확인된 사람은 MEN1 관련 종양 발생을 정기적으로(예: 매년) 선별해야 한다.'],
+'SC1':['2','QQEE','MEN1 관련 종양 고위험자(지표 환자와 MEN1 변이가 확인된 친척)에게는 임상·생화학·영상 선별 프로그램을 제공해야 한다. 선별의 성격과 시기는 지역 자원, 임상 판단, 환자 선호에 따른다.'],
+'PT1':['1','QQQQ','원발성 부갑상선기능항진증 선별에는 혈장 칼슘과 PTH 농도의 매년 평가가 포함되어야 한다.'],
+'PT2':['1','QQQE','경험 많은 내분비외과의가 시행하는 수술이 선택 치료이나 최적 시기는 정해지지 않았다. 아전 부갑상선절제술(최소 3.5개 선) 또는 전절제술을 동반한 고식적 개방 양측 탐색을 권고한다.'],
+'PT3':['2','QQEE','수술 시 경부 흉선절제술을 동시에 시행할 것을 제안한다.'],
+'PT4':['2','QQQE','자가이식을 동반한 전 부갑상선절제술을 고려할 수 있다.'],
+'PT5':['1','QQQE','대개 여러 선이 침범되므로 최소침습 부갑상선절제술은 일반적으로 권고하지 않는다.'],
+'PN1':['2','QQEE','위장췌장 NET 선별에는 최소한 매년 공복 위장관 호르몬 검사(가스트린, 글루카곤, VIP, 췌장 폴리펩타이드, 크로모그라닌 A, 인슐린과 공복 혈당)를 포함해야 한다.'],
+'PN2':['2','QQEE','최적 영상 선별에 대한 합의는 없으며 지역 자원, 임상 판단, 환자 선호에 따른다. 최소 영상 프로토콜로 MRI, CT 또는 내시경초음파로 매년 췌장과 십이지장을 관찰할 것을 제안한다.'],
+'PN3':['1','QQQQ','주요 목표는 가능한 한 오래 질병과 증상이 없는 상태를 유지하고 좋은 삶의 질을 유지하는 것이다.'],
+'PN4':['1','QQQQ','인슐리노마를 포함한 증상성 기능성 췌장 NET 치료의 목표는 가능하면 수술로 완치하는 것이다.'],
+'PN5':['1','QQQE','특정 치료를 계획하기 전에 질병 범위를 충분히 평가해야 한다.'],
+'PN6':['2','QQEE','가스트리노마의 최적 치료는 여전히 논란이다. 췌장 내 전이 없는 가스트리노마의 수술은 완치될 수 있으므로 경험 많은 내분비외과의가 시행한다면 고려해야 한다. 그러나 대부분의 MEN1 환자는 다발성 소형 십이지장 점막하 가스트리노마를 가지며 그 관리는 논란이다. 대다수 환자에서 양성자펌프억제제(PPI)를 이용한 내과적 관리를 제안한다. 다만 경험 많은 센터에서는 완치율을 높일 수 있으므로 림프절 절제를 동반한 국소 절제, 십이지장절제술, 드물게 십이지장췌장절제술을 환자 선호와 함께 고려할 수 있다.'],
+'PN7':['2','QQQE','Whipple 췌십이지장절제술은 가스트리노마 완치 가능성이 가장 크지만 수술 사망률과 장기 이환이 증가하고 덜한 수술로도 장기 생존이 훌륭하므로 대다수 환자에게 제안하지 않는다.'],
+'PN8':['1','QQQQ','과산 분비 억제를 위한 내과 치료에는 PPI와 소마토스타틴 유사체가 있다.'],
+'PN9':['2','QQEE','고가스트린혈증 환자에서는 소화성 궤양과 위 카르시노이드 확인을 위한 주기적 위내시경 감시가 적응된다.'],
+'PN10':['2','QQEE','비기능성 췌장 종양의 수술 역할은 논란이다. 1 cm를 넘거나 6–12개월에 걸쳐 유의하게 자라는 종양은 수술을 고려할 것을 제안한다.'],
+'PN11':['1','QQQQ','NET 전문 병리의가 모든 종양 조직을 검토해야 한다. 종양은 WHO 2010 분류, UICC TNM 7판, 유럽신경내분비종양학회(ENETS) 부위별 T 병기로 분류해야 한다.'],
+'PN12':['1','QQQE','절제 불가능한 종양의 치료에는 소마토스타틴 유사체, 생물요법, 표적 방사성핵종 치료, 국소 치료, 항암화학요법이 포함된다.'],
+'PN13':['1','QQQE','수술 불가능하거나 전이된 췌장 NET에 항암화학요법을 사용할 수 있다. 진행성(수술 불가능 또는 전이성)이며 진행하는 고분화 췌장 NET 환자에서 sunitinib과 everolimus를 고려할 수 있다.'],
+'PI1':['2','QQQE','뇌하수체 종양의 생화학 선별은 임상 판단과 지역 자원에 따라 매년 혈장 프로락틴과 IGF-I 측정을 포함할 수 있다.'],
+'PI2':['2','QQEE','뇌하수체 MRI를 3–5년마다 시행할 수 있다.'],
+'PI3':['1','QQQE','결과가 비정상이면 시상하부–뇌하수체 검사로 병변의 성격과 다른 뇌하수체 호르몬 분비에 대한 영향을 추가로 평가해야 한다.'],
+'PI4':['1','QQQQ','MEN1 관련 뇌하수체 종양의 치료는 비MEN1 종양과 비슷하며, 적절한 약물치료(예: 프로락틴종에 도파민 작용제, 성장호르몬종에 octreotide 또는 lanreotide) 또는 선택적 경접형동 수술로 구성되고, 방사선치료는 절제 불가능한 잔여 종양에 한정한다.'],
+'TB1':['1','QQQQ','소변 5-HIAA와 크로모그라닌 A를 이용한 생화학 평가는 도움이 되지 않는다.'],
+'TB2':['2','QEEE','흉선 및 기관지폐 카르시노이드 발견을 위해 1–2년마다 흉부 CT 또는 MRI를 권한다.'],
+'TB3':['2','QQEE','고가스트린혈증 환자에서는 소화성 궤양과 제2형 위 카르시노이드 발견을 위해 3년마다 위내시경(생검 포함)을 권한다.'],
+'TB4':['1','QQQQ','내시경초음파와 소마토스타틴수용체 신티그래피가 진단에 도움이 될 수 있다.'],
+'TB5':['1','QQQQ','가능하면 근치적 수술이 흉선 및 기관지 카르시노이드의 선택 치료이다.'],
+'TB6':['2','QEEE','질환이 진행되어 근치적 수술이 불가능하면 추가 치료로 방사선치료와 항암화학요법이 있다.'],
+'TB7':['2','QQEE','제2형 위 카르시노이드의 최적 치료는 확립되지 않았다. 작은(&lt;10 mm) 병변은 내시경 감시를 유지할 수 있다. 큰 종양은 내시경 절제 또는 부분·전 위절제술을 동반한 국소 절제가 필요하다. 소마토스타틴 유사체의 적응은 정해지지 않았다.'],
+'AD1':['2','QQEE','최소 선별로 3년마다 CT 또는 MRI 복부 영상을 시행해야 한다.'],
+'AD2':['1','QQQE','부신 병변은 영상 감시를 유지하고 악성 소견을 평가해야 한다.'],
+'AD3':['1','QQQE','영상은 부신 영상 전문 영상의학과의가 판독해야 한다.'],
+'AD4':['1','QQQE','부신 병변의 생화학 평가는 임상 양상이 있거나 1 cm를 넘는 종양에 한정하며, 원발성 알도스테론증과 원발성 고코르티솔증 평가에 초점을 맞춘다.'],
+'AD5':['1','QQQE','MEN1 관련 부신 종양의 치료는 비MEN1 부신 종양과 비슷하다. 기능성 종양(예: 원발성 알도스테론증, 고코르티솔증)과 비전형 소견, 4 cm 초과, 또는 6개월 간격 동안 유의한 성장을 보이는 비기능성 종양은 수술이 적응된다.']
+};
+const RID = id => id;
+
+const EXP = {
+gen:{t:'MEN1 개요와 진료 조직', ids:['G1','G2'], p:[
+'MEN1은 부갑상선, 췌장 섬세포, 뇌하수체 전엽 종양의 동반 발생이 특징인 상염색체 우성 질환이다. 무작위 부검 연구에서 유병률은 0.25%로 추정되며, 원발성 부갑상선기능항진증 환자의 1–18%, 가스트리노마의 16–38%, 뇌하수체 종양의 3% 미만이 MEN1이다. 5–81세에 발생하며, 50대까지 임상 양상은 80%, 생화학 양상은 98% 넘게 나타난다. 약 10%는 de novo 변이이다. 치료하지 않으면 50세까지 사망 확률이 50%이며, 현재 MEN1 환자의 약 70%가 MEN1 관련 원인으로 사망하고, 특히 악성 췌장 NET와 흉선 카르시노이드가 사망 위험을 크게 높인다(위험비 &gt;3).',
+'MEN1 종양의 치료는 비MEN1 종양과 대체로 비슷하나 결과가 덜 좋다. 첫째, 종양이 대개 다발성이어서 수술적 완치가 어렵다(가스트리노마 수술 직후 무병 MEN1 약 15% 대 비MEN1 약 45%, 5년 후 5% 대 40%). 아전 부갑상선절제 후 10년 내 지속·재발 고칼슘혈증은 20–60%로 비MEN1의 약 4%보다 높다. 둘째, 잠복 전이가 흔하다(MEN1 인슐리노마의 최대 50% 대 비MEN1 &lt;10%). 셋째, 종양이 더 크고 공격적이며 치료에 저항적이다(뇌하수체 거대선종 85% 대 64%).',
+'#진료 조직',
+'MEN1 환자와 가족은 MEN1 관리 전문 센터에서 진료받아야 하며, MEN 증후군 전문 내분비내과의가 전체 진료를 조정해야 한다. MEN1 종양 환자는 3–6개월마다, 무증상 1촌은 매년 검토하며 평생 전문 센터에서 추적한다. 모든 위장췌장 NET, 흉선·기관지 카르시노이드는 신경내분비 MDT에서 논의하도록 권고한다. 윤리적으로 승인된 MEN1 등록체계에 환자를 등록할 것을 제안한다. 전문 간호사와 환자 지원 단체가 도움이 될 수 있다.']},
+'dx':{t:'진단과 유전검사', ids:['GT1','GT2','GT3','GT4','GT5','GT6','GT7','GT8'], p:[
+'MEN1은 세 기준 중 하나로 진단한다(Fig. 1): (1) MEN1 관련 원발 내분비종양 2개 이상(부갑상선 선종, 장췌장 종양, 뇌하수체 선종), (2) MEN1 임상 진단 환자의 1촌에서 MEN1 관련 종양 1개, (3) 무증상이고 생화학·영상 이상이 아직 없는 사람에서 MEN1 생식세포 변이 확인.',
+'#MEN1 유전자',
+'11q13에 있고 10개 엑손으로 610개 아미노산의 menin을 암호화하며 전사, 유전체 안정성, 세포분열, 증식을 조절한다. Knudson 2단계 가설에 따라 생식세포 변이에 체세포 변이(대개 이형접합성 소실, 90% 이상)가 더해져 종양이 생긴다. 1133개 생식세포 변이(459종)가 1830 bp 코딩 영역 전체에 흩어져 있고 75%가 불활성 변이이며, MEN2와 달리 유전형–표현형 상관이 없다. MEN1 환자의 5–25%는 코딩 영역 변이가 없으며 전체·부분 결실이나 프로모터·비번역 영역 변이가 있을 수 있어, 코딩 영역 변이가 없으면 MLPA로 엑손 결실을 검사할 것을 권고한다. 종양 체세포 변이 분석은 임상적 가치가 거의 없다.',
+'#변이형과 표현형 모사',
+'가족성 고립성 부갑상선기능항진증(FIHP)은 부갑상선 종양만 생기며 미스센스 변이가 더 흔하다. 표현형 모사는 MEN1 가족의 5–10%에서 보고되며, CDC73(HPT-JT 증후군), CASR(FBHH), AIP(FIPA) 변이가 MEN1을 모사할 수 있다. CDKN1B(p27) 변이는 MEN4로 약 1.5%에서 보고된다. 따라서 MEN1 가족 내 증상 있는 구성원과 종양 2개 이상의 모든 지표 환자에게 유전검사를 제공하는 것이 바람직하다.',
+'#변이 분석의 적응과 가치',
+'MEN1 변이 분석은 (1) 임상 진단 확인, (2) 종양 선별과 조기 치료가 필요한 변이 보유 가족 확인, (3) 변이가 없는 50%의 가족을 확인하여 불안과 불필요한 검사에서 벗어나게 하는 데 유용하다(Table 3). 적응은 MEN1 관련 종양 2개 이상의 지표 환자, 알려진 변이 보인자의 무증상 1촌, 가족성 MEN1을 보이는 1촌, 의심·비전형 MEN1(30세 전 부갑상선 선종, 다선 부갑상선 질환, 가스트리노마, 다발성 췌장 NET, 고전적 3대 종양 외 MEN1 관련 종양 2개)이다. 비가족성 단일 종양의 생식세포 MEN1 변이 빈도는 부갑상선 선종 1%, 가스트리노마 5%, 프로락틴종 1%, 전장 카르시노이드 2%이며, 40세 미만 다선 부갑상선 질환 환자와 가스트리노마 또는 다발성 췌장 NET 환자에서 검사를 제안한다. 소아 MEN1 종양의 최연소 발병은 뇌하수체 5세, 부갑상선 8세, 인슐리노마 8세, 2 cm 넘는 비기능성 췌장 NET 12세이며, 20세 미만 12명 중 40% 넘게 종양이 있었다.']},
+'scr':{t:'종양 선별', ids:['SC1'], p:[
+'5세 미만에서는 비침투적이나 이후 침투도가 높아 20세까지 50% 이상, 40세까지 95% 이상이다. 한 가족 내에서도 양상이 균일하지 않아 선별이 어렵다. 부갑상선 기능항진에 의한 고칼슘혈증이 거의 항상 첫 양상이며, 고프로락틴혈증은 약 15%에서 첫 양상이다. 변이 보인자는 최소 매년 생화학 선별을 하고 뇌하수체·복부 기저 영상(MRI 또는 CT)을 1–3년마다 반복할 것을 제안한다. 일부는 5세에 질환이 생기므로 초기 소아기에 시작하고, 80대까지 나타나지 않을 수 있으므로 평생 지속한다.',
+'병력과 진찰은 고칼슘혈증, 신석증, 소화성 궤양, 신경저혈당증, 뇌하수체기능저하, 여성의 유즙분비·무월경, 말단비대증, 쿠싱병, 시야 결손, 피하 지방종, 혈관섬유종, 콜라겐종에 초점을 둔다. 생화학 선별은 칼슘, PTH, 위장관 호르몬(가스트린, 공복 혈당과 인슐린, 글루카곤, VIP, 췌장 폴리펩타이드), 크로모그라닌 A, 프로락틴, IGF-I을 포함하며, 증상이나 징후가 있으면 특이적 내분비 기능 검사를 시행한다(Table 2).']},
+'pt':{t:'부갑상선 종양', ids:['PT1','PT2','PT3','PT4','PT5'], p:[
+'원발성 부갑상선기능항진증은 MEN1의 가장 흔한 양상(약 90%)이다. 무증상 고칼슘혈증, 신석증, 섬유낭성골염, 고칼슘혈증 증상, 때로 소화성 궤양으로 나타난다. 비MEN1과 비교해 발병 연령이 이르고(20–25세 대 55세), 골밀도 감소가 크며, 남녀비가 같다(1:1 대 1:3). 모든 선이 침범될 수 있어 수술 전 영상(경부 초음파, sestamibi)의 가치가 제한적이며 국소화 결과와 관계없이 경부 탐색이 필요하다. 부갑상선암은 드물다.',
+'아전 부갑상선절제(≤3.5개) 후 10–12년 내 지속·재발 고칼슘혈증이 40–60%, 비타민 D나 calcitriol이 필요한 저칼슘혈증이 10–30%로 비MEN1(재발 4–16%, 저칼슘 1–8%)보다 높다. 전절제와 자가이식은 신선 또는 동결보존 조직을 사용하며, 동결 조직의 생존력은 시간에 따라 감소한다. 수술 중 신속 PTH 측정이 도움이 될 수 있다. 자가이식 조직은 50% 넘게 재발 고칼슘혈증을 일으키나, 약 1 mm³ 조각 10개 정도로 적게 이식하면 재발과 부갑상선기능저하를 모두 줄일 수 있다. 전완 이식은 재발 시 국소마취로 제거할 수 있어 경부 재수술을 피할 수 있다. 아전 절제가 초기 치료로 제안되며, 전절제는 첫 수술이나 재수술 시 광범위 질환에 남겨 둘 수 있다.',
+'증상성 고칼슘혈증 환자에게만 수술하고 무증상 환자는 증상과 합병증을 정기 평가하다가 그때 아전 절제와 흉선절제를 시행하자는 견해도 있다. 수술 시기는 외과 경험, 장기 칼슘 감시 시설, calcitriol 접근성, 환자 선호를 고려한다. 수술이 실패했거나 금기인 환자에서 cinacalcet이 사용되었다.']},
+'pn':{t:'췌장 신경내분비종양', ids:['PN1','PN2','PN3','PN4','PN5','PN6','PN7','PN8','PN9','PN10','PN11','PN12','PN13'], p:[
+'MEN1 환자의 30–80%에서 발생하며 비MEN1보다 이르게 생긴다. 다발성이고 행동이 불확실하며, 영상에 보이는 종양이 호르몬 과다의 부위와 일치한다고 가정할 수 없다.',
+'#가스트리노마',
+'MEN1 십이지장췌장 NET의 50% 넘게 차지하며 가스트리노마 환자의 약 20%가 MEN1이다. 대개 점막 깊이 생기는 작은(&lt;5 mm) 다발성 십이지장 결절로, 느리게 자라지만 췌장 주위 림프절에 흔히 전이한다. 30세 이상에서 흔하다. 공복 혈청 가스트린 상승과 기저 위산 분비 증가(위 pH &lt;2)로 진단하며, 때로 secretin(2 U/kg) 또는 칼슘 주입 유발검사가 필요하다. MEN1에서는 부갑상선기능항진증 없이 ZES가 생기지 않는 것으로 보이며, 정상칼슘 회복으로 ZES 환자의 20%까지 증상과 생화학 이상이 크게 호전된다. 내과 치료는 기저 위산 분비를 10 mmol/L 미만으로 낮추는 것을 목표로 하며 PPI가 선택 약물이다. 간전이 위험은 종양 크기에 따라 증가하여 4 cm 넘는 췌장 NET의 25–40%가 간전이, 2–3 cm 종양의 50–70%가 림프절 전이를 보인다. 2.5 cm 미만 가스트리노마의 15년 생존은 100%, 전이가 있으면 52%이다. 대부분의 센터는 2 cm 넘는 췌장 가스트리노마가 아니면 비수술 관리를 한다.',
+'#인슐리노마',
+'MEN1 췌장 종양의 10–30%로, 대개 5 mm 넘는 단일 병변이며 40세 미만, 흔히 20세 미만에서 생긴다. MEN1의 첫 양상이 약 10%이고 인슐리노마 환자의 약 4%가 MEN1이다. 감독하 72시간 금식에서 저혈당과 함께 인슐린 상승을 보이는 것이 가장 신뢰할 만한 검사이며, C-펩타이드와 프로인슐린 상승으로 확진하고 경구 혈당강하제를 배제한다. 잦은 탄수화물 식사, diazoxide, octreotide 같은 내과 치료는 항상 성공하지는 않아 수술이 최적 치료이다.',
+'#글루카곤종과 VIP종',
+'글루카곤종은 3% 미만으로 괴사이동홍반, 체중감소, 빈혈, 구내염이 없을 수 있으며 50–80%가 진단 시 전이가 있다. VIP종은 수양성 설사, 저칼륨혈증, 무위산증(WDHA)을 일으키며 대부분 췌장 꼬리에 있어 수술이 완치적이다.',
+'#비기능성 췌장 NET',
+'내시경초음파 연구에서 MEN1의 약 55%에서 발견되며 15세 미만에서도 생긴다. 악성 췌장 NET가 현재 MEN1의 가장 흔한 사망 원인이고, 비기능성 종양이 가장 흔한 장췌장 NET이며 기능성보다 예후가 나쁘고, 증상과 생화학 이상이 없어 영상 없이는 진단이 늦어진다. 따라서 장췌장 NET 영상 선별은 10세까지 시작해야 한다. 내시경초음파가 작은 종양 발견에 가장 민감하고 소마토스타틴수용체 신티그래피가 전이 발견에 가장 신뢰할 만하다. 한 연구에서 동시성 전이는 3 cm 초과 43%, 2.1–3.0 cm 18%, 1 cm 미만 4%였다. 1 cm 넘는 비기능성 종양의 절제를 고려하되(일부 센터는 2 cm 초과), 1 cm 미만은 3–6개월간 크기가 두 배가 되는 등 유의하게 자라 1 cm를 넘으면 절제를 제안한다. 수술 시 잠복 전이와 잔여 췌장의 재발 가능성을 고려한다.',
+'#진행성 질환',
+'Sunitinib(무진행생존 11.4 대 5.5개월)과 everolimus(11.0 대 4.6개월)는 진행성 고분화 췌장 NET에서 무진행생존을 두 배로 늘렸다. 두 연구는 주로 비MEN1 환자였으나 MEN1에도 적용될 가능성이 높다.']},
+'pi':{t:'뇌하수체 종양', ids:['PI1','PI2','PI3','PI4'], p:['MEN1 환자의 15–50%에서 발생하며 5세부터 80대까지, 평균 38.0 ± 15.3세에 나타난다. 여성에서 더 흔하고 거대선종이 많으며(85% 대 42%), 약 1/3이 침습적이다. 약 60%가 프로락틴, 25% 미만이 GH, 5%가 ACTH를 분비하고 나머지는 비기능성이며, 다호르몬 발현과 성장호르몬·프로락틴 동시 분비 종양이 더 흔하다. 약 15%에서 MEN1의 첫 양상(대개 프로락틴종)이다. 뇌하수체 종양 환자의 3% 미만이 MEN1이다. 호르몬 분비 선종의 치료로 과분비가 정상화된 비율은 MEN1 42% 대 비MEN1 90%였고, MEN1 프로락틴종 85개 중 44%만 프로락틴이 정상화되어, MEN1에서는 수술이 더 자주 필요할 것으로 보인다.']},
+'tb':{t:'카르시노이드 종양', ids:['TB1','TB2','TB3','TB4','TB5','TB6','TB7'], p:['카르시노이드는 MEN1 환자의 3% 넘게 기관지, 위장관, 췌장, 흉선에 생긴다. 기관지 카르시노이드는 주로 여성(1:4), 흉선 카르시노이드는 유럽에서 주로 남성(20:1)이고 흡연자의 위험이 높으며 일본에서는 성차가 덜하다(2:1). 흉선 카르시노이드는 특히 공격적이어서 사망 위험비가 4.29이고 진단 후 중앙 생존은 약 9.5년이며 70%가 종양으로 사망한다. 대부분 무증상이고 일관된 호르몬·생화학 이상이 없어 선별은 영상에 의존한다. 예방적 경부 흉선절제 후에도 흉선 카르시노이드가 보고되어 이후에도 영상 감시가 필요하다. 절제 불가능하면 방사선, 항암(cisplatin, etoposide), 소마토스타틴 유사체를 사용한다. 제2형 위 ECL세포 카르시노이드는 MEN1과 ZES에 동반되어 MEN1 환자의 70% 넘게 발견될 수 있으며 대개 다발성이고 1.5 cm 미만이다. 소마토스타틴 유사체로 퇴행한 예가 있다.']},
+'ad':{t:'부신피질 종양과 기타 동반 종양', ids:['AD1','AD2','AD3','AD4','AD5'], p:[
+'무증상 부신피질 종양은 영상 방법에 따라 MEN1 환자의 20–73%에서 보고되며 대부분 비기능성이다. 비대한 부신 환자의 10% 미만에서 호르몬 과분비가 있고, 원발성 알도스테론증과 ACTH 비의존성 쿠싱증후군이 가장 흔하다. 갈색세포종은 드물다. 부신피질암은 MEN1 환자 전체의 약 1%이나 1 cm 넘는 부신 종양이 있는 환자에서는 약 13%로 증가한다. 기능성 종양 의심이나 1 cm 넘는 종양에서는 레닌·알도스테론, 저용량 덱사메타손 억제검사, 소변 카테콜아민·메타네프린을 시행한다. 4 cm 미만에서도 부신피질암이 보고되어 4 cm 초과, 비전형 소견이 있는 1–4 cm, 6개월간 유의한 성장 시 수술을 제안한다.',
+'#기타',
+'수막종은 10% 미만으로 대부분 무증상이며 60%는 커지지 않는다. 피하 지방종은 33% 넘게 생기고 보존적으로 관리한다. 안면 혈관섬유종(22–88%)과 콜라겐종(0–72%)은 친척의 증상 전 진단에 유용할 수 있으며 대개 치료가 필요 없다. 갑상선 종양은 25% 넘게 보고되나 일반 인구에서도 흔해 우연일 수 있다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+dx:{tab:'진단 기준', fig:'Fig. 1', aria:'MEN1 진단 근거', w:760, h:320,
+ nodes:[
+  {id:'d_top', x:230,y:10, w:300,h:44, label:'MEN1 진단 근거'},
+  {id:'d_cl',  x:10, y:100,w:230,h:110,label:'임상적<small>MEN1 관련 종양 2개 이상(부갑상선 선종, 장췌장 종양, 뇌하수체 선종)</small>', cls:'mal fac'},
+  {id:'d_fam', x:265,y:100,w:230,h:110,label:'가족적<small>MEN1 관련 종양 1개 + MEN1 진단된 1촌</small>', cls:'mal fac'},
+  {id:'d_gen', x:520,y:100,w:230,h:110,label:'유전적<small>MEN1 변이가 있으나 임상·생화학 양상 없음(변이 보인자)</small>', cls:'test fac'},
+  {id:'d_ph',  x:150,y:250,w:460,h:56, label:'주의: 표현형 모사(phenocopy)<small>MEN1 가족의 5–10% · 임상·가족 기준 진단을 혼동시킬 수 있음</small>', cls:'fac'}
+ ],
+ edges:[[A(380,54,380,72),0],['M125 72 H635',0],[A(125,72,125,100),1],[A(380,72,380,100),1],[A(635,72,635,100),1],
+  ['M125 210 V230 H330 V250',1,'dot'],['M380 210 V250',1,'dot']], labels:[]},
+scr:{tab:'선별 접근', fig:'Fig. 2', aria:'MEN1 선별 접근 순서도', w:760, h:640,
+ nodes:[
+  {id:'s_cl',  x:230,y:10, w:300,h:56, label:'MEN1 임상 진단<small>MEN1 관련 종양 ≥2개 또는 강한 의심</small>'},
+  {id:'s_test',x:230,y:95, w:300,h:44, label:'MEN1 변이 검사', cls:'test'},
+  {id:'s_rel', x:560,y:20, w:190,h:80, label:'1촌 확인<small>유전상담과 MEN1 변이 검사</small>', cls:'test fac'},
+  {id:'s_neg', x:10, y:170,w:200,h:56, label:'변이 미발견*<small>부분·전체 결실 포함</small>', cls:'mal fac'},
+  {id:'s_pos', x:265,y:170,w:230,h:44, label:'MEN1 변이 확인', cls:'mal'},
+  {id:'s_rn',  x:560,y:170,w:190,h:44, label:'1촌: 변이 미발견', cls:'ben'},
+  {id:'s_na',  x:10, y:250,w:200,h:330,label:'다음을 고려<small>표현형 모사와 다른 유전자(CDC73, CASR, AIP, CDKN1B) 분석 · 변이 양성자에 준한 추가 종양 감시 · 1촌 임상·생화학 평가 · 무증상 1촌은 매년 임상·생화학 선별 · MEN1 종양이 있는 1촌은 변이 양성자에 준해 감시</small>', cls:'fac'},
+  {id:'s_ev',  x:245,y:245,w:270,h:170,label:'평가<small>임상: MEN1 종양 증상·징후 · 생화학: Ca, PTH, PRL, IGF-1, CgA, 공복 위장관 호르몬, 공복 혈당·인슐린 · 영상: 뇌하수체 MRI, 복부 MRI(CT·EUS), 흉부 CT(MRI)</small>', cls:'test fac'},
+  {id:'s_rno', x:560,y:250,w:190,h:56, label:'추가 검사 불필요', cls:'ben'},
+  {id:'s_nl',  x:245,y:450,w:125,h:44, label:'정상', cls:'ben'},
+  {id:'s_ab',  x:390,y:450,w:125,h:44, label:'이상', cls:'mal'},
+  {id:'s_re',  x:225,y:525,w:165,h:105,label:'재선별<small>임상·생화학 6–12개월, 영상 12–36개월</small>', cls:'test fac'},
+  {id:'s_fu',  x:400,y:525,w:135,h:80, label:'적절한 추가 검사', cls:'tx'}
+ ],
+ edges:[
+  [A(380,66,380,95),1],[A(380,139,380,155),0],['M110 155 H380',0],[A(110,155,110,170),1],[A(380,155,380,170),1],
+  ['M495 192 H520 V60 H560',1],['M560 85 H545 V117 H530',1],[A(655,100,655,170),1],[A(655,214,655,250),1],
+  [A(110,226,110,250),1],[A(380,214,380,245),1],[A(307,415,307,450),1],[A(452,415,452,450),1],
+  [A(307,494,307,525),1],[A(467,494,467,525),1]
+ ], labels:[]},
+sch:{tab:'선별 일정', fig:'Table 2', aria:'MEN1 고위험군의 생화학·영상 선별 일정', w:760, h:480,
+ nodes:[
+  {id:'c_hd',  x:230,y:10, w:300,h:56, label:'고위험군<small>MEN1 환자 · 변이 보인자</small>'},
+  {id:'c_pit', x:10, y:100,w:235,h:90, label:'뇌하수체 · 5세부터<small>PRL, IGF-1 매년 · MRI 3년마다</small>', cls:'test fac'},
+  {id:'c_ins', x:262,y:100,w:235,h:90, label:'인슐리노마 · 5세부터<small>공복 혈당, 인슐린 매년</small>', cls:'test fac'},
+  {id:'c_par', x:515,y:100,w:235,h:90, label:'부갑상선 · 8세부터<small>칼슘, PTH 매년</small>', cls:'test fac'},
+  {id:'c_pn',  x:10, y:220,w:235,h:110,label:'기타 췌장 NET · 10세 미만부터<small>CgA, PP, 글루카곤, VIP 매년 · MRI·CT·EUS 매년</small>', cls:'test fac'},
+  {id:'c_adr', x:262,y:220,w:235,h:110,label:'부신 · 10세 미만부터<small>증상·징후 또는 &gt;1 cm 아니면 생화학 없음 · MRI·CT 매년(췌장 영상과 함께)</small>', cls:'test fac'},
+  {id:'c_thy', x:515,y:220,w:235,h:110,label:'흉선·기관지 카르시노이드 · 15세부터<small>생화학 없음 · CT·MRI 1–2년마다</small>', cls:'test fac'},
+  {id:'c_hx',  x:10, y:360,w:235,h:110,label:'병력·진찰<small>고칼슘혈증, 신석증, 소화성 궤양, 저혈당, 뇌하수체 증상, 지방종·혈관섬유종·콜라겐종</small>', cls:'fac'},
+  {id:'c_gas', x:262,y:360,w:235,h:90, label:'가스트리노마 · 20세부터<small>가스트린(± 위 pH) 매년</small>', cls:'test fac'},
+  {id:'c_rev', x:515,y:360,w:235,h:110,label:'추적 간격<small>MEN1 종양 환자 3–6개월 · 무증상 1촌 매년 · 평생 전문 센터</small>', cls:'fac'}
+ ],
+ edges:[[A(380,66,380,82),0],['M127 82 H632',0],[A(127,82,127,100),1],[A(380,82,380,100),1],[A(632,82,632,100),1]], labels:[]},
+tx:{tab:'종양별 치료', fig:'권고 요약', aria:'MEN1 관련 종양별 치료', w:760, h:570,
+ nodes:[
+  {id:'t_men', x:230,y:10, w:300,h:44, label:'MEN1 관련 종양 치료'},
+  {id:'t_par', x:10, y:90, w:235,h:56, label:'부갑상선기능항진증'},
+  {id:'t_ptx', x:10, y:170,w:235,h:170,label:'수술<small>경험 많은 내분비외과의 · 개방 양측 탐색 · 아전절제(≥3.5개) 또는 전절제 · 경부 흉선절제 동반 · 최소침습 비권고</small>', cls:'tx fac'},
+  {id:'t_pn',  x:262,y:90, w:235,h:56, label:'췌장·십이지장 NET'},
+  {id:'t_gas', x:262,y:170,w:235,h:90, label:'가스트리노마<small>대부분 PPI · 췌장 내 가스트리노마는 수술 고려 · Whipple 비권고</small>', cls:'tx fac'},
+  {id:'t_ins', x:262,y:275,w:235,h:60, label:'인슐리노마<small>수술로 완치 목표</small>', cls:'tx fac'},
+  {id:'t_nf',  x:262,y:350,w:235,h:90, label:'비기능성 NET<small>&gt;1 cm 또는 6–12개월간 유의 성장 시 수술 고려</small>', cls:'tx fac'},
+  {id:'t_adv', x:262,y:455,w:235,h:105,label:'진행성 NET<small>소마토스타틴 유사체, 방사성핵종, 국소치료, 항암, sunitinib·everolimus</small>', cls:'tx fac'},
+  {id:'t_pit', x:515,y:90, w:235,h:90, label:'뇌하수체<small>약물 또는 경접형동 수술, 잔여 종양에 방사선</small>', cls:'tx fac'},
+  {id:'t_thy', x:515,y:195,w:235,h:90, label:'흉선·기관지 카르시노이드<small>가능하면 근치 수술 · 진행 시 방사선·항암</small>', cls:'tx fac'},
+  {id:'t_gc',  x:515,y:300,w:235,h:90, label:'제2형 위 카르시노이드<small>&lt;10 mm 내시경 감시 · 큰 종양 절제</small>', cls:'tx fac'},
+  {id:'t_adr', x:515,y:405,w:235,h:120,label:'부신<small>기능성 · 비기능성 &gt;4 cm · 비전형 소견 · 6개월간 유의 성장 시 수술</small>', cls:'tx fac'}
+ ],
+ edges:[[A(380,54,380,72),0],['M127 72 H632',0],[A(127,72,127,90),1],[A(380,72,380,90),1],[A(632,72,632,90),1],
+  [A(127,146,127,170),1],[A(380,146,380,170),1],[A(380,260,380,275),0,'dot'],[A(380,335,380,350),0,'dot'],[A(380,440,380,455),0,'dot'],
+  [A(632,180,632,195),0,'dot'],[A(632,285,632,300),0,'dot'],[A(632,390,632,405),0,'dot']], labels:[]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const LVCLS = {'1':'l1','2':'l2'};
+const R = id => {
+  const [s, q, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[s]}" title="${LV[s]} · 근거 ${QTXT[q]}">${s} | ${Q[q]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paras}<p class="exp-src">Thakker RV, et al. J Clin Endocrinol Metab 2012;97:2990–3011 본문 번역·요약. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows, cap) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${cap?`<p class="small" style="color:var(--muted)">${cap}</p>`:''}`;
+const TAB1 = tbl(['유형(염색체)','종양(추정 침투도)','유전자, 흔한 변이 코돈'],[
+ ['MEN1 (11q13)','부갑상선 선종(90%) · 장췌장 종양(30–70%): 가스트리노마 40%, 인슐리노마 10%, 비기능성·PP종 20–55%, 글루카곤종 &lt;1%, VIP종 &lt;1% · 뇌하수체 선종(30–40%): 프로락틴종 20%, 성장호르몬종 10%, ACTH종 &lt;5%, 비기능성 &lt;5% · 동반 종양: 부신피질 40%, 갈색세포종 &lt;1%, 기관지폐 NET 2%, 흉선 NET 2%, 위 NET 10%, 지방종 30%, 혈관섬유종 85%, 콜라겐종 70%, 수막종 8%','<i>MEN1</i>: 83/84 4-bp 결실(약 4%), 119 3-bp 결실(약 3%), 209–211 4-bp 결실(약 8%), 418 3-bp 결실(약 4%), 514–516 결실·삽입(약 7%), 인트론 4 스플라이스(약 10%)'],
+ ['MEN2A (10q11.2)','MTC(90%), 갈색세포종(50%), 부갑상선 선종(20–30%)','<i>RET</i> 634 미스센스(약 85%)'],
+ ['MTC 단독','MTC(100%)','<i>RET</i> 618 미스센스(&gt;50%)'],
+ ['MEN2B (MEN3)','MTC(&gt;90%), 갈색세포종(40–50%), 동반 이상(점막 신경종, 마르판양 체형, 각막신경 수초화, 거대결장)','<i>RET</i> 918 Met→Thr(&gt;95%)'],
+ ['MEN4 (12p13)','부갑상선 선종, 뇌하수체 선종, 생식기관 종양, 부신·신장 종양(?)<sup>a</sup>','<i>CDKN1B</i>, 흔한 변이 미확인']],'Table 1. MEN 증후군. a 보고 수가 적어 유병률 정보 없음.');
+const TAB2 = tbl(['종양','시작 연령(세)','생화학(매년)','영상(간격)'],[['부갑상선','8','칼슘, PTH','없음'],['가스트리노마','20','가스트린(± 위 pH)','없음'],['인슐리노마','5','공복 혈당, 인슐린','없음'],['기타 췌장 NET','&lt;10','크로모그라닌 A, 췌장 폴리펩타이드, 글루카곤, VIP','MRI, CT 또는 EUS(매년)'],['뇌하수체 전엽','5','프로락틴, IGF-I','MRI(3년마다)'],['부신','&lt;10','기능성 종양 증상·징후 또는 &gt;1 cm 종양이 없으면 없음','MRI 또는 CT(매년, 췌장 영상과 함께)'],['흉선·기관지 카르시노이드','15','없음','CT 또는 MRI(1–2년마다)']],'Table 2. 고위험군의 생화학·영상 선별 제안.');
+const TAB3 = `<ul><li><b>임상적 가치</b>: 진단 확인 · 선별과 조기 치료가 필요한 가족 내 변이 보인자 확인 · 변이가 없는 50%의 가족을 확인하여 불안과 질병 부담 해소</li><li><b>대상</b>: 지표 환자(MEN1 임상 기준 충족, 또는 의심·비전형: 40세 전 다발성 부갑상선 선종, 재발 부갑상선기능항진증, 가스트리노마나 다발성 췌장 NET, 비고전적 MEN1 관련 종양 2개) · 알려진 변이 보인자의 무증상 1촌 또는 가족성 MEN1(종양 1개)인 1촌</li><li><b>시기</b>: 가능한 한 일찍(무증상자는 5세 전)</li><li><b>장소</b>: <i>MEN1</i> 유전자 DNA 검사 인증 검사실</li></ul><p class="small" style="color:var(--muted)">Table 3. 임상에서의 MEN1 변이 분석</p>`;
+const NOTE = note('원문 표기 차이','요약 권고는 뇌하수체 MRI를 “3–5년마다”, 부신 복부 영상을 “3년마다”로 제시하나, Table 2는 각각 “3년마다”와 “매년(췌장 영상과 함께)”으로 제시한다. 또한 Table 3은 의심 기준을 “40세 전 다발성 부갑상선 선종”, 본문은 “30세 전 부갑상선 선종”으로 기술한다.');
+const D = {
+d_top:{kind:'출발점', title:'MEN1 진단 근거', next:['d_cl','d_fam','d_gen'], body:`<p>세 기준 중 하나로 진단한다.</p>${R('GT1')}`},
+d_cl:{kind:'기준', title:'임상적 진단', next:['s_cl'], body:`<p>MEN1 관련 원발 내분비종양(부갑상선 선종, 장췌장 종양, 뇌하수체 선종) 2개 이상.</p>${RR('GT1','GT3')}`},
+d_fam:{kind:'기준', title:'가족적 진단', next:['s_cl'], body:`<p>MEN1 임상 진단 환자의 1촌에서 MEN1 관련 종양 1개. 표현형 모사가 있으므로 MEN1 종양이 1개인 가족 구성원에게도 변이 분석을 제안한다.</p>${R('GT1')}`},
+d_gen:{kind:'기준', title:'유전적 진단', next:['s_ev'], body:`<p>무증상이고 생화학·영상 이상이 아직 없는 사람에서 MEN1 생식세포 변이 확인.</p>${RR('GT2','GT8')}`},
+d_ph:{kind:'주의', title:'표현형 모사', next:['s_na'], body:`<p>MEN1 가족 내에서 가족 변이 없이 MEN1 관련 종양(예: 프로락틴종)이 생기거나, 종양 2개가 있는 환자가 MEN1 변이 없이 다른 유전자 이상을 가지는 경우이다. CDC73(HPT-JT), CASR(FBHH), AIP(FIPA), CDKN1B(MEN4) 등이 해당한다.</p>${R('GT6')}`},
+
+s_cl:{kind:'출발점', title:'MEN1 임상 진단 또는 강한 의심', next:['s_test'], body:`${RR('GT1','GT3','GT4')}${TAB3}`},
+s_test:{kind:'유전', title:'MEN1 변이 검사', next:['s_pos','s_neg'], body:`${RR('GT4','GT5','GT6')}`},
+s_rel:{kind:'가족', title:'1촌 확인과 검사', next:['s_test','s_rn'], body:`${RR('GT1','GT2','GT7')}`},
+s_neg:{kind:'결과', title:'변이 미발견', next:['s_na'], body:`<p>* 부분·전체 유전자 결실 검사(MLPA)를 포함한다. MEN1 환자의 5–25%는 코딩 영역 변이가 없다.</p>${R('GT6')}`},
+s_pos:{kind:'결과', title:'MEN1 변이 확인', next:['s_ev','s_rel'], body:`${RR('GT8','SC1')}`},
+s_rn:{kind:'결과', title:'1촌: 변이 미발견', next:['s_rno'], body:`<p>위험이 상염색체 우성의 1/2에서 일반 인구 수준으로 낮아져 반복 검사에서 벗어난다.</p>`},
+s_rno:{kind:'결과', title:'추가 검사 불필요', next:[], body:`<p>MEN1 관련 종양 발생에 대한 불안을 덜 수 있다.</p>`},
+s_na:{kind:'조치', title:'변이 미발견 시 접근', next:[], body:`<p>변이가 확인되지 않은 MEN1 가족에서는 임상 양상이 있는 사람에게 임상·생화학·영상 선별을, 무증상 1촌에게 매년 임상·생화학 선별을 제공하는 실용적 접근을 쓴다. 임상 MEN1 가족의 최대 10%가 표현형 모사를 가질 수 있다.</p>${R('GT6')}`},
+s_ev:{kind:'선별', title:'임상·생화학·영상 평가', next:['s_nl','s_ab'], body:`${RR('SC1','PT1','PN1','PN2','PI1','PI2','TB2','AD1')}${TAB2}${NOTE}`},
+s_nl:{kind:'결과', title:'정상', next:['s_re'], body:``+'<p>정기 재선별을 계속한다.</p>'},
+s_re:{kind:'추적', title:'재선별', next:['c_hd'], body:`<p>임상·생화학 6–12개월, 영상 12–36개월마다 재선별한다(Fig. 2). 본문은 생화학 최소 매년, 영상 1–3년마다를 제안한다.</p>`},
+s_ab:{kind:'결과', title:'이상', next:['s_fu'], body:`${R('PI3')}`},
+s_fu:{kind:'조치', title:'적절한 추가 검사', next:['t_men'], body:`${R('PN5')}`},
+
+c_hd:{kind:'출발점', title:'고위험군 선별 일정', next:['c_pit','c_ins','c_par'], body:`${RR('SC1','GT8')}${TAB2}${NOTE}`},
+c_pit:{kind:'선별', title:'뇌하수체 (5세부터)', next:['t_pit'], body:`${RR('PI1','PI2','PI3')}`},
+c_ins:{kind:'선별', title:'인슐리노마 (5세부터)', next:['t_ins'], body:`${R('PN1')}`},
+c_par:{kind:'선별', title:'부갑상선 (8세부터)', next:['t_par'], body:`${R('PT1')}`},
+c_pn:{kind:'선별', title:'기타 췌장 NET (10세 미만부터)', next:['t_nf'], body:`${RR('PN1','PN2')}`},
+c_adr:{kind:'선별', title:'부신 (10세 미만부터)', next:['t_adr'], body:`${RR('AD1','AD2','AD3','AD4')}`},
+c_thy:{kind:'선별', title:'흉선·기관지 카르시노이드 (15세부터)', next:['t_thy'], body:`${RR('TB1','TB2','TB4')}`},
+c_hx:{kind:'선별', title:'병력과 진찰', next:[], body:`<p>고칼슘혈증, 신석증, 소화성 궤양, 신경저혈당증, 뇌하수체기능저하, 여성의 유즙분비·무월경, 말단비대증, 쿠싱병, 시야 결손, 피하 지방종, 혈관섬유종, 콜라겐종을 확인한다.</p>`},
+c_gas:{kind:'선별', title:'가스트리노마 (20세부터)', next:['t_gas'], body:`${RR('PN1','PN9','TB3')}`},
+c_rev:{kind:'조직', title:'추적 간격과 진료 조직', next:[], body:`${RR('G1','G2')}`},
+
+t_men:{kind:'출발점', title:'MEN1 관련 종양 치료', next:['t_par','t_pn','t_pit'], body:`<p>치료는 비MEN1 종양과 대체로 비슷하나, 종양이 다발성이고 잠복 전이가 흔하며 더 크고 공격적이어서 결과가 덜 좋다.</p>${RR('PN3','PN5','G1')}`},
+t_par:{kind:'종양', title:'부갑상선기능항진증', next:['t_ptx'], body:`${R('PT1')}`},
+t_ptx:{kind:'치료', title:'부갑상선 수술', next:[], body:`${RR('PT2','PT3','PT4','PT5')}${tip('결과','아전절제 후 10–12년 내 지속·재발 40–60%, 장기 비타민 D 필요 저칼슘혈증 10–30%. 수술 실패·금기 시 cinacalcet.')}`},
+t_pn:{kind:'종양', title:'췌장·십이지장 NET', next:['t_gas','t_ins','t_nf','t_adv'], body:`${RR('PN3','PN4','PN5','PN11')}`},
+t_gas:{kind:'치료', title:'가스트리노마', next:[], body:`${RR('PN6','PN7','PN8','PN9')}`},
+t_ins:{kind:'치료', title:'인슐리노마', next:[], body:`${R('PN4')}<p>감독하 72시간 금식으로 진단하며, 수술은 단일 종양 핵출부터 원위·부분 췌장절제까지 다양하다. 수술 중 인슐린/혈당 비 감시가 도움이 된다.</p>`},
+t_nf:{kind:'치료', title:'비기능성 췌장 NET', next:[], body:`${R('PN10')}`},
+t_adv:{kind:'치료', title:'진행성 췌장 NET', next:[], body:`${RR('PN12','PN13')}`},
+t_pit:{kind:'치료', title:'뇌하수체 종양', next:[], body:`${R('PI4')}`},
+t_thy:{kind:'치료', title:'흉선·기관지 카르시노이드', next:[], body:`${RR('TB5','TB6')}<p>예방적 경부 흉선절제 후에도 흉선 카르시노이드가 생길 수 있어 영상 감시를 지속한다.</p>`},
+t_gc:{kind:'치료', title:'제2형 위 카르시노이드', next:[], body:`${RR('TB3','TB7')}`},
+t_adr:{kind:'치료', title:'부신 종양', next:[], body:`${RR('AD4','AD5')}${note('수술 기준','요약 권고(AD5)는 “4 cm 초과, 비전형 소견, 6개월간 유의 성장”, 본문은 “4 cm 초과, 비전형 소견이 있는 1–4 cm, 6개월간 유의 성장”으로 기술한다.')}`}
+};
+const EXTRA = {
+levels:{kind:'참고', title:'권고 등급(GRADE)과 이 도구', next:[], body:`<div class="rec"><span class="lv l1">1</span><p>${LV['1']}</p></div><div class="rec"><span class="lv l2">2</span><p>${LV['2']}</p></div><p>근거의 질: ⊕⊕⊕⊕ 높음, ⊕⊕⊕○ 중등도, ⊕⊕○○ 낮음, ⊕○○○ 매우 낮음.</p><p>MEN1의 진단, 선별, 치료를 평가한 대조 임상시험이 부족하여 많은 권고는 근거 수준보다 전문가 의견의 균형에 근거하며 약한 것으로 보아야 한다. 이 지침은 엄격한 프로토콜이 아니라 환자 선호와 함께 최선의 진료를 결정하기 위한 지침이다.</p>${note('구성','‘진단 기준’(Fig. 1)과 ‘선별 접근’(Fig. 2)은 원 그림을 재현했고, ‘선별 일정’은 Table 2, ‘종양별 치료’는 요약 권고를 바탕으로 구성하였다. 권고 번호(G, GT, SC, PT, PN, PI, TB, AD)는 본 도구에서 부여하였다.')}`},
+all:{kind:'전체', title:'권고 요약 전체 (Summary of Recommendations)', next:[], body:`<h4>일반 권고</h4>${RR('G1','G2')}<h4>유전검사</h4>${RR('GT1','GT2','GT3','GT4','GT5','GT6','GT7','GT8')}<h4>종양 선별</h4>${R('SC1')}<h4>부갑상선 종양</h4>${RR('PT1','PT2','PT3','PT4','PT5')}<h4>췌장 NET</h4>${RR('PN1','PN2','PN3','PN4','PN5','PN6','PN7','PN8','PN9','PN10','PN11','PN12','PN13')}<h4>뇌하수체 종양</h4>${RR('PI1','PI2','PI3','PI4')}<h4>흉선·기관지폐·위 NET</h4>${RR('TB1','TB2','TB3','TB4','TB5','TB6','TB7')}<h4>부신 종양</h4>${RR('AD1','AD2','AD3','AD4','AD5')}`},
+tabs:{kind:'표', title:'Table 1–3', next:[], body:`<h4>Table 1. MEN 증후군</h4>${TAB1}<h4>Table 2. 선별 일정</h4>${TAB2}<h4>Table 3. 변이 분석</h4>${TAB3}${NOTE}`},
+oth:{kind:'동반 종양', title:'기타 동반 종양', next:[], body:`<p>수막종(&lt;10%, 대부분 무증상, 60%는 커지지 않음), 피하 지방종(&gt;33%, 보존적 관리), 안면 혈관섬유종(22–88%)과 콜라겐종(0–72%, 친척의 증상 전 진단에 유용, 대개 치료 불필요), 갑상선 종양(&gt;25%, 우연일 수 있음). 치료는 비MEN1과 비슷하다.</p>`},
+fut:{kind:'미래', title:'향후 방향', next:[], body:`<p>많은 MEN1 종양의 최적 치료는 아직 정해지지 않았으며, 단일 국가 센터로는 충분한 환자를 모으기 어려워 국내·국제 MEN1 등록체계와 협력을 권장한다. menin과 MLL1의 상호작용을 차단하는 thienopyrimidine 유사체 등 새로운 치료 표적이 연구되고 있다.</p>`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['AIP','Aryl hydrocarbon receptor-interacting protein'],['CASR','Calcium-sensing receptor, 칼슘감지수용체'],['CDC73','Parafibromin 유전자 (HPT-JT)'],['CDKN1B','Cyclin-dependent kinase inhibitor 1B (p27kip1), MEN4'],
+ ['CgA','Chromogranin A, 크로모그라닌 A'],['CT / MRI','Computed tomography / magnetic resonance imaging'],['ECL','Enterochromaffin-like, 장크롬친화유사'],['ENETS','European Neuroendocrine Tumor Society'],
+ ['EUS','Endoscopic ultrasound, 내시경초음파'],['FBHH','Familial benign hypocalciuric hypercalcemia, 가족성 양성 저칼슘뇨 고칼슘혈증'],['FIHP','Familial isolated hyperparathyroidism, 가족성 고립성 부갑상선기능항진증'],
+ ['FIPA','Familial isolated pituitary adenoma, 가족성 고립성 뇌하수체 선종'],['GRADE','Grading of Recommendations, Assessment, Development, and Evaluation'],['HPT-JT','Hyperparathyroidism–jaw tumor syndrome, 부갑상선기능항진증-턱종양 증후군'],
+ ['LOH','Loss of heterozygosity, 이형접합성 소실'],['MDT','Multidisciplinary team, 다학제팀'],['MEN','Multiple endocrine neoplasia, 다발성 내분비샘종양'],['MLPA','Multiplex ligation-dependent probe amplification'],
+ ['MTC','Medullary thyroid carcinoma, 갑상선 수질암'],['mTOR','Mammalian target of rapamycin'],['NET','Neuroendocrine tumor, 신경내분비종양'],['PP','Pancreatic polypeptide, 췌장 폴리펩타이드'],
+ ['PPI','Proton-pump inhibitor, 양성자펌프억제제'],['PRL','Prolactin, 프로락틴'],['TKR','Tyrosine kinase receptor'],['VIP(oma)','Vasoactive intestinal polypeptide (-secreting tumor), 혈관활성장펩타이드(종)'],
+ ['ZES','Zollinger-Ellison syndrome, 졸링거-엘리슨 증후군']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mm|cm)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: Z, MLPA)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
