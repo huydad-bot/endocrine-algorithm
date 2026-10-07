@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>저나트륨혈증 치료 표준 2024 (NDT)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>저나트륨혈증 치료 표준 2024</h1>
+        <p class="src">Hyponatraemia—treatment standard 2024, Spasovski G. <a href="https://doi.org/10.1093/ndt/gfae162" target="_blank" rel="noopener noreferrer">Nephrol Dial Transplant 2024;39:1583–1592</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the ERA or the author</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>‘초기 평가’ 탭은 본문으로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="boxes"><span class="bt-ic" aria-hidden="true">＋</span>Box 1–2</button>
+      <button type="button" data-id="tab1"><span class="bt-ic" aria-hidden="true">＋</span>약물 (Table 1)</button>
+      <button type="button" data-id="newdev"><span class="bt-ic" aria-hidden="true">＋</span>새로운 발전·예후</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ K:'Box 1 “In a nutshell”: 저자가 제시한 핵심 요약. 이 종설은 근거 등급을 매기지 않았다',
+ S:'Box 2 “Strategies on how to personalize the treatment”: 저자가 제시한 치료 개별화 전략. 근거 등급 없음'
+};
+const LVTXT = {K:'Box 1 요점', S:'Box 2 전략'};
+const LVCLS = {K:'l2', S:'l1'};
+const REC = {
+'1-1':['K','저나트륨혈증 치료는 원인 진단에 근거하며, 실제 나트륨(Na) 수치, 저나트륨혈증의 중증도, 용적 분류, 긴장도 측정, 소인 및 악화 인자 확인과 함께 환자 평가의 각 단계마다 평가를 계속 반복해야 한다.'],
+'1-2':['K','중증 또는 심한(profound) 저나트륨혈증은 3% 고장성 식염수의 볼루스 또는 지속 주입으로 즉시 치료해야 한다. 치료 기간과 정도는 목표 혈청 나트륨(sNa) 상승과 증상 호전에 따라 정한다.'],
+'1-3':['K','만성 저나트륨혈증은 대개 증상이 덜 심하며 Na 수치에 따라 경도–중등도로 분류하고, 치료는 체액 용적에 근거한다. 저혈량성 저나트륨혈증에서는 정맥 생리식염수 또는 Na와 물의 경구 섭취로 용적을 보충한다.'],
+'1-4':['K','심부전·간질환 비대상과 신증후군에 의한 고혈량성 저나트륨혈증은 세포외액은 증가했으나 혈관내 용적이 감소하여 부적절한 항이뇨호르몬(ADH) 분비를 자극한다. 따라서 진행된 간질환이나 심질환을 제외하면 수분 제한(FR)이 1차 치료이다. 2차 선택은 루프이뇨제이다. 여기서 V2 수용체 길항제 tolvaptan은 확립된 선택 약물이며 루프이뇨제와 동시에 쓰지 않으면 과교정 위험이 거의 없다. 진행된 간질환에서는 알부민 사용이 정당화된다. 고혈량성 저나트륨혈증을 동반한 심부전 환자는 경구 urea로 성공적으로 치료할 수 있다. 최후의 치료는 SGLT2 억제제이다.'],
+'1-5':['K','경도–중등도 정상혈량성 저나트륨혈증의 가장 흔한 원인은 SIADH이다. 치료는 먼저 원인 치료여야 하며 SIADH로 진단되면 달라진다. 유럽과 미국 지침에 따르면 효능이 높지는 않지만 FR이 1차 선택이며, ‘갈증이 나거나 식사할 때만 마시라’는 조언이 유용할 수 있다. FR 시작 전 자유수 배설 능력이 있는 보존된 신기능을 고려해야 한다. 근거는 부족하지만 루프이뇨제가 2차 치료이다. Vaptan은 근거 기반 선택 약물로 간주된다. Urea 보충은 효능과 안전성에 대한 근거가 없다. SGLT2 억제제는 위약 대비 효과적인 치료로 고려될 수 있다.'],
+'2-1':['S','저나트륨혈증의 적절한 진단이 치료에 필수적이다. 대개 중증 저나트륨혈증, 즉 심하고 급성으로 발생한 증상성 저나트륨혈증(sNa &lt;125)은 즉시 치료해야 한다. 그 후 추가 원인 치료와 예후를 위해 긴장도 측정과 용적 상태 평가를 고려해야 한다.'],
+'2-2':['S','중증 저나트륨혈증은 목표 sNa 상승에 도달할 때까지 3% 고장성 식염수(HSS) 100–150 mL 또는 2–4 mL/kg을 20–40분에 걸쳐 정맥 볼루스로 반복 투여하여 긴급히 치료한다. 대안으로 0.5–1 mL/kg/h로 지속 주입할 수 있다. 두 접근의 비교는 아직 논쟁 중이다.'],
+'2-3':['S','경도–중등도 저혈량성 저나트륨혈증은 정맥 생리식염수(NaCl 0.9%) 23–30 mL/kg/일, 또는 가능하면 식사와 수분과 함께 Na 9 g(NaCl 0.9% 1 L에 해당)의 경구 섭취로 적절히 용적을 보충해야 한다.'],
+'2-4':['S','고혈량성 저나트륨혈증에서는 이뇨제(주로 thiazide) 과량이나 위장관 출혈이 원인이어서 수액 보충을 고려해야 하는 경우가 아니라면 FR이 1차 치료이다. 수분 섭취와 소변량을 주의 깊게 감시해야 한다. 2차 선택은 ADH 매개 수분 재흡수를 약화시키는 루프이뇨제로 20–40 mg을 8–12시간마다 투여하며, 작용을 높이는 권장 소금 섭취는 하루 NaCl 3–5 g이다. Tolvaptan은 고혈량성 저나트륨혈증, 특히 심부전 환자에서 선택 치료이다. 초기 용량은 15 mg으로 sNa가 서서히 상승하며, 루프이뇨제와 동시에 쓰지 않으면 과교정 위험과 Na 감시 필요가 없다. 불응성 저나트륨혈증에서 tolvaptan 사용은 승인되어 있다. 진행된 간질환에서 알부민은 교질삼투압과 혈관내 용적을 높여 ADH 자극을 줄이는 보조 치료로 정당화된다. Urea는 아마도 근위세관에 대한 삼투 효과를 통해 자유수 배설을 도우므로 심부전 환자에서 15–60 g/일로 적절하다. SGLT2 억제제는 확고한 근거는 아직 없지만 만성 심부전 환자에서 최후의 치료 선택지로 도움이 될 수 있다.'],
+'2-5':['S','경도–중등도 정상혈량성 저나트륨혈증에서는 SIADH 치료를 시작하기 전에 원인을 배제해야 한다. 주요 지침이 1차 치료로 권고하지만 FR의 효능은 의문스럽다. 반면 갈증이 나거나 식사할 때만 마시라는 상담이 효과적일 수 있다. FR에 의한 교정은 24–48시간마다 1–2 mmol/L로 매우 느리며 며칠 동안만 지속된다. 또한 FR 시작의 전제조건은 자유수 배설 능력이 있는 보존된 신기능이며, 이는 고령자에서 흔히 감소되어 있다. 무작위 연구는 없지만 루프이뇨제가 2차 선택으로 간주된다. Vaptan은 약 48시간 내 Na 정상화에 대해 현재 최선의 근거를 가진 확실히 효과적인 약물이다. 초기 용량은 7.5 mg이며 6시간에 Na가 &gt;5 mmol/L 상승하면 과교정 치료를 위해 혈액·소변 지표 감시가 필요하다. 24시간에 sNa 교정이 ≤8 mmol/L이면 15 mg으로 두 배로 늘리고 48시간 후 같은 절차를 따른다. 과교정 시 상승이 5 mmol/L까지면 desmopressin 2 μg을 피하 투여하고, 6–8 mmol/L이면 5% 포도당을 2–3 mL/kg/h로 2–3시간 추가한다. Urea의 단독 또는 vaptan 병용 효능과 안전성에 대한 근거는 없다. 초기 용량은 15 g이며 Na가 과교정되면 생략하고, 3일째 교정이 불충분하면 두 배로 늘린다. SGLT2 억제제는 25 mg/일로 효과적인 치료이며, 특히 Na와 칼륨이 풍부한 식사를 하는 환자에서 그렇다.']
+};
+const RID = id => 'Box ' + id.replace('-','.');
+
+const EXP = {
+ov:{t:'서론·분류·평가', ids:['1-1','2-1'], p:[
+'저나트륨혈증은 주로 무전해질 자유수의 섭취와 손실의 불균형에서, 드물게는 체내 염분 변화에서 발생한다. 가장 흔한 전해질 이상으로 혈청 나트륨 &lt;135 mmol/L로 정의하며, &lt;120 mmol/L는 중증으로 본다. 유병률은 고령의 중환자실 입원 환자에서 가장 높아(20–35%) 다수의 동반질환과 약물로 사망 위험이 증가한다. 신경외과 지주막하출혈 환자의 50%, 심부전 입원 환자의 20%에서 보고된다. 부적절한 처방 관행과 의사의 제한된 지식으로 병원 획득 저나트륨혈증의 위험을 줄이기 위한 중재가 필요하다. 기존 지침은 방법론적 엄밀성이 다양하고 권고가 항상 일치하지는 않으며, 유럽과 미국 지침은 단일 Na 값보다 정기적 추적과 sNa 측정의 변동 등 환자 개개인의 전체적 측면을 충분히 고려하지 않는 것으로 보인다.',
+'#유형',
+'48시간 미만에 발생하면 급성으로, 과도한 수액 투여를 받은 수술 후 환자나 자가 유발 수분 중독에서 흔하며 증상이 심하다. 기간을 모르거나 ≥48시간이면 만성으로, 대개 무증상이거나 증상이 경미하다. 정도는 중증(sNa &lt;120), 중등도(120–129), 경도(130–134)로 나눈다. 증상은 중증(경련, 혼수, 호흡정지), 경도–중등도의 비특이 증상(두통, 기면, 피로, 어지럼, 오심, 구토, 혼동, 건망, 보행장애, 근육경련), 또는 무증상으로 나눈다. 급성, 중증, 증상성 저나트륨혈증은 치료하지 않거나 과도하게 치료(과교정)했을 때의 합병증 위험 때문에 입원하여 sNa, 소변량, 신경학적 상태를 자주 감시해야 한다.',
+'#긴장도',
+'긴장도로 저장성(&lt;275 mOsm/kg), 등장성(275–290), 고장성(&gt;290) 저나트륨혈증을 구분한다. 가성 저나트륨혈증은 고혈당 및/또는 고중성지방혈증이 혈청 긴장도를 높여 세포에서 물을 끌어내 세포외 수분 공간이 확장되면서 sNa가 낮아지는 경우이다. sNa의 적절한 상승 없이 고혈당을 빠르게 교정하면 혈청 삼투압이 낮아져 특히 케톤산증의 젊은 성인에서 뇌부종이 생길 수 있다. 고중성지방혈증에 의한 가성 저나트륨혈증은 췌장염과 당뇨병케톤산증에서 볼 수 있다.',
+'#용적',
+'세포외액 용적에 따라 저혈량성, 정상혈량성, 고혈량성으로 나눈다. 용적 상태 판단은 흔히 어렵지만 체액 손실의 원인, 조직 관류 악화, ADH 분비의 정상적 억제 실패를 정의하는 데 도움이 된다. 부적절하게 억제되지 않은 ADH는 저혈량 환자와 부종이 있을 수 있는 심부전·간경변 환자(고혈량성)에서 볼 수 있으며, 둘 다 유효동맥혈량 감소, Na 배설 장애, 낮은 소변 Na 농도를 보인다.']},
+sev:{t:'중증 저나트륨혈증과 교정 속도', ids:['1-2','2-2'], p:[
+'급성 저나트륨혈증의 가장 흔한 치료는 3% 고장성 식염수로, 지속 감시하에 강제 나트륨이뇨로 수분 배출을 촉진하기 위해 정맥 furosemide(10–20 mg 1일 1회)를 함께 투여한다. 수술 후 SIADH 환자에서 비경구 수액이 원인이면 대량의 등장성 식염수는 세포외액을 확장하여 뇌부종을 악화시킨다. ADH가 높으면 농축된 소변으로 Na가 배설되어 sNa가 더 떨어지는 ‘탈염(desalination)’ 현상이 생긴다. 따라서 등장성 식염수나 포도당액에 NaCl 10–20 mEq 앰플을 추가하는 것은 체내 Na 고갈이 아닌 수분 과다 질환에 효과가 없어 지양해야 한다.',
+'교정 속도는 기본적으로 증상의 중증도에 달려 있다. 수액 종류와 투여 속도는 Na 결핍 공식 (140 − sNa) × 총체수분(체중 kg × 0.6)으로 계산한다. 증상이 있는 급성 또는 중증 저나트륨혈증에서 sNa 교정 목표는 첫 6시간 이내 4–6 mmol/L이며, 삼투성 탈수초 증후군(ODS)을 피하기 위해 첫 24시간 동안 같은 수준으로 유지해야 한다. 이후 어떤 24시간에도 교정은 8 mmol/L를 넘어서는 안 된다. 4–6 mmol/L 상승으로 대부분의 증상이 회복되며 그 이상의 상승은 치료적 이점이 없다. ODS는 sNa가 첫 24시간 내 &gt;10 mmol/L 또는 48시간 내 &gt;18 mmol/L 상승한 환자에서 가장 흔했다.',
+'급성 중증 저나트륨혈증 치료에서는 매시간 감시하며, 3% 식염수를 최소 100 mL 볼루스로 시작하여 sNa 4–6 mmol/L 상승 목표에 도달할 때까지 각 측정 후 반복할 수 있다. 목표 상승에 도달하면 감시 간격을 6–12시간으로 줄일 수 있다. 모든 예방 조치에도 2–3일 넘게 지속된 중증 저나트륨혈증 환자에서는 ODS가 생길 수 있고 수분 이뇨가 나타날 수 있다. 이 경우 경구 수분 섭취, 5% 포도당 2–4 mL/kg/h 4시간 투여 및/또는 desmopressin 1–3 μg 정맥 또는 피하 8–12시간 간격 투여로 sNa를 다시 낮추는 구조 전략이 필요하며, sNa가 약 1 mmol/L/h 낮아지지 않거나 목표 범위에 들 때까지 반복할 수 있다. 재저하 전략을 시작하면 교정 조치는 중단한다.',
+'#볼루스 대 지속 주입',
+'중증 증상성 급성 저나트륨혈증(Fig. 1)에서는 3% HSS 100–150 mL 볼루스 또는 2–4 mL/kg을 20–40분에 걸쳐 투여하고 증상 지속에 따라 반복하거나, 1–4시간에 Na 5 mmol/L 상승까지 투여한다. 그러나 볼루스는 과교정 가능성이 더 크고 저교정은 과소평가될 수 있다. 대규모 후향 코호트에서 볼루스 HSS는 체중 ≤60 kg과 ≥100 kg 환자에서 과교정과 저교정이 더 잦았다. 중환자 62명 관찰연구에서 볼루스는 등장성 식염수보다 Na를 더 일관되게 교정했으나 과교정률이 유의하게 높았고, 기존 치료는 Na 상승 부족과 변동이 컸다. 볼루스 용량을 줄이거나 반복 시점을 재평가하면 과교정 위험을 줄일 수 있으나 전향 연구 검증이 필요하다.',
+'중증 저나트륨혈증은 유형이나 원인과 관계없이 긴급히 치료하되, 빠른 교정도 합병증을 일으킬 수 있으므로 첫 24시간에 Na를 교정하는 동시 조치는 생략해야 한다. 심부전에는 루프이뇨제, 부신기능저하증에는 hydrocortisone, 저칼륨혈증에는 염화칼륨을 투여할 수 있다.',
+'SIADH에 의한 중증 저나트륨혈증 50명을 대상으로 3% HSS를 20 mL/h 느린 지속 주입(SCI)과 100 mL 최대 2회의 빠른 간헐 볼루스(RIB)로 비교한 전향 연구(SALSA)에서, 과교정(24시간 &gt;12 또는 48시간 &gt;18 mmol/L 상승)은 차이가 없었고 두 방법 모두 효과적이고 안전했다. 그러나 RIB는 치료적 재저하가 적었고 첫 1시간 목표 도달 효능이 더 좋은 경향이었다. 따라서 빠른 간헐 투여가 증상성 저나트륨혈증의 선호 치료이다. 저칼륨혈증 환자에서는 3% HSS 500 mL에 KCl 20 mmol을 넣을 수 있는 지속 주입이 선호되며, 칼륨 보충은 세포에서 Na를 추가로 유출시켜 빠른 과교정(overshooting)과 ODS 위험이 있으므로 2시간마다 Na를 감시해야 한다. 소변량 증가(수분 이뇨)도 과교정과 관련될 수 있다.',
+'&lt;120 mEq/L의 중증 만성 저나트륨혈증의 치료 여부에 대한 RCT는 없으나, 무증상이라도 ODS 예방을 위한 정기 추적과 함께 3% HSS를 15–30 mL/h로 천천히 정맥 투여하는 것이 유용할 수 있다. 증상이 있는 경도–중등도 저나트륨혈증에서는 Na 결핍을 계산한 후 3% NaCl을 천천히 주입하며 자주 감시한다.']},
+hypo:{t:'경도–중등도 및 저혈량성 저나트륨혈증', ids:['1-3','2-3'], p:[
+'경도–중등도 만성 저나트륨혈증은 중추신경계가 삼투 변화에 서서히 적응하므로 대개 무증상이다. 따라서 용적 상태 평가와 원인 평가가 적절한 치료에 결정적이다(Fig. 2). 각 유형에 대한 다양한 약물 선택지가 있으나 실제 사용을 확고히 권고할 근거는 부족하다(Table 1). 무증상 경도–중등도에서는 덜 공격적인 치료가 필요하다: 저혈량이면 이뇨제 없이 등장성 NaCl, 정상혈량이면 하루 수분 1 L로 제한, 고혈량이면 염분과 수분 제한으로 원인을 치료하고 이뇨제를 정기적으로 사용한다.',
+'경도–중등도 저혈량성 저나트륨혈증은 위장관(설사, 구토), 신장(고용량 이뇨제, 세뇨관병증, 원발성 부신기능저하증, 저알도스테론증) 또는 출혈을 통한 전해질과 자유수 손실에 대한 ADH의 보상 반응으로 볼 수 있다. 따라서 용적 보충과 함께 원인 치료가 필수적이다. 생리식염수 23–30 mL/kg/일 정맥 투여는 Na 교정에 충분하면서 과교정 면에서 안전하다. 경구 섭취가 가능한 안정 환자에서는 하루 NaCl 9 g(0.9% NaCl 1 L에 해당)을 몇 차례의 소량 수분과 식사로 나누어 섭취하는 방법이 제안되었다. 투여 경로와 관계없이 과교정을 피하고 치료를 조정하기 위해 6–8시간 후와 24시간에 Na를 감시해야 한다.']},
+hyper:{t:'고혈량성 저나트륨혈증', ids:['1-4','2-4'], p:[
+'경도–중등도 고혈량성 저나트륨혈증은 만성 심부전, 간부전, 신증후군에서 생길 수 있으며, 세 질환 모두 세포외액 확장과 낮은 혈관내 순환 용적이 공통 특징이다. 다른 원인의 감별진단과 혈액량의 지속적 평가가 적절한 치료에 결정적이다. 심부전과 간부전에서는 갈증이 날 때만 마시도록 하고 소변량을 감시하는 FR이 1차 치료여야 한다.',
+'루프이뇨제는 전해질 유출에 대한 세관 투과성을 제한하고 수질 삼투압을 낮추어 ADH 자극을 줄이며, 고혈량성과 정상혈량성 저나트륨혈증 치료에 가장 효과적이다. Furosemide는 8–12시간마다 20–40 mg이며, 하루 소금 3–5 g 섭취와 소변 삼투압 &gt;350 mOsm/kg일 때 특히 효과적이다.',
+'EVEREST 연구에서 tolvaptan은 심부전에 의한 고혈량성 저나트륨혈증에서 7일간 Na를 5–6 mmol/L 높인 안전하고 효과적인 약물이었다. 초기 용량 15 mg은 과교정 위험 없이 sNa를 서서히 지속적으로 높이므로, 루프이뇨제를 동시에 쓰지 않으면 Na 감시가 필요 없다. 간수치 상승 부작용이 있을 수 있어 간이식 직전 준비 외에는 간부전에서 사용하지 않아야 한다.',
+'알부민은 저알부민혈증과 낮은 순환 용적을 동반한 진행된 간질환에서 교질삼투압과 세포외 용적을 높여 ADH 자극을 줄이기 위한 경우가 아니면 정당화되지 않으며, 정상 하한에 가깝게 유지해야 한다. 확고한 근거는 없지만 urea 15–60 g/일은 근위세관에 대한 삼투 효과로 주로 심부전 환자에서 소변량을 늘리는 것으로 보이며, 관련 이환과 사망 예방에 매우 효과적이고 안전한 치료로 보인다. SGLT2 억제제에 의한 삼투 이뇨는 심부전 환자에서 최후의 선택지로 도움이 될 수 있으나 근거 기반 권고는 아니다.']},
+eu:{t:'정상혈량성 저나트륨혈증(SIADH)', ids:['1-5','2-5'], p:[
+'경도–중등도 정상혈량성 저나트륨혈증은 입원과 외래 환자 모두에서 가장 흔한 유형이며 가장 흔한 원인은 SIADH이다. 따라서 SIADH 치료 시작 전에 갑상선기능저하증, 코르티솔 결핍, 특정 약물, 부종양 과정 등 다른 원인을 배제(또는 치료)해야 한다. 모든 SIADH 환자에게 맞는 ‘최선’의 치료는 없으므로 임상 평가와 위험–이득 분석으로 선택한다.',
+'#수분 제한',
+'FR에서는 체내 자유수 배출이 하루 수분 섭취(정맥 또는 경구)를 넘어야 한다. 유럽과 미국 지침이 1차로 권고하지만 효능은 의문스럽다. 현재 유일한 RCT에서 FR 환자의 2/3만이 3일 후 Na &gt;130 mmol/L 목표에 도달했다. 갈증이 나거나 식사할 때만 마시라는 권고는 엄격히 지키면 만성 경도 SIADH 34명 후향 연구에서 76.5%의 sNa를 정상화했다. 그러나 교정은 24–48시간마다 1–2 mEq/L로 매우 느리고 며칠만 지속된다. FR은 신기능이 보존된 경우(소변량 &gt;1500 mL/일, 소변 삼투압 &gt;500 mOsm/kg — 원문 표기) 더 효과적일 수 있으나 고령자에서는 흔히 감소되어 있다. 영양실조, 순응도 불량, 하루 &gt;1 L의 정맥 수액이 필요한 경우, 특히 고온 기후에서는 FR을 권고하지 않는다.',
+'#루프이뇨제',
+'특히 소변 삼투압 &gt;350 mOsm/kg일 때 효과적이나 근거는 부족하다. SIADH 92명의 RCT에서 furosemide, NaCl, FR 병합은 FR 단독보다 우월하지 않았고 급성신손상과 저칼륨혈증이 증가했다.',
+'#Vaptan',
+'비교적 비싸지만 약 48시간 내 Na 정상화에 최선의 근거를 가진 약물이다. 미국과 유럽 지침은 결론이 다르며, 미국 지침은 SIADH 외에 수분 섭취를 제한하지 못하는 간경변이나 심부전 환자에서도 권고한다. 고혈량 또는 정상혈량에서 FR 단독보다 약간 더 효과적일 수 있으나 저혈량에서는 사용하지 않아야 한다. 과교정 시 즉시 대응할 수 있는 시설에서 숙련된 전문가가 신중히 사용해야 한다. 초기 7.5 mg, 6시간에 Na &gt;5 mmol/L 상승 시 주의 깊게 감시한다. 24시간 교정이 ≤8 mmol/L이면 용량을 두 배로 하고 48시간 후 반복한다. 저칼륨혈증, 알코올중독, 영양실조, 간질환 등 ODS 고위험 환자에서는 24시간 교정을 8 mmol/L까지, 평균 위험 환자는 10 mmol/L, 그 외는 12 mmol/L까지로 제한한다. sNa는 4–6시간마다 측정하며, 첫 12시간에 8 mmol/L에 도달하면 소변량만큼 5% 포도당을 투여하여 추가 상승을 막는다. 과교정은 ‘브레이크’ 프로토콜로 처치한다: 첫 몇 시간 내 상승이 5 mmol/L까지면 desmopressin 2 μg 피하, 6–8 mmol/L이면 5% 포도당 2–3 mL/kg/h를 2–3시간 추가한다. 의도치 않은 과교정이 생겨도 desmopressin으로 sNa를 다시 낮춰 뇌 손상을 예방할 기회가 있다.',
+'#Urea',
+'단독 또는 vaptan 병용에 대한 명확한 근거는 없다. 몇몇 증례군 분석에서 과교정이 적고 ODS는 없었다. 초기 15 g, 한도를 넘어 교정되면 다음 날 생략, 3일째 교정이 불충분하면 두 배로 한다.',
+'#SGLT2 억제제',
+'Empagliflozin 25 mg/일은 위약 대비 효과적이며 중앙 Na 상승은 10 mmol/L였으나 무작위 연구가 더 필요하다. 식사당 소금 1–2 g 섭취 또는 생리식염수 500 mL에 고장성(20%) NaCl을 넣어 투여할 때 더 효과적이며, 칼륨이 풍부한 음식이나 정맥 KCl도 Na 상승에 도움이 될 수 있다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+ev:{tab:'초기 평가', fig:'본문 구성', aria:'저나트륨혈증 초기 평가 순서도', w:760, h:500,
+ nodes:[
+  {id:'o_start',x:230,y:10, w:300,h:44, label:'저나트륨혈증 (sNa &lt;135 mmol/L)'},
+  {id:'o_dur', x:10, y:80, w:200,h:70, label:'발생 기간<small>&lt;48시간 급성 · ≥48시간 또는 불명 만성</small>', cls:'test fac'},
+  {id:'o_ton', x:230,y:80, w:300,h:70, label:'혈청 긴장도(삼투압)<small>&lt;275 저장성 · 275–290 등장성 · &gt;290 고장성 (mOsm/kg)</small>', cls:'test fac'},
+  {id:'o_pse', x:560,y:80, w:190,h:70, label:'가성·고장성<small>고혈당 · 고중성지방혈증</small>', cls:'fac'},
+  {id:'o_sev', x:230,y:185,w:300,h:70, label:'증상 중증도<small>중증: 경련·혼수·호흡정지 · 경도–중등도: 비특이 증상</small>', cls:'test fac'},
+  {id:'o_f1',  x:10, y:185,w:200,h:70, label:'중증·증상성<small>Fig. 1로</small>', cls:'mal fac'},
+  {id:'o_vol', x:230,y:290,w:300,h:56, label:'세포외액 용적 평가<small>Fig. 2로</small>', cls:'test fac'},
+  {id:'o_lim', x:10, y:290,w:200,h:120,label:'교정 한도<small>첫 6시간 내 4–6 mmol/L · 이후 어떤 24시간도 &lt;8 mmol/L · ODS 위험: 24시간 &gt;10 또는 48시간 &gt;18</small>', cls:'mal fac'},
+  {id:'o_over',x:560,y:290,w:190,h:160,label:'과교정 시 재저하<small>경구 물 · 5% 포도당 2–4 mL/kg/h 4시간 · desmopressin 1–3 μg IV/SC 8–12시간마다 · 교정 치료 중단</small>', cls:'tx fac'}
+ ],
+ edges:[
+  [A(380,54,380,80),1],['M230 32 H110 V80',1],[A(530,115,560,115),1],[A(380,150,380,185),1],
+  [A(230,220,210,220),1],[A(380,255,380,290),1],[A(110,255,110,290),1,'dot'],['M110 410 V470 H655 V450',1]
+ ], labels:[[214,212,'중증'],[388,278,'경도–중등도'],[380,465,'한도 초과 시']]},
+sev:{tab:'중증', fig:'Fig. 1', aria:'중증 저나트륨혈증 치료 순서도', w:760, h:430,
+ nodes:[
+  {id:'s_sev', x:230,y:10, w:300,h:56, label:'중증 저나트륨혈증<small>혈청 Na &lt;125 mmol/L</small>', cls:'mal fac'},
+  {id:'s_hss', x:180,y:95, w:400,h:64, label:'3% HSS 볼루스 100–150 mL, 20–40분<small>또는 3% HSS 지속 주입 0.5–1 mL/kg/h</small>', cls:'tx fac'},
+  {id:'s_lt4', x:20, y:200,w:200,h:44, label:'Na 상승 &lt;4 mmol/L', cls:'test'},
+  {id:'s_46',  x:260,y:200,w:200,h:44, label:'Na 상승 4–6 mmol/L', cls:'ben'},
+  {id:'s_gt6', x:520,y:200,w:220,h:44, label:'Na 상승 &gt;6 mmol/L', cls:'mal'},
+  {id:'s_rep', x:20, y:290,w:200,h:56, label:'3% HSS 볼루스 반복<small>20–40분</small>', cls:'tx fac'},
+  {id:'s_st1', x:270,y:290,w:180,h:56, label:'3% HSS 중단', cls:'ben'},
+  {id:'s_st2', x:470,y:290,w:120,h:56, label:'3% HSS 중단', cls:'ben'},
+  {id:'s_dd',  x:600,y:290,w:155,h:130,label:'데스모프레신 고려<small>1 μg SC 또는 IV 8시간마다 · 포도당액 4 mL/kg로 Na 1 mmol/L 감소</small>', cls:'tx fac'}
+ ],
+ edges:[
+  [A(380,66,380,95),1],[A(380,159,380,178),0],['M120 178 H630',0],[A(120,178,120,200),1],[A(360,178,360,200),1],[A(630,178,630,200),1],
+  [A(120,244,120,290),1],['M20 318 H10 V127 H180',1,'dot'],[A(360,244,360,290),1],
+  ['M600 244 V266 H530 V290',1],['M660 244 V266 H677 V290',1]
+ ], labels:[[16,120,'반복']]},
+mm:{tab:'경도–중등도', fig:'Fig. 2', aria:'경도–중등도 저나트륨혈증 치료 순서도', w:760, h:640,
+ nodes:[
+  {id:'m_top', x:230,y:10, w:300,h:44, label:'경도–중등도 저나트륨혈증'},
+  {id:'m_hypo',x:20, y:85, w:160,h:40, label:'저혈량'},
+  {id:'m_eu',  x:300,y:85, w:160,h:40, label:'정상혈량'},
+  {id:'m_hyper',x:580,y:85,w:160,h:40, label:'고혈량'},
+  {id:'m_r1',  x:5,  y:160,w:130,h:70, label:'uNa &gt;30<small>신성 원인</small>', cls:'test fac'},
+  {id:'m_r2',  x:145,y:160,w:130,h:70, label:'uNa &lt;30<small>비신성 원인</small>', cls:'test fac'},
+  {id:'m_si',  x:290,y:160,w:180,h:110,label:'SIADH<small>갑상선·부신 질환, 약물, 감염, 종양 배제 · 혈장·소변 삼투압 측정 · 영양결핍 없음</small>', cls:'test fac'},
+  {id:'m_h1',  x:485,y:160,w:130,h:70, label:'uNa &gt;30<small>신성(NS) 또는 비신성–이뇨제</small>', cls:'test fac'},
+  {id:'m_h2',  x:625,y:160,w:130,h:70, label:'uNa &lt;30<small>비신성(CHF·간질환)</small>', cls:'test fac'},
+  {id:'m_a1',  x:5,  y:300,w:130,h:110,label:'이뇨제 중단<small>소변 칼륨 낮으면 fludrocortisone 고려</small>', cls:'fac'},
+  {id:'m_a2',  x:145,y:300,w:130,h:110,label:'이뇨제 중단<small>필요 시 항구토제 · 가능하면 원인 치료</small>', cls:'fac'},
+  {id:'m_fr',  x:290,y:300,w:180,h:100,label:'수분 제한<small>소변량 &lt;500 mL 또는 24시간 sNa 상승 &lt;2 mmol/L이면 약물로</small>', cls:'tx fac'},
+  {id:'m_h1t', x:485,y:300,w:130,h:160,label:'수분 제한<small>eGFR 15–45: 루프이뇨제 · GFR &gt;30: tolvaptan · 무반응 또는 GFR &lt;15: 신장내과</small>', cls:'tx fac'},
+  {id:'m_h2t', x:625,y:300,w:130,h:250,label:'수분 제한<small>(갈증 시만 음수) · furosemide 20–40 mg/8–12h 또는 torasemide 2.5–10 mg/12–24h, 소금 3–5 g/일 · sNa 상승 &lt;2 mmol/L/일이면 tolvaptan 15 mg/일 · urea 15–60 g/일 · SGLT2i 10–25 mg/일</small>', cls:'tx fac'},
+  {id:'m_vol', x:5,  y:470,w:270,h:80, label:'용량 보충<small>생리식염수 0.9% 최대 30 mL/kg/일 · 경구 소금 9 g/일(식사와 함께)</small>', cls:'tx fac'},
+  {id:'m_drug',x:290,y:440,w:180,h:190,label:'약물<small>루프이뇨제 먼저 · tolvaptan 7.5 mg/일(과교정 감시 또는 용량 2배) · urea 15 g/일 · SGLT2i 25 mg/일 + 식사당 Na 1–2 g, 칼륨 풍부 식품</small>', cls:'tx fac'}
+ ],
+ edges:[
+  [A(380,54,380,68),0],['M100 68 H660',0],[A(100,68,100,85),1],[A(380,68,380,85),1],[A(660,68,660,85),1],
+  [A(100,125,100,140),0],['M70 140 H210',0],[A(70,140,70,160),1],[A(210,140,210,160),1],
+  [A(380,125,380,160),1],[A(660,125,660,140),0],['M550 140 H690',0],[A(550,140,550,160),1],[A(690,140,690,160),1],
+  [A(70,230,70,300),1],[A(210,230,210,300),1],[A(380,270,380,300),1],[A(550,230,550,300),1],[A(690,230,690,300),1],
+  ['M70 410 V440 H140 V470',1],['M210 410 V440 H140',0],[A(380,400,380,440),1]
+ ], labels:[]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.map(RID).join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paras}<p class="exp-src">Spasovski G. Nephrol Dial Transplant 2024;39:1583–1592 본문 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const TAB1 = `<div class="tbl"><table><thead><tr><th>항목</th><th>등장성 식염수</th><th>3% HSS</th><th>루프이뇨제</th><th>Vaptan</th><th>Urea</th><th>SGLT2 억제제</th></tr></thead><tbody>
+<tr><td>적응</td><td>저혈량성</td><td>중증</td><td>SIADH, 고혈량성(CHF)</td><td>SIADH, 고혈량성(CHF)<sup>*</sup></td><td>SIADH</td><td>SIADH</td></tr>
+<tr><td>하루 용량</td><td>23–30 mL/kg</td><td>볼루스 2–4 mL/kg 또는 지속 0.5–1 mL/kg/h</td><td>furosemide 20–40 mg/12h, torasemide 2.5–10 mg/24h</td><td>tolvaptan 7.5–60 mg</td><td>15–60 g</td><td>10–25 mg</td></tr>
+<tr><td>eGFR</td><td>제한 없음</td><td>제한 없음</td><td>&gt;15 mL/min</td><td>&gt;30 mL/min</td><td>&gt;60 mL/min</td><td></td></tr>
+<tr><td>반응 불량</td><td>수분 중독</td><td></td><td>uOsm &lt;350</td><td></td><td></td><td></td></tr>
+<tr><td>예상 Na 상승</td><td>첫 2일 2–4 mmol/L</td><td></td><td></td><td>24시간 4–6 mmol/L</td><td>4–6 mmol/L (2–7일)</td><td></td></tr>
+<tr><td>주의·금기</td><td>고혈량</td><td>고혈량</td><td>저혈량</td><td>임신, CYP3A4</td><td>CKD, 간질환, 탈수</td><td>저혈량</td></tr></tbody></table></div>
+<p class="small" style="color:var(--muted)">Table 1. 원표는 열 정렬이 깨져 있어 일부 칸의 귀속이 불확실하다(빈칸은 원문에 값이 없거나 귀속을 확정할 수 없는 경우). * 원표에는 vaptan 적응이 “hypovolaemic hyponatraemia (CHF patients)”로 표기되어 있으나, 본문은 vaptan을 저혈량에서 사용하지 말라고 하므로 고혈량성의 오기로 보았다.</p>`;
+const D = {
+o_start:{kind:'출발점', title:'저나트륨혈증', next:['o_dur','o_ton'], body:`${RR('1-1','2-1')}<p>정도: 경도 130–134, 중등도 120–129, 중증 &lt;120 mmol/L.</p>`},
+o_dur:{kind:'평가', title:'발생 기간', next:[], body:`<p>&lt;48시간은 급성(수술 후 과도한 수액, 자가 유발 수분 중독)으로 증상이 심하다. ≥48시간 또는 기간 불명은 만성으로 대개 무증상이거나 경미하다.</p>`},
+o_ton:{kind:'평가', title:'혈청 긴장도', next:['o_pse','o_sev'], body:`<p>저장성(&lt;275 mOsm/kg), 등장성(275–290), 고장성(&gt;290)으로 나눈다. 이 종설은 주로 저장성(진성) 저나트륨혈증의 치료를 다룬다.</p>`},
+o_pse:{kind:'감별', title:'가성·고장성 저나트륨혈증', next:[], body:`<p>고혈당과 고중성지방혈증이 원인이다. sNa의 적절한 상승 없이 고혈당을 빠르게 교정하면 혈청 삼투압이 낮아져 특히 케톤산증의 젊은 성인에서 뇌부종이 생길 수 있다. 고중성지방혈증성 가성 저나트륨혈증은 췌장염과 당뇨병케톤산증에서 볼 수 있다.</p>`},
+o_sev:{kind:'평가', title:'증상 중증도', next:['o_f1','o_vol'], body:`<ul><li>중증: 경련, 혼수, 호흡정지</li><li>경도–중등도(비특이): 두통, 기면, 피로, 어지럼, 오심, 구토, 혼동, 건망, 보행장애, 근육경련</li><li>무증상</li></ul><p>급성·중증·증상성은 입원하여 sNa, 소변량, 신경학적 상태를 자주 감시한다.</p>`},
+o_f1:{kind:'연결', title:'중증·증상성', next:['s_sev'], nextLabel:'Fig. 1로', body:`${R('2-2')}`},
+o_vol:{kind:'연결', title:'세포외액 용적 평가', next:['m_top'], nextLabel:'Fig. 2로', body:`${R('1-3')}`},
+o_lim:{kind:'안전', title:'교정 한도', next:['o_over'], body:`${R('1-2')}${tip('Na 결핍 공식','(140 − sNa) × 총체수분, 총체수분 = 체중(kg) × 0.6')}`},
+o_over:{kind:'구조', title:'과교정 시 재저하', next:[], body:`<p>2–3일 넘게 지속된 중증 저나트륨혈증에서는 예방 조치에도 ODS와 수분 이뇨가 생길 수 있다. sNa가 약 1 mmol/L/h 낮아지지 않거나 목표 범위에 들 때까지 반복할 수 있다. 빠른 만성 교정에 의한 ODS는 desmopressin 2–4 μg을 6–8시간마다 비경구로 Na에 따라 투여한다.</p>${R('2-5')}`},
+
+s_sev:{kind:'출발점', title:'중증 저나트륨혈증 (Na <125 mmol/L)', next:['s_hss'], body:`${RR('1-2','2-2')}`},
+s_hss:{kind:'치료', title:'3% 고장성 식염수', next:['s_lt4','s_46','s_gt6'], body:`${R('2-2')}${tip('SALSA 연구','빠른 간헐 볼루스(RIB)와 느린 지속 주입(SCI)의 과교정 차이는 없었고, RIB는 재저하 치료가 적고 첫 1시간 목표 도달이 나았다. 저칼륨혈증에서는 3% HSS 500 mL + KCl 20 mmol 지속 주입이 선호되며 2시간마다 Na 감시.')}`},
+s_lt4:{kind:'반응', title:'Na 상승 <4 mmol/L', next:['s_rep'], body:`<p>목표(4–6 mmol/L) 미달.</p>`},
+s_rep:{kind:'치료', title:'3% HSS 볼루스 반복', next:['s_hss'], body:`<p>각 sNa 측정 후 목표 상승에 도달할 때까지 반복한다. 볼루스는 체중 ≤60 kg, ≥100 kg에서 과교정·저교정이 더 잦았다.</p>`},
+s_46:{kind:'반응', title:'Na 상승 4–6 mmol/L', next:['s_st1'], body:`<p>4–6 mmol/L 상승으로 대부분의 증상이 회복되며, 그 이상은 치료적 이점이 없다. 목표 도달 후 감시 간격은 6–12시간으로 줄일 수 있다.</p>`},
+s_st1:{kind:'중단', title:'3% HSS 중단', next:[], body:`<p>첫 24시간 동안 같은 수준을 유지하고, 이후 어떤 24시간에도 8 mmol/L를 넘지 않게 한다.</p>`},
+s_gt6:{kind:'반응', title:'Na 상승 >6 mmol/L', next:['s_st2','s_dd'], body:`<p>과교정 위험. 소변량 증가(수분 이뇨)도 과교정과 관련될 수 있다.</p>`},
+s_st2:{kind:'중단', title:'3% HSS 중단', next:['s_dd'], body:`<p>Na 상승이 6 mmol/L를 넘으면 3% HSS를 중단하고 재저하 치료를 고려한다.</p>`},
+s_dd:{kind:'구조', title:'데스모프레신·포도당', next:[], body:`<p>Fig. 1: desmopressin 1 μg SC 또는 IV 8시간마다, 포도당액 4 mL/kg로 Na 1 mmol/L 감소.</p>${note('수치 차이','본문의 재저하 전략은 desmopressin 1–3 μg 8–12시간마다, 5% 포도당 2–4 mL/kg/h 4시간이다. vaptan 과교정의 브레이크 프로토콜은 desmopressin 2 μg, 5% 포도당 2–3 mL/kg/h 2–3시간이다.')}`},
+
+m_top:{kind:'출발점', title:'경도–중등도 저나트륨혈증', next:['m_hypo','m_eu','m_hyper'], body:`<p>중추신경계가 서서히 적응하므로 대개 무증상이며, 용적 상태와 원인 평가가 치료의 핵심이다. 증상이 있으면 Na 결핍 계산 후 3% NaCl을 천천히 주입하며 자주 감시한다.</p>`},
+m_hypo:{kind:'용적', title:'저혈량', next:['m_r1','m_r2'], body:`${RR('1-3','2-3')}`},
+m_r1:{kind:'원인', title:'uNa >30: 신성 원인', next:['m_a1'], body:`<p>고용량 이뇨제, 세뇨관병증, 원발성 부신기능저하증, 저알도스테론증.</p>`},
+m_r2:{kind:'원인', title:'uNa <30: 비신성 원인', next:['m_a2'], body:`<p>설사, 구토 등 위장관 손실, 출혈.</p>`},
+m_a1:{kind:'조치', title:'이뇨제 중단, fludrocortisone 고려', next:['m_vol'], body:`${note('단위 확인','원 그림(Fig. 2)에는 fludrocortisone “0.05–0.2 mcg/day”로 표기되어 있으나, 통상 용량은 0.05–0.2 mg/일이므로 단위 오기로 보인다.')}`},
+m_a2:{kind:'조치', title:'이뇨제 중단, 항구토제, 원인 치료', next:['m_vol'], body:`<p>위장관 손실이나 출혈 등 원인 치료와 함께 용적을 보충한다.</p>${R('2-3')}`},
+m_vol:{kind:'치료', title:'용량 보충', next:[], body:`${R('2-3')}<p>투여 경로와 관계없이 6–8시간 후와 24시간에 Na를 감시한다.</p>`},
+m_eu:{kind:'용적', title:'정상혈량', next:['m_si'], body:`${RR('1-5','2-5')}`},
+m_si:{kind:'진단', title:'SIADH', next:['m_fr'], body:`<p>갑상선기능저하증, 코르티솔 결핍, 특정 약물, 부종양 과정 등 다른 원인을 배제(또는 치료)한 후 SIADH 치료를 시작한다.</p>${R('1-5')}`},
+m_fr:{kind:'치료', title:'수분 제한', next:['m_drug'], body:`${R('2-5')}<ul><li>RCT: FR 환자의 2/3만 3일 후 Na &gt;130 mmol/L 도달</li><li>교정 속도 24–48시간마다 1–2 mmol/L</li><li>영양실조, 순응도 불량, 하루 &gt;1 L 정맥 수액 필요, 고온 기후에서는 권고하지 않음</li></ul>`},
+m_drug:{kind:'치료', title:'2차 약물', next:[], body:`${R('2-5')}${TAB1}`},
+m_hyper:{kind:'용적', title:'고혈량', next:['m_h1','m_h2'], body:`${RR('1-4','2-4')}`},
+m_h1:{kind:'원인', title:'uNa >30: 신성(신증후군) 또는 이뇨제', next:['m_h1t'], body:`<p>신증후군 같은 신성 원인 또는 이뇨제 사용에 의한 비신성 원인이다. 세포외액 확장과 낮은 혈관내 순환 용적이 공통 특징이다.</p>`},
+m_h1t:{kind:'치료', title:'수분 제한 ± 루프이뇨제·tolvaptan', next:[], body:`${R('2-4')}`},
+m_h2:{kind:'원인', title:'uNa <30: 심부전·간질환', next:['m_h2t'], body:`<p>심부전과 간부전에서는 갈증이 날 때만 마시도록 하고 소변량을 감시하는 FR이 1차 치료이다.</p>${R('1-4')}`},
+m_h2t:{kind:'치료', title:'수분 제한 + 단계적 약물', next:[], body:`${R('2-4')}<p>Tolvaptan은 간수치 상승 위험이 있어 간이식 직전 준비 외에는 간부전에서 사용하지 않는다. 알부민은 저알부민혈증을 동반한 진행된 간질환에 한정한다.</p>`}
+};
+const EXTRA = {
+levels:{kind:'참고', title:'이 종설과 도구에 대하여', next:[], body:`
+${['K','S'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}
+${note('구성','이 논문은 등급화된 권고가 없는 종설(Treatment standard)이므로 Box 1의 5개 요점과 Box 2의 5개 전략을 권고 상자로 수록하였다. Fig. 1과 Fig. 2는 원 그림을 재현했고, ‘초기 평가’ 탭은 본문의 분류·교정 한도를 바탕으로 본 도구에서 구성하였다.')}`},
+tab1:{kind:'Table 1', title:'저나트륨혈증의 약물 선택지', next:[], body:TAB1},
+boxes:{kind:'Box 1–2', title:'요점과 치료 개별화 전략', next:[], body:`<h4>Box 1. In a nutshell</h4>${RR('1-1','1-2','1-3','1-4','1-5')}<h4>Box 2. 치료 개별화 전략</h4>${RR('2-1','2-2','2-3','2-4','2-5')}`},
+newdev:{kind:'본문', title:'새로운 발전과 예후', next:[], body:`
+<p>vaptan과 SGLT2 억제제 몇몇 시험 외에 개발 중인 약물은 많지 않다. 현재 urea와 tolvaptan이 SIADH의 가장 효과적인 2차 치료로 간주된다. 향후 FR ± urea, FR 대 tolvaptan, FR 후 2차 선택지(urea, tolvaptan, SGLT2 억제제) 비교 RCT가 필요하며, 세 약물 모두 과교정 위험이 있으므로(tolvaptan이 가장 높음) 직접 비교가 필요하다.</p>
+<h5>Urea</h5><p>유럽·미국 지침 모두 FR 실패 시 RCT 근거는 없지만 urea를 효과적인 2차 선택지로 권고한다. 15 g urea는 250 mOsm의 신장 용질 부하를 주는 반면 NaCl 1 g 정제는 34 mOsm이다. 쓴맛으로 내약성이 낮아 오렌지주스나 구연산으로 약간 개선되며, 맛을 개선한 새 제형이 있다. 용량은 0.25–0.5 g/kg/일(15–30 g/일)이며 소변 삼투압이 높으면 대개 &gt;30 g/일로 늘린다. 혈청 urea 일시 상승은 신기능 악화로 간주해서는 안 된다. 가장 저렴한 약물이다(30 g당 &lt;3달러). 만성 SIADH 12명에서 vaptan 후 urea 15–30 g/일을 순차 투여한 소규모 연구에서 두 약 모두 반응이 좋았다(평균 sNa 135 mmol/L). 과교정 위험이 작고, 노쇠, 장기 치료 필요, 재입원 예방, tolvaptan의 30일 제한과 간기능 장애 금기를 고려하면 현재 urea가 선호되는 2차 치료일 수 있다.</p>
+<h5>Tolvaptan</h5><p>FR 불응 입원 SIADH 환자에서 2차 치료, 그리고 초기 치료로서 tolvaptan의 효능과 안전성은 진행 중인 RCT(ACTRN12619001683123)가 답할 것이다.</p>
+<h5>SGLT2 억제제</h5><p>입원 SIADH 87명 RCT에서 표준 FR에 empagliflozin 25 mg/일을 추가하면 4일 후 Na 상승이 위약보다 컸다(10 대 7 mmol/L). 심한 저나트륨혈증(&lt;125)과 기저 삼투압이 낮을수록 유리했다. 외래 만성 SIADH 14명의 4주 교차 RCT에서 sNa가 131에서 134 mmol/L로 상승했고 위약은 변화가 없었다. 진행 중인 시험(NCT04447911)이 확인할 것이다.</p>
+<h5>결과와 예후</h5><p>전문가 치료를 받은 18명은 역사적 대조군 23명보다 Na 상승이 빠르고 재원 기간이 짧았으며, 다른 단일기관 연구에서 &lt;120 mmol/L 환자의 전문가 치료는 사망 위험을 91% 줄였다. 교정이 사망과 재입원을 줄이는지는 진행 중인 다기관 RCT가 확인할 것이다. 예후는 중증도와 원인에 따라 다르며 급성 중증, 특히 고령에서 불량하다.</p>
+<h5>결론</h5><p>3% NaCl 100 mL 볼루스 또는 지속 주입의 교정 속도는 증상의 중증도와 지속에 따르며 자주 감시해야 하고, 빠른 간헐 투여가 선호된다. SIADH 환자의 거의 절반은 1차 FR에 반응하지 않는다. 경도·무증상은 적절한 용질(소금과 단백) 섭취와 초기 FR로 치료한다. 지침에 따라 검사실 참고범위로의 빠른 정상화보다 점진적 교정과 임상 평가가 바람직하다.</p>`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['ADH','Antidiuretic hormone, 항이뇨호르몬'],['CHF','Congestive heart failure, 울혈성 심부전'],['CKD','Chronic kidney disease, 만성콩팥병'],
+ ['CYP3A4','Cytochrome P450 3A4'],['ECF','Extracellular fluid, 세포외액'],['eGFR / GFR','(Estimated) glomerular filtration rate, (추정)사구체여과율'],
+ ['FR','Fluid restriction, 수분 제한'],['HF','Heart failure, 심부전'],['HSS','Hypertonic saline solution, 고장성 식염수'],
+ ['ICU','Intensive care unit, 중환자실'],['IV / SC','Intravenous / subcutaneous, 정맥 / 피하'],['NS','Nephrotic syndrome, 신증후군'],
+ ['ODS','Osmotic demyelination syndrome, 삼투성 탈수초 증후군'],['RCT','Randomized controlled trial, 무작위 대조시험'],
+ ['RIB / SCI','Rapid intermittent bolus / slow continuous infusion, 빠른 간헐 볼루스 / 느린 지속 주입'],
+ ['SGLT2(i)','Sodium–glucose cotransporter 2 (inhibitor), 나트륨-포도당 공동수송체 2 (억제제)'],
+ ['SIADH','Syndrome of inappropriate antidiuretic hormone secretion, 항이뇨호르몬 부적절 분비 증후군'],
+ ['sNa / uNa','Serum / urinary sodium, 혈청 / 소변 나트륨'],['uOsm','Urine osmolality, 소변 삼투압']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mL|mg|mmol|μg|g\/)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'ev';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: S, ODS)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('ev');
+
+</script>
+</body>
+</html>
