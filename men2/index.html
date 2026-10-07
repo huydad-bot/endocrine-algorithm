@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MEN2 (GeneReviews 2023)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>다발성 내분비샘종양 2형(MEN2)</h1>
+        <p class="src">GeneReviews®, Eng C, Plitt G. <a href="https://www.ncbi.nlm.nih.gov/books/NBK1257/" target="_blank" rel="noopener noreferrer">Multiple Endocrine Neoplasia Type 2 (Updated 2023 Aug 10)</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by GeneReviews or the authors</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>순서도는 본문·표로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>관리 권고 전체</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 1–8</button>
+      <button type="button" data-id="cl"><span class="bt-ic" aria-hidden="true">＋</span>임상 특성·감별</button>
+      <button type="button" data-id="gc"><span class="bt-ic" aria-hidden="true">＋</span>가족·유전상담</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {S:'GeneReviews 본문의 관리 권고: 등급화되지 않은 전문가 종설의 권고이며, 주로 ATA 2015(Wells 등), NCCN 2022, Neumann 2019 지침을 인용한다'};
+const LVTXT = {S:'GeneReviews'};
+const LVCLS = {S:'l2'};
+const REC = {
+'D1':['S','MEN2A는 한 개인 또는 가까운 친척에서 특정 내분비종양(MTC, 갈색세포종, 부갑상선 선종/과형성) 2개 이상이 발생하면 임상적으로 진단한다. FMTC는 갈색세포종이나 부갑상선 선종/과형성 없이 MTC가 있는 사람이 2명 이상인 가족에서 임상적으로 진단한다. MEN2B는 조기 발병 MTC, 입술과 혀의 점막신경종, 각막신경 수초화, 커진 입술을 동반한 특징적 얼굴, 마르판양 체형으로 임상적으로 진단한다.'],
+'D2':['S','분자 진단은 시사 소견이 있는 발단자에서 RET의 이형접합 생식세포 기능획득 병원성(또는 병원성 가능) 변이를 확인하여 확립한다. 유전형별 감시·치료 권고와 가족 검사를 위해 임상 진단을 받은 모든 사람에게 분자 유전검사를 권고한다. RET 의미 불명 변이(VUS)는 진단을 확정하거나 배제하지 않는다.'],
+'D3':['S','MEN2A나 FMTC가 의심되면 병원성 변이 대부분이 있는 엑손 10, 11, 13–16의 선택 엑손 검사를 먼저 고려할 수 있고, 음성이면 다유전자 패널의 일부로 RET 전체 서열분석을 고려한다. MEN2B가 의심되면 p.Met918Thr와 p.Ala883Phe 표적 분석을 먼저 고려할 수 있다. MEN2는 기능획득 기전이므로 유전자 표적 결실/중복 분석은 적응되지 않는다.'],
+'M1':['S','MEN2 진단 후 질병 범위 확인을 위해 내분비내과 의뢰, 혈장 칼시토닌, 혈장 CEA, 혈장 유리 메타네프린 또는 24시간 소변 분획 메타네프린, 혈청 칼슘(상승 시 부갑상선호르몬과 25-하이드록시비타민 D)을 평가한다. MTC 환자는 흉부·복부 조영증강 CT로 전이를 평가하고, 림프절 질환이 있거나 칼시토닌 &gt;400 pg/mL이면 간 MRI를 시행한다. 유전 전문가의 유전상담을 제공한다.'],
+'T1':['S','예방적 갑상선절제술은 RET 생식세포 병원성 변이가 확인된 사람의 일차 예방 수단이다. C세포 과형성 단계, 즉 침습성 MTC로 진행하기 전에 시행하면 림프절을 보존하고 갑상선절제술만으로 수술을 제한할 수 있다. 모든 연령에서 안전하지만 시기는 논란이며, ATA 합의문에 따라 RET 병원성 변이의 코돈 위치로 시기를 정할 수 있다(Table 6). 진단이 확인되지 않은 위험자에게는 일상적으로 제공하지 않는다.'],
+'T2':['S','MEN2A, MEN2B, FMTC 환자는 수술 중 카테콜아민 위기를 피하기 위해 모든 수술 전에 혈장 유리 메타네프린 또는 24시간 소변 분획 메타네프린으로 기능성 갈색세포종을 평가한다. 갈색세포종이 발견되면 갑상선절제술 전에 부신절제술을 시행한다.'],
+'T3':['S','MTC의 표준 치료는 갑상선 제거와 림프절 절제이다. 불완전 절제나 양성 절제연을 동반한 갑상선외 침범에는 외부방사선치료 또는 세기조절방사선치료를 고려한다. 전이성 MTC에는 다중키나제억제제(1차: vandetanib, cabozantinib)와 RET 선택적 억제제(2차: selpercatinib, pralsetinib)를 고려한다. 1차 치료 후 진행한 전이성 고종양변이부담(≥10 변이/메가베이스) 질환에는 항PD-1 항체 pembrolizumab을 고려한다. HPT 근거가 없으면 갑상선절제술 시 부갑상선절제술을 일상적으로 시행하지 않는다.'],
+'T4':['S','갈색세포종은 부신절제술 전에 흔히 α·β 아드레날린 수용체 차단으로 고혈압을 치료한다(일부 센터는 α 차단 전처치 없이 수술 중 nitroprusside로 혈압을 조절한다). 절제는 비디오 보조 복강경으로 시행할 수 있다. 대부분의 전문가는 일측 갈색세포종에는 일측 부신절제술을, 부신이 하나 남은 경우나 양측 갈색세포종에는 남은 조직을 면밀히 감시하면서 피질 보존 부신 수술을 권한다. 갑상선절제 후 갑상선기능저하증은 갑상선호르몬 보충으로 치료한다.'],
+'T5':['S','갑상선절제술 시 HPT가 진단되면 육안으로 커진 부갑상선 절제, 아전 부갑상선절제술, 또는 전완 자가이식을 동반한 전 부갑상선절제술을 선택할 수 있다. 대부분의 MEN2A 환자는 갑상선절제 수년 후 HPT가 진단되며, 이 경우 수술 전 국소화 후 비대 선을 절제하고, 4선 질환에는 아전절제 또는 전완 자가이식을 동반한 전절제를 시행한다. 수술 사망 위험이 높거나 기대여명이 제한적이거나 수술 후 지속·재발하면 약물을 고려한다.'],
+'S1':['S','혈청 칼시토닌: 예방적 갑상선절제술을 받지 않은 경우 MEN2A/FMTC는 3–5세부터, MEN2B는 생후 6개월부터 매년 측정한다(3세 미만, 특히 6개월 미만은 해석에 주의). 갑상선절제 후에는 생화학적 질병 근거가 나타나기 전에 수술했더라도 수술 후 3개월, 이후 매년, 잔존 MTC가 있으면 더 자주 칼시토닌과 CEA를 측정한다.'],
+'S2':['S','갈색세포종: 모든 수술 전에 평가한다. MEN2A/FMTC는 ATA H 변이에서 11세부터, ATA MOD 변이에서 16세부터 매년, MEN2B는 11세부터 매년 혈장 유리 메타네프린 또는 24시간 소변 분획 메타네프린을 측정하고, 생화학 결과가 비정상이면 MRI 및/또는 CT를 시행한다. 여성은 계획 임신 전 또는 계획하지 않은 임신이면 가능한 한 일찍 선별한다.'],
+'S3':['S','부갑상선: 부갑상선절제술과 자가이식을 받지 않은 MEN2A/FMTC는 ATA H 변이에서 11세부터, ATA MOD 변이에서 16세부터 매년 알부민 보정 칼슘 또는 이온화 칼슘을 측정한다. MEN2B는 선별이 필요 없다. FMTC 표현형도 잘못되거나 이른 분류에 대비하여 MEN2A에 준해 선별한다.'],
+'A1':['S','도파민 D2 수용체 길항제(예: metoclopramide, veralipride)와 베타 아드레날린 수용체 길항제(β차단제)는 갈색세포종 환자에서 부작용 위험이 높다. 모노아민산화효소 억제제, 교감신경 작용제(예: ephedrine), 일부 펩타이드·코르티코스테로이드 호르몬도 합병증을 일으킬 수 있으며, 삼환계 항우울제는 일관되지 않다.'],
+'R1':['S','가족의 RET 변이가 알려진 경우 위험 친척에게 분자 유전검사를 제공한다: MEN2A와 FMTC는 5세까지(12개월 소아에서 MTC가 발견된 예가 있어 가능하면 더 일찍), MEN2B는 출생 후 가능한 한 빨리 시행한다. 가족 변이를 모르면 MTC에 대해 경부 초음파와 기저 및/또는 자극 칼시토닌, HPT에 대해 매년 알부민 보정 칼슘 또는 이온화 칼슘, 갈색세포종에 대해 매년 메타네프린을 선별한다. 환자가 위험 가족에게 알리기를 거부하면 의사는 임상윤리 전문가와 상의하여 경고 의무가 있는지 판단하는 것을 고려해야 한다.'],
+'P1':['S','MEN2 여성은 계획 임신 전, 또는 계획하지 않은 임신이면 가능한 한 일찍 갈색세포종을 선별해야 한다.'],
+'G1':['S','모든 MEN2 아형은 상염색체 우성으로 유전된다. MEN2A 환자의 최대 95%는 이환된 부모가 있고 de novo 변이는 약 5–9%이며, MEN2B는 50%가 이환된 부모가 있고 50%가 de novo이다(대부분 부계 기원). 환자 자녀가 변이를 물려받을 확률은 50%이다. 변이를 부모에서 찾을 수 없으면 생식세포 모자이크증 가능성으로 형제 재발 위험은 약 1%이다. 가족 변이가 확인되면 산전 및 착상 전 유전검사가 가능하다.']
+};
+const RID = id => id;
+
+const EXP = {
+cl:{t:'임상 특성', ids:['D1'], p:[
+'MEN2의 내분비 질환은 갑상선 수질암(MTC)과 그 전구 병변인 C세포 과형성(CCH), 갈색세포종, 부갑상선 선종 또는 과형성이다. MEN2는 MEN2A, FMTC(현재 MEN2A의 변이형으로 간주), MEN2B의 세 표현형으로 나뉜다(Table 2). 유병률은 약 1:35,000이다.',
+'#MTC와 CCH',
+'MEN2의 MTC는 산발성 MTC보다 어린 나이에 나타나며 CCH와 다발성·양측성을 더 흔히 동반한다. 35세 전 경부 종괴나 통증으로 나타나며, 가장 흔한 전신 증상인 설사는 혈장 칼시토닌 &gt;10 ng/mL에서 생기고 예후가 불량하다. 촉지 종괴나 설사가 있는 환자의 최대 70%는 이미 경부 림프절 전이가 있다. 모든 MTC의 약 20–30%가 RET 생식세포 변이를 가지며, 가족력 없는 단독 MTC에서는 약 6–7%이다. 혈장 칼시토닌은 민감하고 특이적인 표지자이며, 예방적 갑상선절제를 받지 않은 MTC 소인 RET 변이 보유자는 모두 35세까지 생화학적 MTC를 보인다. 전절제와 림프절 절제를 받은 환자의 약 50%가 재발하며, 칼시토닌이 정상이었던 보유자의 갑상선에서도 MTC가 발견되었다.',
+'#갈색세포종',
+'MEN2의 갈색세포종은 흔히 양측성이며 전이는 드물지만 난치성 고혈압이나 마취 유발 고혈압 위기로 치명적일 수 있다. 부신외 부신경절종은 거의 없다. 일관되게 에피네프린 또는 에피네프린과 노르에피네프린을 생성한다. 복부 MRI 및/또는 CT로 영상하며 MRI가 더 민감하다. [18F]DA PET이 국소화에 가장 좋고, 없으면 MIBG 신티그래피를 쓰며, 68Ga-DOTATATE PET-CT가 생화학 지표와 가장 잘 상관한다.',
+'#부갑상선 이상',
+'양성 선종부터 고칼슘혈증과 신장결석을 동반한 임상적 HPT까지 다양하다. 칼슘 상승과 함께 부갑상선호르몬이 상승하거나 정상 상한이면 존재한다. 재발 시 99mTc-sestamibi와 경부 초음파, 수술 전 국소화에 SPECT가 도움이 될 수 있다.',
+'#표현형',
+'MEN2A(MEN2의 약 70–80%): MTC가 대개 첫 양상이다. 갈색세포종은 대개 MTC 이후 또는 동시에 나타나나 13–27%에서 첫 양상이며, 산발성보다 이르게 진단되고 증상이 덜하며 양측성이 많고 약 4%가 악성 변환한다. 따라서 갈색세포종 진단 시 MEN2A를 조사해야 한다. HPT는 대개 경미하고 평균 38세에 발병한다. 일부 가족에서 등 위쪽의 피부 태선 아밀로이드증이 MTC보다 먼저 나타날 수 있다.',
+'FMTC(약 10–20%): 정의상 MTC가 유일한 양상이며 발병이 늦고 침투도가 낮다. 갈색세포종 위험을 잘못 배제하지 않도록 MEN2A에 준한 선별이 필요하다.',
+'MEN2B(약 5%): 모든 환자에서 공격적인 MTC가 조기에 생기며, 1세 전에 갑상선절제를 받지 않으면 이른 나이에 전이성 MTC가 생기기 쉽다. 조기 예방적 갑상선절제 이전에는 중앙 사망 연령이 25세였다. 갈색세포종이 50%에서 생기며 약 절반은 다발성·양측성이다. 임상적으로 의미 있는 부갑상선 질환 위험은 증가하지 않는다. 혀, 구개, 인두의 점막신경종과 특징적 얼굴, 두꺼워지는 입술, 눈꺼풀 신경종, 세극등에서 보이는 각막신경 비후가 있다. 약 40%에서 위장관 신경절신경종증(복부 팽만, 거대결장, 변비, 설사), 약 75%에서 마르판양 체형이 있다.']},
+dx:{t:'진단', ids:['D2','D3'], p:[
+'시사 소견: MEN2A는 MTC, 갈색세포종, 부갑상선 선종/과형성 중 하나 이상이 있으면 의심한다. FMTC는 갈색세포종이나 부갑상선 질환 없이 MTC가 2명 이상인 가족에서 의심한다. MEN2B는 입술 점막신경종으로 상하 입술 홍순이 두꺼운 특징적 얼굴, 입술·혀 점막신경종, 각막신경 수초화, 마르판양 체형, MTC가 있으면 의심한다.',
+'ACMG/AMP 해석 지침에 따라 병원성 변이와 병원성 가능 변이는 임상에서 동의어로 진단적이다. RET 서열분석의 검출률은 MEN2A &gt;98%, FMTC &gt;95%, MEN2B &gt;98%이다(Table 1). FMTC 변이의 20–30%씩을 코돈 618, 620, 634가 차지하며, MEN2B의 약 95%는 엑손 16 코돈 918 변이이다. RET와 다른 관련 유전자를 포함한 암 소인 다유전자 패널도 고려할 수 있다.',
+'#감별진단',
+'MTC는 미국 신규 갑상선암의 약 10%이다. 산발성 MTC는 단일 병소, 늦은 발병, CCH 부재가 특징이며 40–50%에서 체세포 RET 변이(가장 흔히 p.Met918Thr, 더 공격적)가 있다. 칼시토닌 자극 양성 CCH는 일반 인구의 약 5%에서 있으며, 칼시토닌은 만성신부전, 패혈증, 폐·위장관 신경내분비종양, 고가스트린혈증, 비만세포증, 자가면역 갑상선질환, 1A형 가성부갑상선기능저하증에서 상승할 수 있다. 가족력 없는 갈색세포종의 최대 25%가 RET, VHL, SDHD, SDHB 생식세포 변이를 가지며 약 5%가 RET 변이이다(Table 4). 노르메타네프린만 생성하는 갈색세포종은 MEN2를 배제할 수 있다. MEN1과 MEN4는 유전적·임상적으로 MEN2와 다르다.']},
+mg:{t:'진단 후 평가와 치료', ids:['M1','T1','T2','T3','T4','T5'], p:[
+'예방적 갑상선절제술의 시기는 ATA 지침 태스크포스가 분류한 공격적 MTC 위험도에 따른다(Table 6). 이 지침은 더 많은 자료가 나오면서 계속 수정되고 있다. 다학제 지지 치료(내분비내과, 내분비외과, 의학유전학)가 권장된다(Table 7).',
+'위험 가족 구성원의 전향 연구에서 RET 변이 보유자의 8%는 MTC와 동시에 갈색세포종이 발견되었다. 키나제억제제는 절제 불가능하거나 진행된 전이성 MTC에서 무진행생존을 개선하고 일부에서 질병 퇴행을 일으켰다.',
+'#연구 중인 치료',
+'Sorafenib, sunitinib, regorafenib 같은 다중키나제억제제의 임상시험이 진행 중이며, NCCN과 ATA는 vandetanib이나 cabozantinib 표준 치료에 실패하면 임상시험 참여를 고려하도록 권고한다. Sorafenib 메타분석(8개 시험, 101명)에서 부분 반응 21%, 안정 58%였고, sunitinib 소규모 2상에서 6명 중 3명이 객관적 반응을 보였다. 면역관문억제제(pembrolizumab, nivolumab, ipilimumab) 시험이 진행 중이다. 소마토스타틴 수용체를 표적하는 PRRT(177Lu, 90Y, 111In)는 200명 넘는 환자 검토에서 60% 넘게 양호한 영상 반응을 보였다.']},
+sv:{t:'감시와 피해야 할 약물', ids:['S1','S2','S3','A1','P1'], p:['기존 양상, 지지 치료에 대한 반응, 새로운 양상의 출현을 감시하기 위해 Table 8의 평가를 권고한다. 갈색세포종과 HPT 감시 시작 연령은 확인된 RET 생식세포 병원성 변이에 따라 정한다.']},
+gc:{t:'위험 친척 평가와 유전상담', ids:['R1','G1'], p:[
+'무증상 위험 친척의 예측 유전검사는 조기 진단과 적절한 선별·감시를 가능하게 하여, C세포 과형성의 악성 변환 전 예방적 갑상선 제거, 이미 있는 MTC의 조기 진단, 갈색세포종과 HPT의 조기 진단으로 임상 결과를 개선할 수 있다. 확인된 RET 변이를 가진 환자의 모든 1촌에게 검사를 강력히 권한다. 조기 발견이 관리에 영향을 주므로 무증상 소아의 검사가 이롭다. 알려진 변이가 확인되지 않으면 여러 세대에 이환자가 있는 가족에서 연관 분석을 고려할 수 있다. 검사 전 소아와 부모에 대한 교육과 유전상담이 적절하다.',
+'발단자 부모 평가: 발단자에서 RET 변이가 확인되면 부모를 평가하고 검사를 제공한다. 감소된 침투도, 부모의 조기 사망, 늦은 발병 등으로 가족력이 음성으로 보일 수 있어 적절한 평가 없이 음성 가족력을 확정할 수 없다. 형제는 부모가 이환되었으면 50% 위험이며 대개 가족과 같은 아형을 보인다.',
+'RET 생식세포 변이가 없는 단독 MTC 환자의 자녀가 변이를 물려받을 확률은 0.15–0.18%로, 단독 MTC의 6–7%가 생식세포 변이를 가지고 검출률이 약 95%인 점에 근거한다. 유전 위험 판정과 산전·착상 전 검사의 최적 시기는 임신 전이며, 이환되었거나 위험이 있는 젊은 성인에게 유전상담을 제공한다. 분자 진단이 확인되지 않은 발단자의 DNA 보관을 고려한다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+dx:{tab:'진단', fig:'본문 구성', aria:'MEN2 진단 순서도', w:760, h:510, nodes:[
+ {id:'n_s', x:230,y:10, w:300,h:56,label:'MEN2 의심<small>MTC · 갈색세포종 · 부갑상선 종양 · MEN2B 얼굴 특징</small>',cls:'fac'},
+ {id:'n_a', x:10, y:100,w:230,h:90,label:'MEN2A 임상 진단<small>한 개인 또는 가까운 친척에서 MTC·갈색세포종·부갑상선 종양 중 2개 이상</small>',cls:'mal fac'},
+ {id:'n_f', x:265,y:100,w:230,h:90,label:'FMTC 임상 진단<small>갈색세포종·HPT 없이 MTC가 2명 이상인 가족</small>',cls:'mal fac'},
+ {id:'n_b', x:520,y:100,w:230,h:90,label:'MEN2B 임상 진단<small>조기 MTC · 입술·혀 점막신경종 · 각막신경 수초화 · 마르판양 체형</small>',cls:'mal fac'},
+ {id:'n_g1',x:10, y:230,w:485,h:70,label:'선택 엑손 검사<small>엑손 10, 11, 13–16 → 음성이면 RET 전체 서열분석(다유전자 패널)</small>',cls:'test fac'},
+ {id:'n_g2',x:520,y:230,w:230,h:70,label:'표적 분석<small>p.Met918Thr · p.Ala883Phe</small>',cls:'test fac'},
+ {id:'n_ret',x:230,y:340,w:300,h:60,label:'RET 생식세포 기능획득 변이 확인<small>VUS는 진단을 확정·배제하지 않음</small>',cls:'mal fac'},
+ {id:'n_risk',x:10,y:440,w:230,h:56,label:'ATA 위험도 분류<small>위험도 탭</small>',cls:'test fac'},
+ {id:'n_ev', x:265,y:440,w:230,h:56,label:'진단 후 평가<small>Table 5</small>',cls:'test fac'},
+ {id:'n_fam',x:520,y:440,w:230,h:56,label:'위험 친척 유전검사<small>유전상담</small>',cls:'test fac'}],
+ edges:[[A(380,66,380,82),0],['M125 82 H635',0],[A(125,82,125,100),1],[A(380,82,380,100),1],[A(635,82,635,100),1],
+  [A(125,190,125,230),1],[A(380,190,380,230),1],[A(635,190,635,230),1],[A(300,300,300,340),1],['M635 300 V320 H480 V340',1],
+  [A(380,400,380,420),0],['M125 420 H635',0],[A(125,420,125,440),1],[A(380,420,380,440),1],[A(635,420,635,440),1]], labels:[]},
+risk:{tab:'위험도·예방 수술', fig:'Table 6·8', aria:'RET 변이별 ATA 위험도와 예방적 갑상선절제술 및 감시', w:760, h:480, nodes:[
+ {id:'r_t', x:230,y:10, w:300,h:44,label:'RET 변이별 ATA 공격적 MTC 위험도',cls:'test'},
+ {id:'r_hst',x:10, y:80, w:230,h:110,label:'최고 위험 (HST)<small>p.Met918Thr · MEN2B</small>',cls:'mal fac'},
+ {id:'r_h',  x:265,y:80, w:230,h:110,label:'고위험 (H)<small>p.Cys634 (Arg·Gly·Phe·Ser·Trp·Tyr) · p.Ala883Phe</small>',cls:'mal fac'},
+ {id:'r_mod',x:520,y:80, w:230,h:110,label:'중등도 위험 (MOD)<small>그 밖의 모든 RET 기능획득 병원성 변이</small>',cls:'fac'},
+ {id:'r_t1', x:10, y:220,w:230,h:80, label:'예방적 갑상선절제술<small>생후 1년 이내 가능한 한 빨리</small>',cls:'tx fac'},
+ {id:'r_t2', x:265,y:220,w:230,h:80, label:'예방적 갑상선절제술<small>5세 이전</small>',cls:'tx fac'},
+ {id:'r_t3', x:520,y:220,w:230,h:80, label:'예방적 갑상선절제술<small>기준 충족 시 5세 이후로 연기 가능</small>',cls:'tx fac'},
+ {id:'r_s1', x:10, y:330,w:230,h:140,label:'감시 (MEN2B)<small>칼시토닌: 생후 6개월부터 매년 · 갈색세포종: 11세부터 매년 · HPT 선별 불필요</small>',cls:'test fac'},
+ {id:'r_s2', x:265,y:330,w:230,h:140,label:'감시 (MEN2A H)<small>칼시토닌: 3–5세부터 매년 · 갈색세포종·HPT: 11세부터 매년 (p.Ala883Phe는 MEN2B 일정)</small>',cls:'test fac'},
+ {id:'r_s3', x:520,y:330,w:230,h:140,label:'감시 (MEN2A/FMTC MOD)<small>칼시토닌: 3–5세부터 매년 · 갈색세포종·HPT: 16세부터 매년</small>',cls:'test fac'}],
+ edges:[[A(380,54,380,68),0],['M125 68 H635',0],[A(125,68,125,80),1],[A(380,68,380,80),1],[A(635,68,635,80),1],
+  [A(125,190,125,220),1],[A(380,190,380,220),1],[A(635,190,635,220),1],[A(125,300,125,330),1],[A(380,300,380,330),1],[A(635,300,635,330),1]], labels:[]},
+tx:{tab:'치료', fig:'Table 7', aria:'MEN2 발현의 치료 순서도', w:760, h:640, nodes:[
+ {id:'x_s',  x:230,y:10, w:300,h:44,label:'모든 수술 전'},
+ {id:'x_pcc',x:230,y:80, w:300,h:70,label:'갈색세포종 선별<small>혈장 유리 메타네프린 또는 24시간 소변 분획 메타네프린</small>',cls:'test fac'},
+ {id:'x_pos',x:10, y:190,w:300,h:56,label:'갈색세포종 있음',cls:'mal'},
+ {id:'x_neg',x:450,y:190,w:300,h:56,label:'갈색세포종 없음',cls:'ben'},
+ {id:'x_pre',x:10, y:280,w:300,h:90,label:'수술 전 혈압 조절<small>α·β 아드레날린 수용체 차단 (일부 센터는 수술 중 nitroprusside)</small>',cls:'tx fac'},
+ {id:'x_adx',x:10, y:400,w:300,h:90,label:'부신절제술 먼저<small>복강경 · 일측은 일측 절제 · 양측·단일 부신은 피질 보존 수술</small>',cls:'tx fac'},
+ {id:'x_thy',x:450,y:280,w:300,h:110,label:'갑상선 수술<small>MTC: 갑상선 제거 + 림프절 절제 · 예방적 갑상선절제(위험도 탭) · 수술 후 갑상선호르몬 보충</small>',cls:'tx fac'},
+ {id:'x_hpt',x:450,y:420,w:300,h:110,label:'부갑상선기능항진증<small>비대 선 절제 · 아전절제 · 전절제 + 전완 자가이식 · 고위험·재발 시 약물</small>',cls:'tx fac'},
+ {id:'x_met',x:10, y:520,w:300,h:110,label:'잔존·전이성 MTC<small>EBRT/IMRT · 1차 vandetanib·cabozantinib · 2차 selpercatinib·pralsetinib · TMB-high: pembrolizumab</small>',cls:'tx fac'}],
+ edges:[[A(380,54,380,80),1],['M330 150 V170 H160 V190',1],['M430 150 V170 H600 V190',1],[A(160,246,160,280),1],[A(160,370,160,400),1],
+  ['M310 445 H380 V335 H450',1],[A(600,246,600,280),1],[A(600,390,600,420),1,'dot'],['M450 375 H395 V575 H310',1]], labels:[]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Eng C, Plitt G. GeneReviews, MEN2 (2023 개정) 본문 번역. 참고문헌은 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows, cap) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${cap?`<p class="small" style="color:var(--muted)">${cap}</p>`:''}`;
+const TAB1 = tbl(['방법','MEN2A','FMTC','MEN2B'],[['RET 서열분석','&gt;98%','&gt;95%','&gt;98%'],['MEN2A/FMTC 관련 선택 엑손 서열분석','98%','95%','해당 없음'],['MEN2B 관련 변이 표적 분석','해당 없음','해당 없음','98%']],'Table 1. 방법별 병원성 변이 검출 발단자 비율. 기능획득 기전이므로 결실/중복 분석은 적응되지 않는다. FMTC에서 코돈 618, 620, 634가 각각 20–30%, MEN2B의 약 95%는 코돈 918.');
+const TAB2 = tbl(['표현형','MTC','갈색세포종','부갑상선 질환'],[['MEN2A','95%','50%','20–30%'],['FMTC','100%','&lt;1%*','&lt;1%*'],['MEN2B','100%','50%','&lt;1%']],'Table 2. *FMTC는 위험 증가가 없으며, FMTC로 추정되던 사람에게 갈색세포종이나 부갑상선 질환이 생기면 MEN2A일 가능성이 높다.');
+const TAB3 = tbl(['코돈','엑손','ATA 위험','아형','PCC','HPT','추가 양상'],[['p.Cys609','10','MOD','MEN2A; FMTC','+','+','HSCR'],['p.Cys611','10','MOD','MEN2A; FMTC','+','+','HSCR'],['p.Cys618','10','MOD','MEN2A; FMTC','+','+','HSCR'],['p.Cys620','10','MOD','MEN2A; FMTC','+','+','HSCR'],['p.Cys630','11','MOD','MEN2A','+','+','−'],['p.Cys634','11','H','MEN2A','+','+','CLA'],['p.Leu790','13','MOD','MEN2A','+','−','PTC'],['p.Val804Leu','14','MOD','MEN2A','+','+','−'],['p.Val804Met','14','MOD','MEN2A','+','+','PTC; CLA'],['p.Ala883Phe','15','H','MEN2B','+','−','−'],['p.Met918Thr','16','HST','MEN2B','+','−','−']],'Table 3. 유전형–표현형 상관. CLA 피부 태선 아밀로이드증, HSCR 히르슈슈프룽병, PTC 유두암.');
+const TAB4 = tbl(['유전자','질환','주요 특징','비고'],[['VHL','폰히펠-린다우 증후군','뇌·척수·망막 혈관모세포종, 신장 낭종과 투명세포 신세포암, 갈색세포종, 췌장 낭종과 신경내분비종양, 내림프낭 종양','가족성 또는 비증후군 갈색세포종으로 나타날 수 있고 일측·양측, 대개 양성'],['MAX, SDHA, SDHAF2, SDHB, SDHC, SDHD, TMEM127','유전성 PGL-PCC 증후군','부신경절종과 갈색세포종 · 추가로 위장관 간질종양, 폐 연골종, 신세포암, 유두암, 뇌하수체 선종, 신경내분비종양','두경부 부신경절종은 흔하나 MEN2에서는 극히 드묾'],['NF1','신경섬유종증 1형','다발성 밀크커피 반점, 겨드랑 주근깨, 피부 신경섬유종, 학습장애','갈색세포종·부신경절종은 성인 NF1의 1% 미만']],'Table 4. 갈색세포종 감수성 유전자');
+const TAB5 = tbl(['평가','내용'],[['내분비','내분비내과 의뢰 · 혈장 칼시토닌, CEA · 혈장 유리 메타네프린 또는 24시간 소변 분획 메타네프린 · 혈청 칼슘(상승 시 PTH, 25OHD)'],['MTC 전이 평가','흉부·복부 조영증강 CT · 림프절 질환 또는 칼시토닌 &gt;400 pg/mL이면 간 MRI'],['유전상담','유전 전문가(의학유전학자, 유전상담사, 유전 전문 간호사)']],'Table 5. 진단 후 평가');
+const TAB6 = tbl(['위험','병원성 변이','예방적 갑상선절제술 권장 연령'],[['HST','p.Met918Thr','생후 1년 이내 가능한 한 빨리'],['H','p.Cys634Arg/Gly/Phe/Ser/Trp/Tyr, p.Ala883Phe','5세 미만'],['MOD','그 밖의 모든 RET 기능획득 병원성 변이','기준 충족 시 5세 이후로 연기 가능*']],'Table 6 (Wells 2015 각색). *기준: 매년 기저 및/또는 자극 칼시토닌 정상, 매년 경부 초음파 정상, 덜 공격적인 MTC 가족력.');
+const TAB8 = tbl(['대상','검사','빈도'],[['MTC','혈청 칼시토닌','예방적 갑상선절제 미시행: MEN2A/FMTC 3–5세부터 매년, MEN2B 생후 6개월부터 매년* · 갑상선절제 후: 수술 후 3개월, 이후 매년(잔존 MTC는 더 자주)†'],['MTC','혈장 CEA','갑상선절제 후: 수술 후 3개월, 이후 매년(잔존 MTC는 더 자주)†'],['갈색세포종','혈장 유리 메타네프린 또는 24시간 소변 분획 메타네프린, 비정상이면 MRI·CT, 필요 시 신티그래피·PET','모든 수술 전 · MEN2A/FMTC: ATA H 11세, ATA MOD 16세부터 매년 · MEN2B: 11세부터 매년 · 여성: 계획 임신 전 또는 가능한 한 일찍'],['부갑상선','알부민 보정 칼슘 또는 이온화 칼슘','부갑상선절제·자가이식 미시행: MEN2A/FMTC ATA H 11세, ATA MOD 16세부터 매년 · MEN2B 불필요']],'Table 8. *3세 미만, 특히 6개월 미만의 칼시토닌 해석에 주의. †생화학적 질병 근거 전에 갑상선절제를 했더라도 잔존·재발 감시 필요.');
+const D = {
+n_s:{kind:'출발점', title:'MEN2 의심', next:['n_a','n_f','n_b'], body:`${R('D1')}`},
+n_a:{kind:'임상 진단', title:'MEN2A', next:['n_g1'], body:`${R('D1')}${TAB2}`},
+n_f:{kind:'임상 진단', title:'FMTC', next:['n_g1'], body:`${RR('D1','S3')}`},
+n_b:{kind:'임상 진단', title:'MEN2B', next:['n_g2'], body:`${R('D1')}`},
+n_g1:{kind:'유전검사', title:'선택 엑손 검사', next:['n_ret'], body:`${RR('D3','D2')}${TAB1}`},
+n_g2:{kind:'유전검사', title:'MEN2B 표적 분석', next:['n_ret'], body:`${R('D3')}${TAB1}`},
+n_ret:{kind:'확진', title:'RET 생식세포 변이 확인', next:['n_risk','n_ev','n_fam'], body:`${R('D2')}<h4>Table 3</h4>${TAB3}`},
+n_risk:{kind:'분류', title:'ATA 위험도 분류', next:['r_t'], nextLabel:'위험도 탭으로', body:`${TAB6}`},
+n_ev:{kind:'평가', title:'진단 후 평가', next:['x_s'], nextLabel:'치료 탭으로', body:`${R('M1')}${TAB5}`},
+n_fam:{kind:'가족', title:'위험 친척 유전검사', next:[], body:`${RR('R1','G1')}`},
+r_t:{kind:'출발점', title:'ATA 위험도', next:['r_hst','r_h','r_mod'], body:`${R('T1')}${TAB6}`},
+r_hst:{kind:'위험도', title:'최고 위험 (HST)', next:['r_t1'], body:`<p>MEN2B는 모든 환자에서 공격적인 MTC가 조기에 생기며, 1세 전에 갑상선절제를 받지 않으면 이른 나이에 전이성 MTC가 생기기 쉽다.</p>${TAB3}`},
+r_h:{kind:'위험도', title:'고위험 (H)', next:['r_t2'], body:`<p>코돈 634 변이는 갈색세포종과 HPT 발생률이 높고 피부 태선 아밀로이드증과 관련된다. p.Cys634Arg는 진단 시 전이 확률이 더 높다는 보고가 있다. p.Ala883Phe는 MEN2B 변이이다.</p>${TAB3}`},
+r_mod:{kind:'위험도', title:'중등도 위험 (MOD)', next:['r_t3'], body:`<p>코돈 609, 611, 618, 620(엑손 10)은 MEN2A, FMTC, 히르슈슈프룽병과 관련되며 변형 활성이 낮다. 코돈 804 변이는 같은 가족 안에서도 발현이 매우 다양하여, 5세에 MTC, 12세에 치명적 전이가 생긴 예부터 86세까지 임상적 MTC가 없는 예까지 있다.</p>${TAB3}`},
+r_t1:{kind:'수술', title:'생후 1년 이내 예방적 갑상선절제술', next:['r_s1'], body:`${RR('T1','T2')}`},
+r_t2:{kind:'수술', title:'5세 이전 예방적 갑상선절제술', next:['r_s2'], body:`${RR('T1','T2')}`},
+r_t3:{kind:'수술', title:'5세 이후 연기 가능', next:['r_s3'], body:`${R('T1')}${TAB6}`},
+r_s1:{kind:'감시', title:'MEN2B 감시', next:[], body:`${RR('S1','S2','S3')}${TAB8}`},
+r_s2:{kind:'감시', title:'MEN2A ATA H 감시', next:[], body:`${RR('S1','S2','S3')}${TAB8}`},
+r_s3:{kind:'감시', title:'MEN2A/FMTC ATA MOD 감시', next:[], body:`${RR('S1','S2','S3')}${TAB8}`},
+x_s:{kind:'출발점', title:'모든 수술 전', next:['x_pcc'], body:`${R('T2')}`},
+x_pcc:{kind:'선별', title:'갈색세포종 선별', next:['x_pos','x_neg'], body:`${RR('T2','A1')}`},
+x_pos:{kind:'결과', title:'갈색세포종 있음', next:['x_pre'], body:`<p>MEN2A 갈색세포종의 13–27%는 첫 양상이며, 진단되지 않은 갈색세포종은 수술 중 고혈압 위기로 사망을 일으킬 수 있다.</p>`},
+x_neg:{kind:'결과', title:'갈색세포종 없음', next:['x_thy'], body:`<p>갑상선 수술로 진행한다.</p>`},
+x_pre:{kind:'치료', title:'수술 전 혈압 조절', next:['x_adx'], body:`${RR('T4','A1')}${note('주의','본문은 β차단제를 갈색세포종에서 피해야 할 약물로 기술하므로, β 차단은 α 차단을 먼저 시작한 뒤에 추가하는 것이 일반적 원칙이다(원문 외 참고).')}`},
+x_adx:{kind:'치료', title:'부신절제술 먼저', next:['x_thy'], body:`${R('T4')}`},
+x_thy:{kind:'치료', title:'갑상선 수술', next:['x_hpt','x_met'], body:`${RR('T3','T1')}`},
+x_hpt:{kind:'치료', title:'부갑상선기능항진증', next:[], body:`${R('T5')}`},
+x_met:{kind:'치료', title:'잔존·전이성 MTC', next:[], body:`${R('T3')}`}
+};
+const EXTRA = {
+levels:{kind:'참고', title:'이 자료와 도구에 대하여', next:[], body:`<div class="rec"><span class="lv l2">GeneReviews</span><p>${LV.S}</p></div>${note('구성','원문은 등급화된 권고와 진료 순서도가 없는 GeneReviews 종설이다. 세 탭은 본문과 Table 6–8을 바탕으로 본 도구에서 구성했고, 관리 권고 16개(번호는 본 도구에서 부여)를 권고 상자로 수록하였다. Molecular Genetics의 Table 9(주요 RET 병원성 변이 목록)는 수록하지 않았다.')}`},
+all:{kind:'전체', title:'관리 권고 전체', next:[], body:`<h4>진단</h4>${RR('D1','D2','D3','M1')}<h4>치료</h4>${RR('T1','T2','T3','T4','T5')}<h4>감시·약물·임신</h4>${RR('S1','S2','S3','A1','P1')}<h4>가족·유전상담</h4>${RR('R1','G1')}`},
+tabs:{kind:'표', title:'Table 1–8', next:[], body:`<h4>Table 1</h4>${TAB1}<h4>Table 2</h4>${TAB2}<h4>Table 3</h4>${TAB3}<h4>Table 4</h4>${TAB4}<h4>Table 5</h4>${TAB5}<h4>Table 6</h4>${TAB6}<h4>Table 8</h4>${TAB8}`},
+cl:{kind:'본문', title:'임상 특성과 감별진단', next:[], body:`<h4>${EXP.cl.t}</h4>${paraHTML(EXP.cl)}<h4>${EXP.dx.t}</h4>${paraHTML(EXP.dx)}${TAB4}`},
+gc:{kind:'본문', title:'위험 친척 평가와 유전상담', next:[], body:`${RR('R1','G1','P1')}`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['ATA','American Thyroid Association, 미국갑상선학회 (위험도 HST/H/MOD)'],['CCH','C-cell hyperplasia, C세포 과형성'],['CEA','Carcinoembryonic antigen'],['CLA','Cutaneous lichen amyloidosis, 피부 태선 아밀로이드증'],
+ ['EBRT / IMRT','External beam / intensity-modulated radiation therapy'],['FMTC','Familial medullary thyroid carcinoma, 가족성 수질암'],['HPT','Hyperparathyroidism, 부갑상선기능항진증'],['HSCR','Hirschsprung disease, 히르슈슈프룽병'],
+ ['MEN2A / 2B','Multiple endocrine neoplasia type 2A / 2B'],['MIBG','Metaiodobenzylguanidine'],['MTC','Medullary thyroid carcinoma, 갑상선 수질암'],['NCCN','National Comprehensive Cancer Network'],
+ ['PCC','Pheochromocytoma, 갈색세포종'],['PGL','Paraganglioma, 부신경절종'],['PRRT','Peptide receptor radionuclide therapy'],['PTC','Papillary thyroid carcinoma, 유두암'],
+ ['RET','REarranged during Transfection 원종양유전자'],['TMB','Tumor mutational burden, 종양변이부담'],['VUS','Variant of uncertain significance, 의미 불명 변이']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: M, RET)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
