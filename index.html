@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Endocrine Algorithm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F6F8; --surface:#FFFFFF; --ink:#16232E; --muted:#5B6B78; --border:#D5DEE5;
+  --hdr:#1F4E6B; --hdr-ink:#FFFFFF; --hdr-sub:#D6E4EE; --gold:#E3B341;
+  --accent:#1F6A93; --accent-soft:#E3EFF6;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F171D; --surface:#17222B; --ink:#E4ECF2; --muted:#9AAAB6; --border:#2B3A46;
+    --hdr:#173B52; --hdr-ink:#FFFFFF; --hdr-sub:#B9CCDA; --accent:#7DB8DA; --accent-soft:#1D3242;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F171D; --surface:#17222B; --ink:#E4ECF2; --muted:#9AAAB6; --border:#2B3A46;
+  --hdr:#173B52; --hdr-ink:#FFFFFF; --hdr-sub:#B9CCDA; --accent:#7DB8DA; --accent-soft:#1D3242;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif; line-height:1.5}
+main{max-width:980px; margin:0 auto; padding:16px 16px calc(32px + env(safe-area-inset-bottom,0px))}
+header{background:var(--hdr); color:var(--hdr-ink); border-radius:12px 12px 0 0; border-bottom:3px solid var(--gold); padding:1.4rem 1.25rem 1.1rem; text-align:center}
+header h1{margin:0; font-size:clamp(1.5rem,4vw,2rem); font-weight:700; letter-spacing:.01em}
+header p{margin:.35rem 0 0; color:var(--hdr-sub); font-size:.92rem}
+.panel{background:var(--surface); border:1px solid var(--border); border-top:0; border-radius:0 0 12px 12px; padding:1rem 1.1rem 1.3rem}
+.search{width:100%; font:inherit; font-size:.95rem; padding:.55rem .75rem; border:1px solid var(--border); border-radius:8px; background:var(--bg); color:var(--ink)}
+.search:focus{outline:2px solid var(--accent); outline-offset:1px}
+section{margin-top:1.2rem}
+section h2{margin:0 0 .55rem; font-size:.95rem; font-weight:700; color:var(--accent); display:flex; align-items:center; gap:.5rem}
+section h2::after{content:""; flex:1; height:1px; background:var(--border)}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:.6rem}
+a.tool{display:flex; flex-direction:column; gap:.15rem; text-decoration:none; color:var(--ink); background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:.7rem .85rem; transition:transform .12s, box-shadow .12s, background .12s}
+a.tool:hover{background:var(--accent-soft); transform:translateY(-1px); box-shadow:0 3px 10px rgba(0,0,0,.08)}
+a.tool:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+a.tool b{font-size:1rem; font-weight:600}
+a.tool span{font-size:.82rem; color:var(--muted)}
+.empty{color:var(--muted); font-size:.9rem; margin-top:1rem}
+footer{margin-top:1.2rem; text-align:center; font-size:.8rem; color:var(--muted)}
+footer a{color:var(--accent)}
+@media (prefers-reduced-motion: reduce){a.tool{transition:none} a.tool:hover{transform:none}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Endocrine Algorithm</h1>
+    <p>내분비대사 진료지침 흐름도 모음</p>
+  </header>
+  <div class="panel">
+    <input class="search" id="q" type="search" placeholder="검색 (예: 갑상선, 부신, CKD)" aria-label="도구 검색" autocomplete="off">
+    <div id="list"></div>
+    <p class="empty" id="empty" hidden>일치하는 도구가 없습니다.</p>
+  </div>
+  <footer>경북대학교병원 내분비대사내과 · 문의 <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></footer>
+</main>
+<script>
+const BASE = 'https://huydad-bot.github.io/endocrine-algorithm/';
+const GROUPS = [
+ ['갑상선', [
+  ['th-nodule','갑상선결절 검사 및 치료 알고리즘','KTA 2024'],
+  ['dtc','갑상선분화암 진료 흐름도','KTA 2024'],
+  ['mtc','갑상선 수질암 관리 알고리즘','ATA 2015'],
+  ['subclinical-hypothyroidism','무증상갑상선기능저하증','대한갑상선학회 2023']]],
+ ['부갑상선·골', [
+  ['phpt','원발성 부갑상선기능항진증 관리 알고리즘','제5차 국제 워크숍 2022'],
+  ['osteoporosis','영국 골다공증 예방·치료 지침','NOGG 2024']]],
+ ['뇌하수체', [
+  ['prolactinoma','프로락틴종 진단 및 치료 알고리즘','Pituitary Society 2023']]],
+ ['부신', [
+  ['adrenal-incidentaloma','부신우연종 관리 알고리즘','ESE-ENSAT 2023'],
+  ['pa','원발성 알도스테론증 진단과 관리','대한내분비학회 2023'],
+  ['ppgl','갈색세포종·부신경절종 진단','대한내분비학회 2021'],
+  ['pbmah','PBMAH 진단·치료','Endocrine Reviews 2023'],
+  ['cah','선천부신과형성(CAH)','Endocrine Reviews 2022']]],
+ ['다발성 내분비샘종양', [
+  ['men1','MEN1 진료지침','JCEM 2012'],
+  ['men2','MEN2','GeneReviews 2023']]],
+ ['당뇨병·비만·지질', [
+  ['mody','MODY 치료 선택','체계적 문헌고찰 2026'],
+  ['midd','MIDD 당뇨병 관리','Diabetes Obes Metab 2026'],
+  ['obesity','비만/ABCD 알고리즘','AACE 2025'],
+  ['dyslipidemia','이상지질혈증 지침 그림 5–18','ACC/AHA 2026']]],
+ ['고혈압·신장·전해질', [
+  ['hypertension','고혈압 진료지침','대한고혈압학회 2026'],
+  ['ckd','만성콩팥병(CKD) 평가·관리','KDIGO 2024'],
+  ['hyponatremia','저나트륨혈증 치료 표준','NDT 2024']]]
+];
+const list = document.getElementById('list'), empty = document.getElementById('empty');
+function render(q){
+  q = (q||'').trim().toLowerCase();
+  let n = 0;
+  list.innerHTML = GROUPS.map(([g, items])=>{
+    const hit = items.filter(([d,t,s])=>!q || (g+' '+t+' '+s+' '+d).toLowerCase().includes(q));
+    n += hit.length;
+    if (!hit.length) return '';
+    return `<section><h2>${g}</h2><div class="grid">${hit.map(([d,t,s])=>`<a class="tool" href="${BASE}${d}/"><b>${t}</b><span>${s}</span></a>`).join('')}</div></section>`;
+  }).join('');
+  empty.hidden = n > 0;
+}
+document.getElementById('q').addEventListener('input', e=>render(e.target.value));
+render('');
+</script>
+</body>
+</html>
