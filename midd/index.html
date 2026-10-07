@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MIDD 당뇨병 관리 (Diabetes Obes Metab 2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>모계 유전 당뇨병 및 난청(MIDD)의 당뇨병 관리</h1>
+        <p class="src">Review and proposed treatment algorithm, Chaudhry A, Thompson DM, Chanoine JP. <a href="https://doi.org/10.1111/dom.70240" target="_blank" rel="noopener noreferrer">Diabetes Obes Metab 2026;28:826–839</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the authors or the journal</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>Fig. 1은 원 그림 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>제안 전체</button>
+      <button type="button" data-id="t1"><span class="bt-ic" aria-hidden="true">＋</span>기존 권고 (Table 1)</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 2–3</button>
+      <button type="button" data-id="agents"><span class="bt-ic" aria-hidden="true">＋</span>약제별 검토</button>
+      <button type="button" data-id="preg"><span class="bt-ic" aria-hidden="true">＋</span>임신·수유</button>
+      <button type="button" data-id="prev"><span class="bt-ic" aria-hidden="true">＋</span>예방·결론</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {S:'저자 제안: 무작위 시험이 없어 병태생리 모델과 증례 경험에 근거한 저자들의 관점이다. 근거 등급 없음', P:'기존 지침·문헌 인용 사항'};
+const LVTXT = {S:'저자 제안', P:'기존 권고'};
+const LVCLS = {S:'l2', P:'l4'};
+const REC = {
+'A1':['S','모계로 유전되는 난청과 당뇨병 가족력이 있는 환자의 당뇨병은, 특히 다른 MIDD 관련 증상이 있으면 MIDD를 강하게 시사한다. 진단은 혈액과 소변, 모발, 타액 같은 쉽게 얻을 수 있는 조직·체액의 유전검사로 확인해야 한다. 결과가 불확정이거나 근육 이형세포질성(heteroplasmy) 평가가 필요하면 근생검을 할 수 있으며, 소변 이형세포질성, VO<sub>2</sub> max, 기저 혈청 젖산으로 간접 평가할 수도 있다.'],
+'A2':['S','MIDD 환자에서는 포도당 대사(공복 혈당, HbA1c, C-펩타이드), 신기능(요소, 크레아티닌, 소변 알부민/크레아티닌 비), 젖산, 심혈관 기능(혈압, 심전도, 심초음파)을 기저와 이후 매년(또는 임상적으로 필요할 때) 평가해야 한다. MIDD 당뇨병은 HbA1c ≥6.5%로 정의한다.'],
+'L1':['S','신체활동, 영양, 영양 보충제는 개별적으로 논의한다. 원칙적으로 건강한 식사를 하고 이화 상태와 장기 금식을 피한다. 경도–중등도의 규칙적 운동은 내약성에 따라 안전하며 근육 이형세포질성과 산화적 인산화를 개선하는 것으로 보인다.'],
+'L2':['S','영양 보충제의 역할은 결론이 나지 않았다. CoQ10은 청력 소실 진행, 운동 후 젖산 상승, 심근·근육 기능 장애를 개선할 수 있으나 β세포 기능과 혈당에 대한 CoQ10과 L-carnitine의 근거는 제한적이고 상충한다.'],
+'K1':['S','MIDD 당뇨병은 DKA로 처음 나타날 수 있다. 인슐린 투여 후 세포내 포도당이 빠르게 늘면 손상된 미토콘드리아가 이를 효율적으로 대사하지 못해 젖산이 증가할 수 있으므로, MIDD의 DKA 관리에는 지속적인 젖산 측정과 고혈당의 느린 교정이 도움이 될 수 있다.'],
+'P1':['S','GLP-1R 작용제와 SGLT2 억제제는 MIDD 당뇨병의 1차 약제로 고려할 수 있다. 둘 사이의 선택은 금기, 기존 합병증, 체중에 따라 개별화하고 치료 반응과 부작용에 따라 조정한다. MIDD에서 GLP-1R 작용제는 원치 않는 체중 감소나 심한 위장관 운동 장애를 막기 위해 저용량으로 시작하여 적절히 증량한다. 가능하면 GLP-1R 작용제 대신 GLP-1/GIP 이중 작용제를 고려할 수 있다.'],
+'P2':['S','Metformin은 조건부로 1차 선택지에 포함한다. 젖산증은 드물지만 우려되므로 이득과 위험에 대한 환자와의 공동 의사결정과 젖산 수치의 면밀한 감시하에 제공할 수 있다. 간부전과 신부전(특히 GFR &lt;30 mL/min/1.73 m²)은 금기이며, 뇌졸중 유사 발작(MELAS) 병력이 있는 환자에서도 주의가 필요할 수 있다.'],
+'P3':['S','다른 약제는 2차 접근으로 고려할 수 있다. Pioglitazone은 산화 스트레스와 인슐린 저항성에 긍정적 효과가 있고, gliclazide는 항산화 특성과 낮은 저혈당 위험, 다른 설폰요소제보다 지속적인 반응을 보이며, DPP-4 억제제는 혈당강하 효과가 작고 심신 보호 효과가 없지만 내약성이 좋고 체중 중립적이다.'],
+'P4':['S','특히 SGLT2 억제제, 설폰요소제, metformin에 대한 sick-day 교육을 환자와 함께 검토해야 한다. MIDD 환자는 인슐린 결핍으로 더 일찍 진행하여 SGLT2 억제제 사용 중 DKA 위험이 높을 수 있으므로 STOP-DKA 같은 프로토콜을 검토한다.'],
+'P5':['S','다른 당뇨병처럼 대사 비대상(증상성 고혈당, DKA, HHS) 환자에서는 집중 인슐린 치료를 시작한다. MIDD 진단 무렵에는 절대적 인슐린 결핍 가능성이 낮아 당독성이 사라지면 β세포 기능이 회복될 수 있으며, 비인슐린 약제(특히 SGLT2 억제제와 GLP-1R 작용제)를 도입하면서 인슐린을 감량할 수 있다는 보고가 있다.'],
+'P6':['S','최대 내약 용량의 비인슐린 약제에도 혈당 목표에 도달하지 못하면, 또는 C-펩타이드로 인슐린 결핍이 의심되면 더 일찍 인슐린을 추가한다.'],
+'P7':['S','임신 중 당뇨병이 있는 MIDD 환자에서는 인슐린이 선택 치료이다. TZD, GLP-1R 작용제, DPP-4 억제제, SGLT2 억제제는 임신 중 금기이고 수유 중 승인되지 않았으며, GLP-1R 작용제는 임신 3개월 전에 중단해야 한다. Metformin은 젖산증 우려로 흔히 피한다.'],
+'P8':['S','가능하면 표준 혈당 목표인 HbA1c &lt;7%를 추구하되, 저혈당 위험, 노쇠, 돌봄 요구, 기대여명에 따라 개별화된 더 높은 목표를 고려한다.'],
+'T1':['P','Nga 등(Newcastle 그룹): 개별화. 체중 감소가 바람직하면 1차 DPP-4 억제제, 2차 SGLT2 억제제 또는 설폰요소제 추가, 3차 두 약 병용 또는 인슐린 전환. 체중 감소가 바람직하지 않으면 1차 GLP-1R 작용제 또는 SGLT2 억제제, 2차 두 약 병용, 3차 GLP-1R 작용제 ± 인슐린 전환. Metformin은 젖산증 위험 증가로 피하는 것이 좋다.'],
+'T2':['P','Yeung 등: 인슐린 결핍 근거가 있으면 영양·신체활동과 함께 인슐린을 시작한다. 인슐린 저항성 근거가 있으면 개별 특성에 따라 SGLT2 억제제 및/또는 GLP-1R 작용제를 쓰고, 이미 복용 중인 metformin은 중단을 고려한다.']
+};
+const RID = id => id;
+
+const EXP = {
+intro:{t:'서론과 병태생리', ids:['T1','T2'], p:[
+'MIDD는 류신 운반 RNA(tRNALeu(UUR))를 암호화하는 <i>MT-TL1</i> 유전자의 병원성 변이에 의한 단일유전자 미토콘드리아 질환이다. m.3243A&gt;G 변이 하나가 임상 증례의 80% 넘게 차지하지만 22개 넘는 병원성 변이가 MIDD를 일으킨다. 저자들은 문헌 검토를 바탕으로, MIDD 당뇨병이 근육 이형세포질성이 높고(인슐린 저항성 촉진) β세포 이형세포질성이 중등도일 때(β세포 기능 손상) 더 잘 생긴다고 제안하였다.',
+'MIDD는 산화 스트레스 증가와 mTORC1 경로의 비정상 활성과 관련된다. 표현형은 Nrf2가 관여하는 미토콘드리아 대사 역행 신호와 아직 잘 정의되지 않은 유전·환경 요인의 영향도 받는다. 칼슘 처리 이상이 보고되었으나 원인인지 산화 스트레스 같은 다른 과정의 하류 효과인지는 근거가 일관되지 않다. <i>MT-TL1</i> 병원성 변이는 MELAS와도 관련되며, 이 더 심한 임상상은 적어도 부분적으로 더 높은 세포 이형세포질성을 반영하고, 대개 더 어린 나이에 진단되며 미토콘드리아 당뇨병을 일으킬 수 있다.',
+'MIDD 관리에 대한 무작위 시험은 없으며, 저자들이 아는 미토콘드리아 당뇨병 관리 권고는 두 가지뿐이다(Table 1). 저자들은 병태생리 모델에 근거한 질환 특이적 접근을 제시하기 위해 기존 항고혈당제가 산화환원 신호, 산화 스트레스, 미토콘드리아 기능에 미치는 영향을 평가하고, 새로운 약제의 심신 보호 효과를 우선시하며, MIDD 증례 경험과 안전성, 임신·수유 중 안전성을 검토하여 진단·평가·관리 알고리즘을 만들었다. 다만 이러한 효과는 주로 1형·2형 당뇨병에서 연구되어 MIDD에 외삽할 때 주의가 필요하며, 제안된 접근은 적절한 임상 연구로 검증되어야 할 토대이다.']},
+met:{t:'Metformin', ids:['P2'], p:[
+'Metformin은 2형 당뇨병의 흔한 1차 경구 약제이며 1형 당뇨병에서도 혈당, 인슐린 요구량, 체중을 개선할 수 있다. 미토콘드리아와 ATP 소비가 필요한 간 포도당신생합성을 감소시켜 혈당을 낮추며, AMPK 의존적·비의존적 기전을 통한 mTORC1 경로 억제가 관여한다. 장운동 변화, GLP-1 반응 증강, 인슐린 감수성 개선, 장 포도당 배출 증가도 기전으로 거론된다. 이 적응으로 승인되지는 않았으나 임상 연구는 metformin이 인슐린이나 설폰요소제와 달리 혈당 강하와 독립적인 심혈관·신장 보호를 제공할 수 있음을 시사한다.',
+'#미토콘드리아 기능과 산화 스트레스',
+'임상 용량의 metformin은 AMPK 의존 경로를 통해 고지방식 생쥐 간에서 산화적 인산화 복합체 I을 자극하고 호흡사슬 활성과 지방산 산화를 증가시켰다. 다른 동물 연구에서도 AMPK, SIRT1·SIRT3, Nrf2 활성화를 통해 췌장을 포함한 조직의 활성산소와 미토콘드리아 산화 스트레스를 줄였고, 미토파지와 미토콘드리아 생합성을 촉진했다. 새로 진단된 2형 당뇨병에서 metformin은 생활습관 교정보다 산화 스트레스 혈청 지표를 더 많이 줄였다.',
+'#MIDD에서의 안전성',
+'미토콘드리아 기능 장애에 metformin의 글리세로인산 탈수소효소와 복합체 I 억제가 겹쳐 이론적으로 젖산이 축적될 수 있다는 논란이 있다. 그러나 복합체 I 억제는 초치료 용량에서만 일어나는 것으로 보이며, 위험의 임상 근거는 증례 보고와 소규모 증례군에 한정된다(Table S1). 다른 그룹은 일부 MIDD 환자에서 효능과 안전성에 대한 긍정적 경험을 보고했다. Cochrane 고찰에서 70,490 환자년의 metformin 사용 중 치명적·비치명적 젖산증은 한 건도 없었고, 진단되지 않은 MIDD 환자가 포함되었을 가능성이 높다. 전문가 합의도 원발성 미토콘드리아 질환에서 metformin을 안전하게 쓸 수 있다고 만장일치로 동의했다. 흔한 부작용은 복부 불편감, 팽만, 설사이며 저혈당 위험은 낮다.']},
+'su':{t:'설폰요소제', ids:[], p:[
+'설폰요소제는 β세포 SUR1 수용체에 결합하여 인슐린 분비를 늘리며 HbA1c를 1–1.5% 낮춘다. 심장과 신장에 있는 SUR2에 대한 췌장 외 작용은 임상 용량에서 입증되지 않았다. 2형 당뇨병의 심혈관 효과는 일관되지 않다.',
+'인슐린 분비 증가는 미토콘드리아의 산화 스트레스와 대사 부하를 만든다. 세포 배양에서 glibenclamide나 glimepiride는 mTOR를 활성화하고 활성산소와 세포자멸을 늘렸으며, glibenclamide의 mTOR 과활성은 미토파지를 방해할 수 있다. 반면 gliclazide는 고유한 azabicyclic 고리로 자유라디칼 소거 특성이 있어 산화 스트레스를 악화시키지 않고 다른 설폰요소제보다 산화 스트레스 지표를 더 잘 완화하며, 저용량에서 GIP와 GLP-1 분비를 늘릴 수 있다. 설폰요소제는 인슐린보다 혈당 강하와 β세포 보존이 덜 지속적이어서 β세포 소진을 가속하는지 의문이 제기되나, gliclazide는 glibenclamide보다 2차 실패율이 낮고 인슐린 시작까지의 기간이 길다.',
+'MIDD에서 여러 사용 경험이 보고되었다. 주요 부작용은 저혈당과 체중 증가이며 gliclazide가 저혈당 위험이 낮다. 간에서 대사되고 소변(과 담즙)으로 배설되므로 만성콩팥병에서 주의해야 한다.']},
+tzd:{t:'Thiazolidinedione', ids:[], p:[
+'TZD는 PPAR-γ를 활성화하는 인슐린 감작제이다. 새로 진단된 2형 당뇨병에서 pioglitazone과 metformin 단독요법의 HbA1c 감소는 비슷했다(1.3%, 1.5%). 전당뇨에서 당뇨로의 진행을 줄이고 인슐린 감수성과 β세포 분비 기능을 보존하는 효과가 있다. 시험관 연구에서 PPAR-γ와 항산화 효소 카탈라제 증가를 통해 β세포의 미토콘드리아 활성산소와 산화 스트레스를 보호했고, PGC-1α 활성과 미토콘드리아 생합성을 촉진했다. MIDD에서의 사용 보고는 1건으로 혈당 조절과 인슐린 저항성 지표가 개선되고 내약성이 좋았다. 체중 증가, 체액 저류, 심부전과 관련되나 pioglitazone은 죽상경화성 심혈관 사건 위험을 낮춘다.']},
+glp:{t:'GLP-1R 작용제', ids:['P1'], p:[
+'GLP-1R 작용제는 HbA1c를 1–2% 낮추고 체중을 줄이며, 체중 감소와 독립적으로 인슐린 감수성을 개선하고 강력한 심혈관(죽상경화, 울혈성 심부전)·신장 보호를 제공한다. Tirzepatide 같은 GLP-1/GIP 이중 작용제는 혈당과 체중 감소가 더 강력하며 GLP-1 유발 오심을 완화할 수 있고, 심혈관 보호도 더 우월할 수 있어 MIDD에 특히 적합할 수 있으나 직접 비교 시험은 아직 없다.',
+'시험관·생체 연구에서 GLP-1R 작용제는 미토콘드리아 기능과 형태, 세포자멸, 염증, 산화 스트레스, ER 스트레스에 관여하는 유전자와 경로를 조절한다. 췌장뿐 아니라 심장, 뇌, 간, 신장에서 AMPK, PKA, Epac2, 단백질키나아제 B, SIRT1, Nrf2를 통해 항산화 능력을 높이고 비정상 mTOR 과활성을 약화시키며, 미토파지와 미토콘드리아 막전위, 질량, 형태를 개선한다. 2형 당뇨병 40개 임상시험 메타분석에서 산화 스트레스 혈청 지표가 유의하게 감소했고, 고위험 2형 당뇨병에서 인슐린보다 산화 스트레스와 미토콘드리아 활성 지표(GDF-15, MOTS-c)를 더 개선했다.',
+'#MIDD에서의 안전성',
+'최근 증례 보고에서 인슐린을 대체하거나 병용했을 때 내약성이 적절하고 당뇨 조절이 개선되었으며 일부에서는 인슐린이 필요 없어졌다. MIDD에서는 체중이 일반 인구보다 낮은 경우가 많아 추가 체중 감소가 바람직하지 않을 수 있으나, 체중 감소는 용량 의존적이고 저용량에서도 HbA1c 효과가 확인되었다. 저혈당 위험은 인슐린 분비촉진제나 인슐린과 병용하지 않으면 낮다. m.3271T&gt;C 변이 미토콘드리아 당뇨병에서 tirzepatide 사용 보고가 1건 있다.']},
+dpp:{t:'DPP-4 억제제', ids:[], p:['DPP-4 억제제는 GLP-1과 GIP의 분해를 막아 생리적 농도의 GLP-1을 유지하며, 포도당 의존적으로 인슐린 분비를 자극하고 글루카곤을 억제한다. GLP-1R 작용제와 달리 인슐린 감수성을 개선하지 않고 오심·구토가 없으며 체중 중립적이다. HbA1c를 0.5–0.8% 낮추고 심장 보호 효과는 입증되지 않았으며 신장에는 알부민뇨 감소의 작은 효과만 있다. 동물 연구에서 미토콘드리아 산화 스트레스 개선이 주로 GLP-1 증가를 통해 나타났으나, 2형 당뇨병에서 SGLT2 억제제나 GLP-1R 작용제에 추가해도 산화 스트레스 지표에 추가 효과가 없었다. MIDD에서 안전성과 내약성을 보인 증례 보고가 있다. 저혈당 위험이 낮으나 담석증과 췌장염과 관련될 수 있다. Linagliptin을 제외하면 주로 신장으로 배설된다.']},
+sglt:{t:'SGLT2 억제제', ids:['P4'], p:[
+'근위세관의 나트륨·포도당 재흡수를 막아 나트륨이뇨와 당뇨를 일으키며 HbA1c를 평균 0.5–0.8% 낮춘다. 2형 당뇨병의 인슐린 감수성 개선은 당독성 감소와 에너지원이 포도당에서 유리지방산으로 이동한 결과로 본다. 1형 당뇨병에서 HbA1c, 인슐린 요구량, 체중을 약간 줄이나 DKA 위험이 높다. 당뇨병 유무와 관계없이 심혈관 건강을 개선하고 심부전과 만성콩팥병 진행을 늦춘다. 혈당 강하 효과는 GFR에 따라 감소하여 GFR &lt;30에서는 미미하다.',
+'심장, 신장, 췌장에서 산화 스트레스를 줄이고 미토콘드리아 기능에 영향을 주며, 이것이 심혈관 이득의 핵심 기전으로 보인다. AMPK와 sirtuin 같은 영양 결핍 신호를 mTORC1 같은 에너지 과잉 신호보다 우세하게 하여 활성산소와 ER 스트레스를 줄인다. β세포에 SGLT2가 없지만 당독성과 대사 부하를 줄여(β세포 휴식) β세포 기능, 생존, 산화 스트레스, 증식 지표를 개선하며, 당뇨 초기에 시작할 때 효과가 가장 크다. 직접 효과도 제안되었다. 고위험 2형 당뇨병에서 인슐린보다, 아마도 GLP-1R 작용제보다 산화 스트레스와 미토콘드리아 활성 지표를 더 개선했다.',
+'#MIDD에서의 안전성',
+'최근 증례 보고에서 효능과 안전성이 기술되었다. 흔한 부작용은 용적 감소와 생식기 진균 감염이며 저혈당 위험은 낮다. 특히 인슐린 결핍 환자와 급성 질환 중 정상혈당 DKA를 포함한 DKA가 증가한다. MIDD 환자는 인슐린 분비 장애로 이론적으로 더 취약하여 인슐린 결핍 근거가 있으면 주의가 필요하다. 그러나 1형 당뇨병에서 신중한 sick-day 교육으로 DKA 위험을 줄일 수 있음이 입증되어, MIDD에서도 sick-day 교육을 확실히 하면서 사용할 수 있다.']},
+ins:{t:'인슐린과 사용 현황', ids:['P5','P6'], p:[
+'MIDD 당뇨병에서 외인성 인슐린이 β세포와 미토콘드리아 산화 스트레스에 미치는 영향은 불명확하다. 2형 당뇨병에서는 당독성 감소로 수개월에서 수년간 β세포 기능을 보존하고 전반적 산화 스트레스를 개선할 수 있으나, 시험관에서 초생리적 농도의 인슐린은 산화 스트레스와 세포사를 촉진했다. 가장 흔한 부작용은 저혈당이며, 체중 증가는 체중을 늘리기 어려운 MIDD에서는 문제가 되지 않을 수 있다. 한 증례군에서 인슐린 치료 중인 MIDD 환자 4명에게 다리 부종이 생겼고 2명은 자연 소실, 2명은 수개월의 CoQ10 치료 후 소실되었다.',
+'#MIDD에서의 약제 사용 현황',
+'MIDD 당뇨병은 1형·2형 당뇨병과 표현형이 분명히 다르지만 흔히 이들로 오인되어 해당 지침대로 관리된다. GLP-1R 작용제(2005)와 SGLT2 억제제(2013) 승인 전에는 인슐린, 설폰요소제, metformin이 주로 쓰였다. m.3243A&gt;G 미토콘드리아 당뇨병 242명의 체계적 고찰에서 167명(72%)이 인슐린을 사용했다. 인슐린 사용이 의존성을 반영하는지 새 약제 접근성 부족을 반영하는지 불명확하다. 당뇨 진단부터 인슐린 치료까지 평균 11년이며 63%가 6년 내 인슐린을 시작했다.']},
+preg:{t:'임신과 수유', ids:['P7'], p:['MIDD는 가임기 환자에게 생기며 모체와 태아의 산과 합병증 위험이 높다. m.3243A&gt;G 표현형 변이 환자는 다른 미토콘드리아 질환보다 임신성 당뇨병과 합병증 위험이 특히 높다. 인슐린 유사체를 포함한 외인성 인슐린은 태반을 통과하지 않고 수유 신생아에 해가 없으며, 임신 중 1형 당뇨병의 관리, 임신성 당뇨병과 2형 당뇨병의 1차 약물이다. Metformin과 glyburide의 임신 중 자료가 있으나 인슐린보다 일반적으로 권장되지 않는다. MIDD 임신 중 이 약제들을 조사한 대조 연구는 없고 경험 보고도 제한적이다.']},
+mg:{t:'제안된 관리 지침', ids:['A1','A2','L1','L2','K1','P3','P8'], p:[
+'#평가',
+'2025 미국당뇨병학회 지침은 전당뇨를 HbA1c 5.7–6.4%, 당뇨병을 ≥6.5%로 정의하나 미토콘드리아 당뇨병은 언급하지 않는다. 반면 2017 미토콘드리아의학회 지침과 2020 Newcastle 미토콘드리아 질환 지침은 무증상 환자에서 기저와 이후 매년 HbA1c 측정을 권고한다.',
+'#생활습관과 보충제',
+'MIDD 당뇨병의 예방이나 관리에 이득이 입증된 특정 식이는 없다. 케톤식은 일부 MELAS 환자에서 신경학적 이득을 보였고 고지방식은 산화적 인산화와 미토콘드리아 생합성 유전자를 하향조절하나, 미토콘드리아 당뇨병에 대한 효과는 연구되지 않았다. 미토콘드리아 질환에서 신체활동은 감소되어 있으며 관리의 필수 요소이다. MIDD에서는 인슐린 저항성이 β세포 기능 장애보다 먼저 올 수 있다. 운동이 MIDD·MELAS의 인슐린 감수성에 미치는 효과는 확인이 필요하다. L-arginine의 MELAS 뇌졸중 유사 발작 감소 근거는 불충분하며, 소규모 시험에서 taurine이 이득을 시사했다. L-arginine이나 taurine의 혈당 효과를 본 시험은 없다.',
+'#DKA',
+'MIDD의 DKA에 대한 특정 지침은 없다. MELAS 환자에서 케톤산증은 호전되나 젖산증이 악화된 ‘전환된 대사성 산증’ 증례가 보고되었다.',
+'#약물 접근',
+'저자들은 혈당 강하 외에 (1) 췌장, 신장, 심장의 산화 스트레스 같은 MIDD의 대사 이상을 표적하고, (2) 인슐린 저항성과 β세포 기능을 개선할 가능성이 있으며, (3) 심혈관·신장 기능을 보호하는 약제로 경험적 관리 접근을 제안한다(Fig. 1, Table 2). MIDD의 심신 합병증 병태생리는 1형·2형 당뇨병과 다르며, 당뇨병이 없을 때는 주로 근본적인 미토콘드리아 유전 결함을 반영하고 당뇨병이 생기면 만성 고혈당의 영향이 더해진다. 두 경우 모두 산화 스트레스와 미토콘드리아 기능 장애가 주요 역할을 한다. GLP-1R 작용제와 SGLT2 억제제의 병용은 2형 당뇨병에서 만성 합병증에 대한 가산 효과가 연구되었다. Metformin은 다른 약제 시험의 기본 혈당 조절 약제였고 저렴하고 접근이 쉬워, 비용이 다른 약제 사용을 제한할 때 장점이 있다. 이는 1형 당뇨병에서 DKA 위험 증가에도 감시와 교육하에 SGLT2 억제제 사용이 늘어나는 것과 비교할 수 있다.']},
+prev:{t:'예방 가능성과 결론', ids:[], p:[
+'당뇨병의 침투도는 높지만(&gt;85%) MIDD의 보편적 특성은 아니며 발병 연령도 다양하다(평균 37세, 11–68세). 인슐린 저항성 평가, 근육 이형세포질성, 임상 평가, HOMA-IR이나 HbA1c 같은 검사 지표 변화가 당뇨병 진행을 예측할 수 있는지가 중요한 질문이다. 이는 전당뇨나 당뇨 발생 전 생활습관 최적화나 약물 치료 같은 조기 중재로 이어질 수 있다. 예를 들어 심부전이나 만성콩팥병에 대한 SGLT2 억제제는 기저 혈당 이상이 없어도 당뇨 위험을 26% 줄였다.',
+'MIDD는 과소 인식되는 단일유전자 당뇨병으로 근거 기반 치료 지침이 없다. 지난 20년간 개발된 새로운 항고혈당제는 혈당 강하 외에 항산화, 미토콘드리아 조절, 심장·신장·β세포 보호 효과가 확인되었다. 산화 스트레스가 표현형에 어떻게 영향을 주는지, 항당뇨 치료의 임상 효능이 산화 스트레스와 미토콘드리아 기능 개선 능력에 의해 조절되는지 확인하는 임상 연구가 필요하며, 환자의 경험, 가치, 관점을 반영하는 것도 향후 연구의 핵심 목표여야 한다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+alg:{tab:'관리 알고리즘', fig:'Fig. 1', aria:'MIDD 진단·평가·관리 알고리즘', w:760, h:570,
+ nodes:[
+  {id:'a_dx', x:230,y:10, w:300,h:56, label:'MIDD 진단 확인<small>유전검사로 병원성 변이 확인*</small>', cls:'fac'},
+  {id:'a_as', x:150,y:90, w:460,h:110,label:'평가 (진단 시와 이후 매년·필요 시)<small>혈액: 공복 혈당, HbA1c, 젖산, 크레아티닌/GFR, 공복 C-펩타이드 · 소변: 알부민/크레아티닌 비 · 심전도·심초음파, 신장 초음파 고려 · 안과·청력 평가</small>', cls:'test fac'},
+  {id:'a_dm', x:150,y:230,w:240,h:50, label:'MIDD 당뇨병: HbA1c ≥6.5%', cls:'mal'},
+  {id:'a_ls', x:430,y:225,w:320,h:60, label:'생활습관 최적화<small>영양 보충제 고려</small>', cls:'fac'},
+  {id:'a_ni', x:10, y:320,w:380,h:130,label:'비인슐린 약제<small>1차: GLP-1RA**, SGLT2i (metformin 고려***) · 2차: DPP-4i(GLP-1RA 대상이 아닐 때), gliclazide, pioglitazone</small>', cls:'tx fac'},
+  {id:'a_dec',x:430,y:330,w:320,h:80, label:'대사 비대상 (DKA·HHS 포함)<small>수액 공급과 지역 지침에 따른 인슐린 치료 시작</small>', cls:'mal fac'},
+  {id:'a_ins',x:10, y:480,w:380,h:44, label:'혈당 조절 미달 시 인슐린 추가', cls:'tx'},
+  {id:'a_tg', x:430,y:470,w:320,h:80, label:'표준 HbA1c 목표 &lt;7%<small>환자별로 혈당 목표 개별화</small>', cls:'ben fac'}
+ ],
+ edges:[[A(380,66,380,90),1],[A(270,200,270,230),1],[A(390,255,430,255),1],[A(200,280,200,320),1],['M330 280 V300 H590 V330',1],
+  [A(200,450,200,480),1],[A(390,502,430,502),1],[A(590,410,590,470),1]], labels:[]},
+drug:{tab:'약제 선택', fig:'Table 2·3', aria:'MIDD 당뇨병 약제 선택', w:760, h:520,
+ nodes:[
+  {id:'g_q',   x:230,y:10, w:300,h:44, label:'1차 약제 선택 (개별화)'},
+  {id:'g_glp', x:10, y:90, w:360,h:150,label:'GLP-1RA (또는 GLP-1/GIP 이중 작용제)<small>유리: 과체중, CVD, 심부전, CKD, 고용량 인슐린 · 주의: 저체중·영양불량, 섭취 저하, 설사·변비, 3개월 내 임신 계획 · 저용량 시작</small>', cls:'tx fac'},
+  {id:'g_sg',  x:390,y:90, w:360,h:150,label:'SGLT2 억제제<small>유리: CVD, 심부전, CKD(GFR &gt;20이면 신보호 목적 시작 가능), 고용량 인슐린 · 주의: 낮은 C-펩타이드(인슐린 추가·STOP-DKA), 반복 비뇨생식기 감염, ESRD</small>', cls:'tx fac'},
+  {id:'g_met', x:10, y:270,w:360,h:130,label:'Metformin (조건부 1차)<small>유리: 고용량 인슐린·인슐린 저항성 · 공동 의사결정과 젖산 감시 · GFR에 따라 감량, GFR &lt;30·간부전 금기</small>', cls:'tx fac'},
+  {id:'g_2nd', x:390,y:270,w:360,h:130,label:'2차 약제<small>pioglitazone: 저체중·인슐린 저항성·죽상경화 CVD · gliclazide: 저렴, 항산화 가능 · DPP-4i: 경도 고혈당, GLP-1RA와 병용 금지</small>', cls:'tx fac'},
+  {id:'g_sick',x:10, y:430,w:360,h:80, label:'Sick-day 교육<small>SGLT2i·설폰요소제·metformin · STOP-DKA</small>', cls:'mal fac'},
+  {id:'g_preg',x:390,y:430,w:360,h:80, label:'임신<small>인슐린이 주된 치료 · GLP-1RA는 임신 3개월 전 중단</small>', cls:'mal fac'}
+ ],
+ edges:[[A(380,54,380,72),0],['M190 72 H570',0],[A(190,72,190,90),1],[A(570,72,570,90),1]], labels:[]},
+pat:{tab:'병태생리', fig:'본문 구성', aria:'MIDD 당뇨병의 병태생리 모델', w:760, h:420,
+ nodes:[
+  {id:'p_var', x:230,y:10, w:300,h:56, label:'<i>MT-TL1</i> 병원성 변이<small>m.3243A&gt;G가 80% 이상 · 22개 이상의 변이</small>', cls:'mal fac'},
+  {id:'p_mus', x:10, y:110,w:300,h:70, label:'근육 이형세포질성 높음<small>인슐린 저항성 촉진</small>', cls:'fac'},
+  {id:'p_bc',  x:450,y:110,w:290,h:70, label:'β세포 이형세포질성 중등도<small>β세포 기능 손상</small>', cls:'fac'},
+  {id:'p_ox',  x:230,y:210,w:300,h:80, label:'산화 스트레스 · mTORC1 비정상 활성<small>Nrf2 역행 신호 · 칼슘 처리 이상(인과성 불명)</small>', cls:'mal fac'},
+  {id:'p_dm',  x:230,y:320,w:300,h:56, label:'MIDD 당뇨병<small>침투도 &gt;85% · 평균 37세(11–68)</small>', cls:'mal fac'},
+  {id:'p_mel', x:560,y:320,w:180,h:56, label:'MELAS<small>더 높은 이형세포질성</small>', cls:'fac'},
+  {id:'p_tx',  x:10, y:310,w:190,h:90, label:'치료 표적<small>산화 스트레스 · 미토콘드리아 기능 · 심신 보호</small>', cls:'tx fac'}
+ ],
+ edges:[['M330 66 V88 H160 V110',1],['M430 66 V88 H595 V110',1],['M160 180 V250 H230',1],['M595 180 V250 H530',1],[A(380,290,380,320),1],
+  ['M530 30 H752 V348 H740',1,'dot'],[A(230,348,200,348),1,'dot']], labels:[]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Chaudhry A, Thompson DM, Chanoine JP. Diabetes Obes Metab 2026;28:826–839 본문 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+const sec = k => `<h4>${EXP[k].t}</h4>${paraHTML(EXP[k])}<p class="exp-src">본문 번역. 참고문헌 번호는 생략하였다.</p>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows, cap) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${cap?`<p class="small" style="color:var(--muted)">${cap}</p>`:''}`;
+const TAB2 = tbl(['약제','근거','이득 가능성이 큰 환자','주의·회피'],[
+ ['GLP-1R 작용제(또는 GLP-1/GIP 이중 작용제)','전신 산화 스트레스·미토콘드리아 기능 개선(직접 기전), 심신 보호, HbA1c 1.5–2% 감소(이중 작용제 &gt;2%)','과체중, CVD, 심부전, CKD, 고용량 인슐린','저체중, 영양불량, 섭취 저하, 기저 설사·변비, 3개월 내 임신 계획'],
+ ['SGLT2 억제제','전신 산화 스트레스·미토콘드리아 기능 개선(간접·직접 가능), 심신 보호, HbA1c 0.5–0.8% 감소','CVD, 심부전, CKD(GFR &lt;45에서 혈당 효과 감소, 신보호 목적으로 GFR &gt;20이면 시작 가능), 고용량 인슐린','낮은 기저 C-펩타이드(DKA 위험으로 인슐린 추가 고려, STOP-DKA 등 sick-day 교육 강조), 반복 비뇨생식기 감염, ESRD'],
+ ['Pioglitazone','β세포 산화 스트레스(PPAR-γ, 카탈라제 증가)와 인슐린 저항성 개선, HbA1c 1–1.5% 감소, 저렴','저체중, 고용량 인슐린 및/또는 인슐린 저항성, 죽상경화 CVD','심부전, 말초 부종, 방광암'],
+ ['DPP-4 억제제','경도 혈당 강하(HbA1c 0.5% 감소)','경도 고혈당','GLP-1RA와 병용 금지'],
+ ['Gliclazide','β세포 산화 스트레스 이득 가능(자유라디칼 소거, 설폰요소제 계열 효과 아님), HbA1c 1–1.5% 감소, 저렴','','잦은 저혈당을 동반한 예측 불가능한 혈당, GFR &lt;15면 주의'],
+ ['Metformin','산화 스트레스·미토콘드리아 항상성 개선 가능(AMPK 의존·비의존), HbA1c 1–1.5% 감소, 저렴','고용량 인슐린 및/또는 인슐린 저항성','젖산증 위험(공동 의사결정과 젖산증 감시), GFR에 따라 감량, GFR &lt;30이나 간부전이면 회피']],'Table 2. MIDD 환자의 항당뇨 약제 권고 근거');
+const TAB3 = tbl(['항목','GLP-1R 작용제','SGLT2 억제제'],[['인슐린 반응','포도당 자극 인슐린 분비','신장 포도당 배설 증가, 인슐린 반응 감소'],['인슐린 저항성','체중 감소와 독립적으로 감소','혈당·당독성 감소와 에너지원의 유리지방산 이동으로 감소'],['항산화 효과','있음','있음'],['체중 감소','경도–고도, 용량 의존','경도'],['심장 합병증','심근경색 위험 감소','당뇨병 유무와 관계없이 심부전 위험 감소'],['신장 합병증','당뇨병 신질환 진행 지연','당뇨병 유무와 관계없이 만성콩팥병 진행 지연'],['금기','췌장염 병력, 임신·수유','중증 신부전(eGFR &lt;30), 임신·수유'],['부작용','체중 감소, 용량 관련 위장관 증상(오심, 구토, 설사), 주사 부위 반응, 두통, 췌장염, 담석증','요로감염과 생식기 진균 감염, 드물게 정상혈당 DKA와 저혈압']],'Table 3. 주로 2형 당뇨병 자료에 근거한 비교');
+const FN = `<div class="box fn"><b>Fig. 1 각주</b>* <i>MT-TL1</i> m.3243A&gt;G가 임상 증례의 80% 넘게 차지하나 22개 넘는 병원성 변이가 MIDD를 일으킨다. 유전검사는 혈액, 소변, 모발, 타액으로 시행할 수 있다. 결과가 불확정이면 근육 이형세포질성을 근생검으로 직접, 또는 소변 이형세포질성이나 VO<sub>2</sub> max, 기저 혈청 젖산으로 간접 평가할 수 있다. ** 원치 않는 체중 감소나 위장관 부작용을 피하려면 저용량이 필요할 수 있다. 가능하면 GLP-1/GIP 이중 작용제로 강화를 고려한다. *** Metformin을 조건부 1차 치료에 포함하였다. GLP-1RA, SGLT2i와 마찬가지로 산화 스트레스와 인슐린 저항성을 줄일 수 있고 최근 심신 이득이 제안되었으며 매우 저렴하다. 젖산증은 드물지만 우려되므로 환자와의 공동 의사결정과 젖산증의 신중한 감시를 제안한다.</div>`;
+const D = {
+a_dx:{kind:'출발점', title:'MIDD 진단 확인', next:['a_as'], body:`${R('A1')}${FN}`},
+a_as:{kind:'평가', title:'평가', next:['a_dm'], body:`${R('A2')}`},
+a_dm:{kind:'진단', title:'MIDD 당뇨병 (HbA1c ≥6.5%)', next:['a_ni','a_ls','a_dec'], body:`<p>당뇨병의 침투도는 85% 넘지만 보편적이지 않으며 평균 진단 연령은 37세(11–68세)이다.</p>${R('A2')}`},
+a_ls:{kind:'생활습관', title:'생활습관 최적화', next:[], body:`${RR('L1','L2')}`},
+a_ni:{kind:'약물', title:'비인슐린 약제', next:['a_ins','g_q'], nextLabel:'약제 선택으로', body:`${RR('P1','P2','P3','P4')}${FN}`},
+a_dec:{kind:'응급', title:'대사 비대상 (DKA·HHS)', next:['a_tg'], body:`${RR('P5','K1')}`},
+a_ins:{kind:'약물', title:'인슐린 추가', next:['a_tg'], body:`${RR('P6','P7')}`},
+a_tg:{kind:'목표', title:'혈당 목표', next:[], body:`${R('P8')}`},
+g_q:{kind:'출발점', title:'1차 약제 선택', next:['g_glp','g_sg','g_met'], body:`${R('P1')}<h4>Table 3</h4>${TAB3}`},
+g_glp:{kind:'1차', title:'GLP-1R 작용제', next:[], body:`${R('P1')}${TAB2}`},
+g_sg:{kind:'1차', title:'SGLT2 억제제', next:['g_sick'], body:`${RR('P1','P4')}`},
+g_met:{kind:'조건부 1차', title:'Metformin', next:[], body:`${R('P2')}`},
+g_2nd:{kind:'2차', title:'2차 약제', next:[], body:`${R('P3')}${TAB2}`},
+g_sick:{kind:'안전', title:'Sick-day 교육', next:[], body:`${R('P4')}`},
+g_preg:{kind:'특수', title:'임신과 수유', next:[], body:`${R('P7')}`},
+p_var:{kind:'원인', title:'MT-TL1 병원성 변이', next:['p_mus','p_bc'], body:`${R('A1')}`},
+p_mus:{kind:'기전', title:'근육 이형세포질성', next:['p_ox'], body:`<p>근육 이형세포질성이 높으면 인슐린 저항성이 촉진된다. MIDD에서는 인슐린 저항성이 β세포 기능 장애보다 먼저 올 수 있으며, 규칙적 운동은 근육 이형세포질성과 산화적 인산화를 개선하는 것으로 보인다.</p>`},
+p_bc:{kind:'기전', title:'β세포 이형세포질성', next:['p_ox'], body:`<p>β세포 이형세포질성이 중등도이면 β세포 기능이 손상된다. 진단 무렵에는 절대적 인슐린 결핍 가능성이 낮다.</p>`},
+p_ox:{kind:'기전', title:'산화 스트레스와 mTORC1', next:['p_dm'], body:`${sec('intro')}`},
+p_dm:{kind:'결과', title:'MIDD 당뇨병', next:['a_dm'], body:`${sec('prev')}`},
+p_mel:{kind:'관련 질환', title:'MELAS', next:[], body:`<p>같은 <i>MT-TL1</i> 변이로 생기는 더 심한 임상상으로, 적어도 부분적으로 더 높은 세포 이형세포질성을 반영하고 더 어린 나이에 진단되며 미토콘드리아 당뇨병을 일으킬 수 있다. Metformin 사용 시 뇌졸중 유사 발작 병력은 주의가 필요할 수 있다.</p>`},
+p_tx:{kind:'치료', title:'치료 표적', next:['a_ni'], body:`${sec('mg')}`}
+};
+const EXTRA = {
+levels:{kind:'참고', title:'이 종설과 도구에 대하여', next:[], body:`${['S','P'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','‘관리 알고리즘’ 탭은 원문 Fig. 1을 재현했고, ‘약제 선택’은 Table 2·3, ‘병태생리’는 본문을 바탕으로 구성하였다. 저자 제안 13개와 기존 권고 2개(Table 1)를 수록했으며 번호는 본 도구에서 부여하였다.')}${note('원문 표기','GLP-1R 작용제의 HbA1c 감소는 본문 1–2%, Table 2는 1.5–2%이며, DPP-4 억제제는 본문 0.5–0.8%, Table 2는 0.5%이다. 원문은 산화 스트레스 지표를 “GDF-14 and mOTS-C”로 표기했으나 문맥상 GDF-15와 MOTS-c로 보았다. Fig. 1 각주의 “MT-L1”은 <i>MT-TL1</i>의 오기로 보았다.')}`},
+t1:{kind:'Table 1', title:'기존 미토콘드리아 당뇨병 권고', next:[], body:`${RR('T1','T2')}<p class="small" style="color:var(--muted)">Nga 등의 알고리즘은 같은 그룹의 이전 Newcastle 미토콘드리아 질환 지침과 약간 다르다.</p>`},
+tabs:{kind:'표', title:'Table 2–3', next:[], body:`<h4>Table 2</h4>${TAB2}<h4>Table 3</h4>${TAB3}`},
+agents:{kind:'본문', title:'약제별 검토', next:[], body:`${sec('met')}${sec('su')}${sec('tzd')}${sec('glp')}${sec('dpp')}${sec('sglt')}${sec('ins')}`},
+preg:{kind:'본문', title:'임신과 수유', next:[], body:`${R('P7')}${sec('preg')}`},
+all:{kind:'전체', title:'저자 제안 전체', next:[], body:`<h4>진단·평가</h4>${RR('A1','A2')}<h4>생활습관·DKA</h4>${RR('L1','L2','K1')}<h4>약물 치료</h4>${RR('P1','P2','P3','P4','P5','P6','P7','P8')}`},
+prev:{kind:'본문', title:'예방 가능성과 결론', next:[], body:`${sec('prev')}`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['AMPK','AMP-activated protein kinase'],['CKD','Chronic kidney disease, 만성콩팥병'],['CoQ10','Coenzyme Q10, 코엔자임 Q10'],['CVD','Cardiovascular disease, 심혈관질환'],
+ ['DKA','Diabetic ketoacidosis, 당뇨병케톤산증'],['DPP-4(i)','Dipeptidyl peptidase-4 (inhibitor)'],['ER','Endoplasmic reticulum, 소포체'],['ESRD','End-stage renal disease, 말기신부전'],
+ ['GDF-15','Growth differentiation factor 15'],['GFR','Glomerular filtration rate, 사구체여과율'],['GIP','Glucose-dependent insulinotropic polypeptide'],['GLP-1R(A)','Glucagon-like peptide-1 receptor (agonist)'],
+ ['HHS','Hyperglycaemic hyperosmolar syndrome, 고혈당 고삼투압 증후군'],['HOMA-IR','Homeostatic Model Assessment for Insulin Resistance'],['MELAS','Mitochondrial encephalomyopathy, lactic acidosis and stroke-like episodes'],
+ ['MIDD','Maternally inherited diabetes and deafness, 모계 유전 당뇨병 및 난청'],['MOTS-c','Mitochondrial open reading frame of the 12S rRNA-c'],['mTORC1','Mammalian target of rapamycin complex 1'],
+ ['MT-TL1','Mitochondrial tRNA leucine 1 유전자'],['Nrf2','Nuclear factor erythroid 2-related factor 2'],['PPAR-γ','Peroxisome proliferator-activated receptor γ'],['ROS','Reactive oxygen species, 활성산소'],
+ ['SGLT2(i)','Sodium–glucose cotransporter 2 (inhibitor)'],['SUR1/2','Sulfonylurea receptor 1/2'],['T1D / T2D','1형 / 2형 당뇨병'],['TZD','Thiazolidinedione']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mg|mL)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'alg';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: D, MELAS)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('alg');
+
+</script>
+</body>
+</html>
