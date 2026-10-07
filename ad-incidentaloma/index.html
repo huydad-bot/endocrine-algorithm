@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>부신우연종 관리 알고리즘 (ESE-ENSAT 2023)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>부신우연종 관리 알고리즘</h1>
+        <p class="src">ESE clinical practice guidelines in collaboration with ENSAT, Fassnacht M, et al. <a href="https://doi.org/10.1093/ejendo/lvad066" target="_blank" rel="noopener noreferrer">Eur J Endocrinol 2023;189:G1–G42</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by ESE or ENSAT</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="악성 의심·감별 필요 박스 강조"><i class="sw mal"></i>악성 의심·감별 필요</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="양성·관찰 박스 강조"><i class="sw ben"></i>양성·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 Reasoning 번역이 펼쳐짐</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>권고 등급</button></div>
+    <button type="button" class="fn-toggle" data-id="notes"><span class="bt-ic" aria-hidden="true">※</span>그림 각주</button>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 권고">
+      <button type="button" data-id="defs"><span class="bt-ic" aria-hidden="true">＋</span>정의·원인</button>
+      <button type="button" data-id="fu"><span class="bt-ic" aria-hidden="true">＋</span>추적</button>
+      <button type="button" data-id="bilat"><span class="bt-ic" aria-hidden="true">＋</span>양측성</button>
+      <button type="button" data-id="age"><span class="bt-ic" aria-hidden="true">＋</span>젊은·고령 환자</button>
+      <button type="button" data-id="mets"><span class="bt-ic" aria-hidden="true">＋</span>악성종양 병력</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+/* ---------- 권고 강도 (GRADE) ---------- */
+const LV = {
+  R:'Recommend(권고): 강한 권고. 근거의 질은 ⊕○○○ 매우 낮음, ⊕⊕○○ 낮음, ⊕⊕⊕○ 중등도, ⊕⊕⊕⊕ 높음으로 본문에 병기',
+  S:'Suggest(제안): 약한 권고. 근거의 질은 본문 괄호의 기호로 표시',
+  RS:'한 항목 안에 recommend(권고)와 suggest(제안)가 함께 있음 — 본문 표현 참조'
+};
+const LVTXT = {R:'권고 (강)', S:'제안 (약)', RS:'권고·제안 혼합'};
+const LVCLS = {R:'l1', S:'l3', RS:'l2'};
+
+/* ---------- 권고문 (원문 전체) ---------- */
+const REC = {
+'1.1':['R','다음 기준 중 하나 이상에 해당하면 부신우연종 환자를 다학제 전문가 팀 회의에서 논의할 것을 권고한다.<br>· 영상 소견이 양성 병변과 일치하지 않음<br>· 호르몬 과다의 근거가 있음(코르티솔에 기인할 수 있는 임상적으로 의미 있는 동반질환을 가진 환자의 경도 자율 코르티솔 분비[MACS] 포함)<br>· 부신 수술을 고려함<br>· 추적 영상에서 의미 있는 종양 성장의 근거가 있음<br>핵심 다학제팀은 부신종양 관리에 상당한 경험이 있는 내분비내과의, 영상의학과의, 외과의로 구성되어야 한다.'],
+'2.1':['R','처음 발견 시점에 부신 종괴가 양성인지 악성인지를 가능한 한 가장 높은 확실성으로 확립하는 것을 목표로 할 것을 권고한다.'],
+'2.2':['R','모든 부신우연종에 대해 종괴가 균질하고 지방이 풍부하여 양성인지 판단하기 위한 영상검사를 시행할 것을 권고한다(⊕⊕⊕○). 이를 위해 아직 시행하지 않았다면 첫 영상검사로 비조영 CT를 사용할 것을 권고한다(⊕⊕⊕○).'],
+'2.3':['R','비조영 CT가 양성 부신 종괴에 합당하면(균질한 모양, Hounsfield unit [HU] ≤10) 추가 영상검사가 필요 없다고 권고한다(⊕⊕⊕○).'],
+'2.4':['S','CT에서 비조영 HU 11–20의 균질한 부신 종괴이고 종양 크기 &lt;4 cm이며 호르몬 검사 결과 의미 있는 호르몬 과다가 없으면, 추적 영상을 피하기 위해 즉시 추가 영상검사를 시행할 것을 제안한다(⊕○○○). 대안으로 12개월 후 비조영 CT(또는 MRI)로 간격 영상검사를 시행할 수 있다.'],
+'2.5':['RS','부신 종괴가 ≥4 cm이면서 불균질하거나 비조영 HU &gt;20이면 악성일 위험이 상당하다. 따라서 이러한 증례는 다학제팀 회의에서 논의할 것을 제안한다. 대부분의 경우 즉시 수술이 선택할 관리이지만 일부 환자에서는 추가 영상이 선택지가 될 수 있다(⊕○○○). 수술 전에는 환자의 병기를 완전히 평가할 것을 제안한다(최소한 흉부 CT 및/또는 FDG-PET/CT 포함 [⊕○○○]). 수술을 시행하지 않으면 6–12개월 후 추적 영상을 권고한다(⊕○○○).'],
+'2.6':['RS','위 범주에 해당하지 않는 부신 종괴(예: 종양 크기 ≥4 cm이면서 비조영 HU 11–20, 크기 &lt;4 cm이면서 비조영 HU &gt;20, 크기 &lt;4 cm이면서 불균질한 모양)에서는 다학제팀 회의 논의를 통한 개별화 접근을 제안한다(⊕○○○). 악성종양 가능성은 여전히 낮다. 따라서 대부분의 경우 기관의 전문성과 가용성에 따른 즉각적인 추가 영상검사가 선호되는 선택지이다. 종양이 여전히 불확정 종괴로 판단되고 수술을 시행하지 않으면 6–12개월 후 간격 영상검사(비조영 CT/MRI)를 권고한다(⊕○○○).'],
+'2.7':['R','부신외 악성종양의 병력이 없는 한(R.6.3.5 참조) 부신 종괴 환자의 진단 과정에 부신 생검을 사용하지 말 것을 권고한다.'],
+'2.8':['S','영상 또는 임상 양상으로 부신피질암이 의심되는 환자에서는 성스테로이드와 스테로이드 생성 전구체 측정(이상적으로는 탠덤 질량분석에 의한 다중 스테로이드 프로파일링)을 제안한다(⊕⊕○○).'],
+'3.1':['R','모든 부신우연종 환자는 부신 호르몬 과다의 증상과 징후에 대한 진찰을 포함한 신중한 평가를 받을 것을 권고한다.'],
+'3.2':['R','부신우연종 환자는 자율적 코르티솔 분비를 배제하기 위해 1 mg 야간 덱사메타손 억제검사를 받을 것을 권고한다(⊕⊕⊕○). 기대여명이 제한된 노쇠한 환자에서는 이 검사가 필요하지 않을 수 있다.'],
+'3.3':['R','1 mg 야간 덱사메타손 검사 결과를 범주형(예/아니오) 변수가 아닌 연속 변수로 해석할 것을 권고한다(⊕○○○). 다만 자율적 코르티솔 분비를 배제하는 진단 기준으로 덱사메타손 후 혈청 코르티솔 ≤50 nmol/L(≤1.8 µg/dL)를 사용할 것을 권고한다(⊕⊕○○).'],
+'3.4':['R','현성 쿠싱증후군의 징후와 증상이 없는 환자에서 덱사메타손 후 혈청 코르티솔 &gt;50 nmol/L(&gt;1.8 µg/dL)는 코르티솔 비억제 정도에 따른 추가 층화 없이 MACS로 간주할 것을 권고한다(⊕⊕○○). 이들 환자에서는 ACTH 비의존성을 확인할 것을 권고한다. 1 mg DST 결과를 변화시키는 상황을 결과 해석 시 고려해야 한다. 코르티솔 분비의 자율성을 확인하기 위해 DST 반복을 권고한다. 코르티솔 분비 정도를 평가하는 추가 생화학 검사가 유용할 수 있다. 그러나 임상 관리에서는 코르티솔 과다에 기인할 수 있는 동반질환의 존재(Table 5), 연령, 환자의 전신 상태가 임상적 의사결정의 주요 요인이다(Figure 6).'],
+'3.5':['R','MACS 환자(정의상 쿠싱증후군의 특이적 임상 징후가 없음)를 현성 쿠싱증후군으로 진행할 위험이 높은 것으로 간주하지 말 것을 권고한다(⊕⊕⊕○).'],
+'3.6':['RS','부신우연종과 MACS가 있는 환자에서 고혈압과 제2형 당뇨병을 선별할 것을 권고하며(⊕⊕○○), 이 질환들에 대한 적절한 치료를 제공할 것을 제안한다.'],
+'3.7':['S','부신우연종과 MACS가 있는 환자에서 척추골절을 선별하고(⊕○○○) 이에 대한 적절한 치료를 고려할 것을 제안한다(⊕○○○).'],
+'3.8':['R','MACS와 함께 의미 있는 동반질환과 일측성 부신 종괴가 있는 환자와 수술의 선택지를 논의할 것을 권고한다(⊕○○○). 연령, 성별, 전신 건강, 덱사메타손 후 비억제 코르티솔의 정도와 지속성, 동반질환의 중증도, 환자의 선호를 고려해야 한다(⊕○○○). 모든 경우 수술 시행 제안은 전문 다학제 그룹 안에서 확정해야 한다.'],
+'3.9':['R','양성 선종에 전형적이지 않은 소견(예: 비조영 HU &gt;10)을 가진 모든 부신 병변 환자에서 혈장 유리 메타네프린 또는 소변 분획 메타네프린 측정으로 갈색세포종을 배제할 것을 권고한다.'],
+'3.10':['R','고혈압 또는 원인 불명의 저칼륨혈증이 동반된 환자에서는 원발성 알도스테론증 평가를 위해 알도스테론/레닌 비를 사용할 것을 권고한다.'],
+'4.1':['R','임상적으로 의미 있는 호르몬 과다를 보이는 일측성 부신종양에서 부신절제술을 표준 치료로 권고한다(Figure 7). MACS 환자에서는 의미 있는 동반질환이 있는 경우 개별 요인을 고려하여(R.3.8에 상세) 수술을 고려할 수 있다.'],
+'4.2':['R','증상이 없고 비기능성이며 영상검사에서 명백한 양성 소견을 보이는 일측성 부신 종괴 환자에서는 수술을 시행하지 말 것을 권고한다(⊕⊕○○).'],
+'4.3':['R','호르몬 과다(MACS 포함)를 일으키는 양성 부신 종괴에 수술이 적응되면 최소침습 접근법을 사용할 것을 권고한다(⊕○○○).'],
+'4.4':['S','영상에서 악성이 의심되고(R.2.4–2.6) 직경 ≤6 cm이지만 국소 침범의 근거가 없는 일측성 부신 종괴 환자에서는 고용량(high-volume) 전문 부신 외과의가 최소침습 부신절제술을 시행할 것을 제안한다(⊕○○○).'],
+'4.5':['R','영상에서 악성이 의심되고 국소 침범 징후가 있는 일측성 부신 종괴에서는 고용량 전문 부신 외과의가 개방 부신절제술을 시행할 것을 권고한다(⊕○○○).'],
+'4.6':['R','위 범주 중 어디에도 해당하지 않는 환자에서는 다학제 전문가 팀 회의에서 고용량 전문 부신 외과의가 개별화된 수술 접근을 논의할 것을 권고한다(⊕○○○).'],
+'4.7':['R','수술을 받으면서 수술 전 1 mg 야간 덱사메타손 검사 후 아침 혈청 코르티솔이 &gt;50 nmol/L(1.8 µg/dL)인 모든 환자에서 수술 스트레스 용량의 수술 전후 글루코코르티코이드 치료를 권고한다.'],
+'4.8':['S','수술을 받은 MACS 환자는 (부신 쿠싱증후군 환자와 마찬가지로) 시상하부–뇌하수체–부신 축 기능 회복이 확인될 때까지 내분비내과의가 추적할 것을 제안한다.'],
+'5.1':['R','영상검사에서 명확한 양성 소견을 보이는 부신 병변 환자에서는 추적 중 추가 영상검사를 하지 말 것을 권고한다(⊕⊕⊕○).'],
+'5.2':['S','영상상 불확정 부신 종괴로 초기 평가 후 부신절제술을 받지 않기로 한 환자에서는 의미 있는 성장을 배제하기 위해 6–12개월 후 비조영 CT 또는 MRI를 1회 반복할 것을 제안한다(⊕○○○). 이 기간에 병변의 최대 직경이 20% 넘게 커지면(최대 직경 최소 5 mm 증가와 함께) 수술적 절제를 제안한다. 이 기준 미만의 성장이 있으면 6–12개월 후 다시 추가 영상을 고려할 수 있다.'],
+'5.3':['R','초기 평가에서 호르몬 검사 결과가 참고범위 내였던 환자에서는 새로운 내분비 활성의 임상 징후가 나타나거나 동반질환(예: 고혈압, 제2형 당뇨병)이 악화되지 않는 한 호르몬 검사를 반복하지 말 것을 권고한다(⊕⊕○○).'],
+'5.4':['RS','부신절제술을 받지 않는 MACS 환자에서는 코르티솔에 기인할 수 있는 동반질환의 연 1회 재평가만을 권고한다(⊕⊕○○). 이를 위해 지역사회에서 동반질환에 대한 적절한 감시가 가능하다면 전문 내분비 추적에서 종결하고 일차 의료기관이 코르티솔 관련 동반질환을 모니터링하는 것을 고려할 것을 제안한다(⊕○○○). 이 동반질환들이 발생하거나 악화되면 내분비 상태를 재평가하고 중재의 잠재적 이득을 재고하기 위해 내분비내과 의뢰를 제안한다.'],
+'6.1.1':['R','양측성 또는 다발성 부신 종괴 환자에서는 처음 발견 시점에 각 부신 병변을 일측성 부신 종괴와 동일한 영상 프로토콜로 개별 평가하여 각 결절이 양성인지 악성인지 확립할 것을 권고한다.'],
+'6.1.2':['R','양측성 부신우연종 환자는 모두 일측성 부신우연종 환자와 동일한 임상·호르몬 평가를 받을 것을 권고한다.'],
+'6.1.3':['S','영상 및 호르몬 검사 결과에 근거한 다음 4가지 분류로 양측성 질환에 접근할 것을 제안한다(Table 6, Figure 8): (1) 양측성 (대결절성) 과형성, (2) 양측 부신선종, (3) 형태가 비슷하지만 선종 같지 않은 2개의 부신 종괴, (4) 형태가 서로 다른 2개의 부신 종괴. 이 범주 중 어디에도 해당하지 않는 환자에서는 개별화 관리 계획이 필요하다.'],
+'6.1.4':['S','자율적 코르티솔 분비가 없는 양측성 과형성 환자에서는 21-수산화효소 결핍에 의한 선천부신과형성(CAH)을 배제하기 위해 17-수산화프로게스테론 측정을 제안한다.'],
+'6.1.5':['R','양측성 (대결절성) 과형성 또는 양측 선종 환자에서는 MACS에 기인할 수 있는 동반질환을 평가할 것을 권고한다.'],
+'6.1.6':['R','양측 전이, 림프종, 침윤성 염증질환, 출혈 환자에서는 부신기능저하증을 평가할 것을 권고한다.'],
+'6.1.7':['S','양측성 과형성 또는 양측 선종과 MACS가 있는 환자에서는 연령, 성별, 코르티솔 자율성 정도, 전신 상태, 동반질환, 환자 선호에 근거하여 특이 치료 선택지를 개별화할 것을 제안한다.'],
+'6.1.8':['S','현성 쿠싱증후군의 임상 징후가 없는 환자에서는 양측 부신절제술을 하지 말 것을 제안한다.'],
+'6.2.1':['R','임신부와 40세 미만에서는 악성 및 임상적으로 의미 있는 호르몬 과다 가능성이 더 높으므로 부신 종괴를 긴급히 평가할 것을 권고한다.'],
+'6.2.2':['S','소아, 청소년, 임신부에서 부신 전용 영상이 필요하면 CT보다 MRI 사용을 제안한다.'],
+'6.2.3':['S','소아, 청소년, 임신부, 40세 미만 성인에서 부신 종괴가 영상상 불확정이면 수술적 절제를 제안한다.'],
+'6.2.4':['R','전신 건강이 불량하고 노쇠도가 높은 환자의 검사와 관리는 잠재적 임상 이득에 비례하여 유지할 것을 권고한다.'],
+'6.3.1':['RS','부신외 악성종양이 있고 불확정 종괴를 가진 환자에서는 부신 종괴가 전이일 가능성이 높더라도 갈색세포종을 배제하기 위해 혈장 또는 소변 메타네프린 측정을 권고한다. 추가 호르몬 검사는 개별화 접근에 따라 시행할 것을 제안한다.'],
+'6.3.2':['R','부신외 악성종양의 병력이 있는 환자에서 비조영 CT로 양성으로 특성화된 부신 병변은 별도의 부신 영상 추적이 필요 없다고 권고한다.'],
+'6.3.3':['R','부신외 악성종양 병력이 있는 환자에서 PET-CT상 부신의 강한 FDG 섭취는 전이를 시사한다. 중등도 섭취 또는 섭취가 없으면 최소한 비조영 CT로 추가 평가할 것을 권고한다.'],
+'6.3.4':['RS','부신외 악성종양 병력이 있는 불확정 병변 환자 중 부신 병변이 악성으로 확인되면 임상 관리가 바뀌는 경우에는 FDG-PET/CT(아직 시행하지 않았다면), 수술적 절제, 또는 생검 중 하나를 시행할 것을 제안한다(R.6.3.5 참조). 그 밖의 모든 환자에서는 원발 악성종양의 영상과 같은 간격으로 영상 추적할 것을 권고한다.'],
+'6.3.5':['R','부신 생검을 고려하기 전에 3가지 핵심 기준을 충족할 것을 권고한다: (1) 병변이 호르몬 비활성임(특히 갈색세포종이 배제됨), (2) 병변이 영상에서 양성으로 확정적으로 특성화되지 않았음, (3) 조직학적 정보가 환자의 임상 관리를 바꿀 것임.'],
+'6.3.6':['R','큰 양측 전이가 있는 환자에서는 잔여 부신 기능을 평가할 것을 권고한다.']
+};
+const RID = id => 'R.' + id;
+
+/* ---------- 권고별 Reasoning 번역 (참고문헌 번호 생략) ---------- */
+const EXP = {
+'1.1':{t:'다학제팀 논의', ids:['1.1'], p:[
+'이상적으로는 모든 부신우연종 환자가 전문 다학제팀에 의해 관리되어야 한다고 본다. 그러나 우연히 발견되는 종괴의 수가 많다는 점을 고려하면 많은 의료 환경에서 이는 비현실적이다. 아직 설득력 있는 근거는 없으나, 다학제 진료가 부신종양 환자의 결과를 개선한다는 일부 근거가 있다. 따라서 다학제팀 논의의 이득을 가장 받을 가능성이 높은 환자 아군을 찾고, 위 기준을 충족하는 환자에서는 이러한 논의가 신속히 이루어지도록 하는 것을 목표로 하였다.',
+'이를 위해 각 기관은 진단 및 치료 과정에 대한 표준 운영 절차를 마련해야 하는데, 이러한 표준은 모든 환자에게 개선되고 표준화된 진료를 제공하는 데 도움이 되기 때문이다. 제안하는 경로는 Figure 4에 요약하였다. 위 다학제팀은 이상적으로는 부신종양 경험이 있는 내분비 병리의사, 종양내과의, 마취과의를 포함하거나 최소한 이들에게 접근할 수 있어야 한다. 이 지침의 범위를 벗어나지만 표준화된 병리 보고서 사용을 강력히 권장한다.']},
+'2.1':{t:'악성 위험 평가의 목표', ids:['2.1'], p:[
+'기능성 여부와 관계없이 임상 관리는 부신 종괴가 악성인지 양성인지를 확립하는 데 달려 있으므로 이를 아는 것이 결정적이다. 악성 병변은 긴급한 수술적 중재와 기타 치료가 필요할 수 있으며 지연은 해를 끼칠 수 있다. 따라서 부신우연종 환자의 모든 영상을 경험 있는 영상의학과의가 판독하는 것이 매우 중요하며, 드물지 않게 과형성 또는 결절성인 반대측 부신에도 주의를 기울여야 한다.']},
+'2.2':{t:'비조영 CT', ids:['2.2','2.3'], p:[
+'부신외 악성종양이 알려지지 않은 환자에서 부신우연종은 양성일 가능성이 높다. 비조영 CT HU 값은 조직 밀도를 반영한다. 지방이 풍부한 선종, 골수지방종, 액체로 찬 균질한 낭종 등 양성 병변은 CT 밀도가 ≤10 HU로 낮다. 2016년과 2022년의 체계적 문헌고찰 및 메타분석(Section 4.1)에 근거하면, 악성종양이 알려지지 않은 3723명의 환자에서 비조영 CT HU ≤10은 양성 질환에서만 발견되었다. 따라서 이전 지침 이후 근거가 더 축적되어, 패널은 비조영 CT의 음성 예측도를 신뢰하여 명백한 양성 특성이 확인되면 추가 영상이 필요 없다고 권고할 수 있었다. 특히 추가 영상(Table 4)은 위양성 결과와 그에 따른 환자의 심리적·경제적 부담, 의료체계의 부담을 초래할 수 있다. 종양 ≥4 cm인 1197명의 환자에서 얻은 더 나은 근거에 따라, 2016년에 임의로 도입했던 4 cm 크기 기준을 삭제하였다.',
+'CT와 마찬가지로 화학적 이동(chemical shift) 영상을 이용한 MRI 결과는 종괴의 지방 함량에 근거한다. CT(및 FDG-PET)와 달리 MRI는 전리방사선과 그에 따른 위험을 피할 수 있다는 장점이 있다. 그러나 신호강도 소실의 정량 평가가 연구마다 표준화되어 있지 않아, 악성 진단에서 MRI 성능에 대한 근거는 강한 권고를 하기에 불충분하다(Section 4.1). 또한 영상 해석이 정량적 CT 평가보다 영상의학과의의 경험에 더 의존할 수 있다. 아울러 적격 연구의 수와 질이 낮아 메타분석에서 특히 CT와 비교한 MRI의 진단적 가치를 결정할 수 없었다. 지난 6년간 선정 기준을 충족하는 MRI 연구는 발표되지 않았다. 2023년 초에 발표된 한 최근 연구는 불균질한 미세 지방을 가진 부신 병변에서도 MRI의 유용성을 시사한다(n = 283). 그러나 화학적 이동 MRI는 여전히 CT가 덜 바람직한 경우(예: 임신, 소아)에만 일차 선택이어야 한다. 그럼에도 화학적 이동 MRI가 이미 시행되었고 결과가 명확하다면 다학제 전문가 팀은 개별 환자에서 이를 충분하다고 판단할 수 있다.']},
+'2.4':{t:'HU &gt;10 종괴의 분류', ids:['2.4','2.5','2.6'], p:[
+'패널은 HU &gt;10 종양군을 3개 군으로 나누기로 하였다(Figure 5). 이를 위해 최근 연구에 근거하여 종괴의 모양, 종양 크기, HU를 기준값으로 사용하였다. Section 4.1에 기술한 바와 같이, 특히 부신외 악성종양 병력이 없는 환자에서 비조영 HU 11–20의 균질한 부신종양은 90% 이상이 양성이라는 근거가 늘고 있다. 그러나 이 범위의 HU를 보이는 전이와 극소수의 부신피질암도 있다. 따라서 &lt;4 cm이면서 HU 11–20인(호르몬 활성이 없는) 부신 종괴에서 첫 선택은 추가 영상검사 1회(기관의 경험과 선호에 따라 FDG-PET/CT, 화학적 이동 MRI, 또는 washout CT)이다. 이 영상 결과가 양성 병변을 시사하면 추가 영상은 필요 없다. 두 번째 선택은 비조영 CT(또는 MRI)로 병변의 크기만 모니터링하는 추적 영상이다. 이 목적에는 부신에만 초점을 맞춘 영상이 합리적이다. 악성 가능성이 낮으므로 대부분의 환자에서 12개월 간격이 합리적이다.',
+'반면 종양 크기가 ≥4 cm이면서 비조영 HU &gt;20이거나 불균질한 모양이면 악성 위험이 명백히 증가한다. 두 범주를 모두 충족하는 종양은 ‘진정한’ 우연종 코호트에서도 악성 병변 가능성이 50%에 이를 수 있다. 따라서 다학제팀 회의에서 이 증례를 상세히 논의해야 한다. 대부분의 경우 환자에게 수술 선택지를 제시해야 한다. 다른 잠재적 악성 병변의 발견은 임상 관리를 바꿀 가능성이 높으므로 수술 전에 완전한 병기 평가를 시행해야 한다. 이와 관련하여 부신피질암에서는 작은 폐전이가 비교적 흔하므로 흉부 CT가 필수적이다. 따라서 이 경우 FDG-PET/CT 단독 사용 권고는 그 CT 성분이 통상적인 진단 품질일 때에만 적용된다.',
+'그러나 위 범주에 해당하지 않는 종양도 있다. 자체 경험과 문헌에 근거하여, 이 아군의 악성 위험은 여전히 작지만 &lt;4 cm이면서 HU 10–20인 종양보다는 높다고 판단한다. 따라서 즉시 수술보다는 추가 영상이 가장 적절해 보였다. 불확정 부신 종괴 환자에서 ‘2차 또는 3차’ 영상의 표적 평가에 대한 근거는 여전히 제한적이지만(Section 4.1), 대부분의 패널은 FDG-PET/CT의 가치를 MRI나 지연 washout CT보다 높게 평가하였다. FDG-PET/CT는 위음성(즉 악성 부신종양을 놓칠) 위험이 매우 낮다는 장점이 있지만 0은 아니다(Table 4). 그러나 더 비싸고 항상 쉽게 이용할 수 있는 것은 아니며, 여러 양성 부신종양(예: 기능성 선종)이 FDG 양성 병변일 수 있다는 단점이 있다. 화학적 이동 MRI의 장단점은 R.2.3에서 논의하였다. 또한 부신 화학적 이동 MRI는 상당히 확립된 것으로 여겨져 이 주제의 새로운 연구가 덜 매력적으로 보일 수 있으므로 출판 편향이 있을 수 있다. 따라서 다학제팀은 기관의 전문성과 가용성에 근거하여 어떤 추가 방법을 사용할지 결정해야 한다. washout CT에서는 최근 한 연구가 상대 washout &gt;58%가 더 적절한 기준값일 수 있다는 근거를 제시하였다. 그러나 이 기준값은 다른 연구로 확인되어야 한다. 추가 영상이 악성 병변을 시사하면 수술을 권한다. 종괴가 여전히 특성화되지 않았는데 수술을 하지 않으면 6–12개월 후 추적 영상을 권한다.',
+'가능한 곳에서 부신피질암에 대한 특이도가 높은 유망한 대안은 소변 스테로이드 대사체학(urine steroid metabolomics)으로, 탠덤 질량분석에 의한 소변 스테로이드 프로파일링과 기계학습 기반 스테로이드 데이터 분석을 결합한 것이다. 부신우연종 환자 2000명 이상을 대상으로 한 전향적 연구에서 이 방법의 양성 예측도는 76.4%, 음성 예측도는 99.7%였다.',
+'2차 영상 또는 소변 스테로이드 대사체학이 양성 질환을 시사하거나, 그 밖의 이유로 수술을 시행하지 않았다면, 개별적으로 판단한 악성 위험에 따라 6–12개월 후 추적 영상이 선호되는 전략이다(이러한 간격 영상이 필요 없는 &lt;4 cm이면서 HU 11–20인 종양은 제외). 매우 느리게 자라는 부신피질암이 극소수 있으므로 일부 패널은 6개월과 12개월 모두 영상을 선호하기도 하였다. 악성을 시사하는 성장을 나타내는 크기 또는 용적 기준값으로 발표되었거나 일반적으로 합의된 것은 없다. 전문가 패널은 RECIST 1.1 기준에 따라 최대 종양 직경이 20% 넘게, 그리고 이 직경이 최소 5 mm 증가하면 의심스러운 것으로 간주하기로 합의하였다. 그러나 크기 변화가 없으면 추가 영상은 필요 없다.']},
+'2.7':{t:'부신 생검', ids:['2.7'], p:[
+'부신 생검은 부신 종괴 평가에서 역할이 제한적이며, 주로 부신외 악성종양, 림프종, 육종, 침윤성 또는 감염성 과정의 진단에 쓰인다. 이러한 상황에서도 부신 생검은 갈색세포종을 배제한 후, 이 시술에 경험이 있는 의사가, 관리 결정에 영향을 미칠 때에만 시행해야 한다. 특히 부신 종괴가 부신피질암일 가능성이 높으면 부신 생검을 하지 말 것을 권고하는데, 이러한 종양의 생검은 종양 파종 위험이 있어 R0 절제를 불가능하게 할 수 있기 때문이다. 생검은 1–2기 부신피질암 환자에서 전체 생존 악화로 이어진다고 보고되었다. 유일한 예외는 수술 불가능한 종양에서 종양학적 관리를 위해 진단의 공식 확인이 필요하거나 임상시험의 일부인 경우일 것이다.']},
+'2.8':{t:'성스테로이드·전구체 측정', ids:['2.8'], p:[
+'부신피질암은 절반 이상에서 성호르몬 및/또는 스테로이드 전구체 상승과 관련된다. 패널은 부신우연종 환자에서 이 호르몬들을 일상적으로 측정할 것을 권고하지 않지만, 영상상 불확정 부신 종괴이거나 안드로겐 또는 에스트로겐 과다의 임상 징후(예: 여성의 급속한 남성화, 남성의 급속히 발생하는 여성형유방)가 있는 경우 성호르몬 또는 전구체의 현저한 증가는 부신피질암을 명확히 가리킬 수 있다. 따라서 혈청 DHEA-S, 안드로스테네디온, 17-수산화프로게스테론, 11-데옥시코르티솔, 그리고 여성에서의 테스토스테론, 남성과 폐경 후 여성에서의 에스트라디올 측정은 부신 종괴의 부신피질 기원을 명확히 시사할 수 있다. 그러나 패널은 이 제안에 대한 발표된 근거가 매우 낮음을 인정한다.',
+'GC-MS 또는 LC-MS로 측정한 포괄적 혈청 또는 소변 스테로이드 프로파일 분석은 양성과 악성 부신피질종양의 감별에 유용한 것으로 나타났다. 2000명 이상을 대상으로 한 전향적 연구에서, 소변 스테로이드 다중 프로파일링 데이터를 처리하는 기계학습 알고리즘 결과를 CT 소견(종양 크기와 비조영 HU)과 결합하면 부신피질암으로 잘못 의심된 불확정 종양의 수술 수를 유의하게 줄일 수 있음이 입증되었다. 따라서 이 방법의 근거가 가장 강하다. 그러나 소변 스테로이드 대사체학은 아직 널리 이용할 수 없고 극소수 검사실에서만 검증·표준화되어 있다. 또한 부신피질 기원이 아닌 악성 부신 종괴는 식별할 수 없다.']},
+'3.1':{t:'임상 평가', ids:['3.1'], p:[
+'일부 소견은 비특이적이어서 놓칠 수 있으므로, 모든 환자는 현성 호르몬 과다의 단서를 찾기 위해 상세한 병력과 신체검사를 포함한 신중한 평가를 받아야 한다. 쿠싱증후군, 원발성 알도스테론증, 갈색세포종의 임상 평가와 이후 진단 절차는 다른 지침을 참조한다. 다모증이나 남성화의 급속한 발생과 진행은 안드로겐 생성 종양의 임상 지표이므로 혈청 테스토스테론과 안드로겐 전구체 DHEA(S), 안드로스테네디온을 측정해야 하며, 최근 발생한 여성형유방은 혈청 17β-에스트라디올 측정의 계기가 되어야 한다(R.2.8 참조).']},
+'3.2':{t:'1 mg DST와 MACS의 정의', ids:['3.2','3.3','3.4'], p:[
+'코르티솔 과다를 배제하거나 이전의 이른바 ‘무증상 코르티솔과다증(subclinical hypercortisolism)’을 정의하기 위해 다양한 진단 알고리즘이 사용되었으나, 문헌에서 검사 간 진단 성능을 직접 비교한 연구는 없다(Section 4.2.1). 알고리즘과 관련 임상 결과 사이의 공식 비교도 없다. 그러나 2016년 ESE-ENSAT 지침에서 패널은 병태생리학적 근거, 단순성, 그리고 대부분의 연구 진단 알고리즘에 포함되었다는 사실에 근거하여 1 mg 야간 덱사메타손 검사 사용을 권고하였다. ESE-ENSAT 지침 발표 후 연구들은 환자 분류에 점점 더 1 mg DST 결과에 의존하게 되었다.',
+'패널은 코르티솔 자율성이 생물학적 연속체이며 비기능성 선종과 어느 정도의 코르티솔 과다를 동반한 기능성 선종 사이에 명확한 구분이 없다고 본다. 그러나 현재 근거를 고려할 때 ≤50 nmol/L(≤1.8 µg/dL)는 생리적인 것으로 간주하여 코르티솔 과다를 배제할 수 있다. 따라서 DST 후 코르티솔 50 nmol/L 기준값은 코르티솔 자율성과 정상 분비를 구별하는 데 일관되게 사용되어 왔다.',
+'일부 연구에서는 이전 ESE-ENSAT 지침의 권고에 따라 1 mg 덱사메타손 후 비억제 환자를 DST 후 코르티솔 50–138 nmol/L(1.9–4.9 µg/dL)인 환자와 138 nmol/L 이상인 환자의 2개 범주로 추가 층화하였다. DST 후 코르티솔의 어떤 기준값도 동반질환 유병을 예측하는 정확도는 전반적으로 낮다. 그러나 여러 연구에서 DST 후 코르티솔이 점진적으로 높아질수록 동반질환 비율이 높아지는 관계를 보였으며, 그 양상이 선형은 아니었다. 한 대규모 코호트 연구는 DST 후 코르티솔 ≥83 nmol/L(3 µg/dL)에서만 사망률이 유의하게 증가했음을 발견했으며, 이는 향후 연구에서 재현되어야 한다. 결국 패널은 &gt;50 nmol/L(&gt;1.8 µg/dL) 기준값이 동반질환과 사망 위험이 증가한 환자를 구별한다는 설득력 있는 근거가 있는 반면, 코르티솔 비억제 정도에 따라 환자를 추가로 구별할 명확한 근거는 없다고 판단하였다. 따라서 패널은 덱사메타손 후 혈청 코르티솔 51–138 nmol/L인 ‘가능한 자율 코르티솔 분비(possible autonomous cortisol secretion)’와 138 nmol/L 초과인 ‘자율 코르티솔 분비(autonomous cortisol secretion)’ 사이의 이전 층화를 폐기해야 한다고 주장하며, 최종적으로 ‘MACS’라는 용어를 제안하였다.',
+'코르티솔이 50 nmol/L 미만으로 억제되는 환자는 내분비내과의의 추가 평가나 추적이 필요 없다. MACS 환자에서는 첫 진찰에서 간과했을 수 있는 현성 쿠싱증후군 징후를 찾기 위한 신중한 2차 임상 평가와, 억제되었거나 적어도 정상 하한인 아침 혈장 ACTH를 입증하여 ACTH 비의존성을 확인하는 것이 필요할 수 있다(Figure 6). 일부 패널은 혈청 DHEA-S 또는 연령·성별 보정 DHEA-S 비 측정이, 특히 1 mg DST 위양성 위험이 있는 환자에서, 의미 있는 MACS 환자를 찾는 데 도움이 된다고 보았다. 시상하부–뇌하수체–부신 축이 만성적으로 억제되면 DHEA-S가 감소하기 때문이다. 그러나 연령 보정 DHEA-S 참고치는 잘 확립되어 있지 않다. 최근 1 mg DST 후 ACTH를 측정하여 ACTH 비의존성을 진단하는 새로운 방법이 제안되었으나 결과는 확인이 필요하다.',
+'또한 관리 방향을 정하는 데에는 코르티솔에 기인할 수 있는 동반질환(Table 5)의 존재 평가가 가장 중요해진다. 그러나 나이가 들수록 동반질환 가능성이 증가한다는 점을 잘 알고 있다. 또한 나이가 들수록 1 mg DST 후 코르티솔도 증가하며, 65세 초과 환자에서는 MACS의 임상적 의의가 감소한다는 근거가 있다. 따라서 이 점은 개별적으로 고려해야 한다. 특히 노쇠한 환자에서 MACS를 확인하는 것은 아마도 의미가 없고 임상적 결과도 없을 것이다. 따라서 현성 쿠싱증후군이 의심되지 않는 한 이 환자군에서는 DST를 생략해야 한다.',
+'확인 가능한 동반질환이 없는 환자는 특이 치료(즉 수술)를 받지 않아야 하나, 코르티솔에 기인할 수 있는 동반질환의 발생에 대한 추적이 필요하다(R.5.4). 반면 의미 있는 동반질환을 가진 일부 환자는 특이 치료를 고려해야 한다(R.3.8, Figure 6).',
+'일부(전부는 아님) 패널은 코르티솔 분비의 자율성을 확인하고 분비 정도를 평가하기 위해 추가 생화학 검사를 선호하였다. 그러나 여러 검사를 사용하면 적어도 하나가 위양성일 가능성이 증가할 수 있음을 인정한다. 1 mg 덱사메타손 후 코르티솔은 코르티솔 분비 정도와 상관하지 않을 수 있으므로 일부 패널은 24시간 소변 유리 코르티솔 및/또는 심야 타액 코르티솔을 추가로 측정한다. 그러나 측정법에 따라 현성 쿠싱증후군이 없는 대부분의 환자에서 이 결과는 정상 범위이다. 따라서 이상 결과는 실제로 더 진행된 표현형을 가리킬 수 있다. 마찬가지로 일부 패널은 MACS 환자의 코르티솔 분비가 ACTH와 무관하다는 개념에 따라 더 높은 용량의 덱사메타손(예: 3 mg, 2 mg × 2, 또는 8 mg)을 사용한다. 그러나 이러한 검사에 대해 명확히 언급하기에는 발표된 문헌이 너무 제한적이고 논란이 있다.',
+'‘건강’과 ‘잠재적 질병’(MACS) 사이의 이러한 범주적 정의의 주요 문제는 MACS의 진단 또는 배제에 대한 DST의 민감도와 특이도가 이상적이지 않다는 데서 비롯된다. 모든 검사실이 주어진 기준값을 실제로 자체 검증해야 한다는 점을 잘 알고 있다. 그러나 이 번거로운 절차는 많은 기관에서 비현실적일 수 있으며, 모든 임상의는 이 한계를 인지하고 관리에 대한 임상 결정을 이 단일 지표에만 근거해서는 안 된다. 덱사메타손 검사에는 위양성 결과가 있으므로 수술을 치료 선택지로 고려하는 모든 MACS 환자에서 검사를 반복해야 한다. 1 mg DST에서 혈청 코르티솔과 함께 혈청 덱사메타손을 측정하면 흡수 불량이나 덱사메타손 대사 증가로 인한 위양성 DST 결과를 배제하는 데 도움이 될 수 있다. 그러나 이 방법은 아직 널리 이용할 수 없다.']},
+'3.5':{t:'현성 쿠싱증후군으로의 진행', ids:['3.5'], p:[
+'부신우연종 환자의 추적을 보고한 연구들은 MACS 환자 중 현성 쿠싱증후군으로 진행하는 비율이 매우 낮다(&lt;1%)는 결과를 일관되게 보여주었다(Section 4.4).']},
+'3.6':{t:'고혈압·당뇨병 선별', ids:['3.6'], p:[
+'MACS와 고혈압 또는 고혈당 사이의 연관에 대한 근거가 늘고 있다(Section 4.2.1). 이상지질혈증과의 연관은 생물학적으로 그럴듯하지만 덜 확고하다. 따라서 패널은 잘 알려진 독립적 심혈관 위험인자이자 코르티솔 과다에 의해 유발될 수 있는 이 질환들을 선별하고 현행 지침에 따라 치료하는 것에 명확히 찬성한다. 이 선별에는 혈압(이상적으로는 활동혈압 측정), HbA1c, LDL 및 HDL 콜레스테롤, 중성지방, 체중이 합리적이다. MACS가 심혈관 사건 위험 증가 및 초과 사망과 관련된다는 근거도 있다.']},
+'3.7':{t:'척추골절 선별', ids:['3.7'], p:[
+'일부 연구에서는 무증상 척추골절 발생 증가가 관찰되었으나 모든 연구에서 그렇지는 않았다. 그러나 X선에서 (미세)골절을 정확히 평가하는 것은 모든 곳에서 임상 진료의 일부는 아니다. 따라서 최소한 현성 골절은 진단 시점에 확인해야 한다. 이는 비외상성 골절 병력을 문진하고, 가능하면 기존 영상(CT)을 재검토하거나 단순 X선으로 할 수 있다.',
+'글루코코르티코이드 과다는 면적 골밀도보다 골 미세구조에 더 큰 영향을 미치므로, 이중에너지 X선 흡수계측법에 의한 골밀도 평가는 글루코코르티코이드 유발 골다공증 진단에 최적이 아닌 도구로 나타났다. 또한 MACS 환자의 골밀도에 대해 상반된 결과가 있다. 해면골 점수(trabecular bone score) 같은 비침습적 골 미세구조 영상 평가를 사용한 소수 연구에서 MACS의 질적 골 악화가 관찰되었다. 그러나 이러한 연구는 수가 적어 추가 확인이 필요하며(Section 6), 골 미세구조의 영상 평가는 널리 이용할 수 없다. 따라서 특히 골다공증이 임상적으로 의심되거나 골다공증 관련 위험인자가 있는 MACS 환자에서 골밀도 측정을 고려할 것을 제안한다.']},
+'3.8':{t:'MACS의 수술 결정', ids:['3.8'], p:[
+'현재 문헌의 한계, 특히 고품질 무작위 시험이 없어 패널은 MACS 환자의 정확한 수술 적응을 정의할 수 없었다. 패널은 수술로 고혈압과 고혈당이 개선된다는 일부 근거가 있음을 인정했으나, 이는 대부분 저품질 자료에 근거한다. 또한 이 방향을 가리키는 2개의 소규모 무작위 시험이 있다. 그러나 무작위배정 후 수술군과 비수술군의 동반질환 평가와 치료가 표준화되지 않아 수술 이득을 정확히 평가할 수 없었다. 또한 더 임상적으로 의미 있는 결과변수(예: 사망률 또는 주요 심혈관 사건)에 대한 자료는 없다.',
+'따라서 수술 결정은 환자의 연령, 최소 2회의 별도 평가에서 확인된 코르티솔 자율성의 정도와 지속성, 동반질환의 기간과 경과 및 조절 정도, 표적장기 손상의 유무와 범위 등 결과와 관련된 요인을 고려하여 개별화해야 한다. 수술적 중재가 개별 환자의 임상 표현형에 미칠 결과를 정확히 예측할 수 없으므로, 이러한 환자의 최적 관리에 대해 패널 내에서 완전한 합의는 없었다.',
+'전반적으로 그룹은 일측성 부신 종괴, 덱사메타손 후 코르티솔 &gt;50 nmol/L(&gt;1.8 µg/dL), 그리고 코르티솔에 기인할 수 있는 동반질환에서 다음 특징 중 적어도 하나가 있는 환자에서 수술 적응이 있을 수 있다는 데 동의하였다: (1) 진행성, (2) 치료가 어려움, (3) 연령에 비해 부적절한 표적장기 손상 동반, (4) 연령에 비해 이례적이거나 가족력과 불일치, (5) 다발성 동반질환. 특정 근거가 없으므로, 패널은 이러한 특징(의 일부)이 있으면 코르티솔 자율성의 정상화가 수술받는 환자에게 이득이 될 가능성이 더 크다는 것을 시사할 수 있다고 보았다. 흥미롭게도 최근 2개의 대규모 연구는 MACS 환자의 사망률이 주로 65세 미만 코호트에서 증가하며, 그중 한 연구에서는 특히 65세 미만 여성이 영향을 받았음을 시사한다. 따라서 이 환자군이 치료적 중재로 가장 큰 이득을 볼 가능성이 있다. 그러나 중재 연구 자료는 아직 없다.',
+'그러나 MACS로 인해 수술을 고려할 때는 억제되었거나 낮은 기저 아침 혈장 ACTH로 ACTH 비의존성을 입증해야 한다는 합의가 있었다. 그렇지 않으면 코르티솔 과다의 다른 원인을 고려해야 한다. 또한 패널은 수술 전 1 mg DST를 반복하여 코르티솔 비억제를 확인해야 한다고 보았다. 이론적으로 내과적 치료가 대안이 될 수 있다. 그러나 이 접근에 대한 근거는 아직 권고하기에는 너무 낮다.']},
+'3.9':{t:'갈색세포종 배제', ids:['3.9'], p:[
+'최근 연구들은 비조영 CT에서 HU ≤10인 부신종양이 갈색세포종일 가능성이 0에 가깝다는 것을 일관되게 보여주었다. 따라서 명확한 부신선종의 CT 소견을 보이는 환자에서는 메타네프린 측정을 피하는 것이 합리적으로 보인다. 부신 화학적 이동 MRI가 선종을 명확히 나타낸 경우에도 아마 마찬가지이다. 그러나 이에 대한 발표 자료는 없다. 불확정 영상 소견을 가진 환자에서는 시사하는 증상이 없더라도, 특히 생검이나 종양 제거를 계획한다면 갈색세포종을 배제해야 한다. 비조영 CT를 시행하지 않았다면 혈장 유리 메타네프린 또는 소변 분획 메타네프린을 측정하는 것이 바람직하다.']},
+'3.10':{t:'원발성 알도스테론증', ids:['3.10'], p:['상세한 내용은 다른 학회의 최신 지침과 종설을 참조한다.']},
+'4.1':{t:'호르몬 과다 종양의 수술', ids:['4.1'], p:[
+'여러 다른 지침에서 다루듯이, 임상적으로 의미 있는 호르몬 과다(예: 원발성 알도스테론증, 쿠싱증후군, 갈색세포종)를 일으키는 부신종양은 수술로 제거해야 한다는 합의가 있다. MACS 환자에서는 의미 있는 동반질환이 있는 경우 개별 요인을 고려하여(R.3.8에 상세) 수술을 고려할 수 있다. 지침 그룹은 이러한 종양에도 내분비 비활성 종양과 같은 수술 접근 원칙이 적용되어야 한다고 확신한다(아래 참조). 호르몬 생성 종양의 수술 접근이 내분비 비활성 종양과 달라야 할 근거 있는 이유는 없다(R.4.4–4.6).']},
+'4.2':{t:'수술하지 않는 경우', ids:['4.2'], p:[
+'대부분의 부신우연종은 해를 끼치지 않는 비기능성 양성 병변(예: 선종, 골수지방종)이다. 따라서 이러한 부신 종괴의 대부분은 수술이 필요 없다는 폭넓은 합의가 있다. 지침 그룹은 일측성 부신 병변을 무해한 것으로 특성화하기 위해 충족해야 할 2가지 기준을 정의하였다: (1) 양성 병변을 시사하는 영상 기준(Section 5.2, Table 4), (2) 의미 있는 내분비 활성이 없음(Section 5.3). 크기와 관계없이 영상 특성이 종괴의 양성 성질을 시사하면 부신절제술은 일상적으로 적응되지 않는다. 그러나 신중한 다학제팀 논의 후, 종괴 효과로 인한 증상 완화를 위한 수술(예: 점차 커지는 큰 골수지방종)을 포함한 더 개별화된 접근을 고려할 수 있다. 끝으로 수술을 반드시 시행해야 하는 특정 크기 기준에 반대하는 투표를 하였다. 그러나 종양 크기가 커질수록 환자와 임상의가 진단에 점점 더 불안을 느낄 수 있음을 인정하며, 이 경우에도 개별화 접근이 가장 적절하다고 보았다.']},
+'4.3':{t:'최소침습 접근', ids:['4.3'], p:[
+'MACS를 일으키는 양성 부신 종괴는 대개 &lt;6 cm이며, 개방 접근보다 환자 이환율이 가장 적은 최소침습 수술로 안전하게 제거할 수 있다. 이러한 부신종양이 최소침습 접근으로 제거할 수 있을지 우려될 만큼 큰 드문 상황에서는 경험이 매우 많은 센터와 상의하는 것이 바람직하다.']},
+'4.4':{t:'악성 의심 종괴의 수술 접근', ids:['4.4','4.5','4.6'], p:[
+'악성이 의심되는 일측성 부신 종괴의 주된 임상적 우려는 부신피질암이다. 전이가 없는 부신피질암에서 수술은 가장 중요한 단일 치료 수단이다. 따라서 외과의의 전문성이 매우 중요하다. 이러한 경험과 전문성을 정의하는 연간 수술 건수에 대한 근거는 제한적이지만, 가용 근거에 따라 패널은 부신 수술에 충분한 경험을 보장하려면 연간 최소 12건의 부신절제술이 필요하며, 악성 가능성이 있는 종양 수술에 관여하는 경우 연간 &gt;20건이 바람직하다고 본다. 또한 부신피질암 의심 시에는 종양 수술에 대한 특정 전문성이 필요하다. 일반적으로 특히 악성 의심 병변 환자의 부신절제술은 집중화를 목표로 해야 한다.',
+'앞서 요약한 바와 같이(Section 4.3) 국소 부신피질암 수술에서 최소침습과 개방 부신절제술을 비교한 군당 10명 이상의 연구가 14편 있다. 그러나 이 연구들은 방법론적 결함이 있으며 중요하게도 무작위 연구는 없다. 그럼에도 이 자료와 지침 그룹 구성원의 임상 경험에 근거하여, 영상에서 악성 징후가 있는 종양이라도 국소 침범의 근거가 없고 부신피질암 수술에 광범위한 경험이 있는 전문 외과의가 시행하는 경우에만 최소침습 부신절제술이 정당화될 수 있다고 판단하였다. 이 접근의 크기 기준에 대해 그룹의 의견이 나뉘어, 3명이 5 cm, 7명이 6 cm에 투표했고 2명은 기권하였다. 이 크기들은 최소침습 부신절제술이 종양 피막 파열(재발의 주요 위험인자) 없이 가능하고 환자에게 이득(예: 통증 감소, 짧은 재원기간)이 있다는 믿음에서 선택되었다. 그러나 종양 크기가 커질수록 종양 피막 파열 위험이 증가할 수 있다. 수술 중 종양 피막 파열 위험이 있으면 개방 수술로 전환해야 한다.',
+'최소침습과 개방 부신절제술 사이의 5–6 cm 기준값은 임상 연구의 좋은 근거에 기반한 것이 아니며, 대부분의 센터에서 &lt;6 cm 종양의 최소침습 부신절제술이 통상적인 진료임을 인정한다. 그러나 이 기준값은 5–6 cm보다 작은 모든 종양이 최소침습 부신절제술을, 5–6 cm보다 큰 모든 종양이 개방 부신절제술을 받아야 한다는 의미가 결코 아니다. 많은 경우 주어진 환자에게 최선의 수술 접근을 찾기 위해 개별화된 결정 과정이 필요하다고 확신한다. 이는 R.4.2–4.5에 기술한 범주에 해당하지 않는 모든 환자에게도 마찬가지이다. 다른 자료는 부신피질암에서 생존 개선을 위한 적절한 림프절 절제의 중요성과 로봇 접근이 제공할 수 있는 잠재적 기술 개선을 지적하지만, 이러한 접근은 추가 검증이 필요하다.',
+'3기 부신피질암(국소 침범, 림프절 전이, 또는 신정맥이나 대정맥의 종양 혈전) 환자에 대한 최선의 접근에 대해 충분한 검정력을 가진 연구는 발표되지 않았다. 그러나 지침 그룹은 현재 임상 진료에 따라 이 병기에서 개방 부신절제술을 표준 술식으로 만장일치로 투표하였다.']},
+'4.7':{t:'수술 전후 글루코코르티코이드', ids:['4.7','4.8'], p:[
+'MACS는 코르티솔의 부신 공급원을 제거한 후 부신기능저하증을 초래할 수 있다. DST 후 코르티솔이 높을수록, 혈장 ACTH(또는 혈청 DHEA-S)가 낮을수록 가능성이 크다. 그러나 ACTH가 불완전하게 억제된 환자도 수술 후 부신기능저하증이 생길 수 있음이 잘 기록되어 있으며, 반대로 모든 MACS 환자에서 생기는 것은 아니다. 이러한 불확실성 때문에 그룹은 부신종양이 있고 덱사메타손 검사에서 혈청 코르티솔이 억제되지 않는 환자에서 수술 중 및 수술 후 글루코코르티코이드 보충, 바람직하게는 하이드로코르티손 보충에 명확히 찬성한다. 이는 국제 지침에 따른 주요 스트레스 용량 보충 제안을 따라야 한다. 수술 후 글루코코르티코이드 용량은 이 임상 상황에 경험이 있는 의사가 개별적으로 감량해야 한다. 시상하부–뇌하수체–부신 축 회복이 확인될 때까지 글루코코르티코이드 치료를 중단해서는 안 된다. 모든 환자에서 수술 후 부신기능저하증이 생기는 것은 아니므로 첫 분석은 수술 후 6주 이내에 해야 한다. 일부 환자는 MACS에 대한 부신절제술 후 심한 글루코코르티코이드 금단증후군을 경험할 수 있으며, 이 또한 코르티솔 과다 환자의 수술 후 관리에 경험 있는 의사가 모니터링해야 하는 이유이다.',
+'그러나 패널은 경험이 매우 많은 일부 센터에서는 글루코코르티코이드 보충 없이 부신 수술을 시행할 수 있음을 인정하였다. 이 경우 수술 전후 및 수술 후 기간에 환자의 임상 상태와 시상하부–뇌하수체–부신 축의 생화학적 지표를 더욱 면밀히 모니터링해야 한다.']},
+'5.1':{t:'양성 병변의 추적 영상', ids:['5.1'], p:[
+'2016년 권고(추적 연구에 포함된 2300명 이상의 환자에 근거) 이후 853명을 포함한 5개의 추적 연구가 추가로 발표되었다. 초기 영상에서 선종의 전형적 소견을 보인 우연종의 대부분은 크기가 대체로 안정적이나, 자발적이고 느린 크기 증가와 감소가 기술되어 있다. 중요하게도 현재까지 부신피질선종의 크기와 관계없이 이들 환자에서 부신 악성종양의 발생을 보고한 연구는 없다. 따라서 패널은 초기 평가가 양성 병변에 명백히 합당하면 영상검사 반복에 만장일치로 반대하였다. 2016년 권고에 포함되었던 4 cm 종양 크기 기준도 삭제하였다.']},
+'5.2':{t:'불확정 종괴의 추적', ids:['5.2'], p:[
+'시간이 지나며 느리게 자랄 수 있는 양성 부신종양과 달리, 악성 부신 병변(대부분 부신피질암과 전이)은 대개 수개월 내 빠른 성장이 특징이다. 따라서 패널은 빠르게 자라는 종괴를 인지하기 위해 초기 평가에서 양성 성질을 확실히 확립할 수 없는 부신우연종에서 추적 영상을 시행할 것을 권고한다. 6–12개월 동안 부신 종괴가 자라지 않으면 악성 종괴 가능성은 낮으며, 의미 있는 빠른 성장이 관찰되면 수술을 권고한다. 부신종양의 의미 있는 성장에 대한 일반적으로 인정된 정의는 없다. 따라서 이전 지침에서 RECIST 1.1 기준을 적용한 위의 기준값을 이미 제안하였다. 패널은 수년간 의미 있는 성장 없이 지내는 악성 부신종양의 예외적 증례가 있음을 알고 있다. 그러나 이는 드문 예외로 볼 수 있으며, 부신 종괴를 가진 모든 환자를 수년간 반복 영상으로 추적하는 것을 정당화하지 않는다. 다만 위 기준을 충족하지 않는 측정 가능한 성장(&lt;20%)이 있으면, 이를 뒷받침하는 자료는 없지만 추가 추적 영상이 정당해 보인다.']},
+'5.3':{t:'호르몬 검사의 반복', ids:['5.3'], p:[
+'비기능성 부신우연종 환자 총 3000명 이상의 연구들은 임상적으로 의미 있는 현성 호르몬 과다가 발생할 위험이 극히 낮음을 확인한다: 쿠싱증후군 0.0–0.6%, 원발성 알도스테론증 0.0–1.6%, 갈색세포종 0.0–2.1%(Section 4.4). 발표 연구 분석은 약 5%의 환자에서 MACS가 발생함을 시사한다(Figure S4). 그러나 일부 패널은 임상 경험상 이 수치가 더 높다고 느꼈다. 그럼에도 MACS와 기타 의미 있는 호르몬 과다가 발생할 가능성이 낮고 1 mg DST의 위양성 위험이 있으므로, 패널은 초기 평가에서 비기능성인 부신우연종 환자의 체계적인 추적 호르몬 검사에 반대 투표하였다. 다만 MACS에 기인할 수 있는 동반질환에 의미 있는 변화가 있으면 1 mg 덱사메타손 검사를 반복해야 한다.']},
+'5.4':{t:'수술하지 않는 MACS의 추적', ids:['5.4'], p:[
+'Section 5.3에서 상술한 바와 같이 패널은 MACS를 여러 동반질환과 관련된 상태로 본다(Table 5). 그러나 앞서 논의했듯이 MACS 환자가 추적 중 현성 쿠싱증후군으로 진행하는 경우는 극히 드물다. 따라서 패널은 시상하부–뇌하수체 축 기능의 일상적 내분비 재평가에 반대하고, 초기에 수술하지 않기로 결정한 MACS 환자에서는 코르티솔에 기인할 수 있는 동반질환에 대한 연 1회 임상 추적을 권고한다. 이 연간 평가에는 HbA1c, 혈압(이상적으로 활동혈압 측정), LDL 및 HDL 콜레스테롤, 중성지방, 체중이 합리적이다.',
+'이 코호트에서 MACS가 흔하고, 이러한 비특이적 동반질환(고혈압, 비만, 내당능장애 등)의 추적은 대개 일반의와 일차 의료기관이 수행하므로, 환자를 전문 내분비 추적에서 종결하는 것을 고려할 수 있다. 이 동반질환들이 악화되거나 새로 생기거나 현성 쿠싱증후군 징후가 새로 나타나면 내분비내과 재의뢰를 고려할 수 있도록, 내분비내과의와 일차 의료기관 사이의 긴밀한 협력과 환자에게 관련 정보 제공을 강력히 권장한다. 이 시점에 전문적 임상·내분비 재평가를 시행하여 적절한 대증 치료나 부신우연종의 수술적 제거 같은 치료 선택지를 재고할 수 있다.']},
+'6.1.1':{t:'양측성 종괴의 개별 평가', ids:['6.1.1'], p:[
+'대부분의 경우 양측 부신 종괴는 양성 양측 부신피질 질환, 즉 양측 선종, 대결절성 과형성, 또는 사이에 정상이거나 위축된 피질이 있는 뚜렷한 양측 결절이다. 그러나 전이(특히 부신외 악성종양이 알려진 환자), 부신 림프종, 양측 갈색세포종의 가능성도 고려해야 한다. 또한 양측 부신 종괴는 선종, 갈색세포종, 낭종, 골수지방종, 부신피질암 등 서로 다른 질환이 함께 있는 것일 수 있다. 따라서 최선의 접근은 R.2.2–R.2.6의 권고에 따라 각 병변을 별도로 특성화하는 것이다.']},
+'6.1.2':{t:'양측성 종괴의 호르몬 평가', ids:['6.1.2','6.1.3','6.1.4','6.1.5','6.1.6'], p:[
+'양측 부신 종괴 환자의 호르몬 과다는 병변 중 하나 또는 양측에서 기원할 수 있다. 쿠싱증후군, 원발성 알도스테론증, 갈색세포종 모두 만날 수 있다. 이 질환들의 임상 평가는 다른 학회의 지침을 참조한다. 위 질환 중 일부는 특정 관리가 필요하므로 대개 부신 다학제 전문가 팀 회의가 있는 경험 많은 센터의 조언을 받는 것이 필요하다(R.1.1).',
+'일반적으로 4개의 아범주를 구별하는 것이 도움이 된다(Table 6). 가용 영상의 철저한 분석이 첫 번째 중요한 단계이다. 전형적 예를 Figure 8에 제시하였다. 이 접근으로 일부 특정 호르몬 검사를 제한된 환자에게만 시행할 수 있다. 예를 들어 17-수산화프로게스테론은 양측성 과형성 환자에서만 필요하고, 부신기능저하증 검사는 크고/또는 침윤성인 양측 종괴(예: 림프종, 전이) 또는 양측 출혈 환자에서만 필요하다. 예를 들어 부신 전이 환자 579명의 연구에서 초기 진단 시 24%, 추적 종료 시 43%가 양측 전이였다. 이 연구에서 검사가 균일하지 않았음에도 양측 병변 환자의 12.4%가 원발성 부신기능저하증으로 진단되었다. 원발성 부신기능저하증의 유병률은 &gt;4 cm 부신 전이 환자에서 20%였다.',
+'부신 기능 평가에는 아침 혈청 코르티솔과 혈장 ACTH 측정이 합리적인 첫 단계이다. 부신기능저하증이면 코르티솔은 낮고 혈장 ACTH는 명백히 상승한다. 불확실한 경우 synacthen 검사를 시행할 수 있다. 양측 부신 비대는 기저 선천부신과형성(CAH)에 의해서도 생길 수 있으며 17-수산화프로게스테론으로 선별할 수 있다. 그러나 17-수산화프로게스테론 상승은 특히 악성종양이나 양측 대결절성 부신과형성에서 병변으로부터의 스테로이드 전구체 분비 증가를 나타낼 수도 있다. 이 경우 낮거나 억제된 ACTH가 CAH와의 구별에 유용하다.',
+'MACS는 일측성 선종보다 양측성 과형성 또는 선종 환자에서 더 흔하다. 원발성 양측 대결절성 부신과형성과 MACS가 있는 환자에서 결절 수는 병원성 생식세포 <i>ARMC5</i> 변이 가능성과 상관한다. 병원성 <i>ARMC5</i> 변이 환자는 대개 더 심한 표현형을 보이며 현성 쿠싱증후군 징후가 더 자주 생긴다. 따라서 특별한 주의와 잠재적으로 더 적극적인 모니터링과 치료 관리가 필요하다. 병원성 생식세포 변이가 발견된 환자에서는 1촌 가족에게 유전상담을 제공해야 한다.']},
+'6.1.7':{t:'양측성 MACS의 치료', ids:['6.1.7','6.1.8'], p:[
+'앞서 언급했듯이 MACS는 일측성보다 양측성 부신우연종 환자에서 더 자주 발견되지만, 이 환자들을 다르게 관리해야 한다는 발표된 근거는 없다. 양측 부신절제술은 현성 쿠싱증후군의 근거가 있는 경우를 제외하면 거의 적응되지 않는다. 양측 부신절제술은 일측 수술보다 이환율이 높고, 환자는 평생 부신호르몬 보충에 의존하며 생명을 위협하는 부신위기 위험이 있다.',
+'양측 대결절성 부신과형성에서 일측 부신절제술의 이로운 효과에 대한 근거는 제한적이다. 발표된 대부분의 연구에서는 부신 병변 크기가 코르티솔 과다 정도와 상관한다는 관찰에 근거하여 가장 큰 병변을 절제하였다. 부신정맥채혈이 코르티솔 과다의 편측화에 도움이 될 수 있으나 자료가 매우 약하다. 일측 부신절제술 후 부신기능저하증이 생겨 수개월–수년 지속될 수 있으므로 평가하고 적절히 치료해야 한다. 남은 비정상 부신에서 MACS가 재발하는지 모니터링하는 것이 중요하다. 근거가 제한적이므로 연령, 코르티솔 과다 정도, 전신 상태, 동반질환 상태, 환자 선호를 고려한 개별화 접근이 합리적이다. 다만 양측 수술이 적응될 가능성이 있으면 부신 보존 수술을 고려할 수 있다. 대안으로 내과적 치료가 있을 수 있다. 그러나 이 접근의 근거는 아직 명확한 지침을 주기에는 너무 낮으나, 선택된 환자에서는 스테로이드 생성 억제제를 고려할 수 있다.',
+'일부 환자는 이상 수용체(aberrant receptor)의 존재 근거가 있겠지만, 대부분의 환자에서 장기 관리가 수용체 활성에 대한 지식에 근거하지 않으므로 이를 확인하는 데 필요한 복잡한 검사를 일상적으로 시행하는 것은 정당화하기 어렵다. 따라서 일상 진료에서 이러한 검사를 권하지 않는다. 양측 갈색세포종 환자에서는 기저 유전적 소인에 따라 부신 보존 수술을 고려할 수 있다. 이 환자들에게는 유전검사를 강력히 권한다.']},
+'6.2.1':{t:'젊은 환자와 고령·노쇠 환자', ids:['6.2.1','6.2.2','6.2.3','6.2.4'], p:[
+'부신우연종의 발생률은 연령에 따라 뚜렷이 달라, 대부분의 환자가 40–60대(fifth to seventh decade)에 발견된다. 부신 질환이 의심되지 않는 이유로 통상 영상검사를 받는 인구에서 부신우연종의 전체 발생률은 1–4%로 보고된다. 70세 초과에서는 10% 이상이 영상 또는 부검에서 확인 가능한 부신 종괴를 가지는 반면, 40세 미만에서 부신 결절은 훨씬 드물고 소아와 젊은 성인에서는 희귀하다. 따라서 임신부를 포함한 젊은 환자의 평가는 악성 위험과 의미 있는 호르몬 과다 유병률이 훨씬 높으므로 긴급히 진행해야 한다. 악성 병변의 검사 전 확률이 높으므로 시간이 많이 걸리는 진단 절차는 피하고, 적응이 되면 수술을 크게 지연해서는 안 된다. 전형적인 부신우연종 환자(대개 &gt;50세)와 달리, 매우 젊은 환자에서는 양성으로 추정되는 부신 종괴라도 12개월 후 1회 추적 영상을 고려할 것이다.',
+'반대로 부신외 악성종양 병력이 없는 고령 환자의 작은 부신우연종은 악성의 검사 전 확률이 매우 낮다고 가정할 수 있다. 따라서 고령 환자의 평가는 악성 의심의 명확한 징후가 있을 때만 신속히 진행하면 되며, 영상 평가의 범위는 개인의 임상 수행 상태와 추가 평가로 기대되는 임상 이득에 비례하여 유지해야 한다. 고령에서 덱사메타손 후 코르티솔이 더 자주 상승한다는 근거도 늘고 있으나, 이 코호트에서 임상적 결과는 덜 중요해 보인다.',
+'젊은 환자에서는 방사선 안전이 더욱 중요하므로 이 연령군에서 MRI를 선호 영상기법으로 제안한다. 그러나 조정된 저선량 비조영 CT 프로토콜은 방사선 노출을 제한할 수 있어 대안으로 고려할 수 있다(특히 MRI 이용이 제한되거나 견딜 수 없는 경우).']},
+'6.3.1':{t:'부신외 악성종양 환자: 호르몬 평가', ids:['6.3.1'], p:[
+'일반적 사항: 원칙적으로 부신외 악성종양이 알려진 환자의 부신 종괴에도 위에 기술한 권고가 동일하게 적용된다(Figure 9). 그러나 이 상황에서는 병변 성질에 대한 서로 다른 검사 전 확률과 환자의 기대여명을 고려하는 것이 특히 중요하다. 부신외 악성종양과 불확정 부신 종괴를 가진 환자에서 연구들은 최대 70%의 높은 악성률을 보였다. 연령별 아군 자료는 없지만, 고령 환자는 공존하는 양성 선종 가능성이 더 높다고 가정할 수 있다. 반대로 악성종양이 있는 젊은 환자는 전이일 가능성이 더 높다.',
+'기존 영상(FDG-PET/CT 포함)으로 부신의 갈색세포종과 전이를 구별하는 것은 거의 불가능하다. 또한 갈색세포종은 특히 의료 중재(수술, 생검 등) 상황에서 생명을 위협하는 합병증을 일으킬 수 있다. 추가 호르몬 검사는 부신외 악성종양의 병기와 기대여명에 따라야 한다. 그러나 종괴가 원발성 부신 병변임을 나타내는 부신 호르몬 과다의 근거는 부신외 악성종양의 관리에 영향을 줄 수 있음을 임상의는 알아야 한다.']},
+'6.3.2':{t:'부신외 악성종양 환자: 영상', ids:['6.3.2','6.3.3'], p:[
+'일부 연구는 소수의 부신 전이가 HU ≤20일 수 있음을 시사하지만, HU ≤20인 부신 종괴의 대다수는 양성이며 기저 악성종양의 평가와 추적에 사용되는 영상으로 대개 충분하다. R.2.4–6에서 언급했듯이 FDG-PET/CT는 여러 한계에도 불구하고 현재 비조영 CT로 불확정인 부신 종괴 평가에서 아마 가장 신뢰할 수 있는 영상 방법이다. 특히 신장암 등 FDG 음성인 악성 병변이 소수 있지만, 대부분의 부신 전이에서 FDG 섭취는 높다. 그러나 양성 종양의 일부(특히 내분비 활성인 경우)도 FDG 양성임을 임상의는 알아야 한다. FDG-PET/CT가 정맥기 조영증강 CT만으로 시행되었다면, 병변의 양성·악성 판정을 위해 비조영 CT(또는 추가 영상법, Table 4)가 필요할 수 있다.']},
+'6.3.4':{t:'부신외 악성종양 환자: 생검', ids:['6.3.4','6.3.5'], p:[
+'부신 생검은 비진단율이 상당하고 합병증 가능성이 있다(Section 4.1.2). 생검은 영상에서 양성으로 특성화되지 않고 생검 결과가 임상 치료 결정에 영향을 미칠 종괴에서만 권고된다. 다른 명백한 전이 병변이 없고 병변의 수술적 제거가 선택지인 환자에서는 CT나 MRI로 보이지 않은 부신 외 전이를 배제하기 위해 FDG-PET/CT를 고려해야 한다. 부신 생검은 부신피질암에 대한 진단 성능이 낮아 이 상황에서는 권고하지 않는다. 생검이 필요하면 전문 중재 영상의학과의/의사가 시행해야 한다. 불확실한 경우 완전한 진단 평가(예: 림프종이나 육종)에 필요한 검체량을 병리의사와 미리 논의하는 것이 합리적이다. 생검 판독은 경험 있는 병리의사가 해야 한다.']},
+'6.3.6':{t:'양측 전이와 부신기능', ids:['6.3.6'], p:[
+'양측 부신 전이는 약 12%의 환자에서 원발성 부신기능저하증을 일으킬 수 있다. 따라서 양측 전이가 있는 모든 환자에서 원발성 부신기능저하증을 고려하고 임상적으로 평가해야 한다. 첫 단계는 아침 혈청 코르티솔과 혈장 ACTH 측정이다. 원발성 부신기능저하증이면 혈장 ACTH는 상승하고 혈청 코르티솔은 낮다. 불확실한 경우 synacthen 검사를 시행할 수 있다. 부신 전이가 하나뿐이면 원발성 부신기능저하증은 극히 가능성이 낮아 대개 부신 예비능의 별도 평가가 필요 없다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+ov:{tab:'전체 관리', fig:'Fig. 4', aria:'부신우연종 관리 개요 순서도', w:760, h:540,
+ nodes:[
+  {id:'o_ai',  x:200,y:10, w:360,h:44, label:'부신우연종<sup>1,2</sup><small>두 축을 병행 평가</small>'},
+  {id:'o_mal', x:20, y:110,w:340,h:96, label:'악성 가능성?<small>Table 4 · 비조영 CT · HU &gt;10이면 Fig. 5</small>', cls:'test fac'},
+  {id:'o_func',x:400,y:110,w:340,h:96, label:'기능성 여부?<small>임상 평가 · 1 mg DST · 혈장/소변 메타네프린<sup>3</sup> · 알도스테론/레닌 비<sup>4</sup> · 성호르몬·스테로이드 전구체<sup>5</sup></small>', cls:'test fac'},
+  {id:'o_dx',  x:60, y:240,w:640,h:44, label:'확정 진단 확립을 목표로'},
+  {id:'o_mdt', x:200,y:310,w:540,h:40, label:'다학제팀(MDT) 논의', cls:'test'},
+  {id:'o_nf',  x:10, y:380,w:170,h:64, label:'비기능성 양성 병변<small>선종, (골수)지방종 등</small>', cls:'ben fac'},
+  {id:'o_ind', x:200,y:380,w:170,h:64, label:'불확정 종괴', cls:'mal'},
+  {id:'o_macs',x:385,y:380,w:170,h:64, label:'MACS를 동반한 양성 부신 종괴'},
+  {id:'o_rel', x:570,y:380,w:180,h:64, label:'의미 있는 호르몬 과다 또는 악성 소견 종양', cls:'mal'},
+  {id:'o_nofu',x:10, y:480,w:170,h:48, label:'추가 검사 불필요', cls:'ben'},
+  {id:'o_g5',  x:200,y:480,w:170,h:48, label:'영상 평가 (Fig. 5)', cls:'test'},
+  {id:'o_g6',  x:385,y:480,w:170,h:48, label:'MACS 평가 (Fig. 6)', cls:'test'},
+  {id:'o_g7',  x:570,y:480,w:180,h:48, label:'수술 (Fig. 7)', cls:'tx'}
+ ],
+ edges:[
+  [A(280,54,280,110),1],[A(480,54,480,110),1],
+  [A(190,206,190,240),1],[A(570,206,570,240),1],
+  [A(95,284,95,380),1],[A(470,284,470,310),1],
+  [A(285,350,285,380),1],[A(470,350,470,380),1],[A(660,350,660,380),1],
+  [A(95,444,95,480),1],[A(285,444,285,480),1],[A(470,444,470,480),1],[A(660,444,660,480),1]
+ ], labels:[]},
+img:{tab:'영상 평가', fig:'Fig. 5', aria:'부신우연종 영상 평가 순서도', w:760, h:480,
+ nodes:[
+  {id:'i_ct', x:200,y:10, w:360,h:44, label:'비조영(unenhanced) CT', cls:'test'},
+  {id:'i_c1', x:10, y:90, w:170,h:110,label:'R.2.3<small>크기 무관<br>균질<br>HU ≤10</small>', cls:'ben fac'},
+  {id:'i_c2', x:195,y:90, w:170,h:110,label:'R.2.4<small>균질<br>HU 11–20<br>종양 &lt;4 cm</small>', cls:'fac'},
+  {id:'i_c3', x:380,y:90, w:180,h:110,label:'R.2.6<small>균질 HU 11–20 · ≥4 cm<br>또는 균질 HU &gt;20 · &lt;4 cm<br>또는 불균질 · &lt;4 cm</small>', cls:'mal fac'},
+  {id:'i_c4', x:575,y:90, w:175,h:110,label:'R.2.5<small>균질 HU &gt;20 · &gt;4 cm<br>또는 불균질 · &gt;4 cm</small>', cls:'mal fac'},
+  {id:'i_d1', x:10, y:240,w:170,h:90, label:'추가 영상 불필요', cls:'ben'},
+  {id:'i_d2', x:195,y:240,w:170,h:90, label:'추가 영상<sup>1</sup><small>(또는 12개월 후 간격 영상)</small>', cls:'test fac'},
+  {id:'i_d3', x:380,y:240,w:180,h:90, label:'MDT 논의, 신속히 추가 영상<sup>1,2</sup><small>(또는 즉시 수술)</small>', cls:'test fac'},
+  {id:'i_d4', x:575,y:240,w:175,h:90, label:'MDT 논의, 신속히 수술<sup>2,3</sup><small>(또는 추가 영상, 특히 FDG-PET/CT)</small>', cls:'tx fac'},
+  {id:'i_u3', x:380,y:360,w:180,h:44, label:'여전히 불확정'},
+  {id:'i_u4', x:575,y:360,w:175,h:44, label:'수술하지 않는 경우'},
+  {id:'i_f',  x:380,y:428,w:370,h:44, label:'6–12개월 후 간격 영상<small>(비조영 CT/MRI)</small>', cls:'test'}
+ ],
+ edges:[
+  [A(380,54,380,70),0],['M95 70 H662',0],[A(95,70,95,90),1],[A(280,70,280,90),1],[A(470,70,470,90),1],[A(662,70,662,90),1],
+  [A(95,200,95,240),1],[A(280,200,280,240),1],[A(470,200,470,240),1],[A(662,200,662,240),1],
+  [A(470,330,470,360),1],[A(662,330,662,360),1],[A(470,404,470,428),1],[A(662,404,662,428),1]
+ ], labels:[[10,228,'1차 결정','sec'],[10,82,'진단','sec'],[200,452,'추적 →','sec']]},
+macs:{tab:'MACS', fig:'Fig. 6', aria:'경도 자율 코르티솔 분비 평가와 관리 순서도', w:760, h:600,
+ nodes:[
+  {id:'m_ben',  x:180,y:10, w:400,h:40, label:'양성으로 보이는 부신우연종'},
+  {id:'m_dst',  x:180,y:75, w:400,h:40, label:'1 mg 덱사메타손 억제검사(DST)', cls:'test'},
+  {id:'m_le',   x:10, y:150,w:260,h:40, label:'혈청 코르티솔 ≤50 nmol/L', cls:'ben'},
+  {id:'m_gt',   x:450,y:150,w:300,h:40, label:'혈청 코르티솔 &gt;50 nmol/L<sup>1</sup>', cls:'mal'},
+  {id:'m_noev', x:10, y:215,w:220,h:52, label:'자율적 코르티솔 분비의 근거 없음', cls:'ben'},
+  {id:'m_cs',   x:450,y:230,w:300,h:44, label:'현성 쿠싱증후군 소견?', cls:'test'},
+  {id:'m_overt',x:250,y:230,w:170,h:44, label:'현성 쿠싱증후군', cls:'mal'},
+  {id:'m_macs', x:450,y:300,w:300,h:44, label:'경도 자율 코르티솔 분비(MACS)'},
+  {id:'m_com',  x:450,y:370,w:300,h:48, label:'코르티솔에 기인할 수 있는 동반질환?<sup>2</sup>', cls:'test'},
+  {id:'m_conf', x:410,y:460,w:240,h:52, label:'MACS 확인? ACTH 비의존성?<sup>3</sup>', cls:'test'},
+  {id:'m_acthd',x:160,y:460,w:210,h:52, label:'ACTH 의존성 쿠싱증후군 고려<sup>4</sup>', cls:'mal'},
+  {id:'m_none', x:10, y:545,w:200,h:50, label:'치료·추적 불필요', cls:'ben'},
+  {id:'m_tx',   x:250,y:545,w:200,h:50, label:'특이 치료 고려<sup>5</sup>', cls:'tx'},
+  {id:'m_mon',  x:500,y:545,w:250,h:50, label:'코르티솔 관련 동반질환 발생 감시<sup>6</sup>', cls:'ben'}
+ ],
+ edges:[
+  [A(380,50,380,75),1],[A(230,115,230,150),1],[A(530,115,530,150),1],
+  [A(120,190,120,215),1],[A(120,267,120,545),1],
+  [A(600,190,600,230),1],[A(450,252,420,252),1],[A(600,274,600,300),1],[A(600,344,600,370),1],
+  [A(530,418,530,460),1],['M700 418 V545',1],
+  [A(410,486,370,486),1],['M480 512 V528 H350 V545',1]
+ ],
+ labels:[[426,246,'예'],[536,446,'예'],[706,486,'아니오'],[374,502,'아니오'],[486,526,'예']]},
+surg:{tab:'수술', fig:'Fig. 7', aria:'수술을 고려하는 부신 종괴 관리 순서도', w:760, h:440,
+ nodes:[
+  {id:'s_uni', x:180,y:10, w:400,h:44, label:'일측성 부신 종괴<sup>1</sup>'},
+  {id:'s_rad', x:180,y:80, w:400,h:44, label:'영상에서 악성 의심?', cls:'test'},
+  {id:'s_horm',x:20, y:170,w:300,h:48, label:'의미 있는 호르몬 과다?<sup>2</sup>', cls:'test'},
+  {id:'s_inv', x:440,y:170,w:300,h:48, label:'국소 침범?', cls:'test'},
+  {id:'s_d6',  x:400,y:270,w:170,h:48, label:'직경 ≤6 cm?', cls:'test'},
+  {id:'s_no',  x:10, y:380,w:150,h:50, label:'수술 안 함', cls:'ben'},
+  {id:'s_mis', x:180,y:380,w:180,h:50, label:'최소침습 부신절제술', cls:'tx'},
+  {id:'s_ind', x:390,y:380,w:180,h:50, label:'개별화 수술 접근', cls:'tx'},
+  {id:'s_open',x:590,y:380,w:160,h:50, label:'개방 부신절제술', cls:'tx'}
+ ],
+ edges:[
+  [A(380,54,380,80),1],['M300 124 V150 H170 V170',1],['M460 124 V150 H590 V170',1],
+  [A(85,218,85,380),1],[A(270,218,270,380),1],
+  [A(485,218,485,270),1],[A(670,218,670,380),1],
+  [A(485,318,485,380),1],['M400 294 H330 V380',1]
+ ],
+ labels:[[200,145,'아니오'],[540,145,'예'],[92,300,'아니오'],[277,300,'예'],[492,248,'아니오'],[677,300,'예'],[492,352,'아니오'],[340,288,'예']]},
+mal:{tab:'악성종양 병력', fig:'Fig. 9', aria:'부신외 악성종양 환자의 부신 종괴 평가 순서도', w:760, h:440,
+ nodes:[
+  {id:'x_am',  x:150,y:10, w:460,h:44, label:'부신외 악성종양 환자의 부신 종괴<sup>1</sup>'},
+  {id:'x_ben', x:150,y:80, w:460,h:44, label:'양성 영상 소견?', cls:'test'},
+  {id:'x_horm',x:20, y:170,w:300,h:48, label:'의미 있는 호르몬 과다?', cls:'test'},
+  {id:'x_pheo',x:420,y:170,w:330,h:56, label:'갈색세포종 배제, 그 외 검사는 개별화<sup>2</sup>', cls:'mal'},
+  {id:'x_path',x:420,y:260,w:330,h:56, label:'병리 평가 결과가 임상 관리를 바꾸는가?<sup>3</sup>', cls:'test'},
+  {id:'x_ind', x:10, y:370,w:170,h:56, label:'개별화 치료 고려', cls:'tx'},
+  {id:'x_prim',x:200,y:370,w:320,h:56, label:'원발 악성종양에 준한 관리'},
+  {id:'x_bx',  x:560,y:370,w:190,h:56, label:'부신 생검, FDG-PET/CT 또는 절제', cls:'tx'}
+ ],
+ edges:[
+  [A(380,54,380,80),1],['M300 124 V148 H170 V170',1],['M460 124 V148 H585 V170',1],
+  [A(95,218,95,370),1],[A(260,218,260,370),1],
+  [A(585,226,585,260),1],[A(480,316,480,370),1],[A(655,316,655,370),1]
+ ],
+ labels:[[200,143,'예'],[530,143,'아니오'],[102,300,'예'],[267,300,'아니오'],[487,345,'아니오'],[662,345,'예']]}
+};
+
+/* ---------- 권고문 렌더 ---------- */
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const key = id.replace(/\./g,'-');
+  const has = !!EXPMAP[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}${has?'<span class="lv-ic" aria-hidden="true"></span>':''}</span>`;
+  if (!has) return `<div class="rec"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${key}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${key}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const rangeLabel = ids => ids.length === 1 ? RID(ids[0]) : RID(ids[0]) + '–' + ids[ids.length-1];
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => `<p>${t}</p>`).join('');
+  const shared = g.ids.length > 1 ? `<p class="exp-note">이 설명은 ${rangeLabel(g.ids)}에 공통으로 해당한다.</p>` : '';
+  return `<div class="exp-h"><b>Reasoning · ${g.t}</b><span class="exp-r">${rangeLabel(g.ids)}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${shared}${paras}<p class="exp-src">Fassnacht M, et al. Eur J Endocrinol 2023;189:G1–G42, Section 5의 Reasoning 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const fnb = (label, t) => `<div class="box fn"><b>${label}</b>${t}</div>`;
+
+/* ---------- 표 ---------- */
+const TAB2 = `<div class="tbl"><table><thead><tr><th>원인</th><th>부신우연종 중 빈도</th></tr></thead><tbody>
+<tr><td><b>부신피질선종 또는 대결절성 양측 부신과형성</b></td><td>80–85%</td></tr>
+<tr><td>· 비기능성</td><td>40–70%</td></tr><tr><td>· 경도 자율 코르티솔 분비(MACS)</td><td>20–50%</td></tr>
+<tr><td>· 원발성 알도스테론증</td><td>2–5%</td></tr><tr><td>· 현성 쿠싱증후군</td><td>1–4%</td></tr>
+<tr><td><b>기타 양성 종괴</b></td><td></td></tr>
+<tr><td>· 골수지방종</td><td>3–6%</td></tr><tr><td>· 낭종 및 가성낭종</td><td>1%</td></tr><tr><td>· 신경절신경종</td><td>1%</td></tr>
+<tr><td>· 신경초종</td><td>&lt;1%</td></tr><tr><td>· 출혈</td><td>&lt;1%</td></tr>
+<tr><td><b>갈색세포종</b></td><td>1–5%</td></tr><tr><td><b>부신피질암</b></td><td>0.4–4%</td></tr>
+<tr><td><b>기타 악성 종괴</b>(대부분 부신 전이)</td><td>3–7%</td></tr></tbody></table></div>
+<p class="small" style="color:var(--muted)">Table 2. 연구마다 선정 기준과 호르몬 과다 정의가 달라 보고된 유병률 범위가 특히 넓으며, 선택·의뢰·보고 편향에 취약할 수 있다.</p>`;
+
+const TAB4 = `<div class="tbl"><table><thead><tr><th>방법</th><th>양성 종괴를 시사하는 기준</th><th>근거 강도</th></tr></thead><tbody>
+<tr><td>비조영 CT</td><td>≤10 HU<sup>c</sup></td><td>⊕⊕⊕○</td></tr>
+<tr><td>FDG-PET/CT</td><td>FDG 섭취 없음 또는 간보다 낮은 섭취<sup>d</sup></td><td>⊕○○○</td></tr>
+<tr><td>MRI 화학적 이동</td><td>out-phase 영상에서 신호강도 소실(지방이 풍부한 선종에 합당)</td><td>⊕○○○</td></tr>
+<tr><td>지연 조영 washout CT<sup>e</sup></td><td>상대 washout &gt;58%<sup>f</sup></td><td>⊕○○○</td></tr></tbody></table></div>
+<ol class="fnl small" type="a">
+<li>이 기준은 균질한 모양의 종괴, 또는 골수지방종처럼 양성 질환에 합당한 다른 명확한 특징을 가진 종괴에만 적용된다. 균질한 종괴는 전체적으로 밀도나 신호강도가 균일한 병변이다. 측정 관심영역(ROI)은 부신 병변 밖 조직의 오염 없이 병변의 최소 75%를 포함해야 한다. 불균질한 병변은 추가 특성화를 위해 MRI나 washout CT를 시행해서는 안 된다.</li>
+<li>근거 강도는 이 주제에 대한 체계적 문헌고찰(Section 4.1.1)과 패널의 경험에 근거한다.</li>
+<li>HU 11–20인 부신 종괴의 대부분도 양성이며, 특히 부신외 악성종양 병력이 없는 환자에서 그렇다.</li>
+<li>일부 전이(예: 신장암, 저등급 림프종)는 FDG 음성일 수 있다.</li>
+<li>최적 시간 간격에 대한 명확한 근거는 없으나, 경험 많은 부신 영상의학과의는 10분보다 15분을 선호한다.</li>
+<li>이 기준값은 253개 부신종양에 대한 단일 연구에 근거하여 신중히 판단해야 하며, 여러 이전 연구는 40%를 제시한다.</li></ol>`;
+
+const TAB5 = `<div class="tbl"><table><thead><tr><th>동반질환</th><th>MACS 환자 유병률</th><th>비기능성 우연종 유병률</th><th>상대위험</th></tr></thead><tbody>
+<tr><td>제2형 당뇨병</td><td>13–54%</td><td>14–39%</td><td>0.94–3.14</td></tr>
+<tr><td>고혈압</td><td>46–88%</td><td>30–68%</td><td>0.69–1.69</td></tr>
+<tr><td>이상지질혈증</td><td>26–67%</td><td>25–49%</td><td>0.71–1.92</td></tr></tbody></table></div>
+<p class="small" style="color:var(--muted)">Table 5. MACS는 1 mg 덱사메타손 후 혈청 코르티솔 &gt;50 nmol/L(&gt;1.8 µg/dL)로 정의. 보고된 범위.</p>`;
+
+const TAB6 = `<div class="tbl"><table><thead><tr><th>분류</th><th>영상 소견</th><th>추가 호르몬 검사</th><th>임상적 결과</th></tr></thead><tbody>
+<tr><td>양측성 과형성</td><td>결절이 뚜렷하지 않은 미만형과, 양측 부신에 대개 2개 이상의 결절(대개 비조영 HU &lt;10)이 있고 나머지 부신이 대개 두꺼워진 대결절형의 2가지 주요 형태가 있다.</td><td>CAH가 의심되면 기저 17-OH 프로게스테론을 측정하여 CAH를 진단(또는 배제)한다. 고안드로겐혈증의 징후·증상·생화학 소견이 있으면 특히 중요하다.</td><td>CAH가 배제되면 원발성 양측 대결절성 부신과형성(PBMAH)을 진단으로 고려한다. 다발성 결절과 ACTH 비의존성 MACS가 있으면 생식세포 병원성 <i>ARMC5</i> 변이 유전검사를 제공해야 한다<sup>a</sup>. MACS 환자에서는 연령, 코르티솔 과다 정도, 전신 상태, 환자 선호를 고려한 개별화 접근으로 우세한 쪽의 일측 부신절제술을 고려할 수 있다.</td></tr>
+<tr><td>양측 부신선종</td><td>대개 양측 부신에 뚜렷하고 명확한 선종(비조영 HU &lt;10)이 하나씩 있고 나머지 부신 사지는 정상이거나 얇다.</td><td>고안드로겐혈증의 징후·증상·생화학 소견이 있으면 CAH 배제를 위해 기저 17-OH 프로게스테론 추가 측정을 고려한다.</td><td>MACS 환자는 R.3.3–9의 권고를 따른다. 선택된 환자에서는 개별화 접근으로 우세 병변의 일측 부신절제술을 고려할 수 있다.</td></tr>
+<tr><td>형태가 비슷한 2개 종괴(영상·호르몬 분석으로 불확정)</td><td>여러 종괴의 비조영 및/또는 조영 CT HU가 대개 비슷하고(MRI나 FDG-PET 소견도 비슷) 영상 특성이 선종에 전형적이지 않다.</td><td>침윤성 종괴(예: 림프종, 전이)나 양측 출혈에서는 부신기능저하증 배제가 필요하다.</td><td>갈색세포종이면 PPGL 관련 유전자 유전검사가 필수이다. 악성 병변이 의심되면 생검을 고려해야 한다.</td></tr>
+<tr><td>형태가 다른 2개 종괴</td><td>비조영 및/또는 조영 CT, MRI, FDG-PET에서 부신 종괴의 모양이 명백히 다르며, 적어도 하나는 선종에 전형적이지 않은 특성을 보인다.</td><td>표준 호르몬 검사로 충분하다(Section 5.3).</td><td>기저 원인 조사가 필요하다.</td></tr>
+</tbody></table></div><p class="small" style="color:var(--muted)">a 병원성 <i>ARMC5</i> 변이 환자는 대개 더 심한 표현형을 보여 특별한 주의가 필요하다. (Table 6)</p>`;
+
+const FN4 = fnb('Fig. 4 각주','1 부신외 악성종양 병력이 있는 환자는 Section 5.6.3 참조. 2 일부 환자(예: 악성 영상 소견을 보이는 &gt;4 cm 종괴, 40세 미만, 임신, 심한 부신 호르몬 과다)에서는 긴급 평가가 필요하다. 3 비조영 CT에서 HU &gt;10인 부신종양에서만 필요하다. 4 고혈압 및/또는 저칼륨혈증이 동반된 환자에서만. 5 부신피질암을 시사하는 임상·생화학·영상 소견이 있는 환자에서만.');
+const FN5 = fnb('Fig. 5 각주','이 그림은 한 그림으로 모든 임상 상황을 다룰 수 없으므로 전반적인 일반 지침을 제공하기 위한 것이며, 의심스러운 경우 MDT 논의가 특히 중요하다. 1 추가 영상은 기관의 전문성과 가용성에 따라 FDG-PET/CT, 화학적 이동 부신 MRI, washout CT 등이 될 수 있다. 2 영상 특징이 비슷한 양측 병변이면 생검을 고려할 수 있다(R.6.3.5 참조). 3 흉부·복부·골반 CT를 포함한 완전한 종양 병기 평가 후.');
+const FN6 = fnb('Fig. 6 각주','1 위양성 결과를 일으키는 요인을 고려해야 한다(Table S16). 일부 패널은 이 단계에서 이미 혈장 ACTH를 측정하여 ACTH 비의존성을 입증한다. 2 코르티솔에 기인할 수 있는 동반질환은 넓게 정의하며 당뇨병, 고혈압, 이상지질혈증, 골다공증을 포함한다. 3 낮거나 억제된 아침 혈장 ACTH(및/또는 낮은 연령 보정 DHEAS)로 정의한다. 4 ACTH 의존성 쿠싱 선별의 계기가 되는 적절한 임상 맥락은 경미하더라도 코르티솔 과다의 징후 및/또는 임상적으로 의미 있는 동반질환의 존재이다. 5 수술은 대개 동반질환이 다음 중 하나 이상을 충족할 때만 적응된다: 진행성, 치료가 어려움, 연령에 비해 부적절한 표적장기 손상 동반, 연령에 비해 이례적이거나 가족력과 불일치, 다발성 동반질환. 또한 연령, 성별, 전신 건강, 덱사메타손 후 비억제 코르티솔의 정도와 지속성, 환자 선호를 고려해야 한다. 6 코르티솔에 기인할 수 있는 동반질환의 연 1회 임상 재평가를 권고한다. 지역사회에서 적절한 감시가 가능하면 전문 내분비 추적이 필요 없다. 동반질환이 발생하거나 악화되면 내분비 상태 재평가와 중재 이득 재고를 위해 내분비내과 의뢰를 제안한다.');
+const FN7 = fnb('Fig. 7 각주','1 수술을 고려하는 모든 환자는 사전에 다학제 전문가 팀 회의에서 논의해야 한다(R.1.1). 2 MACS 환자에서는 개별화된 의사결정 과정이 필요하다(Section 5.3).');
+const FN9 = fnb('Fig. 9 각주','1 항상 기대여명을 고려한다. 2 호르몬 과다가 있으면 개별화하여 치료한다. 3 다른 명백한 전이 병변이 없고 병변의 수술적 제거가 선택지인 환자에서는 다른 전이 병소를 배제하기 위해 FDG-PET/CT를 고려해야 한다.');
+
+const D = {
+/* ===== Fig. 4 ===== */
+o_ai:{kind:'출발점', title:'부신우연종', next:['o_mal','o_func'], body:`
+<p>부신 질환이 의심되지 않는 이유로 시행한 영상에서 발견된 부신 종괴이다. 엄격한 정의상 영상검사는 부신 호르몬 과다(예: 갈색세포종, 쿠싱증후군, 콘증후군)를 시사하는 징후와 증상이나 그 밖에 의심되는 부신 질환 때문이 아니라, 복통·요통 평가나 폐색전증·폐질환 배제처럼 부신 문제를 시사하지 않는 증상 평가를 위해 시행된 것이다.</p>
+<h4>역학</h4>
+<ul><li>부검 연구상 전체 유병률 약 2%(1.0–8.7%), 나이에 따라 증가</li>
+<li>영상 연구상 &gt;50세 성인 약 3%, &gt;80세 최대 10%</li>
+<li>중국 건강검진 25,356명: 1.4%, 18–25세 0.2% → 65세 초과 3.2%</li></ul>
+${FN4}
+${RR('1.1','2.1')}`},
+o_mal:{kind:'병행 평가', title:'악성 가능성 평가', next:['i_ct'], nextLabel:'영상 평가로', body:`
+${RR('2.2','2.3','2.7','2.8')}
+<h4>Table 4. 양성과 악성 부신 종괴를 감별하는 영상 기준</h4>${TAB4}`},
+o_func:{kind:'병행 평가', title:'기능성 여부 평가', next:['m_ben'], nextLabel:'MACS 평가로', body:`
+<ul><li>임상 평가 (R.3.1)</li><li>1 mg DST (R.3.2–3.4)</li><li>혈장 또는 소변 메타네프린: 비조영 CT HU &gt;10인 경우만 (R.3.9)</li><li>알도스테론/레닌 비: 고혈압 및/또는 저칼륨혈증 동반 시만 (R.3.10)</li><li>성호르몬·스테로이드 전구체: 부신피질암 의심 시만 (R.2.8)</li></ul>
+${RR('3.1','3.2','3.9','3.10','2.8')}`},
+o_dx:{kind:'목표', title:'확정 진단 확립', next:['o_nf','o_mdt'], body:`${R('2.1')}<h4>원인 분포 (Table 2)</h4>${TAB2}`},
+o_mdt:{kind:'논의', title:'다학제팀(MDT) 논의', next:['o_ind','o_macs','o_rel'], body:`${R('1.1')}
+<p>다학제팀은 이상적으로 부신종양 경험이 있는 내분비 병리의사, 종양내과의, 마취과의를 포함하거나 최소한 이들에게 접근할 수 있어야 한다.</p>`},
+o_nf:{kind:'결과', title:'비기능성 양성 병변', next:['o_nofu'], body:`
+<p>선종, (골수)지방종 등. 영상에서 양성이고 의미 있는 내분비 활성이 없으면 무해한 병변으로 특성화된다.</p>${RR('4.2','5.1','5.3')}`},
+o_nofu:{kind:'관리', title:'추가 검사 불필요', next:[], body:`${RR('2.3','5.1','5.3')}`},
+o_ind:{kind:'결과', title:'불확정 종괴', next:['i_ct'], nextLabel:'영상 평가로', body:`${RR('2.4','2.5','2.6','5.2')}`},
+o_g5:{kind:'연결', title:'영상 평가 (Fig. 5)', next:['i_ct'], body:`<p>비조영 CT의 HU, 균질성, 크기에 따른 영상 평가 흐름으로 이동한다.</p>${FN5}`},
+o_macs:{kind:'결과', title:'MACS를 동반한 양성 부신 종괴', next:['m_ben'], nextLabel:'MACS 평가로', body:`${RR('3.4','3.6','3.8')}`},
+o_g6:{kind:'연결', title:'MACS 평가 (Fig. 6)', next:['m_ben'], body:`<p>1 mg DST 결과에 따른 MACS 평가와 관리 흐름으로 이동한다.</p>${FN6}`},
+o_rel:{kind:'결과', title:'의미 있는 호르몬 과다 또는 악성 소견 종양', next:['s_uni'], nextLabel:'수술 흐름으로', body:`${RR('4.1','2.5')}`},
+o_g7:{kind:'연결', title:'수술 (Fig. 7)', next:['s_uni'], body:`<p>수술 접근 선택 흐름으로 이동한다.</p>${FN7}`},
+
+/* ===== Fig. 5 ===== */
+i_ct:{kind:'검사 단계', title:'비조영(unenhanced) CT', next:['i_c1','i_c2','i_c3','i_c4'], body:`
+${RR('2.2','2.3')}
+<h4>Table 4. 영상 기준</h4>${TAB4}
+${FN5}`},
+i_c1:{kind:'CT 결과', title:'크기 무관 · 균질 · HU ≤10', next:['i_d1'], body:`${RR('2.3','5.1','3.9')}
+${tip('2016년 대비 변경','종양 ≥4 cm 1197명의 근거에 따라 2016년의 4 cm 크기 기준을 삭제하였다. HU ≤10이면 갈색세포종 가능성도 0에 가까워 메타네프린 측정이 필요 없다.')}`},
+i_c2:{kind:'CT 결과', title:'균질 · HU 11–20 · 종양 <4 cm', next:['i_d2'], body:`${R('2.4')}${R('3.9')}`},
+i_c3:{kind:'CT 결과', title:'위 두 범주 외의 HU >10 종괴', next:['i_d3'], body:`${R('2.6')}${R('3.9')}`},
+i_c4:{kind:'CT 결과', title:'균질 HU >20 · >4 cm, 또는 불균질 · >4 cm', next:['i_d4'], body:`${R('2.5')}${R('3.9')}
+${note('표기 차이','권고 R.2.5는 “≥4 cm”, 원 그림(Fig. 5)은 “&gt;4 cm”으로 표기되어 있어 원문 그대로 두었다.')}`},
+i_d1:{kind:'1차 결정', title:'추가 영상 불필요', next:[], body:`${RR('2.3','5.1')}`},
+i_d2:{kind:'1차 결정', title:'추가 영상 (또는 12개월 후 간격 영상)', next:[], body:`${R('2.4')}
+<p>추가 영상 결과가 양성 병변을 시사하면 더 이상의 영상은 필요 없다. 간격 영상을 택하면 부신에 초점을 맞춘 비조영 CT(또는 MRI)로 크기만 확인한다.</p>`},
+i_d3:{kind:'1차 결정', title:'MDT 논의 후 신속히 추가 영상 (또는 즉시 수술)', next:['i_u3'], body:`${R('2.6')}
+<ul><li>대부분의 패널은 FDG-PET/CT의 가치를 MRI나 지연 washout CT보다 높게 평가하였다.</li><li>소변 스테로이드 대사체학: 양성 예측도 76.4%, 음성 예측도 99.7%(&gt;2000명 전향적 연구)</li></ul>`},
+i_d4:{kind:'1차 결정', title:'MDT 논의 후 신속히 수술 (또는 추가 영상)', next:['i_u4','s_uni'], body:`${R('2.5')}
+<p>두 범주(크기 ≥4 cm, HU &gt;20 또는 불균질)를 모두 충족하면 ‘진정한’ 우연종 코호트에서도 악성 가능성이 50%에 이를 수 있다. 수술 전 흉부 CT를 포함한 완전한 병기 평가가 필수이다.</p>`},
+i_u3:{kind:'추적', title:'여전히 불확정', next:['i_f'], body:`${R('5.2')}`},
+i_u4:{kind:'추적', title:'수술하지 않는 경우', next:['i_f'], body:`${R('2.5')}${R('5.2')}`},
+i_f:{kind:'추적', title:'6–12개월 후 간격 영상 (비조영 CT/MRI)', next:[], body:`${R('5.2')}
+<div class="tbl"><table><thead><tr><th>성장 판정 (RECIST 1.1 적용)</th><th>대응</th></tr></thead><tbody>
+<tr><td>최대 직경 &gt;20% 증가 + 최소 5 mm 증가</td><td>수술적 절제 제안</td></tr>
+<tr><td>측정 가능하나 기준 미만의 성장</td><td>6–12개월 후 추가 영상 고려</td></tr>
+<tr><td>크기 변화 없음</td><td>추가 영상 불필요</td></tr></tbody></table></div>`},
+
+/* ===== Fig. 6 ===== */
+m_ben:{kind:'출발점', title:'양성으로 보이는 부신우연종', next:['m_dst'], body:`${RR('3.1','3.2')}`},
+m_dst:{kind:'검사 단계', title:'1 mg 덱사메타손 억제검사', next:['m_le','m_gt'], body:`${RR('3.2','3.3','3.4')}
+${tip('위양성 요인','흡수 불량, 덱사메타손 대사 증가 등. 가능하면 혈청 덱사메타손을 함께 측정하면 위양성 배제에 도움이 된다(Table S16).')}`},
+m_le:{kind:'DST 결과', title:'혈청 코르티솔 ≤50 nmol/L (≤1.8 µg/dL)', next:['m_noev'], body:`${R('3.3')}<p>코르티솔이 50 nmol/L 미만으로 억제되면 내분비내과의의 추가 평가나 추적이 필요 없다.</p>`},
+m_noev:{kind:'결과', title:'자율적 코르티솔 분비의 근거 없음', next:['m_none'], body:`${R('5.3')}`},
+m_none:{kind:'관리', title:'치료·추적 불필요', next:[], body:`${R('5.3')}<p>MACS나 기타 의미 있는 호르몬 과다의 신규 발생은 드물다(비기능성 우연종 3000명 이상: 쿠싱증후군 0.0–0.6%, 원발성 알도스테론증 0.0–1.6%, 갈색세포종 0.0–2.1%, MACS 약 5%).</p>`},
+m_gt:{kind:'DST 결과', title:'혈청 코르티솔 >50 nmol/L (>1.8 µg/dL)', next:['m_cs'], body:`${R('3.4')}
+${note('표기 차이','원 그림(Fig. 6)에는 “≥50 nmol/L”로 표기되어 있으나 권고문(R.3.3–3.4)의 정의에 따라 “&gt;50 nmol/L”로 표기하였다.')}${FN6}`},
+m_cs:{kind:'확인', title:'현성 쿠싱증후군 소견?', next:['m_overt','m_macs'], body:`<p>첫 진찰에서 간과했을 수 있는 현성 쿠싱증후군 징후를 찾기 위해 신중한 2차 임상 평가가 필요할 수 있다. 현성 쿠싱증후군은 고혈압·비만·당뇨 외에 근력 약화, 피부 취약성, 골다공증 같은 이화 증상을 동반한다.</p>${R('3.5')}`},
+m_overt:{kind:'결과', title:'현성 쿠싱증후군', next:['s_uni'], body:`${R('4.1')}<p>진단과 관리는 쿠싱증후군 관련 지침을 따른다.</p>`},
+m_macs:{kind:'진단', title:'경도 자율 코르티솔 분비 (MACS)', next:['m_com'], body:`
+<p>2016년의 ‘가능한 자율 코르티솔 분비(1.9–5.0 µg/dL)’와 ‘자율 코르티솔 분비(&gt;5.0 µg/dL)’ 구분을 폐지하고, 현성 쿠싱증후군과 구별하기 위해 ‘mild’를 붙여 MACS로 명명하였다.</p>
+${RR('3.4','3.5')}`},
+m_com:{kind:'확인', title:'코르티솔에 기인할 수 있는 동반질환?', next:['m_conf','m_mon'], body:`
+<p>당뇨병, 고혈압, 이상지질혈증, 골다공증을 넓게 포함한다. 선별 항목: 혈압(이상적으로 활동혈압), HbA1c, LDL·HDL 콜레스테롤, 중성지방, 체중.</p>
+${RR('3.6','3.7')}<h4>Table 5</h4>${TAB5}`},
+m_conf:{kind:'확인', title:'MACS 확인? ACTH 비의존성?', next:['m_tx','m_acthd'], body:`
+<ul><li>DST 반복으로 코르티솔 비억제 확인</li><li>낮거나 억제된 아침 혈장 ACTH(및/또는 낮은 연령 보정 DHEAS)로 ACTH 비의존성 입증</li></ul>${R('3.4')}`},
+m_acthd:{kind:'감별', title:'ACTH 의존성 쿠싱증후군 고려', next:[], body:`<p>ACTH가 억제되지 않으면 코르티솔 과다의 다른 원인을 고려해야 한다. 경미하더라도 코르티솔 과다 징후 및/또는 임상적으로 의미 있는 동반질환이 있으면 ACTH 의존성 쿠싱 선별의 계기가 된다.</p>`},
+m_tx:{kind:'치료', title:'특이 치료 고려', next:['s_uni'], body:`${RR('3.8','4.1','4.3','4.7','4.8')}
+<h4>수술 적응을 시사하는 동반질환의 특징 (하나 이상)</h4>
+<ul><li>진행성</li><li>치료가 어려움</li><li>연령에 비해 부적절한 표적장기 손상 동반</li><li>연령에 비해 이례적이거나 가족력과 불일치</li><li>다발성 동반질환</li></ul>`},
+m_mon:{kind:'관리', title:'코르티솔 관련 동반질환 발생 감시', next:[], body:`${R('5.4')}`},
+
+/* ===== Fig. 7 ===== */
+s_uni:{kind:'출발점', title:'일측성 부신 종괴', next:['s_rad'], body:`${RR('1.1','4.1','4.2')}${FN7}`},
+s_rad:{kind:'확인', title:'영상에서 악성 의심?', next:['s_horm','s_inv'], body:`<p>R.2.4–2.6에 해당하는 영상 소견을 말한다.</p><h4>Table 4</h4>${TAB4}`},
+s_horm:{kind:'확인', title:'의미 있는 호르몬 과다?', next:['s_no','s_mis'], body:`${RR('4.1','3.8')}`},
+s_no:{kind:'결정', title:'수술 안 함', next:[], body:`${R('4.2')}`},
+s_mis:{kind:'치료', title:'최소침습 부신절제술', next:[], body:`${RR('4.3','4.4','4.7','4.8')}`},
+s_inv:{kind:'확인', title:'국소 침범?', next:['s_d6','s_open'], body:`${RR('4.4','4.5')}`},
+s_d6:{kind:'확인', title:'직경 ≤6 cm?', next:['s_mis','s_ind'], body:`${R('4.4')}<p>크기 기준에 대해 3명이 5 cm, 7명이 6 cm에 투표하고 2명은 기권하였다. 이 기준은 &lt;5–6 cm이면 반드시 최소침습, 초과하면 반드시 개방이라는 의미가 아니다.</p>`},
+s_ind:{kind:'치료', title:'개별화 수술 접근', next:[], body:`${R('4.6')}`},
+s_open:{kind:'치료', title:'개방 부신절제술', next:[], body:`${R('4.5')}<p>3기 부신피질암(국소 침범, 림프절 전이, 신정맥·대정맥 종양 혈전)에서는 개방 부신절제술을 표준 술식으로 만장일치 결정하였다.</p>${tip('외과의 경험','부신 수술에 충분한 경험을 위해 연간 최소 12건, 악성 가능성 종양 수술에는 연간 &gt;20건이 바람직하다.')}`},
+
+/* ===== Fig. 9 ===== */
+x_am:{kind:'출발점', title:'부신외 악성종양 환자의 부신 종괴', next:['x_ben'], body:`
+<p>원칙적으로 앞의 권고가 동일하게 적용되나, 병변 성질에 대한 검사 전 확률과 기대여명을 특히 고려한다. 불확정 종괴의 악성률은 최대 70%였다.</p>${FN9}`},
+x_ben:{kind:'확인', title:'양성 영상 소견?', next:['x_horm','x_pheo'], body:`${RR('6.3.2','6.3.3')}`},
+x_horm:{kind:'확인', title:'의미 있는 호르몬 과다?', next:['x_ind','x_prim'], body:`<p>부신 호르몬 과다의 근거는 종괴가 원발성 부신 병변임을 나타내어 부신외 악성종양의 관리에 영향을 줄 수 있다.</p>`},
+x_ind:{kind:'치료', title:'개별화 치료 고려', next:[], body:`<p>호르몬 과다가 있으면 개별화하여 치료한다.</p>`},
+x_prim:{kind:'관리', title:'원발 악성종양에 준한 관리', next:[], body:`${R('6.3.4')}`},
+x_pheo:{kind:'검사', title:'갈색세포종 배제, 그 외 검사는 개별화', next:['x_path'], body:`${R('6.3.1')}`},
+x_path:{kind:'확인', title:'병리 평가 결과가 임상 관리를 바꾸는가?', next:['x_bx','x_prim'], body:`${RR('6.3.4','6.3.5')}`},
+x_bx:{kind:'검사·치료', title:'부신 생검, FDG-PET/CT 또는 절제', next:[], body:`${RR('6.3.4','6.3.5','2.7')}`}
+};
+
+const EXTRA = {
+levels:{kind:'참고', title:'권고 강도와 근거의 질 (GRADE)', next:[], body:`
+<p>권고는 recommend(강한 권고)와 suggest(약한 권고)로 표현한다. 근거의 질은 매우 낮음(⊕○○○), 낮음(⊕⊕○○), 중등도(⊕⊕⊕○), 강함(⊕⊕⊕⊕)으로 분류하여 권고문 괄호에 표기한다. 패널의 진료 경험이나 good practice에만 근거한 권고는 등급을 매기지 않았다(기호 없음).</p>
+${['R','S','RS'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}
+${note('표시 방식','권고문 상자를 누르면 원문 Section 5의 Reasoning 번역이 펼쳐진다. Section 4(체계적 문헌고찰 결과)와 Table 1(2016–2023 변경점)은 포함하지 않았다.')}`},
+defs:{kind:'배경', title:'정의·용어·원인 분포', next:[], body:`
+<h4>정의</h4><p>부신우연종은 부신 질환이 의심되지 않아 시행한 영상에서 발견된 부신 종괴이다. 이 지침에서는 부신 종괴 또는 병변이라는 용어를 자주 사용하며, 호르몬을 자율적으로 분비하는 부신종양을 포괄하여 ‘기능성 종양(functioning tumor)’이라 한다.</p>
+<h4>MACS 용어</h4><p>2016년 지침에서 ‘subclinical/preclinical Cushing’s syndrome’ 대신 ‘autonomous cortisol secretion’을 도입했으나, 이 용어가 현성 쿠싱증후군도 포함할 수 있어 ‘mild’를 붙여 MACS로 바꾸었다. ‘possible autonomous cortisol secretion’(DST 후 1.9–5.0 µg/dL)도 이환율·사망률 증가와 관련되어 구분을 폐지하였다.</p>
+<h4>Table 2. 부신우연종의 원인</h4>${TAB2}`},
+fu:{kind:'Section 5.5', title:'수술하지 않는 환자의 추적', next:[], body:`
+${RR('5.1','5.2','5.3','5.4')}
+<div class="tbl"><table><thead><tr><th>상황</th><th>영상 추적</th><th>호르몬 추적</th></tr></thead><tbody>
+<tr><td>명확한 양성 소견</td><td>불필요</td><td>초기 정상이면 불필요(새 징후·동반질환 악화 시 재평가)</td></tr>
+<tr><td>불확정 종괴(수술 안 함)</td><td>6–12개월 후 비조영 CT/MRI 1회</td><td>상동</td></tr>
+<tr><td>MACS(수술 안 함)</td><td>영상 소견에 따름</td><td>코르티솔 관련 동반질환 연 1회 재평가(일차 의료 가능)</td></tr></tbody></table></div>`},
+bilat:{kind:'Section 5.6.1', title:'양측성 부신우연종', next:[], body:`
+${RR('6.1.1','6.1.2','6.1.3','6.1.4','6.1.5','6.1.6','6.1.7','6.1.8')}
+<h4>Table 6. 양측성 부신우연종의 세분류</h4>${TAB6}`},
+age:{kind:'Section 5.6.2', title:'젊은 환자와 고령·노쇠 환자', next:[], body:`${RR('6.2.1','6.2.2','6.2.3','6.2.4')}`},
+mets:{kind:'Section 5.6.3', title:'부신외 악성종양 병력 환자', next:['x_am'], body:`${RR('6.3.1','6.3.2','6.3.3','6.3.4','6.3.5','6.3.6')}`},
+notes:{kind:'순서도 각주', title:'그림 각주', next:[], body:`${FN4}${FN5}${FN6}${FN7}${FN9}`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['17-OHP','17-hydroxyprogesterone, 17-수산화프로게스테론'],
+ ['ACC','Adrenocortical carcinoma, 부신피질암'],
+ ['ACTH','Adrenocorticotropic hormone, 부신피질자극호르몬'],
+ ['ARMC5','Armadillo repeat containing 5, PBMAH 원인 유전자'],
+ ['CAH','Congenital adrenal hyperplasia, 선천부신과형성'],
+ ['CSI','Chemical shift imaging, 화학적 이동 영상(MRI)'],
+ ['CT','Computed tomography, 전산화단층촬영'],
+ ['DHEA(S)','Dehydroepiandrosterone (sulfate), 디하이드로에피안드로스테론(황산염)'],
+ ['DST','Dexamethasone suppression test, 덱사메타손 억제검사'],
+ ['ENSAT','European Network for the Study of Adrenal Tumors, 유럽 부신종양연구네트워크'],
+ ['ESE','European Society of Endocrinology, 유럽내분비학회'],
+ ['FDG-PET/CT','<sup>18</sup>F-fluorodeoxyglucose PET/CT, 불소-18 플루오로데옥시포도당 양전자방출단층촬영'],
+ ['GC-MS / LC-MS','Gas / liquid chromatography–mass spectrometry, 기체·액체 크로마토그래피–질량분석'],
+ ['GRADE','Grading of Recommendations Assessment, Development and Evaluation'],
+ ['HbA1c','Glycated hemoglobin, 당화혈색소'],
+ ['HPA','Hypothalamic-pituitary-adrenal (axis), 시상하부–뇌하수체–부신 (축)'],
+ ['HU','Hounsfield unit, 하운스필드 단위'],
+ ['LDL / HDL','Low- / high-density lipoprotein, 저밀도·고밀도 지단백'],
+ ['MACS','Mild autonomous cortisol secretion, 경도 자율 코르티솔 분비'],
+ ['MDT','Multidisciplinary team, 다학제팀'],
+ ['MRI','Magnetic resonance imaging, 자기공명영상'],
+ ['PBMAH','Primary bilateral macronodular adrenal hyperplasia, 원발성 양측 대결절성 부신과형성'],
+ ['PPGL','Pheochromocytoma and paraganglioma, 갈색세포종·부신경절종'],
+ ['R0','완전 절제(현미경적 잔존 종양 없음)'],
+ ['RECIST','Response Evaluation Criteria in Solid Tumors, 고형종양 반응평가기준 (1.1판)'],
+ ['ROI','Region of interest, 관심영역'],
+ ['TBS','Trabecular bone score, 해면골 점수 (본문에는 약어 없이 기술)']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (cm|nmol)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'ov';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: M, HU)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('ov');
+
+</script>
+</body>
+</html>
