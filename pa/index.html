@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>원발성 알도스테론증 진단과 관리 (대한내분비학회 2023)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>원발성 알도스테론증(PA) 진단과 관리</h1>
+        <p class="src">2023 Korean Endocrine Society Consensus Guidelines, Ha J, Park JH, et al. <a href="https://doi.org/10.3803/EnM.2023.1789" target="_blank" rel="noopener noreferrer">Endocrinol Metab 2023;38:597–618</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Korean Endocrine Society</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>‘치료·추적’ 탭은 본문으로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>핵심 진술 전체</button>
+      <button type="button" data-id="tables"><span class="bt-ic" aria-hidden="true">＋</span>Table 1–8</button>
+      <button type="button" data-id="gen"><span class="bt-ic" aria-hidden="true">＋</span>유전</button>
+      <button type="button" data-id="com"><span class="bt-ic" aria-hidden="true">＋</span>동반질환</button>
+      <button type="button" data-id="other"><span class="bt-ic" aria-hidden="true">＋</span>기타 감별 전략</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {P:'합의 지침 본문의 핵심 진술. 이 지침은 권고별 근거 등급을 매기지 않았다'};
+const LVTXT = {P:'핵심 진술'};
+const LVCLS = {P:'l2'};
+const REC = {
+'S1':['P','PA의 높은 유병률과 불리한 심혈관·신장 결과와의 유의한 연관 때문에 모든 고혈압 환자에서 선별검사를 강력히 권한다. 국제 지침들은 PA 유병률이 높은 환자군의 선별을 강하게 지지한다.'],
+'S2':['P','다음 중 하나라도 해당하면 PA 선별검사를 시행한다: (1) 서로 다른 날 3회 연속 측정에서 지속적 혈압 &gt;160/100 mmHg, (2) 기존 강압제 3제에 저항성인 고혈압(수축기 ≥140 또는 이완기 ≥90 mmHg), (3) 강압제 4제 이상으로 조절되는 혈압, (4) 젊은 나이(&lt;40세)의 고혈압, (5) 고혈압과 저칼륨혈증(자발성 또는 이뇨제 유발), (6) 고혈압과 부신종양, (7) 고혈압과 단독 심방세동, (8) 고혈압과 조기 발병 고혈압 또는 젊은 나이(&lt;40세) 뇌혈관 사건의 가족력, (9) PA 환자 1촌의 고혈압.'],
+'G1':['P','임상 표현형의 중증도와 관계없이 조기 발병 PA(즉 20세 이전 발병) 환자 전체와 PA 가족력이 기록된 환자에서 유전검사를 시행할 수 있다고 제안한다.'],
+'D1':['P','PA의 인정된 선별검사는 혈장 알도스테론/레닌 비(ARR)이다. 알도스테론을 ng/dL, PRA를 ng/mL/hr로 측정할 때 가장 흔히 쓰는 양성 기준값은 30이다. 레닌이 과도하게 억제된 경우 PAC &gt;15 ng/dL를 선별 기준으로 함께 고려한다.'],
+'D2':['P','ARR 측정 조건: 저칼륨혈증을 교정하고, 염분 섭취를 제한하지 않게 하며, 기상 후 최소 2시간 활동(앉기, 서기, 걷기)한 뒤 5–15분 앉은 상태에서 오전 중반에 채혈한다.'],
+'D3':['P','기존 강압제는 선별 중 유지하고 알려진 약물 효과를 고려하여 해석할 수 있다. 현재 약물로 ARR이 진단적이지 않거나 레닌 억제가 뚜렷하지 않으면 MRA를 4–6주 중단하는 것을 고려한다. 필요하면 ARR에 영향이 적은 강압제(Table 4)로 바꾼다. MRA 복용 중 레닌이 억제되어 있으면 PA를 강하게 의심할 수 있고 약물 휴약은 필요 없다.'],
+'D4':['P','ARR의 특이도가 낮으므로 하나 이상의 확진검사를 시행해야 한다. 다만 자발성 저칼륨혈증, PAC &gt;20 ng/dL, 측정 한계 미만의 혈장 레닌이 있으면 확진검사가 필요 없다.'],
+'D5':['P','현재 미국내분비학회 지침이 권장하는 4가지 확진검사(경구 염분부하, fludrocortisone 억제, 식염수 주입, captopril 부하) 중 하나를 다른 것보다 권고할 근거는 충분하지 않다. 확진검사는 저칼륨혈증 교정과 간섭 약물 교체 등 표준화된 조건에서 시행해야 한다.'],
+'T1':['P','큰 종괴(부신피질암 가능성)를 배제하고 중재영상의학과의와 외과의를 돕기 위해 AVS 전 부신 CT는 필수이다. MRI는 공간해상도가 낮고 비용이 높아 PA에서 CT의 보조로 간주된다.'],
+'T2':['P','영상의 한계로 AVS는 일측성과 양측성 질환을 구별하는 표준 검사이다. AVS 4주 전 루프·thiazide 이뇨제, amiloride, MRA를 중단하고 α1 차단제나 비디하이드로피리딘 장기작용 칼슘차단제로 바꾸는 것이 바람직하다. PRA 또는 혈장 레닌이 억제되어 있으면 휴약 기간과 관계없이 AVS를 시행할 수 있으며, 예외적으로 MRA를 유지할 수 있다.'],
+'T3':['P','미국내분비학회 지침은 (1) 35세 미만, (2) PAC &gt;30 ng/dL와 자발성 저칼륨혈증의 중증 표현형, (3) CT상 일측 선종과 정상 반대측 부신을 모두 충족하면 AVS 없이 일측 부신절제술로 진행할 수 있다고 제안한다. 그러나 35세 이하에서도 영상이 편측성을 잘못 예측한 예가 있다.'],
+'T4':['P','비자극 시 SI &lt;2, 자극 시 SI &lt;5인 검사는 신중히 해석해야 한다. 코신트로핀 자극 중 LI가 감소할 수 있으므로 비자극 시 더 낮은 기준보다 두 조건 모두 LI 4를 기준으로 하는 것이 일반적으로 권장된다. CLR은 LI가 회색지대이거나 결절 반대측 부신정맥만 확인된 경우 유용할 수 있다.'],
+'R1':['P','과다 알도스테론 분비가 확인된 일측성 PA(APA 또는 UAH)에서는 일측 부신절제술이 선택 치료이며, 수술 위험이 낮고 재원 기간이 짧은 복강경 부신절제술이 1순위이다. 경피적 고주파 소작술은 수술을 꺼리거나 동반질환으로 수술 대상이 아닌 환자에서 대안이 될 수 있다. 최종 결정은 내분비내과의, 숙련된 외과의, 마취과의, 중재영상의학과의로 구성된 다학제팀이 내려야 한다.'],
+'R2':['P','양측성 부신과형성(BAH), 일측성 PA를 확인할 수 없는 환자, 수술할 수 없는 의학적 상태의 환자, 수술을 원하지 않는 환자에게는 MRA 단독 또는 다른 강압제와 병용을 권고한다. 혈압 조절, 칼륨 정상화, 혈장 레닌 억제 해소(PRA ≥1 μg/L/hr)를 적절한 MRA 용량의 지표로 쓸 수 있다.'],
+'R3':['P','수술 전 고혈압과 저칼륨혈증 조절에는 MRA가 1차 약물이다. 수술 후 고칼륨혈증을 피하기 위해 수술 첫날 MRA와 칼륨 보충을 중단하고, 혈청 칼륨이 매우 낮지 않으면(&lt;3 mmol/L) 염화칼륨 없는 생리식염수를 사용한다. 혈압, 전해질, 혈청 크레아티닌을 감시한다.'],
+'R4':['P','일측성 PA 여성은 임신을 계획하기 전에 부신절제술을 받아야 한다. Spironolactone은 임신부와 임신을 원하는 여성에서 금기이다. 보존 치료에 반응하지 않는 지속적 저항성 고혈압과 저칼륨혈증에서는 eplerenone과 amiloride를 신중히 고려할 수 있다.'],
+'F1':['P','생화학적 관해 평가를 위해 수술 후 최소 1개월과 6개월에 PRA와 PAC를 측정해야 한다. 혈압은 1–6개월에 최대로 개선되나 1년까지 계속 감소할 수 있으므로 강압제 감량·중단 여부를 위해 감시한다. 치료 후 최대 3년간 신규 심방세동 위험이 높으므로 특히 부신절제술 후 심방세동 감시가 필요할 수 있다.'],
+'C1':['P','알려진 부정맥 유발 원인 없이 심방세동과 고혈압이 있는 환자는 PA 선별검사를 받아야 한다. PA 환자에게는 조기 MRA 치료로 비가역적 신손상을 예방할 것을 권하며, 저골밀도와 골절 위험 증가를 알려야 한다.']
+};
+const RID = id => id;
+
+const EXP = {
+def:{t:'정의·유병률·선별 대상', ids:['S1','S2'], p:[
+'PA는 이차성 고혈압의 가장 흔한 내분비 원인으로, 레닌-안지오텐신계(RAS)의 핵심 효과기인 알도스테론의 자율적 생성이 특징이다. 안지오텐신 II가 AT1 수용체에 결합하여 부신 사구대의 알도스테론 분비를 강하게 자극하며, 혈청 칼륨 상승과 정도는 덜하지만 ACTH도 분비를 촉진한다. 알도스테론은 무기질코르티코이드 수용체(MR)에 결합하여 나트륨 재흡수와 칼륨 배설을 일으킨다. 1954년 Conn이 처음 기술했다. 신세뇨관 나트륨 재흡수 증가와 용적 확장으로 고혈압 및/또는 저칼륨혈증이 생기며, 레닌이 억제되어 ARR이 상승한다. PA는 심근경색, 심부전, 심방세동, 뇌졸중, 근감소증, 만성콩팥병 등 심혈관·뇌혈관·신장·대사·골 후유증의 소인이다. 임상 아형은 (1) 일측성(APA 또는 일측 부신과형성 UAH)과 (2) 양측성(특발성 양측 부신과형성 IAH와 양측 APA)이다.',
+'고혈압 환자에서 PA 유병률은 5.9–34%로 추정되며, 1차 의료 선별 연구에서 0.7–14%, 의뢰·3차 기관에서 최대 29.8%이다. 진단 기준이 엄격할수록 유병률이 낮아, 알도스테론 &gt;10 ng/dL와 ARR &gt;30 기준이면 13.8%, ARR &gt;20이고 최소 알도스테론 기준을 없애면 33%였다. 확진검사 기반 보정 유병률은 정상혈압 11.3%, 불응성 고혈압 22.0%였다. 국내 3차 기관 연구에서 확진 PA는 6.1%였다. 고혈압 중증도별로 정상 상한 5.5%, 1기 4.2%, 2기 10.2%, 3기 16.4%였다. 저칼륨혈증은 PA 환자의 40% 미만(9–37%)에서만 관찰되므로 저칼륨혈증에만 의존하면 과소진단되지만, 저칼륨혈증이 있으면 반드시 선별해야 한다. 부신 우연종에서 PA 유병률은 1.0–4.0%, 수면무호흡에서 8.9%였다.',
+'국제 지침(미국내분비학회, ACC/AHA, 유럽고혈압학회, 일본내분비학회)은 PA 유병률이 높은 환자군의 선별을 강하게 지지한다. 고위험 요인은 치료저항성 고혈압, 저칼륨혈증 동반 고혈압, 부신 우연종 또는 수면무호흡, 조기 고혈압이나 젊은 나이 뇌혈관 사건의 가족력, PA 가족력이다. 인도 연구에서 40세 전 고혈압 발병 환자의 17.8%가 PA로 확진되었다.']},
+gen:{t:'유전', ids:['G1'], p:[
+'차세대염기서열 연구로 PA가 주로 유전 질환임이 밝혀졌다. 산발성은 주로 이온채널과 펌프의 체세포 변이, 가족성 고알도스테론증(FH)은 비슷한 유전자의 생식세포 변이에 의한다. APA의 90% 이상이 KCNJ5, CACNA1D, ATP1A1, ATP2B3, CACNA1H, CLCN2, CTNNB1, GNAQ/11 체세포 변이를 가지며, 대부분 세포 탈분극이나 세포내 칼슘 증가로 지속적 알도스테론 생성을 일으킨다. 국내 환자의 KCNJ5 변이 유병률은 71.2%로 다른 아시아인과 비슷하다.',
+'PA 환자의 약 5%가 FH이다(Table 1). FH-I(글루코코르티코이드 반응성)은 가장 흔한 단일유전자 고혈압으로 키메라 CYP11B1/CYP11B2를 장거리 PCR로 진단하며, 저용량 dexamethasone(0.125–0.25 mg) 단독 또는 MRA 병용이 선택 치료이다. FH-II는 CLCN2, FH-III는 KCNJ5(매우 조기 발병 PA에서 배제해야 함), FH-IV는 CACNA1H 생식세포 변이에 의한다. PASNA는 CACNA1D의 de novo 변이에 의한 비가족성 유전 PA이다.']},
+dx:{t:'선별검사와 ARR', ids:['D1','D2','D3'], p:[
+'혈장 레닌은 PRA(ng/mL/hr) 또는 직접 레닌 농도(DRC)로 측정한다. DRC는 비용·시간 효율적이고 검사실 간 재현성이 우수하나 국내에서는 아직 상용화되지 않았다. PRA는 복잡하지만 매우 낮은 레닌(&lt;1 ng/mL/hr) 측정에 정확하다. 모든 방법이 매우 낮은 레닌에서 부정확하므로 측정 하한을 PRA 0.2 ng/mL/hr, DRC 2 mIU/L로 두는 것이 일반적이다. PAC는 방사면역측정, 자동화 화학발광, LC-MS/MS로 측정한다.',
+'ARR은 알도스테론, 레닌, 칼륨 단독 측정보다 민감도와 특이도가 좋다. 기준값은 측정법과 단위에 따라 다르다(Table 2). 레닌이 매우 낮으면 PAC도 낮아도 ARR이 위양성일 수 있어 최소 PAC &gt;15 ng/dL를 포함하기도 하나, ARR 양성 PA의 30–40%는 PAC &lt;15 ng/dL였다.',
+'#ARR에 영향을 주는 요인 (Table 3)',
+'ACE 억제제와 ARB는 레닌을 높이고 PAC를 낮춰 ARR을 낮추고(위음성), β차단제는 레닌을 억제하여 위양성을 일으킨다. 이뇨제는 용적 감소로 레닌을 높여 위음성을 일으킨다. 고염식은 레닌을 알도스테론보다 더 낮춰 위양성, 저염식은 위음성을 일으킨다. 저칼륨혈증은 PAC를 낮춘다. 65세 초과에서는 나이만으로 레닌이 알도스테론보다 더 낮아져 위양성이 생긴다. 교란 요인으로 결과가 불확정이면 ARR을 반복한다.',
+'#환자 준비',
+'레닌과 알도스테론은 일주기가 있어 기상 시 알도스테론이 가장 높고, 직립 자세는 레닌과 PAC를 높인다. 따라서 오전에 5–15분(이상적으로 15분 이상) 앉은 후 채혈한다. 심한 저칼륨혈증은 알도스테론 분비를 줄이므로 고용량 경구 염화칼륨으로 교정하고, 염분 섭취를 제한하지 않는다. 간섭 약물, 특히 MRA(위음성)와 β차단제(위양성)는 이상적으로 중단하며, 안전하게 중단할 수 없으면 영향이 적은 약물(Table 4)로 바꾼다. 그러나 전형적 PA에서는 강압제가 선별 결과에 유의한 영향을 주지 않으며, 레닌을 높이고 PAC를 낮출 약물을 복용 중인데 PAC가 높고 레닌이 낮으면 PA를 진단할 수 있다. MRA 복용 중 레닌이 억제되어 있으면 휴약이 필요 없고, 억제되지 않았는데 검사 전 확률이 높으면 MRA를 최소 4주 중단하고 비간섭 약물로 바꾼다.']},
+cf:{t:'확진검사', ids:['D4','D5'], p:[
+'확진검사는 급성 용적 확장이나 안지오텐신 II 합성 차단에 알도스테론 생성이 억제되지 않음을 보여야 한다. ARR 값이 높을수록 특이도가 높아지고 위양성률이 낮아지므로, 자발성 저칼륨혈증, PAC &gt;20 ng/dL, 측정 한계 미만 레닌이면 확진검사가 필요 없다. 미국내분비학회 지침이 권하는 4가지 검사(Table 5) 중 우선순위를 둘 근거는 없다. 확진검사는 표준화된 조건이 필요하며, 저칼륨혈증을 교정하고 간섭 강압제를 영향이 적은 약물로 바꿔야 한다(Table 6).']},
+img:{t:'영상과 AVS', ids:['T1','T2','T4'], p:[
+'#영상',
+'AVS 전 부신 CT는 부신피질암일 수 있는 큰 종괴를 배제하고 해부학적으로 중재영상의학과의와 외과의를 돕기 위해 필수이다. MRI는 공간해상도가 낮고 비싸며 작은 선종과 과형성을 놓칠 수 있다. PA의 영상 소견은 정상, 일측 부신 사지 비후, 일측 미세선종(&lt;1 cm), 일측 거대선종(&gt;1 cm), 양측 미세·거대선종 등 다양하다. APA는 대개 &lt;2 cm의 작은 저음영 결절이다. 크고 양성으로 보이는 일측 종괴는 알도스테론과 코르티솔을 함께 분비할 수 있어 덱사메타손 억제검사를 시행한다. 알도스테론 생성 부신암은 대개 &gt;4 cm이다. 나이가 들수록 부신선종이 흔해 CT의 아형 감별 정확도가 떨어진다. 메이오 연구에서 CT는 53%에서만 정확했고 22%가 수술에서 잘못 배제, 25%가 불필요하거나 부적절한 수술을 받을 수 있었다. 950명 메타분석에서 CT/MRI와 AVS 불일치는 37.8%, 국내 2개 기관 466명에서는 35.6%였다.',
+'#AVS 시행',
+'AVS는 대퇴정맥 경피 접근과 투시 유도로 시행한다. 좌부신정맥은 좌신정맥으로 바로 배액되어 삽관이 쉬우나, 우부신정맥은 짧고 작으며 하대정맥으로 바로 배액되고 부신-간 융합으로 보이지 않을 수 있어 성공률이 낮다. 연 30명 이상을 치료하는 고용량 센터의 숙련된 시술자에서 기술적 성공률은 90%를 넘으며, 합병증은 약 0.61%로 부신출혈이 가장 심각하나 드물다. 동시 삽관과 순차 삽관(5분 간격)은 선택성과 편측화에 차이가 없어 기관 선호에 따른다. 분절 AVS는 선택적 결절절제술 안내에 쓰이나 기술적으로 어렵다. ACTH(1-24)는 50 μg/hr 지속 주입(첫 채혈 30분 전 시작) 또는 250 μg 볼루스로 투여하며, 코르티솔 기울기를 극대화하고 알도스테론 변동을 줄이지만 반대측 분비를 자극하여 LI를 낮출 수 있다.',
+'#AVS 해석 (Table 7)',
+'SI가 높을수록 결과가 신뢰할 만하므로 비자극 SI &lt;2, 자극 SI &lt;5는 주의한다. 비대칭 양측 질환이나 APA와 양측 알도스테론 생성 세포군이 공존하는 경우 일측과 양측 사이에 회색지대가 있다. 코신트로핀 자극 중 LI가 감소할 수 있어 두 조건 모두 LI 4를 기준으로 권한다. CLR은 수술의 필수 조건은 아니나 LI 회색지대에서 유용하며, 일부 기관은 LI 없이 ILR &gt;2와 CLR &lt;1로 일측성을 진단한다. 국내 251명 연구에서 LI ≥10이면 생화학적 성공률 91.7%, LI 3–4이면 66.7%였고, ILR &gt;2인 환자에서 CLR &lt;0.25는 생화학적 성공, CLR &lt;1은 임상적 성공에 적합했다.']},
+oth:{t:'다른 아형 감별 전략', ids:['T3'], p:[
+'#AVS 필요성 논쟁',
+'미국내분비학회 지침의 AVS 생략 기준이 있으나, 최근 두 연구에서 35세 이하에서도 영상이 편측성을 잘못 예측했다(13명 중 2명, 16명 중 2명). SPARTACUS 시험에서는 CT 또는 AVS에 근거한 치료 후 1년 결과에 유의한 차이가 없었고, AVS의 추가 비용이 삶의 질 향상으로 이어지지 않아 모든 PA 환자에 대한 AVS의 보편적 지지에 의문을 제기했다.',
+'#기능 영상과 스테로이드 프로파일',
+'<sup>11</sup>C-metomidate PET-CT는 AVS 대비 민감도 76%, 특이도 87%이나 현장 사이클로트론이 필요하다. <sup>18</sup>F-CDP2230은 선택성이 높고 반감기가 길며, <sup>68</sup>Ga-pentixafor PET(CXCR4 표적)는 민감도 88%, 특이도 100%로 보고되었으나 대규모 검증이 필요하다. 18-hydroxycorticosterone, 18-hydroxycortisol, 18-oxo-cortisol 측정은 APA에서 BAH보다 높고 FH-I과 일부 FH-III에서 매우 높다. LC/MS 스테로이드 프로파일과 기계학습을 결합한 방법도 단일 단계 해법으로 잠재력이 있다.']},
+com:{t:'동반질환', ids:['C1'], p:[
+'대사증후군, 당뇨병, 수면무호흡이 PA와 흔히 공존하며, 2016년 미국내분비학회 지침은 고혈압과 수면무호흡이 있는 모든 환자의 PA 선별을 제안한다. PA 환자의 심방세동 위험은 본태성 고혈압보다 12배 높고, 심방세동 평가를 받은 고혈압 환자의 42%가 PA였다. 부신절제술과 MRA가 심방세동 위험을 낮추므로 원인 불명의 심방세동과 고혈압 환자는 선별해야 한다.',
+'PA는 MR 과활성으로 만성콩팥병 진행을 빠르게 한다. PA 환자는 eGFR이 높고 알부민뇨가 심하며, 치료 후 eGFR과 알부민 배설이 감소하고 크레아티닌이 상승하여 신기능 이상이 부분적으로 가역적임을 보인다. 따라서 적절한 용량의 조기 MRA 치료가 권장된다. 고알도스테론증은 저칼슘혈증과 이차성 부갑상선기능항진증으로 골밀도 감소와 골절 위험 증가를 일으키며, PA 환자는 PTH가 높고 골다공증, 낮은 해면골 질, 척추골절이 더 흔하다. 과도한 알도스테론은 근기능 장애에도 기여한다.']},
+tx:{t:'치료', ids:['R1','R2','R3','R4'], p:[
+'치료 목표는 알도스테론 과다에 의한 고혈압과 저칼륨혈증을 정상화하고 심혈관 이환·사망 위험을 줄이는 것이다. 알도스테론 과다를 효과적으로 차단하지 않고 혈압만 조절하는 것은 불충분하다. 일측 부신절제술 또는 MRA 모두 효과적이나, 많은 연구에서 고혈압과 저칼륨혈증에 대해 부신절제술이 더 효과적이었고 삶의 질도 개선했다. 두 치료를 비교한 무작위 시험은 없다.',
+'#수술 또는 경피적 소작',
+'복강경 부신절제술이 1순위이다. 경피적 고주파 소작술은 국소마취와 진정하에 최소 절개로 시행하며, 소규모 후향 연구에서 생화학적 관해율은 90–100%였다.',
+'#병리 (HISTALDO, Table 8)',
+'CYP11B2 항체로 알도스테론 생성 병변을 면역조직화학으로 확인할 수 있다. HISTALDO 합의는 일측성 PA를 APA, 단일 APN 또는 APM, 다발성 MAPN 또는 MAPM, APDH로 나눈다. ‘고전적’은 단일 APA 또는 APN, ‘비고전적’은 MAPN, MAPM, APDH이며, 비고전적은 생화학적 성공률이 낮으나 임상적 성공률은 유의한 차이가 없다.',
+'#수술 전후',
+'PA 환자는 저항성 고혈압, 저칼륨혈증, 심혈관 합병증이 흔해 수술 전 평가와 치료가 필요하다. 수술 후 일시적 저혈압, 고칼륨혈증, eGFR 감소가 생길 수 있다. 다른 강압제의 감량·중단이 필요할 수 있다. 고칼륨혈증은 일시적이거나 지속될 수 있다. 수술 후 eGFR 감소는 고칼륨혈증의 예측인자이나 장기 신기능에는 좋은 예후를 시사할 수 있다.',
+'#내과적 치료',
+'MRA는 고혈압과 저칼륨혈증을 정상화하고 표적장기 손상을 독립적으로 줄인다. MRA 용량이 불충분하면 심혈관 위험이 증가할 수 있다. Spironolactone은 1차 권장이자 국내 유일한 MRA이며, 용량 의존적으로 여성형유방과 발기부전을 일으킬 수 있다. Eplerenone은 효과가 낮지만 항안드로겐 작용이 없으나 국내에서 사용할 수 없다. Amiloride는 성호르몬 관련 부작용 없이 혈압과 저칼륨혈증을 조절할 수 있고 국내에서 사용 가능하다. 비스테로이드 MRA finerenone, esaxerenone, 선택적 알도스테론 합성효소 억제제 baxdrostat이 새로운 선택지로 연구되고 있다.',
+'#임신',
+'임신 중 PA 관리에 대한 공식 권고는 없다. 임신 중 진단은 생리적 변화와 확진·국소화 검사의 금기로 주로 낮은 레닌과 높은 알도스테론에 의존한다. 고혈압은 임신 중 승인된 약물(α-methyldopa, hydralazine, labetalol, 20주 이후 nifedipine)로 치료하고, 저칼륨혈증은 칼륨으로 교정한다. 자발성 저칼륨혈증, 현저한 알도스테론 과다, MRI상 일측 부신피질 선종으로 일측성 PA가 강하게 의심되고 약물에 저항성이면 2삼분기 이후 수술을 고려할 수 있다.']},
+fu:{t:'수술 후 추적', ids:['F1'], p:['수술 직후의 PRA와 PAC 측정은 생화학적 반응의 조기 징후로 도움이 되지만 레닌 억제는 즉시 회복되지 않는다. AVS 유도하 일측 부신절제술의 생화학적 관해율은 거의 100%이다. 생화학적으로 알도스테론 과다가 지속되면 일측성 판정 실패(양측 또는 반대측 질환), 불완전 절제, 매우 드물게 알도스테론 생성 암의 재발을 고려한다. 반대로 반대측 부신의 영구적 억제로 fludrocortisone 보충이 필요한 지속적 저알도스테론증이 최대 5%에서 생긴다. 메타분석에서 임상적 관해율은 약 50%이며, 생화학적 관해에도 고혈압이 지속되는 것은 치료 실패가 아니고 MRA 이외의 강압제로 치료한다. 고혈압 기간이 짧을수록, 수술 전 강압제가 적을수록, 젊을수록, 여성, 높은 eGFR, 낮은 체질량지수가 임상적 관해의 유리한 인자이며, PASO 점수(고혈압 기간, 성별, 강압제 용량, 체질량지수, 표적장기 손상, 영상상 최대 결절 크기)가 예측에 유용하다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+fig:{tab:'진단 과정', fig:'Fig. 1', aria:'원발성 알도스테론증 진단 과정 순서도', w:760, h:650,
+ nodes:[
+  {id:'f_ind', x:10, y:10, w:250,h:270,label:'PA 선별 적응증<small>① 혈압 &gt;160/100 mmHg 3회 ② 3제 저항성 고혈압 ③ 4제 이상으로 조절 ④ 40세 미만 고혈압 ⑤ 고혈압 + 저칼륨혈증 ⑥ 고혈압 + 부신종양 ⑦ 고혈압 + 단독 심방세동 ⑧ 조기 고혈압·뇌혈관 사건 가족력 ⑨ PA 환자 1촌의 고혈압</small>', cls:'fac'},
+  {id:'f_arr', x:310,y:10, w:260,h:44, label:'선별검사: ARR', cls:'test'},
+  {id:'f_pos', x:310,y:80, w:260,h:44, label:'ARR &gt;30<sup>a</sup>', cls:'mal'},
+  {id:'f_skip',x:585,y:140,w:170,h:96, label:'확진검사 생략 가능<small>PAC &gt;20 · 자발 저칼륨혈증 · PRA(DRC) 측정 한계 미만</small>', cls:'fac'},
+  {id:'f_conf',x:310,y:170,w:260,h:44, label:'확진검사', cls:'test'},
+  {id:'f_ct',  x:310,y:260,w:260,h:44, label:'부신 CT', cls:'test'},
+  {id:'f_ns',  x:10, y:330,w:200,h:56, label:'수술 금기 또는 원치 않음'},
+  {id:'f_by',  x:430,y:330,w:325,h:110,label:'AVS 생략 가능<small>① 35세 미만 AND ② PAC &gt;30 &amp; 자발 저칼륨혈증 AND ③ CT상 전형적 일측 선종 &amp; 반대측 정상</small>', cls:'fac'},
+  {id:'f_avs', x:230,y:470,w:260,h:44, label:'부신정맥채혈(AVS)', cls:'test'},
+  {id:'f_bil', x:150,y:540,w:180,h:40, label:'양측성'},
+  {id:'f_uni', x:380,y:540,w:200,h:40, label:'일측성 또는 편측화', cls:'mal'},
+  {id:'f_mra', x:150,y:600,w:180,h:44, label:'MRA 치료', cls:'tx'},
+  {id:'f_adx', x:380,y:600,w:200,h:44, label:'일측 부신절제술', cls:'tx'}
+ ],
+ edges:[
+  [A(260,32,310,32),1],[A(440,54,440,80),1],[A(440,124,440,170),1],['M520 124 V150 H585',1,'dot'],
+  ['M670 236 V282 H570',1,'dot'],[A(440,214,440,260),1],
+  ['M310 282 H110 V330',1,'dot'],[A(520,304,520,330),1,'dot'],[A(400,304,400,470),1],
+  ['M330 514 V527 H240 V540',1],['M430 514 V527 H480 V540',1],
+  [A(240,580,240,600),1],[A(480,580,480,600),1],
+  ['M110 386 V622 H150',1,'dot'],['M700 440 V622 H580',1,'dot']
+ ], labels:[[600,30,'선별','sec'],[600,195,'확진','sec'],[600,470,'아형 감별','sec'],[610,640,'치료','sec'],[448,244,'양성']]},
+avs:{tab:'AVS 해석', fig:'Table 7', aria:'부신정맥채혈 해석 순서도', w:760, h:440,
+ nodes:[
+  {id:'v_pre', x:230,y:10, w:300,h:70, label:'AVS 준비<small>이뇨제·amiloride·MRA 4주 전 중단 · 레닌 억제 시 그대로 시행 가능</small>', cls:'test fac'},
+  {id:'v_si',  x:230,y:110,w:300,h:70, label:'선택성 지수(SI)<small>코르티솔 AV/PV · 비자극 ≥2(3 선호) · 자극 ≥5(3 이상)</small>', cls:'test fac'},
+  {id:'v_fail',x:560,y:110,w:190,h:70, label:'SI 미달<small>삽관 실패, 신중한 해석</small>', cls:'mal fac'},
+  {id:'v_li',  x:230,y:215,w:300,h:80, label:'편측화 지수(LI)<small>(A/C)우세 ÷ (A/C)비우세 · 비자극 ≥2, 자극 ≥4 · 두 조건 모두 4 권장</small>', cls:'test fac'},
+  {id:'v_uni', x:10, y:340,w:220,h:80, label:'일측성 PA<small>LI ≥4 · LI ≥10이면 생화학적 성공 91.7%</small>', cls:'tx fac'},
+  {id:'v_gray',x:270,y:340,w:220,h:90, label:'회색지대<small>CLR &lt;1 + ILR &gt;2로 보조 판단 · CLR &lt;0.25: 생화학적 성공</small>', cls:'fac'},
+  {id:'v_bil', x:530,y:340,w:220,h:80, label:'양측성<small>MRA 치료</small>', cls:'fac'}
+ ],
+ edges:[
+  [A(380,80,380,110),1],[A(530,145,560,145),1],[A(380,180,380,215),1],
+  ['M300 295 V318 H120 V340',1],[A(380,295,380,340),1],['M460 295 V318 H640 V340',1],[A(270,385,230,385),1,'dot']
+ ], labels:[[536,138,'미달'],[388,203,'적절']]},
+tx:{tab:'치료·추적', fig:'본문 구성', aria:'원발성 알도스테론증 치료와 추적 순서도', w:760, h:530,
+ nodes:[
+  {id:'t_pa',  x:230,y:10, w:300,h:44, label:'PA 확진 + 아형 결정'},
+  {id:'t_uni', x:10, y:90, w:300,h:56, label:'일측성 PA<small>APA · UAH</small>', cls:'fac'},
+  {id:'t_bil', x:450,y:90, w:300,h:80, label:'MRA 대상<small>양측성 · 편측화 실패 · 수술 불가 · 수술 거부</small>', cls:'fac'},
+  {id:'t_pre', x:10, y:180,w:300,h:80, label:'수술 전 처치<small>MRA로 혈압·저칼륨혈증 조절 · 필요 시 다른 강압제·칼륨</small>', cls:'test fac'},
+  {id:'t_adx', x:10, y:290,w:300,h:80, label:'복강경 일측 부신절제술<small>대안: 경피적 고주파 소작술</small>', cls:'tx fac'},
+  {id:'t_post',x:10, y:400,w:300,h:120,label:'수술 후<small>1일째 MRA·칼륨 중단 · 칼륨 없는 생리식염수 · 혈압·전해질·Cr 감시 · PRA·PAC 1개월과 6개월</small>', cls:'test fac'},
+  {id:'t_mra', x:450,y:200,w:300,h:110,label:'MRA 치료<small>spironolactone(국내 유일 MRA) · 대안 amiloride · 적정 지표: 혈압·칼륨 정상화, PRA ≥1</small>', cls:'tx fac'},
+  {id:'t_preg',x:450,y:335,w:300,h:80, label:'임신·임신 희망<small>일측성은 임신 전 수술 · spironolactone 금기</small>', cls:'mal fac'},
+  {id:'t_out', x:450,y:440,w:300,h:80, label:'결과<small>생화학적 관해 거의 100%(AVS 기반) · 임상적 관해 약 50% · 심방세동 3년 감시</small>', cls:'ben fac'}
+ ],
+ edges:[
+  ['M330 54 V72 H160 V90',1],['M430 54 V72 H600 V90',1],[A(160,146,160,180),1],[A(160,260,160,290),1],[A(160,370,160,400),1],
+  [A(600,170,600,200),1],[A(600,310,600,335),1,'dot'],[A(310,480,450,480),1]
+ ], labels:[]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paras}<p class="exp-src">Ha J, Park JH, et al. Endocrinol Metab 2023;38:597–618 본문 번역·요약. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows, cap) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${cap?`<p class="small" style="color:var(--muted)">${cap}</p>`:''}`;
+const TAB1 = tbl(['아형','원인 유전자','특징','치료'],[['FH-I','<i>CYP11B1/CYP11B2</i>','dexamethasone 반응, hybrid steroid','dexamethasone, MRA'],['FH-II','<i>CLCN2</i>','없음','MRA'],['FH-III','<i>KCNJ5</i>','다양한 과형성, hybrid steroid','MRA, 양측 부신절제술'],['FH-IV','<i>CACNA1H</i>','없음','MRA'],['PASNA','<i>CACNA1D</i>','경련, 신경학적 이상, 심장 결함, 일시적 저혈당(다양)','MRA, 칼슘길항제(?)']],'Table 1. 가족성 고알도스테론증 아형');
+const TAB2 = tbl(['PAC 단위','PRA (ng/mL/hr)','DRC (mIU/L)<sup>a</sup>'],[['ng/dL','20','2.4'],['','30','3.7'],['','40','4.9'],['pmol/L<sup>b</sup>','550','67'],['','830','101'],['','1,100','134']],'Table 2. ARR 기준값. a PRA→DRC 환산계수 8.2 기준(Diasorin 면역측정법은 12). b 알도스테론 1 ng/dL = 27.7 pmol/L.');
+const TAB3 = tbl(['요인','알도스테론','레닌','ARR'],[['ACE 억제제, ARB','↓','↑↑','↓ (위음성)'],['중추 α2 작용제(clonidine, α-methyldopa)','↓','↓↓','↑ (위양성)'],['칼륨 보존 이뇨제(MRA, amiloride)','↑','↑↑','↓ (위음성)'],['칼륨 소실 이뇨제(thiazide, loop)','→ 또는 ↑','↑↑','↓ (위음성)'],['β차단제','↓','↓↓','↑ (위양성)'],['DHP 칼슘차단제','→ 또는 ↓','↑','↓ (위음성)'],['NSAID','↓','↓↓','↑ (위양성)'],['염분 제한','↑','↑↑','↓ (위음성)'],['고염식','↓','↓↓','↑ (위양성)'],['저칼륨혈증','↓','→ 또는 ↑','↓ (위음성)'],['칼륨 부하','↑','→ 또는 ↓','↑ (위양성)'],['고령','↓','↓↓','↑ (위양성)'],['임신','↑','↑↑','↓ (위음성)'],['신기능 장애','→','↓','↑ (위양성)'],['신혈관성·악성 고혈압','↑','↑↑','↓ (위음성)']],'Table 3. ARR에 영향을 주는 약물과 요인 (Funder et al. 인용)');
+const TAB4 = tbl(['약물','계열','통상 용량','비고'],[['Verapamil 서방형','비DHP CCB','90–120 mg 1일 2회','단독 또는 이 표의 다른 약과 병용'],['Hydralazine','혈관확장제','10–12.5 mg 1일 2회','반사성 빈맥 예방을 위해 verapamil 서방형 먼저 시작, 저용량부터'],['Prazosin','α차단제','0.5–1 mg 1일 2–3회','기립성 저혈압 감시'],['Doxazosin','α차단제','1–2 mg 1일 1회','기립성 저혈압 감시'],['Terazosin','α차단제','1–2 mg 1일 1회','기립성 저혈압 감시']],'Table 4. 레닌과 PAC에 영향이 적은 약물');
+const TAB5 = tbl(['검사와 방법','해석','비고'],[['<b>경구 염분부하</b>: 나트륨 &gt;200 mmol(6 g)/일 3일','3일 아침–4일 아침 24시간 소변 알도스테론 &gt;12 또는 14 μg/일: PA 가능성 높음 · &lt;10 μg/일: 가능성 낮음','금기: 조절 안 되는 중증 고혈압, 신부전, 부정맥, 심부전, 중증 저칼륨혈증. 24시간 소변 불편, HPLC-MS 권장'],['<b>Fludrocortisone 억제</b>: 0.1 mg 6시간마다 4일 + 서방형 KCl·NaCl(30 mmol 1일 3회 식사와 함께)·충분한 염분','4일째 오전 10시 기립 PAC &gt;6 ng/dL, PRA &lt;1 ng/mL/hr: PA 가능성 높음','ACTH 영향 배제를 위해 오전 10시 코르티솔이 7시보다 낮아야 함'],['<b>식염수 주입</b>: 0.9% NaCl 2 L 4시간 · 8:00–9:30 시작, 1시간 전부터 누운 자세 또는 30분 전부터 앉은 자세','누운 자세: &gt;10 PA 가능성 높음, 5–10 중간, &lt;5 낮음 · 앉은 자세: &gt;6 확진(코르티솔이 기저보다 낮을 때) · 기준값은 측정법에 따라 달라짐','금기: 염분부하와 같음'],['<b>Captopril 부하</b>: 1–2시간 앉거나 선 후 captopril 25–50 mg 경구, 검사 끝까지 앉아 있음','2시간 후 PAC &gt;11 ng/dL와 PRA 억제, 또는 ARR &gt;20: PA 가능성 높음 · PAC &lt;8.5: 가능성 매우 낮음','위음성 또는 불확정 결과가 상당수']],'Table 5. PA 확진검사 (PAC 단위 ng/dL)');
+const TAB6 = `<ol><li>저칼륨혈증 교정</li><li>염분 섭취를 제한하지 않도록 권장</li><li>약물 확인: 현재 강압제는 유지하고 알려진 효과를 고려하여 해석 · 결과가 진단적이지 않거나 레닌 억제가 뚜렷하지 않으면 MRA 4–6주 중단 고려 · 필요 시 ARR 영향이 적은 강압제(Table 4)로 교체</li><li>최소 2시간 활동 후 5–15분 앉은 상태에서 오전 중반 채혈</li></ol><p class="small" style="color:var(--muted)">Table 6. ARR 측정 조건</p>`;
+const TAB7 = tbl(['지표','계산','기준값','해석'],[['선택성 지수(SI)','코르티솔 AV / PV','비자극 ≥2 또는 3(&gt;2–3 선호) · 자극 ≥5(&gt;3–5 선호)<sup>a</sup>','부신정맥 삽관 성공'],['편측화 지수(LI)','(A/C)우세 AV / (A/C)비우세 AV','비자극 ≥2 · 자극 ≥4','우세 측의 유의한 알도스테론 과다 분비'],['반대측 비(CLR)','(A/C)비우세 AV / (A/C)PV','&lt;1','비우세 측 분비의 유의한 억제'],['동측 비(ILR)','(A/C)우세 AV / (A/C)PV','&gt;2','우세 측 과다 분비(CLR &lt;1일 때)']],'Table 7. AVS 지표. A/C: 알도스테론/코르티솔. a 일부 기관은 SI ≥3을 더 신뢰하며 SI 2–3은 신중히 해석한다.');
+const TAB8 = tbl(['병리 실체','신생물 여부','고전/비고전','H&amp;E 가시성','CYP11B2(+) 최대 크기'],[['알도스테론 생성 부신피질암(APACC)','신생물','고전','보임','≥10 mm'],['알도스테론 생성 선종(APA)','신생물','고전','보임','≥10 mm'],['알도스테론 생성 결절(APN)','비신생물/과형성','고전','보임','&lt;10 mm'],['알도스테론 생성 미세결절(APM)<sup>a</sup>','비신생물/과형성','비고전','안 보임','&lt;10 mm'],['다발성 APN 또는 APM','비신생물/과형성','비고전','보이거나 안 보임','&lt;10 mm, 다발'],['알도스테론 생성 미만성 과형성(APDH)','비신생물/과형성','비고전','안 보임','사구대의 ≥50%']],'Table 8. HISTALDO 합의. a 이전 명칭: 알도스테론 생성 세포군(APCC).');
+const D = {
+f_ind:{kind:'출발점', title:'PA 선별 적응증', next:['f_arr'], body:`${RR('S1','S2')}`},
+f_arr:{kind:'선별', title:'선별검사: ARR', next:['f_pos'], body:`${RR('D1','D2','D3')}<h4>Table 3</h4>${TAB3}`},
+f_pos:{kind:'선별 결과', title:'ARR >30', next:['f_conf','f_skip'], body:`<p>a 레닌이 과도하게 억제되면 PAC &gt;15 ng/dL를 선별 기준으로 고려한다(Fig. 1 각주).</p>${R('D1')}<h4>Table 2</h4>${TAB2}`},
+f_skip:{kind:'예외', title:'확진검사 생략 가능', next:['f_ct'], body:`${R('D4')}`},
+f_conf:{kind:'확진', title:'확진검사', next:['f_ct'], body:`${RR('D4','D5')}<h4>Table 5</h4>${TAB5}`},
+f_ct:{kind:'아형 감별', title:'부신 CT', next:['f_avs','f_by','f_ns'], body:`${R('T1')}${tip('CT의 한계','CT/MRI와 AVS 불일치 37.8%(메타분석), 국내 466명에서 35.6%. 고령에서는 비기능 선종이 흔해 정확도가 떨어진다.')}`},
+f_ns:{kind:'분기', title:'수술 금기 또는 원치 않음', next:['f_mra'], body:`${R('R2')}`},
+f_by:{kind:'분기', title:'AVS 생략 가능 조건', next:['f_adx'], body:`${R('T3')}`},
+f_avs:{kind:'아형 감별', title:'부신정맥채혈(AVS)', next:['f_bil','f_uni','v_pre'], body:`${RR('T2','T4')}<h4>Table 7</h4>${TAB7}`},
+f_bil:{kind:'AVS 결과', title:'양측성', next:['f_mra'], body:``+'<p>특발성 양측 부신과형성(IAH)과 양측 APA를 포함한다.</p>'},
+f_uni:{kind:'AVS 결과', title:'일측성 또는 편측화', next:['f_adx'], body:`<p>일측 APA 또는 일측 부신과형성(UAH).</p>`},
+f_mra:{kind:'치료', title:'MRA 치료', next:['t_mra'], body:`${R('R2')}`},
+f_adx:{kind:'치료', title:'일측 부신절제술', next:['t_pre'], body:`${RR('R1','R3')}`},
+
+v_pre:{kind:'준비', title:'AVS 준비', next:['v_si'], body:`${R('T2')}${tip('ACTH(1-24)','50 μg/hr 지속 주입(첫 채혈 30분 전 시작) 또는 250 μg 볼루스. 코르티솔 기울기를 키우고 알도스테론 변동을 줄이나 반대측 분비를 자극해 LI를 낮출 수 있다.')}`},
+v_si:{kind:'지표', title:'선택성 지수(SI)', next:['v_li','v_fail'], body:`${R('T4')}${TAB7}`},
+v_fail:{kind:'결과', title:'SI 미달', next:[], body:`<p>삽관 성공을 확신할 수 없다. 우부신정맥은 짧고 하대정맥으로 바로 배액되어 성공률이 낮다. 연 30명 이상 치료하는 고용량 센터의 숙련 시술자는 90% 넘게 성공한다.</p>`},
+v_li:{kind:'지표', title:'편측화 지수(LI)', next:['v_uni','v_gray','v_bil'], body:`${R('T4')}`},
+v_uni:{kind:'결과', title:'일측성 PA', next:['t_uni'], body:`<p>국내 251명: LI ≥10이면 생화학적 성공 91.7%, LI 3–4이면 66.7%.</p>${R('R1')}`},
+v_gray:{kind:'결과', title:'회색지대', next:[], body:`<p>비대칭 양측 질환이나 APA와 양측 알도스테론 생성 세포군이 공존할 수 있다. 일부 기관은 LI 없이 ILR &gt;2와 CLR &lt;1로 일측성을 진단한다. 국내 연구에서 ILR &gt;2인 환자의 CLR &lt;0.25는 생화학적 성공, CLR &lt;1은 임상적 성공에 적합했다.</p>`},
+v_bil:{kind:'결과', title:'양측성', next:['t_bil'], body:`${R('R2')}`},
+
+t_pa:{kind:'출발점', title:'PA 확진과 아형 결정', next:['t_uni','t_bil'], body:`<p>치료 목표는 고혈압과 저칼륨혈증 정상화와 심혈관 이환·사망 위험 감소이다. 알도스테론 과다를 차단하지 않고 혈압만 조절하는 것은 불충분하다.</p>`},
+t_uni:{kind:'아형', title:'일측성 PA', next:['t_pre'], body:`${R('R1')}`},
+t_pre:{kind:'수술 전', title:'수술 전 처치', next:['t_adx'], body:`${R('R3')}`},
+t_adx:{kind:'치료', title:'복강경 일측 부신절제술', next:['t_post'], body:`${R('R1')}<h4>Table 8. HISTALDO</h4>${TAB8}`},
+t_post:{kind:'수술 후', title:'수술 후 관리와 추적', next:['t_out'], body:`${RR('R3','F1')}`},
+t_bil:{kind:'아형', title:'MRA 대상', next:['t_mra'], body:`${R('R2')}`},
+t_mra:{kind:'치료', title:'MRA 치료', next:['t_preg'], body:`${R('R2')}<ul><li>Spironolactone: 용량 의존적 여성형유방·발기부전</li><li>Eplerenone: 항안드로겐 작용 없음, 국내 사용 불가</li><li>Amiloride: 국내 사용 가능한 대안</li><li>새로운 약제: finerenone, esaxerenone, baxdrostat</li></ul>`},
+t_preg:{kind:'특수 상황', title:'임신·임신 희망', next:[], body:`${R('R4')}`},
+t_out:{kind:'결과', title:'치료 결과와 장기 추적', next:[], body:`${RR('F1','C1')}`}
+};
+const EXTRA = {
+levels:{kind:'참고', title:'이 지침과 도구에 대하여', next:[], body:`<div class="rec"><span class="lv l2">핵심 진술</span><p>${LV.P}</p></div>${note('구성','이 지침은 권고별 등급이 없는 합의 지침이므로 본문의 핵심 진술 17개를 권고 상자로 수록하였다(번호는 본 도구에서 부여: S 선별, G 유전, D 진단, T 아형 감별, R 치료, F 추적, C 동반질환). ‘진단 과정’ 탭은 원문 Fig. 1을 재현했고, ‘AVS 해석’은 Table 7, ‘치료·추적’은 본문을 바탕으로 구성하였다.')}`},
+tables:{kind:'Table 1–8', title:'표 모음', next:[], body:`<h4>Table 1. 가족성 고알도스테론증</h4>${TAB1}<h4>Table 2. ARR 기준값</h4>${TAB2}<h4>Table 3. ARR 영향 요인</h4>${TAB3}<h4>Table 4. 영향이 적은 강압제</h4>${TAB4}<h4>Table 5. 확진검사</h4>${TAB5}<h4>Table 6. ARR 측정 조건</h4>${TAB6}<h4>Table 7. AVS 지표</h4>${TAB7}<h4>Table 8. HISTALDO</h4>${TAB8}`},
+gen:{kind:'유전', title:'유전과 가족성 고알도스테론증', next:[], body:`${R('G1')}${TAB1}`},
+com:{kind:'동반질환', title:'심대사·신장·골 합병증', next:[], body:`${R('C1')}`},
+other:{kind:'아형 감별', title:'다른 아형 감별 전략', next:[], body:`${R('T3')}`},
+all:{kind:'전체', title:'핵심 진술 전체', next:[], body:`<h4>선별·유전</h4>${RR('S1','S2','G1')}<h4>진단</h4>${RR('D1','D2','D3','D4','D5')}<h4>아형 감별</h4>${RR('T1','T2','T3','T4')}<h4>치료·추적·동반질환</h4>${RR('R1','R2','R3','R4','F1','C1')}`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['ACTH','Adrenocorticotropic hormone, 부신피질자극호르몬'],['AF','Atrial fibrillation, 심방세동'],['APA','Aldosterone-producing adenoma, 알도스테론 생성 선종'],
+ ['APDH / APM / APN','Aldosterone-producing diffuse hyperplasia / micronodule / nodule'],['ARR','Aldosterone-to-renin ratio, 알도스테론/레닌 비'],
+ ['AVS','Adrenal venous sampling, 부신정맥채혈'],['BAH','Bilateral adrenal hyperplasia, 양측 부신과형성'],['CLR / ILR','Contralateral / ipsilateral ratio, 반대측 / 동측 비'],
+ ['CT / MRI','Computed tomography / magnetic resonance imaging'],['DRC','Direct renin concentration, 직접 레닌 농도'],['FH','Familial hyperaldosteronism, 가족성 고알도스테론증'],
+ ['HISTALDO','Histopathology of primary aldosteronism (consensus)'],['IAH','Idiopathic bilateral adrenal hyperplasia, 특발성 양측 부신과형성'],
+ ['LC-MS/MS','Liquid chromatography–tandem mass spectrometry'],['LI','Lateralization index, 편측화 지수'],['MR / MRA','Mineralocorticoid receptor / antagonist, 무기질코르티코이드 수용체 / 길항제'],
+ ['OSA','Obstructive sleep apnea, 폐쇄수면무호흡'],['PA','Primary aldosteronism, 원발성 알도스테론증'],['PAC','Plasma aldosterone concentration, 혈장 알도스테론 농도'],
+ ['PASNA','PA with seizures and neurologic abnormalities'],['PASO','Primary Aldosteronism Surgical Outcome (score)'],['PRA','Plasma renin activity, 혈장 레닌 활성도'],
+ ['RAS','Renin-angiotensin system, 레닌-안지오텐신계'],['SI','Selectivity index, 선택성 지수'],['UAH','Unilateral adrenal hyperplasia, 일측 부신과형성']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|ng|mm|μg|mg)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'fig';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: A, PAC)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('fig');
+
+</script>
+</body>
+</html>
