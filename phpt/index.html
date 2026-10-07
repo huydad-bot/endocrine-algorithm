@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>원발성 부갑상선기능항진증 관리 알고리즘 (제5차 국제 워크숍 2022)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>원발성 부갑상선기능항진증(PHPT) 평가와 관리</h1>
+        <p class="src">Fifth International Workshop Summary Statement, Bilezikian JP, et al. <a href="https://doi.org/10.1002/jbmr.4677" target="_blank" rel="noopener noreferrer">J Bone Miner Res 2022;37:2293–2314</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the International Workshop or ASBMR</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>순서도는 원문 권고 요약을 바탕으로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>권고 등급</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 권고">
+      <button type="button" data-id="tables"><span class="bt-ic" aria-hidden="true">＋</span>Table 1–3</button>
+      <button type="button" data-id="gen"><span class="bt-ic" aria-hidden="true">＋</span>유전 평가</button>
+      <button type="button" data-id="nc"><span class="bt-ic" aria-hidden="true">＋</span>비고전적 양상</button>
+      <button type="button" data-id="research"><span class="bt-ic" aria-hidden="true">＋</span>연구 과제</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ GS:'GRADE 등급 권고: 강한 권고(recommend), 높은 질의 근거. 무작위 시험의 체계적 문헌고찰에 근거',
+ GW:'GRADE 등급 권고: 약한 권고(suggest), 낮은 또는 매우 낮은 질의 근거',
+ P:'패널 권고(ungraded): 서술적 문헌고찰에 근거한 비등급 권고. “the Panel recommends/proposes”로 표현'
+};
+const LVTXT = {GS:'GRADE 강', GW:'GRADE 약', P:'패널(비등급)'};
+const LVCLS = {GS:'l1', GW:'l3', P:'l2'};
+
+/* ---------- 권고 요약(Summary of Recommendations) 전체 + 본문 패널 권고 ---------- */
+const REC = {
+'1.1':['P','고칼슘혈증 PHPT: 알부민 보정 혈청 칼슘 상승과 함께 intact PTH(2세대 또는 3세대 측정법)가 상승하거나 부적절하게 정상인 소견이 최소 2주 간격으로 2회 확인될 때 진단한다.'],
+'1.2.1':['P','가족성 저칼슘뇨 고칼슘혈증(FHH)은 소변 칼슘/크레아티닌 청소율 비 &lt;0.01인 젊은 환자 및/또는 고칼슘혈증 가족력이 있는 환자에서 의심할 수 있다.'],
+'1.2.2':['P','Thiazide 이뇨제와 lithium(본문 참조).'],
+'1.2.3':['P','PTH의 이소성 분비(매우 드묾).'],
+'1.3':['P','정상칼슘 PHPT: 이차성 부갑상선기능항진증의 모든 다른 원인을 배제한 후, 3–6개월에 걸쳐 최소 2회 보정 총칼슘과 이온화 칼슘이 정상이면서 intact PTH(2세대 또는 3세대 측정법)가 상승한 경우이다.'],
+'2.1':['P','증상성 PHPT: 섬유낭성골염 및/또는 골절, 만성콩팥병, 신석증 및/또는 신석회증 등 명백한 골격·신장 합병증을 동반한다.'],
+'2.2':['P','무증상 PHPT: 명백한 증상이나 징후가 없으며 대개 생화학 선별검사로 발견된다. 평가 후 두 가지 형태로 정의한다: (2.2.1) 표적장기 침범 있음, (2.2.2) 표적장기 침범 없음.'],
+'2.3':['P','정상칼슘 PHPT: 이 정의에 해당하는 환자에서 골격 또는 신장 합병증은 있을 수도 없을 수도 있다.'],
+'3.1':['P','생화학: 보정 총혈청칼슘(정상칼슘 PHPT를 고려하면 이온화 칼슘), 인, intact PTH, 25OHD, 크레아티닌을 측정한다.'],
+'3.2':['P','골격: 3부위 이중에너지 X선 흡수계측(DXA; 요추, 고관절, 원위 1/3 요골), 척추골절 영상(척추골절평가[VFA] 또는 척추 X선), 가능하면 해면골 점수(TBS).'],
+'3.3':['P','신장: 추정사구체여과율(eGFR) 또는 가급적 크레아티닌 청소율, 24시간 소변 칼슘과 결석의 생화학적 위험인자, 신석증/신석회증 영상.'],
+'3.4':['P','비고전적 양상(신경인지, 삶의 질, 심혈관): 이러한 추정 양상을 일상적으로 평가하는 것을 뒷받침하는 자료는 없다.'],
+'3.5':['P','유전: 30세 미만, 병력이나 영상상 다선 질환, 및/또는 고칼슘혈증 가족력이나 증후군 질환이 있는 환자에서 유전 평가를 고려해야 한다.'],
+'4':['GS','무증상 PHPT 환자에서 질환을 완치하기 위해 수술을 권고한다(강한 권고/높은 질의 근거).'],
+'5.1':['P','부갑상선절제술은 금기가 없고 환자와 의사가 동의하면 모든 환자에서 선택지이지만, 패널은 다음 중 하나 이상이 있는 모든 환자(무증상 포함)에게 수술을 권고한다: (5.1.1) 혈청 칼슘이 정상 상한보다 1 mg/dL(0.25 mmol/L) 넘게 높음, (5.1.2) 골격 침범: VFA 또는 척추 X선상 골절, 또는 어느 부위든 골밀도 T-score ≤−2.5, (5.1.3) 신장 침범: eGFR 또는 크레아티닌 청소율 &lt;60 mL/min, X선·초음파·기타 영상상 신석회증 또는 신석증, 고칼슘뇨(예: 여성 &gt;250 mg/일, 남성 &gt;300 mg/일), (5.1.4) 50세 미만(다른 적응증 불필요; 50세 미만만으로 충분한 적응증).'],
+'5.2':['P','수술은 숙련된 부갑상선 외과의가 시행해야 한다.'],
+'5.3':['P','근거가 결론적이지 않으므로 신경인지 기능, 삶의 질, 심혈관 지표의 개선을 위해 수술을 권고할 수는 없다.'],
+'6.1':['P','수술 전 영상은 진단 목적으로 권고하지 않는다.'],
+'6.2':['P','부갑상선 수술을 받을 환자에서 이상 부갑상선의 위치를 찾기 위해 수술 전 영상을 권고한다.'],
+'6.3':['P','수술 전 영상 방법에는 고해상도 경부 초음파, technetium-99m-sestamibi 감영 신티그래피, 조영증강 4차원(4D) CT가 있다.'],
+'6.4':['P','수술 전 영상이 성공적이면, 수술 중 PTH 모니터링 병용 여부와 관계없이 선택적 부갑상선절제술은 숙련된 외과의가 시행할 때 높은 완치율을 달성한다.'],
+'6.5':['P','선택적 접근의 장점은 수술 시간 단축, 조직 반흔 감소, 주변 구조 손상 위험 감소, 입원비 절감이다. 직접 비교 연구는 없다.'],
+'7':['P','부갑상선절제술 기준(5항)을 충족하지 않는 PHPT 환자는 약물 개입 없이 추적할 수 있다. 수술을 원하지 않지만 특정 기준(예: 칼슘 또는 골밀도)을 충족하는 환자에게는 패널이 권고하는 약물 선택지가 있다.'],
+'7.1':['P','Cinacalcet으로 혈청 칼슘을 정상 범위로 낮춘다.'],
+'7.2':['P','칼슘 섭취/보충은 미국의학연구소(IOM) 영양 지침을 따른다: 50세 미만 여성과 70세 미만 남성은 800 mg/일, 50세 초과 여성과 70세 초과 남성은 1000 mg/일.'],
+'7.3':['P','비타민 D 보충: 패널은 25OHD를 &gt;30 ng/mL이면서 검사실 참고범위 상한 미만(예: &lt;50 ng/mL)으로 유지할 것을 권고한다.'],
+'7.4':['P','금기가 없으면 골밀도를 높이기 위해 alendronate 또는 denosumab을 사용할 수 있다.'],
+'7.5':['P','에스트로겐은 골밀도를 높이는 것으로 나타났다. 혈청 칼슘 감소 효과는 일관되지 않다.'],
+'7.6':['P','Raloxifene은 결론을 내리기에 자료가 불충분하여 권고할 수 없다.'],
+'8.1':['P','자료가 제한적이므로 현재 정상칼슘 PHPT의 수술 기준을 권고할 수 없다.'],
+'9.1':['P','혈청 칼슘과 25OHD 농도: 매년. 임상적으로 필요하면 PTH도 측정할 수 있다.'],
+'9.2':['P','골격: 3부위 DXA를 1–2년마다(골밀도가 정상이면 예외, 본문 참조). 임상적으로 필요하면 척추 X선, VFA 또는 TBS.'],
+'9.3':['P','신장: 크레아티닌 청소율(eGFR보다 선호) 매년. 임상적으로 필요하면 복부 영상(X선, CT, 초음파)과 24시간 소변 칼슘.'],
+'10.1':['P','혈청 칼슘이 지속적으로 정상 상한보다 1 mg/dL(0.25 mmol/L) 넘게 높아질 때.'],
+'10.2':['P','저외상 골절이 있을 때.'],
+'10.3':['P','신장결석이 생겼을 때.'],
+'10.4':['P','골밀도가 어느 부위에서든 T-score ≤−2.5로 유의하게 감소했을 때(측정의 최소 유의변화를 넘는 감소).'],
+'10.5':['P','크레아티닌 청소율이 유의하게 감소했을 때(1–2년간 평균 연 &gt;3 mL/min 감소로 &lt;60 mL/min에 이르고 진행을 시사하는 다른 변화가 동반될 때).'],
+'11.1':['P','칼슘 섭취는 영양 지침에 맞춘다.'],
+'11.2':['P','비타민 D는 &gt;30 ng/mL로 유지한다. 임상적으로 필요하면 모체형 비타민 D(parent form, 원문 표기는 “parental”; 예: cholecalciferol)로 신중하게 보충한다.'],
+'11.3':['P','혈청 칼슘을 낮출 적응이 있으면 cinacalcet이 효과적이다.'],
+'11.4':['P','골밀도를 높일 적응이 있으면 bisphosphonate 또는 denosumab을 사용할 수 있다.'],
+'11.5':['P','혈청 칼슘을 낮추고 골밀도를 높일 적응이 모두 있으면 bisphosphonate 또는 denosumab과 cinacalcet의 병용을 고려할 수 있다.'],
+'12.1':['P','경증은 충분한 수분 공급 유지와 칼슘 모니터링으로 관리한다.'],
+'12.2':['P','Bisphosphonate와 denosumab은 사용하지 않아야 한다.'],
+'12.3':['P','Cinacalcet 사용에 대한 자료는 매우 제한적이다.'],
+'12.4':['P','혈청 칼슘이 &gt;11.0 mg/dL이고 수술 금기가 없는 환자에서는 2삼분기 수술을 고려한다(본문 패널 권고에는 “정상 상한보다 &gt;1 mg/dL[&gt;0.25 mmol/L]”로 표기).'],
+'12.5':['P','수술 전 영상은 초음파로 한정해야 한다.'],
+'12.6':['P','수술을 연기하면 신생아의 저칼슘혈증을 면밀히 감시해야 한다.'],
+'12.7':['P','수술을 연기하면 분만 후, 그리고 다음 임신 전에 부갑상선절제술을 시행해야 한다.'],
+'S1':['GS','숙련된 외과의에 의한 수술은 금기가 없다면 생화학적 완치를 달성하기 위해 사용해야 한다(높은 질의 근거).'],
+'M1a':['GW','부갑상선절제술을 받지 않는 저골밀도 환자에서 bisphosphonate(예: alendronate) 또는 denosumab을 제안한다(매우 낮은 질의 근거에 기반한 약한 권고).'],
+'M1b':['GW','부갑상선절제술을 받지 않고 혈청 칼슘이 &gt;11.0 mg/dL(정상 상한보다 &gt;0.25 mmol/L)인 PHPT 환자에서 cinacalcet을 제안한다(낮은 질의 근거에 기반한 약한 권고).'],
+'M2':['GW','비타민 D 부족(25OHD &lt;30 ng/mL [75 nmol/L]) 또는 결핍(&lt;12 ng/mL [&lt;30 nmol/L])이 있는 PHPT 환자에서 비타민 D 보충을 제안한다(매우 낮은 질의 근거에 기반한 약한 권고).'],
+'NC1':['P','PHPT에서 신경인지 또는 신경정신 검사를 일상적으로 시행해서는 안 된다.'],
+'NC2':['P','신경인지 또는 신경정신 양상이 있더라도, 그것만으로 부갑상선 수술을 권고해서는 안 된다.'],
+'NC3':['P','질환 특이적 삶의 질 도구 개발을 포함한 추가 연구가 필요하다.'],
+'CV1':['P','PHPT에서 심혈관 또는 대사 평가는 권고하지 않는다.'],
+'CV2':['P','심혈관 또는 대사 이상이 있더라도 PHPT와 명확한 관련이 없다.'],
+'CV3':['P','심혈관 또는 대사 이상이 있더라도 부갑상선절제술 결정의 기준으로 사용해서는 안 된다.'],
+'GI1':['P','PHPT에서 위장관 평가의 적응은 없다.'],
+'GI2':['P','위장관 증상이 있더라도 증상성 PHPT 또는 졸링거-엘리슨 증후군을 동반한 MEN이 아니라면 PHPT와 명확한 관련이 없다.']
+};
+const RIDMAP = {S1:'G-수술', M1a:'G-약물1a', M1b:'G-약물1b', M2:'G-비타민D', NC1:'신경1', NC2:'신경2', NC3:'신경3', CV1:'심혈관1', CV2:'심혈관2', CV3:'심혈관3', GI1:'위장관1', GI2:'위장관2'};
+const RID = id => RIDMAP[id] || id;
+
+const EXP = {
+dx:{t:'진단과 감별진단', ids:['1.1','1.2.1','1.2.2','1.2.3','1.3'], p:[
+'#진단',
+'PHPT에서 PTH 분비는 혈청 칼슘 농도에 비해 부적절하게 높지만, 때로 PTH가 검사실 참고범위 안에 있을 수 있다. 반대로 정상칼슘 PHPT에서는 PTH가 참고범위 상한보다 지속적으로 높다. 혈청 칼슘은 혈청 알부민을 고려해야 하며 알부민이 4 g/dL 미만이면 보정해야 한다. 알부민 결합 칼슘이 총 순환 칼슘의 약 50%를 차지하므로 알부민이 낮으면 총칼슘이 낮아져 이온화 칼슘을 정확히 반영하지 못한다. 일반적으로 알부민이 4 g/dL보다 1 g/dL 낮을 때마다 0.8의 상향 보정 계수를 사용한다. 알부민이 4 g/dL를 넘을 때 같은 계수로 보정하는 것은 명확하지 않다. 정확한 이온화 칼슘 분석기가 있으면 알부민 변동에 따른 불확실성을 없앨 수 있으며, 총칼슘은 정상이나 PTH가 상승한 경우 이온화 칼슘 측정이 더욱 중요하다. 과다한 PTH의 인뇨 작용으로 혈청 인은 낮거나 정상 하한일 수 있다.',
+'#감별진단',
+'혈청 총칼슘과 intact PTH가 모두 명백히 높으면 PHPT일 가능성이 매우 높다. PHPT의 정의는 같은 생화학 이상이 3차 부갑상선기능항진증을 나타낼 수 있는 말기콩팥병이 없음을 전제로 한다. PTH가 기술적으로 정상이라도 고칼슘혈증 환자에서는 PHPT가 진단임이 명백하다. 악성종양 동반 고칼슘혈증이 이소성 PTH 분비와 관련된 경우는 극히 드물고, 대개 PTH 관련 단백(PTHrP) 분비에 의한다. PTHrP와 PTH 측정법은 교차반응하지 않으므로 혼동되는 일은 드물다. 비오틴 보충제는 일부 PTH 측정법에서 거짓 저하를 일으킬 수 있으므로 PTH 측정 최소 48시간 전 중단이 제안되었다.',
+'FHH 감별에는 소변 칼슘/크레아티닌 청소율 비가 도움이 될 수 있다. &lt;0.01이면 FHH를 시사한다(FHH의 70–80%). 그러나 PHPT 환자의 최대 20%도 &lt;0.01일 수 있고, FHH의 최대 10%는 PHPT에서 더 흔한 &gt;0.02일 수 있으며, 두 질환 모두 약 40%가 0.01–0.02 사이이다. Lithium이나 thiazide 복용 중에는 소변 칼슘 측정이 정확하지 않을 수 있고, 비타민 D 결핍이나 만성콩팥병도 소변 칼슘 배설을 줄일 수 있다. 평생 고칼슘혈증, 30세 미만, 고칼슘혈증 가족력이 있으면 FHH를 중요하게 고려하며, 이 경우 유전검사가 적응된다.',
+'Lithium이나 thiazide는 고칼슘혈증과 PTH 상승을 동반할 수 있으나, 대개는 이 병력이 PHPT 진단으로 이어진다. 약물을 중단하고 수개월 후 재검해도 고칼슘혈증이 지속될 가능성이 높다. Lithium 관련 PHPT는 갑상선 기능장애와 신기능 저하를 동반할 수 있다.',
+'정상칼슘 PHPT를 진단하려면 CKD 3–5기, 비타민 D 결핍, 칼슘 흡수장애, bisphosphonate나 denosumab 사용 등 이차성 부갑상선기능항진증 상태를 배제해야 한다. 혈청 칼슘이 낮으면 정상칼슘 PHPT는 배제된다. 3차 부갑상선기능항진증은 장기간의 이차성 부갑상선기능항진증(활동성 셀리악병, 광범위 장절제, 위우회술 등 흡수장애, 조절되지 않는 신부전)이 고칼슘혈증 상태로 진행한 것으로, 임상 맥락으로 쉽게 구별된다.',
+'골용해성 전이 또는 PTHrP나 1,25(OH)<sub>2</sub>D를 과다 생성하는 종양에 의한 악성종양 고칼슘혈증, 1,25(OH)<sub>2</sub>D를 생성하는 사르코이드증·결핵 같은 육아종 질환은 모두 PTH가 억제되어 있다. 따라서 고칼슘혈증의 감별진단은 PTH 측정에 크게 좌우되며, PTH가 억제된 경우에만 이러한 원인을 찾는다.']},
+ph:{t:'역학·병태생리·임상 양상', ids:['2.1','2.2','2.3'], p:[
+'#역학',
+'혈청 칼슘을 일상적으로 측정하는 자동화 화학검사의 도입과 함께 미국과 유럽에서 PHPT의 발생률과 유병률이 증가했다. 미국의 연령 보정 유병률은 여성 10만 명당 233명, 남성 85명이다. 이렇게 선행 임상 양상 없이 생화학 선별로 발견된 환자가 무증상 PHPT이다. 골다공증 환자에서 PTH 측정이 일상화되면서 정상칼슘 변이형이 인식되었다. 선별이 일상적이지 않은 국가에서는 덜 흔하고 더 증상성으로 나타난다. 중증 고전적 PHPT는 사망률 증가와 관련되며, 생명을 위협하는 고칼슘혈증을 보이는 급성 PHPT의 사망률은 1970년 이전 약 60%에서 이후 약 6%로 낮아졌다. 무증상 PHPT가 생존에 미치는 영향은 불확실하다.',
+'#병태생리',
+'부갑상선 조직의 클론성 과다증식과 과도한 PTH 분비, 세포 표면 칼슘감지수용체(CaSR) 발현 감소가 주요 병태생리이다. 칼슘에 의한 PTH 분비 억제의 설정점이 높아지고, 골흡수가 가속되며, 신세관 칼슘 재흡수가 촉진되고, 장 칼슘 흡수가 증가한다. 신장의 인 재흡수 감소는 저인산혈증을 일으킬 수 있다. 산발성 PHPT는 대부분 단일 양성 선종(85%), 다선 침범(과형성, 동시성·이시성 선종, 15%), 매우 드물게 부갑상선암(&lt;1%)에 의한다. 다선 질환은 유전성이거나 lithium 관련일 가능성이 더 높다.',
+'#임상 양상',
+'증상성 PHPT: 1970년대 표준 혈액화학검사 이전에는 섬유낭성골염에 의한 골통과 골절, 신석회증에 의한 만성콩팥병, 신석증에 의한 신산통 등 골격·신장 합병증으로 발견되었다. 근위부 근병증도 흔했고, 췌장염, 부갑상선 중독 위기, 드물게 선종 파열에 의한 자발적 경부 혈종이 있다. 이 고전적 형태는 선진국에서는 드물지만 칼슘을 일상 측정하지 않는 지역에서는 여전히 비교적 흔하다.',
+'무증상 고칼슘혈증 PHPT: 다른 문제 평가나 일상 검사에서 우연히 고칼슘혈증이 발견된다. DXA에서 저골밀도나 초음파에서 신장결석이 발견되어도 증상성으로 재정의하지 않고 ‘표적장기 침범이 있는’ 무증상 PHPT로 표현한다. 이는 실제 증상이 있는 환자에게만 증상성이라는 용어를 쓰기 위함이다.',
+'정상칼슘 PHPT: 3–6개월에 걸쳐 연속 2회 이상 알부민 보정 총칼슘과 이온화 칼슘이 지속적으로 정상이면서 PTH가 상승한 경우이다. 골밀도 측정 의뢰 환자에서 유병률은 약 0.18%로 추정되나 선택 편향이 있을 수 있다. 24시간 소변 칼슘은 정상이다. 골다공증이나 신석증 같은 골격·신장 침범이 있을 수 있다. 진단 기준이 일관되지 않아 자연경과가 불분명하며, 일부 연구에서는 일부가 고칼슘혈증으로 진행했다.']},
+ev:{t:'고전적 양상의 평가와 유전 평가', ids:['3.1','3.2','3.3','3.5'], p:[
+'#생화학',
+'25OHD는 낮은 25OHD로 PTH 분비가 추가 자극되어 이차성 부갑상선기능항진증이 겹치는 환자를 찾기 위해 측정한다. eGFR 또는 크레아티닌 청소율과 24시간 소변 칼슘은 표준 평가의 일부여야 한다. 공복 소변으로 추정할 수 있으나 일중 변동 때문에 전문가는 24시간 소변을 수집한다. 고염식은 소변 칼슘을 증가시킨다. 혈청 인을 모든 환자에서 측정할 필요는 없으나 도움이 될 수 있다. 골형성·골흡수 표지자는 질환의 골격 활성이나 수술 후 골밀도 변화 예측에서 가치가 불확실하여 표준 평가에 권고하지 않는다.',
+'#골격',
+'PHPT에서 척추·비척추 골절 위험이 증가한다. 골절 병력이 없어도 X선이나 VFA로 무증상 골절을 발견할 수 있다. PTH 작용에 맞게 피질골 비율이 높은 원위 1/3 요골에서 저골밀도가 흔하고 해면골 위주인 요추는 비교적 보존되며 대퇴경부는 중간이다. 그러나 일부 폐경 후 여성에서는 요추가 우선 감소하는 반대 양상도 보이며, 때로 1/3 요골에서만 T-score ≤−2.5이다. 10년 넘게 관찰하면 고관절과 요골 골밀도가 감소할 수 있다. FRAX의 질환 특이 자료는 아직 없다. HRpQCT는 해면골과 피질골의 미세구조 이상을 보여 DXA보다 골절 위험 증가를 더 잘 설명하나 널리 이용할 수 없어 표준 평가로 권고하지 않는다. TBS는 척추골절과 연관된다는 연구와 그렇지 않은 연구가 있어 가치가 불확실하지만, 방사선 노출을 늘리지 않으므로 보조 검사로 도움이 될 수 있다.',
+'#신기능',
+'PHPT가 신기능에 해로운 영향을 미치는 크레아티닌 청소율 기준값은 불명확하다. 널리 쓰이는 60 mL/min은 주로 수술 후 관찰에서 비롯되었다: &lt;60 mL/min 환자는 성공적 수술 후 신기능이 안정되었으나 수술하지 않은 환자는 계속 감소했다. eGFR 감소는 특히 피질골의 더 큰 골밀도 감소와도 관련된다. eGFR 공식은 선별 목적으로만 유용하며 실제 크레아티닌 청소율 측정이 더 정확하다. KDIGO 지침은 1–2년간 반복 측정에서 연 3 mL/min 감소를 유의하다고 본다.',
+'#신장결석',
+'고칼슘뇨는 결석 위험인자이나 모든 위험을 설명하지 못하며, 고요산뇨, 저마그네슘뇨, 고옥살산뇨, 저구연산뇨, 시스틴뇨도 역할을 할 수 있다. 결석이 있는 PHPT 환자의 약 1/3에서 현저한 고칼슘뇨가 있다. 4차 워크숍의 &gt;400 mg/일 기준 대신, 여성 &gt;250 mg/일, 남성 &gt;300 mg/일이 합리적이다. 고칼슘뇨 환자와 결석 환자(고칼슘뇨 유무와 관계없이)에서는 결석 위험 프로파일이 권고된다. 무증상 PHPT의 최대 22%에서 무증상 신장결석이 보고되어 신장 영상(나선 CT, 초음파, 복부 X선)을 권고한다.',
+'#유전',
+'PHPT 환자의 10% 넘게 10개 관련 유전자 중 하나에 변이가 있다. 진단에 유전검사가 필요하지는 않지만 다음에 도움이 된다: (1) 부갑상선기능항진증-턱종양(HPT-JT) 증후군이면 부갑상선암 위험 때문에 조기 양측 경부 탐색, (2) MEN1·MEN2이면 다선 질환이므로 양측 경부 탐색이 필요하고 선택적 절제는 금기, (3) FHH이면 대부분 수술 금기, (4) 위험 가족 구성원 확인. 따라서 30세 미만, 다선 질환, 고칼슘혈증 가족력 또는 MEN1, MEN2A, MEN4, HPT-JT 같은 증후군, 비정형 선종과 부갑상선암 환자에서 유전상담과 평가를 고려한다. CaSR 일배체형(AGQ는 결석 위험 증가, SRQ는 감소) 평가는 시기상조이다.']},
+nc:{t:'비고전적 양상', ids:['3.4','NC1','NC2','NC3','CV1','CV2','CV3','GI1','GI2'], p:[
+'#신경인지와 삶의 질',
+'고칼슘혈증이 심한 증상성 PHPT는 의식 변화를 동반할 수 있으나, 칼슘이 현저히 높지 않을 때의 미묘한 신경인지 이상이 PHPT와 특이적으로 관련되는지는 불확실하다. 정신의학·외과 문헌은 무증상 PHPT와 우울, 삶의 질 저하의 연관을 강조하며, 미국 내분비외과학회는 신경정신 증상을 모든 환자에서 평가하고 수술의 상대적 적응으로 고려할 것을 권고했다. 그러나 최근 10년간의 전향적 무작위 대조시험에서 신경인지 기능과 PHPT의 연관이 입증되지 않았고, 수술 후 일관된 가역성도 보이지 않았다.',
+'#심혈관·대사',
+'소규모 연구들이 고혈압, 좌심실 비대, 동맥경직도, 이완기 충만 장애를 보고했으나 명확한 병태생리적 근거가 없고 성공적 수술 후 명확히 변하지 않았다. HOMA-IR 같은 대사 지표도 일관되게 관련되거나 수술 후 개선되지 않았다.',
+'#위장관',
+'증상성 PHPT의 고전적 위장관 양상은 복통, 변비, 오심, 구토, 소화성 궤양, 담석, 췌장염이다. 더 흔한 무증상 PHPT와 정상칼슘 PHPT에서는 위장관 양상이 관련된다는 근거가 없다. 예외는 위장관 증상이 흔하고 병태생리적으로 연관된 MEN1과 졸링거-엘리슨 증후군 환자이다.']},
+sg:{t:'수술적 관리', ids:['4','S1','5.1','5.2','5.3'], p:[
+'#체계적 문헌고찰(GRADE)',
+'무증상 PHPT 환자를 수술(± 약물치료)과 비수술 관리(± 약물치료)에 무작위 배정한 시험들을 포함했다. 부갑상선절제술은 97.8%에서 생화학적 완치를 달성했다(완치율에 대한 높은 질의 근거). 수술 후 골밀도는 명확히 증가했으나, 폐경 후 골다공증에서 골밀도 변화와 골절 위험의 관계가 PHPT에도 똑같이 적용되는지 불확실하여 간접성으로 근거 확실성을 두 단계 낮추었다. 따라서 수술이 골절을 얼마나 줄이는지는 매우 불확실하다. 삶의 질, 신장결석 발생, 신기능 개선에 대해서는 결론을 내리지 않았다(Table 1).',
+'#서술적 문헌고찰',
+'부갑상선절제술은 숙련된 외과의(대부분의 내분비외과의는 연 50건 이상을 숙련 기준으로 봄)에게서 안전하고 잘 견디며 성공적인 수술이다. 단일 선종은 해당 선 절제로 완치되며, 이중 선종과 4선 과형성 같은 다선 질환은 다른 접근이 필요하다. 양측 경부 탐색의 성공률은 약 95%이며, 선택적 절제는 95–97%이다. 대부분 당일 퇴원하며 마약성 진통제는 거의 필요 없다. 합병증은 매우 드물어 영구 반회후두신경 손상 1%, 지속·재발 질환 2–5%, 경부 혈종 0.5%이며, 다선 절제 환자의 수술 후 부갑상선기능저하증은 10% 훨씬 미만이다. 고령이나 노쇠 환자에서도 안전하다.',
+'수술 후 골밀도는 증가하며, 중증 질환, 젊은 나이, 양호한 신기능이 유의한 증가와 관련된다. 정상칼슘 PHPT에서도 대부분의 연구에서 골밀도 증가가 관찰되었다. 관찰 자료상 신장결석은 수술 후 감소하여 10년 후 대조군 수준이 되며, 수술은 예상되는 신기능 감소를 완화하는 것으로 보인다.',
+'어느 부위든 T-score가 골다공증 범위인 것은 PHPT 이전의 저골밀도나 에스트로겐 결핍 같은 다른 요인 때문일 수 있다. 그럼에도 PHPT는 골밀도를 감소시키며 확실히 관리할 수 있는 요인이고, 다른 요인이 있어도 성공적 수술 후 골밀도가 개선되므로 골밀도를 수술 기준으로 쓰는 근거는 설득력이 있다. 50세 미만은 보존적 추적 시 부정적 결과를 겪을 가능성이 더 높다고 본다. 기준을 충족하지 않아도 의학적 금기가 없으면 환자와 의사의 동의하에 수술을 고려할 수 있다.',
+'이전 지침과 비슷하지만 신장 기준이 바뀌었고 더 강한 자료에 근거한다(Table 2). 정상칼슘 PHPT의 수술에 대해서는 자료가 제한적이어서 결론을 내리지 못했으나, 많은 임상의가 고칼슘혈증형의 수술 기준을 도움이 되는 지침으로 여길 수 있음을 인정한다.']},
+im:{t:'수술 전 영상과 수술 접근', ids:['6.1','6.2','6.3','6.4','6.5'], p:[
+'고해상도 경부 초음파, technetium-99m-sestamibi 감영 신티그래피, 조영증강 4D CT 같은 영상의 발전이 수술 접근을 용이하게 했다. 일부 연구에서는 정상칼슘 질환에서 수술 전 위치 확인의 가치가 고칼슘혈증 질환만큼 명확하지 않았는데, 다선 질환이 더 흔하고 선종이 더 작기 때문일 수 있다. 모든 형태의 PHPT에서 수술 전 영상은 수술을 결정한 환자에게만 사용하며 진단 목적으로 사용하지 않는다.',
+'구조화된 프로토콜에 따른 수술 중 PTH 모니터링(IOPTH) 병용 여부와 관계없이 선택적 절제는 95–97%의 성공률을 달성한다. 잠재적 이점은 수술 시간 단축, 조직 반흔 감소, 주변 구조 손상 위험 감소, 입원비 절감이다. 양측과 선택적 접근 모두 절개가 작고 전신 또는 국소 마취로 시행할 수 있다.']},
+md:{t:'비수술 약물 관리', ids:['7','7.1','7.2','7.3','7.4','7.5','7.6','M1a','M1b','M2','11.1','11.2','11.3','11.4','11.5'], p:[
+'#체계적 문헌고찰(GRADE)',
+'11편, 423명. 비수술 관리에서 약물치료와 무치료를 비교한 무작위 시험이며 alendronate(3), denosumab(1), cinacalcet(2), 비타민 D(2), 에스트로겐 또는 유사체(3)를 포함했다. PHPT에서 골밀도와 골절의 관계가 폐경 후 골다공증과 같은지 확신할 수 없다는 전제하에 골밀도 증가를 골절 감소의 대리지표로 보았다: alendronate, denosumab, 비타민 D, 에스트로겐은 골밀도를 높이고, cinacalcet은 혈청 칼슘과 PTH를 낮춘다(Table 3).',
+'#칼슘',
+'칼슘 보충을 중단하고 식이 칼슘을 제한하라는 조언이 많으나, 칼슘 제한 시 혈청 칼슘은 측정 가능하게 변하지 않으면서 PTH가 더 올라갈 수 있어 권장하지 않는다. 일반 인구에 대한 IOM 지침이 PHPT에도 적절하며, 성인은 모든 공급원을 합쳐 약 1000–1200 mg이다.',
+'#비타민 D',
+'PHPT 환자 340명을 포함한 10개 연구의 메타분석에서 800 IU/일부터 50,000 IU 주 2회까지 비타민 D는 고칼슘혈증 악화와 관련되지 않았고, PTH는 평균 33% 감소했다. 다른 메타분석에서도 혈청 칼슘과 소변 칼슘 배설은 안정적이었다. 최적치는 논란이 있으나 25OHD &gt;30 ng/mL를 권고하는 것이 신중해 보인다.',
+'#Bisphosphonate',
+'주로 alendronate가 골밀도를 개선하고 골교체를 줄였으나 혈청 칼슘의 일관된 감소는 없었다. 남성과 고령에서도 결과가 비슷했고, 정상칼슘 PHPT에서도 골밀도를 개선하는 것으로 보인다. PHPT에서 골밀도–골절 관계가 명확하지 않아 골절 위험이 폐경 후 골다공증만큼 줄어든다고 확신할 수는 없다.',
+'#에스트로겐과 SERM',
+'위약 대비 요추 골밀도가 7.3% 증가했다. 결합 에스트로겐의 혈청 칼슘 감소 효과는 일관되지 않다. 매우 단기간의 raloxifene 보고에서 혈청 칼슘이 13% 감소했다.',
+'#Denosumab',
+'1–2년 후향 연구에서 골밀도가 개선되었다. 골밀도 변화는 수술이 우월했으나 TBS 개선은 denosumab이 우월했다. 혈청 칼슘은 변하지 않았고 PTH는 28% 증가했으나, RANKL을 억제하므로 PTH 증가가 골격에 해로울 것으로 예상되지 않는다. 고령 여성 50명 연구에서 PHPT가 없는 골다공증 환자보다 2년간 골밀도가 더 증가했다.',
+'#Cinacalcet',
+'칼슘 유사체로 1–5년간 대부분의 환자에서 혈청 칼슘을 유의하게 낮추었다. PTH도 감소하지만 칼슘만큼은 아니며 골밀도에는 영향이 없다. 정상칼슘 PHPT에서 PTH를 낮출 만한 용량으로 신장결석의 수와 직경이 감소했다.',
+'#병용',
+'50주 무작위 위약대조 시험에서 denosumab과 cinacalcet 병용으로 64%에서 혈청 칼슘이 정상화되었고 요추와 대퇴경부 골밀도가 증가했다. 약물적 접근은 수술이 선택지가 아니지만 고칼슘혈증, 저골밀도 또는 둘 다를 관리할 필요가 있는 환자에 한정해야 한다.']},
+np:{t:'정상칼슘 PHPT의 관리', ids:['8.1'], p:['현재의 제한된 자료로는 정상칼슘 PHPT의 수술에 대해 결론을 내릴 수 없다. 많은 임상의가 고칼슘혈증형의 수술 기준을 도움이 되는 지침으로 여길 수 있음을 인정한다. 정상칼슘 PHPT 환자에서 수술 후 골밀도 증가는 대부분의 연구에서 관찰되었다.']},
+mo:{t:'추적과 수술 전환', ids:['9.1','9.2','9.3','10.1','10.2','10.3','10.4','10.5'], p:[
+'수술 기준을 충족하지 않아 수술하지 않는 환자에서는 칼슘과 25OHD를 매년, 신기능(크레아티닌 청소율 또는 eGFR)을 매년 측정한다. 임상적으로 필요하면 PTH도 측정할 수 있다. 3부위 DXA는 임상적으로 필요한 대로 1–2년마다 시행하며, 정상이면 간격을 늘릴 수 있다.',
+'국제임상골밀도학회(ISCD) 권고대로 변화를 확신하려면 같은 기관의 DXA를 사용해야 하며, 유의한 감소는 측정의 최소 유의변화(LSC)를 넘는 변화이다. 예컨대 요추 측정의 정밀도가 1%이면 95% 확신을 위해 2.77%를 넘는 변화가 필요하다. 유의한 변화로 T-score ≤−2.5에 이르면 수술을 권고한다. 이러한 추적으로 시간이 지나며 혈청 칼슘, 골격 또는 신장 침범에 관한 수술 기준을 충족하게 될 수 있다.']},
+pg:{t:'임신 중 PHPT', ids:['12.1','12.2','12.3','12.4','12.5','12.6','12.7'], p:[
+'임신 중 PHPT는 드물지만 실제 발생률은 알려지지 않았다. 피로, 변비, 오심 같은 비특이 증상이 임신 증상과 겹치기 때문이다. 대개 경증으로 알부민 보정 칼슘이 정상 상한 1 mg/dL 이내이다. 이스라엘 대규모 연구에서는 불량한 산과 결과와 관련되지 않았으나, 미국 연구에서는 태아 소실이 3.5배 증가했으며, 이 차이는 선별 방법과 혈청 칼슘 수준과 관련될 수 있다. 임신오조, 전자간증은 신석증 같은 PHPT의 고전적 양상과 공존할 수 있다.',
+'정상 임신에서는 세포외액 증가와 알부민 감소로 보정하지 않은 총칼슘이 감소하지만 이온화 칼슘은 변하지 않는다. PTH는 1삼분기에 정상 하한으로 감소했다가 만삭까지 정상 중간으로 꾸준히 상승한다.',
+'경증은 대개 수술이나 약물 없이 관리한다. Calcitonin, bisphosphonate, denosumab, cinacalcet은 경험이 제한적이고 임신 주의 표시가 있다. 수술 적응은 다른 환자와 비슷하며, 전신마취하 수술의 적절한 시기는 2삼분기 전반부이다. 다른 영상은 방사선이나 태반을 통과하는 조영제 때문에 위험하므로 수술 전 영상은 초음파로 한정한다. 수술하지 않으면 환자 교육과 수분 공급이 중요하며, 대부분의 전문가는 분만 후 수술을 권고하고 다음 임신을 원하면 그 전에 수술하는 것이 더욱 강하게 권고된다. 태아 부갑상선이 자궁 내에서 억제되어 분만 후 신생아 저칼슘혈증이 생길 수 있으므로 분만 시와 이후 정기적으로 신생아 칼슘을 측정해야 한다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+dx:{tab:'진단·감별', fig:'요약 1', aria:'PHPT 진단과 감별진단 순서도', w:760, h:560,
+ nodes:[
+  {id:'d_start',x:200,y:10, w:360,h:44, label:'알부민 보정 혈청 칼슘 + intact PTH', cls:'test'},
+  {id:'d_hyper',x:20, y:90, w:340,h:50, label:'고칼슘혈증', cls:'mal'},
+  {id:'d_normo',x:520,y:90, w:220,h:50, label:'정상 칼슘 + PTH 상승'},
+  {id:'d_pthsup',x:10,y:180,w:150,h:56, label:'PTH 억제'},
+  {id:'d_nonpth',x:10,y:270,w:150,h:110,label:'PTH 비의존성 원인<small>악성종양(PTHrP·골용해 전이·1,25(OH)₂D) · 육아종 질환</small>', cls:'mal fac'},
+  {id:'d_pthhi',x:175,y:180,w:180,h:56, label:'PTH 상승 또는 부적절하게 정상', cls:'test'},
+  {id:'d_ddx',  x:175,y:270,w:180,h:130,label:'감별<small>FHH · thiazide·lithium · 이소성 PTH(매우 드묾) · 3차 부갑상선기능항진증 · 비오틴 간섭</small>', cls:'test fac'},
+  {id:'d_hpth', x:175,y:430,w:180,h:60, label:'고칼슘혈증 PHPT<small>≥2주 간격 2회 확인</small>', cls:'ben fac'},
+  {id:'d_ion',  x:520,y:180,w:220,h:50, label:'이온화 칼슘도 정상', cls:'test'},
+  {id:'d_sec',  x:520,y:260,w:220,h:100,label:'이차성 원인 배제<small>CKD 3–5기 · 비타민 D 결핍 · 칼슘 흡수장애 · bisphosphonate·denosumab · thiazide·lithium</small>', cls:'test fac'},
+  {id:'d_nphpt',x:520,y:390,w:220,h:60, label:'정상칼슘 PHPT<small>3–6개월간 ≥2회 PTH 상승</small>', cls:'ben fac'},
+  {id:'d_eval', x:390,y:500,w:200,h:44, label:'평가로 →', cls:'test'}
+ ],
+ edges:[
+  [A(380,54,380,72),0],['M190 72 H630',0],[A(190,72,190,90),1],[A(630,72,630,90),1],
+  [A(85,140,85,180),1],['M240 140 V160 H265 V180',1],
+  [A(85,236,85,270),1],[A(265,236,265,270),1],[A(265,400,265,430),1],
+  [A(630,140,630,180),1],[A(630,230,630,260),1],[A(630,360,630,390),1],
+  ['M265 490 V522 H390',1],['M630 450 V522 H590',1]
+ ], labels:[]},
+ev:{tab:'평가·수술 결정', fig:'요약 2–5·8', aria:'PHPT 평가와 수술 결정 순서도', w:760, h:600,
+ nodes:[
+  {id:'e_dx',  x:260,y:10, w:240,h:44, label:'PHPT 확진'},
+  {id:'e_eval',x:110,y:80, w:540,h:100,label:'표준 평가<small>생화학: 보정 Ca(필요 시 이온화)·P·intact PTH·25OHD·Cr · 골격: 3부위 DXA, VFA/척추 X선, TBS(가능 시) · 신장: eGFR(가급적 CrCl), 24시간 소변 Ca, 신장 영상 · 유전: 해당 시</small>', cls:'test fac'},
+  {id:'e_sym', x:10, y:215,w:170,h:56, label:'증상성 PHPT', cls:'mal'},
+  {id:'e_asx', x:200,y:215,w:360,h:56, label:'무증상 PHPT<small>표적장기 침범 유무로 구분</small>', cls:'fac'},
+  {id:'e_nph', x:580,y:215,w:170,h:56, label:'정상칼슘 PHPT'},
+  {id:'e_crit',x:200,y:305,w:360,h:150,label:'수술 기준 (하나 이상)<small>Ca &gt; ULN + 1 mg/dL · VFA/X선 척추골절 · T-score ≤−2.5 · eGFR/CrCl &lt;60 · 신석증/신석회증 · 고칼슘뇨(여 &gt;250, 남 &gt;300 mg/일) · 50세 미만</small>', cls:'test fac'},
+  {id:'e_nphm',x:580,y:305,w:170,h:90, label:'수술 기준 권고 불가<small>자료 제한적</small>', cls:'fac'},
+  {id:'e_surg',x:10, y:495,w:250,h:70, label:'부갑상선절제술<small>숙련된 외과의 · 술전 위치 영상</small>', cls:'tx fac'},
+  {id:'e_opt', x:300,y:495,w:220,h:90, label:'기준 미충족<small>동의 시 수술 선택 가능 · 수술하지 않으면 추적</small>', cls:'ben fac'},
+  {id:'e_mon', x:560,y:495,w:190,h:56, label:'추적·비수술 관리 →', cls:'test'}
+ ],
+ edges:[
+  [A(380,54,380,80),1],[A(380,180,380,198),0],['M95 198 H665',0],[A(95,198,95,215),1],[A(380,198,380,215),1],[A(665,198,665,215),1],
+  [A(95,271,95,495),1],[A(380,271,380,305),1],[A(665,271,665,305),1],
+  ['M240 455 V475 H180 V495',1],[A(420,455,420,495),1],[A(520,523,560,523),1],[A(665,395,665,495),1]
+ ], labels:[[188,470,'예'],[428,480,'아니오']]},
+mg:{tab:'추적·약물', fig:'요약 7·9–11', aria:'수술하지 않는 PHPT의 추적과 약물 관리 순서도', w:760, h:560,
+ nodes:[
+  {id:'m_start',x:10, y:10, w:250,h:50, label:'수술하지 않는 환자'},
+  {id:'m_not', x:10, y:90, w:250,h:64, label:'수술 기준 미충족<small>약물 개입 없이 추적 가능</small>', cls:'ben fac'},
+  {id:'m_meet',x:420,y:90, w:330,h:64, label:'수술 기준 충족하나 수술 안 함<small>금기 · 숙련된 수술 후 지속 질환 · 환자 선택</small>', cls:'mal fac'},
+  {id:'m_mon', x:10, y:190,w:250,h:170,label:'추적 (공통)<small>Ca·25OHD 매년(PTH는 필요 시) · 3부위 DXA 1–2년마다 · CrCl(또는 eGFR) 매년 · 필요 시 척추 영상·TBS·신장 영상·24시간 소변 Ca</small>', cls:'test fac'},
+  {id:'m_trig',x:10, y:395,w:250,h:150,label:'수술 권고 전환<small>Ca 지속 &gt; ULN+1 · 저외상 골절 · 신장결석 · BMD 유의 감소로 T ≤−2.5 · CrCl 유의 감소로 &lt;60</small>', cls:'mal fac'},
+  {id:'m_ptx', x:285,y:440,w:115,h:60, label:'부갑상선절제술', cls:'tx'},
+  {id:'m_nut', x:420,y:190,w:330,h:70, label:'영양<small>칼슘은 IOM 기준(제한하지 않음) · 25OHD &gt;30 ng/mL, ULN 미만</small>', cls:'fac'},
+  {id:'m_ca',  x:420,y:290,w:160,h:80, label:'칼슘 저하 필요<small>cinacalcet</small>', cls:'tx fac'},
+  {id:'m_bmd', x:590,y:290,w:160,h:80, label:'골밀도 증가 필요<small>alendronate · denosumab</small>', cls:'tx fac'},
+  {id:'m_both',x:420,y:400,w:330,h:60, label:'둘 다 필요<small>골흡수억제제 + cinacalcet 병용 고려</small>', cls:'tx fac'},
+  {id:'m_oth', x:420,y:480,w:330,h:66, label:'기타 약제<small>에스트로겐: BMD 증가, Ca 감소 비일관 · raloxifene: 근거 불충분</small>', cls:'fac'}
+ ],
+ edges:[
+  [A(135,60,135,90),1],['M260 35 H585 V90',1],[A(135,154,135,190),1],['M450 154 V172 H220 V190',1,'dot'],
+  [A(135,360,135,395),1],[A(260,470,285,470),1],
+  [A(585,154,585,190),1],[A(500,260,500,290),1],[A(670,260,670,290),1],[A(500,370,500,400),1],[A(670,370,670,400),1]
+ ], labels:[]},
+pg:{tab:'임신', fig:'요약 12', aria:'임신 중 PHPT 관리 순서도', w:760, h:430,
+ nodes:[
+  {id:'g_p',   x:230,y:10, w:300,h:44, label:'임신 중 PHPT'},
+  {id:'g_mild',x:20, y:100,w:300,h:80, label:'경증<small>수분 공급 유지 + 칼슘 모니터링</small>', cls:'ben fac'},
+  {id:'g_sev', x:440,y:100,w:300,h:80, label:'혈청 칼슘 &gt; ULN + 1 mg/dL<small>(요약 12.4: &gt;11.0 mg/dL)</small>', cls:'mal fac'},
+  {id:'g_drug',x:20, y:225,w:300,h:80, label:'약물<small>bisphosphonate·denosumab 사용 금지 · cinacalcet 자료 매우 제한적</small>', cls:'fac'},
+  {id:'g_surg',x:440,y:225,w:300,h:80, label:'2삼분기 수술 고려<small>금기 없을 때 · 술전 영상은 초음파만</small>', cls:'tx fac'},
+  {id:'g_def', x:20, y:340,w:300,h:80, label:'수술을 연기하면<small>신생아 저칼슘혈증 감시 · 분만 후, 다음 임신 전 부갑상선절제술</small>', cls:'test fac'}
+ ],
+ edges:[
+  ['M330 54 V77 H170 V100',1],['M430 54 V77 H590 V100',1],
+  [A(170,180,170,225),1,'dot'],[A(170,305,170,340),1],
+  [A(590,180,590,225),1],['M440 160 H380 V380 H320',1,'dot']
+ ], labels:[[386,300,'연기 시']]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const key = id.replace(/\./g,'-');
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${key}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${key}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.map(RID).join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paras}<p class="exp-src">Bilezikian JP, et al. J Bone Miner Res 2022;37:2293–2314 본문 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+
+const TAB2 = `<div class="tbl"><table><thead><tr><th>항목</th><th>1990</th><th>2002</th><th>2008</th><th>2013</th><th>2022</th></tr></thead><tbody>
+<tr><td>혈청 칼슘(&gt;ULN)</td><td>1–1.6 mg/dL</td><td>1.0 mg/dL</td><td>1.0 mg/dL</td><td>1.0 mg/dL</td><td>1.0 mg/dL (0.25 mmol/L)</td></tr>
+<tr><td>골격</td><td>Z-score &lt;−2.0 (부위 미지정)</td><td>T-score &lt;−2.5 어느 부위든</td><td>T-score &lt;−2.5 어느 부위든; 이전 취약골절</td><td>T-score &lt;−2.5 (요추·전고관절·대퇴경부·원위 1/3 요골); X선·CT·MRI·VFA 척추골절</td><td>2013과 동일<sup>*</sup></td></tr>
+<tr><td>신장</td><td>eGFR 예상보다 &gt;30% 감소; 24시간 소변 Ca &gt;400 mg/일</td><td>1990과 동일</td><td>eGFR &lt;60; 24시간 소변 Ca 권고 안 함</td><td>eGFR &lt;60; 소변 Ca &gt;400 mg/일 + 결석 위험 분석상 위험 증가; 신석증·신석회증</td><td>eGFR &lt;60<sup>**</sup>; 24시간 소변 Ca 여 &gt;250 (&gt;6.25 mmol), 남 &gt;300 mg/일 (&gt;7.5 mmol); 신석증·신석회증</td></tr>
+<tr><td>연령</td><td>&lt;50세</td><td>&lt;50세</td><td>&lt;50세</td><td>&lt;50세</td><td>&lt;50세</td></tr></tbody></table></div>
+<p class="small" style="color:var(--muted)">Table 2. 증상성 PHPT(현저한 고칼슘혈증, 신장결석, 골절)의 명확한 수술 적응은 포함하지 않았다. 의학적 감시를 원하지 않거나 불가능한 환자, 기준을 충족하지 않아도 수술을 원하는 환자(금기 없을 때)도 수술 적응이 된다. 기준은 하나만 충족하면 된다. * ISCD에 따라 폐경 전 여성과 50세 미만 남성에서는 T-score 대신 Z-score를 권장하나, 이들은 연령으로 이미 기준을 충족한다. ** eGFR &gt;60이라도 신장이 하나뿐이면 특별한 수술 적응으로 고려할 수 있다.</p>`;
+
+const TAB3 = `<div class="tbl"><table><thead><tr><th>약제</th><th>골밀도</th><th>혈청 칼슘</th><th>시험</th></tr></thead><tbody>
+<tr><td>Alendronate</td><td>증가 (아마도, 중등도 근거)</td><td>효과 없음</td><td>Chow, Khan, Rossini</td></tr>
+<tr><td>에스트로겐 (raloxifene 자료 희박)</td><td>증가 (낮은 근거)</td><td>감소 (낮은 근거)</td><td>Grey, Rubin</td></tr>
+<tr><td>Cinacalcet</td><td>효과 없음</td><td>감소 (아마도, 중등도 근거)</td><td>Khan, Peacock</td></tr>
+<tr><td>Denosumab</td><td>증가</td><td>효과 없음</td><td>Leere</td></tr>
+<tr><td>비타민 D</td><td>증가</td><td>효과 없음</td><td>Lind, Rolighed</td></tr></tbody></table></div>
+<p class="small" style="color:var(--muted)">Table 3. 골밀도 증가가 골절 감소로 이어진다는 직접 자료는 없다.</p>`;
+
+const TAB1 = `<div class="tbl"><table><thead><tr><th>대상</th><th>Ca (mg/dL)</th><th>PTH (pg/mL)</th><th>소변 Ca (mg/일)</th></tr></thead><tbody>
+<tr><td>수술 기준 없음</td><td>10.3 ± 0.46</td><td>105 ± 38</td><td>239 ± 104</td></tr>
+<tr><td>수술 기준 유무 무관 무증상</td><td>10.9 ± 0.38</td><td>92 ± 31</td><td>264 ± 121</td></tr></tbody></table></div>
+<p class="small" style="color:var(--muted)">Table 1. 결론: 수술하면 생화학적 완치, 수술하지 않으면 완치되지 않음. 수술은 골밀도를 증가시킨다.</p>`;
+
+const D = {
+d_start:{kind:'출발점', title:'알부민 보정 혈청 칼슘과 intact PTH', next:['d_hyper','d_normo'], body:`<p>알부민이 4 g/dL 미만이면 1 g/dL 감소당 0.8 mg/dL를 더해 보정한다. 정확한 분석기가 있으면 이온화 칼슘이 불확실성을 없앤다. PTH는 2세대 또는 3세대 측정법을 사용하며, 비오틴은 측정 48시간 전 중단을 제안한다.</p>${RR('1.1','1.3')}`},
+d_hyper:{kind:'결과', title:'고칼슘혈증', next:['d_pthsup','d_pthhi'], body:`<p>고칼슘혈증의 감별진단은 PTH 측정에 크게 좌우된다. PTH가 억제된 경우에만 PTH 비의존성 원인을 찾는다.</p>`},
+d_pthsup:{kind:'PTH', title:'PTH 억제', next:['d_nonpth'], body:`<p>PTH 비의존성 고칼슘혈증을 시사한다.</p>`},
+d_nonpth:{kind:'감별', title:'PTH 비의존성 원인', next:[], body:`<ul><li>악성종양: 골용해성 전이, PTHrP 또는 1,25(OH)<sub>2</sub>D 과다 생성 종양</li><li>육아종 질환: 사르코이드증, 결핵(1,25(OH)<sub>2</sub>D 생성)</li></ul><p>PTHrP와 PTH 측정법은 교차반응하지 않는다. 이소성 PTH 분비는 극히 드물다.</p>`},
+d_pthhi:{kind:'PTH', title:'PTH 상승 또는 부적절하게 정상', next:['d_ddx'], body:`${R('1.1')}<p>고칼슘혈증 환자에서 PTH가 기술적으로 정상이어도 PHPT가 진단이다. 말기콩팥병에서는 3차 부갑상선기능항진증을 고려한다.</p>`},
+d_ddx:{kind:'감별', title:'감별진단', next:['d_hpth'], body:`${RR('1.2.1','1.2.2','1.2.3')}
+<div class="tbl"><table><thead><tr><th>Ca/Cr 청소율 비</th><th>해석</th></tr></thead><tbody><tr><td>&lt;0.01</td><td>FHH 시사 (FHH의 70–80%), 단 PHPT의 최대 20%도 해당</td></tr><tr><td>0.01–0.02</td><td>두 질환 모두 약 40%</td></tr><tr><td>&gt;0.02</td><td>PHPT에 더 흔함 (FHH의 최대 10%)</td></tr></tbody></table></div>
+${tip('주의','lithium·thiazide 복용, 비타민 D 결핍, CKD는 소변 칼슘 배설을 낮추어 해석을 어렵게 한다. FHH가 의심되면 유전검사가 적응되며, FHH는 대부분 수술 금기이다.')}`},
+d_hpth:{kind:'진단', title:'고칼슘혈증 PHPT', next:['e_eval'], nextLabel:'평가로', body:`${R('1.1')}<p>산발성 PHPT는 단일 양성 선종 85%, 다선 질환 15%, 부갑상선암 &lt;1%이다.</p>`},
+d_normo:{kind:'결과', title:'정상 칼슘 + PTH 상승', next:['d_ion'], body:`<p>총칼슘이 정상이고 PTH가 상승하면 이온화 칼슘 측정이 특히 중요하다.</p>${R('1.3')}`},
+d_ion:{kind:'확인', title:'이온화 칼슘도 정상', next:['d_sec'], body:`${RR('3.1','1.3')}`},
+d_sec:{kind:'배제', title:'이차성 부갑상선기능항진증 배제', next:['d_nphpt'], body:`${R('1.3')}<p>혈청 칼슘이 낮으면 정상칼슘 PHPT는 배제된다. 24시간 소변 칼슘은 정상이다.</p>`},
+d_nphpt:{kind:'진단', title:'정상칼슘 PHPT', next:['e_nph'], body:`${RR('1.3','2.3','8.1')}`},
+d_eval:{kind:'연결', title:'평가로', next:['e_eval'], body:`<p>평가·수술 결정 순서도로 이동한다.</p>`},
+
+e_dx:{kind:'출발점', title:'PHPT 확진', next:['e_eval'], body:`${R('1.1')}`},
+e_eval:{kind:'평가', title:'표준 평가', next:['e_sym','e_asx','e_nph'], body:`${RR('3.1','3.2','3.3','3.4','3.5')}<p>골표지자는 표준 평가에 권고하지 않는다. 고칼슘뇨 또는 결석이 있으면 결석 위험 프로파일을 권고한다.</p>`},
+e_sym:{kind:'임상형', title:'증상성 PHPT', next:['e_surg'], body:`${R('2.1')}<p>의학적 금기가 없으면 모든 증상성 환자에게 수술을 제시해야 한다.</p>`},
+e_asx:{kind:'임상형', title:'무증상 PHPT', next:['e_crit'], body:`${RR('2.2','4','S1')}<h4>Table 1. 체계적 문헌고찰 포함 시험</h4>${TAB1}`},
+e_nph:{kind:'임상형', title:'정상칼슘 PHPT', next:['e_nphm'], body:`${R('2.3')}`},
+e_nphm:{kind:'결정', title:'정상칼슘 PHPT의 수술', next:['e_mon'], body:`${R('8.1')}`},
+e_crit:{kind:'결정', title:'수술 기준', next:['e_surg','e_opt'], body:`${R('5.1')}<h4>Table 2. 수술 기준의 변천</h4>${TAB2}`},
+e_surg:{kind:'치료', title:'부갑상선절제술', next:[], body:`${RR('5.2','5.3','6.1','6.2','6.3','6.4','6.5')}${tip('수술 성적','생화학적 완치 97.8%(높은 질의 근거). 영구 반회후두신경 손상 1%, 지속·재발 2–5%, 경부 혈종 0.5%. 숙련 기준은 대개 연 50건 이상.')}`},
+e_opt:{kind:'결정', title:'수술 기준 미충족', next:['e_mon'], body:`${R('7')}<p>기준을 충족하지 않아도 의학적 금기가 없으면 환자와 의사의 동의하에 수술을 고려할 수 있다.</p>`},
+e_mon:{kind:'연결', title:'추적·비수술 관리', next:['m_start'], body:`<p>추적·약물 순서도로 이동한다.</p>`},
+
+m_start:{kind:'출발점', title:'수술하지 않는 환자', next:['m_not','m_meet'], body:`${R('7')}`},
+m_not:{kind:'분류', title:'수술 기준 미충족', next:['m_mon'], body:`${R('7')}`},
+m_meet:{kind:'분류', title:'수술 기준 충족하나 수술 안 함', next:['m_nut','m_mon'], body:`<p>의학적 금기, 숙련된 외과의의 수술 실패 후 지속 질환, 또는 환자 선택에 따라 수술하지 않을 수 있다. 약물 치료는 이러한 환자 중 고칼슘혈증 또는 저골밀도를 관리할 필요가 있을 때에 한정한다.</p>${RR('M1a','M1b')}`},
+m_mon:{kind:'추적', title:'추적', next:['m_trig'], body:`${RR('9.1','9.2','9.3')}${tip('골밀도 변화 판정','같은 기관의 DXA를 사용한다. 요추 정밀도 1%이면 95% 확신에 2.77% 초과 변화가 필요하다(최소 유의변화).')}`},
+m_trig:{kind:'전환', title:'수술 권고로 전환', next:['m_ptx'], body:`${RR('10.1','10.2','10.3','10.4','10.5')}`},
+m_ptx:{kind:'치료', title:'부갑상선절제술', next:['e_surg'], body:`${RR('5.2','6.2')}`},
+m_nut:{kind:'영양', title:'칼슘과 비타민 D', next:['m_ca','m_bmd'], body:`${RR('7.2','7.3','11.1','11.2','M2')}`},
+m_ca:{kind:'약물', title:'칼슘 저하: cinacalcet', next:['m_both'], body:`${RR('7.1','11.3','M1b')}`},
+m_bmd:{kind:'약물', title:'골밀도 증가: alendronate·denosumab', next:['m_both'], body:`${RR('7.4','11.4','M1a')}`},
+m_both:{kind:'약물', title:'골흡수억제제와 cinacalcet 병용', next:[], body:`${R('11.5')}<p>DENOCINA 시험(50주)에서 denosumab + cinacalcet 병용 시 64%에서 칼슘 정상화와 요추·대퇴경부 골밀도 증가.</p>`},
+m_oth:{kind:'약물', title:'기타 약제', next:[], body:`${RR('7.5','7.6')}<h4>Table 3. 약물치료 체계적 문헌고찰</h4>${TAB3}`},
+
+g_p:{kind:'출발점', title:'임신 중 PHPT', next:['g_mild','g_sev'], body:`<p>정상 임신에서는 총칼슘이 감소하나 이온화 칼슘은 변하지 않는다. PTH는 1삼분기에 정상 하한으로 감소한 후 만삭까지 정상 중간으로 상승한다.</p>`},
+g_mild:{kind:'관리', title:'경증', next:['g_drug','g_def'], body:`${R('12.1')}`},
+g_sev:{kind:'관리', title:'혈청 칼슘 > ULN + 1 mg/dL', next:['g_surg'], body:`${R('12.4')}${note('표기 차이','요약 권고 12.4는 “&gt;11.0 mg/dL”, 본문 패널 권고 4번은 “정상 상한보다 &gt;1 mg/dL(&gt;0.25 mmol/L)”로 표기되어 있다. 순서도는 본문 표기를 따르고 요약 표기를 병기하였다.')}`},
+g_drug:{kind:'약물', title:'임신 중 약물', next:[], body:`${RR('12.2','12.3')}`},
+g_surg:{kind:'치료', title:'2삼분기 수술', next:[], body:`${RR('12.4','12.5')}<p>전신마취하 수술의 적절한 시기는 2삼분기 전반부이다.</p>`},
+g_def:{kind:'관리', title:'수술을 연기하면', next:[], body:`${RR('12.6','12.7')}`}
+};
+const EXTRA = {
+levels:{kind:'참고', title:'권고 등급과 표시 방식', next:[], body:`
+${['GS','GW','P'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}
+<p>GRADE는 수술적 관리와 비수술 약물 관리에 관한 체계적 문헌고찰에만 적용되었고, 근거에서 권고로 넘어가는 과정에는 적용되지 않았다. 강한 권고는 ‘recommend’, 약한 권고는 ‘suggest’로 표현한다.</p>
+${note('이 도구에 대하여','원문에는 순서도 그림이 없다. 4개의 순서도는 원문의 ‘Summary of Recommendations’와 본문 패널 권고를 바탕으로 본 도구에서 구성한 것이다. 권고 번호는 요약 권고의 번호이며, G-로 시작하는 항목은 본문의 GRADE 권고, 신경·심혈관·위장관 항목은 본문의 비고전적 양상 패널 권고이다.')}
+${note('원문 표기','원문은 T-score를 “≤ 2.5”로 표기했으나(음수 부호 누락), 의미에 따라 “≤−2.5”로 표기하였다. 요약 권고 11.2의 “parental forms”는 문맥상 parent forms(모체형)로 번역하였다. GRADE 권고 1b의 “&gt;11.0 mg/dL (&gt;0.25 mmol/L) above the upper limit of normal”은 원문 그대로 옮겼다.')}`},
+nc:{kind:'비고전적 양상', title:'신경인지·심혈관·위장관', next:[], body:`${RR('3.4','NC1','NC2','NC3','CV1','CV2','CV3','GI1','GI2','5.3')}`},
+gen:{kind:'유전', title:'유전 평가', next:[], body:`${R('3.5')}<ul><li>HPT-JT 증후군: 부갑상선암 위험 때문에 조기 양측 경부 탐색</li><li>MEN1·MEN2: 다선 질환이므로 양측 경부 탐색, 선택적 절제는 금기</li><li>FHH: 대부분 수술 금기</li><li>위험 가족 구성원 확인</li></ul><p>비정형 부갑상선 선종과 부갑상선암 환자에서도 유전상담과 평가를 고려한다.</p>`},
+tables:{kind:'표', title:'Table 1–3', next:[], body:`<h4>Table 1. 수술 체계적 문헌고찰</h4>${TAB1}<h4>Table 2. 수술 기준의 변천</h4>${TAB2}<h4>Table 3. 약물치료 체계적 문헌고찰</h4>${TAB3}`},
+research:{kind:'Table 4', title:'연구 과제', next:[], body:`<ol class="small"><li><b>역학과 임상 양상</b>: 지역별 양상과 차이 요인, 증상성·무증상·정상칼슘형의 발생률과 유병률 차이, 수술 유무에 따른 장기 자연경과, 정상칼슘 PHPT의 정의, 국제 등록체계</li><li><b>병태생리</b>: 고칼슘혈증형과 정상칼슘형의 차이, 단일·다선 질환 양상의 차이, 식이와 미생물총의 역할, CaSR 신호전달</li><li><b>유전</b>: PHPT와 FHH에서 CaSR 변이, GNA11·AP2S1의 역할, 유전검사가 관리 결과를 바꾸는지, 검사 방법의 유용성, 미확인 원인 유전자</li><li><b>혈청 칼슘</b>: 알부민 &gt;4 g/dL일 때 하향 보정 여부, 수술 적응 기준값</li><li><b>비타민 D</b>: PTH 추가 상승을 막는 25OHD 수준, 최적 보충 방법</li><li><b>신장</b>: 소변 분석물로 본 결석 위험인자, 예측 모델, 수술 권고 신기능 기준값, 신기능 악화 요인, CrCl과 PTH·칼슘·인·1,25(OH)₂D의 관계, 치료에 의한 신장 침범의 개선</li><li><b>골격</b>: TBS·HRpQCT 등 골질과 예측 가치, FRAX의 예측 가치, 골밀도 감소·골절 관련 요인, 수술 전후 골절 위험</li><li><b>비고전적 양상</b>: 질환 특이 신경인지 도구, 중추신경계 기능·영상 연구, RCT, 심혈관·대사 양상의 귀속성·결과·예측인자·가역성</li><li><b>수술</b>: 갑상선·부갑상선 동시 수술의 합병증 위험, 부갑상선종증과 국소 재발 위험인자, 수술 후 골다공증 약물 시작 시기, 반회후두신경 손상 등 합병증 재검토, 부갑상선암 접근 개선, 수술 결정에서 유전의 역할</li></ol>`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['1,25(OH)₂D','1,25-dihydroxyvitamin D, 1,25-디하이드록시비타민 D'],['25OHD','25-hydroxyvitamin D, 25-하이드록시비타민 D'],
+ ['4D CT','Four-dimensional computed tomography, 4차원 CT'],['BMD','Bone mineral density, 골밀도'],
+ ['CaSR','Calcium-sensing receptor, 칼슘감지수용체'],['CKD','Chronic kidney disease, 만성콩팥병'],
+ ['CrCl','Creatinine clearance, 크레아티닌 청소율'],['CTX-1','C-terminal telopeptide of type I collagen, 골흡수 표지자'],
+ ['DXA','Dual-energy X-ray absorptiometry, 이중에너지 X선 흡수계측'],['eGFR','Estimated glomerular filtration rate, 추정사구체여과율'],
+ ['FHH','Familial hypocalciuric hypercalcemia, 가족성 저칼슘뇨 고칼슘혈증'],['FRAX','Fracture Risk Assessment Tool, 골절위험평가도구'],
+ ['GRADE','Grading of Recommendations, Assessment, Development, and Evaluations'],['HOMA-IR','Homeostatic Model Assessment–Insulin Resistance'],
+ ['HPT-JT','Hyperparathyroidism–jaw tumor syndrome, 부갑상선기능항진증-턱종양 증후군'],['HRpQCT','High-resolution peripheral quantitative CT, 고해상도 말초 정량 CT'],
+ ['IOM','Institute of Medicine, 미국의학연구소'],['IOPTH','Intraoperative PTH monitoring, 수술 중 PTH 모니터링'],
+ ['ISCD','International Society for Clinical Densitometry, 국제임상골밀도학회'],['KDIGO','Kidney Disease: Improving Global Outcomes'],
+ ['LSC','Least significant change, 최소 유의변화'],['MEN','Multiple endocrine neoplasia, 다발성 내분비샘종양'],
+ ['NPHPT','Normocalcemic PHPT, 정상칼슘 원발성 부갑상선기능항진증'],['NTX','N-terminal telopeptide of type I collagen'],
+ ['P1NP','Procollagen type 1 N-propeptide, 골형성 표지자'],['PHPT','Primary hyperparathyroidism, 원발성 부갑상선기능항진증'],
+ ['PTH','Parathyroid hormone, 부갑상선호르몬'],['PTHrP','PTH-related protein, PTH 관련 단백'],
+ ['PTX','Parathyroidectomy, 부갑상선절제술'],['RANKL','Receptor activator of nuclear factor κB ligand'],
+ ['RCT','Randomized controlled trial, 무작위 대조시험'],['SERM','Selective estrogen receptor modulator, 선택적 에스트로겐수용체 조절제'],
+ ['TBS','Trabecular bone score, 해면골 점수'],['ULN','Upper limit of normal, 정상 상한'],
+ ['VFA','Vertebral fracture assessment, 척추골절평가']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (cm|nmol|pg|mg)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: P, CaSR)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
