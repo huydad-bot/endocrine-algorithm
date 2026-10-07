@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>영국 골다공증 지침 2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>2024 영국 골다공증 예방·치료 진료지침 (NOGG)</h1>
+        <p class="src">Gregson CL, Armstrong DJ, Avgerinou C, et al; National Osteoporosis Guideline Group (NOGG). The 2024 UK clinical guideline for the prevention and treatment of osteoporosis. <a href="https://doi.org/10.1007/s11657-025-01588-3" target="_blank" rel="noopener noreferrer">Arch Osteoporos 2025;20:119</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the National Osteoporosis Guideline Group (NOGG)</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상·주의·중단 박스 강조"><i class="sw mal"></i>이상·주의·중단</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="생활습관·보조·휴약 박스 강조"><i class="sw ben"></i>생활습관·보조·휴약</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고를 누르면 해당 본문 절 요약 번역이 펼쳐짐</li><li>색 박스는 위험 범주(초록 저 · 주황 중간 · 빨강 고 · 진홍 초고)</li><li>탭은 원문 Fig. 1–5와 권고 흐름을 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>등급·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 권고</button>
+      <button type="button" data-id="summ"><span class="bt-ic" aria-hidden="true">＋</span>요약 권고</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 1–7</button>
+      <button type="button" data-id="drug"><span class="bt-ic" aria-hidden="true">＋</span>약제 정보</button>
+      <button type="button" data-id="life"><span class="bt-ic" aria-hidden="true">＋</span>생활습관</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·체계</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ S:'강한 권고(Strong recommendation): 대부분의 사람이 받아야 하는 중재. NICE는 “offer, measure, advise, refer” 등 행동 표현을 쓴다',
+ C:'조건부 권고(Conditional recommendation): 환자의 가치·선호와 함께 장단점을 논의할 중재. NICE는 “consider”를 쓴다',
+ SC:'강한 권고와 조건부 권고가 한 진술에 함께 있음(앞부분 강한 권고, 대안 부분 조건부 권고)',
+ U:'요약 권고(Summary of main recommendations): 본문 권고를 요약한 진술로 원문에 등급이 붙어 있지 않음'
+};
+const LVTXT = {S:'강함', C:'조건부', SC:'강함·조건부', U:'요약'};
+const LVCLS = {S:'l1', C:'l2', SC:'l2', U:'l3'};
+/* [등급, 번역, 본문 절 키] */
+const REC = {
+/* 골절 위험 평가와 환자 발견 */
+'F1':['S','임상적 취약골절 위험인자가 있는 모든 폐경 후 여성과 50세 이상 남성에서 FRAX 평가를 시행하여 BMD 측정 여부를 정하고, 필요하면 적시에 의뢰하거나 약물치료를 시작하게 한다.','frax'],
+'F2':['S','FRAX로 골절 확률을 계산할 때 임상적 위험이 FRAX에 입력할 수 있는 인자를 넘어서면 임상적 판단이 필요하다.','frax'],
+'F3':['C','고용량 글루코코르티코이드 사용, 불일치하게 낮은 요추 BMD, 제2형 당뇨병, 낙상력 같은 추가 임상 위험인자를 반영하기 위해 주요 골다공증 골절(MOF: 임상적 척추·고관절·전완·상완 골절)과 고관절 골절의 FRAX 확률에 산술적 보정(Table 1)을 진료에 쓸 수 있다.','frax'],
+'F4':['S','폐경 후 여성과 50세 이상 남성에서 4 cm 이상의 키 감소, 척추후만, 최근 또는 현재의 장기 경구 글루코코르티코이드 치료, 척추나 고관절 BMD T-점수 ≤ −2.5, 또는 골다공증 위험인자가 있으면서 급성 요통이 생긴 경우 척추골절 평가(VFA)를 시행한다.','inv'],
+'F5':['S','남녀의 대퇴경부 BMD T-점수는 NHANES III의 젊고 건강한 여성에서 얻은 BMD 정상값으로 산출한다.','bmd'],
+'F6':['S','DXA 결과는 DXA 판독 교육을 받은 의료인이 국내외 판독 기준에 따라 검사 후 3주 이내에 보고한다.','bmd'],
+'F7':['S','골다공증이나 취약골절이 있는 환자는 기본 혈액검사의 필요성을 포함하여 기저 원인을 검사한다.','inv'],
+'F8':['S','정량적 초음파, IBEX bone health, 방사선주파수 반향 다중분광법(REMS)은 골다공증 진단에 권고하지 않는다.','bmd'],
+'F9':['C','폐경 후 여성과 50세 이상 남성에서 QCT로 측정한 대퇴경부 면적 BMD는 기회적 골다공증 진단과 FRAX를 이용한 개별 치료 결정에 쓸 수 있다.','bmd'],
+'F10':['C','폐경 후 여성과 50세 이상 남성의 CT 판독을 개선하여 척추골절을 기회적으로 찾기 위해 컴퓨터 보조 진단(CAD)을 고려할 수 있다.','inv'],
+/* 중재 역치와 전략 */
+'I1':['S','초기 FRAX 평가로 얻은 MOF 및/또는 고관절 골절의 10년 확률로 환자를 저위험, 중간위험, 고위험, 초고위험으로 분류할 수 있다.','thr'],
+'I2':['S','특히 노인에서 과거 및/또는 최근 취약골절이 있으면 약물치료를 고려하고, 골절 위험 평가로 약제 선택을 정한다.','thr'],
+'I3':['S','고위험·초고위험(Fig. 1) 남녀는 향후 BMD와 비교할 기준값이 필요하면 DXA를 시행한다.','thr'],
+'I4':['S','중간위험(상위·하위 평가 역치 사이) 남녀는 가능하면 BMD 측정에 의뢰하고, 이후 FRAX로 골절 확률을 재평가한다.','thr'],
+'I5':['S','FRAX에 BMD를 포함하면 환자의 위험(고위험, 초고위험, 저위험)은 MOF와 고관절 골절 두 평가 중 높은 쪽으로 정한다.','thr'],
+'I6':['S','중간위험 남녀에서 BMD 측정을 할 수 없거나 금기이거나 실행이 어려우면(예: 쇠약한 사람), 취약골절 병력이 있거나 골절 위험이 중재 역치를 넘을 때 약물치료를 제공한다.','thr'],
+'I7':['S','과거 취약골절이 없는 저위험 남녀에게는 골절 위험이 낮다고 안심시키고 필요하면 생활습관 조언을 제공한다.','thr'],
+'I8':['C','초고위험 환자는 평가와 비경구 치료 고려를 위해 2차 진료의 골다공증 전문의에게 의뢰하는 것을 고려한다(일부, 특히 다발 척추골절이 있으면 1차 동화제 치료가 필요할 수 있다). 전문의 의뢰를 고려할 초고위험 지표는 다음과 같다. ① 단일하지만 중요한 임상 위험인자: 최근(2년 이내) 척추골절, 시기와 관계없이 2개 이상의 척추골절, BMD T-점수 ≤ −3.5, 고용량 글루코코르티코이드 치료(3개월간 프레드니솔론 ≥7.5 mg/일 또는 동등량; 시작 후 골소실이 빠르므로 긴급 의뢰하고, 지연이 예상되면 그동안 경구 비스포스포네이트를 시작) ② 다수의 임상 위험인자, 특히 최근 취약골절로 재골절의 임박 위험이 높은 경우 ③ FRAX 정의를 포함한 그 밖의 초고위험 지표.','thr'],
+'I9':['S','약제 선택은 골절 위험 수준, 추가 임상 위험인자, 치료의 비용효과성, 환자 선호를 고려해 정한다.','thr'],
+'I10':['S','FRAX와 NOGG 웹사이트 링크를 전자의무기록 시스템에 통합한다.','thr'],
+/* 비약물 관리 */
+'N1':['S','건강하고 영양소가 풍부한 균형 잡힌 식사를 권고한다.','diet'],
+'N2':['S','칼슘을 적절히(하루 최소 700 mg) 섭취하도록 권고하며, 가능하면 식사로, 그렇지 않으면 보충제로 섭취한다.','diet'],
+'N3':['S','비타민 D 부족이 확인되었거나 그 위험인자가 있으면 음식으로 비타민 D를 섭취하거나 하루 800 IU 이상의 비타민 D 보충제를 처방받도록 권고한다. 집 밖 거동이 어렵거나 요양시설에 사는 사람은 권장 섭취량을 채우기 위해 칼슘과 비타민 D 보충이 필요할 가능성이 크다.','diet'],
+'N4':['S','개인의 필요와 능력에 맞춘 규칙적인 체중부하 운동과 근력강화 운동을 함께 하도록 권고한다.','ex'],
+'N5':['S','흡연자에게 금연을 조언한다.','ex'],
+'N6':['S','음주를 하루 2단위 이하로 제한하도록 조언한다.','ex'],
+'N7':['S','골다공증과 취약골절이 있는 모든 환자에서 낙상 평가를 시행하고, 위험이 있으면 균형 개선 및/또는 복합 운동 프로토콜을 포함한 운동 프로그램을 제공한다.','ex'],
+/* 약물치료 */
+'D1':['S','골절 위험 평가, 환자 적합성과 선호로 약제를 선택한다. 취약골절 위험이 있는 대부분의 사람에서 골흡수억제제가 1차 선택이다.','ov'],
+'D2':['S','가장 비용효과적인 중재로 경구 비스포스포네이트(알렌드로네이트 또는 리세드로네이트)나 정맥 졸레드로네이트를 제공한다. 대안으로 데노수맙, 이반드로네이트, 호르몬대체요법(HRT), 랄록시펜, 스트론튬 라넬레이트가 있다.','bp'],
+'D3':['S','고관절 골절 후에는 정맥 졸레드로네이트를 1차 치료로 제공한다.','bp'],
+'D4':['C','골절 위험이 높고 악성·혈전색전 이상반응의 기저 위험이 낮은 젊은 폐경 후 여성(60세 이하)에게 HRT를 1차 치료로 제공하는 것을 고려한다.','hrt'],
+'D5':['C','60세 이후의 HRT 지속은 환자와 상의하여 개인별 위험–이득 분석에 따라 정한다.','hrt'],
+'D6':['C','HRT를 중단하면 골절 위험을 재평가하고 필요하면 다른 치료를 고려한다.','hrt'],
+'D7':['S','데노수맙 시작 전에 장기적인 개인별 골다공증 관리 계획을 세우고, 환자와 1차 진료 의사 모두가 의료인과 상의 없이 데노수맙을 중단하거나 늦춰서는 안 된다는 것을 알게 한다.','dmab'],
+'D8':['S','데노수맙의 계획되지 않은 중단은 척추골절 위험을 높일 수 있으므로 피해야 하며, 대체 치료를 고려하지 않고 중단해서는 안 된다.','dmab'],
+'D9':['SC','데노수맙을 중단하면 마지막 주사 6개월 후 정맥 졸레드로네이트 주입을 권고하고, 이후 혈청 CTX 감시로 추가 치료 시점을 정한다(강한 권고). 혈청 CTX 감시가 불가능하면 첫 졸레드로네이트 6개월 후 추가 주입을 고려한다(조건부 권고).','dmab'],
+'D10':['C','초고위험 폐경 후 여성, 특히 척추골절이 있으면 테리파라타이드, 아발로파라타이드, 로모소주맙을 1차 치료로 고려한다.','ana'],
+'D11':['C','초고위험인 50세 이상 남성, 특히 척추골절이 있으면 테리파라타이드를 1차 치료로 고려한다.','ana'],
+'D12':['C','비스포스포네이트에 불내성인 사람, 특히 척추골절이 있으면 2차 치료로 폐경 후 여성과 50세 이상 남성에서 테리파라타이드를, 폐경 후 여성에서 아발로파라타이드나 로모소주맙을 고려한다.','ana'],
+'D13':['S','테리파라타이드, 아발로파라타이드, 로모소주맙의 승인 치료 기간(각각 24, 18, 12개월)이 끝나면 지체 없이 알렌드로네이트, 졸레드로네이트, 데노수맙을 시작한다.','ana'],
+'D14':['C','여성에서 동화제 이후의 후속 치료로 랄록시펜을 고려한다.','ana'],
+'D15':['S','다른 골흡수억제제와 동화제가 금기이거나 불내성이면, 심혈관·혈전색전 사건에 대한 위험–이득을 고려하여 폐경 후 골다공증과 중증 골다공증 남성에 스트론튬 라넬레이트를 쓸 수 있다. 골다공증 관리 전문가가 시작하는 것이 바람직하다.','hrt'],
+'D16':['S','식이 칼슘이 적거나 비타민 D 부족 위험이 있으면 골다공증 약물치료의 보조로 각각 칼슘 및/또는 비타민 D 보충을 제공한다.','diet'],
+'D17':['S','비경구 골다공증 약물 시작 전에는 비타민 D 결핍과 부족을 치료하고, 경구 약물은 시작과 함께 치료한다.','diet'],
+/* 비스포스포네이트 기간과 감시 */
+'B1':['S','경구 비스포스포네이트(알렌드로네이트, 이반드로네이트, 리세드로네이트)는 최소 5년 처방을 계획하고 이후 골절 위험을 재평가한다. 다음 남녀에서는 최소 10년의 더 긴 치료를 권고한다(Fig. 4): ① 비스포스포네이트 시작 시 70세 이상 ② 고관절 또는 척추골절 병력 ③ 프레드니솔론 ≥7.5 mg/일 또는 동등량의 경구 글루코코르티코이드 치료 ④ 치료 첫 5년 동안 1회 이상 취약골절 발생(치료를 바꾸지 않은 경우).','dur'],
+'B2':['S','연 1회 정맥 비스포스포네이트(졸레드로네이트)는 최소 3년 처방을 계획하고 이후 골절 위험을 재평가한다. 다음 남녀에서는 최소 6년의 더 긴 치료를 권고한다(Fig. 5): ① 시작 시 70세 이상 ② 고관절 또는 척추골절 병력 ③ 프레드니솔론 ≥7.5 mg/일 또는 동등량의 경구 글루코코르티코이드 치료 ④ 치료 첫 3년 동안 1회 이상 취약골절 발생(치료를 바꾸지 않은 경우).','dur'],
+'B3':['S','비스포스포네이트 중단 후 새 골절이 생기면 FRAX로 재평가하고 치료를 다시 시작한다.','dur'],
+'B4':['S','비스포스포네이트를 중단하고 새 골절이 없으면 리세드로네이트와 이반드로네이트는 18개월, 알렌드로네이트는 2년, 졸레드로네이트는 3년 후 FRAX로 재평가하여 재시작 여부를 정한다.','dur'],
+'B5':['S','약물치료 중 취약골절이 생긴 남녀에서는 치료 순응도를 검토하고(올바르게 복용한 비율이 80% 미만이면 불량) 골다공증의 이차 원인을 검사한다.','reas'],
+'B6':['S','약물치료 중인 환자의 골절 위험 평가는 BMD를 포함한 FRAX와 추가 임상 위험인자에 대한 산술 보정으로 한다. FRAX 골절 확률이 중재 역치를 넘으면 약물치료를 지속한다.','reas'],
+'B7':['C','비스포스포네이트 중단 후 골교체 표지자가 억제 상태에서 다시 오르거나 BMD가 감소하면 약물치료 재개를 고려한다.','reas'],
+'B8':['C','비스포스포네이트 10년 치료 후에는 환자 관리를 개별적으로 결정한다.','reas'],
+/* 드문 이상반응 */
+'A9':['S','비스포스포네이트나 데노수맙 치료 중 모든 환자에게 구강 위생 유지, 정기 치과 검진, 그리고 치아 동요·통증·부종 같은 구강 증상의 보고를 권장한다.','onj'],
+'A10':['C','비스포스포네이트나 데노수맙이 필요한 중증 치과 질환자는 약물 투여 전에 경험 있는 치과 의사의 적시 검진과 치료를 받게 하되, 취약골절 후에는 가능한 한 빨리 약물을 시작해야 함을 염두에 둔다. 개인의 요구를 논의하는 다학제(MDT) 접근을 권장한다.','onj'],
+'A11':['C','비스포스포네이트나 데노수맙 치료 중에는 침습적 치과 시술을 가능하면 줄이는 것이 이상적이나, 적응이 되면 대부분의 환자에서 안전하고 성공적으로 시행할 수 있다. 치과 시술 시 치료 중단이 ONJ 위험을 줄이는지 보여주는 자료는 없다. 담당 의사의 임상적 판단으로 개별 이득·위험 평가에 따라 관리 계획을 세우고, 환자가 정기 치과 진료를 계속 받게 한다.','onj'],
+'A12':['S','비스포스포네이트나 데노수맙 치료 중 원인 모를 대퇴부·서혜부·고관절 통증을 보고하도록 안내하고, 증상이 생기면 대퇴골을 영상 검사(대퇴골 전장 X선, 동위원소 스캔, MRI)한다.','onj'],
+'A13':['S','비전형 대퇴골절(AFF)이 확인되면 반대쪽 대퇴골도 영상 검사한다.','onj'],
+'A14':['S','AFF가 생긴 모든 환자는 향후 골 건강 관리를 위해 골다공증 전문의에게 의뢰한다.','onj'],
+'A15':['C','AFF가 생긴 환자는 비스포스포네이트나 데노수맙 치료를 중단한다.','onj'],
+/* 글루코코르티코이드 유발 골다공증 */
+'G15':['S','경구 글루코코르티코이드 시작 후 골소실과 골절 위험 증가가 일찍 나타나므로, 다음 사람에서는 골밀도 평가를 기다리지 않고 글루코코르티코이드와 동시에 골 보호 치료를 시작하며 골밀도 평가는 나중에 한다. a) 과거 취약골절이 있는 모든 사람 b) 70세 이상 여성 c) 고용량 글루코코르티코이드(3개월간 프레드니솔론 ≥7.5 mg/일 또는 동등량; 3개월 중 4주간 프레드니손 ≥30 mg/일에 해당)를 처방받는 폐경 후 여성과 50세 이상 남성 d) MOF 또는 고관절 골절의 FRAX 확률이 중재 역치를 넘는 폐경 후 여성과 50세 이상 남성.','gio'],
+'G16':['S','경구 비스포스포네이트(알렌드로네이트 또는 리세드로네이트)나 정맥 졸레드로네이트가 가장 비용효과적인 1차 골 보호 약제다. 데노수맙은 대안이다. 초고위험에서는 테리파라타이드를 1차 약제로 쓸 수 있다.','gio'],
+'G17':['S','적절한 칼슘 섭취는 가능하면 식사로, 필요하면 보충제로 달성한다. 적절한 비타민 D 상태는 필요하면 보충제로 유지한다.','gio'],
+'G18':['S','글루코코르티코이드를 중단하면, FRAX 재평가에서 MOF와 고관절 골절 확률이 모두 중재 역치 아래일 때 골 보호 치료도 함께 중단하는 것을 고려할 수 있다.','gio'],
+'G19':['S','글루코코르티코이드를 장기간 지속하면 대부분 골 보호 치료를 유지한다.','gio'],
+'G20':['C','중등도 또는 저용량 경구 글루코코르티코이드를 시작하면서 FRAX 확률이 중재 역치에 가깝지만 그 아래인 환자는 시작 12–18개월 후 BMD를 포함한 FRAX로 재평가한다.','gio'],
+'T21':['S','안드로겐 차단 요법(ADT)을 시작하는 모든 남성은 ADT를 골다공증의 이차 원인으로 간주하여 FRAX로 골절 위험을 평가하고, 가능하면 BMD를 측정한다.','adt'],
+'T22':['C','약물치료가 필요한 고위험 남성은 평가와 비스포스포네이트 또는 데노수맙 시작을 위해 2차 진료 의뢰를 고려한다.','adt'],
+'T23':['C','FRAX 확률이 중재 역치에 가깝지만 그 아래인 남성과 추가 전신 치료(특히 글루코코르티코이드가 필요한 경우)를 받게 되는 환자는 ADT 시작 12–18개월 후 BMD를 포함한 FRAX로 재평가한다.','adt'],
+'H24':['S','아로마타제 억제제(AI)를 시작하는 모든 여성은 AI를 골다공증의 이차 원인으로 간주하여 FRAX로 골절 위험을 평가하고, 가능하면 BMD를 측정한다.','ai'],
+'H25':['S','고위험 여성은 골다공증과 골절 예방을 위해 비스포스포네이트나 데노수맙으로 약물치료를 시작한다.','ai'],
+'H26':['C','FRAX 확률이 중재 역치에 가깝지만 그 아래인 여성과 추가 전신 치료(특히 글루코코르티코이드가 필요한 경우)를 받게 되는 환자는 AI 시작 12–24개월 후 BMD를 포함한 FRAX로 재평가한다.','ai'],
+'H27':['C','유방암 치료의 일부로 보조 고용량 비스포스포네이트를 쓰면, 특히 AI를 계속할 경우 그 비스포스포네이트 치료가 끝날 때 골절 위험 평가를 고려한다.','ai'],
+/* 증상성 척추골절 */
+'V1':['S','가능하면 진통제는 비경구보다 경구로 투여한다. 통증을 정기적으로 재평가하여 통증 강도와 부작용에 따라 진통제를 증감하고, 효과가 있는 가장 약한 약제를 가장 짧은 기간 쓴다.','vf'],
+'V2':['S','노인에서는 비스테로이드 소염제(NSAID)를 피하되, 쓴다면 양성자펌프억제제를 함께 처방하고 위장관·신장·심혈관 부작용을 감시한다.','vf'],
+'V3':['S','노인에서 오피오이드를 쓸 때는 항상 대변연화제와 자극성 하제의 병용 같은 적절한 하제를 처방한다.','vf'],
+'V4':['S','척추골절 후 운동 프로그램에는 척추기립근 강화 및/또는 지구력 운동을 포함한 점진적 근력강화 활동을 넣을 것을 권고한다.','vf'],
+'V5':['C','통증이 있으면 처음에는 비부하 자세에서 척추기립근 운동을 하는 것이 바람직할 수 있다.','vf'],
+'V6':['S','통증성 척추골절 환자에게 일상생활 동작을 조정하는 방법과 운동이 자세와 통증에 어떻게 도움이 되는지를 명확하고 신속하게 안내한다.','vf'],
+'V7':['S','골절 후 이차 골절 예방을 신속히 시작하고, 새로 척추골절을 진단받은 모든 폐경 후 여성과 50세 이상 남성을 골절 연계 서비스(FLS)로 추적한다.','vf'],
+/* 진료 모델 */
+'M1':['S','취약골절 남녀를 체계적으로 찾아내기 위해 다학제·코디네이터 기반 FLS를 권고한다. FLS는 골절·낙상 위험의 적시 평가, 필요할 때 골다공증 이차 원인 배제 검사와 BMD 측정을 포함한 영상 검사, 낙상과 골절 위험을 줄이는 약물·비약물 중재의 시작을 돕는다.','fls'],
+'M2':['S','FLS에는 골절 환자 진료를 감시할 수 있도록 임상 골절 데이터베이스(예: 영국왕립내과의사회 FLS-Database)를 기반으로 한 지역 감사 체계를 내장한다.','fls'],
+'M3':['S','FLS는 다양한 환자 발견 전략으로 취약골절 입원·외래 환자를 모두 찾는다.','fls'],
+'M4':['S','영상 진단 부서는 척추가 보이는 폐경 후 여성과 50세 이상 남성의 모든 영상에서 척추를 일상적으로 평가하고, 표준화된 방법으로 척추골절을 보고한다.','fls'],
+'M5':['S','골다공증 약물치료를 권고받은 환자에게 골다공증과 치료에 관한 맞춤 정보를 제공하고, 순응을 지원하며 받아들이기 어려운 이상반응이나 순응 문제가 생기면 대체 치료를 논의하는 추가 약물 검토를 제공한다.','fls'],
+'M6':['S','1차 진료 의사는 골다공증 위험인자가 있는 폐경 후 여성과 50세 이상 남성이 급성 요통, 특히 흉추 통증으로 오면 항상 척추골절 가능성을 염두에 둔다.','fls'],
+/* 교육 */
+'E1':['S','관련 내과·외과 분과의 모든 고급 전문 수련 과정에서 공유 의사결정을 포함한 개인 맞춤 진료 교육을 제공한다.','trn'],
+'E2':['S','골다공증과 대사성 골질환 교육을 관련 왕립 학회가 정한 각 내과·외과 분과 고급 수련 과정의 명확한 구성 요소로 한다.','trn'],
+'E3':['S','1차 진료 의사는 이 분야의 충분한 교육을 받고, 최신 근거 기반 자료와 지침에 효율적으로 접근하며, 지식을 유지·보완할 지속 전문성 개발(CPD) 기회를 갖는다.','trn'],
+'E4':['S','골다공증 관리를 모든 관련 보건 직종 교육의 구성 요소로 한다.','trn'],
+'E5':['S','FLS 인력에게 고품질 DXA 시행과 판독을 위한 교육을 제공한다.','trn'],
+'E6':['S','FLS 및/또는 골다공증 서비스 제공을 맡은 인력에게 질 향상 교육을 제공한다.','trn'],
+/* 서비스 책임자·커미셔너 */
+'C1':['S','골다공증 골절이 보건·사회 돌봄 비용이 큰, 중대하고 증가하는 공중보건 문제임을 인식하고 지역 보건 프로그램에서 취약골절을 명시적으로 다룬다.','com'],
+'C2':['S','지역 보건 프로그램이 낙상과 골 건강 불량에 관련된 골다공증·골절의 피할 수 있는 위험인자 유병률을 줄이는 접근을 다루고, NHS와 다른 기관의 역할을 명시하게 한다.','com'],
+'C3':['S','취약골절 위험이 있는 사람의 발견과 치료를 돕도록 전자의무기록 시스템에 FRAX와 NOGG 웹사이트 링크를 통합하고, FLS와 1차 진료팀 사이에 명확하고 가능하면 자동화된 전자 소통이 가능하게 한다.','com'],
+'C4':['S','골다공증 골절 위험이 있는 사람이 적절한 검사(골절 위험 평가, 낙상 위험 평가, 골밀도 측정), 생활습관 조언(식사, 운동, 흡연), 골 보호 약물치료를 받을 기회를 갖도록 한다(NICE Quality Standard 149, 2017). 여기에는 1차 진료와 지역사회에서 비경구 약물치료를 쓸 수 있게 하는 것이 포함된다.','com'],
+'C5':['S','폐경 후 여성과 50세 이상 남성, 이들의 대변인과 전문 조언자가 치료와 순응에 관해 정보에 근거한 결정을 할 수 있도록 약물 중재에 관한 정확하고 최신의 일관된 정보를 널리 제공한다.','com'],
+'C6':['S','통합 진료 체계(ICS)는 취약골절이 지역 경제에 주는 부담을 구체적으로 다루고, 취약골절을 입은 모든 환자가 FLS를 이용할 수 있게 한다.','com'],
+'C7':['S','ICS는 지역 전문의, 일반의, 환자 대표를 포함한 이해관계자를 모아 골다공증 관리와 취약골절 예방의 지역 치료 관행과 의뢰 경로에 합의한다. 1차·2차 진료에 각각 책임 임상의를 두면 흔히 도움이 된다. 이 그룹의 권고는 지역 자원과 관련 비용효과 자료를 반영하고, 지역 지침은 이 문서의 근거와 일치해야 한다. 합의된 지역 지침은 관련 전문가와 잠재 환자에게 널리 알리고 시행에 필요한 서비스 변화를 만든다. 시행을 감사하여 기준에 미달하면 진료를 바꾸고, 이후 지침 준수를 감시한다.','com'],
+/* 주요 권고 요약 */
+'S1':['U','임상적 취약골절 위험인자가 있는 사람에게 FRAX 평가를 시행한다.','sum'],
+'S2':['U','FRAX 중간위험(주황)이면 10년 위험 추정을 정밀하게 하기 위해 BMD를 측정한다.','sum'],
+'S3':['U','FRAX 고위험·초고위험(빨강)이면 약제 선택을 돕고 BMD 감시의 기준값을 얻기 위해 BMD를 측정한다.','sum'],
+'S4':['U','골다공증 위험인자가 있으면서 급성 요통이 생긴 사람, 및/또는 4 cm 이상 키 감소, 척추후만, 최근 또는 현재의 장기 경구 글루코코르티코이드 치료, BMD T-점수 ≤ −2.5가 있는 사람에서 척추골절을 찾는 영상 검사를 고려한다.','sum'],
+'S5':['U','골다공증 및/또는 취약골절 환자의 낙상 위험을 평가하고, 위험이 있으면 균형과 근력을 개선하는 운동 프로그램을 제공한다.','sum'],
+'S6':['U','골절 고위험·초고위험인 사람에게 약물치료를 제공한다.','sum'],
+'S7':['U','BMD 측정이 실용적이지 않으면(예: 쇠약) FRAX 기반의 온라인 NOGG 중재 역치로 치료를 결정한다.','sum'],
+'S8':['U','특히 노인에서 과거 및/또는 최근 취약골절이 있으면 약물치료를 고려한다.','sum'],
+'S9':['U','특정 약제를 정할 때 골절 위험 수준, 추가 임상 위험인자, 환자의 선택, 치료의 비용효과성을 고려한다.','sum'],
+'S10':['U','재골절 위험은 골절 직후 가장 높고 이후에도 높게 유지되므로 취약골절 후 치료를 신속히 시작한다.','sum'],
+'S11':['U','초고위험 환자는 평가와 비경구 치료 고려를 위해 2차 진료 골다공증 전문의 의뢰를 고려한다(일부, 특히 다발 척추골절이 있으면 1차 동화제 치료가 필요할 수 있다). 초고위험 지표: 최근(2년 이내) 척추골절, 시기와 관계없는 2개 이상 척추골절, BMD T-점수 ≤ −3.5, 고용량 글루코코르티코이드(3개월간 프레드니솔론 ≥7.5 mg/일 또는 동등량); 특히 최근 취약골절과 함께 다수의 임상 위험인자가 있어 재골절 임박 위험이 높은 경우; FRAX 정의를 포함한 그 밖의 초고위험 지표.','sum'],
+'S12':['U','치료가 필요한 그 밖의 환자에게는 경구 비스포스포네이트(알렌드로네이트 또는 리세드로네이트)나 정맥 졸레드로네이트, 또는 60세 이하 폐경 후 여성에서 HRT로 골흡수억제 치료를 제공한다.','sum'],
+'S13':['U','1차 비스포스포네이트가 적합하지 않거나 불내성이면 데노수맙, 이반드로네이트, 랄록시펜, 스트론튬 라넬레이트, 테리파라타이드, 아발로파라타이드, 로모소주맙 등 대체 치료를 고려한다.','sum'],
+'S14':['U','동화제(테리파라타이드, 아발로파라타이드, 로모소주맙) 치료 후 지체 없이 알렌드로네이트, 졸레드로네이트, 데노수맙을 시작한다.','sum'],
+'S15':['U','경구 약물의 내약성과 순응도를 정기적으로 검토한다.','sum'],
+'S16':['U','골다공증은 현재 완치법이 없는 장기 질환이므로 흔히 장기 치료가 필요함을 기억한다.','sum'],
+'S17':['U','경구 비스포스포네이트는 최소 5년, 정맥 비스포스포네이트는 최소 3년 처방을 계획하고 이후 골절 위험을 재평가한다. 고령(70세 이상), 고관절 또는 척추골절, 고용량 경구 글루코코르티코이드(3개월간 프레드니솔론 ≥7.5 mg/일 또는 동등량), 치료 중 추가 취약골절이 있으면 더 긴 치료가 필요하다. 저위험 환자는 경구 5년 또는 정맥 3년 후 18–36개월의 일시 중단을 고려할 수 있다(50쪽과 51쪽의 임상 흐름도 참조).','sum'],
+'S18':['U','데노수맙 시작 전에 장기 치료 계획에 데노수맙 중단 가능성과 그 관리 방법을 반영한다.','sum'],
+'S19':['U','신기능이 허락하는 한, 후속 골흡수억제 치료 계획 없이 데노수맙을 중단하지 않는다.','sum'],
+'S20':['U','새 골절이 생기면 시점과 관계없이 골절 위험을 다시 평가한다.','sum'],
+'S21':['U','약물치료를 일시 중단하면 18개월–3년 후 골절 위험을 재평가한다.','sum'],
+'S22':['U','앞으로 3개월간 프레드니솔론 ≥7.5 mg/일 또는 동등량을 시작하면 골 보호 치료를 동시에 시작한다(DXA를 기다리지 않으며 DXA는 나중에 할 수 있다).','sum'],
+'S23':['U','경구 비스포스포네이트(알렌드로네이트 또는 리세드로네이트)나 정맥 졸레드로네이트로 골흡수억제 치료를 제공하고, 척추골절 초고위험이면 동화제 치료 고려를 위해 의뢰한다.','sum'],
+'S24':['U','데노수맙을 대체 치료로 고려한다.','sum'],
+'S25':['U','건강하고 균형 잡힌 식사, 절주, 금연을 권고한다.','sum'],
+'S26':['U','식이 칼슘과 비타민 D 섭취를 충분히 하고 필요하면 보충한다.','sum'],
+'S27':['U','규칙적인 체중부하 운동과 근력강화 운동을 함께 하도록 권장한다.','sum'],
+'S28':['U','취약골절 환자는 골절·낙상 위험의 적시 평가, 검사, 치료, 감시가 가능한 다학제·코디네이터 기반 FLS를 이용할 수 있어야 한다.','sum'],
+'S29':['U','영상 진단 부서가 척추가 보이는 폐경 후 여성과 50세 이상 남성의 모든 영상에서 척추를 일상적으로 평가하고 표준화된 방법으로 척추골절을 보고하게 한다.','sum'],
+'S30':['U','점진적 근력강화 활동(척추기립근 강화 및/또는 지구력 운동 포함)을 제공하는 운동 프로그램 의뢰를 고려한다.','sum'],
+'S31':['U','취약골절의 기저 원인을 검사한다.','sum'],
+'S32':['U','추가 골절 위험을 줄이기 위해 치료를 신속히 시작한다.','sum']
+};
+
+const EXP = {
+bg:{t:'서론·배경', r:'1–3쪽', p:[
+ '#2024 개정 요약',
+ 'NOGG 지침은 2008년 처음 만들어져 2013, 2017, 2021년에 개정되었고, 이 문서는 2021년 지침의 소폭 개정판이다. 범위는 폐경 후 여성과 50세 이상 남성의 골다공증 평가·관리와 취약골절 예방이다. 폐경 전 여성과 50세 미만 남성의 취약골절은 드물어 이차 원인을 철저히 찾아야 하며 대개 전문의 의뢰가 필요하다. 근거는 2016년 7월–2020년 9월 PubMed의 체계적 문헌고찰과 메타분석을 바탕으로 하며, AMSTAR2로 질을 평가하였다.',
+ '2024년 변경: 정량적 초음파, IBEX bone health, REMS를 진단에 권고하지 않음을 명시; 비백인 민족과 영국 이주자의 FRAX 사용 지침; 파킨슨병의 FRAX 보정; 하지 절단과 성인 학습장애(다운증후군 등)를 위험인자로 추가; 초고위험 정의 명확화; 중재 역치 정의와 NOGG 그래프 개정; 전자담배를 가능한 위험인자로 추가; 60세 이하 젊은 폐경 후 여성에서 골절 위험이 높고 악성·혈전색전 위험이 낮으면 HRT를 1차 치료로 권고; 아발로파라타이드 권고 추가; 동화제 선택 시 고려사항; 교육 자료 추가.',
+ '#배경',
+ 'WHO는 1994년 골다공증을 “낮은 골량과 골조직 미세구조 악화로 골 취약성과 골절 감수성이 증가하는 진행성 전신 골격 질환”으로 정의했고, 실무적으로 BMD T-점수 ≤ −2.5를 썼다. 이제 BMD는 매우 중요하지만 여러 위험인자 중 하나로 보며, 골절 위험 평가가 핵심이다.',
+ '성인 여성의 약 1/2, 남성의 약 1/5이 평생 한 번 이상 취약골절(서 있는 높이 이하에서 넘어져 생긴 저외상 골절)을 겪는다. 영국 50세 이상에서 대퇴경부 T-점수 ≤ −2.5 유병률은 남성 6.8%, 여성 21.8%이나, 취약골절 환자 대부분은 T-점수가 −2.5보다 높다. 낙상 관련 위험인자가 골절 위험을 크게 더하므로 낙상·골절 통합 서비스가 필요하다.',
+ '영국에서는 매년 약 549,000건(고관절 105,000, 척추 86,000, 기타 358,000)의 취약골절이 생기고 33%는 남성이다. 취약골절로 579,722 DALY가 손실되며(50세 이상 1000명당 24, 치매와 비슷), NHS 비용은 연 47억 파운드를 넘고 2019년 직접비용은 54억 파운드(보건 지출의 2.4%)였다. 고관절 골절은 노인의 응급 마취·수술의 가장 흔한 원인이며 평균 재원 20일, 120일 후 자택 생활 52%, 12개월 내 사망 26%다. 현재 진료가 바뀌지 않으면 2030년까지 취약골절이 19.6% 늘 것으로 예측된다.']},
+bmd:{t:'골밀도 측정', r:'3–5쪽', p:[
+ 'BMD가 1 표준편차 감소할 때마다 골절 위험은 약 2배 증가한다(Ia). 위험 경사는 측정 부위·기법, 나이, 골절 종류에 따라 다르다. 고관절 골절에 대한 BMD의 예측력은 뇌졸중에 대한 혈압과 비슷하거나 낫다(IV).',
+ 'WHO와 IOF는 예측력이 높은 대퇴경부 DXA를 기준 기술로 권고하며(Ia) FRAX도 대퇴경부 BMD를 쓴다. 노인에서는 퇴행성 변화가 척추 BMD를 인위적으로 높이므로 척추가 늘 신뢰할 만한 부위는 아니다. 그러나 노인에서 낮은 BMD 결과는 거의 항상 유효하며, 특히 고관절보다 척추가 불균형하게 낮을 때 유용하다. 다만 골연화증도 BMD를 낮출 수 있다.',
+ '같은 대퇴경부 BMD에서 남녀의 골절 위험은 거의 같다(IIa). 따라서 남성, 여성, 트랜스젠더의 대퇴경부·전고관절 T-점수는 NHANES III의 20–29세 백인 여성 기준으로 계산한다. 요추와 원위 전완 T-점수는 대개 장비 제조사 기준을 쓴다.',
+ '골다공증은 전고관절, 대퇴경부, 요추 T-점수로 진단할 수 있으나 여러 부위를 쓴다고 예측력이 나아지지는 않는다(IIa). 고관절 측정이 기술적으로 어렵거나 척추가 선택적으로 침범되면 척추 BMD로 진단할 수 있고, 척추와 고관절 모두 측정·해석이 어렵거나 체중이 DXA 테이블 한계를 넘으면 원위 전완(1/3 요골) T-점수로 진단할 수 있다(IV).',
+ '연속 BMD 측정으로 치료 반응을 감시할 수 있다. 요추가 치료 변화가 가장 커서 선호되나, 퇴행성 변화가 심하면 고관절이 낫다. BMD 측정의 타당성은 정도관리에 달려 있으며 ROS와 ISCD가 DXA 판독 기준을 발표하였다. 50세 미만 남성과 폐경 전 여성에서는 같은 나이·성별·민족과 비교하는 Z-점수를 쓰며, 낮은 Z-점수는 추가 검사(Table 2)의 필요를 시사한다.',
+ 'QCT로 측정한 대퇴경부 면적 BMD는 남녀의 골다공증 골절을 예측하며 DXA 면적 BMD와 동등하다. QCT 2차원 투영 자료로 계산한 대퇴경부·전고관절 T-점수는 DXA T-점수와 같으므로 CTXA 대퇴경부 BMD를 FRAX에 넣을 수 있다(IIa). 정량적 초음파 등 다른 기법은 흡수계측법보다 검증이 덜 되었다.']},
+crf:{t:'임상 위험인자 평가', r:'5–6쪽', p:[
+ '임상 위험인자를 함께 고려하면 BMD 평가의 성능이 좋아진다. 나이는 BMD와 독립적으로 위험에 기여한다(Ia). 나이와 BMD 모두와 독립적인 추가 위험인자는 다음과 같다.',
+ '① 낮은 BMI는 고관절 골절의 의미 있는 위험인자이나 BMD로 보정하면 다른 골절에 대한 예측 가치는 크게 줄어든다(Ia). ② 과거 골절, 특히 저외상과 골다공증 특징 부위의 골절은 중요한 위험인자다. 무증상의 중등도·중증(Grade 2·3) 형태계측 척추골절을 포함해 과거 골절이 있으면 위험이 약 2배가 되고(Ia), 척추골절이 2개 이상이면 더 커진다. 골절 직후 재골절 위험이 가장 높아(임박 위험) 10년간 후속 골절의 1/3 이상이 첫해에 생긴다(Ic). ③ 부모의 고관절 골절력은 BMD와 대체로 독립적이다(Ia). ④ 흡연은 일부 BMD 의존적이다(Ia). ⑤ 경구 글루코코르티코이드는 용량 의존적으로 위험을 높이며 BMD 독립적 위험도 있다(Ia). ⑥ 음주는 하루 평균 2단위 이하에서는 위험 증가가 없고 3단위 이상에서 용량 의존적으로 증가한다(Ia). ⑦ 이차 원인(염증성 장질환, 내분비 질환 등)은 BMD나 글루코코르티코이드와의 관계가 불분명하나, 류마티스 관절염은 BMD와 글루코코르티코이드와 독립적으로 위험을 높인다(Ia). ⑧ 제1형·제2형 당뇨병은 고관절·비척추 골절 위험을 높이며, 제2형에서는 긴 유병 기간과 인슐린 사용이 위험을 더한다(Ia). 일부는 BMD와 독립적이다.',
+ '임상 위험인자만으로 한 예측은 BMD만으로 한 예측과 비슷하다. BMD를 더하는 것이 최적이지만, 저/고위험 경계나 고/초고위험 경계 근처에 있는 사람에게 BMD 측정을 집중할 수 있다. FRAX에 없는 위험인자도 많다. 낙상 경향은 골절 위험이 높으나 골대사 약물만으로 충분히 해결되지 않는 예다.',
+ '글루코코르티코이드 외에 갑상선호르몬 과잉, 유방암의 아로마타제 억제제, 전립선암의 안드로겐 차단은 고관절 골절 위험을 높이고(Ia), 티아졸리딘디온도 골절 위험을 높인다. 항우울제, 항파킨슨제, 항정신병제, 항불안제, 벤조디아제핀, 진정제, H2 차단제, 양성자펌프억제제도 골절 위험 증가와 관련되나 BMD, 낙상, 인과성의 기여가 불분명하여 중단에 관한 권고는 하지 않는다. 트랜스젠더에서 성호르몬의 영향은 불분명하다. 골교체 표지자는 위험 평가보다 치료 감시에 더 직접적인 역할을 한다(Ia).']},
+frax:{t:'골절 위험 평가 도구', r:'6–8쪽', p:[
+ '#FRAX와 QFracture',
+ 'IOF와 WHO는 골절 위험을 10년 확률이라는 절대 위험으로 표현할 것을 권고한다. 10년은 초기 치료 기간과 중단 후 지속 효과를 포괄하며, 더 짧은 기간은 위험 분류에 도움이 되지 않는다. 기대여명이 10년 미만이면 FRAX는 남은 평생 확률을 준다. FRAX는 고관절 골절과 MOF(임상적 척추, 고관절, 전완, 상완 골절)의 10년 확률을 계산하며 외부 검증되었다(Ia).',
+ 'QFracture는 영국 일차진료 자료로 만든 도구로 1–10년 누적 발생률을 추정한다. NICE는 FRAX나 QFracture 사용을 권고하지만, FRAX는 사망 위험을 고려한 확률이고 QFracture는 누적 위험이어서 서로 바꿔 쓸 수 없고 QFracture에는 BMD를 넣을 수 없다. NICE 질 기준이 권고하는 NOGG 중재 역치는 FRAX 확률에 기반하므로 QFracture 등 다른 계산기의 결과에는 쓸 수 없다.',
+ '#민족과 이주',
+ '영국 FRAX는 백인이 대다수인 인구에 맞춰져 있다. 다른 나라에서 영국으로 이주한 사람은 민족과 관계없이 출생국 FRAX 모델이 있으면 그것을 쓰는 것이 적절하다. 출생국의 위험 특성을 유지하기 때문이다. 2세대 이후의 위험이 영국 일반 인구로 수렴하는지와 그 속도는 알려지지 않았다.',
+ '#FRAX 입력 항목',
+ '나이, 성별과 함께 BMI, 과거 취약골절(형태계측 척추골절 포함), 부모의 고관절 골절, 현재 글루코코르티코이드(용량 무관, 3개월 이상 경구), 현재 흡연, 하루 3단위 이상 음주, 류마티스 관절염, 이차 원인(제1형 당뇨병, 장기 미치료 갑상선기능항진증, 미치료 성선기능저하증/조기 폐경(&lt;45세), 만성 영양실조/흡수장애, 만성 간질환, 투석 전 만성 신부전(CKD 3a–5))을 넣는다. 대퇴경부 BMD는 선택 항목이며, BMD를 넣으면 이차 원인은 BMD를 통해 작용한다고 보수적으로 가정되어 가중치가 없어진다.',
+ 'FRAX는 이전 골다공증 약물치료나 여러 위험인자의 용량을 반영하지 않는다. 골절 2회는 1회보다 위험이 크고, 임상적 척추골절은 다른 골절보다 위험이 약 2배다. 글루코코르티코이드 용량 반응은 NOGG 지침에서 일부 다룬다. 따라서 FRAX 결과 해석에는 임상적 판단이 필요하다. 고외상 골절도 저외상 골절과 같은 정도로 낮은 BMD와 향후 골절 위험에 관련된다.',
+ '#산술 보정',
+ 'Table 1의 단순 산술 보정으로 글루코코르티코이드 용량(IIa), 요추 BMD(Ia), 해면골 점수 TBS(Ia, 영국 FRAX 웹사이트에서 입력 가능), 고관절 축 길이(Ib), 낙상력(IIa), 출생국(Ib), 제2형 당뇨병(Ib), 파킨슨병(Ic), 최근 MOF(Ib)를 반영할 수 있다. x% 증가는 원래 FRAX 값에 대한 비율로 적용한다(예: 30%를 10% 올리면 30 × 1.10 = 33%). 여러 보정을 겹쳐 쓴 정확도에 대한 근거는 없으므로 가장 영향이 큰 요인 하나로 보정한다(IV). 제1형 당뇨병도 제2형처럼 보정할 수 있다(IV). 파킨슨병과 관련 운동장애는 BMD와 독립적으로 고관절·비척추 골절 위험을 크게 높이며, 류마티스 관절염 항목으로 대신 입력하면 일부만 반영된다(Ib). FRAX 값은 사회경제적 상태, 체성분, 암, 만성 신질환의 영향을 거의 받지 않는다(Ib). 척추골절의 중증도·개수 보정은 FRAXplus에서 가능하나 유료다.',
+ '#위험 전달',
+ '위험은 단순 빈도로 긍정·부정 틀을 함께 써서 숫자로 전달하는 것이 좋다. 예를 들어 23%이면 “당신과 같은 100명 중 10년 동안 23명은 뼈가 부러지고 77명은 부러지지 않는다”고 말한다. 말로만 “골절 가능성이 높다”고 하면 효과가 없고 위험 인식을 과장한다. 백분율보다 정수와 단순 빈도(100명 중 1명)가 이해하기 쉽고, 그래프와 그림 도표를 쓸 수 있으면 쓴다(IV).']},
+inv:{t:'원인 검사·척추골절 평가·선별', r:'8쪽', p:[
+ '#원인 검사',
+ '골다공증 환자의 진단 평가는 골다공증을 흉내 내는 질환을 배제하고, 원인을 찾으며, 동반 질환을 관리하는 것을 포함한다. 흔한 검사는 Table 2에 있다.',
+ '#척추골절 평가(VFA)',
+ '척추골절 대부분은 의료진의 주의를 끌지 못해 진단되지 않는다. 중등도·중증 척추골절은 증상이 없어도 척추와 다른 부위의 후속 골절에 대한 강한 위험인자다(Ia). 따라서 고위험군에서 흉요추 측면 방사선 사진이나 측면 척추 DXA 영상으로 VFA를 고려한다(Ia). 측면 DXA는 방사선량이 훨씬 적으면서 성능은 비슷하다. 다른 이유로 찍은 복부·흉부 방사선 사진에서 척추골절을 찾는 것도 기회가 되며, 고관절과 척추가 흔히 포함되는 CT로 기회적 진단이 가능하다(Ia). CT의 CAD는 표준 판독을 보완·개선할 수 있고(IIb), 신뢰할 만한 CAD는 민감도·특이도·정확도가 높다(IV).',
+ '#선별과 환자 발견',
+ '현재 인구 기반 선별 정책은 없다. 영국 SCOOP 시험은 70–85세 여성 약 12,500명에서 FRAX로 고관절 골절 고위험군을 찾아 치료하여 5년간 고관절 골절을 28% 줄였다. 덴마크 연구도 비슷했고 네덜란드 연구는 효과가 작았으며, 세 시험의 메타분석에서 선별은 고관절 골절 위험을 20% 줄였다(Ia).',
+ '선별 정책이 없는 상황에서는 취약골절이나 다른 임상 위험인자로 환자를 찾는 환자 발견 전략이 적절하다. FRAX에 없는 많은 위험인자(Table 3)도 위험 평가의 계기가 되며, 여기에는 흉추후만과 4 cm 이상 키 감소(젊을 때 키와 비교하거나 연속 측정으로 확인; IIa), 흡수장애를 일으키는 비만대사수술(Ia)이 포함된다.']},
+thr:{t:'중재 역치와 전략', r:'8–13쪽', p:[
+ '#FRAX 평가 역치',
+ '의사결정은 FRAX 골절 확률에 기반하며 남녀에 모두 적용한다. 이 접근은 경구·정맥 비스포스포네이트를 중재로 한 비용효과 분석이 뒷받침한다(Ib). 중재 역치(IT)는 그 이상이면 치료를 제공하는 골절 확률이다. BMD 없는 FRAX는 FRAX 없는 BMD와 성능이 비슷하므로(Ia) BMD 유무와 관계없이 같은 중재 역치를 쓴다.',
+ '남녀 모두 70세까지의 중재 역치는 같은 나이에 과거 골절이 있는 여성의 위험과 같게 정해 나이에 따라 올라가고, 70세 이상은 고정 역치를 쓴다(Ib). 치료 대상 여성의 비율은 나이에 따라 약 30%에서 50%로 늘며 주로 과거 골절 유병률 때문이다(Ib). BMD를 넣어 FRAX를 계산하면 NOGG 웹사이트는 MOF와 함께 고관절 골절 10년 확률 기반의 역치도 제공하며(Fig. 2), 두 확률의 위험 범주가 다르면 높은 범주로 중재를 정한다. SCOOP 연구에서는 BMD 유무와 관계없이 고관절 골절 확률로 치료 대상을 정했다.',
+ '#초고위험과 전문의 의뢰',
+ '초고위험인 사람은 골다공증과 낙상의 철저한 평가, 평생 질환에 대한 개인별 치료 계획의 수립과 시행에서 가장 큰 이득을 본다. 치료제 대부분은 2차 진료에서 시작되며 사용 순서가 중요하다. 동화제는 테리파라타이드, 아발로파라타이드, 로모소주맙의 세 가지이며 테리파라타이드는 평생 1회 과정만 허가된다. 특정 순서를 뒷받침하는 근거는 없으므로 골다공증 전문의의 의견이 필수다. 동화제와 이중 작용의 로모소주맙은 일부 골흡수억제제보다 빠르고 큰 골절 위험 감소를 보인다(Ib).',
+ '전문의 의뢰는 최근(2년 이내) 척추골절, 시기와 무관한 2개 이상 척추골절, BMD T-점수 ≤ −3.5, 고용량 글루코코르티코이드(3개월간 프레드니솔론 ≥7.5 mg/일) 같은 단일 중요 위험인자(IIb, IV) 또는 여러 위험인자의 조합(IIb)으로 정해질 수 있다.',
+ '골절 후 재골절 위험은 직후에 특히 높고 2년에 걸쳐 줄지만 이후에도 일반 인구보다 높다. 이 “임박 위험”은 나이, 성별, 골절 부위에 따라 다르다(Ic). 최근 골절의 영향을 탐색하는 FRAX 후 보정 알고리즘이 개발되고 있다. 졸레드로네이트, 리세드로네이트, 테리파라타이드, 아발로파라타이드, 로모소주맙에서 빠른 효과가 확인되었다(Ib).',
+ '초고위험은 FRAX 확률이 중재 역치를 60% 넘는 경우로 정의한다(Fig. 1·2). 이렇게 정의한 초고위험 폐경 후 여성의 비율은 50–54세 약 6%에서 90세 이상 36%로 늘어난다. 수치는 Table 4, 평가 알고리즘은 Fig. 3에 있다. 고위험군에서도 잦은 낙상, 매우 낮은 척추 BMD 같은 추가 위험인자(Table 1)를 고려하면 초고위험으로 재분류될 수 있다.',
+ '#FRAX 실무',
+ 'FRAX 결과 창의 버튼으로 MOF 확률을 NOGG 웹사이트로 자동 전송하거나, 수동 입력 페이지(나이, 성별, 글루코코르티코이드 노출, BMD 포함 여부)를 쓸 수 있다. 외국 출생자는 비영국 FRAX 결과를 수동 입력해 역치와 비교한다. 전자의무기록에 FRAX와 NOGG 지침이 통합되지 않은 것은 효과적인 위험 평가의 장벽이다(IV).',
+ 'NOGG 전략에 따른 표적 BMD 측정은 위험인자가 있는 모든 사람을 DXA로 검사하는 것보다 자원을 효율적으로 쓴다(Ib). 고관절·척추골절이 아니면 BMD 측정 없이 치료하지 않는다는 과거 견해는 1998년 알렌드로네이트 사후분석(T-점수 &gt; −2.5에서 효과 감소)에서 나왔으나, 이후 졸레드로네이트, 데노수맙, 랄록시펜, 아발로파라타이드, 테리파라타이드 등에서 BMD와 효과 사이에 상호작용이 거의 없음이 밝혀졌다(Ib). 70세 이상에서 임상 위험인자만으로 고위험으로 분류된 군은 BMD가 약 1 SD 낮아, BMD 없는 FRAX 고위험 분류는 대부분 낮은 BMD 환자를 고른다. DXA를 널리 쓸 수 있다면 쓰는 것을 막지 않으며, DXA는 가장 정확한 위험 평가, 치료 감시 기준값, VFA를 제공한다. FRAX는 치료 감시 도구로 권고하지 않지만(IIb), 관리 변경을 고려할 때 현재 확률을 재평가하는 데는 적절하다(IV).']},
+diet:{t:'식사·칼슘·비타민 D', r:'13–14쪽', p:[
+ '#식사',
+ '관찰연구 메타분석에서 “건강한” 식사(과일·채소, 생선, 가금류, 통곡물)는 낮은 BMD와 고관절 골절 위험을 조금 낮추고, “우유·유제품” 식사는 낮은 BMD 위험을 낮췄다. “육류·서구식” 식사(가공육·붉은 고기, 동물성 지방, 정제당, 청량음료)는 위험을 조금 높였다. 다만 25세 미만이 포함된 연구가 많아 일반화가 제한된다(IIa). 30일간 DASH 식사는 골교체를 줄였다(Ib).',
+ '권장량(0.75 g/kg/일)보다 많은 단백질 섭취는 한 RCT와 관찰연구에서 높은 고관절 BMD와 낮은 고관절 골절 위험에 관련되었으나(Ib, IIa), 30개 중재연구의 메타분석에서는 단백질 보충이 BMD에 유의한 효과가 없었다(Ia). 최근 고관절 골절 환자의 수술 후 단백질 보충은 감염과 재원 기간을 줄였다(Ib).',
+ '채식과 비건 식사는 잡식보다 요추·고관절 BMD가 낮고 비건은 골절 위험이 높았다(IIa). 영국 65,000명 코호트에서도 같은 결과였으며 비건의 높은 고관절 골절 위험은 칼슘·단백질 보정으로 일부 줄었다(IIb).',
+ '#칼슘과 비타민 D',
+ '영국 19세 이상 칼슘 권장 섭취량은 하루 700 mg이며 식이 칼슘 계산기를 쓸 수 있다. SACN은 비타민 D 400 IU/일을 권장하나 골다공증에서는 800–2000 IU/일이 적절할 수 있다(IV).',
+ '골흡수억제제와 동화제 RCT 대부분은 칼슘과 비타민 D를 함께 투여하였다. 칼슘과 비타민 D 병용 보충은 고관절·비척추 골절, 아마도 척추골절도 줄이지만(Ia), 비타민 D 단독은 골절 감소 근거가 적고 낙상을 줄일 수는 있다(Ib). 골다공증 약물을 쓰는 환자는 비타민 D가 충분해야 한다. 식이 칼슘이 우선이며, 보충은 식사로 충분히 얻지 못하고 골다공증·취약골절 위험이 있는 사람(집이나 요양시설에 머무는 노인, 염증성 장질환이나 비만대사수술 후 흡수장애)에게 집중한다. 보충제는 신결석 위험을 높일 수 있으나 심혈관질환이나 암을 늘리지 않는다(Ia). 60,000 IU 이상 같은 고용량 간헐 투여는 골절과 낙상 증가 보고가 있어 권하지 않는다(Ia).']},
+ex:{t:'운동·낙상·생활습관', r:'14–15쪽', p:[
+ '#골밀도를 위한 운동',
+ '운동은 BMD에 이득이 있으나(Ia) 골절 감소의 명확한 근거는 부족하다. 체중부하와 저항 강화 운동을 합친 복합 프로그램은 폐경 후 여성의 대퇴경부·요추 골소실을 줄이고(Ia), 상체 저항 운동은 전완 골량을 늘린다(Ia). 남성은 연구가 3개뿐이며 대퇴경부 BMD가 중등도로 개선되었다(Ia).',
+ '효과는 강도와 기간에 따라 다르며 저항 운동은 감독하에 할 때 효과가 클 수 있다. 낙상 위험이 있거나 척추골절이 있으면 강도를 높이기 전에 구체적 조언과 평가가 필요하다. NOGG는 ROS의 “Strong, Steady and Straight” 합의문을 지지한다. 골다공증 환자는 반복적인 강한 척추 전방 굴곡 운동을 조심해야 하지만(Ia), 일반적으로 운동의 심각한 이상반응 위험은 매우 낮다(Ia).',
+ '#낙상 중재',
+ '비척추 골절 대부분은 낙상 후에 생긴다. 운동은 근력, 균형, 자세, 자신감, 반응 시간을 유지·회복하여 낙상과 아마도 골절을 줄인다. 일차진료에서 낙상 위험 선별과 함께 한 다학제 낙상 중재의 대규모 RCT 2개는 골절 감소를 보이지 못했으나(Ib), Cochrane 고찰과 메타분석 2개는 지역사회 거주자에서 낮은 확실성으로 낙상 관련 골절 감소를 보였다(Ia). 골다공증·낙상 고위험군의 운동은 안전하다(Ia). 균형 훈련 및/또는 복합 운동(저항, 균형, 유산소, 충격 운동)이 낙상 위험인자가 있는 사람에서 더 효과적이며(Ia), 주 3시간 이상이 가장 효과적이다(Ia). 6개월 미만의 짧은 중재도 효과가 있었다(Ia). 작업치료사의 가정 안전 중재는 낙상을 줄이고(Ia), 전신 진동은 낙상률을 줄이나 BMD는 늘리지 않는다(Ia).',
+ '#생활습관',
+ '저체중이나 과체중이면 BMI를 최적화하고, 금연과 절주를 한다. 금연은 여성의 척추·고관절 골절을 줄이나(IIb, IIa) 고관절 골절 감소는 5년 후에 나타났다. 수술 전 금연은 수술 후 합병증을 줄인다(Ia). 전자담배는 자료가 거의 없으나 한 단면연구에서 자가보고 취약골절이 많았다(Ic). 알코올 의존 남성의 BMD는 3–4년 금주 후 개선된다(IIa). 영국 지침은 남녀 모두 하루 2단위 이하 음주를 권한다.']},
+ov:{t:'약물치료 개관', r:'16–18쪽', p:[
+ '골다공증 약물은 주된 작용에 따라 골흡수억제제(파골세포 골흡수 억제, 이후 이차적으로 골형성 영향)와 동화제(조골세포 골형성 촉진)로 나뉜다. 로모소주맙은 골형성 촉진과 골흡수 억제의 이중 작용을 한다. 테리파라타이드와 아발로파라타이드는 골재형성을 촉진한다. 골흡수억제제가 동화제보다 훨씬 저렴하다. 약물 사용 시점이 중요하므로 장기 전략을 고려해야 한다. 예를 들어 테리파라타이드는 평생 1회 과정만 쓸 수 있고(아발로파라타이드와 로모소주맙은 제한 없음), 데노수맙은 중단이 어려워 시작 전에 신중히 고려해야 한다.',
+ 'Table 5의 약물은 골다공증 폐경 후 여성(및 해당 시 남성)의 취약골절을 줄이며(Ia, Ib), 척추골절 예방 효과는 확립되어 있다. 테리파라타이드와 로모소주맙은 고위험 폐경 후 여성의 척추골절 감소에서 각각 리세드로네이트와 알렌드로네이트보다 우월하다. 대부분 고관절 골절을 줄이나 이반드로네이트, 칼시트리올, 랄록시펜, 아발로파라타이드는 예외이며, 칼시트리올과 랄록시펜을 뺀 나머지는 비척추 골절을 줄인다.',
+ '#시작 주체',
+ '경구·정맥 비스포스포네이트, 데노수맙, 랄록시펜, 칼시트리올, HRT는 1차 또는 2차 진료에서 시작할 수 있다. 데노수맙을 1차 진료에서 시작하면 장기 계획이 필요하므로 2차 진료와 상의한다. 칼시트리올은 근거가 IIa 수준이라 2차 진료의 일부 환자에게 제한된다. 스트론튬 라넬레이트는 1차 진료에서 시작할 때 2차 진료와 상의한다. 테리파라타이드, 아발로파라타이드, 로모소주맙은 2차 진료에서 시작하며, 영국에서 테리파라타이드와 로모소주맙은 환자 교육을 포함한 가정 의료 서비스로 공급된다.',
+ '#동화제 선택 시 고려사항',
+ '① 테리파라타이드와 로모소주맙은 고관절 골절 위험 감소가 보였으나 아발로파라타이드는 RCT에서 보이지 않았다. ② 아발로파라타이드와 골흡수억제제를 비교한 일관된 RCT는 없으나, 네트워크 메타분석은 척추골절에서 테리파라타이드와 동등, 비척추 골절에서 우월을 시사했다. ③ 아발로파라타이드나 테리파라타이드와 로모소주맙의 우열 근거는 없다. ④ 세 약제 모두 골절 위험이 높은 폐경 후 여성에서 승인되었고 남성에는 테리파라타이드만 승인되었다. NICE는 추가로 아발로파라타이드를 논바이너리와 출생 시 여성으로 등록된 트랜스 남성에, 로모소주맙을 성별과 무관하게 폐경 후인 사람에 권고한다. ⑤ 치료 기간은 테리파라타이드 24개월, 아발로파라타이드 18개월, 로모소주맙 12개월이다. ⑥ 테리파라타이드와 아발로파라타이드는 1일 1회, 로모소주맙은 월 1회 주사한다. ⑦ 테리파라타이드 펜은 냉장 보관한다. 아발로파라타이드는 개봉 전 냉장, 개봉 후 실온 30일 보관 후 폐기한다. ⑧ 로모소주맙은 동화·골흡수억제 이중 작용을 한다.',
+ '#치료 순서',
+ '데노수맙, 로모소주맙, 테리파라타이드, 아발로파라타이드를 끝내는 환자는 대개 골흡수억제제를 이용한 후속 치료 전략이 필요하며, 치료 공백을 피하도록 처음 치료를 시작할 때 계획한다.']},
+bp:{t:'비스포스포네이트', r:'18–19쪽', p:[
+ '#알렌드로네이트',
+ '주 1회 70 mg 경구. 폐경 후 골다공증(PMO), 남성 골다공증, 글루코코르티코이드 유발 골다공증(GIO)의 치료와 PMO·GIO 예방에 권고된다. 주 70 mg은 하루 10 mg과 동등하다. PMO에서 척추, 비척추, 고관절 골절을 줄였다(Ib). 남성과 글루코코르티코이드 사용자는 BMD 가교 연구로 승인되었다(Ib). 남성에는 하루 10 mg이 허가되어 있으나 동등한 주 70 mg이 흔히 허가 외로 처방된다(IV).',
+ '흔한 부작용은 상부 위장관 증상, 배변 장애, 두통, 근골격 통증이다. 밤새 금식 후 그날 첫 음식·음료(물 제외)나 다른 약·보충제(칼슘 포함) 최소 30분 전에, 앉거나 선 자세에서 맹물 약 200 ml와 함께 통째로 삼키고 30분간 눕지 않는다. 70 mg 발포정·용해정은 맹물 120 ml 이상에 녹여 복용한다.',
+ '#리세드로네이트',
+ '주 1회 35 mg 경구. PMO, 남성 골다공증, GIO 치료와 여성의 GIO 예방에 권고된다. 주 35 mg은 하루 5 mg과 동등하다. PMO에서 척추·비척추 골절을 줄였고(Ib), 고령 여성 대규모 연구에서 고관절 골절을 유의하게 줄였으며 골다공증 여성에서 효과가 더 컸다(Ib). 남성과 글루코코르티코이드 사용 폐경 후 여성은 BMD 가교 연구로 승인되었다(Ib). 부작용과 복용법은 알렌드로네이트와 같으며 물은 120 ml 이상이다.',
+ '#이반드로네이트',
+ '월 1회 150 mg 경구 또는 3개월마다 3 mg 정맥 주사(나비 바늘로 15–30초 주입). PMO 치료에 권고되며 하루 2.5 mg 경구와 동등하다. 하루 2.5 mg은 척추골절을 줄였고(Ib), 대퇴경부 T-점수 &lt; −3.0인 고위험 여성의 사후분석에서 비척추 골절이 줄었다(Ib). 고관절 골절 감소 자료는 없다. 정맥 투여는 첫 주사 후 짧은 독감 유사 급성기 반응을 일으킬 수 있다. 경구제는 밤새 금식 후 첫 음식·음료·약 1시간 전에 맹물 180–240 ml와 함께 앉거나 선 자세로 복용하고 1시간 눕지 않는다.',
+ '#졸레드로네이트',
+ '연 1회 5 mg 정맥 주입(5 mg/100 ml, 최소 15분). PMO, 남성 골다공증, 남녀 GIO 치료에 권고된다. PMO에서 척추, 비척추, 고관절 골절을 줄였다(Ib). 고관절 골절 직후 투여하면 3년 후 임상 골절과 사망이 적었다(Ib). 골감소증 여성에게 18개월마다(칼슘 보충 없이) 투여하면 척추·비척추 골절이 적었고(Ib), 6년 연구 종료 시 이차 결과로 사망의 비유의한 감소, 유방암과 비유방암 감소가 보고되었다.',
+ '흔한 부작용은 대개 첫 주입 후의 급성기 반응이며 파라세타몰 병용으로 줄일 수 있다. 시작 전 eGFR을 계산하고 신부전 위험이 있으면 주의하며 크레아티닌 상승이나 eGFR 감소를 감시한다. MHRA는 75세 초과 및/또는 BMI &lt;18 또는 &gt;40 kg/m²이면 eGFR 대신 크레아티닌 청소율을 쓰도록 권고한다. 3상 시험에서 증상성 심방세동이 중대 이상반응으로 증가하였다(Ib).',
+ '#금기와 주의',
+ '경구·정맥 비스포스포네이트는 저칼슘혈증, 비스포스포네이트 과민증, 임신·수유에서 금기다. 경구제는 협착이나 이완불능증처럼 식도 배출을 늦추는 식도 이상, 30–60분 이상 앉거나 서 있을 수 없는 경우 금기이고, 다른 상부 위장관 질환에서는 주의한다. 졸레드로네이트(GFR ≤35 ml/min)와 리세드로네이트(≤30 ml/min)는 중증 신기능 장애에서 금기이고, 알렌드로네이트(≤35)와 이반드로네이트(≤30)는 사용을 권하지 않는다. 기존 저칼슘혈증은 원인을 검사하고, 비타민 D 결핍 때문이면 졸레드로네이트 시작 전에 비타민 D(예: 100,000–300,000 IU 경구 부하 용량을 나누어)로 치료한다.']},
+dmab:{t:'데노수맙', r:'19–20쪽', p:[
+ 'RANKL에 대한 완전 인간화 단클론항체로 파골세포의 형성과 활성을 억제한다. PMO와 골절 위험이 높은 남성, 전립선암 호르몬 차단 관련 골소실, 장기 전신 글루코코르티코이드 관련 골소실의 치료에 승인되었다(Ib). 6개월마다 60 mg 피하 주사한다. PMO에서 척추, 비척추, 고관절 골절을 줄였고 10년 치료에서도 안전성과 효과가 유지되었다(Ib). 남성은 BMD 가교 연구로 승인되었다(Ib).',
+ '저칼슘혈증이나 구성 성분 과민증에서 금기이며 임신과 18세 미만에는 권하지 않는다. 부작용인 저칼슘혈증은 신기능 장애가 심할수록 늘어나므로 증상을 보고하게 한다. 기존 저칼슘혈증은 원인을 검사하고 비타민 D 결핍이면 시작 전에 치료한다. 모든 환자, 특히 중증 신기능 장애에서 칼슘·비타민 D 섭취가 중요하다. 제품 설명서는 매 투여 전 칼슘 확인을 요구하며, 크레아티닌 청소율 &lt;35 ml/min 등 저칼슘혈증 소인이 있으면 첫 투여 2주 이내에도 확인한다. 부작용으로 피부 감염(주로 봉와직염), 습진, 저칼슘혈증, 고창이 있다.',
+ '#중단 후 반동',
+ '데노수맙을 중단하면 BMD가 빠르게 줄고 골교체가 치료 전보다 높아진다(Ib). 중단 시 다발 척추골절 위험이 높아진다. FREEDOM과 연장 연구의 사후분석에서 중단한 여성은 마지막 주사 예정일 후 평균 3–6개월 동안 척추골절률이 증가했고, 척추골절이 생긴 사람 중 다발 골절 비율은 60.7%로 위약 중단군 38.7%보다 높았다(Ib). 따라서 중단 후에는 다른 골흡수억제제로 치료를 이어야 한다.',
+ '마지막 데노수맙 6개월 후 졸레드로네이트 5 mg 정맥 주입은 이후 골소실을 줄이지만, 모든 환자에서 효과가 있지는 않고 특히 데노수맙을 3년 넘게 쓴 경우 1년 넘게 유지되지 않을 수 있다(IIa, IIb). 졸레드로네이트 후 3개월과 6개월에 골교체 표지자를 감시하면 추가 주입 시점을 정하는 데 도움이 되며, 표지자를 쓸 수 없으면 6개월 후 2차 주입이 제안되었다(IV). 데노수맙 1년 후 알렌드로네이트 주 70 mg은 대부분에서 12개월간 BMD를 유지했으나 일부는 유의한 골소실이 있었다(IIa). 중단이 어려우므로 젊은 폐경 후 여성과 남성에서는 시작 전에 특히 신중해야 한다.']},
+hrt:{t:'HRT·칼시트리올·랄록시펜·스트론튬', r:'20–21쪽', p:[
+ '#호르몬대체요법(HRT)',
+ '에스트로겐 단독 또는 에스트로겐+프로게스토겐(합성 프로게스틴 또는 생체동일 프로게스테론) 제제로, 일부는 취약골절 위험이 있는 폐경 후 여성의 골다공증 예방에 승인되었다. 결합 에스트로겐 0.625 mg/일 ± 메드록시프로게스테론 2.5 mg/일은 낮은 BMD나 고위험으로 선택되지 않은 폐경 후 여성에서 척추, 비척추, 고관절 골절을 줄였다(Ib). 2019년 NICE 근거 검토에서 HRT는 10개 분석 중 9개에서 골절 감소나 BMD 증가와 관련되었다.',
+ '경구 에스트로겐 HRT는 정맥혈전색전증(VTE) 위험을 높이지만 표준 용량 경피 HRT는 높이지 않는다. 60세 미만에서 시작하면 심혈관질환 위험을 높이지 않고, 폐경 10년 이내 시작하면 위험을 낮추는 것으로 보인다. 일부 제제, 특히 합성 프로게스틴 포함 제제는 유방암을 약간 늘리나 신체활동 감소, 비만, 과음 같은 생활습관 위험보다 작다. 유방암 기저 위험이 낮은 대부분의 여성에서 증상 완화 목적의 최대 5년 HRT는 골 이득을 빼고도 이득이 위해보다 크다.',
+ '#칼시트리올',
+ '활성형 비타민 D로 지금은 거의 쓰지 않으나 확립된 PMO 치료에 0.25 μg 하루 2회로 승인되어 있다. 주로 골흡수를 억제한다. 척추골절 위험을 줄였으나 비척추·고관절 골절 효과는 확인되지 않았다(IIb). 고칼슘혈증이나 전이성 석회화에서 금기다. 고칼슘혈증과 고칼슘뇨증을 일으킬 수 있어 시작 후 1, 3, 6개월과 이후 6개월마다 혈청 칼슘과 크레아티닌을 감시한다.',
+ '#랄록시펜',
+ '선택적 에스트로겐 수용체 조절제로 골흡수를 억제한다. 폐경 후 골다공증의 치료와 예방에 승인되었다. 척추골절 위험을 줄였으나 비척추·고관절 골절 감소는 확인되지 않았다(Ib). 하루 60 mg을 식사와 관계없이 복용한다. 가임 여성, 원인 불명 자궁 출혈, 중증 간·신기능 장애, VTE 병력에서 금기다. 부작용은 다리 경련, 부종, 혈관운동 증상이다. 주로 첫 몇 개월에 VTE가 약간 늘고 치명적 뇌졸중의 약간 증가가 보고되어(IIa) 뇌졸중 병력이나 위험인자가 있으면 주의한다. 3상 시험에서 유방암 발생이 유의하게 줄었다(Ib).',
+ '#스트론튬 라넬레이트',
+ '하루 2 g을 취침 시, 음식이나 칼슘 함유 식품 섭취 2시간 이상 후 물에 탄 과립 현탁액으로 복용한다. 수산화인회석에서 칼슘을 대체하며, 약한 골흡수억제 효과와 골형성 유지 효과가 있는 것으로 보인다. PMO에서 척추·비척추 골절을 줄였고(Ib), 74세 이상이면서 대퇴경부 T-점수 ≤ −2.5인 고관절 골절 고위험 여성의 사후분석에서 고관절 골절이 적었다. 남성은 BMD 가교 연구로 승인되었다(Ib).',
+ '흔한 부작용은 오심과 설사다. 3상 시험에서 VTE가 유의하게 늘었다. 사후 통합 안전성 분석에서 심근경색과 뇌혈관질환을 포함한 신경계 질환이 늘어, 과거 심근경색, 뇌졸중, VTE는 금기다. 제조사는 eGFR &lt;30에서 사용을 권하지 않는다. 스트론튬은 원자번호가 칼슘보다 커 골기질에 들어가면 BMD를 인위적으로 높이며, 중단 후에도 천천히 사라져 BMD 감시에 영향을 준다.']},
+ana:{t:'동화제와 초고위험 치료', r:'21–23쪽', p:[
+ '#테리파라타이드(재조합 인간 PTH 1–34)',
+ '간헐 투여 시 주로 해면골에 동화 효과를 낸다. 폐경 후 여성과 골절 위험이 있는 남성의 골다공증, 남녀의 전신 글루코코르티코이드 관련 골다공증에 승인되었다. 하루 20 μg 피하 주사, 치료 기간은 24개월로 제한된다. 고칼슘혈증, 중증 신기능 장애, 골격을 침범한 악성 질환, 골격 방사선 치료 병력, 임신·수유, 골다공증과 골형성부전증 이외의 대사성 골질환에서 금기이며 중등도 신기능 장애에서는 주의한다. PTH가 정상이어야 시작할 수 있으므로 칼슘이 정상이어도 확인한다. 부작용은 두통, 오심, 어지럼, 기립성 저혈압, 다리 통증이며 주사 후 혈청 칼슘이 약간 일시적으로 오를 수 있다.',
+ 'PMO에서 척추·비척추 골절을 줄였다(Ib). 고관절 골절 일차 결과 자료는 없으나 안전성 결과로 본 메타분석에서 OR 0.44(95% CI 0.22–0.87), 네트워크 메타분석에서 HR 0.35(0.15–0.73)였다(Ia). 상지 골절에는 유의한 이득이 없었다. 남성과 GIO는 BMD 가교 연구로 승인되었다(Ib). 바이오시밀러로 비용효과가 나아질 수 있다.',
+ '#아발로파라타이드',
+ 'PTHrP 첫 34개 아미노산의 합성 유사체로 골 동화 효과가 있고, 골절 위험이 높은 폐경 후 여성에서 승인되었다. 하루 80 μg 피하 주사, 치료 기간은 18개월로 제한된다. 과민증, 임신·수유, 가임 여성, 기존 고칼슘혈증, 중증 신기능 장애(말기 신질환 포함), 원인 불명 ALP 상승, 골격 방사선 치료 등 골육종 위험, 골격 악성 종양이나 골전이에서 금기다. 시작 전 혈압, 심장 상태, 심전도를 평가하고 심장질환자는 악화를 감시한다. 부작용은 고칼슘혈증, 고칼슘뇨증, 어지럼, 요통, 오심, 두통, 관절통, 고혈압, 주사 부위 반응, 두근거림이다.',
+ 'PMO에서 척추골절을 줄였으나 비척추 골절 감소는 유의하지 않았다(Ib). 네트워크 메타분석 2개에서 위약 대비 척추골절 RR 0.14와 0.13, 비척추 골절 RR 0.51과 0.50이었고(Ia), 손목 골절도 줄었다(RR 0.39). RCT 9개와 실제 진료 연구 2개의 네트워크 메타분석에서 비척추 골절 감소가 테리파라타이드보다 우월했다(OR 0.87; Ia). 고관절 골절 효과를 평가할 시험 자료는 부족하다.',
+ '#로모소주맙',
+ '스클레로스틴을 억제하는 인간화 단클론항체로 골형성 촉진과 골흡수 억제의 이중 작용을 하며, 초고위험 폐경 후 여성의 중증 골다공증에 승인되었다. 남성에는 승인되지 않았으나 남성 BMD를 높였다(Ib). 월 1회 210 mg(105 mg 2회 피하 주사), 치료 기간은 12개월로 제한된다.',
+ 'FRAME 연구에서 12개월 로모소주맙 후 12개월 데노수맙을 투여했을 때 12개월 시점 새 척추골절과 임상 골절이 위약보다 유의하게 적었고, 24개월 척추골절도 적었다(Ib). ARCH 연구에서 12개월 로모소주맙 후 알렌드로네이트는 24개월 알렌드로네이트보다 새 척추, 비척추, 임상, 고관절 골절이 모두 적었다(Ib). 알렌드로네이트군보다 심혈관 사건이 유의하게 많았다(Ib). 저칼슘혈증, 과민증, 심근경색이나 뇌졸중 병력에서 금기이며, 향후 1년의 골절 위험과 심혈관 위험을 함께 고려한다. 일시적 저칼슘혈증이 있어 시작 전 교정하고 칼슘·비타민 D를 충분히 보충한다. 중증 신기능 장애나 투석 환자는 저칼슘혈증 위험이 크다. 턱뼈 괴사와 AFF가 매우 드물게 보고되었다.',
+ '#초고위험 환자의 약물치료',
+ '중증 골다공증 폐경 후 여성에서 두 비교 RCT가 동화제의 우월성을 보였다. 로모소주맙은 24개월에 알렌드로네이트보다 척추 48%, 비척추 19%, 임상 27%, 고관절 38% 더 큰 감소를 보였다. VERO 연구에서 테리파라타이드는 2년 후 리세드로네이트보다 새 척추골절 56%, 임상 골절 52%가 적었다(Ib). 이것이 초고위험 폐경 후 여성에서 테리파라타이드나 로모소주맙을 1차로 고려하는 근거다. 남성에서는 비교 연구가 없다.',
+ '테리파라타이드나 로모소주맙 중단 후 골교체가 늘고 BMD가 떨어지며 아발로파라타이드도 비슷할 것으로 본다. 최대 치료 기간(24, 18, 12개월) 후 효과 유지를 위해 골흡수억제제의 후속 치료가 필요하다. 알렌드로네이트와 데노수맙은 테리파라타이드나 로모소주맙 후 BMD를 유지·증가시켰다. FRAME 연장에서 로모소주맙 12개월의 골절 이득은 데노수맙 24개월로 유지되었고(IIb), 아발로파라타이드 18개월 후 알렌드로네이트는 BMD를 더 늘리고 골절 감소를 유지했다(IIb).',
+ '#전환에 따른 효과 감소',
+ '경구 비스포스포네이트에서 테리파라타이드나 로모소주맙으로 바꾸면 치료 경험이 없는 사람보다 척추·고관절 BMD 증가가 약하며, 테리파라타이드에서, 특히 고관절에서 더 심하다(IIb). 골절에 대한 영향은 알 수 없다. 비스포스포네이트에서 아발로파라타이드로 바꾼 효과는 알려지지 않았다. 데노수맙에서 테리파라타이드로 바꾸면 척추에서 일시적, 고관절에서 더 크고 오래가는 골소실이 생기며, 데노수맙 후 로모소주맙은 BMD 증가가 약해진다(IIb).']},
+dur:{t:'비스포스포네이트 치료 기간과 감시', r:'23–25쪽', p:[
+ '골다공증은 현재 완치법이 없는 장기 질환이므로 흔히 평생 치료와 감시가 필요하다.',
+ '비스포스포네이트에는 드물지만 심각한 이상반응인 AFF와 턱뼈 괴사(ONJ)가 있다. 최적 치료 기간은 모든 시점에서 골절 감소 이득이 이 작은 위험보다 크게 하려는 것이다. 비스포스포네이트는 뼈에 오래 남아 중단 후에도 효과가 얼마간 지속되므로, 몇 년 후 치료를 멈추고 재개 필요성을 다시 평가하는 방식이 일부 환자에게 이득이 될 수 있다(IIa). 치료 검토가 중요하며 모든 환자에게 적용할 표준 정책은 없다(IIa). 주요 시험이 대부분 3년이어서 장기 사용과 중단에 관한 권고는 폐경 후 여성 연장 연구의 제한된 근거에 기반하며(IIa), 남성에 대한 근거는 없다.',
+ '중단 후 BMD 감소와 골교체 증가는 알렌드로네이트에서 2–3년(Ib), 이반드로네이트와 리세드로네이트에서 1–2년(Ib) 후 나타난다. 졸레드로네이트 3년 후 중단하면 3년 뒤에도 BMD가 조금만 줄었다(Ib). 3년 시점 비교에서 알렌드로네이트군이 노출 기간이 더 길었는데도 전고관절 BMD 감소와 PINP 상승이 더 커 효과 소실이 더 빨랐다(IIb).',
+ 'FLEX 연구에서 알렌드로네이트 5년 후 5년 더 지속한 여성은 위약 전환군보다 임상 척추골절이 유의하게 적었다(Ib). HORIZON 연장에서 졸레드로네이트 3년 후 3년 더 지속한 여성은 형태계측 척추골절이 유의하게 적었다(Ib). 사후분석에서 장기 치료로 이득을 볼 가능성이 큰 여성은 낮은 고관절 BMD(FLEX T &lt; −2.0, HORIZON ≤ −2.5), 기존 척추골절, 초기 3–5년 동안 새 골절이 있는 사람이었다(Ib). 고령도 알렌드로네이트 중단 후 골절 위험 증가와 관련되었다(Ib).']},
+reas:{t:'치료 중 골절 위험 재평가', r:'25–26쪽', p:[
+ '비스포스포네이트든 데노수맙이든 치료를 멈추면 취약골절 위험이 늘어나므로, 근거 검토는 골흡수억제 치료의 일상적 중단(이른바 “약물 휴지기”)을 지지하지 않는다(IIa). 치료 중인 사람의 골절 위험은 대퇴경부 BMD를 포함한 FRAX로 재평가할 수 있고(IIb), NOGG 중재 역치로 일정 기간 치료를 멈출지 정한다(Fig. 4·5).',
+ 'FRAX는 치료 반응을 평가하는 데는 쓸 수 없지만(IIb) 현재 골절 위험을 재평가하여 치료 지속이나 중단 필요성을 정하는 데는 역할이 있다. BMD와 골교체 변화로 약효 소실을 감지하면 관리에 정보를 줄 수 있으나, 효과 소실 동안의 BMD나 골교체 표지자 변화 역치와 임상적으로 의미 있는 골절 위험 변화를 연결한 확정 자료는 아직 없다.']},
+onj:{t:'턱뼈 괴사와 비전형 대퇴골절', r:'26–27쪽', p:[
+ '#턱뼈 괴사(ONJ)',
+ '골다공증 치료로 비스포스포네이트나 데노수맙을 쓰는 환자에서 매우 드물다. 비스포스포네이트 임상시험의 추정 발생률은 100,000인년당 10–100이다. 위험인자는 불량한 구강 위생, 치과 질환, 치과 시술, 흡연, 암, 항암치료 및/또는 글루코코르티코이드다(IIa). 골전이 치료에 쓰는 고용량에서 훨씬 흔하다. 스코틀랜드 치과 임상효과 프로그램이 골흡수억제제 사용자의 구강 건강 관리 지침을 발표하였다. 외이도 골괴사도 사례 보고로 매우 드물게 기술되었으며 만성 귀 감염 등 귀 증상으로 나타나고, 스테로이드, 항암치료, 국소 감염이나 외상이 위험인자일 수 있다(IV).',
+ '#비전형 대퇴골절(AFF)',
+ '주로 대퇴골 전자하부와 골간부에 생기며, 비스포스포네이트나 데노수맙 사용자에서 드물게 보고되었다. 아시아인, 대퇴골 만곡, 글루코코르티코이드 사용이 위험인자다. ASBMR 태스크포스의 체계적 검색에서 절대 위험은 100,000인년당 3.2–50건으로 일관되게 낮았고(IV), 3년 초과(중앙 7년) 사용에서 약 2배가 되며 중단하면 줄었다(IV, IIa). 덴마크 전국 코호트에서 10년 넘는 알렌드로네이트 사용은 고관절 골절 위험을 30% 낮추면서 전자하부·골간부 골절은 늘리지 않아 위험–이득 균형이 받아들일 만했다(IIb).',
+ 'AFF는 흔히 양측성이고, 전구 통증(대퇴부·서혜부·고관절에 수일–수개월)을 동반하며, 잘 치유되지 않는다. AFF가 생기면 비스포스포네이트나 데노수맙을 중단하고, 체중부하를 제한하며, 칼슘과 비타민 D를 충분히 하고, 적절하면 다른 치료를 고려한다. 흔히 골수강내 금속정 고정술이 권고된다(IV).',
+ '#AFF 이후 골 건강 관리',
+ '근거는 부족하다. 국제 전문가 합의문은 다음을 제안한다(IV). 취약골절 위험이 낮으면 추가 약물을 피할 수 있다. 위험이 높고 양측 수술 고정을 했으면 테리파라타이드를 고려한다. 일측 고정이거나 수술하지 않았으면 테리파라타이드, 로모소주맙, 랄록시펜, HRT를 고려한다. 테리파라타이드가 AFF 치유를 촉진한다는 근거는 없으나 수술한 AFF에서 치유가 빨라지는 경향이 있었고, 보존 치료한 AFF에서는 개선이 없었다. AFF 후 비스포스포네이트나 데노수맙을 고려한다면 이전 일측·양측 고정, 동화제 사용, 전반적 임상 상황과 골절 위험을 고려해 이득과 위험을 신중히 따진다(IV).']},
+gio:{t:'글루코코르티코이드 유발 골다공증', r:'27–28쪽', p:[
+ '아발로파라타이드와 로모소주맙은 적응증(초고위험 폐경 후 여성)을 만족하면 추가 선택지다. 골절 병력이 있거나 고용량(3개월간 프레드니솔론 ≥7.5 mg/일)을 받는 일부 폐경 전 여성과 젊은 남성에서도 골 보호 치료가 적절할 수 있다. 가임기 여성에게 약을 처방할 때는 주의하며, 복잡한 사례는 흔히 2차 진료 의뢰가 필요하다.',
+ '여러 나라에서 지침이 있지만 영국의 장기 경구 글루코코르티코이드 사용자에서 골다공증 위험 평가와 관리는 여전히 불충분하다(IIIb). 골소실과 골절 위험 증가는 시작 후 빠르게 나타나고 용량에 따라 커진다. 고관절을 포함한 척추·비척추 골절이 늘고, 일부는 BMD와 독립적이다(Ia).',
+ '골 보호 치료의 승인은 주로 비스포스포네이트 3상 RCT의 BMD 가교 연구에 기반했고, 데노수맙도 같은 방법으로 승인되었다. 대부분의 시험에서 골절은 효능 결과가 아니었다. 18개월(36개월로 연장) 테리파라타이드 대 알렌드로네이트 RCT에서 테리파라타이드군의 척추골절이 유의하게 적었으나 비척추 골절 이득은 없었다. 최근 메타분석은 테리파라타이드, 알렌드로네이트, 리세드로네이트, 데노수맙 병용이 척추골절을 줄이고 알렌드로네이트와 테리파라타이드는 비척추 골절도 줄인다는 근거를 보였다(Table 6; Ia, Ib).',
+ 'FRAX는 평균 용량(프레드니솔론 2.5–7.5 mg/일)과 고용량(≥7.5 mg/일)에 따른 확률을 제공한다. 평균 &lt;2.5 mg/일이면 위험이 낮으며 Table 7의 평균 보정을 쓴다(IIb). 프레드니솔론 &gt;20 mg/일 같은 초고용량에서는 더 큰 상향 보정이 필요하다(IIa). 영국 FRAX에서 글루코코르티코이드 칸을 채우면 NOGG 그래프에 중간 용량과 고용량 두 점이 표시되고, 평가 역치와 중재 역치는 일반 폐경 후 여성·노년 남성과 같은 방식으로 쓴다.']},
+adt:{t:'안드로겐 차단 요법을 받는 남성', r:'28–29쪽', p:[
+ 'NOGG는 Brown 등(2020)의 지침을 지지한다. 남성의 골대사가 여성과 근본적으로 다르다는 근거는 없으나 남성에서는 이차 원인이 흔하고 그중 성선기능저하증이 두드러진다. 주로 고령 전립선암 남성에 쓰는 ADT는 흔히 성선기능저하증을 일으키며, 시작 후 6–12개월 안에 BMD가 빠르게 줄고(Ic) 시작 후 5년간 골절 위험이 유의하게 늘어난다(Ic).',
+ '비스포스포네이트와 데노수맙은 ADT 남성의 BMD 소실을 막는 데 효과적이나 골절 감소는 입증되지 않았다. 운동은 덜 효과적이며 단독으로는 불충분하다(Ib). 네트워크 메타분석에서 비스포스포네이트와 SERM 모두 위약보다 BMD를 개선했고, 졸레드로네이트가 대부분 부위에서 가장 컸다(한 소규모 연구의 대퇴경부에서는 리세드로네이트가 나았다; IIa). 영국 합의문은 ADT를 이차 원인으로 넣어 FRAX를 계산하고, 가능하면 BMD를 포함하며, 계산 위험이 NOGG 중재 역치에 가까우면 항상 BMD를 측정하고, 역치 바로 아래이거나 추가 전신 치료를 받게 되면 12–18개월 후 BMD를 포함한 FRAX를 반복하도록 하였다(IIa).']},
+ai:{t:'아로마타제 억제제를 받는 여성', r:'29쪽', p:[
+ '폐경 후 여성의 AI 사용은 해면골이 풍부한 부위에서 연 평균 1–3%의 골소실을 일으키며, 치료 유도 난소 억제를 받는 젊은 여성에서는 연 7–8%로 더 크다(IIa). 환자-대조군 연구에서 AI 치료 유방암 여성의 골절 발생률은 5년 추적에서 약 18–20%였다. NICE 조기 유방암 지침은 AI 시작 시 기저 DXA를 권고한다(IV).',
+ '국제 합의문은 골절 위험 평가를 권하지만 FRAX에서 AI를 이차 원인으로 넣는 것만으로는 위험을 충분히 추정하지 못할 수 있다(IIa). 이 합의문은 T-점수 &lt; −2, 또는 위험인자 1개와 T-점수 &lt; −1.5, 또는 (BMD 없이) 위험인자 2개 이상이면 약물치료를 권한다. 약제는 폐경 후 골다공증 용량의 비스포스포네이트(경구 또는 비경구)나 데노수맙이다. 데노수맙과 졸레드로네이트는 AI를 받는 유방암 폐경 후 여성의 척추·고관절 BMD를 유의하게 늘렸고, 데노수맙과 리세드로네이트는 골절 위험을 줄였다(Ia).']},
+vf:{t:'증상성 골다공증 척추골절의 관리', r:'29–30쪽', p:[
+ '척추골절은 급성·만성 통증, 키 감소, 척추 변형과 체형 변화, 기능 장애, 삶의 질 저하를 일으킨다(Ia). 기능과 이동성 회복을 위해 급성 통증 진통이 중요하지만 안전하게 써야 한다(IIa).',
+ '#보조 진통',
+ '입원 환자에서 급성(10일 이내) 척추골절의 안정 시·보행 시 통증에 연어 칼시토닌(50–100 IU/일 피하 또는 근육 주사, 최대 4주)이 효과적인 보조 진통제였다(IIa). 그러나 홍조와 위장관 장애 같은 부작용이 흔하고 장기 사용은 암 위험 증가와 관련될 수 있으며, 만성 통증에는 효과 근거가 없다(Ia). 제품 설명서상 칼시토닌의 적응은 통증 관리가 아니라 최근 골절 등 갑작스러운 부동에 의한 급성 골소실 예방이다. 급성 척추골절 21일 이내 파미드로네이트 30 mg 정맥 주사가 위약보다 통증을 줄인 소규모 RCT가 하나 있다(IIb). 파미드로네이트의 적응도 통증 관리가 아니다.',
+ '#운동·교육·보조기',
+ '물리치료사 감독 운동은 척추골절 후 통증과 신체 수행을 개선한다(Ib). 통증이 있으면 처음에는 누운 자세처럼 비부하 자세에서 척추기립근 운동을 하는 것이 좋을 수 있다(Ia). 운동과 물리치료사의 교육·지도를 함께 하면 낙상 공포와 심리 증상이 줄어든다(Ia). 통증성 척추골절에서 하루 2시간, 6개월간 연성·경성 보조기가 통증과 체간 근력을 개선한다는 낮은 질의 근거가 있으나 골절 치유를 개선한다는 근거는 없어 일상적 보조기 사용은 권고하지 않는다(Ia).',
+ '#시술',
+ '경피적 척추성형술과 풍선 척추후만성형술은 일관된 이득이 없어 통증성 골다공증 척추골절에 일상적으로 쓰는 것을 지지하지 않는다(Ia). 6개월 이상 안정된 만성 요통이 있는 고령 여성에서 간섭파 또는 수평 치료 방식의 전기 신경 자극(주 5일, 2주)이 14주간 통증을 개선한 소규모 RCT가 있다(IIb). 최근 척추골절 환자는 추가 취약골절의 임박 위험이 높다(IIb). 척추골절이 신경학적 결손을 동반하거나 위협하면 척추 수술 서비스로 긴급 의뢰한다.']},
+fls:{t:'골절 예방 진료 모델', r:'30–32쪽', p:[
+ '#FLS 진료 모델',
+ '1차 진료, 2차 진료 의사, 정형외과, 영상의학과, 약사 등 의료·비의료 직종의 협력이 이차 골절 예방 프로그램의 기반이다. FLS는 재골절을 줄이고 생존을 개선한다(Ia, IIb). 영국 보건부와 NHS RightCare는 모든 취약골절 환자에게 FLS를 제공해야 한다고 하며, 이는 IOF의 Capture the Fracture와 ROS FLS 임상 기준과도 일치한다.',
+ 'FLS는 완전히 조정된 집중 진료 모델이어야 한다. 환자 발견, 평가, 치료 시작(또는 1차 진료에 치료 권고)을 하는 모델이 발견·알림·교육만 하는 접근보다 임상적·비용적으로 효과적이다(Ia). 필요한 형태는 코디네이터가 관리하고 성과 측정 전용 데이터베이스를 쓰는 통합 전자 의료망 안에서 발견, 평가, 치료가 모두 이루어지는 FLS다(Ia). 1차 진료에 권고만 하는 것보다 FLS가 직접 약물을 시작하면 치료 시작률이 높다(Ia). FLS는 비약물 중재도 시작하고 1차 진료와 효과적으로 소통하며, 낙상과 골절 예방을 통합해 모든 골절 환자의 낙상 위험을 평가하고 중재해야 한다. 재골절 위험은 골절 직후 가장 높으므로 평가와 중재는 가능한 한 빨리, 늦어도 골절 후 16주 이내에 시작한다(ROS 권고).',
+ '#FLS 환자 발견',
+ '입원·외래 취약골절 환자와 흔히 진단되지 않는 척추골절 환자를 찾기 위해 다양한 전략이 필요하다. 척추골절을 놓치는 이유는 낙상이라는 계기가 없거나, 증상이 없거나, 다른 원인으로 돌리기 때문이며, 척추 영상에서도 모호한 비표준 용어와 다른 장기 영상에 찍힌 척추를 평가하지 않는 관행이 원인이 된다. ROS는 영상의학과가 가능한 모든 영상에서 척추골절을 일상적으로 평가하고, “vertebral fracture”라는 표준 용어로 실행 가능한 관리 방향을 담아 보고하도록 권고한다(IV). 급성 요통, 특히 흉추 통증은 1차 진료의 흔한 증상이므로 표적 척추 영상은 환자 발견, 증상 관리, 신속한 이차 예방에 도움이 된다.',
+ '#환자 정보와 순응 지원',
+ '추가 중재가 필요한 환자에게 골다공증의 원인, 결과, 약물·비약물 관리를 설명한다. 약물치료를 논의할 때는 권고 이유, 목적과 이득, 흔하거나 심각한 부작용, 복용의 실제, 치료 기간을 설명한다(IV). 의사결정 보조 도구는 공유 의사결정을 개선하고 결정 갈등을 줄이며 환자가 인식하는 골절 위험의 정확성을 높인다(Ib). 정보는 서면 자료를 포함해 환자에게 맞춘다.',
+ '순응을 높이려면 순응을 떨어뜨리는 믿음과 우려를 끌어내 다루고 현실적인 기대를 세운다. 단일 중재로 순응이 나아진다는 근거는 없으나 환자가 능동적으로 참여하는 다요소 모델이 가장 효과적이며(Ia), 환자 접촉이 많은 FLS 모델이 더 효과적이다(Ia). NOGG는 골절 후 16주와 52주에 추적하여 낙상·골절 위험을 높이는 약물을 검토하고, 필요하면 칼슘·비타민 D를 함께 처방하며, 이상반응과 순응을 감시하라는 ROS 권고를 지지한다.']},
+trn:{t:'교육', r:'32–33쪽', p:[
+ '골다공증과 취약골절 위험 관리는 한 분과에 속하지 않는다. 일반의, 류마티스내과, 정형외과, 내분비내과, 대사의학, 신장내과, 노인의학, 산부인과가 관련되며, 간호사, 물리치료사, 작업치료사, 약사, DXA 검사자도 책임을 나눈다. 1차 진료는 위험 인구를 찾고 장기 관리하는 데 중심 역할을 하므로 충분한 교육과 최신 지침·온라인 학습 자료 접근이 중요하다.',
+ '모든 직종에 공통으로 개인 맞춤의 환자 중심 진료가 필요하다. 개인 맞춤 진료는 임상 정보와 함께 사람들이 건강에 관해 정보에 근거한 결정을 하도록 돕는 협력 접근이다. FLS의 DXA 서비스 접근성과 질은 편차가 크며, 많은 센터가 IOF-ISCD Osteoporosis Essentials 기준에 못 미친다. 질 향상은 특정 방법과 도구를 써서 측정 가능한 개선을 목표로 문제를 체계적으로 해결하는 것이며, ROS FLS 시행 도구 같은 자료가 도움이 된다.',
+ '#교육 예',
+ '① 개인 맞춤 진료: 위험 전달, 공유 의사결정, 건강 문해력 원칙, 골다공증 소통을 다루는 상담 기술 교육(ifraptraining.co.uk)과 Personalised Care Institute의 이러닝. ② 골다공증 관리: ROS Fracture Prevention Practitioner Training(기초 5개, 심화 3개 모듈, RCGP·RCP·RCN CPD 인증), RCGP 이러닝, erohub.co.uk. ③ 근골격 통증 관리: Health Education England의 통증 관리 프로그램(척추골절 평가·관리 포함). ④ DXA 시행: ROS 골밀도 국가 교육 과정.']},
+com:{t:'서비스 책임자·커미셔너 권고', r:'33–34쪽', p:[
+ '2017년 국가 낙상예방조정그룹과 잉글랜드 공중보건청(PHE)은 낙상·골절 위험을 줄이고 이차 예방을 포함한 골절 관리를 개선하기 위한 합의문과 자료집을 냈다. 이어 NHS RightCare가 PHE·ROS와 함께 낙상·취약골절 경로를 만들어 커미셔너가 우선 최적화할 세 가지로 ① 낙상 예방 ② 골다공증 발견·관리 ③ 취약골절 후 최적 지원을 정의하였다. ROS는 FLS 위탁을 돕는 온라인 FLS 시행 도구를 개발하였다. 잉글랜드의 통합 진료 체계(ICS)로의 전환은 임박 골절 위험을 포함한 취약골절 위험 환자의 강화된 진료 경로를 일상 서비스에 넣을 기회다.',
+ '위탁 구조가 아닌 곳에서는 의료 재원 기관과 지역 보건 위원회에 적용한다. 웨일스는 웨일스 정부와 지역 보건 위원회(IMTP 수립 시), 북아일랜드는 보건사회복지위원회(HSCB)와 5개 지역 위탁 그룹에 적용한다.']},
+aud:{t:'감사와 질 향상 기준', r:'34–35쪽', p:[
+ '#골다공증 질 기준',
+ '① NICE 2017 골다공증 질 기준 4개(QS149) ② ROS 2017 골다공증·취약골절 예방 질 기준 7개 ③ ROS 임상 질 도구 5개: DXA 질, 고관절 골절, 척추골절, FLS 시행, 비대면·전화 진료.',
+ '#1차 진료',
+ '일반의에 등록된 폐경 후 여성과 50세 이상 남성 중 다음의 비율을 기록한다. a) 골절 코드가 있고 취약(저외상) 골절인지 평가된 사람 b) 취약골절 위험인자가 1개 이상 있고 공식 골절 위험 평가를 받은 사람 c) 과거 취약골절이 있고 DXA 결과가 기록된 사람 d) FRAX 고위험·초고위험으로 약물치료를 제안받은 사람 e) 새 고관절 골절 후 16주 이내에 골다공증 약물을 받은 사람 f) 골다공증 약물을 처방받고 최근 12개월 내 순응이 확인된 사람 g) 골다공증 약물을 처방받고 5년·10년 검토를 받은 사람 h) 데노수맙을 처방받고 예정일 4주 이내에 다음 주사를 받은 사람 i) 경구 글루코코르티코이드를 3개월 이상 쓰고 골절 위험 평가를 받은 사람 j) 골절 위험 평가와 치료 결정의 논의가 기록된 사람.',
+ '#FLS',
+ 'ROS는 2019년 FLS 핵심 기준 6개와 달성 시간표, 감사 예시를 발표했고 이어 FLS 시행 도구를 냈다. 영국왕립내과의사회 FLS-DB 국가 감사는 HQIP가 위탁한 낙상·취약골절 감사 프로그램의 일부로, 잉글랜드 병원의 Quality Account 보고와 웨일스 보건 위원회의 필수 항목이며, NICE·ROS·NOGG 기준에 대한 성과를 측정하는 핵심 성과 지표 11개를 둔다. IOF Capture the Fracture 모범 사례 체계는 FLS 제공 기준 13개와 브론즈·실버·골드 달성 목표를 제시한다.',
+ '#DXA 판독',
+ 'ROS는 2019년 DXA 판독 질 기준 6개와 감사 양식을 발표하였다.']},
+sum:{t:'주요 권고 요약', r:'35–36쪽', p:[
+ '이 요약은 골다공증의 평가, 진단, 현재 치료와 취약골절 예방 권고를 다루며 폐경 후 여성과 50세 이상 남성에게 적용한다. 위험 평가(1–5), 약물치료(6–8), 약제 선택(9–14), 치료 시작 후(15–21), 경구 글루코코르티코이드(22–24), 생활습관·식사(25–27), 골절 예방 서비스(28–29), 증상성 척추골절(30–32)로 구성된다. 이 근거는 서비스 책임자와 커미셔너를 위한 추가 권고, 1·2차 진료의 감사·질 향상 기준을 뒷받침한다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+/* NOGG 역치 그래프 (Table 4 값, 70세 이후 고정) */
+const AGES = [50,55,60,65,70,90];
+const TH = {
+ mof:{LAT:[3.4,4.5,6.0,8.6,11.1], IT:[7.3,9.5,12.2,16.5,20.3], UAT:[8.8,11.4,14.6,19.8,24.4], VHRT:[11.7,15.2,19.4,26.4,32.5]},
+ hip:{IT:[0.91,1.5,2.3,3.5,5.4], VHRT:[1.5,2.3,3.7,5.6,8.6]}
+};
+const PANEL = {mof:{x0:60, ymax:40, step:10}, hip:{x0:440, ymax:10, step:2}};
+const gx = (p,a)=> PANEL[p].x0 + (a-50)*7;
+const gy = (p,v)=> 300 - v*(240/PANEL[p].ymax);
+const pts = (p,arr)=> AGES.map((a,i)=>[gx(p,a), gy(p, arr[Math.min(i,4)])]);
+const line = (p,arr)=> pts(p,arr).map(([x,y],i)=>`${i?'L':'M'}${x.toFixed(1)} ${y.toFixed(1)}`).join(' ');
+const band = (p,lo,hi)=>{
+  const top = hi ? pts(p,hi) : AGES.map(a=>[gx(p,a), gy(p,PANEL[p].ymax)]);
+  const bot = lo ? pts(p,lo) : AGES.map(a=>[gx(p,a), gy(p,0)]);
+  return 'M' + top.map(([x,y])=>`${x.toFixed(1)} ${y.toFixed(1)}`).join(' L') + ' L' + bot.reverse().map(([x,y])=>`${x.toFixed(1)} ${y.toFixed(1)}`).join(' L') + ' Z';
+};
+const axes = p => {
+  const e = [[`M${gx(p,50)} 60 V300 H${gx(p,90)}`,0,'ax']];
+  for (let v=PANEL[p].step; v<=PANEL[p].ymax; v+=PANEL[p].step) e.push([`M${gx(p,50)} ${gy(p,v)} h-4`,0,'ax']);
+  return e;
+};
+const ticks = p => {
+  const l = AGES.filter(a=>a!==55&&a!==65).concat([80]).map(a=>[gx(p,a)-8, 318, String(a)]);
+  for (let v=0; v<=PANEL[p].ymax; v+=PANEL[p].step) l.push([gx(p,50)-28, gy(p,v)+4, String(v)]);
+  return l;
+};
+
+const CHARTS = {
+alg:{tab:'위험 평가 알고리즘', fig:'Fig. 3', aria:'골절 위험 평가와 관리 알고리즘', w:760, h:585, nodes:[
+ {id:'a_crf', x:280,y:10, w:200,h:45, label:'임상 위험인자', cls:'test'},
+ {id:'a_fp',  x:280,y:75, w:200,h:45, label:'골절 확률 (FRAX)', cls:'test'},
+ {id:'a_lo',  x:10, y:150,w:170,h:45, label:'저위험', cls:'rk0'},
+ {id:'a_im',  x:200,y:150,w:170,h:45, label:'중간위험', cls:'rk2'},
+ {id:'a_hi',  x:390,y:150,w:170,h:45, label:'고위험', cls:'rk3'},
+ {id:'a_vh',  x:580,y:150,w:170,h:45, label:'초고위험', cls:'rk4'},
+ {id:'a_bmd', x:200,y:215,w:170,h:45, label:'BMD 측정', cls:'rk2'},
+ {id:'a_hit', x:390,y:215,w:170,h:45, label:'치료 · BMD 측정', cls:'rk3'},
+ {id:'a_vht', x:580,y:215,w:170,h:45, label:'치료 · 의뢰 고려', cls:'rk4'},
+ {id:'a_rea', x:200,y:280,w:170,h:45, label:'확률 재평가', cls:'rk2'},
+ {id:'a_lo2', x:10, y:365,w:170,h:45, label:'저위험', cls:'rk0'},
+ {id:'a_hi2', x:200,y:365,w:170,h:45, label:'고위험', cls:'rk3'},
+ {id:'a_vh2', x:390,y:365,w:170,h:45, label:'초고위험', cls:'rk4'},
+ {id:'a_hi2t',x:200,y:430,w:170,h:45, label:'치료', cls:'rk3'},
+ {id:'a_vh2t',x:390,y:430,w:170,h:45, label:'치료 · 의뢰 고려', cls:'rk4'},
+ {id:'a_life',x:580,y:365,w:170,h:110,label:'모든 사람에게 생활습관 조언<small>식사 · 칼슘·비타민 D · 운동 · 금연 · 절주 · 낙상 평가</small>', cls:'ben fac'},
+ {id:'a_vfa', x:10, y:510,w:360,h:65, label:'척추골절 평가(VFA)<small>키 감소 ≥4 cm · 척추후만 · 장기 GC · T ≤ −2.5 · 급성 요통</small>', cls:'test fac'},
+ {id:'a_inv', x:390,y:510,w:360,h:65, label:'원인 검사<small>Table 2 · BMD 측정법 · Table 3 위험 평가 계기</small>', cls:'test fac'}],
+ edges:[[A(380,55,380,75),1],['M380 120 V135',0],['M95 135 H665',0],[A(95,135,95,150),1],[A(285,135,285,150),1],[A(475,135,475,150),1],[A(665,135,665,150),1],
+  [A(285,195,285,215),1],[A(285,260,285,280),1],[A(475,195,475,215),1],[A(665,195,665,215),1],
+  ['M285 325 V345',0],['M95 345 H475',0],[A(95,345,95,365),1],[A(285,345,285,365),1],[A(475,345,475,365),1],
+  [A(285,410,285,430),1],[A(475,410,475,430),1]],
+ labels:[[10,500,'초고위험은 치료하고 2차 진료 골다공증 전문의 의뢰를 고려 · 일부는 비경구(1차 동화제 포함) 치료']]},
+
+thr:{tab:'NOGG 역치', fig:'Fig. 1·2 · Table 4', aria:'나이별 NOGG 평가·중재 역치', w:760, h:575, nodes:[
+ {id:'th_vh', x:10, y:345,w:180,h:75, label:'초고위험<small>VHRT 초과 · 전문의 의뢰 고려와 치료</small>', cls:'rk4 fac'},
+ {id:'th_hi', x:200,y:345,w:180,h:75, label:'고위험<small>UAT(BMD 없이) 또는 IT(BMD 포함) 초과 · 치료</small>', cls:'rk3 fac'},
+ {id:'th_im', x:390,y:345,w:180,h:75, label:'중간위험<small>LAT–UAT · BMD 측정</small>', cls:'rk2 fac'},
+ {id:'th_lo', x:580,y:345,w:170,h:75, label:'저위험<small>LAT 미만 · 생활습관 조언</small>', cls:'rk0 fac'},
+ {id:'th_t4', x:10, y:435,w:365,h:55, label:'Table 4 역치 수치<small>50·55·60·65·70세 (70세 이후 고정)</small>', cls:'test fac'},
+ {id:'th_hip',x:385,y:435,w:365,h:55, label:'MOF와 고관절 확률이 다르면<small>높은 위험 범주를 따른다</small>', cls:'test fac'},
+ {id:'th_nb', x:10, y:505,w:365,h:60, label:'BMD 측정이 어려우면<small>쇠약 등 · IT 초과 또는 취약골절이면 치료</small>', cls:'fac'},
+ {id:'th_df', x:385,y:505,w:365,h:60, label:'역치의 정의<small>IT = 같은 나이 과거 골절 여성의 위험 · VHRT = IT의 1.6배</small>', cls:'fac'}],
+ edges:[
+  [band('mof',null,TH.mof.LAT),0,'f0'],[band('mof',TH.mof.LAT,TH.mof.UAT),0,'f1'],[band('mof',TH.mof.UAT,TH.mof.VHRT),0,'f2'],[band('mof',TH.mof.VHRT,null),0,'f3'],
+  [line('mof',TH.mof.IT),0,'thl'],
+  [band('hip',null,TH.hip.IT),0,'f0'],[band('hip',TH.hip.IT,TH.hip.VHRT),0,'f2'],[band('hip',TH.hip.VHRT,null),0,'f3'],
+  ...axes('mof'), ...axes('hip')],
+ labels:[[60,40,'MOF 10년 확률(%) · BMD 없이 (Fig. 1)','sec'],[440,40,'고관절 골절 10년 확률(%) · BMD 포함 (Fig. 2)','sec'],
+  ...ticks('mof'), ...ticks('hip'), [175,336,'나이(세)'],[555,336,'나이(세)'],
+  [gx('mof',72),gy('mof',36),'VHRT 초과','gl'],[gx('mof',74),gy('mof',28),'UAT–VHRT','gl'],[gx('mof',74),gy('mof',21.6),'IT','gl'],[gx('mof',74),gy('mof',15),'LAT–UAT','gl'],[gx('mof',74),gy('mof',5),'LAT 미만','gl'],
+  [gx('hip',72),gy('hip',9.4),'VHRT 초과','gl'],[gx('hip',74),gy('hip',6.6),'IT–VHRT','gl'],[gx('hip',74),gy('hip',2),'IT 미만','gl']]},
+
+tx:{tab:'약제 선택', fig:'약물치료 권고 1–17', aria:'골절 위험 수준에 따른 약제 선택', w:760, h:585, nodes:[
+ {id:'x_need',x:200,y:10, w:360,h:50, label:'약물치료 대상<small>고위험·초고위험 · 특히 노인의 과거·최근 취약골절</small>', cls:'test fac'},
+ {id:'x_hi',  x:10, y:95, w:360,h:50, label:'고위험', cls:'rk3'},
+ {id:'x_vh',  x:390,y:95, w:360,h:50, label:'초고위험', cls:'rk4'},
+ {id:'x_bp',  x:10, y:170,w:175,h:80, label:'1차: 비스포스포네이트<small>경구 알렌드로네이트·리세드로네이트 또는 IV 졸레드로네이트</small>', cls:'tx fac'},
+ {id:'x_hip', x:195,y:170,w:175,h:80, label:'고관절 골절 후<small>IV 졸레드로네이트 1차</small>', cls:'tx fac'},
+ {id:'x_hrt', x:10, y:270,w:175,h:80, label:'60세 이하 폐경 여성<small>악성·혈전 위험 낮으면 HRT 1차</small>', cls:'tx fac'},
+ {id:'x_alt', x:195,y:270,w:175,h:80, label:'대안<small>데노수맙 · 이반드로네이트 · 랄록시펜 · 스트론튬</small>', cls:'fac'},
+ {id:'x_dmab',x:10, y:370,w:360,h:55, label:'데노수맙<small>시작 전 장기 계획 · 계획 없는 중단 금지</small>', cls:'mal fac'},
+ {id:'x_dst', x:10, y:445,w:360,h:55, label:'데노수맙 중단 시<small>마지막 주사 6개월 후 졸레드로네이트 · CTX 감시</small>', cls:'mal fac'},
+ {id:'x_ref', x:390,y:170,w:360,h:55, label:'2차 진료 골다공증 전문의 의뢰<small>평가 · 비경구 치료 고려</small>', cls:'test fac'},
+ {id:'x_ana', x:390,y:245,w:360,h:80, label:'1차 동화제 고려(특히 척추골절)<small>여성: 테리파라타이드·아발로파라타이드·로모소주맙 · 남성: 테리파라타이드</small>', cls:'tx fac'},
+ {id:'x_seq', x:390,y:345,w:360,h:80, label:'동화제 종료 후 즉시 후속 치료<small>24·18·12개월 후 알렌드로네이트·졸레드로네이트·데노수맙 · 여성 랄록시펜 고려</small>', cls:'tx fac'},
+ {id:'x_2nd', x:390,y:445,w:360,h:55, label:'BP 불내성 + 척추골절<small>2차 동화제 고려</small>', cls:'fac'},
+ {id:'x_ca',  x:10, y:520,w:360,h:55, label:'칼슘·비타민 D 보조<small>식이 칼슘 부족·비타민 D 부족 위험 시</small>', cls:'ben fac'},
+ {id:'x_vd',  x:390,y:520,w:360,h:55, label:'비타민 D 결핍 교정<small>비경구 약물 시작 전 · 경구 약물과 함께</small>', cls:'ben fac'}],
+ edges:[['M380 60 V78',0],['M190 78 H570',0],[A(190,78,190,95),1],[A(570,78,570,95),1],
+  ['M190 145 V158',0],['M97 158 H282',0],[A(97,158,97,170),1],[A(282,158,282,170),1],
+  ['M10 120 H4 V310 H10',1],[A(282,250,282,270),1,'dot'],[A(282,350,282,370),1],[A(190,425,190,445),1],
+  [A(570,145,570,170),1],[A(570,225,570,245),1],[A(570,325,570,345),1],['M370 310 H380 V472 H390',1,'dot']],
+ labels:[[288,264,'부적합·불내성'],[288,364,'선택 시']]},
+
+bp:{tab:'경구 BP 기간', fig:'Fig. 4', aria:'경구 비스포스포네이트 장기 치료와 감시 흐름도', w:760, h:715, nodes:[
+ {id:'o_q',   x:230,y:10, w:300,h:85, label:'70세 초과, 또는 과거 고관절 골절, 또는 척추골절 ≥2개, 또는 현재 GC 사용', cls:'test'},
+ {id:'o_y',   x:10, y:115,w:220,h:60, label:'BP 시작 · 10년 치료로 상담', cls:'tx'},
+ {id:'o_n',   x:530,y:115,w:220,h:60, label:'BP 시작 · 5년 치료로 상담', cls:'tx'},
+ {id:'o_tol', x:180,y:195,w:400,h:40, label:'12–16주 후 내약성 확인', cls:'test'},
+ {id:'o_adh', x:180,y:250,w:400,h:40, label:'1년 후 순응 확인', cls:'test'},
+ {id:'o_rf',  x:180,y:305,w:400,h:75, label:'골절 위험 재평가<small>재골절 · 임상 위험인자 변화(예: GC 시작) · 그 밖에는 늦어도 5년 후</small>', cls:'test fac'},
+ {id:'o_5',   x:180,y:395,w:400,h:70, label:'5년 시점 재평가<small>순응 · 골다공증 이차 원인 · 약제 선택</small>', cls:'test fac'},
+ {id:'o_fb',  x:480,y:485,w:180,h:40, label:'FRAX + BMD', cls:'test'},
+ {id:'o_ab',  x:300,y:550,w:190,h:60, label:'NOGG IT 초과 또는 T ≤ −2.5', cls:'rk3'},
+ {id:'o_be',  x:560,y:550,w:190,h:60, label:'NOGG IT 미만이고 T &gt; −2.5', cls:'rk0'},
+ {id:'o_ct',  x:10, y:550,w:200,h:60, label:'5년 더 지속', cls:'tx'},
+ {id:'o_10',  x:10, y:635,w:320,h:70, label:'10년 치료 후<small>개별 결정 · 환자와 충분히 상의 · 전문의 조언</small>', cls:'fac'},
+ {id:'o_ps',  x:560,y:635,w:190,h:70, label:'1.5–3년 휴약 후 재평가', cls:'ben'}],
+ edges:[['M230 52 H120 V115',1],['M530 52 H640 V115',1],['M120 175 V215 H180',1],['M640 175 V215 H580',1],
+  [A(380,235,380,250),1],[A(380,290,380,305),1],[A(380,380,380,395),1],
+  ['M250 465 V530 H110 V550',1],[A(570,465,570,485),1],['M570 525 V538 H395 V550',1],['M570 538 H655 V550',1],
+  [A(300,580,210,580),1],[A(110,610,110,635),1],[A(655,610,655,635),1],['M750 670 H756 V505 H660',1]],
+ labels:[[150,44,'YES'],[580,44,'NO']]},
+
+iv:{tab:'IV BP 기간', fig:'Fig. 5', aria:'정맥 비스포스포네이트 장기 치료와 감시 흐름도', w:760, h:655, nodes:[
+ {id:'z_q',   x:230,y:10, w:300,h:85, label:'70세 초과, 또는 과거 고관절 골절, 또는 척추골절 ≥2개, 또는 현재 GC 사용', cls:'test'},
+ {id:'z_y',   x:10, y:115,w:220,h:60, label:'BP 시작 · 6년 치료로 상담', cls:'tx'},
+ {id:'z_n',   x:530,y:115,w:220,h:60, label:'BP 시작 · 3년 치료로 상담', cls:'tx'},
+ {id:'z_rf',  x:180,y:195,w:400,h:75, label:'골절 위험 재평가<small>재골절 · 임상 위험인자 변화(예: GC 시작) · 그 밖에는 늦어도 3년 후</small>', cls:'test fac'},
+ {id:'z_3',   x:180,y:290,w:400,h:85, label:'3년 시점 재평가<small>순응 · 골다공증 이차 원인 · 약제 선택 · FRAX + BMD</small>', cls:'test fac'},
+ {id:'z_ab',  x:180,y:405,w:200,h:60, label:'NOGG IT 초과 또는 T ≤ −2.5', cls:'rk3'},
+ {id:'z_be',  x:430,y:405,w:200,h:60, label:'NOGG IT 미만이고 T &gt; −2.5', cls:'rk0'},
+ {id:'z_ct',  x:180,y:490,w:200,h:50, label:'3년 더 지속', cls:'tx'},
+ {id:'z_ps',  x:430,y:490,w:200,h:70, label:'1.5–3년 휴약 후 재평가', cls:'ben'},
+ {id:'z_6',   x:110,y:575,w:340,h:70, label:'6년 치료 후<small>개별 결정 · 환자와 충분히 상의 · 전문의 조언</small>', cls:'fac'}],
+ edges:[['M230 52 H120 V115',1],['M530 52 H640 V115',1],['M120 175 V232 H180',1],['M640 175 V232 H580',1],
+  [A(380,270,380,290),1],['M380 375 V390 H280 V405',1],['M380 390 H530 V405',1],
+  [A(280,465,280,490),1],[A(530,465,530,490),1],[A(280,540,280,575),1],['M630 525 H660 V332 H580',1]],
+ labels:[[150,44,'YES'],[580,44,'NO']]},
+
+gio:{tab:'GIO·ADT·AI', fig:'권고 15–27 · Table 6·7', aria:'글루코코르티코이드, 안드로겐 차단, 아로마타제 억제제 관련 골다공증', w:760, h:600, nodes:[
+ {id:'g_st',  x:10, y:30, w:360,h:45, label:'경구 글루코코르티코이드 시작', cls:'test'},
+ {id:'g_q',   x:10, y:95, w:360,h:110,label:'즉시 골 보호 대상?<small>a) 과거 취약골절 · b) 70세 이상 여성 · c) 고용량(프레드니솔론 ≥7.5 mg/일, 3개월) · d) FRAX가 IT 초과</small>', cls:'test fac'},
+ {id:'g_yes', x:10, y:230,w:175,h:80, label:'GC와 동시에 골 보호 시작<small>DXA는 나중에</small>', cls:'tx fac'},
+ {id:'g_no',  x:195,y:230,w:175,h:80, label:'FRAX(GC 용량 보정) ± BMD', cls:'test'},
+ {id:'g_dr',  x:10, y:330,w:175,h:90, label:'약제<small>BP·졸레드로네이트 1차 · 데노수맙 대안 · 초고위험 테리파라타이드</small>', cls:'tx fac'},
+ {id:'g_nr',  x:195,y:330,w:175,h:90, label:'역치 근처이나 미만<small>12–18개월 후 FRAX+BMD 재평가</small>', cls:'fac'},
+ {id:'g_ca',  x:10, y:440,w:175,h:60, label:'칼슘·비타민 D', cls:'ben'},
+ {id:'g_t7',  x:195,y:440,w:175,h:60, label:'Table 7 용량 보정', cls:'test'},
+ {id:'g_sp',  x:10, y:520,w:175,h:70, label:'GC 중단<small>MOF·고관절 모두 IT 미만이면 중단 고려</small>', cls:'ben fac'},
+ {id:'g_lg',  x:195,y:520,w:175,h:70, label:'GC 장기 지속<small>대부분 골 보호 유지</small>', cls:'tx fac'},
+ {id:'d_st',  x:390,y:30, w:360,h:55, label:'ADT 시작 남성<small>ADT를 이차 원인으로 FRAX · 가능하면 BMD</small>', cls:'test fac'},
+ {id:'d_tx',  x:390,y:100,w:360,h:55, label:'약물치료가 필요한 고위험<small>2차 진료 의뢰 고려 · BP 또는 데노수맙</small>', cls:'tx fac'},
+ {id:'d_re',  x:390,y:170,w:360,h:55, label:'역치 근처이나 미만 · 추가 전신 치료<small>12–18개월 후 FRAX+BMD</small>', cls:'fac'},
+ {id:'h_st',  x:390,y:275,w:360,h:55, label:'AI 시작 여성<small>AI를 이차 원인으로 FRAX · 가능하면 BMD</small>', cls:'test fac'},
+ {id:'h_tx',  x:390,y:345,w:360,h:55, label:'고위험<small>BP 또는 데노수맙 시작</small>', cls:'tx fac'},
+ {id:'h_re',  x:390,y:415,w:360,h:55, label:'역치 근처이나 미만 · 추가 전신 치료<small>12–24개월 후 FRAX+BMD</small>', cls:'fac'},
+ {id:'h_bp',  x:390,y:485,w:360,h:55, label:'보조 고용량 BP 사용 시<small>종료 시 골절 위험 평가 고려</small>', cls:'fac'}],
+ edges:[[A(190,75,190,95),1],['M190 205 V218 H97 V230',1],['M190 218 H282 V230',1],[A(97,310,97,330),1],[A(282,310,282,330),1],
+  [A(97,420,97,440),1],['M195 290 H190 V375 H185',1],
+  [A(570,85,570,100),1],[A(570,155,570,170),1],[A(570,330,570,345),1],[A(570,400,570,415),1],[A(570,470,570,485),1]],
+ labels:[[10,20,'글루코코르티코이드 유발 골다공증','sec'],[390,20,'안드로겐 차단 요법(ADT)','sec'],[390,265,'아로마타제 억제제(AI)','sec'],[288,325,'역치 미만']]},
+
+safe:{tab:'재평가·안전성', fig:'권고 3–15', aria:'치료 중 재평가, 턱뼈 괴사와 비전형 대퇴골절', w:760, h:560, nodes:[
+ {id:'r_fx',  x:10, y:30, w:360,h:55, label:'치료 중 취약골절<small>순응(복용 &lt;80%면 불량) 검토 · 이차 원인 검사</small>', cls:'mal fac'},
+ {id:'r_fr',  x:10, y:100,w:360,h:55, label:'FRAX + BMD(+ 산술 보정)<small>IT 초과면 치료 지속</small>', cls:'test fac'},
+ {id:'r_wh',  x:10, y:170,w:360,h:70, label:'휴약 후 재평가 시점<small>리세드로네이트·이반드로네이트 18개월 · 알렌드로네이트 2년 · 졸레드로네이트 3년</small>', cls:'test fac'},
+ {id:'r_nw',  x:10, y:255,w:360,h:55, label:'휴약 중 새 골절<small>FRAX 재평가 · 치료 재시작</small>', cls:'mal fac'},
+ {id:'r_of',  x:10, y:325,w:360,h:55, label:'골교체 표지자 재상승 · BMD 감소<small>치료 재개 고려</small>', cls:'fac'},
+ {id:'r_10',  x:10, y:395,w:360,h:55, label:'BP 10년 후<small>개별적으로 관리 결정</small>', cls:'fac'},
+ {id:'r_hol', x:10, y:465,w:360,h:85, label:'일상적 “약물 휴지기”는 지지하지 않음<small>BP·데노수맙 모두 중단 시 골절 위험 증가 · FRAX는 반응 평가에는 쓰지 않음</small>', cls:'mal fac'},
+ {id:'j_or',  x:390,y:30, w:360,h:55, label:'구강 위생 · 정기 치과 검진<small>치아 동요·통증·부종 보고</small>', cls:'ben fac'},
+ {id:'j_dt',  x:390,y:100,w:360,h:55, label:'중증 치과 질환<small>투여 전 치과 치료 · MDT · 투약 지연 최소화</small>', cls:'fac'},
+ {id:'j_pr',  x:390,y:170,w:360,h:55, label:'치료 중 치과 시술<small>대부분 안전 · 중단이 ONJ를 줄인다는 근거 없음</small>', cls:'fac'},
+ {id:'f_pn',  x:390,y:270,w:360,h:55, label:'원인 모를 대퇴부·서혜부·고관절 통증<small>대퇴골 전장 X선·동위원소 스캔·MRI</small>', cls:'test fac'},
+ {id:'f_af',  x:390,y:340,w:360,h:45, label:'AFF 확인 → 반대쪽 대퇴골 영상', cls:'mal'},
+ {id:'f_rf',  x:390,y:400,w:360,h:55, label:'골다공증 전문의 의뢰<small>BP·데노수맙 중단</small>', cls:'mal fac'},
+ {id:'f_nx',  x:390,y:470,w:360,h:80, label:'AFF 이후 치료<small>저위험: 추가 약물 회피 · 고위험·양측 고정: 테리파라타이드 · 일측·비수술: 테리파라타이드·로모소주맙·랄록시펜·HRT</small>', cls:'tx fac'}],
+ edges:[[A(190,85,190,100),1],[A(570,85,570,100),1],[A(570,155,570,170),1],[A(570,325,570,340),1],[A(570,385,570,400),1],[A(570,455,570,470),1]],
+ labels:[[10,20,'치료 중 재평가 (권고 5–8, 3–4)','sec'],[390,20,'턱뼈 괴사(ONJ)','sec'],[390,260,'비전형 대퇴골절(AFF)','sec']]},
+
+vf:{tab:'척추골절·FLS', fig:'척추골절 권고 1–7 · 진료 모델', aria:'증상성 척추골절 관리와 골절 연계 서비스', w:760, h:560, nodes:[
+ {id:'v_fx',  x:10, y:30, w:360,h:45, label:'증상성 골다공증 척추골절', cls:'mal'},
+ {id:'v_an',  x:10, y:95, w:360,h:80, label:'진통<small>경구 우선 · 정기 재평가와 증감 · 노인 NSAID 회피(쓰면 PPI) · 오피오이드에 하제</small>', cls:'tx fac'},
+ {id:'v_ad',  x:10, y:190,w:360,h:55, label:'보조 진통 근거<small>급성기 칼시토닌 · 파미드로네이트 소규모 RCT</small>', cls:'fac'},
+ {id:'v_ex',  x:10, y:260,w:360,h:70, label:'운동<small>점진적 근력강화 · 척추기립근 강화·지구력 · 통증 시 비부하 자세</small>', cls:'ben fac'},
+ {id:'v_ed',  x:10, y:345,w:360,h:45, label:'일상 동작·자세 안내', cls:'ben'},
+ {id:'v_no',  x:10, y:405,w:360,h:60, label:'일상적으로 권고하지 않음<small>보조기 · 척추성형술·풍선 척추후만성형술</small>', cls:'mal fac'},
+ {id:'v_ne',  x:10, y:480,w:360,h:55, label:'신경학적 결손(위협)<small>척추 수술 서비스 긴급 의뢰</small>', cls:'mal fac'},
+ {id:'l_fl',  x:390,y:30, w:360,h:55, label:'골절 연계 서비스(FLS)<small>다학제 · 코디네이터 기반</small>', cls:'tx fac'},
+ {id:'l_fd',  x:390,y:105,w:360,h:80, label:'환자 발견<small>입원·외래 · 모든 영상에서 척추 평가와 표준 보고 · 1차 진료의 급성 요통</small>', cls:'test fac'},
+ {id:'l_as',  x:390,y:205,w:360,h:55, label:'평가<small>골절·낙상 위험 · 이차 원인 · BMD</small>', cls:'test fac'},
+ {id:'l_tx',  x:390,y:280,w:360,h:55, label:'치료 시작<small>약물·비약물 · 늦어도 골절 후 16주</small>', cls:'tx fac'},
+ {id:'l_fu',  x:390,y:355,w:360,h:55, label:'추적<small>16주·52주 · 정보 제공 · 순응 지원</small>', cls:'ben fac'},
+ {id:'l_db',  x:390,y:430,w:360,h:45, label:'감사 · FLS 데이터베이스', cls:'test'},
+ {id:'l_tr',  x:390,y:490,w:360,h:45, label:'교육 · 커미셔너 · 질 기준', cls:'fac'}],
+ edges:[[A(190,75,190,95),1],[A(190,175,190,190),0,'dot'],[A(190,245,190,260),1],[A(190,330,190,345),1],
+  [A(370,52,390,57),1],[A(570,85,570,105),1],[A(570,185,570,205),1],[A(570,260,570,280),1],[A(570,335,570,355),1],[A(570,410,570,430),1]],
+ labels:[[10,20,'증상성 척추골절','sec'],[390,20,'골절 예방 진료 모델','sec']]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const SECN = {F:'위험 평가',I:'중재 역치',N:'비약물',D:'약물',B:'BP 기간·재평가',A:'이상반응',G:'GIO',T:'ADT',H:'AI',V:'척추골절',M:'진료 모델',E:'교육',C:'커미셔너',S:'요약'};
+const R = id => {
+  const [g, t] = REC[id];
+  const lab = `${SECN[id[0]]} ${id.slice(1)}`;
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${lab}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Gregson CL, et al. Arch Osteoporos 2025;20:119 해당 절의 요약 번역. 괄호 안은 원문의 근거 수준이며 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약 번역.</p>`;
+
+/* ---------- 표 ---------- */
+const T1 = tbl(['위험 변수','FRAX 보정*','참고'],[
+ ['중간·고용량 경구 글루코코르티코이드','중간 용량(2.5–7.5 mg/일)은 FRAX 계산의 기본 가정으로 보정하지 않는다. 고용량(&gt;7.5 mg/일)은 MOF 확률을 약 15%, 고관절 골절 확률을 20% 올린다¥','FRAX 웹사이트 자동 보정(nogg.org.uk 수동 입력). Kanis 2011'],
+ ['요추 BMD 동시 자료','요추와 대퇴경부의 반올림 T-점수 차이 1당 MOF 확률을 10% 올리거나 내린다(NOGG FAQ 4번 예시)*','Leslie 2011; Johansson 2014'],
+ ['해면골 점수(TBS)','TBS 1 SD 감소당 MOF 확률을 30% 올린다','영국 FRAX 웹사이트에서 입력. McCloskey 2016'],
+ ['고관절 축 길이(HAL)','HAL 1 SD 차이당 고관절 골절 확률을 30% 올리거나 내린다','Leslie 2016'],
+ ['낙상력','반복 낙상(지난 1년 ≥2회)이면 MOF와 고관절 골절 확률을 30% 올린다','Masud 2011; Vandenput'],
+ ['출생국','출생국의 위험 특성이 유지되므로 출생국 FRAX 모델을 쓴다','Johansson 2015; Wändell 2021'],
+ ['제1형·제2형 당뇨병','FRAX의 류마티스 관절염 항목에 “예”를 입력한다','기타 보정: Leslie 2018'],
+ ['파킨슨병과 관련 운동장애','FRAX의 류마티스 관절염 항목에 “예”를 입력한다','Schini 2023'],
+ ['최근 MOF','골절 확률을 크게 올린다','Kanis 2020']]) + '<p class="exp-src">Table 1. * 하향 보정은 매우 신뢰할 수 있는 높은 요추 BMD일 때만 하고, 퇴행성 변화 같은 인공물에 의한 불일치로 하지 않는다. ¥ 용량과 권고는 “글루코코르티코이드 유발 골다공증” 참조. 여러 보정이 겹치면 영향이 가장 큰 한 요인으로 보정한다.</p>';
+const T2 = tbl(['기본 검사','필요 시 추가 검사'],[
+ ['병력','혈청 단백 전기영동, 혈청 면역글로불린, 혈청 유리 경쇄'],
+ ['진찰(키 측정, 흉추후만 평가 포함)','혈장 부갑상선호르몬(PTH)ᵇ'],
+ ['전혈구 검사','혈청 테스토스테론, 성호르몬결합글로불린, FSH, LH'],
+ ['적혈구 침강속도 또는 CRP','24시간 요 유리 코르티솔 / 하룻밤 덱사메타손 억제 검사'],
+ ['신기능','혈청 프로락틴'],
+ ['혈청 칼슘, 알부민, 크레아티닌, 인ᵃ, 알칼리성 인산분해효소ᵃ, 간 아미노전이효소','저칼슘혈증이면 혈청 마그네슘 · 조직 트랜스글루타미나아제 항체 ± 근내막 항체(셀리악병 선별)'],
+ ['혈청 25-히드록시비타민 D','요 칼슘 배설'],
+ ['갑상선 기능 검사','골교체 표지자(CTX, P1NP)ᶜ · 흉요추 측면 방사선 또는 DXA 측면 척추 영상 · FRAX 평가나 BMD 감시에 필요하면 DXA · 동위원소 골 스캔']]) + '<p class="exp-src">Table 2. a 지속적인 저인산혈증이나 낮은 ALP는 기저 대사성 골질환을 시사할 수 있으므로 놓치지 않는다. b 알부민 보정 칼슘 ≥2.6 mmol/l가 2회, 또는 원발성 부갑상선기능항진증이 의심되면 ≥2.5 mmol/l가 2회이면 PTH를 측정한다. c 주로 골흡수억제제의 골교체 반응 감시용이며 CTX는 골흡수, P1NP는 골형성을 반영한다. CTX는 밤새 금식 후 아침에 측정한다. 골생검, 골형성부전증 유전 검사 등은 주로 전문 센터에서 한다.</p>';
+const T3 = `<ul class="plain"><li>흉추후만 · 키 감소(≥4 cm) · 낙상과 쇠약</li><li>염증성 질환: 강직척추염, 기타 염증성 관절염, 결합조직병, 전신홍반루푸스</li><li>내분비 질환: 제1형·제2형 당뇨병ᵃ, 부갑상선기능항진증, 갑상선기능항진증, 성선기능저하증, 쿠싱병/증후군</li><li>혈액 질환·악성 종양: 다발골수종, 지중해빈혈</li><li>근육 질환: 근염, 근병증·근이영양증, 근감소증</li><li>하지 절단</li><li>폐질환: 천식, 낭성 섬유증, 만성 폐쇄성 폐질환</li><li>HIV</li><li>신경·정신 질환: 파킨슨병과 관련 증후군ᵃ, 다발경화증, 뇌전증, 뇌졸중, 우울증, 치매</li><li>성인 학습장애: 다운증후군</li><li>영양 결핍: 칼슘, 비타민 D(비타민 D 결핍은 골다공증보다 골연화증으로 골절 위험에 기여할 수 있음)</li><li>비만대사수술과 흡수장애 질환: 염증성 장질환, 셀리악병</li><li>약물: 일부 면역억제제(칼시뉴린 억제제) · (과량) 갑상선호르몬(레보티록신 및/또는 리오티로닌; TSH가 억제된 갑상선암 환자는 특히 위험) · 성선호르몬 생성에 영향을 주는 약(아로마타제 억제제, 안드로겐 차단 요법, 메드록시프로게스테론 아세테이트, GnRH 작용제, GnRH 수용체 길항제) · 일부 당뇨병 약(티아졸리딘디온) · 일부 항뇌전증제(페니토인, 카르바마제핀)</li></ul><p class="exp-src">Table 3. FRAX에 반영되지 않으나 골절 위험 평가의 계기가 되어야 하는 임상 위험인자. a 류마티스 관절염 항목에 “예”를 입력해 대리로 FRAX에 반영할 수 있다(원문은 “Table 2 참조”로 표기).</p>`;
+const T4 = tbl(['나이(세)','MOF LAT','MOF IT','MOF UAT','MOF VHRT','고관절 LAT','고관절 IT','고관절 UAT','고관절 VHRT'],[
+ ['50','3.4','7.3','8.8','11.7','0.23','0.91','1.1','1.5'],['55','4.5','9.5','11.4','15.2','0.43','1.5','1.7','2.3'],['60','6.0','12.2','14.6','19.4','0.80','2.3','2.8','3.7'],
+ ['65','8.6','16.5','19.8','26.4','1.4','3.5','4.2','5.6'],['70 이상','11.1','20.3','24.4','32.5','2.6','5.4','6.5','8.6']]) + '<p class="exp-src">Table 4. FRAX 10년 확률(%) 기준 NOGG 역치. LAT·UAT는 하위·상위 평가 역치로 그 사이에서 BMD가 필요하다. IT(중재 역치)와 VHRT(초고위험 역치)는 각각 고위험과 초고위험의 경계다. 70세 이후에는 고정 역치를 쓴다.</p>';
+const T5 = tbl(['약제','척추(위약)','비척추(위약)','고관절(위약)','척추(다른 약)','비척추(다른 약)','고관절(다른 약)','남성 허가'],[
+ ['로모소주맙','Ib','IIb','IIb','알렌드로네이트보다 우월(Ib)*','알렌드로네이트보다 우월(Ib)*','알렌드로네이트보다 우월(Ib)*','아니오'],
+ ['테리파라타이드','Ia','Ia','Ia','알렌드로네이트·리세드로네이트·데노수맙보다 우월(Ia)','알렌드로네이트보다 우월(Ia)','NAE','예'],
+ ['아발로파라타이드','Ia','Ia','IIb','랄록시펜보다 우월(Ia)','테리파라타이드보다 우월(Ia)','NAE','아니오'],
+ ['알렌드로네이트','Ia','Ia','Ia','테리파라타이드(Ia)·로모소주맙(Ib)보다 열등','테리파라타이드·아발로파라타이드보다 열등(Ia)','로모소주맙보다 열등(Ib)','예'],
+ ['이반드로네이트','Ib','Ib','NAE','NAE','NAE','NAE','아니오'],
+ ['리세드로네이트','Ia','Ia','Ia','테리파라타이드보다 열등(Ia)','아발로파라타이드보다 열등(Ia)','NAE','예'],
+ ['졸레드로네이트','Ia','Ia','Ia','NAE','NAE','NAE','예'],
+ ['칼시트리올','IIa','NAE','NAE','NAE','NAE','NAE','예'],
+ ['데노수맙','Ia','Ia','Ia','테리파라타이드보다 열등(Ia)','NAE','NAE','예'],
+ ['HRT','Ia','Ia','Ia','NAE','NAE','NAE','아니오'],
+ ['랄록시펜','Ia','NAE','NAE','테리파라타이드·아발로파라타이드보다 열등(Ia)','NAE','NAE','아니오'],
+ ['스트론튬 라넬레이트','Ia','Ia','IIb','NAE','NAE','NAE','예']]) + '<p class="exp-src">Table 5. 칼슘·비타민 D와 함께 투여한 승인 약물의 골절 예방 효과(근거 수준). NAE 임상시험 근거 없음. * 로모소주맙 12개월 후 골흡수억제제를 투여한 경우.</p>';
+const T6 = tbl(['골 보호 치료','척추 BMD','고관절 BMD','척추골절','비척추 골절','척추·고관절 BMD 우월성 근거'],[
+ ['알렌드로네이트','Ib','Ia','Ia','Ia','테리파라타이드보다 열등(Ib)'],['리세드로네이트','Ib','Ia','Ia','NAE','졸레드로네이트보다 열등(Ia)'],
+ ['졸레드로네이트','Ib','Ib','Ia','NAE','리세드로네이트보다 우월(Ib)'],['데노수맙','Ib','Ia','Ia','NAE','비스포스포네이트보다 우월(IIa)'],
+ ['테리파라타이드','Ib','Ib','Ia','Ia','알렌드로네이트보다 우월(Ib)']]) + '<p class="exp-src">Table 6. 글루코코르티코이드 유발 골다공증 승인 중재의 BMD와 골절 효과. NAE 근거 없음.</p>';
+const T7 = tbl(['용량','프레드니솔론 동등 용량(mg/일)','고관절 골절 확률 평균 보정','MOF 확률 평균 보정'],[
+ ['저용량','&lt;2.5','−35%','−20%'],['중간 용량','2.5–7.5','없음','없음'],['고용량','≥7.5','+20%','+15%']]) + '<p class="exp-src">Table 7. 프레드니솔론 하루 용량에 따른 FRAX 확률 보정. 프레드니솔론 &gt;20 mg/일 같은 초고용량은 더 큰 상향 보정이 필요하다.</p>';
+const DRUG = tbl(['약제','용법','핵심 주의'],[
+ ['알렌드로네이트','70 mg 주 1회 경구(10 mg/일과 동등)','공복, 맹물 약 200 ml, 30분 직립·금식 · GFR ≤35에서 권하지 않음'],
+ ['리세드로네이트','35 mg 주 1회 경구(5 mg/일과 동등)','공복, 맹물 ≥120 ml, 30분 직립·금식 · GFR ≤30 금기'],
+ ['이반드로네이트','150 mg 월 1회 경구 또는 3 mg 3개월마다 정맥','경구는 1시간 직립·금식, 물 180–240 ml · 고관절 골절 근거 없음 · GFR ≤30에서 권하지 않음'],
+ ['졸레드로네이트','5 mg 연 1회 정맥(≥15분)','급성기 반응(파라세타몰) · eGFR 확인(75세 초과·BMI &lt;18 또는 &gt;40이면 CrCl) · GFR ≤35 금기 · 시작 전 비타민 D 결핍 교정'],
+ ['데노수맙','60 mg 6개월마다 피하','저칼슘혈증(매 투여 전 칼슘, CrCl &lt;35면 2주 내 재확인) · 중단 시 반동 척추골절 → 6개월 후 졸레드로네이트'],
+ ['HRT','제제 다양(CEE 0.625 mg ± MPA 2.5 mg 등)','경구는 VTE 증가, 표준 용량 경피는 아님 · 60세 미만 시작 시 CVD 증가 없음 · 합성 프로게스틴 포함 제제의 유방암 소폭 증가'],
+ ['랄록시펜','60 mg/일 경구','VTE·치명적 뇌졸중 소폭 증가 · 가임 여성·VTE 병력 금기 · 유방암 감소'],
+ ['칼시트리올','0.25 μg 하루 2회 경구','1·3·6개월과 이후 6개월마다 칼슘·크레아티닌'],
+ ['스트론튬 라넬레이트','2 g 취침 시 경구(식후 2시간)','과거 심근경색·뇌졸중·VTE 금기 · eGFR &lt;30 비권장 · BMD 인위적 상승 · 전문가 시작'],
+ ['테리파라타이드','20 μg/일 피하, 24개월(평생 1회)','PTH 정상 확인 · 고칼슘혈증·중증 신기능 장애·골격 악성·방사선 치료 금기 · 냉장 보관'],
+ ['아발로파라타이드','80 μg/일 피하, 18개월','시작 전 혈압·심장 상태·심전도 · 중증 신기능 장애·원인 불명 ALP 상승 금기 · 개봉 후 실온 30일'],
+ ['로모소주맙','210 mg(105 mg × 2) 월 1회 피하, 12개월','심근경색·뇌졸중 병력 금기 · 1년 심혈관 위험 고려 · 시작 전 저칼슘혈증 교정']]) + '<p class="exp-src">본문 18–22쪽 약제별 서술을 표로 정리하였다.</p>';
+const VH = '<ul class="plain"><li>최근(2년 이내) 척추골절</li><li>시기와 관계없이 척추골절 2개 이상</li><li>BMD T-점수 ≤ −3.5</li><li>고용량 글루코코르티코이드(3개월간 프레드니솔론 ≥7.5 mg/일 또는 동등량) — 긴급 의뢰, 지연 시 경구 비스포스포네이트 먼저 시작</li><li>다수의 임상 위험인자, 특히 최근 취약골절(임박 위험)</li><li>FRAX가 중재 역치를 60% 넘는 경우(VHRT)</li></ul>';
+const DISC_F4 = note('원문 불일치','Fig. 4·5의 시작 질문은 “Age &gt; 70, Previous hip fracture, ≥2 vertebral fractures, Current GC use”인데, 권고 1·2는 “시작 시 70세 이상(≥70)”, “고관절 또는 척추골절(들)의 병력”, “≥7.5 mg/일 경구 GC”로 기준이 다르고, 그림에는 “치료 중 취약골절” 항목이 없다.');
+
+const D = {
+/* ---------- Fig. 3 ---------- */
+a_crf:{kind:'Fig. 3', title:'임상 위험인자', next:['a_fp'], body:`${RR('F1','F2')}<h5>Table 3. FRAX에 없는 위험 평가 계기</h5>${T3}${ex('crf')}`},
+a_fp:{kind:'Fig. 3', title:'골절 확률 (FRAX)', next:['a_lo','a_im','a_hi','a_vh'], body:`${RR('I1','F3','I10')}<h5>Table 1. FRAX 보정</h5>${T1}${ex('frax')}`},
+a_lo:{kind:'Fig. 3', title:'저위험', next:['a_life'], body:`${R('I7')}<p>FRAX 확률이 하위 평가 역치(LAT) 미만이다.</p>`},
+a_im:{kind:'Fig. 3', title:'중간위험', next:['a_bmd'], body:`${RR('I4','I6')}<p>FRAX 확률이 하위(LAT)와 상위(UAT) 평가 역치 사이다.</p>`},
+a_hi:{kind:'Fig. 3', title:'고위험', next:['a_hit'], body:`${RR('I2','I3','I9')}<p>고위험군도 잦은 낙상, 매우 낮은 척추 BMD 같은 추가 위험인자(Table 1)로 초고위험으로 재분류될 수 있다.</p>`},
+a_vh:{kind:'Fig. 3', title:'초고위험', next:['a_vht','x_ref'], body:`${R('I8')}<h5>초고위험 지표</h5>${VH}`},
+a_bmd:{kind:'Fig. 3', title:'BMD 측정', next:['a_rea'], body:`${RR('I4','F5','F6','F8','F9')}${ex('bmd')}`},
+a_hit:{kind:'Fig. 3', title:'치료 · BMD 측정', next:['x_hi'], body:RR('I3','I9','S3','S6')},
+a_vht:{kind:'Fig. 3', title:'치료 · 전문의 의뢰 고려', next:['x_vh'], body:`${RR('I8','I3')}<p>Fig. 3 범례: 초고위험은 치료하고 2차 진료 골다공증 전문의 의뢰를 고려한다. 일부는 비경구 치료(1차 동화제 포함), 특히 다발 척추골절이 있으면 이득을 볼 수 있다.</p>`},
+a_rea:{kind:'Fig. 3', title:'FRAX 확률 재평가', next:['a_lo2','a_hi2','a_vh2'], body:`${RR('I4','I5')}<p>BMD를 넣어 다시 계산하면 MOF와 고관절 골절 확률의 높은 범주를 따른다. BMD를 넣은 뒤에는 중재 역치(IT)로 고위험을 판정한다.</p>`},
+a_lo2:{kind:'Fig. 3', title:'BMD 후 저위험', next:['a_life'], body:`${R('I7')}<p>BMD를 포함한 FRAX가 중재 역치(IT) 미만이다.</p>`},
+a_hi2:{kind:'Fig. 3', title:'BMD 후 고위험', next:['a_hi2t'], body:`<p>BMD를 포함한 FRAX가 중재 역치(IT)를 넘는다.</p>${RR('I2','I9')}`},
+a_vh2:{kind:'Fig. 3', title:'BMD 후 초고위험', next:['a_vh2t'], body:`<p>BMD를 포함한 FRAX가 초고위험 역치(VHRT)를 넘는다.</p>${R('I8')}`},
+a_hi2t:{kind:'Fig. 3', title:'치료', next:['x_hi'], body:RR('D1','D2','S6')},
+a_vh2t:{kind:'Fig. 3', title:'치료 · 의뢰 고려', next:['x_vh'], body:RR('I8','D10','D11')},
+a_life:{kind:'Fig. 3', title:'모든 사람에게 생활습관 조언', next:[], body:`<p>원문 서두: 골다공증이 있거나 취약골절 위험이 있는 폐경 후 여성과 50세 이상 남성에게 다음을 권고한다.</p>${RR('N1','N2','N3','N4','N5','N6','N7')}`},
+a_vfa:{kind:'척추골절 평가', title:'VFA 적응과 기회적 진단', next:['l_fd'], body:`${RR('F4','F10','M4','M6','S4')}${ex('inv')}`},
+a_inv:{kind:'원인 검사', title:'원인 검사와 진단 기법', next:[], body:`${RR('F7','F8','F9')}<h5>Table 2. 원인 검사</h5>${T2}<h5>Table 3. 위험 평가 계기</h5>${T3}`},
+
+/* ---------- NOGG 역치 ---------- */
+th_vh:{kind:'Fig. 1·2', title:'초고위험 (VHRT 초과)', next:['x_vh'], body:`${R('I8')}${VH}<p>초고위험은 FRAX 확률이 중재 역치를 60% 넘는 경우로 정의한다. 이렇게 정의한 초고위험 폐경 후 여성의 비율은 50–54세 약 6%에서 90세 이상 36%로 늘어난다.</p>`},
+th_hi:{kind:'Fig. 1·2', title:'고위험', next:['x_hi'], body:`<p>BMD 없이 계산한 MOF 확률이 상위 평가 역치(UAT)를 넘거나, BMD를 넣은 확률이 중재 역치(IT)를 넘으면 치료한다. BMD 측정이 어려우면 IT 초과로 치료를 고려한다.</p>${RR('I2','I3','S6')}`},
+th_im:{kind:'Fig. 1', title:'중간위험 (LAT–UAT)', next:['a_bmd'], body:RR('I4','I6','S2')},
+th_lo:{kind:'Fig. 1·2', title:'저위험 (LAT 미만)', next:['a_life'], body:R('I7')},
+th_t4:{kind:'Table 4', title:'NOGG 역치 수치', next:[], body:`${T4}${note('계산 확인','VHRT는 IT × 1.6, UAT는 IT × 1.2와 대부분 일치한다. 55세는 MOF VHRT 15.2(9.5 × 1.6 = 15.2), 고관절 UAT 1.7(1.5 × 1.2 = 1.8)과 VHRT 2.3(1.5 × 1.6 = 2.4), 60세 MOF VHRT 19.4(12.2 × 1.6 = 19.5)로, 반올림 전 IT 값에서 계산되어 생긴 작은 차이로 보인다.')}`},
+th_hip:{kind:'Fig. 2', title:'MOF와 고관절 확률의 불일치', next:[], body:`${R('I5')}<p>BMD를 넣어 FRAX를 계산하면 NOGG 웹사이트는 MOF와 함께 고관절 골절 확률 기반 역치를 제공한다. 두 범주가 다르면 높은 범주를 따른다. SCOOP 선별 연구는 고관절 골절 확률로 치료 대상을 정했다.</p>`},
+th_nb:{kind:'Fig. 1', title:'BMD 측정이 어려운 경우', next:[], body:`${RR('I6','S7')}<p>Fig. 1 범례: 쇠약하여 DXA 테이블에 오르거나 눕기 어려운 경우처럼 BMD 측정이 실용적이지 않으면 IT를 넘는 환자를 치료 대상으로 본다.</p>`},
+th_df:{kind:'역치의 정의', title:'중재 역치와 평가 역치', next:[], body:`${ex('thr')}`},
+
+/* ---------- 약제 선택 ---------- */
+x_need:{kind:'약물치료', title:'약물치료 대상', next:['x_hi','x_vh'], body:`${RR('D1','I2','I9','S6','S8','S10')}${ex('ov')}`},
+x_hi:{kind:'약물치료', title:'고위험: 1차 골흡수억제제', next:['x_bp','x_hip','x_hrt'], body:RR('D1','D2','S12')},
+x_vh:{kind:'약물치료', title:'초고위험', next:['x_ref'], body:`${RR('I8','S11')}${VH}`},
+x_bp:{kind:'1차 약제', title:'비스포스포네이트', next:['o_q','z_q'], body:`${RR('D2','S12')}<h5>약제별 요약</h5>${DRUG}${ex('bp')}`},
+x_hip:{kind:'1차 약제', title:'고관절 골절 후 졸레드로네이트', next:['z_q'], body:`${R('D3')}<p>고관절 골절 직후 졸레드로네이트 5 mg을 매년 투여한 남녀는 3년 후 임상 골절과 사망이 적었다(Ib).</p>`},
+x_hrt:{kind:'1차 약제', title:'60세 이하 폐경 여성의 HRT', next:[], body:`${RR('D4','D5','D6')}${ex('hrt')}`},
+x_alt:{kind:'대안', title:'대체 약제', next:['x_dmab','x_2nd'], body:`${RR('D2','D15','S13')}<h5>Table 5. 승인 약물의 골절 예방 효과</h5>${T5}${note('원문 불일치','① Table 5는 칼시트리올의 척추골절 근거를 IIa로 표기하나 본문 칼시트리올 절은 IIb로 쓴다(약물 시작 절은 “IIa 근거”). ② 본문은 아발로파라타이드의 고관절 골절 감소가 입증되지 않았다고 하는데 Table 5는 위약 대비 고관절에 IIb를 준다. ③ Table 5는 칼시트리올을 남성 허가 “예”로 표기하나 본문은 확립된 폐경 후 골다공증 치료에 승인되었다고만 쓴다.')}`},
+x_dmab:{kind:'데노수맙', title:'데노수맙 시작 전 계획', next:['x_dst'], body:`${RR('D7','D8','S18','S19')}${ex('dmab')}`},
+x_dst:{kind:'데노수맙', title:'데노수맙 중단 시 후속 치료', next:[], body:RR('D9','D8','S19')},
+x_ref:{kind:'초고위험', title:'골다공증 전문의 의뢰', next:['x_ana'], body:`${R('I8')}<p>테리파라타이드, 아발로파라타이드, 로모소주맙은 2차 진료에서 시작한다. 영국에서 테리파라타이드와 로모소주맙은 환자 교육을 포함한 가정 의료 서비스로 공급된다.</p>`},
+x_ana:{kind:'동화제', title:'1차 동화제', next:['x_seq'], body:`${RR('D10','D11')}${ex('ana')}`},
+x_seq:{kind:'동화제', title:'동화제 후 후속 치료', next:[], body:`${RR('D13','D14','S14')}<p>데노수맙, 로모소주맙, 테리파라타이드, 아발로파라타이드를 끝내는 환자는 골흡수억제제 후속 치료가 필요하며, 치료 공백을 피하도록 처음 시작할 때 계획한다.</p>`},
+x_2nd:{kind:'동화제', title:'2차 동화제', next:[], body:R('D12')},
+x_ca:{kind:'보조 치료', title:'칼슘·비타민 D', next:[], body:`${RR('D16','N2','N3')}${ex('diet')}`},
+x_vd:{kind:'보조 치료', title:'비타민 D 결핍 교정', next:[], body:`${R('D17')}<p>기존 저칼슘혈증은 원인을 검사하고, 비타민 D 결핍 때문이면 졸레드로네이트나 데노수맙 시작 전에 비타민 D(예: 100,000–300,000 IU 경구 부하 용량을 나누어)로 치료한다. 60,000 IU 이상 고용량 간헐 투여는 일상적으로 권하지 않는다.</p>`},
+
+/* ---------- Fig. 4 ---------- */
+o_q:{kind:'Fig. 4', title:'장기 치료 대상 판정', next:['o_y','o_n'], body:`${R('B1')}${DISC_F4}<p class="exp-src">Fig. 4 범례: GC 경구 글루코코르티코이드(프레드니솔론 ≥7.5 mg/일 또는 동등량), BP 비스포스포네이트.</p>`},
+o_y:{kind:'Fig. 4 · YES', title:'10년 치료로 상담', next:['o_tol'], body:R('B1')},
+o_n:{kind:'Fig. 4 · NO', title:'5년 치료로 상담', next:['o_tol'], body:R('B1')},
+o_tol:{kind:'Fig. 4', title:'12–16주 후 내약성 확인', next:['o_adh'], body:`${R('S15')}<p>경구 비스포스포네이트의 흔한 부작용은 상부 위장관 증상, 배변 장애, 두통, 근골격 통증이다.</p>`},
+o_adh:{kind:'Fig. 4', title:'1년 후 순응 확인', next:['o_rf'], body:RR('B5','M5','S15')},
+o_rf:{kind:'Fig. 4', title:'골절 위험 재평가 시점', next:['o_5'], body:RR('S20','B6')},
+o_5:{kind:'Fig. 4', title:'5년 시점 재평가', next:['o_ct','o_fb'], body:`${RR('B1','B5','S17')}${ex('dur')}`},
+o_fb:{kind:'Fig. 4', title:'FRAX + BMD', next:['o_ab','o_be'], body:`${R('B6')}${ex('reas')}`},
+o_ab:{kind:'Fig. 4', title:'NOGG IT 초과 또는 T ≤ −2.5', next:['o_ct'], body:`${R('B6')}<p>FLEX 사후분석에서 장기 치료로 이득을 볼 가능성이 큰 여성은 고관절 T-점수 &lt; −2.0, 기존 척추골절, 초기 치료 중 새 골절이 있는 사람이었다.</p>`},
+o_be:{kind:'Fig. 4', title:'NOGG IT 미만이고 T &gt; −2.5', next:['o_ps'], body:`<p>저위험 환자는 경구 비스포스포네이트 5년 후 18–36개월의 일시 중단을 고려할 수 있다.</p>${RR('S17','S21')}`},
+o_ct:{kind:'Fig. 4', title:'5년 더 지속', next:['o_10'], body:`${R('B1')}<p>FLEX 연구에서 알렌드로네이트 5년 후 5년 더 지속한 여성은 위약 전환군보다 임상 척추골절이 유의하게 적었다(Ib).</p>`},
+o_10:{kind:'Fig. 4', title:'10년 후 개별 결정', next:[], body:`${R('B8')}<p>Fig. 4: 10년 치료 후 이후 관리는 환자와 충분히 상의하여 개별적으로 결정하며 전문의 조언이 필요할 수 있다.</p>`},
+o_ps:{kind:'Fig. 4', title:'1.5–3년 휴약 후 재평가', next:['o_fb'], body:`${RR('B4','B3','B7','S21')}${note('원문 표기','요약 권고 17은 임상 흐름도가 “50쪽과 51쪽”에 있다고 쓰지만, 이 판에서 Fig. 4·5는 23–24쪽에 있다.')}`},
+
+/* ---------- Fig. 5 ---------- */
+z_q:{kind:'Fig. 5', title:'장기 치료 대상 판정', next:['z_y','z_n'], body:`${R('B2')}${DISC_F4}`},
+z_y:{kind:'Fig. 5 · YES', title:'6년 치료로 상담', next:['z_rf'], body:R('B2')},
+z_n:{kind:'Fig. 5 · NO', title:'3년 치료로 상담', next:['z_rf'], body:R('B2')},
+z_rf:{kind:'Fig. 5', title:'골절 위험 재평가 시점', next:['z_3'], body:RR('S20','B6')},
+z_3:{kind:'Fig. 5', title:'3년 시점 재평가', next:['z_ab','z_be'], body:`${RR('B2','B5','B6','S17')}<p>졸레드로네이트 3년 후 중단하면 3년 뒤에도 BMD가 조금만 줄었고(Ib), HORIZON 연장에서 3년 더 지속한 여성은 형태계측 척추골절이 유의하게 적었다(Ib).</p>`},
+z_ab:{kind:'Fig. 5', title:'NOGG IT 초과 또는 T ≤ −2.5', next:['z_ct'], body:`${R('B6')}<p>HORIZON 사후분석에서 장기 치료 이득이 큰 여성은 고관절 T-점수 ≤ −2.5, 기존 척추골절, 초기 치료 중 새 골절이 있는 사람이었다.</p>`},
+z_be:{kind:'Fig. 5', title:'NOGG IT 미만이고 T &gt; −2.5', next:['z_ps'], body:RR('S17','S21')},
+z_ct:{kind:'Fig. 5', title:'3년 더 지속', next:['z_6'], body:R('B2')},
+z_ps:{kind:'Fig. 5', title:'1.5–3년 휴약 후 재평가', next:['z_3'], body:RR('B4','B3','B7')},
+z_6:{kind:'Fig. 5', title:'6년 후 개별 결정', next:[], body:'<p>Fig. 5: 6년 치료 후 이후 관리는 환자와 충분히 상의하여 개별적으로 결정하며 전문의 조언이 필요할 수 있다.</p>'+R('B8')},
+
+/* ---------- GIO·ADT·AI ---------- */
+g_st:{kind:'GIO', title:'경구 글루코코르티코이드 시작', next:['g_q'], body:`${R('S22')}${ex('gio')}`},
+g_q:{kind:'GIO', title:'즉시 골 보호 대상', next:['g_yes','g_no'], body:`${R('G15')}${note('원문 표기','권고 번호가 “15”로 다시 시작한다. 앞 절(드문 이상반응)의 마지막 권고도 15번(AFF 시 중단)이어서 15번이 두 개다. 이 도구는 GIO 권고를 G15–G20으로 구분하였다. 또 Table 1은 고용량을 “&gt;7.5 mg/일”, Table 7과 권고는 “≥7.5 mg/일”로 써서 7.5 mg 경계가 다르다(Table 7의 중간 용량 2.5–7.5와도 겹침).')}`},
+g_yes:{kind:'GIO', title:'GC와 동시에 골 보호 시작', next:['g_dr'], body:RR('G15','S22')},
+g_no:{kind:'GIO', title:'FRAX(용량 보정) ± BMD', next:['g_dr','g_nr'], body:`<p>FRAX는 평균 용량(2.5–7.5 mg/일)과 고용량(≥7.5 mg/일)에 따른 확률을 주며, 영국 FRAX에서 글루코코르티코이드 칸을 채우면 NOGG 그래프에 두 점이 표시된다. 평가 역치와 중재 역치는 일반 폐경 후 여성·노년 남성과 같다.</p>${T7}`},
+g_dr:{kind:'GIO', title:'골 보호 약제', next:['g_sp','g_lg'], body:`${RR('G16','S23','S24')}<p>아발로파라타이드와 로모소주맙은 적응증(초고위험 폐경 후 여성)을 만족하면 추가 선택지다.</p><h5>Table 6. GIO 중재의 효과</h5>${T6}`},
+g_nr:{kind:'GIO', title:'역치 근처이나 미만', next:[], body:R('G20')},
+g_ca:{kind:'GIO', title:'칼슘·비타민 D', next:[], body:R('G17')},
+g_t7:{kind:'Table 7', title:'GC 용량별 FRAX 보정', next:[], body:T7},
+g_sp:{kind:'GIO', title:'GC 중단 시', next:[], body:R('G18')},
+g_lg:{kind:'GIO', title:'GC 장기 지속 시', next:[], body:R('G19')},
+d_st:{kind:'ADT', title:'ADT 시작 남성', next:['d_tx'], body:`${R('T21')}${ex('adt')}`},
+d_tx:{kind:'ADT', title:'고위험 남성', next:['d_re'], body:R('T22')},
+d_re:{kind:'ADT', title:'12–18개월 후 재평가', next:[], body:R('T23')},
+h_st:{kind:'AI', title:'AI 시작 여성', next:['h_tx'], body:`${R('H24')}${ex('ai')}`},
+h_tx:{kind:'AI', title:'고위험 여성', next:['h_re'], body:R('H25')},
+h_re:{kind:'AI', title:'12–24개월 후 재평가', next:['h_bp'], body:R('H26')},
+h_bp:{kind:'AI', title:'보조 고용량 BP 이후', next:[], body:R('H27')},
+
+/* ---------- 재평가·안전성 ---------- */
+r_fx:{kind:'재평가', title:'치료 중 취약골절', next:['r_fr'], body:RR('B5','S20')},
+r_fr:{kind:'재평가', title:'FRAX + BMD 재평가', next:['r_wh'], body:`${R('B6')}${ex('reas')}`},
+r_wh:{kind:'재평가', title:'휴약 후 재평가 시점', next:['r_nw'], body:`${RR('B4','S21')}<p>중단 후 BMD 감소와 골교체 증가는 알렌드로네이트 2–3년, 이반드로네이트·리세드로네이트 1–2년 후 나타나며, 졸레드로네이트는 3년 후 중단해도 3년 뒤 BMD가 조금만 줄었다.</p>`},
+r_nw:{kind:'재평가', title:'휴약 중 새 골절', next:[], body:R('B3')},
+r_of:{kind:'재평가', title:'효과 소실 징후', next:[], body:R('B7')},
+r_10:{kind:'재평가', title:'BP 10년 후', next:[], body:R('B8')},
+r_hol:{kind:'재평가', title:'약물 휴지기', next:[], body:`${paraHTML(EXP.reas)}${R('S16')}`},
+j_or:{kind:'ONJ', title:'구강 위생과 정기 치과 검진', next:['j_dt'], body:`${R('A9')}${ex('onj')}`},
+j_dt:{kind:'ONJ', title:'중증 치과 질환', next:['j_pr'], body:R('A10')},
+j_pr:{kind:'ONJ', title:'치료 중 치과 시술', next:[], body:R('A11')},
+f_pn:{kind:'AFF', title:'대퇴부·서혜부·고관절 통증', next:['f_af'], body:R('A12')},
+f_af:{kind:'AFF', title:'AFF 확인', next:['f_rf'], body:`${R('A13')}<p>AFF는 주로 전자하부와 골간부에 생기고, 흔히 양측성이며 전구 통증을 동반하고 잘 낫지 않는다. 위험인자는 아시아인, 대퇴골 만곡, 글루코코르티코이드다. 절대 위험은 100,000인년당 3.2–50건이다.</p>`},
+f_rf:{kind:'AFF', title:'전문의 의뢰와 약물 중단', next:['f_nx'], body:`${RR('A14','A15')}<p>체중부하를 제한하고 칼슘·비타민 D를 충분히 하며, 흔히 골수강내 금속정 고정술이 권고된다(IV).</p>`},
+f_nx:{kind:'AFF', title:'AFF 이후 골 건강 관리', next:[], body:`<p>근거는 부족하며 국제 전문가 합의(IV)에 따른다. 취약골절 위험이 낮으면 추가 약물을 피할 수 있다. 위험이 높고 양측 수술 고정을 했으면 테리파라타이드를, 일측 고정이거나 수술하지 않았으면 테리파라타이드, 로모소주맙, 랄록시펜, HRT를 고려한다. 테리파라타이드가 AFF 치유를 촉진한다는 근거는 없으나 수술한 AFF에서 치유가 빨라지는 경향이 있었다. AFF 후 비스포스포네이트나 데노수맙은 이전 고정 방식, 동화제 사용, 전반적 상황과 골절 위험을 고려해 신중히 판단한다.</p>`},
+
+/* ---------- 척추골절·FLS ---------- */
+v_fx:{kind:'척추골절', title:'증상성 골다공증 척추골절', next:['v_an','l_fl'], body:`${RR('V7','S31','S32')}${ex('vf')}`},
+v_an:{kind:'척추골절', title:'진통', next:['v_ex'], body:RR('V1','V2','V3')},
+v_ad:{kind:'척추골절', title:'보조 진통 근거', next:[], body:'<p>입원 환자의 급성(10일 이내) 척추골절 통증에 연어 칼시토닌(50–100 IU/일 피하 또는 근육, 최대 4주)이 효과적인 보조 진통제였다(IIa). 그러나 홍조·위장관 부작용이 흔하고 장기 사용은 암 위험과 관련될 수 있으며 만성 통증에는 근거가 없다(Ia). 급성 척추골절 21일 이내 파미드로네이트 30 mg 정맥이 위약보다 통증을 줄인 소규모 RCT가 하나 있다(IIb). 두 약 모두 제품 설명서상 적응은 통증 관리가 아니다.</p>'},
+v_ex:{kind:'척추골절', title:'운동', next:['v_ed'], body:`${RR('V4','V5','S30')}<p>물리치료사 감독 운동은 척추골절 후 통증과 신체 수행을 개선하고(Ib), 교육·지도와 함께하면 낙상 공포와 심리 증상이 줄어든다(Ia).</p>`},
+v_ed:{kind:'척추골절', title:'일상 동작·자세 안내', next:[], body:R('V6')},
+v_no:{kind:'척추골절', title:'일상적으로 권고하지 않는 치료', next:[], body:'<p>연성·경성 보조기는 통증과 체간 근력을 개선한다는 낮은 질의 근거만 있고 골절 치유 개선 근거가 없어 급성·아급성 척추골절에 일상적으로 쓰지 않는다(Ia). 경피적 척추성형술과 풍선 척추후만성형술은 일관된 이득이 없어 일상적 사용을 지지하지 않는다(Ia). 6개월 이상 안정된 만성 요통이 있는 고령 여성에서 전기 신경 자극이 14주간 통증을 개선한 소규모 RCT가 있다(IIb).</p>'},
+v_ne:{kind:'척추골절', title:'신경학적 결손', next:[], body:'<p>척추골절이 신경학적 결손을 동반하거나 위협하면 척추 수술 서비스로 긴급 의뢰한다. 최근 척추골절 환자는 추가 취약골절의 임박 위험이 높다(IIb).</p>'},
+l_fl:{kind:'진료 모델', title:'골절 연계 서비스(FLS)', next:['l_fd'], body:`${RR('M1','S28','V7')}${ex('fls')}`},
+l_fd:{kind:'진료 모델', title:'환자 발견', next:['l_as'], body:RR('M3','M4','M6','S29')},
+l_as:{kind:'진료 모델', title:'평가', next:['l_tx'], body:RR('M1','F7','N7')},
+l_tx:{kind:'진료 모델', title:'치료 시작', next:['l_fu'], body:`${RR('S10','S32')}<p>FLS가 1차 진료에 권고만 하는 것보다 직접 약물을 시작하면 치료 시작률이 높다(Ia). 재골절 위험은 골절 직후 가장 높으므로 평가와 중재는 늦어도 골절 후 16주 이내에 시작한다.</p>`},
+l_fu:{kind:'진료 모델', title:'추적과 순응 지원', next:['l_db'], body:`${R('M5')}<p>NOGG는 골절 후 16주와 52주에 추적하여 낙상·골절 위험을 높이는 약물을 검토하고, 필요하면 칼슘·비타민 D를 함께 처방하며, 이상반응과 순응을 감시하라는 ROS 권고를 지지한다.</p>`},
+l_db:{kind:'진료 모델', title:'감사와 데이터베이스', next:[], body:`${R('M2')}${ex('aud')}`},
+l_tr:{kind:'진료 모델', title:'교육과 커미셔너', next:[], body:`<h5>교육</h5>${RR('E1','E2','E3','E4','E5','E6')}<h5>서비스 책임자·커미셔너</h5>${RR('C1','C2','C3','C4','C5','C6','C7')}`}
+};
+
+/* 하단 버튼 */
+const ALL = Object.keys(REC);
+const GROUP = [['F','골절 위험 평가와 환자 발견'],['I','중재 역치와 전략'],['N','비약물 관리'],['D','약물치료'],['B','비스포스포네이트 기간·재평가'],['A','드문 이상반응'],['G','글루코코르티코이드 유발 골다공증'],['T','안드로겐 차단 요법'],['H','아로마타제 억제제'],['V','증상성 척추골절'],['M','골절 예방 진료 모델'],['E','교육'],['C','서비스 책임자·커미셔너']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'등급과 이 도구에 대하여', next:[], body:`${['S','C','SC','U'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}<h5>근거 수준(중재 연구)</h5>${tbl(['수준','정의'],[['Ia','RCT의 체계적 문헌고찰·메타분석'],['Ib','개별 RCT(좁은 신뢰구간)'],['IIa','비무작위 대조 시험이나 잘 설계된 코호트 연구 1개 이상의 체계적 고찰'],['IIb','개별 코호트 연구 또는 질 낮은 RCT'],['IIIa','환자-대조군 연구 1개 이상의 체계적 고찰'],['IIIb','개별 환자-대조군 연구'],['IV','전문가 위원회 보고·의견, 권위자의 임상 경험, 증례 연속(질 낮은 코호트·환자-대조군 포함)']])}<p class="exp-src">위험인자 타당성의 근거 수준은 Ia(동질성 높은 수준 I 연구의 메타분석), Ib(동질성 중등도·낮음), Ic(수준 I 연구), IIa, IIb, IIIa, IIIb, IV로 따로 정의된다. 권고 등급은 GRADE 이분 분류(강한/조건부)를 따르며 이득과 위해의 차이, 근거의 질, 가치와 선호의 변이, 비용을 고려하였다.</p>${note('구성','원문 본문 권고 98개(강한·조건부)와 주요 권고 요약 32개를 모두 해라체로 번역해 수록했다. 번호는 원문 절 번호를 따르되 절 구분을 위해 머리글자를 붙였다(F 위험 평가, I 중재 역치, N 비약물, D 약물, B 비스포스포네이트 기간·재평가, A 이상반응, G GIO, T ADT, H AI, V 척추골절, M 진료 모델, E 교육, C 커미셔너, S 요약). 탭은 Fig. 1–5와 권고 흐름을 재현했고, Fig. 1·2 그래프는 Table 4 수치로 다시 그렸다(50세부터 표시). 권고를 누르면 해당 본문 절의 요약 번역이 펼쳐진다.')}${note('원문 불일치','① 권고 번호 15가 두 번 쓰였다(드문 이상반응 마지막 권고와 GIO 첫 권고). ② Fig. 4·5의 장기 치료 기준(“&gt;70세”, “고관절 골절 또는 척추골절 ≥2개”)이 권고 1·2(“≥70세”, “고관절 또는 척추골절 병력”, 치료 중 골절)와 다르다. ③ 요약 권고 17의 흐름도 위치 “50·51쪽”은 실제 23–24쪽이다. ④ 고용량 글루코코르티코이드 경계: Table 1 “&gt;7.5 mg/일”, Table 7과 권고 “≥7.5 mg/일”, Table 7 중간 용량 “2.5–7.5”와 고용량 “≥7.5”가 7.5에서 겹친다. ⑤ 칼시트리올 척추골절 근거: Table 5 IIa, 본문 IIb. ⑥ 아발로파라타이드 고관절: 본문은 감소가 입증되지 않았다고 하나 Table 5는 위약 대비 IIb를 준다. ⑦ Table 5는 칼시트리올을 남성 허가로 표기하나 본문은 폐경 후 골다공증 승인만 쓴다. ⑧ Table 3 각주 a는 “Table 2 참조”로 쓰지만 해당 내용은 Table 1에 있다. ⑨ FRAX 입력 항목 설명에서 “대퇴경부 BMD는 선택 항목…” 문장이 두 번 반복된다. ⑩ 스트론튬 절의 “eGFR &lt;30 ml/ml” 단위 오기(ml/min).')}${tip('한국 적용','영국 NHS와 NICE 체계, 영국 FRAX 모델과 NOGG 역치에 맞춘 지침이다. 국내 FRAX 모델과 허가·급여 기준(예: 아발로파라타이드, 스트론튬 라넬레이트, 로모소주맙의 남성 사용)은 다를 수 있다.')}`},
+ all:{kind:'전체', title:'본문 권고 98개', next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k[0]===g))}`).join('')},
+ summ:{kind:'요약', title:'주요 권고 요약 32개', next:[], body:`${paraHTML(EXP.sum)}${RR(...ALL.filter(k=>k[0]==='S'))}${note('원문 표기','요약 권고 17은 임상 흐름도가 “50쪽과 51쪽”에 있다고 쓰지만 이 판에서 Fig. 4·5는 23–24쪽에 있다.')}`},
+ tabs:{kind:'표', title:'Table 1–7', next:[], body:`<h5>Table 1. FRAX 보정</h5>${T1}<h5>Table 2. 원인 검사</h5>${T2}<h5>Table 3. 위험 평가 계기</h5>${T3}<h5>Table 4. NOGG 역치</h5>${T4}<h5>Table 5. 승인 약물의 골절 예방 효과</h5>${T5}<h5>Table 6. GIO 중재 효과</h5>${T6}<h5>Table 7. GC 용량별 FRAX 보정</h5>${T7}`},
+ drug:{kind:'약제', title:'약제별 용법과 주의', next:[], body:`${DRUG}${ex('bp')}${ex('dmab')}${ex('hrt')}${ex('ana')}`},
+ life:{kind:'비약물', title:'식사·운동·낙상·생활습관', next:[], body:`${RR('N1','N2','N3','N4','N5','N6','N7')}${ex('diet')}${ex('ex')}`},
+ intro:{kind:'서론', title:'서론·2024 개정 요약', next:[], body:`${paraHTML(EXP.bg)}${ex('com')}${ex('trn')}`}
+});
+
+const ABBR = [
+ ['ADT','Androgen deprivation therapy, 안드로겐 차단 요법'],['AFF','Atypical femoral fracture, 비전형 대퇴골절'],['AI','Aromatase inhibitor, 아로마타제 억제제'],['ALP','Alkaline phosphatase'],
+ ['BMD','Bone mineral density, 골밀도'],['BP','Bisphosphonate, 비스포스포네이트'],['CAD','Computer aided diagnostics, 컴퓨터 보조 진단'],['CRF','Clinical risk factor, 임상 위험인자'],
+ ['CTX / P1NP','C-telopeptide of type I collagen / procollagen type I N-propeptide, 골흡수·골형성 표지자'],['CTXA','CT X-ray absorptiometry'],['DXA','Dual-energy X-ray absorptiometry'],
+ ['FLS','Fracture liaison service, 골절 연계 서비스'],['FRAX','Fracture Risk Assessment Tool'],['GC','Glucocorticoid'],['GIO','Glucocorticoid-induced osteoporosis'],
+ ['HAL','Hip axis length, 고관절 축 길이'],['HRT','Hormone replacement therapy'],['ICS','Integrated Care System, 통합 진료 체계'],['IT','Intervention threshold, 중재 역치'],
+ ['LAT / UAT','Lower / upper assessment threshold, 하위·상위 평가 역치'],['MDT','Multidisciplinary team'],['MHRA','Medicines and Healthcare products Regulatory Agency'],
+ ['MOF','Major osteoporotic fracture: 임상적 척추·고관절·전완·상완 골절'],['NAE','No available evidence'],['NICE','National Institute for Health and Care Excellence'],
+ ['NOGG','National Osteoporosis Guideline Group'],['ONJ','Osteonecrosis of the jaw, 턱뼈 괴사'],['PMO','Postmenopausal osteoporosis'],['QCT','Quantitative computed tomography'],
+ ['REMS','Radiofrequency Echographic Multi-Spectrometry'],['ROS','Royal Osteoporosis Society'],['SERM','Selective oestrogen receptor modulator'],['TBS','Trabecular bone score, 해면골 점수'],
+ ['VFA','Vertebral fracture assessment, 척추골절 평가'],['VHRT','Very high-risk threshold, 초고위험 역치'],['VTE','Venous thromboembolism']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'alg';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: F, MOF)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('alg');
+
+</script>
+</body>
+</html>
