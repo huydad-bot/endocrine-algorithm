@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>무증상갑상선기능저하증 — 대한갑상선학회 2023</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>2023 대한갑상선학회 무증상갑상선기능저하증 진료 권고안</h1>
+        <p class="src">정현경, 구유정, 유원상, … 강호철, 박도준. 2023 Korean Thyroid Association Management Guidelines for Patients with Subclinical Hypothyroidism. <a href="https://doi.org/10.11106/ijt.2023.16.1.32" target="_blank" rel="noopener noreferrer">Int J Thyroidol 2023;16:32–50</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Korean Thyroid Association</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상·고위험 박스 강조"><i class="sw mal"></i>이상·고위험</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="치료 안 함·추적 박스 강조"><i class="sw ben"></i>치료 안 함·추적</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 해당 핵심 질문의 본문 원문이 펼쳐짐</li><li>첫 탭은 원문 Fig. 1 재현, 나머지는 본문·표로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>권고 등급·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>권고 전체 (28)</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 2–6</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·방법</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ SH:'권고 강도 Strong(이득이 위험보다 명확) · 근거 수준 High(잘 설계된 RCT 1개 이상)',
+ SM:'권고 강도 Strong(이득이 위험보다 명확) · 근거 수준 Moderate(중요한 제한점이 있는 RCT, 잘 설계된 코호트·환자대조군)',
+ WM:'권고 강도 Weak(이득과 위험이 비슷함) · 근거 수준 Moderate',
+ WL:'권고 강도 Weak(이득과 위험이 비슷함) · 근거 수준 Low(관찰연구)',
+ GPS:'Good Practice Statement: 바람직한 임상관리를 위한 전문가 권고사항'
+};
+const LVTXT = {SH:'Strong · High', SM:'Strong · Moderate', WM:'Weak · Moderate', WL:'Weak · Low', GPS:'GPS'};
+const LVCLS = {SH:'l1', SM:'l1', WM:'l2', WL:'l2', GPS:'l3'};
+/* [등급, 원문 위치, 권고문(원문), 본문 절] */
+const REC = {
+'II-1':['SM','II. 상황별 TSH 참고치','무증상갑상선기능저하증 진단을 위한 TSH 참고치는 갑상선질환이 없는 일반인을 대상으로 조사된 각 지역, 연령별 자료에 근거한 값을 사용한다.','c2'],
+'II-2':['SM','II. 상황별 TSH 참고치','우리나라의 TSH 참고치는 2015년 국민건강영양조사 결과에 근거한 0.6–6.8 mIU/L를 사용한다. 단, TSH 측정 kit에 따라 측정값의 차이가 있으므로 이를 고려하여 적용한다.','c2'],
+'II-3':['SM','II. 상황별 TSH 참고치','무증상갑상선기능저하증은 TSH의 범위에 따라 경증(TSH 6.8–10 mIU/L)과 중증(TSH &gt;10 mIU/L)으로 나누며, 연령에 따른 갑상선호르몬의 영향이 상이하므로 70세를 기준으로 성인과 고령으로 나눈다.','c2'],
+'III-1':['SM','III. 현성 진행 빈도와 위험인자','처음 발견된 무증상갑상선기능저하증은 치료 여부를 결정하기 위해 TSH 추적검사를 시행한다.<br><span class="nt-cc">임상적 고려 사항: 처음 발견 2–3개월 후 추적검사를 고려한다.</span>','c3'],
+'III-2':['SM','III. 현성 진행 빈도와 위험인자','무증상갑상선기능저하증의 경과를 예측하기 위해 갑상선과산화효소(thyroperoxidase, TPO) 항체를 측정한다.','c3'],
+'III-3':['WM','III. 현성 진행 빈도와 위험인자','진단 당시 높은 TSH 및 낮은 free T4, TPO 항체 양성, 추적검사에서 2배 이상 상승하는 TSH, 여성, 갑상선염 등이 현성 갑상선기능저하증으로 진행하는 위험인자이므로, 이를 고려한 추적검사 및 치료가 필요할 수 있다.','c3'],
+'IV-1':['WM','IV. 심혈관대사질환','성인(&lt;70세)에서 경증 무증상갑상선기능저하증에 대한 LT4 치료는 심혈관질환이 동반되어도 일반적으로 권고하지 않는다.','c4'],
+'IV-2':['SM','IV. 심혈관대사질환','성인(&lt;70세)에서 중증 무증상갑상선기능저하증에 대한 LT4 치료는 기저 관상동맥질환 또는 심부전이 동반되어 있는 경우 시행한다.','c4'],
+'IV-3':['SH','IV. 심혈관대사질환','고령(≥70세)에서 경증 무증상갑상선기능저하증에 대해 LT4 치료를 시행하지 않는다.','c4'],
+'IV-4':['WM','IV. 심혈관대사질환','고령(≥70세)에서 중증 무증상갑상선기능저하증에 대한 LT4 치료는 심혈관질환이 동반되어도 일반적으로 권고하지 않는다.','c4'],
+'IV-5':['SM','IV. 심혈관대사질환','무증상갑상선기능저하증에서 대사증후군 및 비만 치료 목적으로 LT4 치료를 시행하지 않는다.','c4'],
+'IV-6':['WM','IV. 심혈관대사질환','중증(TSH &gt;10 mIU/L) 무증상갑상선기능저하증이 이상지질혈증과 동반된 경우 성인(&lt;70세)에서는 이상지질혈증의 개선 목적으로 LT4 치료를 고려할 수 있다.','c4'],
+'V-1':['WL','V. 심리 및 인지기능','성인(&lt;70세) 무증상갑상선기능저하증에서 우울증을 개선하기 위한 LT4 치료는 일반적으로 권고하지 않는다.','c5'],
+'V-2':['WM','V. 심리 및 인지기능','고령(≥70세) 무증상갑상선기능저하증에서 인지기능을 개선하기 위한 LT4 치료는 일반적으로 권고하지 않는다.','c5'],
+'VI-1':['WL','VI. 관련 증상','성인(&lt;70세) 무증상갑상선기능저하증에서 갑상선기능저하증 관련 증상의 호전을 위한 LT4 치료는 일반적으로 권고하지 않는다.','c6'],
+'VI-2':['SM','VI. 관련 증상','고령(≥70세) 무증상갑상선기능저하증에서 삶의 질 향상 또는 갑상선기능저하증 관련 증상의 호전을 위한 LT4 치료는 시행하지 않는다.','c6'],
+'TS-1':['WM','치료 선별 (VI 끝 종합)','성인(&lt;70세)에서 경증 무증상갑상선기능저하증에 대한 LT4 치료는 일반적으로 권고하지 않는다.','c1'],
+'TS-2-1':['SM','치료 선별 (VI 끝 종합)','성인(&lt;70세)에서 중증 무증상갑상선기능저하증은 기저 관상동맥질환 또는 심부전이 동반되어 있는 경우에는 LT4 치료를 시행한다.','c1'],
+'TS-2-2':['WM','치료 선별 (VI 끝 종합)','성인(&lt;70세)에서 중증 무증상갑상선기능저하증은 이상지질혈증과 동반되어 있는 경우 이의 개선 목적으로 LT4 치료를 고려할 수 있다.','c1'],
+'TS-3':['SH','치료 선별 (VI 끝 종합)','고령(≥70세)에서 경증 무증상갑상선기능저하증에 대해 LT4 치료를 시행하지 않는다.','c1'],
+'TS-4':['WM','치료 선별 (VI 끝 종합)','고령(≥70세)에서 중증 무증상갑상선기능저하증에 대한 LT4 치료는 일반적으로 권고하지 않는다.','c1'],
+'VII-1':['SH','VII. 약제 선택 및 추적관리','LT4 경구투여는 무증상갑상선기능저하증의 가장 적절한 치료방법이다.','c7'],
+'VII-2':['SM','VII. 약제 선택 및 추적관리','LT4 필요용량은 체중과 성별에 따라 다르며, 고령 혹은 심혈관질환 위험을 동반한 환자는 초기 12.5–25 μg/일의 용량으로 시작하여 1–2개월 간격으로 갑상선기능검사를 추적하여 혈중 TSH의 정상화를 목표로 용량을 조정한다.','c7'],
+'VII-3':['SM','VII. 약제 선택 및 추적관리','LT4 치료 중 갑상선기능이 항진 상태로 전환 시 용량의 감량 및 중단 시도가 필요하다.','c7'],
+'VII-4':['WM','VII. 약제 선택 및 추적관리','LT4 치료를 하지 않는 무증상갑상선기능저하증은 주기적인 추적관찰을 시행하여야 하며, 적절한 검사 간격은 경증 및 중증에 따라 결정한다.','c7'],
+'VIII-1':['GPS','VIII. 환자 교육','지속되는 무증상갑상선기능저하증에서 정기적인 갑상선기능검사가 필요함을 교육한다. 치료하지 않는 경우 현성 갑상선기능저하증으로 진행 여부를 확인하기 위해, 치료를 시작한 경우에는 LT4 용량 조정 및 지속 복용의 필요성을 평가하기 위해서이다.','c8'],
+'VIII-2':['GPS','VIII. 환자 교육','만성 자가면역갑상선염이 의심되는 환자에게는 저요오드 식이를 권장하고, 고요오드 함유 건강보조식품은 피하며, 고요오드 함유 약제 복용은 주의할 것을 교육한다.','c8'],
+'VIII-3':['GPS','VIII. 환자 교육','모든 가임 연령 여성에서는 임신 관련 주의 사항에 대해 교육한다. 특히 LT4 치료 없이 경과 관찰 중인 무증상갑상선기능저하증 여성에서는 계획 임신의 필요성에 대해 교육한다.','c8']
+};
+
+const EXP = {
+intro:{"t": "서론·방법", "r": "서론 · 방법", "p": ["#서론", "무증상갑상선기능저하증은 혈중 갑상선자극호르몬(thyroid stimulating hormone, TSH)은 높지만 혈중 유리 타이록신(free T4)이 정상인 경우로 정의된다. 무증상갑상선기능저하증은 건강검진 등에서 우연히 진단되는 경우가 흔한데, 아직까지 이들에 대한 적절한 평가와 추적관리에 대한 국내 진료지침이 제시된 바 없다.", "갑상선기능저하증에 대한 국외 진료지침은 대부분 현성 갑상선기능저하증에 초점을 맞추어 작성되었고, 무증상갑상선기능저하증에 관한 단독 진료지침으로 2013년 유럽갑상선학회의 진료지침이 발표되었다. 이후 무증상갑상선기능저하증이 심혈관질환과 사망, 비만, 대사질환 및 인지 기능 등에 미치는 영향, 연령별 임상적 경과의 차이점, 레보타이록신(levothyroxine, LT4) 치료의 이득과 위해에 대한 대규모 결과들이 보고되었다. 특히 국내 연령별 TSH 분포에 대한 결과도 발표되면서, 국내 실정에 맞는 진단 기준과 LT4 치료의 적응증을 정립할 진료지침의 필요성이 대두되었다. 이에, 대한갑상선학회에서는 현재까지 발표된 진료지침과 연구결과를 종합하여 무증상갑상선기능저하증 진료지침을 작성하였고, 2023년 3월 대한갑상선학회에서 공청회를 거쳐 회원들의 의견을 수렴하여 완성하였다.", "이번 진료지침은 국내 첫 무증상갑상선기능저하증 진료지침으로, 국내 자료를 바탕으로 혈중 TSH 참고치의 상한선을 제시하여 무증상갑상선기능저하증 진단 기준을 명시했다는 점에서 큰 의미를 가진다. 일반적으로 갑상선질환이 없는 성인 인구 집단의 혈중 TSH의 참고치는 0.4-4.0 mIU/L로 알려져 있지만, 그 분포는 대상 집단에 따라 매우 다양하다. 따라서 지역별 연령별 근거자료를 바탕으로 무증상갑상선기능저하증을 진단하는 것이 바람직하다는 학회 회원들의 의견을 수렴하여 한국인 혈중 TSH의 참고치의 상한선이 4.0 mIU/L보다 높다는 국내 연구결과들을 토대로 진단 기준에 이를 반영하였다.", "그리고 국내외 연구결과를 바탕으로 환자의 나이, 심혈관 및 대사질환, 심리 및 인지 기능, 그리고 임상증상 측면으로 나누어 LT4 치료가 필요한 환자를 선별하여 용이하게 실제 임상에 적용하도록 고안하였다. 특히 기존 진료지침에서 애매한 무증상갑상선기능저하증 증상에 따라 치료 여부를 결정하였던 점을 없애고, 증명된 건강 효과에 집중하여 치료방침을 정하도록 하였다. 아울러 환자 교육과 관련, 전문가 권고사항(good practice statements, GPS)을 제시하여 임상현장에서 환자 관리 시 참고하도록 하였다.", "#방법", "대한갑상선학회는 2022년 학회 회원들의 추천을 받아 ‘무증상갑상선기능저하증 진료지침제정 Task Force (TF)’를 조직하여 수차례 내부 회의를 거쳐 진료지침의 방식을 2013년 유럽갑상선학회 진료지침을 토대로 그 이후 발표된 새로운 문헌을 추가하는 수용 개작으로 결정하였다.", "기존 진료지침을 참고하여 핵심 질문을 결정하였고, 담당 위원들이 근거문헌을 선정 및 검토한 후 초안을 작성하였다. 문헌검색 데이터베이스(PubMed, Embase 등)를 이용하여 2013년부터 2022년까지 발표된 논문 중 ‘subclinical hypothyroidism’을 기본 키워드로 하여 각 핵심 질문에 해당하는 키워드를 추가하여 검색하였다. 사용된 키워드는 ‘TSH’, ‘Age’, ‘Overt hypothyroidism’, ‘Progression’, ‘Cardiovascular disease’, ‘Mortality’, ‘Dysli-pidemia’, ‘Metabolic syndrome’, ‘Symptom’, ‘Cognitive function’, ‘Dementia’, ‘Mood’, ‘Depression’, ‘Levothyroxine’, ‘Treatment’였다. 검토된 문헌의 형식은 ‘상황별 TSH의 참고치’에 대한 내용은 관찰연구, ‘현성 갑상선기능저하증으로 진행’은 코호트 연구, ‘심혈관대사질환’, ‘심리 및 인지기능’ 및 ‘증상 호전’은 무작위 대조군 연구(rando-mized controlled trial, RCT)와 메타분석 연구를 주요 문헌으로 채택하였다.", "또한 연구가 많지는 않지만, 임상현장에서 중요한 환자 교육에 대한 항목은 여러 전문가의 의견을 모아 GPS 형식으로 기술하였다. 단, 이번 진료지침이 다루는 주된 대상은 무증상갑상선기능저하증이 의심되거나 갑상선기능검사를 통해 무증상갑상선기능저하증이 진단된 환자로서, 소아 및 청소년, 임신부와 임신을 시도하는 여성은 본 진료지침의 적용 대상에서 제외하였다.", "권고 수준은 American College of Physicians (ACP)에서 제시하는 근거에 따른 권고 수준에 따라 표시하였다(Table 1)."]},
+c1:{"t": "진단 및 진료 흐름도 설명", "r": "I. 진료지침 요약 · Fig. 1", "p": ["#무증상갑상선기능저하증 진단 및 진료 흐름도(Fig. 1)", "무증상갑상선기능저하증은 일시적으로 발생하거나 환경, 약물 등과 같은 외적 요인에 의해 발생할 수 있으므로 반드시 갑상선기능검사를 반복 측정하여 지속적인 무증상갑상선기능저하증임을 확인해야 한다. 검사 간격은 환자의 연령과 중증도에 따라 다를 수 있으며, 추적 시에는 예후를 예측하기 위해 TPO 항체를 같이 측정하여 자가면역갑상선염의 동반 여부를 확인한다.", "지속적인 무증상갑상선기능저하증으로 확인된 경우에는 환자의 연령과 동반질환을 고려하여 치료방침을 결정한다. 고령(≥70세)에서는 치료 없이 경과 관찰이 원칙이며, 특히 경증(TSH 6.8-10 mIU/L)에서는 LT4 치료의 이득이 없으므로 권고되지 않는다. 반대로 성인(＜70세)에서는 LT4 치료가 권장되는데 특히 중증(TSH ＞10 mIU/L)에서는 심혈관질환의 위험성을 줄이기 위해 적극적인 투약이 권고된다. 그 외에도 TSH가 지속적으로 상승하거나, 만성갑상선염이나 갑상선종이 동반되거나 갑상선엽절제술을 받은 경우 등 현성 갑상선기능저하증으로 진행할 가능성이 높다고 예측되는 경우에는 LT4 치료를 고려한다."]},
+c2:{"t": "상황별 TSH 참고치", "r": "II. 핵심 질문", "p": ["혈중 TSH의 참고치는 대상 집단의 기저 갑상선질환이 없는 건강인 집단의 95%가 포함되는 TSH 농도로 결정한다. 일반적으로 TSH 농도는 여성에서 높고, 나이가 증가할수록, Caucasian보다 아시아인에서 높고, 요오드 섭취가 많을수록 높다. 연령이 증가할수록 TSH가 높아지므로 무증상갑상선기능저하증의 유병률은 고령 인구에서 8-18%까지 높아지는데, 고령의 환자는 심혈관질환이나 골다공증 등의 LT4 치료에 따른 부정적인 영향을 받을 수 있는 동반질환을 가지는 경우가 많아 LT4 치료에 대해 신중해야 한다. 특히 고령화 사회로 급격히 변모하는 우리나라의 현실을 감안하여 본 TF는 무증상갑상선기능저하증 진단을 위한 혈중 TSH의 참고치를 국내 자료를 바탕으로 제시하고 연령별로 치료 방침을 세분화하는 것이 바람직하다는 데 의견을 모았다.", "2013년-2015년 제6기 한국 국민건강영양조사를 바탕으로 갑상선질환이 없는 일반인 6546명의 TSH를 분석한 결과, 평균 TSH 농도는 2.16 mIU/L, 대상 집단의 2.5-97.5%의 TSH 농도에 해당하는 참고치는 0.62-6.86 mIU/L였다. 여성의 평균 TSH 농도는 2.24 mIU/L로 남성 평균 2.09 mIU/L보다 높았으며, 연령에 따른 분포는 10대와 70대 이상에서 가장 높고 40대에서 가장 낮은 U자형이었다(Table 2). 단일기관 약 2만 명의 건강검진 자료를 후향적으로 분석한 다른 연구에서도 평균 TSH 농도는 2.38 mIU/L, TSH의 참고치는 0.73-7.06 mIU/L로 보고하였다. 또한 안성지역에 거주하는 3021명을 12년간 전향적으로 관찰한 코호트 연구에서 TSH가 6.57 mIU 초과인 경우 관찰 8년 차부터 심혈관질환의 유병률과 사망률이 증가함을 보고하였다. 즉, 혈중 TSH 4.0-6.5 mIU/L의 환자들은 수년이 지나도 건강 효과에 악영향을 받지 않았다.", "보고된 연구결과들에 따르면 한국인의 혈중 TSH 분포는 두 가지 특이점을 가진다. 첫 번째, 한국인 혈중 TSH 농도의 상한선은 다른 나라에 비해 높다. 다른 나라의 혈중 TSH 상한선이 4-5 mIU/L인데 비해 국내 혈중 TSH의 상한선은 모두 6-7 mIU/L였다(Table 3). 또한 TSH 4-7 mIU/L인 환자들은 시간이 지나도 갑상선기능저하증 관련 임상적 유의성이 발생하지 않은 점을 고려하면 적극적인 진단과 치료보다는 경과 관찰을 우선적으로 하는 것이 적절하다.", "두 번째로, 다른 나라와 다르게 연령에 따른 변화가 선형적이지 않고 U자형이라는 점이다. 이는 우리나라의 요오드 섭취 형태와 연관성이 높다. 우리나라는 고요오드 섭취 국가로, 소변 요오드양으로 대변되는 요오드 섭취량과 TSH는 강한 양의 상관관계가 있다. 한국인 TSH 농도를 연령별로 살펴보면, 40대에서 최저점을 보이다가 이후에는 점차 증가하는 양상을 보이고 있으며, 국내 코호트 연구에서도 고령에서 갑상선기능저하증의 유병률이 높아지는 등 연령 증가에 따른 혈중 TSH 농도 증가는 뚜렷하다. 요오드 섭취가 많은 다른 나라의 연구에서도 연령에 따라 TSH 농도가 선형적으로 변하지는 않는다고 보고된 바 있다. 이를 종합하여 본 지침에서는 한국 국민영양조사 결과에 근거하여 혈중 TSH의 참고치를 0.6-6.8 mIU/L로 새롭게 제안하였다. 단, 임상적 유용성을 고려하여 연령별, 성별 참고치를 구분하지는 않았다.", "새롭게 제안된 TSH 참고치는 전국적으로 5000명 이상의 기준 집단(reference population)에서 단일한 검사법(전기화학발광 면역분석법; electrochemiluminescence im-munoassay, Roche Diagnostics, Mannheim, Germany)을 통해 얻어진 TSH 결과에 근거한다. 기준 집단은 갑상선질환 및 가족력이 없으며 갑상선자가항체 음성이고 현재 임신 중이 아닌 상태로 정의하였으며, 이로써 TSH 측정값에 영향을 미칠 수 있는 요인을 최소화하였다. 그러나 근거 문헌과 다른 측정법 또는 다른 제조회사의 kit를 사용하는 경우, 측정 결과에 일부 차이가 나타날 수 있으므로, kit에 따른 추정값의 적용이 고려되어야 한다. 향후 측정법 간 차이를 표준화하는 방법이 고안되고, 이에 근거한 대규모 전향적 연구가 이루어지면 이러한 제한점을 극복할 수 있을 것으로 기대한다.", "무증상갑상선기능저하증은 TSH의 범위에 따라 경증(TSH 6.8-10 mIU/L)과 중증(TSH ＞10 mIU/L)으로 나뉘는데, 무증상갑상선기능저하증의 90%가 경증에 해당한다. 다만, 혈중 TSH 농도는 여러 상황에 따라 변동폭이 큼에 주의해야 한다. 기본적으로 TSH 분비에 일중변동이 있어 이른 오후에 최저치를 보이고 저녁과 밤에 높아진다. 또한 TSH 농도는 일과성 갑상선염 등의 질환이나 약제, 수면 습관, 운동, 우울증, 체형에 따라서도 영향을 받는다. 그러므로 TSH가 정확하게 측정되었는지 검토하고, 충분한 간격을 두고 재측정하여 TSH 상승이 지속적인지 반드시 확인하여야 한다.", "TSH 측정 간격은 TSH의 범위와 환자의 상태에 따라 달리 정한다. 일반적으로 6개월 내 재측정할 것을 권유하며, 경증의 경우에는 더 늦게, 중증의 경우에는 더 일찍 검사해 볼 수 있다."]},
+c3:{"t": "현성 진행 빈도와 위험인자", "r": "III. 핵심 질문", "p": ["#무증상갑상선기능저하증의 유병률", "무증상갑상선기능저하증의 유병률은 인구집단의 나이, 성별, 인종, 지역은 물론 TSH 측정 방법에 따라서도 다양해서, 4-20%로 알려져 있고, 한국인 유병률은 TSH 4.0 mIU/L를 참고치로 하였을 때 0.2-17.3%로 보고되었다. 건강검진 데이터를 분석한 연구에서 무증상갑상선기능저하증의 유병률은 0.1%에서 5.0%였으나, 대규모 인구 집단 코호트를 기반으로 한 한국인유전체역학조사사업(Korean Genome and Epidemiology Study, KoGES)에서는 40-70세 성인에서 11.7%, 지역사회 기반 코호트 연구(Korean Longitudinal Study on Health and Aging, KLoSHA)에서는 65세 이상 성인에서 17.3%의 유병률을 보였다. 또한 제6기 국민건강영양조사 기반 관찰연구에서는 유병률이 3.1% (남성 2.26%, 여성 4.04%)였고, 여성이거나, 고령인 경우 유병률이 증가하였다.", "무증상갑상선기능저하증의 유병률은 일반적으로 요오드 과잉 섭취 지역에서 높다. 한국인 국민건강영양조사 자료의 6564명의 요중 요오드 농도를 분석한 결과 평균 요오드 섭취량은 299.3 μg/L (사분위수 범위, 158.8- 699.8 μg/L)로, WHO에서 제안하는 요오드 권장 섭취량(적정 수준: 100-199 μg/L)을 크게 상회하였다. 요오드 권장 섭취량을 초과하는 사람이 66.3%였으며 요오드 과잉섭취는 무증상갑상선기능저하증 및 현성 갑상선기능저하증 발병과 연관되었다.", "#무증상갑상선기능저하증의 원인", "무증상갑상선기능저하증의 원인으로 자가면역갑상선염, 현성 갑상선기능저하증인데 갑상선호르몬제 복용이 불충분한 경우, 갑상선엽절제술, 방사성요오드 치료, 경부 방사선치료, 일과성 갑상선염, 약제, 요오드 과잉 섭취, 생리학적 변화 등이 있다. 기저 갑상선질환으로는 하시모토 갑상선염, 아밀로이드증, 사르코이드증(sar-coidosis), 혈색소침착증(hemochromatosis), 리이델갑상선염(Riedel thyroiditis), 피부경화증(scleroderma) 등에 의한 침윤성 갑상선염, 갑상선 무형성증 등이 원인질환이 될 수 있다.", "원인 약제로는 요오드 포함 조영제, 아미오다론, 리튬, 타이로신키나제억제제(tyrosine kinase inhibitor; sunitinib, sorafenib, lenvatinib, cabozantinib 등), 인터페론 알파, 혹은 면역관문억제제(immune checkpoint inhibitor; ipilimumab, pembrolizumab) 등이 알려져 있다. 요오드 섭취량은 결핍 혹은 과잉 모두 무증상갑상선기능저하증을 일으킬 수 있는데, 우리나라에서 무증상갑상선기능저하증 환자 64명에서 시행한 전향적 연구결과 1일 평균 요오드 섭취량은 290.61 μg으로 요오드 과잉 상태였고, 이들에게 요오드 섭취를 제한하자 48.5%의 환자에서 갑상선 기능이 정상화되었다.", "생리학적 변화로는 계절의 변화, 비갑상선 질환의 회복기, 아급성갑상선염이나 무통성갑상선염, 산후갑상선염의 회복기에도 관찰된다. 그 외에 이종친화항체, 류마티스 인자, 비오틴, macro-TSH, 혹은 TSH 아형 이상에 의한 TSH 측정 방법에 따른 차이, 중추갑상선기능저하증 혹은 항진증, 갑상선호르몬저항증후군, 신기능 이상, 부신피질호르몬부족, 비만, 고령 등이 있다(Table 4).", "#무증상갑상선기능저하증에서 현성 갑상선기능저하증으로 진행하는 위험인자", "무증상갑상선기능저하증의 추적관찰과 치료에 있어 가장 중요한 점은 현성 갑상선기능저하증으로 진행 여부이다. 무증상갑상선기능저하증에서 현성으로 진행하는 데는 다양한 인자들이 관련된다. 먼저 무증상갑상선기능저하증 자체가 현성 갑상선기능저하증으로의 진행 위험 인자이며, 무증상갑상선기능저하증 환자는 정상 갑상선기능 환자에 비하여 5년 이내 현성 갑상선기능저하증이 될 확률이 10배 정도 높으며, 이환율은 5년 추적관찰 시 2.0-3.4%, 10년 이상 추적관찰 시 33-55%이다.", "현성 갑상선기능저하증으로 진행되는 잘 알려진 위험인자로는 TPO 항체 양성, 첫 진단 시 낮은 free T4 혹은 높은 TSH 농도(TSH ≥10 mIU/L), 추적관찰 시 TSH의 2배 이상 상승, 여성, 갑상선 초음파에서 에코저하 혹은 염증 소견이 있는 경우이다. 이처럼 현성 갑상선기능저하증으로 진행 위험이 높은 환자의 경우에는 추적검사를 소홀히 하지 않도록 해야 하며, 특히 TSH 20 mIU/L 이상으로 증가하거나 갑상선엽절제술의 과거력이나 만성갑상선염의 병력이 있어 현성 갑상선기능저하증의 진행이 예상되는 경우에는 LT4 치료를 고려해야 한다.", "그 밖의 위험인자로는 고령, 갑상선종, 경부 방사선치료 병력, 요오드 과잉 섭취, 고혈당(식후 2시간 혈당 ≥200 mg/dL), 높은 콜레스테롤(총콜레스테롤 ≥240 mg/dL), 높은 중성지방(중성지방 ≥200 mg/dL), 2단계 비만(체질량지수 ＞30 kg/m), 고혈압, 심방세동, 신장질환, 아미오다론 투약 등이 알려져 있다(Table 5).", "#무증상갑상선기능저하증의 진단 시 갑상선 자가항체의 측정", "TPO 항체, 갑상선글로불린 항체의 측정은 갑상선 자가면역에 가장 민감한 혈청학적 검사이다. 특히 TPO 항체 양성인 경우는 음성에 비해 현성 갑상선기능저하증으로의 이환율이 2배 이상인 것으로 알려져 있기 때문에 무증상갑상선기능저하증 환자 첫 내원 시 측정이 필요하다. 다만, TPO 항체 혈청 농도는 시간 경과에 따라 감소할 수 있기에 자가항체의 반복 측정이 추가적인 정보를 제공하지는 않는다. 일부 무증상갑상선기능저하증 환자에서 TPO 항체 음성, 갑상선글로불린 항체 양성을 보이는 경우가 있기 때문에 갑상선글로불린 항체 측정도 도움이 된다. 또한 무증상갑상선기능저하증 환자의 약 20%에서는 TPO 및 갑상선글로불린 항체가 모두 검출되지 않는데, 이러한 환자에 갑상선 초음파를 시행했을 때 갑상선 실질 에코의 증가 및 감소, 거친 표면, 전후 방향(anteroposterior) 길이의 증가 혹은 감소, marginal nodularity, micro-nodulation 등의 소견은 자가면역갑상선염을 조기에 진단할 수 있는 증거를 제공하므로, 필요시 갑상선 초음파검사를 시행하는 것도 무증상갑상선기능저하증의 예후를 예측하는 데 도움이 된다."]},
+c4:{"t": "심혈관대사질환", "r": "IV. 핵심 질문", "p": ["무증상갑상선기능저하증과 심혈관 및 대사질환과의 연관성에 대해서는 최근 많은 연구들이 연령에 따라 서로 다른 결과를 보고하고 있다(Table 6).", "#심혈관질환", "무증상갑상선기능저하증은 좌심실 확장 기능장애뿐만 아니라 안정 및 운동시의 좌심실 수축 기능 감소와 관련 있으며, 혈관저항의 증가, 동맥혈관의 경직, 혈관내피기능장애 및 죽상동맥경화증과 같은 혈관 이상의 위험을 높인다. 또한, RCT를 포함한 여러 중재연구에서 무증상갑상선기능저하증에 대한 LT4 치료가 심혈관 구조 및 기능 표지자들을 개선하였다. 이는 무증상갑상선기능저하증으로 인한 심근기능저하, 대사 지표 및 혈관 기능의 변화가 주요 심혈관질환의 위험성을 증가시키고, LT4 치료는 그 위험성을 낮출 수 있음을 의미한다.", "최근 대규모 코호트 연구를 포함한 메타분석 결과들은 특정 연령에서 특정 심질환과 무증상갑상선기능저하증의 연관성을 보고하였다. 75,000명 이상의 참가자가 포함된 Thyroid Studies Collaboration 코호트 연구의 메타분석에서는 무증상갑상선기능저하증과 심방세동, 심부전, 뇌졸중, 관상동맥질환, 심혈관질환에 의한 사망 및 전체 사망률의 증가와의 연관성은 입증하지 못하였지만, TSH ＞10 mIU/L의 중증 무증상갑상선기능저하증 환자에서는 심부전, 관상동맥질환, 관상동맥질환으로 인한 사망의 위험도가 정상 대비 유의하게 상승하였다. 또한 후향적 코호트 연구 35개를 포함한 메타분석은 무증상갑상선기능저하증에서 심혈관질환의 위험도가 1.33배 상승하는 것으로 보고하였고, 이러한 경향은 심혈관질환 고위험군에서 두드러졌으나, 65세 이상에서는 유의하게 증가하지 않았다.", "무증상갑상선기능저하증의 LT4 치료 효과에 대한 대규모 RCT는 고령 인구에서 시행되었는데, 대표적으로 두 연구를 들 수 있다. 첫 번째로 TRUST (Thyroid Hormone replacement for Untreated Older Adults with Subclinical Hypothyroidism) 연구는 총 737명의 65세 이상의 무증상갑상선기능저하증 환자(평균 연령 74.4세, 평균 기저 TSH 6.4 mIU/L)들을 모집하여 LT4 치료군(용량 중앙값 50 μg/일)과 위약군으로 나누었는데, 중재 1년 후 심혈관질환 발생률에 차이가 없었다. 더불어 2019년에 발표한 80세 이상 고령 무증상갑상선기능저하증 환자 251명을 대상으로 한 RCT인 IEMO (Institute for Evidence based Medicine in Old age)에서도 LT4 치료는 심혈관질환 및 전체 사망을 감소시키지 않았다. 따라서 70세 이상의 고령의 경증 무증상갑상선기능저하증 환자에서는 LT4 치료를 권고하지 않으며, 중증 무증상갑상선기능저하증에서도 심혈관질환의 치료 목적으로 LT4 치료를 권고할 만한 연구결과가 부족하여 일반적으로 권고되지 않는다.", "성인 무증상갑상선기능저하증을 대상으로 진행된 RCT는 현재까지 없지만, 후향적 연구와 메타분석 연구에서는 LT4 치료가 전체 사망률과 심혈관질환 연관 사망률, 그리고 허혈성 심질환의 위험성을 낮추었다. 따라서 70세 미만 성인의 경우, 경증 무증상갑상선기능저하증에서는 심혈관질환의 치료 목적으로 LT4 치료를 권고하지 않으나, 기저 심혈관질환이 동반된 중증 무증상기능저하증에서는 심혈관질환 예후 향상을 위해 LT4 치료를 고려할 수 있다.", "현재까지 무증상갑상선기능저하증과 사망과의 연관성에 관해서는 대규모 RCT 결과가 없을 뿐 아니라, 후향적 연구나 코호트 연구 결과들도 일관된 경향성이 부족하다. 다만, 최근 발표된 9020명의 미국 국민건강영양조사에서는 무증상갑상선기능저하증을 포함하여 TSH 상승은 전체 사망위험 증가와 관련이 있었으며, 무증상갑상선기능저하증 환자에서 심혈관질환이 전체 사망의 14.3%에 기여하는 것으로 보고하였다. 하지만 대규모 RCT 및 국내 연구 결과의 부족으로 무증상갑상선기능저하증 환자에서 사망률 개선의 목적으로의 LT4 치료는 권고하지 않는다.", "#대사증후군 및 비만", "갑상선기능저하증은 체중 증가는 물론 대사증후군의 위험을 높인다. 비만 인구에 대한 코호트 연구에서도 TSH와 체중은 양의 상관관계가 확인되었고 두 개의 중요한 종단연구에서 TSH 증가는 체질량지수 증가와 연관되었다. 또한 위우회술과 같은 비만수술(baria-tric surgery) 후 상당한 체중 감소가 TSH 수치 감소와 연관됨이 보고되었으며 최근 메타분석에도 무증상갑상선기능저하증 환자에서 대사증후군의 승산비(오즈비, odds ratio)가 정상 갑상선기능 대비 1.39배 높았다.", "다만, 65세 이상의 고령 무증상갑상선기능저하증 환자를 대상으로 진행한 TRUST 연구에서 LT4 치료는 체질량지수 및 허리둘레를 감소시키지 못하였고, LT4 치료가 비만 및 대사증후군을 개선한다는 대규모 RCT 결과가 없으므로, 현 시점에서는 이들 질환의 개선목적으로 LT4 치료를 권고하지 않는다.", "#이상지질혈증", "무증상갑상선기능저하증은 이상지질혈증의 위험성을 높이나, LT4 치료의 효과에 대해서는 논란의 여지가 있다. 한 대규모 역학연구에서 혈중 TSH와 이상지질혈증이 선형 상관관계를 가지며, 무증상갑상선기능저하증에서는 현성 갑상선기능저하증과 정상의 중간 정도로 총 콜레스테롤과 LDL 콜레스테롤이 상승하였다. EPIC- Norfolk 전향적 연구에서는 무증상갑상선기능저하증 여성에서만 총 콜레스테롤, LDL 콜레스테롤 및 중성지방 상승이 관찰되어 무증상갑상선기능저하증의 혈청 지질에 대한 영향은 성별에 따라 다를 수도 있음을 확인하였다. 최근 발표된 메타분석 연구는 무증상갑상선기능저하증 환자에서 정상 갑상선기능 인구 대비 총 콜레스테롤, LDL 콜레스테롤 및 중성지방 농도가 상승하였으나 HDL 콜레스테롤과는 관련성이 없었다고 발표하였다.", "소규모 RCT에서 무증상갑상선기능저하증 환자 대상 LT4 치료가 총 콜레스테롤 및 LDL 콜레스테롤을 감소시켰고 특히 TSH ＞12 mIU/L의 성인 중증 무증상갑상선기능저하증 환자에서 그 효과가 뚜렷하였다. 또한 최근 발표된 메타분석 및 체계적 문헌고찰 연구에서 LT4 치료가 총 콜레스테롤 및 LDL 콜레스테롤을 각각 11.2 mg/dL, 8.5 mg/dL 낮추었다. 이러한 결과를 바탕으로, 성인 중증 무증상갑상선기능저하증에서는 고지혈증 개선의 목적으로 LT4 치료를 고려할 수 있다. 그러나 경증 무증상갑상선기능저하증에서 이상지질혈증 치료를 위한 LT4 치료 효과에 대해서는 상이한 결과를 보이고 있어, 본 진료지침에서는 경증 무증상갑상선기능저하증 환자에게 이상지질혈증 개선을 위한 LT4의 치료를 권고하지 않는다."]},
+c5:{"t": "심리 및 인지기능", "r": "V. 핵심 질문", "p": ["#우울증", "무증상갑상선기능저하증은 우울증의 위험을 높이나 LT4 치료에 의한 개선효과는 뚜렷하지 않다. 25개의 관찰연구를 종합한 메타분석에서 무증상갑상선기능저하증은 우울증 진단 또는 주요 우울증상과 미약하지만 유의한 연관(승산비 1.13, 95% 신뢰구간 1.01-1.28)을 보였다. 다른 메타분석에서도 무증상갑상선기능저하증은 우울 증상과 유의한 연관성(상대위험도 2.35, 95% 신뢰구간 1.84-3.02)이 있었다. 다만, 60세 미만 무증상갑상선기능저하증 환자에서는 우울증 진단 위험도가 3.8배(95% 신뢰구간 1.02-14.18) 증가하고 주요 우울 증상도 증가한 반면, 60세 이상의 경우에는 우울증 진단과 주요 우울 증상 모두 통계적으로 유의한 차이를 보이지 않아 연령에 따른 차이가 있음이 알려졌다.", "LT4 치료가 무증상갑상선기능저하증 환자에서의 우울 증상 개선에 도움이 되는지 확인하기 위해 4개의 RCT가 시행되었는데, 60-100명의 비교적 작은 규모의 연구였지만 LT4 치료가 우울 증상을 유의하게 개선하지 못하였다. 또한 이들 연구들의 메타분석 결과 역시 대조군 대비하여 유의한 효과가 관찰되지 않았다. 즉, 무증상갑상선기능저하증은 우울증과 연관성을 보였고, 연령에 따른 차이가 있었지만, LT4 치료의 효과는 입증되지 않았다. 따라서 무증상갑상선기능저하증에 동반된 우울 증상을 개선하기 위한 목적으로 LT4 치료는 권고되지 않는다.", "#인지기능과 치매", "현성 갑상선기능저하증은 인지기능 저하와 연관되나, 무증상갑상선기능저하증은 인지기능 저하 또는 치매 발생과 유의한 연관성이 없다. 무증상갑상선기능저하증과 인지기능의 연관성은 대부분 60-70세 이상을 대상으로 연구되었는데, 지역사회 고령 환자를 대상으로 한 단면 연구에서 무증상갑상선기능저하증은 경도인지장애(mild cognitive impairment)와 유의한 연관성이 없었고, 전향적 코호트 연구들을 종합한 메타분석에서도 무증상갑상선기능저하증은 치매 진단이나 MMSE (mini-mental state examination) 점수 감소와 연관성이 없었다. 최근 각 환자의 개별 데이터를 취합하여 통합 분석(pooled analysis)한 전향적 관찰연구에서 전체 인지기능, 실행력, 기억력 모두 무증상갑상선기능저하증 환자와 정상 갑상선기능 환자 간에 차이가 없었다. 다만, 한 메타분석 연구에서 무증상갑상선기능저하증은 인지기능 저하와 유의한 상관성이 없었으나 75세 미만에 국한해서 분석하면 치매 상대 위험도가 1.81배(95% 신뢰구간 1.43-2.28) 증가하였다. 즉, 고령에서 무증상갑상선기능저하증과 치매 및 인지기능 저하와의 연관성이 일부 연구에서 보고되었으나 전체적으로는 관련성이 입증되지 못하였고, 비교적 젊은 성인에서의 연구 결과는 부족하다.", "고령의 무증상갑상선기능저하증 환자에게 LT4 치료가 인지기능 개선에 도움이 되는지에 대해 4개의 RCT가 시행되었다. 이들 연구 중 가장 대규모 연구는 TRUST 연구로 LT4 치료군과 대조군 간 인지기능 개선에 유의한 차이가 없었다. 그 외 연구에서도 LT4 치료는 대조군 대비 유의한 효과를 보이지 않았고, 이들 연구의 메타분석 결과 역시 유의한 차이가 없어 인지기능 개선을 위한 LT4 치료는 권고되지 않는다."]},
+c6:{"t": "갑상선기능저하증 관련 증상", "r": "VI. 핵심 질문", "p": ["갑상선기능저하증과 관련된 증상들은 피로감, 근육 불편감, 냉감성(cold sensitivity), 건조한 피부, 목소리 변화, 변비 등과 같이 비특이적인 경우가 많아, 갑상선기능저하증과의 연관성을 명확히 구분하기는 어렵다. 그럼에도 이전 여러 진료지침에서는 연령이나 중증도뿐 아니라 증상에 따라서도 무증상갑상선기능저하증의 치료를 고려할 수 있다고 권고하였다. 일례로 2013년에 발표된 유럽갑상선학회 진료지침에서는 경증 무증상갑상선기능저하증 성인에서 연관 증상이 동반되는 경우에 LT4 치료를 시행하고, 중증 무증상갑상선기능저하증에서도 고령이면서 증상이 있는 경우에 LT4 치료를 고려하도록 하였다. 그러나 이들 진료지침이 근거로 사용한 연구들이 주로 소규모의 관찰 연구들이고 중증도에 따른 구분이 불명확한 경우가 많아 해석에 제한을 두어야 한다. 또한 최근 무증상갑상선기능저하증 대상 RCT 결과들이 보고되면서 연령과 증상에 따른 치료 필요성에 대한 개념이 변화되고 있다.", "#무증상갑상선기능저하증과 임상 증상의 연관성", "후향적 연구들에서 정상 갑상선기능군과 비교하여 무증상갑상선기능저하증에서 임상 증상 및 삶의 질 점수가 유의하게 낮다고 보고되었으나, 실제 환자들의 평균 혈중 TSH 수치가 10 mIU/L 이상임에도 중증도에 따른 층화 분석 결과가 없었다. 콜로라도 지역에서 시행된 설문지 조사 단면 연구에서도 25,865명의 참여자 중 2336명(9.0%)이 무증상갑상선기능저하증이었는데, 더 많은 증상과의 연관성을 보여주었다. 다만, 정상 갑상선기능군에서도 약 1/3만이 증상이 전혀 없었으며, 나머지에서 1개 이상의 증상을 호소하였다. 덴마크에서 시행된 단면 조사연구(1997-2005)는 376명의 무증상갑상선기능저하증 환자를 7619명의 정상 갑상선기능군과 비교하였는데, 갑상선기능저하증과 관련된 증상 점수가 유의한 차이가 없었고, 혈중 TSH 수치와 증상 사이에도 연관성이 없었다.", "#무증상갑상선기능저하증 증상 호전을 위한 LT4 치료의 연령별 효과", "영국에서 시행된 무증상갑상선기능저하증 환자 100명 대상 RCT에서 LT4 치료를 시행한 군은 위약군과 비교하여 피로감이 낮았으나 그 외의 증상 및 삶의 질 점수에 유의한 차이는 없었다. 한 메타분석 연구에서 LT4 치료는 삶의 질 향상이나 증상 호전과 관련되지 않았다. 다만, LT4 치료군과 위약군을 비교하면 증상 호전은 유의하지 않았으나 세부 분석 결과 TSH ≥12 mIU/L인 군에서는 증상의 호전을 보였다. 따라서 70세 미만 무증상갑상선기능저하증 환자에서 연관 증상의 호전만을 위한 LT4 치료는 권고되지 않는다.", "고령 무증상갑상선기능저하증 환자를 대상으로 한 TRUST 연구에서 LT4 치료군은 위약군과 비교하여 갑상선기능저하 증상 점수 및 피로감 정도에서 유의한 차이를 보이지 않았다. 80세 이상 무증상갑상선기능저하증 환자 대상 IEMO 연구에서도 LT4 치료는 갑상선기능저하 관련 증상과 피로감을 유의하게 개선하지 못하였다. 따라서 70세 이상의 고령 환자에서 연관 증상의 호전만을 목표로 하여 LT4 치료는 권고되지 않는다.", "이에 따라, IV. 심혈관 및 대사질환에 대한 무증상갑상선기능저하증의 부정적 영향과 치료 적응증, V. 심리 및 인지 기능에 대한 무증상갑상선기능저하증의 부정적 영향과 치료 적응증과 VI. 무증상갑상선기능저하증의 임상 증상과 치료 적응증을 종합적으로 고려하여 아래와 같이 무증상갑상선기능저하증의 LT4 치료 기준을 요약, 권고한다."]},
+c7:{"t": "약제 선택 및 추적관리", "r": "VII. 핵심 질문", "p": ["#무증상갑상선기능저하증 치료 시 약제의 선택과 용량", "무증상갑상선기능저하증은 대부분 치료가 필요하지 않은 경우가 많으며, 치료 시에는 경구용 LT4를 사용한다. 여러 RCT에서 무증상갑상선기능저하증 환자에서 LT4 치료는 정상 TSH 수치를 회복하고 유지하는 데 효과적이었다. 적절한 LT4 용량은 상황에 따라 다르지만, 일반적으로 12.5-50 μg/일 용량으로 시작하며 1-3개월 간격으로 용량을 조절하여 정상 TSH에 도달하도록 한다. 정상 TSH가 확인되면 TSH 검사 시행 주기는 3-6개월로 연장하며, 수치가 안정된 경우에는 1년마다 검사하면서 치료를 유지할 수 있다. 그러나 여러 관찰연구에서 실제로 치료 중인 무증상갑상선기능저하증 환자 중 혈중 TSH를 정상 범위로 유지하는 비율은 40-60%로 비교적 낮게 보고된다. 과잉 용량이 투여되거나 부적절한 용법으로 투여되는 경우가 적지 않으며, 그로 인해 심혈관질환의 위험과 골다공증 및 골절의 위험이 높아지므로 주기적인 TSH 측정을 간과하여서는 안 된다.", "무증상갑상선기능저하증 환자의 LT4 필요량은 환자의 체중, 연령, 동반질환 및 사용 약물에 따라 다를 수 있으며 체중이 증가할수록 LT4 필요량도 증가하여 최대 1일 1.5 μg/kg까지 필요할 수 있다. 연령이 높을수록 LT4의 용량은 작게 필요하여, 65세 이상에서 TSH를 정상으로 유지하는데 평균 50 μg/일의 LT4가 필요했던 것에 비해, 젊은 연령은 평균 68-71 μg/일이 필요하였다. 약물 투여 시작 용량도 연령과 동반질환에 따라 다르게 접근해야 한다. 이론적으로는 필요용량을 계산하여 한 번에 투여하는 것이 비용대비 효과적일 것으로 보이지만, 심혈관질환 특히 관상동맥질환이 있거나 고령인 경우에는 12.5-25 μg/일로 적게 시작하여 1-2개월마다 점차 증량하여 필요 용량에 천천히 도달하는 것이 안전하다.", "LT4 치료를 시작하였더라도 이후 LT4를 중단할 수 있다. 무증상갑상선기능저하증 환자에서 LT4를 중단한 후 정상 갑상선 기능을 유지하는지에 대한 메타분석에 따르면 약 35.6%의 환자가 약물을 중단할 수 있었다. LT4 중단을 예측하는 요인으로는 TSH＜10 mIU/L, 초음파상 균질한 에코를 보이는 정상 갑상선 실질, TPO 항체 음성, 나이가 많을수록, 갑상선종이 없을 때 등이다. 이를 종합해 보면, LT4 치료를 시작했다 하더라도 경증의 무증상갑상선기능저하증 환자에서 TPO 항체 음성, 초음파상 정상 갑상선 실질을 보이는 경우에는 중단을 시도해 볼 수 있다.", "#LT4 복용법 및 주의 사항", "적절한 약물 흡수를 위해 LT4는 반드시 공복에 복용하여야 한다. 혈중 TSH를 유지하는 가장 적절한 방법은 아침 식사 60분 전에 복용하는 것으로 알려져 있으나, 독일의 한 연구는 마지막 식사 후 4시간 공복을 유지한 상태에서 취침 전 복용하는 것도 적절하다고 보고하였다. 일부 음식들은 LT4의 흡수를 방해하기도 하는데, 우유같이 칼슘이 많이 포함되어 있는 음식과 커피, 두유 같은 음식이 해당된다. 또한 철분이 포함된 영양제, 제산제(H2 receptor blocker or proton pump inhibitor), cholestyramine, raloxifene 같은 약제, 심한 위축성위염, 악성빈혈과 같은 위장관 질환과 비만수술도 흡수율 저하와 연관된다. 이러한 환자들에게는 일반적인 용량보다 더 높은 용량의 LT4를 투여하거나 비타민C 또는 과일주스와 함께 복용하도록 하는 것이 도움이 된다.", "T4에서 T3로의 전환이 저하되면 T3가 부족하여 갑상선기능저하증 증상이 나타날 수 있다는 이론적 배경에서 T3/T4 복합제가 더 유용할 수 있다는 주장이 제기되기도 하였다. 그러나, 갑상선기능저하증 환자들을 대상으로 LT4와 T3/T4 복합제를 비교한 메타분석 연구에서 복합제의 사용이 도움이 되지 못하였다. 현재까지 LT4와 비교하여 T3/T4 복합제가 더 유용하다는 증거는 충분하지 않기에 무증상갑상선기능저하증 환자들에게 T3/T4 복합제의 사용은 권고되지 않는다.", "#치료하지 않는 무증상갑상선기능저하증의 추적관리", "무증상갑상선기능저하증은 1년에 약 5-8%에서 현성 갑상선기능저하증으로 진행하며, 반대로 6-35%는 정상 갑상선기능으로 회복한다. 무증상갑상선기능저하증으로 진단된 후에는 치료를 하지 않더라도 6개월 내에 재검사를 통해 TSH 상승이 지속되는지 확인해야 한다. 만약, 갑상선기능이 정상으로 회복되었고 항체도 음성이며, 갑상선 종대와 같은 갑상선질환의 다른 증거가 보이지 않는다면 추후에 더 이상의 검사는 필요하지 않다. 반대로 무증상갑상선기능저하증이 지속된다면 다시 한번 LT4 치료 필요 여부를 환자 상황에 따라 결정해야 하며 치료 없이 지속적인 경과관찰을 결정한다면 이후에는 6개월마다 경과를 관찰할 수 있으며, 특별한 변화를 보이지 않는다면 1년마다 경과관찰이 가능하다."]},
+c8:{"t": "환자 교육", "r": "VIII. 핵심 질문", "p": ["무증상갑상선기능저하증이 지속되는 경우, 일반적인 병의 경과에 대한 설명과 함께 추적검사의 필요성을 교육하는 것이 필요하다(핵심질문 “III. 현성 갑상선기능저하증으로 진행하는 빈도와 위험인자는?” 참고). 즉각적인 LT4 치료가 고려되지 않는 경우라면 적절한 추적검사 간격을 알리고, 경과 중 갑상선기능저하증으로의 진행을 시사하는 증상이 동반될 경우 일찍 내원하도록 교육한다. LT4 치료를 시작한 경우에는 LT4 용량의 적절성 및 지속 투여의 필요성을 평가하기 위해 갑상선기능에 대한 추적검사가 필요함을 교육한다. 동일 용량의 갑상선호르몬을 장기간 갑상선기능검사 추적 없이 복용할 경우 갑상선기능항진 상태로 전환될 위험이 있음을 알려야 하며, 이는 특히 다약제 복용 노인과 골다공증 및 부정맥이 동반된 환자에서 필수적이다.", "상기한 내용대로, 현성 갑상선기능저하증으로의 진행과 연관 깊은 질환은 만성 자가면역갑상선염이다. 따라서 가족력 및 갑상선 자가항체 역가, 초음파 소견 등에 근거하여 만성 자가면역갑상선염이 진단되면 몇 가지 교육이 필요하다. 첫 번째는 요오드 섭취에 대한 주의사항이다. 고요오드 함유 음식(해조류, 해산물 등)을 지나치게 많이 섭취하지 않도록 교육하고, 요오드 함유량이 높은 건강보조식품이나 약제(예: 다시마 진액 등)는 반드시 피하도록 한다. 두 번째는 만성 자가면역갑상선염의 임상 경과를 이해하도록 돕고, 장기적으로 갑상선기능과 임상 양상의 변화를 추적할 필요가 있음을 알리도록 한다.", "자가면역갑상선염과 관련하여 가장 주목해야 하는 대상은 가임 연령의 여성이다. 대한갑상선학회의 “2014 임신 중 및 산후 갑상선기능질환의 진단 및 치료 권고안”에서 임신 시 혈중 TSH의 적정 농도를 4.0 mIU/L로 제시하고 있는 바, 무증상갑상선기능저하증 상태의 임신은 태아 및 산모에게 바람직하지 않다. 따라서 임신을 고려 중인 가임 연령 여성에서는 적절한 LT4 보충을 통해 임신 중 목표 TSH에 도달하도록 조치하고, 목표치에 도달하기 전까지는 피임하도록 교육한다. 무증상갑상선기능저하증이지만 LT4 보충을 시행하지 않고 있는 가임 연령 여성이 현재 임신을 고려하지 않는다면, 임신과 무증상갑상선기능저하증의 연관성 및 계획 임신의 필요성을 설명하고, 향후 임신 계획 시 또는 임신 확인 시에는 가능한 빨리 갑상선기능검사를 확인하고 적절한 치료가 필요함을 교육한다."]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CX = [170,317,464,611], CW = 137;
+const cell = (id,ci,span,y,h,label,cls) => ({id, x:CX[ci], y, w:CW*span+10*(span-1), h, label, cls});
+const CHARTS = {
+fig1:{tab:'진료 흐름도', fig:'Fig. 1', aria:'무증상갑상선기능저하증 진료지침 흐름도', w:760, h:420, nodes:[
+ {id:'f_sch', x:10, y:10, w:220,h:40, label:'무증상갑상선기능저하증',cls:'test'},
+ {id:'f_fu',  x:10, y:80, w:220,h:55, label:'갑상선기능검사 추적<small>TPO 항체 측정</small>',cls:'test fac'},
+ {id:'f_per', x:10, y:160,w:220,h:55, label:'지속적 무증상갑상선기능저하증',cls:'mal'},
+ {id:'f_old', x:255,y:85, w:110,h:40, label:'고령(≥70세)',cls:'fac'},
+ {id:'f_ad',  x:255,y:255,w:110,h:40, label:'성인(&lt;70세)',cls:'fac'},
+ {id:'f_om',  x:390,y:40, w:200,h:40, label:'경증 (TSH 6.8–10 mIU/L)',cls:'ben'},
+ {id:'f_os',  x:390,y:110,w:200,h:40, label:'중증 (TSH &gt;10 mIU/L)',cls:'mal'},
+ {id:'f_am',  x:390,y:200,w:200,h:40, label:'경증 (TSH 6.8–10 mIU/L)',cls:'ben'},
+ {id:'f_as',  x:390,y:270,w:200,h:40, label:'중증 (TSH &gt;10 mIU/L)',cls:'mal'},
+ {id:'f_n1',  x:615,y:35, w:140,h:50, label:'치료 없이 추적검사',cls:'ben'},
+ {id:'f_n2',  x:615,y:145,w:140,h:60, label:'치료 없이 추적검사*',cls:'ben'},
+ {id:'f_tx',  x:615,y:268,w:140,h:44, label:'치료 고려**',cls:'tx'},
+ {id:'f_fn1', x:10, y:340,w:365,h:70, label:'* 현성 진행 고위험군<small>TSH &gt;20 mIU/L, 갑상선엽절제술 과거력, 만성갑상선염 병력 등에서는 LT4 치료 고려</small>',cls:'mal fac'},
+ {id:'f_fn2', x:390,y:340,w:365,h:70, label:'** 성인 중증<small>기저 관상동맥질환 또는 심부전 동반 시 LT4 치료 권고 · 이상지질혈증 개선 목적으로 LT4 치료 고려</small>',cls:'tx fac'}],
+ edges:[[A(120,50,120,80),1],[A(120,135,120,160),1],['M230 187 H245',0],['M245 105 V275',0],[A(245,105,255,105),1],[A(245,275,255,275),1],
+  ['M365 105 H378',0],['M378 60 V130',0],[A(378,60,390,60),1],[A(378,130,390,130),1],
+  ['M365 275 H378',0],['M378 220 V290',0],[A(378,220,390,220),1],[A(378,290,390,290),1],
+  [A(590,60,615,60),1],['M590 130 H602',0],['M590 220 H602',0],['M602 130 V220',0],[A(602,175,615,175),1],[A(590,290,615,290),1],
+  [A(685,312,685,340),1,'dot']],
+ labels:[]},
+
+dx:{tab:'진단·진행 위험', fig:'II·III 구성', aria:'무증상갑상선기능저하증 진단과 현성 진행 위험 평가', w:760, h:480, nodes:[
+ {id:'d_cause',x:10, y:10, w:200,h:70, label:'원인 확인<small>Table 4: 자가면역·약제·요오드·생리적 변화</small>',cls:'fac'},
+ {id:'d_tsh', x:230,y:10, w:300,h:70, label:'TSH 상승 · free T4 정상<small>한국인 TSH 참고치 0.6–6.8 mIU/L</small>',cls:'test fac'},
+ {id:'d_kit', x:560,y:10, w:190,h:70, label:'측정값 변동 요인<small>kit 차이 · 일중변동 · 약제·수면 등</small>',cls:'fac'},
+ {id:'d_re',  x:230,y:100,w:300,h:65, label:'TSH 추적검사 + TPO 항체<small>처음 발견 2–3개월 후 고려 · 일반적으로 6개월 내 재측정</small>',cls:'test fac'},
+ {id:'d_ultra',x:560,y:100,w:190,h:65, label:'항체 모두 음성 (약 20%)<small>Tg 항체 · 필요 시 초음파</small>',cls:'fac'},
+ {id:'d_q',   x:230,y:190,w:300,h:45, label:'TSH 상승 지속?',cls:'test'},
+ {id:'d_risk',x:560,y:190,w:190,h:125,label:'현성 진행 위험인자<small>높은 TSH(≥10)·낮은 free T4 · TPO 항체 양성 · 추적 시 TSH 2배 이상 · 여성 · 초음파 에코저하</small>',cls:'mal fac'},
+ {id:'d_norm',x:10, y:265,w:250,h:80, label:'정상 회복<small>항체 음성·갑상선종 등 다른 이상이 없으면 추가 검사 불필요</small>',cls:'ben fac'},
+ {id:'d_per', x:280,y:265,w:250,h:45, label:'지속적 무증상갑상선기능저하증',cls:'mal'},
+ {id:'d_mild',x:280,y:340,w:225,h:55, label:'경증: TSH 6.8–10 mIU/L<small>무증상갑상선기능저하증의 약 90%</small>',cls:'ben fac'},
+ {id:'d_sev', x:525,y:340,w:225,h:55, label:'중증: TSH &gt;10 mIU/L',cls:'mal'},
+ {id:'d_hi',  x:10, y:370,w:250,h:75, label:'현성 진행 예상 시 LT4 고려<small>TSH ≥20 mIU/L · 갑상선엽절제술 과거력 · 만성갑상선염 병력</small>',cls:'tx fac'},
+ {id:'d_age', x:280,y:420,w:470,h:45, label:'70세 기준 성인·고령 구분 → 치료 적응증 결정',cls:'test'}],
+ edges:[[A(210,45,230,45),1,'dot'],[A(560,45,530,45),1,'dot'],[A(380,80,380,100),1],[A(530,132,560,132),1,'dot'],[A(380,165,380,190),1],
+  ['M300 235 V250 H135 V265',1],[A(405,235,405,265),1],[A(530,212,560,212),1,'dot'],
+  ['M405 310 V325 H392 V340',1],['M405 325 H637 V340',1],[A(392,395,392,420),1],[A(637,395,637,420),1],['M280 300 H270 V407 H260',1,'dot']],
+ labels:[[140,258,'No'],[411,252,'Yes']]},
+
+tx:{tab:'치료 적응증', fig:'IV–VI 구성', aria:'연령·중증도·동반질환별 LT4 치료 적응증', w:760, h:600, nodes:[
+ {id:'h_am', x:170,y:10,w:137,h:42, label:'성인 · 경증<small>&lt;70세, TSH 6.8–10</small>',cls:'test fac'},
+ {id:'h_as', x:317,y:10,w:137,h:42, label:'성인 · 중증<small>&lt;70세, TSH &gt;10</small>',cls:'test fac'},
+ {id:'h_om', x:464,y:10,w:137,h:42, label:'고령 · 경증<small>≥70세, TSH 6.8–10</small>',cls:'test fac'},
+ {id:'h_os', x:611,y:10,w:137,h:42, label:'고령 · 중증<small>≥70세, TSH &gt;10</small>',cls:'test fac'},
+ {id:'r_cv', x:10,y:62,w:150,h:56, label:'관상동맥질환·심부전',cls:'fac'},
+ cell('c_cv1',0,1,62,56,'일반적으로 권고 안 함<small>CVD 동반되어도</small>','ben fac'),
+ cell('c_cv2',1,1,62,56,'LT4 시행<small>기저 CAD·HF</small>','tx fac'),
+ cell('c_cv3',2,1,62,56,'시행 안 함','ben'),
+ cell('c_cv4',3,1,62,56,'일반적으로 권고 안 함<small>CVD 동반되어도</small>','ben fac'),
+ {id:'r_lp', x:10,y:126,w:150,h:56, label:'이상지질혈증',cls:'fac'},
+ cell('c_lp1',0,1,126,56,'권고 안 함<small>효과 상이 (본문)</small>','ben fac'),
+ cell('c_lp2',1,1,126,56,'LT4 고려 가능<small>지질 개선 목적</small>','tx fac'),
+ cell('c_lp3',2,1,126,56,'시행 안 함','ben'),
+ cell('c_lp4',3,1,126,56,'일반적으로 권고 안 함','ben'),
+ {id:'r_ms', x:10,y:190,w:150,h:56, label:'대사증후군·비만',cls:'fac'},
+ cell('c_ms',0,4,190,56,'치료 목적의 LT4 시행 안 함<small>연령·중증도 무관</small>','ben fac'),
+ {id:'r_dp', x:10,y:254,w:150,h:56, label:'우울증',cls:'fac'},
+ cell('c_dp1',0,2,254,56,'일반적으로 권고 안 함<small>개선 목적 LT4</small>','ben fac'),
+ cell('c_dp2',2,2,254,56,'해당 권고 없음<small>60세 이상에서 우울증과 유의한 연관 없음</small>','fac'),
+ {id:'r_cg', x:10,y:318,w:150,h:56, label:'인지기능·치매',cls:'fac'},
+ cell('c_cg1',0,2,318,56,'해당 권고 없음<small>비교적 젊은 성인 연구 부족</small>','fac'),
+ cell('c_cg2',2,2,318,56,'일반적으로 권고 안 함<small>개선 목적 LT4</small>','ben fac'),
+ {id:'r_sx', x:10,y:382,w:150,h:56, label:'관련 증상·삶의 질',cls:'fac'},
+ cell('c_sx1',0,2,382,56,'일반적으로 권고 안 함<small>증상 호전만을 위한 LT4</small>','ben fac'),
+ cell('c_sx2',2,2,382,56,'시행 안 함<small>삶의 질·증상 호전 목적</small>','ben fac'),
+ {id:'r_ts', x:10,y:452,w:150,h:66, label:'종합: 치료 선별',cls:'test'},
+ cell('c_ts1',0,1,452,66,'일반적으로 권고 안 함','ben'),
+ cell('c_ts2',1,1,452,66,'CAD·HF: 시행<small>이상지질혈증: 고려</small>','tx fac'),
+ cell('c_ts3',2,1,452,66,'시행 안 함','ben'),
+ cell('c_ts4',3,1,452,66,'일반적으로 권고 안 함','ben'),
+ {id:'r_hi', x:10,y:530,w:150,h:60, label:'현성 진행 고위험',cls:'mal'},
+ cell('c_hi',0,4,530,60,'LT4 치료 고려<small>TSH &gt;20 mIU/L · 갑상선엽절제술 과거력 · 만성갑상선염 병력 (Fig. 1 각주)</small>','tx fac')],
+ edges:[['M10 446 H748',0,'dot']], labels:[]},
+
+mg:{tab:'LT4 치료·추적', fig:'VII 구성', aria:'LT4 치료와 무치료 추적관리 순서도', w:760, h:530, nodes:[
+ {id:'m_dec', x:230,y:10, w:300,h:50, label:'치료 방침 결정<small>연령·중증도·동반질환 (치료 적응증 탭)</small>',cls:'test fac'},
+ {id:'m_tx',  x:10, y:90, w:360,h:55, label:'LT4 치료<small>경구 LT4가 가장 적절 · T3/T4 복합제 권고 안 함</small>',cls:'tx fac'},
+ {id:'m_no',  x:390,y:90, w:360,h:55, label:'치료하지 않음<small>주기적 추적관찰 · 간격은 경증·중증에 따라</small>',cls:'ben fac'},
+ {id:'m_dose',x:10, y:170,w:360,h:85, label:'시작 용량<small>고령·심혈관 위험: 12.5–25 μg/일, 1–2개월 간격 · 일반: 12.5–50 μg/일, 1–3개월 간격 · 최대 1.5 μg/kg/일</small>',cls:'tx fac'},
+ {id:'m_take',x:10, y:275,w:360,h:70, label:'복용법<small>공복 · 아침 식사 60분 전(또는 4시간 공복 후 취침 전) · 칼슘·커피·두유·철분·제산제 주의</small>',cls:'fac'},
+ {id:'m_norm',x:10, y:365,w:360,h:60, label:'TSH 정상화 후<small>3–6개월마다 → 안정 시 1년마다</small>',cls:'test fac'},
+ {id:'m_hyper',x:10,y:445,w:175,h:75, label:'항진 상태로 전환<small>용량 감량·중단 시도</small>',cls:'mal fac'},
+ {id:'m_stop',x:195,y:445,w:175,h:75, label:'중단 시도 고려<small>경증 · TPO 항체 음성 · 정상 실질 (약 35.6%)</small>',cls:'fac'},
+ {id:'m_6',   x:390,y:170,w:360,h:60, label:'6개월 내 재검<small>TSH 상승 지속 확인</small>',cls:'test fac'},
+ {id:'m_ok',  x:390,y:255,w:175,h:90, label:'정상 회복<small>항체 음성 · 갑상선종 없음 → 추가 검사 불필요</small>',cls:'ben fac'},
+ {id:'m_pers',x:575,y:255,w:175,h:90, label:'지속<small>LT4 치료 필요 여부 재결정</small>',cls:'mal fac'},
+ {id:'m_6m',  x:390,y:365,w:360,h:60, label:'치료 없이 경과관찰<small>6개월마다 → 변화 없으면 1년마다</small>',cls:'ben fac'},
+ {id:'m_nat', x:390,y:445,w:360,h:75, label:'자연 경과<small>연 5–8% 현성 진행 · 6–35% 정상 회복</small>',cls:'fac'}],
+ edges:[['M330 60 V75 H190 V90',1],['M430 60 V75 H570 V90',1],[A(190,145,190,170),1],[A(190,255,190,275),1],[A(190,345,190,365),1],
+  ['M190 425 V435 H97 V445',1],['M190 435 H282 V445',1],[A(570,145,570,170),1],['M570 230 V242 H477 V255',1],['M570 242 H662 V255',1],
+  [A(662,345,662,365),1],['M750 300 H756 V35 H530',1,'dot'],[A(570,425,570,445),0,'dot']],
+ labels:[[686,30,'재결정']]},
+
+edu:{tab:'환자 교육', fig:'VIII 구성', aria:'무증상갑상선기능저하증 환자 교육', w:760, h:340, nodes:[
+ {id:'e_s', x:230,y:10, w:300,h:50, label:'지속되는 무증상갑상선기능저하증',cls:'mal'},
+ {id:'e_1', x:10, y:95, w:240,h:120,label:'정기 갑상선기능검사<small>무치료: 현성 진행 확인 · 치료: 용량 조정·지속 필요성 평가 · 장기간 같은 용량은 항진 위험</small>',cls:'test fac'},
+ {id:'e_2', x:260,y:95, w:240,h:120,label:'만성 자가면역갑상선염 의심<small>저요오드 식이 · 고요오드 건강보조식품(다시마 진액 등) 피함 · 고요오드 약제 주의</small>',cls:'fac'},
+ {id:'e_3', x:510,y:95, w:240,h:120,label:'가임 연령 여성<small>임신 관련 주의 · LT4 없이 관찰 중이면 계획 임신 필요성</small>',cls:'mal fac'},
+ {id:'e_4', x:10, y:245,w:240,h:80, label:'진행 시사 증상 시 조기 내원<small>적절한 추적검사 간격 안내</small>',cls:'ben fac'},
+ {id:'e_5', x:510,y:245,w:240,h:80, label:'임신 고려 중<small>LT4로 목표 TSH 도달 전까지 피임 · 임신 확인 시 즉시 검사</small>',cls:'tx fac'}],
+ edges:[['M380 60 V78 H130 V95',1],[A(380,78,380,95),1],['M380 78 H630 V95',1],[A(130,215,130,245),1],[A(630,215,630,245),1]],
+ labels:[]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[3]]));
+const RL = id => id.startsWith('TS-') ? '선별 ' + id.slice(3) : id;
+const R = id => {
+  const [g, src, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]} · ${src}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${RL(id)}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">정현경 등. 2023 대한갑상선학회 무증상갑상선기능저하증 진료 권고안. Int J Thyroidol 2023;16:32–50 해당 절 원문. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+
+const FLOW_NOTE = note('원문 서술 차이','흐름도 설명 본문은 “성인(&lt;70세)에서는 LT4 치료가 권장되는데 특히 중증(TSH &gt;10 mIU/L)에서는 … 적극적인 투약이 권고된다”고 썼으나, 권고(선별 1, IV-1)와 Fig. 1은 성인 경증에서 LT4 치료를 일반적으로 권고하지 않으며 중증도 기저 관상동맥질환·심부전 동반 시 시행, 이상지질혈증 동반 시 고려로 한정한다. 본 도구는 권고문과 Fig. 1을 따랐다.');
+
+const T1 = tbl(['구분','등급','의미'],[
+ ['권고 강도','Strong','이득이 위험보다 명확함'],['','Weak','이득과 위험이 비슷함'],
+ ['근거 수준','High','잘 설계되고 잘 수행된 무작위 대조 연구(RCT) 1개 이상'],['','Moderate','중요한 제한점이 있는 RCT, 잘 설계된 코호트 또는 환자대조군 연구'],['','Low','관찰연구'],
+ ['GPS','Good Practice Statement','연구가 많지 않으나 임상현장에서 중요한 환자 교육 항목에 대한 전문가 권고사항']]);
+const T2 = tbl(['연령(세)','전체 평균','2.5%','중앙값','97.5%','남 평균','남 97.5%','여 평균','여 97.5%'],[
+ ['10–19','2.33','0.63','2.45','7.37','2.44','6.92','2.31','7.47'],['20–29','2.15','0.67','2.25','6.05','2.13','6.09','2.22','6.00'],
+ ['30–39','2.05','0.61','2.07','6.42','2.00','6.05','2.12','6.54'],['40–49','2.04','0.58','2.09','6.20','1.94','5.96','2.16','7.20'],
+ ['50–59','2.20','0.49','2.30','8.11','2.06','7.02','2.38','9.19'],['60–69','2.17','0.56','2.21','7.77','2.07','7.35','2.26','7.87'],
+ ['&gt;70','2.32','0.42','2.28','6.68','2.18','6.53','2.48','6.80']]) + '<p class="exp-src">Table 2. 한국인 기준집단에서 혈중 TSH 농도 분포(mIU/L). 기준집단: 갑상선질환과 가족력이 없고 갑상선자가항체 음성이며 임신 중이 아닌 인구집단. 남녀의 2.5%·중앙값은 표 폭을 위해 생략하였다(남 2.5%: 0.75, 0.66, 0.68, 0.59, 0.53, 0.53, 0.28 · 남 중앙값: 2.47, 2.22, 2.04, 1.97, 2.08, 2.13, 2.04 · 여 2.5%: 0.57, 0.67, 0.50, 0.55, 0.42, 0.56, 0.44 · 여 중앙값: 2.39, 2.26, 2.17, 2.20, 2.56, 2.28, 2.42).</p>';
+const T3 = tbl(['자료','연도','대상자 수','TSH 평균(또는 중앙값)','기준치(2.5–97.5%)'],[
+ ['제6기 국민건강영양조사','2017','6,564','2.23 (IQR 1.55–3.18)','0.62–6.86'],
+ ['건강검진(아산병원)','2014','5,778','2.38 (95% CI 0.72–7.79)','0.73–7.06'],
+ ['안성, KLoSHA 코호트','2010','3,399 (안성) · 940 (KLoSHA)','2.53±3.31 (안성) · 3.49±7.12 (KLoSHA)','NA'],
+ ['건강검진(영남대병원)','2008','1,591','1.37±1.95','0.38–4.35 (남) · 0.35–6.42 (여)']]) + '<p class="exp-src">Table 3. 한국인 정상 혈중 TSH 농도 범위에 관한 국내 연구(mIU/L).</p>';
+const T4 = tbl(['분류','원인'],[
+ ['갑상선질환','만성 자가면역갑상선염(하시모토 갑상선염) · 침윤성 갑상선염(아밀로이드증, 사르코이드증, 일차 갑상선림프종, 리이델 갑상선염) · 일과성 갑상선염(아급성, 무통성, 산후 갑상선염) · 현성 갑상선질환에서 부적절한 LT4 치료(용량 부적절, 순응도 저하, 흡수 감소: 철분·칼슘·콜레스티라민·식품섬유 등, T4 대사 증가: 페니토인·카바마제핀·페노바비탈 등) · 갑상선무형성증'],
+ ['비갑상선질환','정상 갑상선기능질병증후군의 회복기 · 부신피질저하 · 만성신부전 · 두경부 악성종양 · 심한 비만(BMI &gt;40 kg/m²) · 중추갑상선기능저하증 혹은 중추갑상선기능항진증 · 갑상선호르몬저항증후군'],
+ ['약제','요오드 조영제, 아미오다론, 리튬, 타이로신인산화효소수용체억제제, 인터페론알파, 면역관문억제제(ipilimumab, pembrolizumab 등)'],
+ ['요오드','요오드 섭취의 결핍 또는 과잉'],
+ ['기타','고령 · 계절 변화(겨울) 및 일중 변화 · 측정 방법에 따른 차이 · TSH 측정 간섭(이종친화항체, 류마티스 인자, 비오틴, macro-TSH, TSH 아형 이상 등)']]) + '<p class="exp-src">Table 4. 무증상갑상선기능저하증의 원인.</p>';
+const T5 = tbl(['현성 갑상선기능저하증으로 진행하는 위험인자'],[['높은 혈중 TSH 농도 · 혈중 TSH 농도의 지속적인 상승 · 갑상선종대 · TPO 항체, 갑상선글로불린 항체 양성 · 여성 · 혈당 이상 · 이상지질혈증 · 비만 · 고혈압 · 심방세동 · 신장질환 · 아미오다론 약제 투약']]) + '<p class="exp-src">Table 5. 본문은 그 밖에 고령, 경부 방사선치료 병력, 요오드 과잉 섭취, 고혈당(식후 2시간 ≥200 mg/dL), 총콜레스테롤 ≥240 mg/dL, 중성지방 ≥200 mg/dL, BMI &gt;30 kg/m²를 든다.</p>';
+const T6 = tbl(['질환','대상자 수(코호트)','연령 범위','TSH 범위(mIU/L)','위험도(95% CI)'],[
+ ['심방세동','3,765 (11)','46–85','4.5–6.9 · 7.0–9.9 · 10.0–19.9','0.91 (0.71–1.14) · 0.95 (0.68–1.33) · 0.93 (0.60–1.44)'],
+ ['심부전','24,742 (6)','58–75','4.5–19.9 · 10.0–19.9','1.22 (0.93–1.59) · 1.59 (1.15–2.19)'],
+ ['뇌졸중','37,842 (17)','46–85','4.5–19.9','0.97 (0.77–1.22)'],
+ ['관상동맥질환','25,977 (7)','46–85','4.5–19.9 · 10.0–19.9','1.18 (0.99–1.40) · 1.89 (1.22–2.82)'],
+ ['치명적 심혈관질환','283,578 (27)','NA','NA','평균 연령 &lt;65: 1.54 (1.21–1.96) · ≥65: 1.07 (0.97–1.18)'],
+ ['심혈관 사망','54,301 (10)','46–85','4.5–19.9 · 10.0–19.9','1.15 (0.99–1.34) · 1.54 (1.07–2.23)'],
+ ['전체 사망','55,287 (11)','46–85','4.5–19.9','1.13 (0.98–1.29)'],
+ ['전체 사망','532,332 (27)','NA','NA','평균 연령 &lt;65: 1.28 (1.10–1.48) · ≥65: 1.13 (0.97–1.33)'],
+ ['대사증후군','79,727 (18)','46.7±10.9','NA','1.28 (1.19–1.39)'],
+ ['이상지질혈증 (가중평균차이)','41,177–42,562 (15–16)','평균 55세','NA','총콜레스테롤 12.17 (7.79–16.54) · 중성지방 13.19 (4.92–21.46) · HDL −0.50 (−1.90–0.89) · LDL 7.01 (3.95–10.06)']]) + '<p class="exp-src">Table 6. 무증상갑상선기능저하증 환자의 심혈관대사질환 위험을 분석한 메타분석 결과 요약(검사 건수와 여성 비율 열은 생략).</p>';
+
+const D = {
+/* ---------- Fig. 1 ---------- */
+f_sch:{kind:'정의', title:'무증상갑상선기능저하증', next:['f_fu'], body:`<p>혈중 TSH는 높지만 혈중 유리 타이록신(free T4)이 정상인 경우로 정의되며, 건강검진 등에서 우연히 진단되는 경우가 흔하다. 소아·청소년, 임신부와 임신을 시도하는 여성은 본 진료지침의 적용 대상에서 제외한다.</p>${RR('II-2','II-1')}`},
+f_fu:{kind:'검사', title:'갑상선기능검사 추적 · TPO 항체 측정', next:['f_per'], body:`<p>일시적으로 발생하거나 환경, 약물 등 외적 요인에 의해 발생할 수 있으므로 반드시 갑상선기능검사를 반복 측정하여 지속적인지 확인한다. 추적 시 예후 예측을 위해 TPO 항체를 같이 측정하여 자가면역갑상선염 동반 여부를 확인한다.</p>${RR('III-1','III-2')}`},
+f_per:{kind:'확인', title:'지속적 무증상갑상선기능저하증', next:['f_old','f_ad'], body:`<p>지속적인 무증상갑상선기능저하증으로 확인되면 환자의 연령과 동반질환을 고려하여 치료방침을 결정한다.</p>${R('II-3')}${FLOW_NOTE}`},
+f_old:{kind:'연령', title:'고령(≥70세)', next:['f_om','f_os'], body:`<p>고령에서는 치료 없이 경과 관찰이 원칙이며, 특히 경증에서는 LT4 치료의 이득이 없으므로 권고되지 않는다. TRUST(65세 이상 737명)와 IEMO(80세 이상 251명) RCT에서 LT4는 심혈관질환, 사망, 증상, 피로감을 개선하지 못했다.</p>${RR('TS-3','TS-4')}`},
+f_ad:{kind:'연령', title:'성인(<70세)', next:['f_am','f_as'], body:`${RR('TS-1','TS-2-1','TS-2-2')}${FLOW_NOTE}`},
+f_om:{kind:'고령 · 경증', title:'고령 경증 (TSH 6.8–10)', next:['f_n1'], body:RR('TS-3','IV-3')},
+f_os:{kind:'고령 · 중증', title:'고령 중증 (TSH >10)', next:['f_n2'], body:RR('TS-4','IV-4')},
+f_am:{kind:'성인 · 경증', title:'성인 경증 (TSH 6.8–10)', next:['f_n2'], body:RR('TS-1','IV-1')},
+f_as:{kind:'성인 · 중증', title:'성인 중증 (TSH >10)', next:['f_tx'], body:RR('TS-2-1','TS-2-2')},
+f_n1:{kind:'관리', title:'치료 없이 추적검사', next:['m_no'], body:`${R('VII-4')}<p>치료 없이 지속적인 경과관찰을 결정하면 이후 6개월마다 관찰하고, 특별한 변화가 없으면 1년마다 관찰할 수 있다.</p>`},
+f_n2:{kind:'관리', title:'치료 없이 추적검사*', next:['f_fn1','m_no'], body:`${R('VII-4')}${tip('* 각주','현성 갑상선기능저하증 진행 고위험군(TSH &gt;20 mIU/L, 갑상선엽절제술 과거력, 만성갑상선염 병력 등)에서는 LT4 치료를 고려한다.')}`},
+f_tx:{kind:'치료', title:'치료 고려**', next:['f_fn2','m_tx'], body:`${RR('TS-2-1','TS-2-2')}${tip('** 각주','기저 관상동맥질환 또는 심부전 동반 시 LT4 치료 권고, 이상지질혈증 개선 목적으로 LT4 치료 고려.')}`},
+f_fn1:{kind:'각주 *', title:'현성 진행 고위험군', next:['d_hi'], body:`<p>본문: 현성 갑상선기능저하증으로 진행 위험이 높은 환자는 추적검사를 소홀히 하지 않도록 하며, 특히 TSH 20 mIU/L 이상으로 증가하거나 갑상선엽절제술의 과거력이나 만성갑상선염의 병력이 있어 진행이 예상되는 경우에는 LT4 치료를 고려해야 한다. 흐름도 설명은 TSH가 지속적으로 상승하거나 갑상선종이 동반된 경우도 든다.</p>${R('III-3')}`},
+f_fn2:{kind:'각주 **', title:'성인 중증의 치료', next:['c_ts2'], body:RR('IV-2','IV-6')},
+
+/* ---------- 진단·진행 위험 ---------- */
+d_cause:{kind:'원인', title:'원인 확인', next:[], body:`<p>원인으로 자가면역갑상선염, 현성 갑상선기능저하증에서 갑상선호르몬제 복용 불충분, 갑상선엽절제술, 방사성요오드 치료, 경부 방사선치료, 일과성 갑상선염, 약제, 요오드 과잉 섭취, 생리학적 변화 등이 있다. 국내 무증상갑상선기능저하증 환자 64명의 1일 평균 요오드 섭취량은 290.61 μg이었고, 요오드 섭취를 제한하자 48.5%에서 갑상선 기능이 정상화되었다.</p>${T4}`},
+d_tsh:{kind:'진단', title:'TSH 상승 · free T4 정상', next:['d_re'], body:`${RR('II-1','II-2')}<p>2013–2015 국민건강영양조사의 갑상선질환이 없는 일반인 분석에서 평균 TSH 2.16 mIU/L, 2.5–97.5% 참고치 0.62–6.86 mIU/L였다. 한국인 TSH 상한선은 다른 나라(4–5 mIU/L)보다 높은 6–7 mIU/L이고, 연령 분포는 40대에서 최저인 U자형이다(고요오드 섭취와 관련).</p>${T2}`},
+d_kit:{kind:'주의', title:'측정값 변동 요인', next:[], body:`<p>새 참고치는 단일 검사법(전기화학발광 면역분석법, Roche)으로 얻은 결과에 근거하므로, 다른 측정법이나 kit를 사용하면 일부 차이가 있어 kit에 따른 추정값 적용을 고려해야 한다. TSH는 일중변동(이른 오후 최저, 저녁·밤 상승)이 있고 일과성 갑상선염, 약제, 수면 습관, 운동, 우울증, 체형의 영향을 받는다.</p>${T3}`},
+d_re:{kind:'검사', title:'TSH 추적검사 + TPO 항체', next:['d_q','d_ultra'], body:`${RR('III-1','III-2')}<p>TSH 측정 간격은 TSH 범위와 환자 상태에 따라 정하며, 일반적으로 6개월 내 재측정하고 경증은 더 늦게, 중증은 더 일찍 검사해 볼 수 있다. TPO 항체 양성은 음성에 비해 현성 이환율이 2배 이상이며, 혈청 농도가 시간에 따라 감소할 수 있어 반복 측정이 추가 정보를 주지는 않는다.</p>`},
+d_ultra:{kind:'보조 검사', title:'자가항체 모두 음성', next:[], body:`<p>일부 환자는 TPO 항체 음성, 갑상선글로불린 항체 양성이므로 갑상선글로불린 항체 측정도 도움이 된다. 약 20%에서는 두 항체가 모두 검출되지 않는데, 갑상선 초음파에서 실질 에코의 증가·감소, 거친 표면, 전후 길이 변화, marginal nodularity, micro-nodulation 등은 자가면역갑상선염을 조기에 진단할 수 있는 증거가 되므로 필요시 초음파검사를 시행한다.</p>`},
+d_q:{kind:'판단', title:'TSH 상승 지속?', next:['d_per','d_norm'], body:`<p>TSH가 정확하게 측정되었는지 검토하고 충분한 간격을 두고 재측정하여 TSH 상승이 지속적인지 반드시 확인한다. 무증상갑상선기능저하증은 1년에 약 5–8%에서 현성으로 진행하며, 6–35%는 정상 갑상선기능으로 회복한다.</p>`},
+d_risk:{kind:'예후', title:'현성 진행 위험인자', next:['d_hi'], body:`${R('III-3')}<p>무증상갑상선기능저하증 환자는 정상 갑상선기능에 비해 5년 이내 현성 진행 확률이 10배 정도 높으며, 이환율은 5년 추적 시 2.0–3.4%, 10년 이상 추적 시 33–55%이다.</p>${T5}`},
+d_norm:{kind:'경과', title:'정상 회복', next:[], body:`<p>갑상선기능이 정상으로 회복되었고 항체도 음성이며, 갑상선 종대와 같은 갑상선질환의 다른 증거가 보이지 않는다면 추후에 더 이상의 검사는 필요하지 않다.</p>`},
+d_per:{kind:'확인', title:'지속적 무증상갑상선기능저하증', next:['d_mild','d_sev'], body:R('II-3')},
+d_mild:{kind:'분류', title:'경증: TSH 6.8–10 mIU/L', next:['d_age'], body:`<p>무증상갑상선기능저하증의 90%가 경증에 해당한다. 안성 코호트(3021명, 12년)에서 TSH가 6.57 mIU/L를 넘는 경우 관찰 8년 차부터 심혈관질환 유병률과 사망률이 증가했으며, TSH 4.0–6.5 mIU/L 환자는 수년이 지나도 건강 효과에 악영향을 받지 않았다.</p>${R('II-3')}`},
+d_sev:{kind:'분류', title:'중증: TSH >10 mIU/L', next:['d_age'], body:`<p>Thyroid Studies Collaboration 메타분석에서 TSH &gt;10 mIU/L의 중증 환자는 심부전, 관상동맥질환, 관상동맥질환으로 인한 사망 위험이 정상 대비 유의하게 상승했다.</p>${R('II-3')}`},
+d_hi:{kind:'치료 고려', title:'현성 진행 예상 시 LT4 고려', next:['m_tx'], body:`<p>TSH 20 mIU/L 이상으로 증가하거나 갑상선엽절제술의 과거력이나 만성갑상선염의 병력이 있어 현성 갑상선기능저하증의 진행이 예상되는 경우에는 LT4 치료를 고려해야 한다(Fig. 1 각주 *).</p>${R('III-3')}`},
+d_age:{kind:'다음', title:'70세 기준 성인·고령 구분', next:['h_am','h_as','h_om','h_os'], body:`<p>연령이 증가할수록 TSH가 높아져 유병률이 고령에서 8–18%까지 높아지며, 고령 환자는 심혈관질환이나 골다공증 등 LT4 치료의 부정적 영향을 받을 수 있는 동반질환이 많아 신중해야 한다.</p>${R('II-3')}`},
+
+/* ---------- LT4 치료·추적 ---------- */
+m_dec:{kind:'결정', title:'치료 방침 결정', next:['m_tx','m_no'], body:RR('TS-1','TS-2-1','TS-2-2','TS-3','TS-4')},
+m_tx:{kind:'치료', title:'LT4 치료', next:['m_dose'], body:`${R('VII-1')}<p>LT4와 T3/T4 복합제를 비교한 메타분석에서 복합제는 도움이 되지 못했고, 더 유용하다는 증거가 충분하지 않아 무증상갑상선기능저하증에서 T3/T4 복합제는 권고되지 않는다.</p>`},
+m_dose:{kind:'용량', title:'시작 용량', next:['m_take'], body:`${R('VII-2')}<p>일반적으로 12.5–50 μg/일로 시작하며 1–3개월 간격으로 조절하여 정상 TSH에 도달한다. 체중이 증가할수록 필요량이 늘어 최대 1일 1.5 μg/kg까지 필요할 수 있다. 65세 이상은 평균 50 μg/일, 젊은 연령은 평균 68–71 μg/일이 필요했다. 관상동맥질환이 있거나 고령이면 12.5–25 μg/일로 적게 시작하여 1–2개월마다 천천히 증량하는 것이 안전하다.</p>`},
+m_take:{kind:'복용', title:'LT4 복용법 및 주의 사항', next:['m_norm'], body:`<p>LT4는 반드시 공복에 복용하며, 아침 식사 60분 전 복용이 가장 적절한 것으로 알려져 있으나 마지막 식사 후 4시간 공복을 유지한 상태에서 취침 전 복용도 적절하다는 보고가 있다. 우유처럼 칼슘이 많은 음식, 커피, 두유, 철분 영양제, 제산제(H2 차단제, PPI), cholestyramine, raloxifene, 심한 위축성위염, 악성빈혈, 비만수술은 흡수를 떨어뜨린다. 이런 환자는 더 높은 용량을 투여하거나 비타민 C 또는 과일주스와 함께 복용하도록 하는 것이 도움이 된다.</p>`},
+m_norm:{kind:'추적', title:'TSH 정상화 후', next:['m_hyper','m_stop'], body:`<p>정상 TSH가 확인되면 검사 주기를 3–6개월로 연장하고, 수치가 안정되면 1년마다 검사하며 치료를 유지할 수 있다. 실제 치료 중인 환자 중 TSH를 정상 범위로 유지하는 비율은 40–60%로 낮으며, 과잉 용량은 심혈관질환과 골다공증·골절 위험을 높이므로 주기적인 TSH 측정을 간과해서는 안 된다.</p>${R('VIII-1')}`},
+m_hyper:{kind:'조정', title:'항진 상태로 전환', next:[], body:R('VII-3')},
+m_stop:{kind:'중단', title:'중단 시도 고려', next:[], body:`<p>메타분석에서 약 35.6%가 LT4를 중단할 수 있었다. 중단 예측 인자는 TSH &lt;10 mIU/L, 초음파상 균질한 정상 실질, TPO 항체 음성, 많은 나이, 갑상선종이 없는 경우이다. 따라서 경증에서 TPO 항체 음성, 초음파상 정상 실질이면 중단을 시도해 볼 수 있다.</p>${R('VII-3')}`},
+m_no:{kind:'관리', title:'치료하지 않음', next:['m_6'], body:R('VII-4')},
+m_6:{kind:'재검', title:'6개월 내 재검', next:['m_ok','m_pers'], body:`<p>무증상갑상선기능저하증으로 진단된 후에는 치료를 하지 않더라도 6개월 내에 재검사를 통해 TSH 상승이 지속되는지 확인해야 한다.</p>${R('VII-4')}`},
+m_ok:{kind:'경과', title:'정상 회복', next:[], body:`<p>갑상선기능이 정상으로 회복되었고 항체도 음성이며 갑상선 종대 같은 다른 증거가 없으면 추후 더 이상의 검사는 필요하지 않다.</p>`},
+m_pers:{kind:'경과', title:'지속', next:['m_dec','m_6m'], body:`<p>무증상갑상선기능저하증이 지속되면 다시 한번 LT4 치료 필요 여부를 환자 상황에 따라 결정해야 한다.</p>`},
+m_6m:{kind:'추적', title:'치료 없이 경과관찰', next:['m_nat'], body:`<p>치료 없이 지속적인 경과관찰을 결정하면 이후 6개월마다 관찰할 수 있으며, 특별한 변화가 없으면 1년마다 경과관찰이 가능하다.</p>${R('VIII-1')}`},
+m_nat:{kind:'자연 경과', title:'자연 경과', next:[], body:`<p>무증상갑상선기능저하증은 1년에 약 5–8%에서 현성 갑상선기능저하증으로 진행하며, 반대로 6–35%는 정상 갑상선기능으로 회복한다.</p>`},
+
+/* ---------- 환자 교육 ---------- */
+e_s:{kind:'교육', title:'지속되는 무증상갑상선기능저하증', next:['e_1','e_2','e_3'], body:RR('VIII-1','VIII-2','VIII-3')},
+e_1:{kind:'교육', title:'정기 갑상선기능검사', next:['e_4'], body:`${R('VIII-1')}<p>동일 용량의 갑상선호르몬을 장기간 검사 없이 복용하면 항진 상태로 전환될 위험이 있음을 알려야 하며, 특히 다약제 복용 노인과 골다공증·부정맥이 동반된 환자에서 필수적이다.</p>`},
+e_2:{kind:'교육', title:'만성 자가면역갑상선염 의심', next:[], body:`${R('VIII-2')}<p>고요오드 음식(해조류, 해산물 등)을 지나치게 많이 섭취하지 않도록 하고, 요오드 함유량이 높은 건강보조식품이나 약제(예: 다시마 진액)는 반드시 피한다. 만성 자가면역갑상선염의 임상 경과를 이해하도록 돕고 장기적인 추적 필요성을 알린다.</p>`},
+e_3:{kind:'교육', title:'가임 연령 여성', next:['e_5'], body:`${R('VIII-3')}<p>“2014 임신 중 및 산후 갑상선기능질환의 진단 및 치료 권고안”은 임신 시 혈중 TSH 적정 농도를 4.0 mIU/L로 제시하므로, 무증상갑상선기능저하증 상태의 임신은 태아와 산모에게 바람직하지 않다.</p>`},
+e_4:{kind:'교육', title:'진행 시사 증상 시 조기 내원', next:[], body:`<p>즉각적인 LT4 치료가 고려되지 않는 경우 적절한 추적검사 간격을 알리고, 경과 중 갑상선기능저하증으로의 진행을 시사하는 증상이 동반되면 일찍 내원하도록 교육한다.</p>`},
+e_5:{kind:'교육', title:'임신 고려 중', next:[], body:`<p>임신을 고려 중인 가임 연령 여성은 적절한 LT4 보충으로 임신 중 목표 TSH에 도달하도록 하고, 도달 전까지 피임하도록 교육한다. LT4 보충을 하지 않으면서 현재 임신을 고려하지 않는다면 계획 임신의 필요성을 설명하고, 임신 계획 시 또는 임신 확인 시 가능한 빨리 갑상선기능검사를 확인하도록 교육한다.</p>`}
+};
+
+/* 치료 적응증 표 셀 */
+const HD = {h_am:['성인 · 경증','TS-1'], h_as:['성인 · 중증','TS-2-1','TS-2-2'], h_om:['고령 · 경증','TS-3'], h_os:['고령 · 중증','TS-4']};
+Object.entries(HD).forEach(([k,[t,...ids]])=>{ D[k] = {kind:'환자군', title:t, next:[], body:RR(...ids)}; });
+const CELL = {
+ r_cv:['관상동맥질환·심부전',['IV-1','IV-2','IV-3','IV-4']], c_cv1:['성인 경증 + CVD',['IV-1']], c_cv2:['성인 중증 + CAD·HF',['IV-2']], c_cv3:['고령 경증',['IV-3']], c_cv4:['고령 중증 + CVD',['IV-4']],
+ r_lp:['이상지질혈증',['IV-6']], c_lp2:['성인 중증 + 이상지질혈증',['IV-6','TS-2-2']], c_lp3:['고령 경증',['TS-3']], c_lp4:['고령 중증',['TS-4']],
+ r_ms:['대사증후군·비만',['IV-5']], c_ms:['대사증후군·비만',['IV-5']],
+ r_dp:['우울증',['V-1']], c_dp1:['성인 + 우울증',['V-1']],
+ r_cg:['인지기능·치매',['V-2']], c_cg2:['고령 + 인지기능',['V-2']],
+ r_sx:['관련 증상·삶의 질',['VI-1','VI-2']], c_sx1:['성인 + 관련 증상',['VI-1']], c_sx2:['고령 + 증상·삶의 질',['VI-2']],
+ r_ts:['종합: 치료 선별',['TS-1','TS-2-1','TS-2-2','TS-3','TS-4']], c_ts1:['성인 경증',['TS-1']], c_ts2:['성인 중증',['TS-2-1','TS-2-2']], c_ts3:['고령 경증',['TS-3']], c_ts4:['고령 중증',['TS-4']]
+};
+Object.entries(CELL).forEach(([k,[t,ids]])=>{ D[k] = {kind:'치료 적응증', title:t, next:[], body:RR(...ids)}; });
+D.c_cv2.next = ['m_tx']; D.c_lp2.next = ['m_tx']; D.c_ts2.next = ['m_tx'];
+D.c_lp1 = {kind:'치료 적응증', title:'성인 경증 + 이상지질혈증', next:[], body:`<p>경증에서 이상지질혈증 치료를 위한 LT4 효과는 상이한 결과를 보여, 본 진료지침은 경증 환자에게 이상지질혈증 개선을 위한 LT4 치료를 권고하지 않는다(본문 서술, 별도 번호 권고 없음). 소규모 RCT에서 LT4는 총·LDL 콜레스테롤을 낮췄고 특히 TSH &gt;12 mIU/L의 성인 중증에서 뚜렷했으며, 메타분석에서 각각 11.2, 8.5 mg/dL 낮췄다.</p>${R('IV-6')}`};
+D.c_dp2 = {kind:'치료 적응증', title:'고령 + 우울증', next:[], body:`<p>우울증 개선에 대한 번호 권고는 성인(&lt;70세)만 다룬다. 메타분석에서 60세 미만은 우울증 진단 위험이 3.8배 증가했으나 60세 이상은 진단과 주요 우울 증상 모두 유의한 차이가 없었다. 4개 RCT와 그 메타분석에서 LT4는 우울 증상을 개선하지 못했다.</p>${R('V-1')}`};
+D.c_cg1 = {kind:'치료 적응증', title:'성인 + 인지기능', next:[], body:`<p>인지기능에 대한 번호 권고는 고령(≥70세)만 다룬다. 무증상갑상선기능저하증은 인지기능 저하나 치매와 전체적으로 연관이 입증되지 않았고(75세 미만 분석에서 치매 상대위험 1.81), 비교적 젊은 성인 연구는 부족하다.</p>${R('V-2')}`};
+D.r_hi = {kind:'고위험', title:'현성 진행 고위험', next:['d_hi'], body:D.f_fn1.body};
+D.c_hi = {kind:'고위험', title:'현성 진행 고위험군에서 LT4 고려', next:['d_hi'], body:D.f_fn1.body};
+
+const ALL = Object.keys(REC);
+const CH = [['II. 상황별 TSH 참고치','II-'],['III. 현성 진행 빈도와 위험인자','III-'],['IV. 심혈관대사질환','IV-'],['V. 심리 및 인지기능','V-'],['VI. 관련 증상','VI-'],['치료 선별 (종합)','TS-'],['VII. 약제 선택 및 추적관리','VII-'],['VIII. 환자 교육','VIII-']];
+Object.assign(D, {
+ levels:{kind:'Table 1', title:'권고 등급 (ACP grading system)', next:[], body:`${T1}${['SH','SM','WM','WL','GPS'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','원문은 국내 첫 무증상갑상선기능저하증 진료지침으로, 2013 유럽갑상선학회 지침을 수용 개작했다. 첫 탭은 Fig. 1을 재현했고, 나머지 네 탭은 핵심 질문 II–VIII을 바탕으로 본 도구에서 구성했다. 권고 28개(치료 선별 종합 5개 포함, 요약 절 I의 중복 권고는 한 번만 수록)는 원문 문장 그대로이며, 권고를 누르면 해당 핵심 질문의 본문 원문이 펼쳐진다.')}${note('원문 불일치','① 흐름도 설명은 “성인(&lt;70세)에서는 LT4 치료가 권장된다”고 썼으나 권고·Fig. 1은 성인 경증에서 일반적으로 권고하지 않는다. ② Table 1은 ACP(American College of Physicians) 등급 체계라 했으나 인용한 문헌 5는 American College of Chest Physicians(Guyatt 2006)이다. ③ 대사증후군 승산비가 본문은 1.39배, Table 6은 1.28 (1.19–1.39)이다. ④ 국민건강영양조사 대상자 수가 본문 II는 6546명, Table 3과 본문 III은 6564명이다. ⑤ Table 6의 치명적 심혈관질환(283,578명)과 전체 사망(532,332명)이 같은 검사 건수 21,176/555,530을 쓴다.')}${tip('Corrigendum','원문 첫 쪽에 “본 원고는 수정되었습니다. Corrigendum을 통해 확인할 수 있습니다”라는 표기가 있다. 정정 내용은 본 도구에 반영되지 않았으므로 확인이 필요하다.')}`},
+ all:{kind:'권고 전체', title:'권고 28개', next:[], body:CH.map(([t,p])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.startsWith(p)))}`).join('')},
+ tabs:{kind:'표', title:'Table 2–6', next:[], body:`<h5>Table 2. 한국인 기준집단의 TSH 분포</h5>${T2}<h5>Table 3. 국내 정상 TSH 범위 연구</h5>${T3}<h5>Table 4. 원인</h5>${T4}<h5>Table 5. 현성 진행 위험인자</h5>${T5}<h5>Table 6. 심혈관대사질환 위험 메타분석</h5>${T6}`},
+ intro:{kind:'서론·방법', title:'서론과 방법', next:[], body:paraHTML(EXP.intro)+'<p class="exp-src">원문 서론·방법. 참고문헌 번호는 생략하였다.</p>'}
+});
+
+const ABBR = [
+ ['CAD','Coronary artery disease, 관상동맥질환'],['CVD','Cardiovascular disease, 심혈관질환'],['ETA','European Thyroid Association, 유럽갑상선학회'],['free T4','Free thyroxine, 유리 타이록신'],
+ ['GPS','Good practice statement, 전문가 권고사항'],['HF','Heart failure, 심부전'],['IEMO','Institute for Evidence-based Medicine in Old age (80세 이상 RCT)'],['IQR','Interquartile range'],
+ ['KLoSHA','Korean Longitudinal Study on Health and Aging'],['KNHANES','Korea National Health and Nutrition Examination Survey, 국민건강영양조사'],['KoGES','Korean Genome and Epidemiology Study'],['LT4','Levothyroxine, 레보타이록신'],
+ ['MMSE','Mini-mental state examination'],['RCT','Randomized controlled trial, 무작위 대조군 연구'],['SCH','Subclinical hypothyroidism, 무증상갑상선기능저하증'],['Tg 항체','Thyroglobulin antibody, 갑상선글로불린 항체'],
+ ['TPO','Thyroperoxidase, 갑상선과산화효소'],['TRUST','Thyroid Hormone Replacement for Untreated Older Adults with Subclinical Hypothyroidism (65세 이상 RCT)'],['TSH','Thyroid-stimulating hormone, 갑상선자극호르몬']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'fig1';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: T, LT4)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('fig1');
+
+</script>
+</body>
+</html>
