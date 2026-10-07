@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KDIGO 2024 CKD 평가·관리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>KDIGO 2024 만성콩팥병(CKD) 평가·관리 진료지침</h1>
+        <p class="src">Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. <a href="https://doi.org/10.1016/j.kint.2023.10.018" target="_blank" rel="noopener noreferrer">Kidney Int 2024;105(4S):S117–S314</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by Kidney Disease: Improving Global Outcomes (KDIGO)</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상·고위험·중단 박스 강조"><i class="sw mal"></i>이상·고위험·중단</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="정상·기반·지지 박스 강조"><i class="sw ben"></i>정상·기반·지지</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고·실천 지침을 누르면 해당 절 근거 요약이 펼쳐짐</li><li>탭은 원문 Figure 3·11·13·18·21·26·32·33·40·44·48을 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>등급·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 권고·실천 지침</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>표 모음</button>
+      <button type="button" data-id="meds"><span class="bt-ic" aria-hidden="true">＋</span>약물 관리</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ '1A':'강한 권고(We recommend) · 근거 수준 A(높음)', '1B':'강한 권고 · 근거 수준 B(중등도)', '1C':'강한 권고 · 근거 수준 C(낮음)', '1D':'강한 권고 · 근거 수준 D(매우 낮음)',
+ '2A':'약한 권고(We suggest) · 근거 수준 A(높음)', '2B':'약한 권고 · 근거 수준 B(중등도)', '2C':'약한 권고 · 근거 수준 C(낮음)', '2D':'약한 권고 · 근거 수준 D(매우 낮음)',
+ 'PP':'실천 지침(Practice Point): 체계적 문헌고찰 없이 작업반 합의로 제시한 등급 없는 진술'
+};
+const LVTXT = {'1A':'1A','1B':'1B','1C':'1C','1D':'1D','2A':'2A','2B':'2B','2C':'2C','2D':'2D','PP':'PP'};
+const LVCLS = {'1A':'l1','1B':'l1','1C':'l1','1D':'l1','2A':'l2','2B':'l2','2C':'l2','2D':'l2','PP':'l3'};
+/* R = 권고(Recommendation), P = 실천 지침(Practice Point). [등급, 번역] */
+const REC = {
+/* 1.1 */
+'P1.1.1.1':['PP','CKD 위험이 있거나 CKD가 있는 사람은 요알부민 측정과 사구체여과율(GFR) 평가를 모두 사용하여 검사한다.'],
+'P1.1.1.2':['PP','요 알부민-크레아티닌비(ACR) 상승, 혈뇨, 낮은 추정 GFR(eGFR)이 우연히 발견되면 검사를 반복하여 CKD의 존재를 확인한다.'],
+'R1.1.2.1':['1B','CKD 위험이 있는 성인에서 크레아티닌 기반 eGFR(eGFRcr) 사용을 권고한다. 시스타틴 C를 쓸 수 있으면 GFR 범주는 크레아티닌과 시스타틴 C의 조합(eGFRcr-cys)으로 추정해야 한다.'],
+'P1.1.3.1':['PP','만성(최소 3개월 지속)의 증거는 다음으로 확인할 수 있다: ① 과거 GFR 측정·추정치 검토 ② 과거 알부민뇨·단백뇨 측정과 요 현미경 검사 검토 ③ 신장 크기 감소, 피질 두께 감소 같은 영상 소견 ④ 섬유화와 위축 같은 신장 병리 소견 ⑤ 병력, 특히 CKD를 일으키거나 기여하는 것으로 알려진 질환 ⑥ 3개월 시점 이내와 이후의 반복 측정.'],
+'P1.1.3.2':['PP','단 한 번의 비정상 eGFR과 ACR로 만성을 가정하지 않는다. 최근의 급성 신손상(AKI)이나 급성 신장질환(AKD)의 결과일 수 있다.'],
+'P1.1.3.3':['PP','다른 임상 지표로 CKD 가능성이 높다고 판단되면 GFR 감소나 ACR 상승을 처음 발견했을 때 CKD 치료 시작을 고려한다.'],
+'P1.1.4.1':['PP','임상 맥락, 개인력과 가족력, 사회·환경 요인, 약물, 진찰, 검사, 영상, 유전·병리 진단을 이용하여 CKD의 원인을 밝힌다(Figure 8).'],
+'P1.1.4.2':['PP','가용 자원에 따라 원인을 밝히기 위한 검사를 사용한다(Table 6).'],
+'R1.1.4.1':['2D','임상적으로 적절할 때 원인을 평가하고 치료 결정을 이끄는 허용 가능하고 안전한 진단 검사로 신생검 시행을 제안한다.'],
+/* 1.2 */
+'P1.2.1.1':['PP','사구체 여과라는 특정 신기능을 말할 때는 “GFR”이라는 용어를 쓰고, 신장의 기능 전체를 다룰 때는 더 일반적인 용어인 “신기능”을 쓴다.'],
+'P1.2.2.1':['PP','GFR의 초기 평가에는 혈청 크레아티닌(SCr)과 추정식을 사용한다(Figure 11).'],
+'R1.2.2.1':['1C','eGFRcr이 덜 정확하고 GFR이 임상 의사결정에 영향을 주는 상황에서는 eGFRcr-cys 사용을 권고한다(Table 8).'],
+'P1.2.2.2':['PP','더 정확한 GFR 확인이 치료 결정에 영향을 주는 경우, 외인성 여과 표지자의 혈장 또는 소변 청소율로 GFR을 측정한다(Table 9).'],
+'P1.2.2.3':['PP','eGFR과 측정 GFR(mGFR)의 가치와 한계, 그리고 SCr과 시스타틴 C 측정의 변동성과 영향 요인을 이해한다.'],
+'P1.2.2.4':['PP','SCr 해석에는 식이 섭취를 고려해야 한다.'],
+'P1.2.2.5':['PP','시간에 따른 GFR 변화를 평가할 때 eGFR 오차 가능성을 평가한다.'],
+'P1.2.2.6':['PP','일부 특정 상황에서는 시스타틴 C 기반 eGFR(eGFRcys) 사용을 고려한다.'],
+'P1.2.2.7':['PP','eGFRcr과 eGFRcys의 차이는 방향과 크기 모두에서 정보가 될 수 있으므로 그 의미를 이해한다.'],
+'P1.2.2.8':['PP','mGFR을 쓸 수 없고 eGFRcr-cys가 부정확하다고 판단되면 크레아티닌 청소율 측정을 위한 시간 소변 수집을 고려한다.'],
+'P1.2.3.1':['PP','크레아티닌과 시스타틴 C로 GFR을 평가할 때 정확성과 신뢰성을 보장하기 위해 Table 11의 검사실 표준을 시행한다.'],
+'P1.2.3.2':['PP','가용 자원에 따라 임상 검사실은 크레아티닌과 시스타틴 C를 원내 검사나 위탁 검사로 모두 측정할 가능성을 고려할 수 있다.'],
+'P1.2.3.3':['PP','영아나 어린 소아에서 크레아티닌을 측정하는 검사실은 정도관리에 해당 집단의 예상 범위 최하단이 포함되도록 해야 한다. (소아)'],
+'P1.2.3.4':['PP','Jaffe법에서는 소아의 측정 크레아티닌에 비크레아티닌 색원체가 상대적으로 더 기여하고, 신생아기에는 황달·용혈 검체가 많으므로 소아에서는 효소법 크레아티닌 측정을 일관되게 사용하는 것을 고려한다. (소아)'],
+'P1.2.3.5':['PP','2세 초과 소아·청소년에서 eGFRcr &lt;90 ml/min/1.73 m²는 “낮음”으로 표시할 수 있다. (소아)'],
+'R1.2.4.1':['1D','혈청 여과 표지자만으로 판단하지 말고, 검증된 GFR 추정식으로 혈청 여과 표지자에서 GFR(eGFR)을 산출할 것을 권고한다.'],
+'P1.2.4.1':['PP','지역(대륙, 국가, 권역 등 지역별로 정의하되 가능한 한 넓게) 안에서는 같은 추정식을 사용한다. 그 지역 안에서도 성인과 소아의 추정식은 다를 수 있다.'],
+'P1.2.4.2':['PP','eGFR 계산에 인종을 사용하는 것은 피해야 한다.'],
+'P1.2.4.3':['PP','소아의 GFR은 비교 가능한 집단에서 개발되거나 검증된 추정식으로 추정한다. (소아)'],
+/* 1.3 */
+'P1.3.1.1':['PP','알부민뇨의 초기 검사에는 다음 측정을 선호 순서대로 사용한다. 성인과 소아 모두 아침 첫 소변 중간뇨가 바람직하다. ① 요 ACR ② 자동 판독 시험지의 알부민과 ACR. 요단백을 측정한다면 ① 요 단백-크레아티닌비(PCR) ② 자동 판독 시험지의 총단백 ③ 육안 판독 시험지의 총단백.'],
+'P1.3.1.2':['PP','덜 정확한 방법으로 알부민뇨가 발견되면 더 정확한 방법을 사용한다. 시험지 양성 알부민뇨·단백뇨는 정량 검사로 확인하고 가능하면 요 크레아티닌에 대한 비(ACR 또는 PCR)로 표현한다. 무작위 소변의 ACR ≥30 mg/g(≥3 mg/mmol)은 이후 아침 첫 중간뇨로 확인한다.'],
+'P1.3.1.3':['PP','요 알부민과 요 크레아티닌 측정 해석에 영향을 줄 수 있는 요인을 이해하고 필요하면 확인 검사를 한다(Table 16).'],
+'P1.3.1.4':['PP','소아에서는 알부민뇨와 단백뇨의 초기 검사에 아침 첫 소변을 쓰며 선호 순서는 ① 요 PCR과 ACR 모두 ② 자동 판독 시험지의 총단백과 알부민 ③ 육안 판독 시험지의 총단백과 알부민이다. (소아)'],
+'P1.3.2.1':['PP','소변 검체 평가의 정확성과 신뢰성을 보장하기 위해 Table 17의 검사실 보고·처리 표준을 시행한다.'],
+'P1.3.2.2':['PP','ACR 계산을 포함한 요 알부민과 크레아티닌의 외부 정도관리 프로그램 시행이 검사실에 바람직하다.'],
+/* 1.4 */
+'R1.4.1':['2C','검사실 접근이 제한되거나 현장 검사가 진료 경로를 쉽게 하는 경우, 크레아티닌과 요 알부민 측정에 현장검사(POCT)를 사용할 수 있음을 제안한다.'],
+'P1.4.1':['PP','크레아티닌과 요 알부민에 POCT 기기를 쓸 때는 검체 채취와 기기 성능(외부 정도관리 포함), 결과 해석에 관한 검사 전·중·후 품질 기준을 똑같이 적용한다.'],
+'P1.4.2':['PP','크레아티닌 POCT 기기를 쓰면 GFR 추정치를 산출하며, 지역에서 쓰는 것과 같은 추정식을 사용한다.'],
+'P1.4.3':['PP','알부민뇨 POCT 기기는 크레아티닌도 분석하여 ACR을 산출할 수 있어야 한다. 기기 사용을 평가할 때 유의한 알부민뇨(ACR ≥30 mg/g 또는 ≥3 mg/mmol)가 있는 사람의 85%에서 양성을 내는지 평가한다.'],
+/* 2.1 */
+'P2.1.1':['PP','CKD가 있는 사람은 적어도 매년 알부민뇨(성인) 또는 알부민뇨/단백뇨(소아)와 GFR을 평가한다.'],
+'P2.1.2':['PP','측정이 치료 결정에 영향을 줄 경우 CKD 진행 위험이 높은 사람에서는 알부민뇨와 GFR을 더 자주 평가한다.'],
+'P2.1.3':['PP','CKD가 있는 사람에서 다음 검사의 eGFR 변화가 &gt;20%이면 예상 변동을 넘는 것으로 평가가 필요하다.'],
+'P2.1.4':['PP','혈역학적으로 작용하는 치료를 시작한 CKD 환자에서 다음 검사의 GFR 감소가 &gt;30%이면 예상 변동을 넘는 것으로 평가가 필요하다.'],
+'P2.1.5':['PP','CKD의 알부민뇨 감시에서 다음 검사의 ACR이 2배가 되면 검사실 변동을 넘는 것으로 평가가 필요하다.'],
+/* 2.2 */
+'R2.2.1':['1A','CKD G3–G5에서 신부전의 절대 위험을 추정하기 위해 외부 검증된 위험 방정식 사용을 권고한다.'],
+'P2.2.1':['PP','5년 신부전 위험 3–5%는 eGFR이나 요 ACR 기준과 다른 임상 고려사항에 더해 신장내과 의뢰 필요성 판단에 쓸 수 있다.'],
+'P2.2.2':['PP','2년 신부전 위험 &gt;10%는 eGFR 기준과 다른 임상 고려사항에 더해 다학제 진료 시점 판단에 쓸 수 있다.'],
+'P2.2.3':['PP','2년 신부전 위험 &gt;40%는 eGFR 기준과 다른 임상 고려사항에 더해 투석 방식 교육, 혈관 접근로 계획과 이식 의뢰를 포함한 신대체요법(KRT) 준비 시점 판단에 쓸 수 있다.'],
+'P2.2.4':['PP','CKD G3–G5용으로 개발된 위험 예측식은 CKD G1–G2에서 유효하지 않을 수 있다.'],
+'P2.2.5':['PP','IgA 신병증(IgAN)과 상염색체 우성 다낭신(ADPKD)에서는 질환 특이적이고 외부 검증된 예측식을 사용한다.'],
+/* 2.3 */
+'P2.3.1':['PP','예방 치료를 이끄는 심혈관 위험 예측에는 CKD 집단에서 개발되었거나 eGFR과 알부민뇨를 포함하는 외부 검증 모델을 사용한다.'],
+'P2.3.2':['PP','치료 목표 논의를 위한 사망 위험 예측에는 CKD 집단에서 특별히 개발된 전체 사망 예측의 외부 검증 모델을 사용한다.'],
+/* 3.1–3.2 */
+'P3.1.1':['PP','CKD 진행과 관련 합병증의 위험을 줄이기 위해 포괄적 치료 전략으로 CKD를 치료한다(Figure 17).'],
+'P3.2.1':['PP','심혈관 건강, 내약성, 쇠약 정도에 맞는 신체활동을 하고, 최적 체질량지수(BMI)를 달성하며, 담배 제품을 사용하지 않도록 권장한다. 필요하고 가능하면 심리 전문가, 신장 영양사 또는 공인 영양 제공자, 약사, 물리·작업치료, 금연 프로그램에 의뢰한다.'],
+'R3.2.2.1':['1D','CKD가 있는 사람에게 주당 누적 최소 150분의 중등도 강도 신체활동, 또는 심혈관·신체 내약성에 맞는 수준의 활동을 하도록 조언할 것을 권고한다.'],
+'P3.2.2.1':['PP','신체활동 권고는 나이, 민족 배경, 동반질환, 자원 접근성을 고려해야 한다.'],
+'P3.2.2.2':['PP','CKD가 있는 사람에게 좌식 행동을 피하도록 조언해야 한다.'],
+'P3.2.2.3':['PP','낙상 위험이 높은 사람에게는 신체활동 강도(저·중등도·고강도)와 운동 유형(유산소 대 저항, 또는 둘 다)에 대해 조언해야 한다.'],
+'P3.2.2.4':['PP','비만이 있는 CKD 환자에게 체중 감량을 조언·권장하는 것을 고려해야 한다.'],
+'P3.2.2.5':['PP','CKD 소아는 세계보건기구(WHO) 권장 수준(하루 ≥60분)의 신체활동을 하고 건강 체중을 달성하도록 권장한다. (소아)'],
+/* 3.3 */
+'P3.3.1':['PP','동물성보다 식물성 식품을 더 많이, 초가공식품을 더 적게 섭취하는 건강하고 다양한 식사를 하도록 조언한다.'],
+'P3.3.2':['PP','신장 영양사나 공인 영양 제공자를 통해 개인의 필요, CKD 중증도, 동반질환에 맞춘 나트륨, 인, 칼륨, 단백질 섭취 조정을 교육한다.'],
+'R3.3.1.1':['2C','CKD G3–G5 성인에서 단백질 섭취를 0.8 g/kg 체중/일로 유지할 것을 제안한다.'],
+'P3.3.1.1':['PP','진행 위험이 있는 CKD 성인에서는 고단백 섭취(&gt;1.3 g/kg/일)를 피한다.'],
+'P3.3.1.2':['PP','의지와 능력이 있고 신부전 위험이 있는 CKD 성인에서는 면밀한 감독하에 필수아미노산이나 케토산 유사체(최대 0.6 g/kg/일까지)를 보충한 초저단백 식사(0.3–0.4 g/kg/일) 처방을 고려한다.'],
+'P3.3.1.3':['PP','대사적으로 불안정한 CKD 환자에게는 저단백 또는 초저단백 식사를 처방하지 않는다.'],
+'P3.3.1.4':['PP','성장 장애 위험 때문에 CKD 소아의 단백질 섭취를 제한하지 않는다. CKD G2–G5 소아의 단백질·에너지 목표는 최적 성장을 위해 건강한 소아 정상 범위의 상단이어야 한다. (소아)'],
+'P3.3.1.5':['PP','쇠약, 근감소증 같은 기저 질환이 있는 노인에서는 더 높은 단백질과 열량 목표를 고려한다. (노인)'],
+'R3.3.2.1':['2C','CKD에서 나트륨 섭취를 하루 &lt;2 g(&lt;90 mmol, 또는 염화나트륨 &lt;5 g)으로 할 것을 제안한다.'],
+'P3.3.2.1':['PP','나트륨 소실 신병증 환자에게는 대개 식이 나트륨 제한이 적절하지 않다.'],
+'P3.3.2.2':['PP','수축기 및/또는 이완기 혈압이 나이·성별·키의 90백분위수를 넘는 CKD 소아에게 나트륨 섭취를 상담할 때는 나이별 권장 섭취량을 따른다. (소아)'],
+/* 3.4 */
+'R3.4.1':['2B','고혈압이 있는 CKD 성인은 견딜 수 있다면 표준화된 진료실 혈압 측정으로 수축기 혈압(SBP) &lt;120 mmHg를 목표로 치료할 것을 제안한다.'],
+'P3.4.1':['PP','쇠약, 낙상·골절 고위험, 매우 제한된 기대여명, 증상이 있는 기립성 저혈압이 있는 사람에서는 덜 집중적인 강압 치료를 고려한다.'],
+'R3.4.2':['2C','CKD 소아에서 활동혈압측정(ABPM)의 24시간 평균동맥압(MAP)을 나이·성별·키의 50백분위수 이하로 낮출 것을 제안한다. (소아)'],
+'P3.4.2':['PP','CKD 소아에서 혈압은 매년 ABPM으로, 3–6개월마다 표준화된 청진 진료실 혈압으로 감시한다. (소아)'],
+'P3.4.3':['PP','CKD 소아에서 ABPM을 쓸 수 없으면, 저혈압 징후나 증상으로 제한되지 않는 한 프로토콜에 따른 표준화된 환경에서 얻은 수동 청진 진료실 SBP를 나이·성별·키의 50–75백분위수로 목표하는 것이 합리적이다. (소아)'],
+/* 3.6 */
+'R3.6.1':['1B','당뇨병이 없고 알부민뇨가 심하게 증가한(G1–G4, A3) CKD 환자에게 레닌-안지오텐신계 억제제(RASi: ACEi 또는 ARB) 시작을 권고한다.'],
+'R3.6.2':['2C','당뇨병이 없고 알부민뇨가 중등도로 증가한(G1–G4, A2) CKD 환자에게 RASi(ACEi 또는 ARB) 시작을 제안한다.'],
+'R3.6.3':['1B','당뇨병이 있고 알부민뇨가 중등도–고도로 증가한(G1–G4, A2·A3) CKD 환자에게 RASi(ACEi 또는 ARB) 시작을 권고한다.'],
+'R3.6.4':['1B','당뇨병 유무와 관계없이 CKD에서 ACEi, ARB, 직접 레닌 억제제(DRI)의 어떤 병용도 피할 것을 권고한다.'],
+'P3.6.1':['PP','입증된 이득이 이 용량을 쓴 시험에서 얻어졌으므로, RASi(ACEi 또는 ARB)는 견딜 수 있는 최대 승인 용량으로 투여해야 한다.'],
+'P3.6.2':['PP','RASi 시작이나 증량 후 2–4주 이내에 현재 GFR과 혈청 칼륨에 따라 혈압, 혈청 크레아티닌, 혈청 칼륨의 변화를 확인해야 한다.'],
+'P3.6.3':['PP','RASi 관련 고칼륨혈증은 흔히 RASi 감량이나 중단보다 혈청 칼륨을 낮추는 조치로 관리할 수 있다.'],
+'P3.6.4':['PP','치료 시작이나 증량 후 4주 이내에 혈청 크레아티닌이 30%를 넘게 오르지 않으면 ACEi나 ARB를 계속한다.'],
+'P3.6.5':['PP','증상이 있는 저혈압, 약물치료에도 조절되지 않는 고칼륨혈증, 또는 신부전(eGFR &lt;15 ml/min/1.73 m²) 치료 중 요독 증상 감소를 위해서는 ACEi나 ARB의 감량이나 중단을 고려한다.'],
+'P3.6.6':['PP','알부민뇨가 정상–경도 증가(A1)인 CKD에서도 특정 적응증(예: 고혈압, 박출률 감소 심부전)이 있으면 RASi(ACEi 또는 ARB) 시작을 고려한다.'],
+'P3.6.7':['PP','eGFR이 30 ml/min/1.73 m² 미만으로 떨어져도 CKD에서 ACEi나 ARB를 계속한다.'],
+/* 3.7 */
+'R3.7.1':['1A','제2형 당뇨병(T2D), CKD, eGFR ≥20 ml/min/1.73 m²인 환자를 SGLT2 억제제(SGLT2i)로 치료할 것을 권고한다.'],
+'P3.7.1':['PP','SGLT2i를 시작했다면 견디지 못하거나 KRT를 시작하지 않는 한 eGFR이 20 ml/min/1.73 m² 미만으로 떨어져도 계속하는 것이 합리적이다.'],
+'P3.7.2':['PP','장기 금식, 수술, 중증 질환 시기(케톤증 위험이 클 때)에는 SGLT2i를 보류하는 것이 합리적이다.'],
+'R3.7.2':['1A','다음에 해당하는 CKD 성인을 SGLT2i로 치료할 것을 권고한다: eGFR ≥20 ml/min/1.73 m²이면서 요 ACR ≥200 mg/g(≥20 mg/mmol), 또는 알부민뇨 정도와 관계없이 심부전.'],
+'P3.7.3':['PP','SGLT2i 시작이나 사용으로 CKD 감시 빈도를 바꿀 필요는 없으며, 시작 시 가역적인 eGFR 감소는 일반적으로 중단 사유가 아니다.'],
+'R3.7.3':['2B','eGFR 20–45 ml/min/1.73 m²이고 요 ACR &lt;200 mg/g(&lt;20 mg/mmol)인 성인을 SGLT2i로 치료할 것을 제안한다.'],
+/* 3.8 */
+'R3.8.1':['2A','최대 내약 용량의 RASi에도 T2D, eGFR &gt;25 ml/min/1.73 m², 정상 혈청 칼륨, 알부민뇨(&gt;30 mg/g [&gt;3 mg/mmol])가 있는 성인에게 신장 또는 심혈관 이득이 입증된 비스테로이드 무기질코르티코이드 수용체 길항제(ns-MRA)를 제안한다.'],
+'P3.8.1':['PP','ns-MRA는 다른 표준 치료에도 지속되는 알부민뇨로 드러나는, CKD 진행과 심혈관 사건 위험이 높은 T2D 성인에게 가장 적절하다.'],
+'P3.8.2':['PP','T2D와 CKD가 있는 성인의 치료에 RASi와 SGLT2i에 ns-MRA를 추가할 수 있다.'],
+'P3.8.3':['PP','고칼륨혈증 위험을 줄이기 위해 혈청 칼륨이 지속적으로 정상인 사람을 선택하고, ns-MRA 시작 후 혈청 칼륨을 정기적으로 감시한다(Figure 26).'],
+'P3.8.4':['PP','ns-MRA 선택은 신장 또는 심혈관 이득이 입증된 약제를 우선해야 한다.'],
+'P3.8.5':['PP','스테로이드 MRA는 심부전, 고알도스테론증, 불응성 고혈압 치료에 쓸 수 있으나, 특히 GFR이 낮은 사람에서 고칼륨혈증이나 가역적 사구체 여과 감소를 일으킬 수 있다.'],
+/* 3.9–3.10 */
+'R3.9.1':['1B','메트포르민과 SGLT2 억제제를 쓰고도 개별 혈당 목표에 도달하지 못했거나 이 약제를 쓸 수 없는 T2D와 CKD 성인에게 장기작용 GLP-1 수용체 작용제(GLP-1 RA)를 권고한다.'],
+'P3.9.1':['PP','GLP-1 RA 선택은 심혈관 이득이 입증된 약제를 우선해야 한다.'],
+'P3.10.1':['PP','CKD에서 임상적 의미가 있을 수 있는 산증(예: 성인 혈청 중탄산염 &lt;18 mmol/l) 발생을 막기 위해 식이 중재와 함께 또는 단독으로 약물치료를 고려한다.'],
+'P3.10.2':['PP','대사성 산증 치료로 혈청 중탄산염이 정상 상한을 넘지 않고 혈압 조절, 혈청 칼륨, 체액 상태에 나쁜 영향을 주지 않도록 감시한다.'],
+/* 3.11 */
+'P3.11.1.1':['PP','일중·계절 변동, 혈장 대 혈청 검체, 약물 작용 등 칼륨 측정에 영향을 줄 수 있는 요인과 기전, 그리고 칼륨 검사 측정의 변동성을 인지한다.'],
+'P3.11.2.1':['PP','비응급 고칼륨혈증의 약물 관리와 관련한 지역의 가용성이나 처방집 제한을 인지한다.'],
+'P3.11.5.1':['PP','CKD G3–G5와 응급 고칼륨혈증이 있는 사람에게는 동반질환과 삶의 질을 고려한 식이·약물 중재를 포함하는 개별 접근을 시행한다. 신장 영양사나 공인 영양 제공자를 통한 평가와 교육이 권고된다.'],
+'P3.11.5.2':['PP','고칼륨혈증 병력이 있는 CKD G3–G5 환자, 또는 고칼륨혈증 위험이 우려되는 시기의 예방 전략으로, 생체이용 칼륨이 풍부한 식품(예: 가공식품) 섭취를 제한하도록 조언한다.'],
+/* 3.14 */
+'R3.14.1':['1C','증상이 있는 고요산혈증이 있는 CKD 환자에게 요산 강하 중재를 제공할 것을 권고한다.'],
+'P3.14.1':['PP','CKD 환자의 첫 통풍 발작 후(특히 피할 수 있는 유발 요인이 없거나 혈청 요산이 &gt;9 mg/dl [535 μmol/l]일 때) 요산 강하 치료 시작을 고려한다.'],
+'P3.14.2':['PP','CKD와 증상이 있는 고요산혈증에서는 요산배설촉진제보다 잔틴 산화효소 억제제를 처방한다.'],
+'P3.14.3':['PP','CKD의 급성 통풍 증상 치료에는 비스테로이드 소염제(NSAID)보다 저용량 콜히친이나 관절강 내·경구 글루코코르티코이드가 바람직하다.'],
+'P3.14.4':['PP','통풍 예방에 도움이 될 수 있는 비약물 중재로 알코올, 육류, 액상과당 섭취 제한이 있다.'],
+'R3.14.2':['2D','CKD와 무증상 고요산혈증에서 CKD 진행을 늦추기 위해 혈청 요산 강하제를 사용하지 않을 것을 제안한다.'],
+/* 3.15 */
+'R3.15.1.1':['1A','만성 투석이나 신장이식을 받지 않는 eGFR &lt;60 ml/min/1.73 m²(G3a–G5)의 50세 이상 성인에게 스타틴 또는 스타틴/에제티미브 병용 치료를 권고한다.'],
+'R3.15.1.2':['1B','eGFR ≥60 ml/min/1.73 m²(G1–G2)인 CKD의 50세 이상 성인에게 스타틴 치료를 권고한다.'],
+'R3.15.1.3':['2A','만성 투석이나 신장이식을 받지 않는 18–49세 CKD 성인 중 다음 중 하나 이상이 있으면 스타틴 치료를 제안한다: 알려진 관상동맥질환(심근경색 또는 관상동맥 재관류술), 당뇨병, 이전 허혈성 뇌졸중, 추정 10년 관상동맥 사망 또는 비치명적 심근경색 발생률 &gt;10%.'],
+'P3.15.1.1':['PP','검증된 위험 도구로 10년 심혈관 위험을 추정한다.'],
+'P3.15.1.2':['PP','CKD에서는 최대 치료 이득을 얻기 위해 LDL 콜레스테롤의 절대 감소를 극대화하는 스타틴 기반 요법을 선택한다.'],
+'P3.15.1.3':['PP','18–49세 CKD 성인에서는 더 낮은(즉 &lt;10%) 추정 10년 관상동맥 사망·비치명적 심근경색 발생률도 스타틴 기반 치료 시작의 적절한 기준이 될 수 있다.'],
+'P3.15.1.4':['PP','사용 적응증이 있는 CKD 환자에게 PCSK9 억제제 처방을 고려한다.'],
+'P3.15.1.5':['PP','심혈관 위험을 줄이기 위해 지질 조절 치료와 함께 식물성 위주의 “지중해식” 식사를 고려한다.'],
+'R3.15.2.1':['1C','확립된 허혈성 심혈관질환이 있는 CKD 환자에서 재발성 허혈성 심혈관 사건 예방(이차 예방)을 위해 경구 저용량 아스피린을 권고한다.'],
+'P3.15.2.1':['PP','아스피린 불내성이 있으면 다른 항혈소판제(예: P2Y12 억제제)를 고려한다.'],
+'R3.15.3.1':['2D','부하 검사로 확인된 안정형 허혈성 심질환에서는 집중 약물치료를 이용한 초기 보존적 접근이 초기 침습적 전략의 적절한 대안임을 제안한다.'],
+'P3.15.3.1':['PP','급성 또는 불안정 관상동맥질환, 받아들이기 어려운 협심증(예: 환자 불만족), 허혈에 의한 좌심실 수축 기능 장애, 좌주간지 질환이 있는 CKD 환자에게는 여전히 초기 침습적 전략이 바람직할 수 있다.'],
+/* 3.16 */
+'P3.16.1':['PP','심방세동의 진단과 관리에는 확립된 전략을 따른다(Figure 40).'],
+'R3.16.1':['1C','CKD G1–G4의 심방세동 혈전 예방에는 비타민 K 길항제(예: 와파린)보다 비-비타민 K 길항 경구 항응고제(NOAC)를 우선 사용할 것을 권고한다.'],
+'P3.16.2':['PP','GFR에 따른 NOAC 용량 조정이 필요하며 CKD G4–G5에서는 주의가 필요하다.'],
+'P3.16.3':['PP','예정 시술 전 NOAC 중단 기간은 시술 출혈 위험, 처방된 NOAC, GFR 수준을 고려해야 한다(Figure 44).'],
+/* 4 */
+'P4.1.1':['PP','CKD 환자는 약물의 신독성에 더 취약할 수 있다. 이런 약물을 처방할 때는 항상 이득과 잠재적 위해를 비교한다.'],
+'P4.1.2':['PP','치료 범위가 좁거나 이상반응·신독성 가능성이 있는 약물을 받는 CKD 환자는 외래와 입원 모두에서 필요할 때 eGFR, 전해질, 약물 농도를 감시한다.'],
+'P4.1.3':['PP','CKD 환자에게 해로울 수 있는 일반의약품과 식이·한약 제제의 사용을 검토하고 제한한다.'],
+'P4.1.4':['PP','가임 가능한 CKD 환자에게 약물을 처방할 때는 항상 기형 유발 가능성을 검토하고, 당사자의 가치와 선호에 따라 정기적인 생식·피임 상담을 제공한다.'],
+'P4.2.1':['PP','신장으로 청소되는 약물의 용량을 정할 때 GFR을 고려한다.'],
+'P4.2.2':['PP','대부분의 사람과 임상 상황에서는 SCr을 이용한 검증된 eGFR 식이 약물 용량 결정에 적절하다.'],
+'P4.2.3':['PP','더 높은 정확도가 필요한 약물 결정(예: 치료·독성 범위가 좁아 용량 결정), 약물 독성, 또는 eGFRcr이 신뢰하기 어려운 임상 상황에서는 크레아티닌과 시스타틴 C를 함께 쓰는 식이나 측정 GFR이 필요할 수 있다.'],
+'P4.2.4':['PP','체중이 극단적인 사람에서는 특히 치료 범위가 좁거나 효과를 위해 최소 농도가 필요한 약물에서 체표면적(BSA)으로 보정하지 않은 eGFR이 필요할 수 있다.'],
+'P4.2.5':['PP','GFR, 여과 표지자의 비GFR 결정인자, 분포 용적이 정상 상태가 아닌 사람에서는 약물 용량을 고려하고 조정한다.'],
+'P4.3.1':['PP','CKD 환자는 흔히 복잡한 약물 요법을 쓰고 여러 전문의를 만나므로, 정기적으로 그리고 진료 전환 시점에 순응도, 지속 적응증, 약물 상호작용을 평가하는 철저한 약물 검토를 시행한다.'],
+'P4.3.2':['PP','급성 질환 중 약물을 중단했다면 언제 다시 시작할지 명확한 계획을 당사자와 의료진에게 전달하고 의무기록에 남긴다.'],
+'P4.3.3':['PP','예정 수술 48–72시간 전이나 이상반응의 급성 관리 중에는 합병증 예방 조치로 약물(메트포르민, ACEi, ARB, SGLT2i 등)의 계획적 중단을 고려한다. 다만 사건이나 시술 후 재개하지 않으면 의도치 않은 위해가 생길 수 있다(PP 4.3.2 참조).'],
+'P4.3.1.1':['PP','CKD 환자가 관리 가능한 이상반응을 알아보고 보고할 수 있도록 약물의 기대 이득과 가능한 위험을 교육하고 알린다.'],
+'P4.3.1.2':['PP','복잡한 약물 요법 관리를 개선하기 위해 다른 의료진·약사와 협력 관계를 맺고 및/또는 도구를 사용하여 CKD 환자의 약물 관리를 보장하고 개선한다.'],
+'P4.4.1':['PP','영상 검사의 적응증은 일반 인구의 적응증에 따라 고려한다. 영상 검사의 위험과 이득은 CKD 맥락에서 개별적으로 판단해야 한다.'],
+'P4.4.1.1':['PP','심장 시술을 위해 동맥 내 조영제를 받는 CKD 환자의 AKI 위험은 검증된 도구로 평가한다.'],
+'P4.4.1.2':['PP','예정 검사를 받는 AKI 또는 GFR &lt;60 ml/min/1.73 m²(CKD G3a–G5) 환자의 정맥 조영제 투여는 영상의학회 합의문에 따라 관리할 수 있다.'],
+'P4.4.2.1':['PP','가돌리늄 조영제가 필요한 GFR &lt;30 ml/min/1.73 m²(CKD G4–G5) 환자에게는 미국영상의학회(ACR) group II와 III 가돌리늄 조영제를 우선 제공한다.'],
+/* 5 */
+'P5.1.1':['PP','Figure 48의 상황에서 CKD 성인을 신장 전문 진료로 의뢰한다.'],
+'P5.1.2':['PP','소아·청소년은 다음 상황에서 신장 전문 진료로 의뢰한다: 건강하고 월경 중이 아닐 때 반복 아침 첫 소변으로 확인된 ACR 30 mg/g(3 mg/mmol) 또는 PCR 200 mg/g(20 mg/mmol) 이상 · 지속 혈뇨 · eGFR의 지속적 감소 · 고혈압 · 요로 폐쇄 또는 신장·요로 기형 · 알려지거나 의심되는 CKD · 재발성 요로감염. (소아)'],
+'P5.2.2.1':['PP','진행성 CKD 환자에게 매 진료 때 표준화된 검증 도구로 요독 증상(예: 식욕 감소, 오심, 피로·무기력 정도)을 묻는다.'],
+'P5.2.3.1':['PP','CKD와 함께 잘 살고 건강 관련 삶의 질을 개선하도록 근거 기반 관리 전략을 사용한다.'],
+'P5.2.3.2':['PP','CKD G4–G5, 65세 초과, 성장 부진(소아), 또는 비자발적 체중 감소·쇠약·식욕 저하 같은 증상이 있는 사람은 검증된 도구로 연 2회 영양실조를 선별한다.'],
+'P5.2.3.3':['PP','영양실조 징후가 있는 사람에게 가능하면 신장 영양사, 없으면 공인 영양 제공자의 감독하에 적절한 의학 영양 치료를 받을 수 있게 한다.'],
+'P5.3.1':['PP','식이 상담, 약물 관리, 교육, 다양한 KRT 방식·이식 선택지·투석 접근로 수술에 관한 상담, 윤리·심리·사회적 돌봄으로 구성된 환자 중심 다학제 진료팀을 이용할 수 있게 한다.'],
+'P5.3.2':['PP','필요하면 돌봄 제공자도 참여하는 교육 프로그램이 정보를 갖추고 능동적인 CKD 환자를 만드는 데 중요하다.'],
+'P5.3.3':['PP','교육과 진료 제공에 웹 기반, 모바일 앱, 가상 방문, 착용형 기기 등 원격의료 기술 사용을 고려한다.'],
+'P5.3.1.1.1':['PP','11–14세부터 준비도 평가와 준비 안내를 위한 체크리스트를 쓰고 매 방문의 일부를 부모·보호자 없이 진행하여, 청소년과 가족이 성인 진료로의 이전을 준비하게 한다(Figure 55). (소아)'],
+'P5.3.1.1.2':['PP','받는 의료진에게 관련 의료 정보와 함께 청년의 인지 능력과 사회적 지지 정보를 포함한 포괄적인 서면 이전 요약을, 가능하면 구두 인계와 함께 제공한다(Figure 55). (소아)'],
+'P5.3.1.1.3':['PP','가능하면 의학적·사회적으로 안정된 시기에 청년을 성인 진료로 이전한다. (소아)'],
+'P5.3.1.2.1':['PP','25세 미만 CKD 청년은 부분적으로 뇌 성숙이 불완전하여 불량한 결과 위험이 높은 독특한 집단임을 인식한다.'],
+'P5.3.1.2.2':['PP','청년이 첫 예약 전에 이전될 성인 진료 클리닉을 비공식적으로 방문하도록 권장한다(Figure 55).'],
+'P5.3.1.2.3':['PP','같은 병기의 고령자보다 CKD 청년을 더 자주 평가하고, 당사자의 동의하에 적어도 소아 진료에서 이전한 뒤 1–3년 동안은 보호자나 중요한 타인을 진료에 포함한다(Figure 55).'],
+'P5.4.1':['PP','증상, 징후, 삶의 질, 선호, GFR 수준, 검사 이상을 종합 평가하여 투석을 시작한다.'],
+'P5.4.2':['PP','다음 상황 중 하나 이상이 분명하면 투석을 시작한다(Table 41). 이는 흔히, 그러나 항상은 아니게, GFR 5–10 ml/min/1.73 m² 범위에서 생긴다.'],
+'P5.4.3':['PP','성인에서 GFR이 &lt;15–20 ml/min/1.73 m²이거나 2년 KRT 위험이 &gt;40%이면 선제적 신장이식 및/또는 투석 접근로 계획을 고려한다.'],
+'P5.4.4':['PP','소아에서는 성인의 투석 적응증에 더해, 최적화된 영양·성장호르몬·약물 관리에도 불응하는 성장 부진이 KRT 시작의 적응증이다. (소아)'],
+'P5.4.5':['PP','진행성·비가역적 CKD의 증거가 있는 소아에게는 생체 또는 뇌사 공여자 선제적 신장이식을 선택 치료로 추구한다. 선제 이식을 시행할 eGFR은 소아의 나이와 크기, 신부전 진행 속도 등에 따라 다르지만 대개 5–15 ml/min/1.73 m²이다. (소아)'],
+'P5.5.1':['PP','CKD 환자에게 KRT와 포괄적 보존 치료의 선택지를 알린다.'],
+'P5.5.2':['PP','KRT를 선택하지 않는 사람에게 포괄적 보존 관리를 선택지로 지원한다.'],
+'P5.5.3':['PP','포괄적 보존 치료를 받는 사람을 포함하여 임종 돌봄 필요가 인정되는 사람에게 사전 돌봄 계획을 제공할 수 있는 자원에 접근할 수 있게 한다.']
+};
+
+const EXP = {
+'1.1':{t:'CKD의 발견과 평가', p:[
+'CKD는 3개월 넘게 지속되는 건강에 영향을 주는 신장 구조나 기능의 이상으로 정의하며 원인(C), GFR 범주(G), 알부민뇨 범주(A)로 분류한다(CGA). 진단과 병기에는 GFR과 ACR이 모두 필요하다. 위험인자가 있는 성인을 찾아 GFR과 ACR을 검사하고, GFR &lt;60 ml/min/1.73 m² 또는 ACR ≥30 mg/g이 3개월 지속되면(또는 만성의 증거가 있으면) CKD로 진단한다. AKI/AKD가 있으면 그 지침을 따른다(Figure 3).',
+'당뇨병에서는 ADA–KDIGO 합의에 따라 매년 선별하며, 제2형 당뇨병은 진단 시부터, 제1형 당뇨병은 진단 5년 후부터 시작한다. 반복 선별의 간격은 CKD 위험에 따라 정한다.',
+'#eGFRcr-cys의 우월성 (R 1.1.2.1)',
+'CKD-PC 협력 연구에서 72만 명 이상의 시스타틴 C 자료를 이용해 위험 격자의 eGFRcr을 eGFRcr-cys로 바꾸자, 특히 eGFR 45–59와 ACR &lt;10 mg/g 칸이 10개 결과 모두에서 더 높은 위험으로 이동해 “저위험(초록)”이 아니게 되었다. 크레아티닌과 무관한 8개 결과에서 eGFRcr은 eGFR &gt;105에서 위험이 다시 오르는 J자 관계를, eGFRcr-cys는 선형 관계를 보여 위험 병기 구분에 더 우수했다.',
+'#원인 평가와 신생검',
+'원인은 병력, 가족력(유전 원인 가능성), 사회·환경력, 신독성 약물, 진찰, 요로 이상과 전신질환의 증상·징후, 그리고 요검사와 요침사, ACR, 혈청 검사, 초음파, 신생검, 유전 검사로 밝힌다(Figure 8, Table 6). 신생검은 정확한 진단, 치료 계획, 활동성과 만성도 평가, 치료 반응 예측에 쓰이며 유전 질환 평가에도 쓸 수 있다.']},
+'1.2':{t:'GFR의 평가', p:[
+'초기 검사는 eGFRcr이다. eGFR이 정확하다고 판단되면 eGFRcr을 쓰고, 부정확할 것으로 보이거나 더 정확한 평가가 필요하면 시스타틴 C를 측정하여 eGFRcr-cys를 쓴다. 그래도 오차 가능성이 있거나 더 정확해야 하면 GFR을 측정한다(Figure 11). 근육량 감소나 크레아티닌 분비·신외 배설 감소처럼 크레아티닌 생성이 줄어든 건강한 사람에서는 eGFRcys가 더 나을 수 있다. 매우 낮은 근육량, 매우 높은 염증, 고이화 상태, 외인성 스테로이드는 eGFRcr-cys의 오차 원인이다.',
+'eGFRcr-cys는 북미·유럽 대규모 연구에서 측정 GFR의 30% 이내 비율(P30)이 약 90%로 최적이었고, 브라질, 콩고, 파키스탄, 싱가포르, 일본, 중국에서도 80–90%로 대부분의 결정에 적절했다. 같은 지역 안에서 같은 추정식을 쓰면 검사실마다 eGFR이 달라 생기는 혼란과 불필요한 반복 검사를 줄일 수 있다.',
+'#Table 9. eGFR 대 측정 GFR',
+'eGFR은 저렴하고 쉽게 반복할 수 있으며 현장검사도 가능하지만 모든 상황에서 충분히 정확하지 않고 GFR 변화보다 늦으며 비GFR 결정인자의 교란을 받는다. 측정 GFR은 비싸고 시간이 걸리며 침습적이고 일부 기관에서만 가능하지만 모든 상황과 GFR 범위에서 정확하고 초기 변화를 잡을 수 있다.',
+'#Table 11. 검사실 표준',
+'검증된 식으로 eGFR을 함께 보고하고, 성인은 1.73 m² 기준 정수로 보고하며, &lt;60 ml/min/1.73 m²는 낮음으로 표시한다. 크레아티닌(CV &lt;2.3%)과 시스타틴 C(CV &lt;2.0%)는 정밀하고 국제 표준에 소급되는 방법으로 측정하고, 가능하면 효소법 크레아티닌을 쓰며, 채혈 12시간 이내에 원심분리하고, 시스타틴 C를 측정할 때는 같은 검체에서 크레아티닌도 측정한다.']},
+'1.3':{t:'알부민뇨의 평가', p:[
+'알부민뇨 초기 검사는 아침 첫 중간뇨의 요 ACR이 가장 바람직하다. 시험지 양성은 정량 검사로 확인하고, 무작위 소변 ACR ≥30 mg/g은 아침 첫 소변으로 확인한다. 소아는 PCR과 ACR을 모두 측정하는 것이 가장 바람직하다.',
+'요 알부민·단백은 혈뇨, 월경, 운동, 감염(증가)과 비알부민 단백(시험지에서 놓침)의 영향을 받고, 요 크레아티닌은 성별(여성은 배설이 적어 ACR·PCR이 높게 나옴)과 체중 등의 영향을 받아(Table 16) 해석에 주의하고 필요하면 확인 검사를 한다. 검사실은 보고·처리 표준(Table 17)을 지키고 ACR 계산을 포함한 외부 정도관리에 참여하는 것이 바람직하다.']},
+'1.4':{t:'현장검사(POCT)', p:[
+'크레아티닌과 요 알부민 POCT는 조기 진단과 치료, 진행 감시, 빠른 결과, 저비용, 편의성의 이점이 있으나, 분석·진단 성능 유지와 관리 체계가 과제이며 검사실보다 덜 정확하여 오진, 오분류, 과잉·과소 치료로 이어질 수 있다. NICE/NIHR 체계적 문헌고찰(54개 연구)과 그 갱신을 근거로 검사실 접근이 제한되거나 진료 경로를 쉽게 할 때 사용을 제안한다. 알부민뇨 POCT는 크레아티닌도 측정해 ACR을 내야 하며 유의한 알부민뇨의 85%에서 양성을 내는지 평가한다.']},
+'2.1':{t:'CKD의 감시', p:[
+'GFR과 알부민뇨 위험 격자에 따라 감시 빈도를 정한다(Figure 13: 칸의 숫자는 연간 검사 횟수 안내). 예를 들어 G1–G2/A1은 선별 1회, G3a/A1은 1회, G3b/A2는 3회, G4/A3와 G5는 4회 이상이다.',
+'집중 강압 후 처음 3개월에 10–20%의 eGFR 감소가 흔하며 이는 혈역학적이고 대개 일시적이다. 따라서 &lt;20–30%의 급성 크레아티닌 상승(eGFR 감소)은 장기적 심신 보호 효과가 있는 약제의 변경 사유가 아니다. SGLT2i 시험의 사후 분석에서 초기 eGFR이 &gt;10% 감소한 사람도 장기 eGFR 경과와 신장 이득이 비슷했다. 다만 강압제, RASi, MRA, SGLT2i 시작 후 &gt;30% 감소는 다른 원인을 찾고 면밀히 감시해야 한다. 대규모 연구에서 2년 안에 ACR이 2배가 되면 신부전 위험이 50–100% 증가했다.']},
+'2.2':{t:'신부전 위험 예측', p:[
+'CKD 범주는 여러 위험 범위에 걸쳐 크게 겹치므로 개인의 절대 위험을 추정하는 외부 검증된 예측식(C-통계 &gt;0.8)이 개인화 진료, 전문 자원의 효율적 사용, 질병 조절 치료의 조기 사용, 치료 목표 논의에 도움이 된다(Table 19).',
+'KFRE(Kidney Failure Risk Equation)는 나이, 성별, eGFR, ACR의 4변수(± 칼슘, 인, 중탄산염, 알부민의 8변수)로 30개국 이상 100만 명 이상, 10만 건 이상의 사건에서 검증되었고 2–5년 치료 신부전 예측의 판별력이 0.88–0.91이다. KPNW, Landray 등, Z6 점수도 외부 검증되었다.',
+'#Figure 14의 위험 기준',
+'2년 KFRE 위험에 따른 임상 기준 예시: &gt;2% 신장내과 의뢰, &gt;10% 다학제 진료, 20–40% 투석 접근로·이식 준비. 40% eGFR 감소 위험에 따른 치료 강도 예시: &gt;1% 약물 최적화, &gt;5% 여러 약물 고려, &gt;10% 치료 극대화.']},
+'2.3':{t:'심혈관·사망 위험 예측', p:[
+'CKD는 심혈관 사건과 사망의 강력한 위험인자이므로, 예방 치료를 이끄는 심혈관 위험 예측에는 CKD 집단에서 개발되었거나 eGFR과 알부민뇨를 포함한 외부 검증 모델을 쓴다. 치료 목표 논의에는 CKD 집단에서 개발된 전체 사망 예측 모델을 쓴다.']},
+'3.1':{t:'CKD 치료와 위험 조절', p:[
+'포괄적 치료는 CKD 병태생리에 영향을 주어 질병 경과를 바꾸는 것을 목표로 한다. CKD 발현(증상과 징후, 혈압 등)의 예방·치료, 건강 관련 삶의 질·신체 기능·일과 사회생활 능력의 극대화, 빈혈·CKD-MBD·칼륨 이상·산증 같은 검사 이상의 감시와 치료, 그리고 신부전 진행과 심혈관질환·입원·통풍·감염 등 합병증 위험의 최소화를 포함한다(Figure 17).',
+'#Figure 18. 종합적 접근',
+'생활습관(건강한 식사, 신체활동, 금연, 체중 관리)을 바탕으로, 대부분 환자의 1차 약물은 SGLT2i(투석이나 이식까지 지속), 고혈압이 있으면 SBP &lt;120 mmHg 목표와 최대 내약 용량 RAS 억제제, 그리고 중등도 또는 고강도 스타틴 기반 치료이다. 합병증 표적 치료로 KDIGO 당뇨병 지침에 따른 혈당 관리(필요시 GLP-1 RA), 당뇨병과 적응증이 있으면 ns-MRA, 개별 혈압 목표를 위해 디히드로피리딘 CCB 및/또는 이뇨제, eGFR ≥45의 저항성 고혈압에 스테로이드 MRA, 임상적 ASCVD에 항혈소판제, ASCVD 위험과 지질에 따라 에제티미브·PCSK9 억제제를 쓰며, 빈혈, CKD-MBD, 산증, 칼륨 이상을 관리한다. 위험인자는 3–6개월마다 재평가한다.']},
+'3.2':{t:'생활습관', p:[
+'신체활동, 최적 BMI, 금연은 심혈관 건강과 연결된다. 집중적인 간호사 주도 프로그램은 금연에 효과적이며 니코틴 대체요법 등과 병용할 수 있다. 신체활동 권고(주 150분 중등도)는 KDIGO 2022 당뇨병·CKD 지침의 권고를 모든 CKD 성인으로 확장한 것이며, 나이, 민족 배경, 동반질환, 자원 접근성, 낙상 위험을 고려해 개별화한다.']},
+'3.3':{t:'식사', p:[
+'많은 사회에서 성인의 평균 단백질 섭취는 약 1.2 g/kg/일로 권장량보다 많다. 다른 질환이 없으면 CKD의 단백질 요구량은 건강인과 다르지 않으므로, WHO 일반인 권장량과 같은 0.8 g/kg/일 유지를 제안한다. 과잉 단백질은 저장되지 않고 분해되어 요소와 요독소로 축적된다. 단백질 그램과 음식 무게를 혼동하지 않도록 교육한다(고기 100 g에 단백질 약 25 g).',
+'전 세계 평균 나트륨 섭취는 하루 4310 mg(소금 10.78 g)으로 WHO 권고(나트륨 &lt;2 g, 소금 &lt;5 g)의 두 배를 넘는다. 상업 식품에 나트륨이 널리 쓰여 목표 달성이 어렵다. 나트륨 소실 신병증에서는 제한이 적절하지 않다.']},
+'3.4':{t:'혈압 조절', p:[
+'성인 SBP &lt;120 mmHg 목표는 KDIGO 2021 CKD 혈압 지침의 권고로, 표준화된 진료실 혈압 측정을 전제로 한다. 쇠약, 낙상·골절 고위험, 매우 제한된 기대여명, 증상성 기립성 저혈압에서는 덜 집중적인 목표를 고려한다. 소아는 ABPM의 24시간 MAP을 50백분위수 이하로, ABPM이 없으면 진료실 SBP 50–75백분위수를 목표로 한다.']},
+'3.6':{t:'레닌-안지오텐신계 억제제', p:[
+'작업반은 KDIGO 2021 혈압 지침과 2022 당뇨병 지침의 RASi 권고를 강조하되, 여러 권고는 고혈압이 없어도 적용된다고 보고 고혈압 요건을 제거하여 조정했다.',
+'#Figure 21. RASi 시작 후 감시',
+'ACEi나 ARB 시작·용량 변경 후 2–4주 이내에 크레아티닌과 칼륨을 확인한다. 정상 칼륨이고 eGFR 감소가 &lt;30%이면 증량하거나 최대 내약 용량을 유지한다. 고칼륨혈증이면 병용 약물 검토, 식이 칼륨 조절, 이뇨제·중탄산나트륨·칼륨 결합제를 고려한다. eGFR ≥30% 감소면 AKI 원인 검토, 체액 결핍 교정, 병용 약물(이뇨제, NSAID) 재평가, 신동맥 협착을 고려한다. 완화 전략이 효과가 없을 때만 감량하거나 중단한다.']},
+'3.7':{t:'SGLT2 억제제', p:[
+'여러 대규모 위약 대조 시험에서 SGLT2i는 CKD 유무와 관계없이 신부전, AKI, 심부전 입원 위험을 크게, 심혈관 사망과 심근경색 위험을 중등도로 줄였으며, 이 이득은 당뇨병 여부, 신장질환 원인, GFR 수준과 무관했다. EMPA-KIDNEY와 DAPA-CKD를 포함한 13개 시험(약 9만 명) 메타분석에서 SGLT2i는 당뇨병 여부와 무관하게 신장질환 진행 위험을 37%, AKI 위험을 23% 줄였고, 심혈관 사망 또는 심부전 입원을 23% 줄였으며, MACE를 약 10% 줄였다.',
+'KDIGO 2022 당뇨병 지침의 T2D 권고(1A)에 더해, 이번 지침은 CKD 성인 전반에 대한 1A 권고를 새로 제시했다. 신부전, 심혈관 사망, 심부전 위험 감소와 대규모 시험의 큰 상대위험 감소, AKI·심부전·심근경색·입원 위험 감소, 그리고 절대 이득이 절대 위해보다 큰 점을 높이 평가했다.']},
+'3.8':{t:'무기질코르티코이드 수용체 길항제', p:[
+'FIDELIO-DKD와 FIGARO-DKD 및 통합 분석(FIDELITY)에서 ns-MRA finerenone은 CKD와 T2D에서 심혈관 위험을 줄였고(HR 0.86), 이는 주로 심부전 입원 22% 감소(HR 0.78)에 의한 것이며 뇌졸중에는 뚜렷한 효과가 없었다. 참여자는 eGFR ≥25 ml/min/1.73 m²였다. FIDELITY에서 고칼륨혈증으로 인한 영구 중단은 1.7% 대 0.6%였고, 중증 고칼륨혈증 입원의 초과 위험은 3년간 &lt;1%였으며 중증 AKI 초과는 없었다.',
+'#Figure 26. finerenone 칼륨 감시',
+'K⁺ ≤4.8 mmol/l: finerenone 시작(eGFR 25–59는 10 mg, ≥60은 20 mg 1일 1회), 1개월 후와 이후 4개월마다 K⁺ 확인, 10 mg이면 20 mg으로 증량, 고칼륨혈증으로 중단했다가 K⁺ ≤5.0이면 10 mg으로 재시작. K⁺ 4.9–5.5: 10 mg 또는 20 mg 지속, 4개월마다 확인. K⁺ &gt;5.5: 중단, 식이와 병용 약물 조정, 재확인, K⁺ ≤5.0이면 재시작 고려. 작업반은 이 기준이 보수적이라 보며 K⁺ 5.5–6.0에서 MRA를 계속하는 것도 적절할 수 있다고 본다. FDA는 K⁺ &lt;5.0에서 시작을 승인했다.']},
+'3.9':{t:'GLP-1 수용체 작용제', p:['KDIGO 2022 당뇨병·CKD 지침의 핵심 권고와 실천 지침을 강조한 것이다. 메트포르민과 SGLT2i로 혈당 목표에 도달하지 못하거나 이를 쓸 수 없으면 심혈관 이득이 입증된 장기작용 GLP-1 RA를 쓴다.']},
+'3.10':{t:'대사성 산증', p:['혈청 중탄산염은 eGFR이 60 ml/min/1.73 m² 아래로 떨어지면 점차 감소한다. 대규모 RCT 근거가 부족하여 이번에는 등급화된 권고를 제시하지 않았다(2012 지침은 2B였다). 치료 시 중탄산염이 정상 상한을 넘지 않고 혈압, 칼륨, 체액 상태를 악화시키지 않도록 감시한다.']},
+'3.11':{t:'고칼륨혈증', p:[
+'칼륨 측정은 일중·계절 변동, 혈장 대 혈청 검체, 약물의 영향을 받는다.',
+'#Figure 32. 고칼륨혈증(K⁺ &gt;5.5 mmol/l) 관리',
+'1단계 교정 가능한 요인: RASi 외 약물(NSAID, trimethoprim 등) 검토, 식이 칼륨 평가(영양사 의뢰)와 적절한 조절. 2단계 약물: 이뇨제 적절 사용, 혈청 중탄산염 최적화, 승인된 칼륨 교환제. 3단계 최후 수단: RASi/MRA 감량 또는 중단(중단은 심혈관 사건 증가와 관련되므로 상태가 허락하면 나중에 재검토·재시작).',
+'#식이',
+'식물성 식품은 칼륨 흡수율이 50–60%이고 알칼리화 효과와 탄수화물이 칼륨의 세포 내 이동을 도와 혈청 칼륨 영향이 적다. 동물성 식품은 70–90%, 칼륨염이 첨가된 가공식품은 약 90%이다(Figure 33). 따라서 교육은 식물성 식품보다 고도 가공식품 제한에 초점을 두어야 한다. 끓는 물에 5–10분 담그면 일부 식품의 칼륨을 절반으로 줄일 수 있다.']},
+'3.14':{t:'고요산혈증', p:[
+'미국류마티스학회 체계적 문헌고찰은 결절성 통풍, 방사선 손상, 잦은 발작에서 요산 강하의 강한 근거를 보였다. ERT 검토에서 CKD의 요산 강하는 피부 반응·과민반응(RR 1.00)이나 간독성(RR 0.92)을 늘리지 않았고 심혈관 사건과 사망에도 영향이 없었다. ALL-HEART(5721명)에서도 allopurinol은 심혈관 위험을 바꾸지 않았다.',
+'무증상 고요산혈증에서는 관찰연구가 요산과 CKD 진행의 관련을 시사하지만 인과관계가 입증되지 않았다. Cochrane(12개 RCT, 1187명)과 이후 대규모 음성 RCT 3개를 포함한 근거는 진행 억제 이득을 보이지 않아, 약물 부담을 고려해 요산 강하제를 쓰지 않을 것을 제안한다.']},
+'3.15':{t:'심혈관질환과 추가 위험 감소', p:[
+'#지질',
+'콜레스테롤 치료 연구자(CTT) 메타분석에서 스타틴은 경미한 근육통을 약간 늘릴 뿐이며 근육 증상 보고의 90% 이상은 스타틴 때문이 아니었다. SHARP에서 집중 스타틴 기반 요법은 안전했고 심각한 비혈관 위해가 없었다. LDL 1.0 mmol/l 감소당 주요 혈관 사건의 상대위험 감소는 eGFR이 낮을수록 작아지므로, LDL의 절대 감소를 극대화하는 요법을 선택한다.',
+'#관상동맥질환',
+'안정형 허혈성 심질환에서 침습적 전략의 이득은 협심증이 있는 사람에 국한될 수 있다. ISCHEMIA-CKD는 검정력 부족 등으로 해석에 주의가 필요하며, CKD-MBD와 관상동맥 석회화로 미세혈관 질환이 흔하고 재관류술이 기술적으로 어렵다. 침습적 전략의 위해로 투석 시작, 사망, 뇌졸중 위험이 있다.']},
+'3.16':{t:'심방세동', p:[
+'NOAC 42,411명과 와파린 29,272명의 4개 3상 시험 메타분석(2014)에서 NOAC은 뇌졸중·전신 색전을 19% 줄였고(RR 0.81), 이는 주로 출혈성 뇌졸중 감소(RR 0.49)에 의했다. CrCl &lt;50 ml/min에서도 상대 이득이 일관되었다. CKD 하위군만 본 7개 시험 메타분석(2021)에서도 19% 감소(HR 0.81)였다. 시험은 대부분 CKD G4–G5를 제외했고, 투석 환자 자료는 관찰연구뿐이다.',
+'#Figure 40. 진단과 관리',
+'1단계 진단: 혈압 측정 때 맥박으로 기회 선별, 불규칙하면 12유도 심전도, 진단되지 않으면 환자 작동형·착용형 기기나 Holter. 2단계 뇌졸중·전신 색전 예방: CHA₂DS₂-VASc 0–1점이라도 위험이 높을 가능성이 커 경구 항응고(CKD 용량 조정) 고려, HAS-BLED 등으로 교정 가능한 출혈 위험인자 관리. 3단계 심박수·리듬 조절: 가역 원인 고려, 안정 시 약 90회/분 미만으로 심박수 조절, 충분한 조절에도 증상이 지속되면 심율동전환, 항부정맥제, 도자절제술.']},
+'4.1':{t:'약물 선택과 안전 감시', p:['CKD 환자는 신독성에 더 취약하므로 처방 시 이득과 위해를 비교하고, 치료 범위가 좁거나 신독성이 있는 약물은 eGFR, 전해질, 약물 농도를 감시한다. 일반의약품, 식이 보충제, 한약 중 신독성이 보고된 것이 많아 사용을 검토하고 제한한다(Figure 45). 가임 가능한 환자에게는 기형 유발 가능성을 검토하고 생식·피임 상담을 제공한다.']},
+'4.2':{t:'GFR에 따른 용량 조정', p:['대부분은 SCr 기반 검증 eGFR로 용량을 정할 수 있다. 치료 범위가 좁거나 eGFRcr이 신뢰하기 어려우면 eGFRcr-cys나 측정 GFR을 쓰고, 극단적 체중에서는 BSA로 보정하지 않은 eGFR(ml/min)을 고려하며, GFR이 정상 상태가 아니면 용량을 조정한다.']},
+'4.3':{t:'다약제 사용과 약물 관리', p:[
+'약물 검토는 용량·간격 변경과 NSAID 중단을 가장 흔히 포함하며 부적절한 약물과 약물 관련 문제를 줄인다. 이상반응을 새 질환으로 오인해 약을 추가하는 “처방 연쇄”(예: CCB 부종에 이뇨제 추가 후 저칼륨혈증)에 유의한다.',
+'#병가 규칙(sick day rules)',
+'탈수성 급성 질환 때 설폰요소제, ACEi, 이뇨제·직접 레닌 억제제, 메트포르민, ARB, NSAID, SGLT2i(SADMANS)를 일시 중단하도록 안내한다. 그러나 AKI 예방 근거는 부족하고, 탈수 질환 인식이나 중단·재개 약물을 잘못 판단하면 위해가 생길 수 있다. 가장 흔한 문제는 재개 실패이므로 재개 계획을 의무기록에 남기고 명확히 전달하며, 1개월 이내 약물 검토가 도움이 될 수 있다(Figure 47: 아픔 → 탈수성 질환 인지 → 중단할 약 목록 기억 → 약 중단 → 회복 후 재개).',
+'#수술 전 중단',
+'수술 전 RASi 보류는 다양한 수술·시술에서 주술기 저혈압 위험 감소와 일관되게 관련된다. SGLT2i는 예정 수술 최소 3–4일 전 보류가 권고된다. 이상반응 후 RASi를 영구 중단하는 경우가 많은데, 관찰연구에서 이는 이상반응 재발은 적지만 MACE와 사망 위험 증가와 관련되었다.']},
+'4.4':{t:'영상 검사', p:['영상 검사 적응증은 일반 인구와 같게 고려하고 위험·이득은 개별적으로 판단한다. 동맥 내 조영제를 쓰는 심장 시술은 검증된 도구로 AKI 위험을 평가하고, 정맥 조영제는 영상의학회 합의문에 따른다. G4–G5에서 가돌리늄이 필요하면 ACR group II·III 제제를 쓴다.']},
+'5.1':{t:'신장 전문 진료 의뢰', p:[
+'#Figure 48. 성인 의뢰 상황',
+'원인: 원인 불확실, 유전성 신장질환, 재발성 광범위 신결석 → 추가 평가와 진단에 따른 전문 관리. eGFR/KRT 위험: 검증된 위험식으로 5년 KRT 위험 &gt;3–5%, eGFR &lt;30 ml/min/1.73 m², GFR의 지속적 &gt;20% 감소(혈역학적 치료 시작 시 &gt;30%) → KRT 계획과 준비. 알부민뇨와 현미경적 혈뇨: 지속적 유의 알부민뇨(ACR ≥300 mg/g, AER ≥300 mg/24h, PCR ≥500 mg/g, PER ≥500 mg/24h)와 혈뇨 동반, 감시 중 알부민뇨 2배 이상 증가, ACR &gt;700 mg/g 지속, 요 적혈구 원주 또는 설명되지 않는 RBC &gt;20/HPF 지속 → 추가 평가와 관리. 기타: 4제 이상에도 불응하는 고혈압, 지속적 칼륨 이상, 산증, 빈혈, 골질환, 영양실조 → CKD 합병증 관리.']},
+'5.2':{t:'증상과 영양', p:['CKD는 과소 인식·진단·치료되는 요독 증상 부담이 크며, 이는 사회적 관계, 경제적 안정, 안녕을 해쳐 건강 관련 삶의 질을 떨어뜨린다. 환자들은 흔히 삶의 질과 증상 같은 환자 보고 결과를 임상 결과보다 중요하게 여긴다. 매 진료에서 검증 도구로 요독 증상을 묻고, 고위험군은 연 2회 영양실조를 선별한다.']},
+'5.3':{t:'진료 모델', p:['CKD 중증도가 높아질수록 진료 모델의 강도를 높인다(Figure 50). 다학제 팀은 식이 상담, 약물 관리, 교육, KRT·이식·투석 접근로 상담, 윤리·심리·사회 돌봄을 포함한다. 교육에는 돌봄 제공자를 포함하고 원격의료 기술을 활용한다. 소아에서 성인 진료로의 이전은 11–14세부터 준비하고, 25세 미만 청년은 더 자주 평가한다(Figure 55).']},
+'5.4':{t:'투석 시작 시점', p:[
+'#Table 41. 투석 시작 적응증',
+'신부전에 의한 증상이나 징후(요독에 의한 신경 증상, 심낭염, 식욕부진, 약물에 저항하는 산-염기·전해질 이상, 난치성 소양증, 장막염) · 체액량이나 혈압을 조절할 수 없음 · 식이 중재에 불응하는 영양 상태의 진행성 악화 또는 인지 장애.',
+'성인은 GFR &lt;15–20 ml/min/1.73 m² 또는 2년 KRT 위험 &gt;40%에서 선제 이식과 투석 접근로를 계획한다. 소아는 성장 부진도 적응증이며 선제 이식이 선택 치료이다.']},
+'5.5':{t:'지지 치료와 포괄적 보존 관리', p:['KRT와 포괄적 보존 치료의 선택지를 알리고, KRT를 원하지 않는 사람의 보존 관리를 지원하며, 임종 돌봄이 필요한 사람에게 사전 돌봄 계획 자원을 제공한다. 신장 지지 치료는 삶의 질 최적화와 고통 완화를 강조하며, 포괄적 보존 치료를 받는 사람과 임종 돌봄으로 넘어가는 사람 모두에게 이 강조가 있어야 한다(Figure 56).']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const GRID = [
+ ['G1','정상 또는 높음','≥90',[['rk0','선별 1'],['rk1','치료 1'],['rk2','치료 3']]],
+ ['G2','경도 감소','60–89',[['rk0','선별 1'],['rk1','치료 1'],['rk2','치료 3']]],
+ ['G3a','경도–중등도 감소','45–59',[['rk1','치료 1'],['rk2','치료 2'],['rk3','치료 3']]],
+ ['G3b','중등도–고도 감소','30–44',[['rk2','치료 2'],['rk3','치료 3'],['rk3','치료 3']]],
+ ['G4','고도 감소','15–29',[['rk3','치료* 3'],['rk3','치료* 3'],['rk4','치료 4+']]],
+ ['G5','신부전','&lt;15',[['rk4','치료 4+'],['rk4','치료 4+'],['rk4','치료 4+']]]
+];
+const gridNodes = () => {
+  const n = [{id:'gr_hd', x:10, y:10, w:300, h:55, label:'CGA 분류<small>원인(C) · GFR(G) · 알부민뇨(A)</small>', cls:'fac'}];
+  [['A1','정상–경도 증가 · &lt;30 mg/g'],['A2','중등도 증가 · 30–299 mg/g'],['A3','고도 증가 · ≥300 mg/g']].forEach(([a,s],j)=>n.push({id:`gr_a${j}`, x:320+j*145, y:10, w:140, h:55, label:`${a}<small>${s}</small>`, cls:'test fac'}));
+  GRID.forEach(([g,d,r,cells],i)=>{
+    const y = 75 + i*60;
+    n.push({id:`gr_g${i}`, x:10, y, w:300, h:54, label:`${g} · ${d}<small>${r} ml/min/1.73 m²</small>`, cls:'test fac'});
+    cells.forEach(([c,t],j)=>n.push({id:`gr_c${i}_${j}`, x:320+j*145, y, w:140, h:54, label:t, cls:c}));
+  });
+  return n;
+};
+
+const CHARTS = {
+scr:{tab:'선별·진단', fig:'Figure 3', aria:'성인 CKD 진단과 병기의 선별 알고리즘', w:760, h:630, nodes:[
+ {id:'s_id', x:230,y:10, w:300,h:45, label:'CKD 위험이 있는 성인 확인',cls:'ben'},
+ {id:'s_t1', x:180,y:85, w:400,h:45, label:'GFR*과 ACR ± 다른 신손상 표지자† 검사',cls:'test'},
+ {id:'s_ab', x:180,y:160,w:400,h:55, label:'GFR &lt;60 또는 ACR ≥30 mg/g 및/또는 다른 신손상 표지자 있음',cls:'test'},
+ {id:'s_t2', x:180,y:245,w:400,h:45, label:'시행하지 않았다면 GFR·ACR 검사 · AKI/AKD 배제',cls:'test'},
+ {id:'s_ckd',x:10, y:330,w:250,h:80, label:'GFR &lt;60 및/또는 ACR ≥30 mg/g 3개월 후<small>만성의 증거가 있으면 더 일찍</small>',cls:'mal fac'},
+ {id:'s_aki',x:290,y:330,w:180,h:60, label:'AKI/AKD 있음<small>AKI/AKD 지침을 따름</small>',cls:'fac'},
+ {id:'s_no', x:500,y:330,w:250,h:80, label:'GFR ≥60, ACR &lt;30 mg/g<small>다른 신손상 표지자 없음</small>',cls:'ben fac'},
+ {id:'s_cys',x:10, y:440,w:250,h:55, label:'가능하면 eGFRcr-cys 측정',cls:'test'},
+ {id:'s_stg',x:10, y:525,w:250,h:95, label:'GFR·ACR로 병기 결정<small>원인 규명 · 진행 위험 추정 · 치료 시작</small>',cls:'tx fac'},
+ {id:'s_nk', x:500,y:440,w:250,h:80, label:'CKD 없음<small>진행 위험 등 개인 특성에 따라 재검 시점 결정</small>',cls:'ben fac'}],
+ edges:[[A(380,55,380,85),1],[A(380,130,380,160),1],[A(380,215,380,245),1],['M380 290 V310 H135 V330',1],[A(380,310,380,330),1],['M380 310 H625 V330',1],
+  [A(135,410,135,440),1],[A(135,495,135,525),1],[A(625,410,625,440),1],['M750 480 H756 V32 H530',1]],
+ labels:[]},
+
+grid:{tab:'위험도·감시 빈도', fig:'Figure 13', aria:'GFR과 알부민뇨 범주별 위험과 연간 감시 횟수', w:760, h:470, nodes:gridNodes(), edges:[],
+ labels:[[10,455,'칸의 숫자: 연간 GFR·알부민뇨 감시 횟수 · 초록 저위험 · 노랑 중등도 위험 증가 · 주황 고위험 · 빨강·진한 빨강 매우 고위험']]},
+
+gfr:{tab:'GFR 평가', fig:'Figure 11', aria:'초기·보조 검사를 이용한 GFR 평가 접근', w:760, h:490, nodes:[
+ {id:'g_in', x:230,y:10, w:300,h:40, label:'초기 검사: eGFRcr*',cls:'test'},
+ {id:'g_q1', x:180,y:75, w:400,h:60, label:'오차 원인과 더 정확한 평가의 필요성 고려<small>eGFR이 정확하다고 보는가?</small>',cls:'test fac'},
+ {id:'g_cr', x:60, y:175,w:200,h:45, label:'eGFRcr 사용',cls:'ben'},
+ {id:'g_cy', x:500,y:175,w:200,h:45, label:'시스타틴 C 측정',cls:'test'},
+ {id:'g_q2', x:330,y:250,w:420,h:65, label:'eGFRcr-cys의 오차 원인과 더 정확한 평가의 필요성 고려†<small>더 정확한 평가가 필요한가?</small>',cls:'test fac'},
+ {id:'g_cc', x:330,y:345,w:200,h:50, label:'eGFRcr-cys 사용‡',cls:'ben'},
+ {id:'g_m',  x:550,y:345,w:200,h:50, label:'GFR 측정',cls:'tx'},
+ {id:'g_ev', x:10, y:430,w:740,h:50, label:'임상 적용을 위한 GFR 평가',cls:'fac'}],
+ edges:[[A(380,50,380,75),1],['M380 135 V155 H160 V175',1],['M380 155 H600 V175',1],[A(600,220,600,250),1],['M540 315 V330 H430 V345',1],['M540 330 H650 V345',1],
+  ['M60 197 H30 V430',1],[A(430,395,430,430),1],[A(650,395,650,430),1]],
+ labels:[[300,150,'Yes'],[440,150,'No'],[470,327,'No'],[600,327,'Yes']]},
+
+tx:{tab:'종합 치료', fig:'Figure 18', aria:'CKD 치료와 위험 조절의 종합적 접근', w:760, h:525, nodes:[
+ {id:'t_life',x:10, y:10, w:600,h:55, label:'생활습관<small>건강한 식사 · 신체활동 · 금연 · 체중 관리</small>',cls:'ben fac'},
+ {id:'t_re',  x:620,y:10, w:130,h:55, label:'위험인자 재평가<small>3–6개월마다</small>',cls:'test fac'},
+ {id:'t_sg',  x:10, y:95, w:200,h:80, label:'SGLT2i<small>투석 또는 이식까지 지속</small>',cls:'tx fac'},
+ {id:'t_ras', x:230,y:95, w:260,h:80, label:'SBP &lt;120 mmHg 목표<small>고혈압이면 최대 내약 용량의 RAS 억제제*</small>',cls:'tx fac'},
+ {id:'t_st',  x:510,y:95, w:240,h:80, label:'스타틴 기반 치료<small>중등도 또는 고강도 스타틴</small>',cls:'tx fac'},
+ {id:'t_gl',  x:10, y:215,w:200,h:95, label:'혈당 관리<small>KDIGO 당뇨병 지침 · 적응 시 GLP-1 RA</small>',cls:'tx fac'},
+ {id:'t_mra', x:230,y:215,w:125,h:95, label:'ns-MRA<small>당뇨병 + 적응증</small>',cls:'tx fac'},
+ {id:'t_ccb', x:365,y:215,w:125,h:95, label:'DHP CCB·이뇨제<small>개별 혈압 목표</small>',cls:'tx fac'},
+ {id:'t_ap',  x:510,y:215,w:115,h:95, label:'항혈소판제<small>임상적 ASCVD</small>',cls:'tx fac'},
+ {id:'t_cx',  x:635,y:215,w:115,h:95, label:'빈혈·MBD<br>산증·칼륨 관리',cls:'fac'},
+ {id:'t_sm',  x:365,y:340,w:125,h:80, label:'스테로이드 MRA<small>저항성 고혈압, eGFR ≥45</small>',cls:'tx fac'},
+ {id:'t_ez',  x:510,y:340,w:115,h:80, label:'에제티미브·PCSK9i<small>ASCVD 위험·지질</small>',cls:'tx fac'},
+ {id:'t_af',  x:510,y:445,w:240,h:70, label:'ASCVD·심방세동<small>CKD 없는 사람과 같은 원칙으로 진단·관리</small>',cls:'fac'}],
+ edges:[[A(110,175,110,215),1],['M360 175 V195 H292 V215',1],['M360 195 H427 V215',1],[A(427,310,427,340),1],[A(567,175,567,215),1],[A(567,310,567,340),1],[A(567,420,567,445),1]],
+ labels:[[10,88,'1차 약물'],[10,208,'표적 치료'],[432,202,'혈압']]},
+
+ras:{tab:'RASi·MRA 감시', fig:'Figure 21·26', aria:'RASi 시작 후와 finerenone 사용 중 칼륨·eGFR 감시', w:760, h:495, nodes:[
+ {id:'r_in', x:130,y:10, w:220,h:40, label:'ACEi 또는 ARB 시작',cls:'tx'},
+ {id:'r_mo', x:40, y:75, w:400,h:55, label:'혈청 크레아티닌·칼륨 감시<small>시작 또는 용량 변경 후 2–4주 이내</small>',cls:'test fac'},
+ {id:'r_nk', x:10, y:160,w:140,h:40, label:'정상 칼륨',cls:'ben'},
+ {id:'r_hk', x:170,y:160,w:140,h:40, label:'고칼륨혈증',cls:'mal'},
+ {id:'r_dc', x:330,y:160,w:150,h:55, label:'eGFR ≥30% 감소',cls:'mal'},
+ {id:'r_lt', x:10, y:225,w:140,h:45, label:'eGFR 감소 &lt;30%',cls:'ben'},
+ {id:'r_up', x:10, y:300,w:140,h:95, label:'증량 또는 최대 내약 용량 유지',cls:'tx'},
+ {id:'r_hm', x:165,y:240,w:150,h:165,label:'고칼륨혈증 조치<small>병용 약물 검토 · 식이 칼륨 조절 · 이뇨제 · 중탄산나트륨 · 칼륨 결합제 고려</small>',cls:'fac'},
+ {id:'r_ak', x:330,y:240,w:150,h:165,label:'AKI 원인 검토<small>체액 결핍 교정 · 병용 약물(이뇨제, NSAID) 재평가 · 신동맥 협착 고려</small>',cls:'fac'},
+ {id:'r_rd', x:165,y:430,w:315,h:55, label:'완화 전략이 효과 없으면 ACEi·ARB 감량 또는 중단',cls:'mal'},
+ {id:'f_h',  x:500,y:10, w:250,h:40, label:'finerenone 칼륨 감시',cls:'test'},
+ {id:'f_1',  x:500,y:65, w:250,h:155,label:'K⁺ ≤4.8 mmol/l<small>시작: eGFR 25–59 10 mg, ≥60 20 mg · 1개월 후, 이후 4개월마다 K⁺ · 10 mg이면 20 mg 증량 · 고칼륨으로 중단 후 K⁺ ≤5.0이면 10 mg 재시작</small>',cls:'ben fac'},
+ {id:'f_2',  x:500,y:235,w:250,h:80, label:'K⁺ 4.9–5.5 mmol/l<small>10 mg 또는 20 mg 지속 · 4개월마다 K⁺</small>',cls:'fac'},
+ {id:'f_3',  x:500,y:330,w:250,h:110,label:'K⁺ &gt;5.5 mmol/l<small>중단 · 식이·병용 약물 조정 · K⁺ 재확인 · K⁺ ≤5.0이면 재시작 고려</small>',cls:'mal fac'}],
+ edges:[[A(240,50,240,75),1],['M240 130 V145 H80 V160',1],[A(240,145,240,160),1],['M240 145 H405 V160',1],[A(80,200,80,225),1],[A(80,270,80,300),1],
+  [A(240,200,240,240),1],[A(405,215,405,240),1],[A(240,405,240,430),1],[A(405,405,405,430),1],['M10 347 H4 V102 H40',1],['M480 457 H490 V102 H440',1],
+  [A(625,50,625,65),1]],
+ labels:[]},
+
+k:{tab:'고칼륨혈증', fig:'Figure 32·33', aria:'CKD 고칼륨혈증 관리', w:760, h:560, nodes:[
+ {id:'k_h', x:10, y:10, w:740,h:45, label:'고칼륨혈증(K⁺ &gt;5.5 mmol/l) 관리',cls:'mal'},
+ {id:'k_1', x:10, y:80, w:740,h:75, label:'1단계: 교정 가능한 요인<small>RASi 외 약물(NSAID, trimethoprim 등) 검토 · 식이 칼륨 평가(영양사 의뢰)와 적절한 조절</small>',cls:'fac'},
+ {id:'k_2', x:10, y:180,w:740,h:75, label:'2단계: 약물<small>이뇨제 적절 사용 · 혈청 중탄산염 최적화 · 승인된 칼륨 교환제</small>',cls:'tx fac'},
+ {id:'k_3', x:10, y:280,w:740,h:75, label:'3단계: 최후 수단<small>RASi/MRA 감량 또는 중단 — 심혈관 사건 증가와 관련 · 상태가 허락하면 재검토·재시작</small>',cls:'mal fac'},
+ {id:'k_f1',x:10, y:385,w:240,h:90, label:'식물성 식품<small>흡수율 50–60% · 알칼리화 효과</small>',cls:'ben fac'},
+ {id:'k_f2',x:260,y:385,w:240,h:90, label:'동물성 식품<small>흡수율 70–90%</small>',cls:'fac'},
+ {id:'k_f3',x:510,y:385,w:240,h:90, label:'가공식품<small>칼륨염 첨가 · 흡수율 약 90%</small>',cls:'mal fac'},
+ {id:'k_m', x:10, y:500,w:740,h:50, label:'칼륨 측정 변동 인지<small>일중·계절 변동 · 혈장 대 혈청 · 약물</small>',cls:'test fac'}],
+ edges:[[A(380,55,380,80),1],[A(380,155,380,180),1],[A(380,255,380,280),1]],
+ labels:[[10,378,'식품별 칼륨 흡수율 (Figure 33)']]},
+
+af:{tab:'심방세동', fig:'Figure 40·44', aria:'CKD 심방세동의 진단과 관리', w:760, h:400, nodes:[
+ {id:'a_1', x:10, y:10, w:740,h:80, label:'1단계 진단<small>혈압 측정 때 맥박으로 기회 선별 → 불규칙하면 12유도 심전도 · 증상이 의심되나 심전도가 진단적이지 않으면 환자 작동형·착용형 기기 또는 Holter</small>',cls:'test fac'},
+ {id:'a_2', x:10, y:110,w:740,h:80, label:'2단계 뇌졸중·전신 색전 예방<small>경구 항응고 고려(CHA₂DS₂-VASc 0–1점이라도 고위험 가능) · HAS-BLED 등으로 교정 가능한 출혈 위험인자 관리</small>',cls:'tx fac'},
+ {id:'a_no',x:10, y:210,w:365,h:80, label:'NOAC 우선 (G1–G4)<small>와파린보다 우선 · GFR에 따른 용량 조정 · G4–G5 주의</small>',cls:'tx fac'},
+ {id:'a_st',x:385,y:210,w:365,h:80, label:'시술 전 NOAC 중단 기간<small>출혈 위험 · 약제 · GFR(CrCl) 고려 (Figure 44)</small>',cls:'fac'},
+ {id:'a_3', x:10, y:310,w:740,h:80, label:'3단계 심박수·리듬 조절<small>가역 원인 고려 · 안정 시 약 90회/분 미만 · 충분한 조절에도 증상 지속 시 심율동전환·항부정맥제·도자절제술</small>',cls:'fac'}],
+ edges:[[A(380,90,380,110),1],[A(192,190,192,210),1],[A(567,190,567,210),1],[A(192,290,192,310),1]],
+ labels:[]},
+
+ref:{tab:'의뢰·신대체요법', fig:'Figure 48·Table 41', aria:'신장 전문 진료 의뢰와 신대체요법 준비', w:760, h:675, nodes:[
+ {id:'f_dx', x:10, y:180,w:120,h:45, label:'CKD 진단',cls:'fac'},
+ {id:'c_ca', x:150,y:10, w:130,h:50, label:'원인',cls:'test'},
+ {id:'c_rk', x:150,y:120,w:130,h:50, label:'eGFR·KRT 위험',cls:'test'},
+ {id:'c_al', x:150,y:240,w:130,h:60, label:'알부민뇨·현미경적 혈뇨',cls:'test'},
+ {id:'c_ot', x:150,y:380,w:130,h:50, label:'기타',cls:'test'},
+ {id:'e_ca', x:295,y:10, w:290,h:80, label:'원인 불확실 · 유전성 신장질환 · 재발성 광범위 신결석',cls:'fac'},
+ {id:'e_rk', x:295,y:105,w:290,h:95, label:'5년 KRT 위험 &gt;3–5% · eGFR &lt;30 · GFR 지속 &gt;20% 감소(혈역학적 치료 시작 시 &gt;30%)',cls:'mal fac'},
+ {id:'e_al', x:295,y:215,w:290,h:140,label:'ACR ≥300 mg/g + 혈뇨 · 감시 중 알부민뇨 2배 이상 증가 · ACR &gt;700 mg/g 지속 · 적혈구 원주 또는 RBC &gt;20/HPF',cls:'mal fac'},
+ {id:'e_ot', x:295,y:370,w:290,h:95, label:'불응성 고혈압(≥4제) · 지속적 칼륨 이상 · 산증 · 빈혈 · 골질환 · 영양실조',cls:'mal fac'},
+ {id:'x_ca', x:600,y:20, w:150,h:60, label:'추가 평가·진단별 전문 관리',cls:'tx'},
+ {id:'x_rk', x:600,y:120,w:150,h:60, label:'KRT 계획과 준비',cls:'tx'},
+ {id:'x_al', x:600,y:255,w:150,h:60, label:'추가 평가와 관리',cls:'tx'},
+ {id:'x_ot', x:600,y:385,w:150,h:60, label:'CKD 합병증 관리',cls:'tx'},
+ {id:'t_rf', x:10, y:495,w:240,h:75, label:'5년 신부전 위험 3–5%<small>신장내과 의뢰 판단</small>',cls:'test fac'},
+ {id:'t_md', x:260,y:495,w:240,h:75, label:'2년 신부전 위험 &gt;10%<small>다학제 진료 시점</small>',cls:'test fac'},
+ {id:'t_kr', x:510,y:495,w:240,h:75, label:'2년 위험 &gt;40% 또는 GFR &lt;15–20<small>KRT 교육·준비 · 접근로 · 선제 이식</small>',cls:'test fac'},
+ {id:'t_di', x:10, y:590,w:490,h:75, label:'투석 시작<small>증상·징후·삶의 질·선호·GFR·검사 종합 · 흔히 GFR 5–10 · Table 41</small>',cls:'mal fac'},
+ {id:'t_cc', x:510,y:590,w:240,h:75, label:'포괄적 보존 관리<small>KRT 선택지 안내 · 사전 돌봄 계획</small>',cls:'ben fac'}],
+ edges:[['M130 202 H140',0],['M140 35 V405',0],[A(140,35,150,35),1],[A(140,145,150,145),1],[A(140,270,150,270),1],[A(140,405,150,405),1],
+  [A(280,35,295,35),1],[A(280,145,295,145),1],[A(280,270,295,270),1],[A(280,405,295,405),1],
+  [A(585,50,600,50),1],[A(585,150,600,150),1],[A(585,285,600,285),1],[A(585,415,600,415),1],
+  [A(130,570,130,590),1],[A(380,570,380,590),1],[A(630,570,630,590),1]],
+ labels:[[10,488,'위험 예측식 기준 (Chapter 2) → 진료 단계']]}
+};
+
+const EXPMAP = Object.fromEntries(Object.keys(REC).map(k=>[k, k.slice(1).split('.').slice(0,2).join('.')]));
+const R = id => {
+  const [g, t] = REC[id];
+  const lab = (id[0]==='R' ? 'Rec ' : 'PP ') + id.slice(1);
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id.replace(/\./g,'-')}" data-rid="${id}"><span class="rid"><i>${lab}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id.replace(/\./g,'-')}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const k = EXPMAP[rid], g = EXP[k];
+  return `<div class="exp-h"><b>본문 · ${k} ${g.t}</b><span class="exp-r">근거 요약</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">KDIGO 2024 CKD Work Group. Kidney Int 2024;105(4S):S117–S314, ${k}절 근거 요약 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const sec = p => Object.keys(REC).filter(k=>k.slice(1).startsWith(p+'.'));
+
+/* ---------- 표 ---------- */
+const T5 = tbl(['영역','예'],[
+ ['흔한 위험인자','고혈압 · 당뇨병 · 심혈관질환(심부전 포함) · 과거 AKI/AKD'],
+ ['CKD 유병률이 높은 지역 거주','원인 불명 CKD(CKDu) 풍토 지역 · APOL1 변이 빈도가 높은 지역 · 환경 노출'],
+ ['비뇨생식기 질환','구조적 요로 질환 · 재발성 신결석'],
+ ['다기관 질환·만성 염증','전신홍반루푸스 · 혈관염 · HIV'],
+ ['의인성','약물 신독성 · 방사선 신염'],
+ ['가족력 또는 알려진 유전 변이','원인과 무관한 신부전 가족력 · 유전 이상과 관련된 신장질환(PKD, APOL1 매개 신장질환, Alport 증후군 등)'],
+ ['임신 관련','조산 · 작은 재태 크기 · 전자간증/자간증'],
+ ['직업 노출','카드뮴·납·수은 · 다환방향족 탄화수소 · 살충제']]) + '<p class="exp-src">Table 5. CKD 위험인자.</p>';
+const T6 = tbl(['검사 범주','예','설명'],[
+ ['영상','초음파, 정맥 요로조영, CT(신장·요관·방광), 핵의학, MRI','신장 구조(모양, 크기, 대칭, 폐쇄)와 낭성 질환·역류 질환 평가. 3D 초음파 등 새 기술의 역할이 늘고 있음'],
+ ['신생검','초음파 유도 경피 생검','대개 광학·면역형광·전자현미경으로 검사하며 분자 진단을 포함하기도 함. 정확한 진단, 치료 계획, 활동성·만성도와 치료 반응 가능성 평가, 유전 질환 평가에 쓰임'],
+ ['검사실(혈청·소변)','산염기·전해질 화학 · 항PLA2R, ANCA, 항GBM 항체 · 혈청 유리 경쇄, 혈청·소변 단백 전기영동/면역고정 · 요검사와 요침사','KDIGO 2021 사구체질환 지침 참조. 다발골수종이 없어도 경쇄의 역할(MGRS)이 인식되고 있음. 지속 혈뇨나 알부민뇨의 존재가 감별진단에 결정적'],
+ ['유전 검사','APOL1, COL4A3, COL4A4, COL4A5, NPHS1, UMOD, HNF1B, PKD1, PKD2','진단 도구로 발전 중이며 사용 증가 예상. 유전 원인이 생각보다 흔하고 전형적 가족력 없이 나타날 수 있음']]) + '<p class="exp-src">Table 6. 원인 평가를 위한 추가 검사 선택.</p>';
+const T8 = tbl(['영역','임상 상황','부정확 원인','GFR 평가'],[
+ ['체형·근육량 변화','섭식장애','SCr의 비GFR 결정인자','근육량 감소 외 동반 질환이 없으면 eGFRcys가 적절할 수 있음'],
+ ['','극한 운동·보디빌더','SCr의 비GFR 결정인자','근육량 증가가 유일한 이상이면 eGFRcys가 적절할 수 있음'],
+ ['','무릎 위 절단','SCr의 비GFR 결정인자','동반 질환이 없으면 eGFRcys, 있으면 eGFRcr-cys 제안'],
+ ['','척수손상(하지·사지 마비)','SCr의 비GFR 결정인자','동반 질환이 없으면 eGFRcys, 있으면 eGFRcr-cys 제안'],
+ ['','3도 비만ᵃ·ᵇ','SCr·SCys의 비GFR 결정인자','eGFRcr-cys가 가장 정확함'],
+ ['생활습관','흡연','SCys의 비GFR 결정인자','자료 적음. SCr 결정인자 변화나 동반 질환이 없으면 eGFRcr 제안'],
+ ['식사','저단백·케톤·채식·고단백 식사와 크레아틴 보충','SCr의 비GFR 결정인자','자료 적음. SCr 결정인자 변화나 동반 질환이 없으면 eGFRcr가 적절할 수 있음'],
+ ['CKD 외 질환','영양실조','만성 질환(SCr·SCys 결정인자에 영향 추정)','영양실조와 염증이 공존해 eGFRcr-cys도 덜 정확할 수 있음. GFR 수준에 따른 치료 결정에는 mGFR 제안'],
+ ['','암ᵃ','″','연구 집단에서는 eGFRcr-cys가 가장 정확했으나 쇠약하거나 세포 교체가 빠른 암에서는 덜 정확할 가능성. 치료 결정에는 mGFR 제안'],
+ ['','심부전ᵃ','″','자료 제한적. eGFRcys의 편향이 적어 보이나 모두 정확도가 낮음. 일상 평가에 eGFRcr-cys 또는 eGFRcys, 치료 결정에 mGFR 제안'],
+ ['','간경변ᵃ','″','자료 제한적. eGFRcys의 편향이 적어 보이나 모두 정확도가 낮음. 일상 평가에 eGFRcr-cys 또는 eGFRcys, 치료 결정에 mGFR 제안'],
+ ['','이화성 소모 질환ᶜ','″','자료 적음. eGFRcr-cys도 부정확할 수 있음. 일상 평가에 eGFRcr보다 eGFRcr-cys, 치료 결정에 mGFR 제안'],
+ ['','근소모 질환','″','자료 적음. 한 연구에서 eGFRcr·eGFRcys 모두 편향이 큼. 일상 평가에 eGFRcr-cys, 치료 결정에 mGFR 제안'],
+ ['약물','스테로이드(단백동화, 호르몬)','SCr의 비GFR 결정인자, SCys 영향 불명','eGFRcr-cys 제안'],
+ ['','세뇨관 분비 감소 약물','SCr의 비GFR 결정인자','크레아티닌에만 영향을 주고 동반 질환이 없으면 eGFRcys가 적절할 수 있음. 치료 결정에는 mGFR 제안'],
+ ['','신외 제거를 줄이는 광범위 항생제','SCr의 비GFR 결정인자','위와 같음']]) + '<p class="exp-src">Table 8. 시스타틴 C 사용 적응. a Adingwupu 등의 자료 요약 · b 3도 비만 기준은 지역마다 다르나 흔히 BMI &gt;40 또는 &gt;35 kg/m² · c 결핵, AIDS, 혈액암, 중증 피부질환 등. mGFR로 직접 평가한 자료는 없음.</p>';
+const T9 = tbl(['SCr·시스타틴 C로 추정한 GFR','측정 GFR'],[
+ ['저렴하고 쉽게 시행','비싸고 시간이 걸리며 침습적'],
+ ['널리 쓸 수 있고 현장검사도 가능하며 반복이 쉬움','일부 기관에서만 가능 · 소변 수집이 필요 없는 방법(혈장 청소율)이 있음 · 대부분 장시간 반복 채혈 필요 · 손끝 미세채혈로 현장검사가 가능하다고 보고되었으나 일상적이지 않음'],
+ ['모든 임상 상황에서 충분히 정확·정밀하지 않음','모든 상황과 GFR 범위에서 정확. 개별 프로토콜 필요'],
+ ['GFR 변화보다 늦게 반영','GFR의 초기 변화를 포착'],
+ ['비GFR 결정인자에 의한 교란','비GFR 결정인자의 영향이 적음']]) + '<p class="exp-src">Table 9. 추정 GFR과 측정 GFR의 비교.</p>';
+const T11 = `<ul class="plain"><li>여과 표지자의 혈청 농도와 함께 검증된 추정식으로 eGFR을 보고한다.</li><li>성인 eGFR은 정수로 반올림하고 체표면적 1.73 m²에 대한 값(ml/min/1.73 m²)으로 보고한다.</li><li>eGFR &lt;60 ml/min/1.73 m²는 “낮음”으로 표시한다.</li><li>SCr은 SI 단위(μmol/l)면 정수, 관용 단위(mg/dl)면 소수 둘째 자리까지, 시스타틴 C는 mg/l 소수 둘째 자리까지 보고한다.</li><li>국제 표준물질에 소급되는 특이적·정밀한 분석법(CV: 크레아티닌 &lt;2.3%, 시스타틴 C &lt;2.0%)과 바람직한 편향(크레아티닌 &lt;3.7%, 시스타틴 C &lt;3.2%)을 갖춘 방법으로 측정한다.</li><li>가능하면 효소법으로 크레아티닌을 측정한다.</li><li>채혈 후 12시간 이내에 원심분리로 혈청·혈장을 적혈구에서 분리한다.</li><li>시스타틴 C를 측정하면 같은 검체로 크레아티닌도 측정해 eGFRcr-cys를 계산할 수 있게 한다.</li></ul><p class="exp-src">Table 11. 크레아티닌·시스타틴 C로 GFR을 평가할 때 정확성과 신뢰성을 위한 시행 표준. 원문에는 SCr SI 단위가 “mmol/l”로 표기되어 있으나 μmol/l의 오기로 보인다.</p>`;
+const T16 = tbl(['요인','ACR·PCR 거짓 증가','ACR·PCR 거짓 감소'],[
+ ['혈뇨','소변 알부민·단백 증가',''],['월경','소변 알부민·단백 증가',''],['운동','소변 알부민·단백 증가',''],
+ ['감염','증상 있는 요로감염에서 미생물이 단백을 만들 수 있음',''],['비알부민 단백','','알부민 시험지는 다른 단백을 놓칠 수 있음'],
+ ['생물학적 성별','여성은 요 크레아티닌 배설이 적어 ACR·PCR이 높음','남성은 요 크레아티닌 배설이 많아 ACR·PCR이 낮음'],
+ ['체중','저체중에 따른 낮은 요 크레아티닌 배설로 시간뇨 대비 ACR·PCR이 높아짐','고체중에 따른 높은 요 크레아티닌 배설로 시간뇨 대비 ACR·PCR이 낮아짐'],
+ ['크레아티닌 배설 변화','AKI나 저단백 섭취로 요 크레아티닌 배설 감소','고단백 섭취나 운동으로 요 크레아티닌 배설 증가']]) + '<p class="exp-src">Table 16. 요 알부민·단백의 생물학적 변동 요인.</p>';
+const T32 = tbl(['약물','계속 사용 시 수술 전후 이상반응'],[
+ ['ACEi/ARB','저혈압, AKI'],['이뇨제','체액 결핍, AKI'],['SGLT2i','케톤산증(기아 또는 당뇨병)'],['메트포르민','AKI 발생 시 젖산산증'],['아미노글리코시드','급성 세뇨관 괴사/AKI'],['NSAID','AKI, 급성 간질성 신염']]) + '<p class="exp-src">Table 32. 예정 수술 전 일시 중단을 고려할 약물.</p>';
+const T41 = `<ul class="plain"><li>신부전으로 인한 증상·징후: 요독에 의한 신경학적 증상·징후, 심낭염, 식욕부진, 약물치료에 불응하는 산염기·전해질 이상, 난치성 가려움증, 장막염 등</li><li>체액 상태나 혈압을 조절할 수 없음</li><li>식이 중재에 불응하는 영양 상태의 진행성 악화, 또는 인지 장애</li></ul><p class="exp-src">Table 41. 투석 시작 적응.</p>`;
+const F44 = tbl(['CrCl (ml/min)','Dabigatran<br>저위험 / 고위험','Apixaban·edoxaban·rivaroxaban<br>저위험 / 고위험'],[
+ ['≥80','≥24 / ≥48시간','≥24 / ≥48시간'],['50–80','<b>≥36</b> / <b>≥72시간</b>','≥24 / ≥48시간'],['30–50ᵃ','<b>≥48</b> / <b>≥96시간</b>','≥24 / ≥48시간'],
+ ['15–30ᵃ','공식 적응 없음','<b>≥36</b> / <b>≥48시간</b>'],['&lt;15','공식 적응 없음 · LMWH/UFH 가교 불필요','공식 적응 없음 · LMWH/UFH 가교 불필요']]) + '<p class="exp-src">Figure 44. 시술 전 NOAC 중단 시점(EHRA 2017 실무 지침 각색). 굵은 값은 통상 규칙(저위험 ≥24시간, 고위험 ≥48시간)에서 벗어난 값. 저위험은 출혈 빈도가 낮거나 출혈의 영향이 작은 경우, 고위험은 출혈 빈도가 높거나 임상적 영향이 큰 경우. 중요한 출혈 위험이 없거나 국소 지혈이 충분하면 혈중 최저 농도 시점(마지막 복용 후 ≥12 또는 24시간)에 시술한다. a 이들 중 다수는 저용량(dabigatran 110 mg 1일 2회, apixaban 2.5 mg 1일 2회, rivaroxaban 15 mg 1일 1회, edoxaban 30 mg 1일 1회)을 쓴다. Dabigatran 110 mg 1일 2회는 미국 FDA 승인이 없다.</p>';
+const DISC_RISK = note('원문 수치 차이','신부전 위험 기준이 그림과 실천 지침 사이에 다르게 제시된다. PP 2.2.1은 “5년 위험 3–5%”, Figure 48은 “5년 KRT 위험 &gt;3–5%”이고, Figure 14(a)의 결정 기준선은 2년 위험 &gt;2% 신장내과, &gt;10% 다학제 진료, 20–40% 접근로·이식 준비로 그려져 있다. PP 2.2.3은 2년 &gt;40%를 KRT 준비 시점으로 제시한다.');
+
+const D = {
+/* ---------- 선별·진단 (Figure 3) ---------- */
+s_id:{kind:'Figure 3 · 위험군', title:'CKD 위험이 있는 성인 확인', next:['s_t1'], body:`${R('P1.1.1.1')}${T5}${tip('대상','Figure 3의 주황 박스는 검사가 필요한 위험군에 대한 조치, 파랑은 검사 단계, 초록은 CKD 확인·병기·치료 시작, 보라는 AKD/AKI 확인을 뜻한다.')}`},
+s_t1:{kind:'Figure 3 · 검사', title:'GFR과 ACR ± 다른 신손상 표지자', next:['s_ab'], body:`${RR('P1.1.1.1','R1.1.2.1','P1.3.1.1')}<p class="exp-src">* 권장 eGFR 방법은 1.2절 참조. † 알부민뇨 외 신손상 표지자로도 CKD를 진단할 수 있으나 병기 결정과 진행 위험 추정에는 여전히 ACR과 GFR이 필요하다.</p>`},
+s_ab:{kind:'Figure 3 · 판정', title:'GFR &lt;60 또는 ACR ≥30 mg/g 또는 다른 표지자', next:['s_t2'], body:`${R('P1.1.1.2')}<p>CKD는 건강에 영향을 주는 신장 구조나 기능 이상이 3개월 넘게 지속되는 것으로 정의한다. 기준은 GFR &lt;60 ml/min/1.73 m², 알부민뇨(ACR ≥30 mg/g), 그 밖의 신손상 표지자(요침사 이상, 세뇨관 장애에 의한 전해질 이상, 병리 이상, 영상 구조 이상, 신장이식 병력) 중 하나 이상이다.</p>`},
+s_t2:{kind:'Figure 3 · 재검', title:'GFR·ACR 재검 · AKI/AKD 배제', next:['s_ckd','s_aki','s_no'], body:RR('P1.1.1.2','P1.1.3.2','P1.1.3.1')},
+s_ckd:{kind:'Figure 3 · 만성', title:'3개월 후 GFR &lt;60 및/또는 ACR ≥30', next:['s_cys'], body:RR('P1.1.3.1','P1.1.3.3')},
+s_aki:{kind:'Figure 3 · AKI/AKD', title:'AKI/AKD', next:[], body:`${R('P1.1.3.2')}<p>AKD는 건강에 영향을 주는 신기능·구조 이상이 3개월 이하 지속되는 상태로 정의한다. KDIGO AKI 진료지침을 따른다.</p>`},
+s_no:{kind:'Figure 3 · 정상', title:'GFR ≥60, ACR &lt;30, 다른 표지자 없음', next:['s_nk'], body:'<p>GFR ≥60 ml/min/1.73 m², ACR &lt;30 mg/g이고 다른 신손상 표지자가 없으면 현재 CKD 기준을 만족하지 않는다.</p>'},
+s_nk:{kind:'Figure 3', title:'CKD 없음 · 재검 시점', next:['s_id'], body:'<p>진행 위험 등 개인 특성에 따라 재검 시점을 정한다. 위험인자(Table 5)가 지속되면 주기적으로 다시 검사한다.</p>'},
+s_cys:{kind:'Figure 3 · 확인', title:'가능하면 eGFRcr-cys', next:['s_stg','g_in'], body:RR('R1.1.2.1','R1.2.2.1')},
+s_stg:{kind:'Figure 3 · 병기', title:'병기 · 원인 · 위험 · 치료', next:['gr_hd','c_ca','t_life'], body:`${RR('P1.1.4.1','P1.1.4.2','R1.1.4.1')}<h5>Table 6. 원인 평가를 위한 추가 검사</h5>${T6}`},
+
+/* ---------- 위험 격자 ---------- */
+gr_hd:{kind:'Figure 13', title:'CGA 분류와 감시 빈도', next:[], body:`<p>CKD는 원인(C), GFR 범주(G1–G5), 알부민뇨 범주(A1–A3)로 분류한다. 격자 색의 진하기는 진행 위험(초록, 노랑, 주황, 빨강, 진한 빨강)을, 칸의 숫자는 연간 GFR·알부민뇨 감시 횟수의 지침을 나타낸다.</p>${RR('P2.1.1','P2.1.2','P2.1.3','P2.1.4','P2.1.5')}${note('원문 표기','G4 칸의 “Treat*” 별표에는 Figure 13 범례에 설명이 없다.')}`},
+...Object.fromEntries([['A1','&lt;30 mg/g (&lt;3 mg/mmol)'],['A2','30–299 mg/g (3–29 mg/mmol)'],['A3','≥300 mg/g (≥30 mg/mmol)']].map(([a,s],j)=>[`gr_a${j}`,{kind:'알부민뇨 범주', title:`${a}: ${s}`, next:[], body:`${RR('P1.3.1.1','P1.3.1.2','P1.3.1.3')}<h5>Table 16. 요 알부민·단백의 변동 요인</h5>${T16}`}])),
+...Object.fromEntries(GRID.map(([g,d,r],i)=>[`gr_g${i}`,{kind:'GFR 범주', title:`${g} ${d} (${r})`, next:['g_in'], body:RR('R1.1.2.1','P1.2.2.1','R1.2.2.1')}])),
+
+/* ---------- GFR 평가 (Figure 11) ---------- */
+g_in:{kind:'Figure 11 · 초기 검사', title:'eGFRcr', next:['g_q1'], body:`${RR('P1.2.2.1','R1.2.4.1','P1.2.4.1','P1.2.4.2','P1.2.2.4')}<p class="exp-src">* 근육량 변화나 특정 약물에 의한 크레아티닌 분비·신외 제거 변화 등 비GFR 결정인자로 크레아티닌 생성이 달라진, 그 밖에는 건강한 사람에서는 초기 검사로 eGFRcys나 eGFRcr-cys를 쓸 수 있다.</p>`},
+g_q1:{kind:'Figure 11 · 판단', title:'eGFRcr이 정확한가?', next:['g_cr','g_cy'], body:`${RR('P1.2.2.3','P1.2.2.5','P1.2.2.7')}<h5>Table 8. 시스타틴 C 사용 적응</h5>${T8}`},
+g_cr:{kind:'Figure 11', title:'eGFRcr 사용', next:['g_ev'], body:'<p>오차 원인이 없고 더 정확한 평가가 필요하지 않으면 eGFRcr을 임상 결정에 쓴다.</p>'+R('P4.2.2')},
+g_cy:{kind:'Figure 11', title:'시스타틴 C 측정', next:['g_q2'], body:RR('R1.2.2.1','P1.2.2.6','P1.2.3.1','P1.2.3.2')+`<h5>Table 11. 검사실 시행 표준</h5>${T11}`},
+g_q2:{kind:'Figure 11 · 판단', title:'더 정확한 평가가 필요한가?', next:['g_cc','g_m'], body:`<p>† eGFRcr-cys의 오차 원인: 매우 적은 근육량, 매우 심한 염증, 고이화 상태, 외인성 스테로이드 사용.</p>${RR('P1.2.2.2','P1.2.2.8')}${note('원문 표기','Figure 11 하단 상자가 “Use GFRcr-cys”로 표기되어 있다. 문맥상 eGFRcr-cys의 오기로 보인다.')}`},
+g_cc:{kind:'Figure 11', title:'eGFRcr-cys 사용', next:['g_ev'], body:`<p>‡ 근육량 감소로 크레아티닌 생성이 줄었거나 특정 약물로 크레아티닌 분비·신외 제거가 줄어든, 그 밖에는 건강한 사람에서는 eGFRcr-cys 대신 eGFRcys를 고려한다.</p>${R('P4.2.3')}`},
+g_m:{kind:'Figure 11', title:'GFR 측정 (mGFR)', next:['g_ev'], body:`${RR('P1.2.2.2','P1.2.2.8')}<h5>Table 9. 추정 GFR과 측정 GFR</h5>${T9}`},
+g_ev:{kind:'Figure 11', title:'임상 적용을 위한 GFR 평가', next:['a_st'], body:`<p>초기·보조 검사를 종합하여 진짜 GFR을 최종 판단하고 개인의 의사결정(CKD 진단·병기, 약물 용량)에 적용한다.</p>${RR('P4.2.1','P4.2.2','P4.2.3','P4.2.4','P4.2.5')}`},
+
+/* ---------- 종합 치료 (Figure 18) ---------- */
+t_life:{kind:'Figure 18 · 기반', title:'생활습관', next:['t_sg','t_ras','t_st'], body:`${RR('P3.1.1','P3.2.1','R3.2.2.1','P3.2.2.1','P3.2.2.2','P3.2.2.3','P3.2.2.4','P3.3.1','P3.3.2','R3.3.1.1','P3.3.1.1','P3.3.1.2','P3.3.1.3','P3.3.1.5','R3.3.2.1','P3.3.2.1')}`},
+t_re:{kind:'Figure 18', title:'3–6개월마다 위험인자 재평가', next:[], body:`<p>Figure 18은 생활습관과 1차 약물을 기반으로 두고, 3–6개월마다 위험인자를 다시 평가하여 표적 치료를 더하는 층 구조로 제시한다.</p>${RR('P3.1.1','P2.1.1')}`},
+t_sg:{kind:'Figure 18 · 1차 약물', title:'SGLT2i', next:['t_gl'], body:`${RR('R3.7.1','R3.7.2','R3.7.3','P3.7.1','P3.7.2','P3.7.3')}`},
+t_ras:{kind:'Figure 18 · 1차 약물', title:'SBP &lt;120 목표 · RASi', next:['t_mra','t_ccb','r_in'], body:`${RR('R3.4.1','P3.4.1','R3.6.1','R3.6.2','R3.6.3','R3.6.4','P3.6.1','P3.6.6','P3.6.7')}<p class="exp-src">* 알부민뇨가 있으면 ACEi 또는 ARB가 혈압 조절의 1차 약물이며, 없으면 DHP CCB나 이뇨제도 고려할 수 있다. 목표 혈압에 도달하려면 흔히 세 계열이 모두 필요하다.</p>`},
+t_st:{kind:'Figure 18 · 1차 약물', title:'스타틴 기반 치료', next:['t_ez'], body:RR('R3.15.1.1','R3.15.1.2','R3.15.1.3','P3.15.1.1','P3.15.1.2','P3.15.1.3','P3.15.1.5')},
+t_gl:{kind:'Figure 18 · 표적 치료', title:'혈당 관리 · GLP-1 RA', next:[], body:`${RR('R3.9.1','P3.9.1')}${tip('참고','혈당 목표와 메트포르민 사용은 KDIGO 2022 당뇨병 CKD 지침을 따른다.')}`},
+t_mra:{kind:'Figure 18 · 표적 치료', title:'ns-MRA', next:['f_h'], body:RR('R3.8.1','P3.8.1','P3.8.2','P3.8.3','P3.8.4')},
+t_ccb:{kind:'Figure 18 · 혈압', title:'DHP CCB·이뇨제', next:['t_sm'], body:`<p>알부민뇨가 없으면 DHP CCB나 이뇨제도 1차 강압제로 고려할 수 있고, 목표 혈압에 도달하려면 흔히 ACEi/ARB, CCB, 이뇨제가 모두 필요하다.</p>${R('R3.4.1')}`},
+t_sm:{kind:'Figure 18 · 혈압', title:'스테로이드 MRA', next:[], body:R('P3.8.5')},
+t_ap:{kind:'Figure 18 · 표적 치료', title:'항혈소판제', next:[], body:RR('R3.15.2.1','P3.15.2.1','R3.15.3.1','P3.15.3.1')},
+t_cx:{kind:'Figure 18 · 합병증', title:'빈혈·CKD-MBD·산증·칼륨', next:['k_h'], body:`${RR('P3.10.1','P3.10.2','P3.11.1.1','P3.11.2.1','P3.11.5.1','P3.11.5.2','R3.14.1','P3.14.1','P3.14.2','P3.14.3','P3.14.4','R3.14.2')}${tip('범위','빈혈과 CKD-MBD는 이 지침에서 다루지 않고 각 KDIGO 지침을 따르도록 한다.')}`},
+t_ez:{kind:'Figure 18 · 표적 치료', title:'에제티미브·PCSK9i', next:[], body:RR('R3.15.1.1','P3.15.1.4')},
+t_af:{kind:'Figure 18', title:'ASCVD·심방세동', next:['a_1'], body:RR('P3.16.1','R3.16.1','R3.15.3.1')},
+
+/* ---------- RASi·MRA 감시 ---------- */
+r_in:{kind:'Figure 21', title:'ACEi 또는 ARB 시작', next:['r_mo'], body:RR('R3.6.1','R3.6.2','R3.6.3','P3.6.1')},
+r_mo:{kind:'Figure 21', title:'2–4주 내 크레아티닌·칼륨', next:['r_nk','r_hk','r_dc'], body:R('P3.6.2')},
+r_nk:{kind:'Figure 21', title:'정상 칼륨', next:['r_lt'], body:'<p>칼륨이 정상이고 eGFR 감소가 30% 미만이면 계속한다.</p>'},
+r_hk:{kind:'Figure 21', title:'고칼륨혈증', next:['r_hm'], body:RR('P3.6.3','P3.6.5')},
+r_dc:{kind:'Figure 21', title:'eGFR ≥30% 감소', next:['r_ak'], body:RR('P3.6.4','P2.1.4')},
+r_lt:{kind:'Figure 21', title:'eGFR 감소 &lt;30%', next:['r_up'], body:RR('P3.6.4','P3.6.7')},
+r_up:{kind:'Figure 21', title:'증량 또는 최대 내약 용량 유지', next:['r_mo'], body:R('P3.6.1')},
+r_hm:{kind:'Figure 21', title:'고칼륨혈증 조치', next:['r_rd','k_h'], body:RR('P3.6.3','P3.11.5.1','P3.11.5.2')},
+r_ak:{kind:'Figure 21', title:'AKI 원인 검토', next:['r_rd'], body:`<p>체액 결핍을 교정하고 병용 약물(이뇨제, NSAID)을 다시 평가하며 신동맥 협착을 고려한다.</p>${R('P3.6.4')}`},
+r_rd:{kind:'Figure 21', title:'ACEi·ARB 감량 또는 중단', next:[], body:`${R('P3.6.5')}<p>완화 전략이 효과가 없을 때의 마지막 단계이다. 상태가 허락하면 다시 시작을 검토한다.</p>`},
+f_h:{kind:'Figure 26', title:'finerenone 칼륨 감시', next:['f_1','f_2','f_3'], body:`${RR('R3.8.1','P3.8.3')}${note('원문 각주','작업반은 이 칼륨 기준이 보수적이라고 보며, 칼륨 5.5–6.0 mmol/l에서도 MRA 지속이 적절할 수 있다고 본다. 이 알고리즘은 스테로이드 MRA에도 쓸 수 있다. 미국 FDA는 K⁺ &lt;5.0 mmol/l에서 시작을 승인하였다. 시험 설계와 FDA 허가를 따른 것이어서 다른 나라에서는 다를 수 있다. 칼륨과 함께 크레아티닌·eGFR을 감시한다.')}`},
+f_1:{kind:'Figure 26', title:'K⁺ ≤4.8 mmol/l', next:[], body:'<p>시작 용량은 eGFR 25–59이면 10 mg, ≥60이면 20 mg 1일 1회. 1개월 후 K⁺를 확인하고 이후 4개월마다 확인한다. 10 mg이면 20 mg으로 증량한다. 고칼륨으로 중단했던 경우 K⁺ ≤5.0이면 10 mg으로 다시 시작한다.</p>'},
+f_2:{kind:'Figure 26', title:'K⁺ 4.9–5.5 mmol/l', next:[], body:'<p>10 mg 또는 20 mg을 유지하고 4개월마다 K⁺를 확인한다.</p>'},
+f_3:{kind:'Figure 26', title:'K⁺ &gt;5.5 mmol/l', next:['k_h'], body:'<p>중단한다. 식이와 병용 약물을 조정하고 K⁺를 다시 확인한다. K⁺ ≤5.0이면 재시작을 고려한다.</p>'},
+
+/* ---------- 고칼륨혈증 ---------- */
+k_h:{kind:'Figure 32', title:'고칼륨혈증(K⁺ &gt;5.5) 관리', next:['k_1'], body:RR('P3.11.5.1','P3.11.2.1','P3.6.3')},
+k_1:{kind:'Figure 32 · 1단계', title:'교정 가능한 요인', next:['k_2','k_f1'], body:RR('P3.11.5.1','P3.11.5.2','P4.1.3')},
+k_2:{kind:'Figure 32 · 2단계', title:'약물', next:['k_3'], body:RR('P3.6.3','P3.10.1','P3.11.2.1')},
+k_3:{kind:'Figure 32 · 3단계', title:'최후 수단: RASi/MRA 감량·중단', next:[], body:`${RR('P3.6.5','P3.8.3')}<p>RASi·MRA 감량이나 중단은 심혈관 사건 증가와 관련되므로 최후 수단으로 쓰고, 상태가 허락하면 다시 검토하여 재시작한다.</p>`},
+k_f1:{kind:'Figure 33', title:'식물성 식품', next:[], body:`<p>식물성 식품의 칼륨 흡수율은 50–60%로 낮고, 알칼리화 효과와 섬유소 이득이 있다.</p>${RR('P3.3.1','P3.11.5.2')}`},
+k_f2:{kind:'Figure 33', title:'동물성 식품', next:[], body:'<p>동물성 식품의 칼륨 흡수율은 70–90%이다.</p>'},
+k_f3:{kind:'Figure 33', title:'가공식품', next:[], body:`<p>칼륨염 첨가물이 들어간 가공식품은 흡수율이 약 90%에 이른다. 고칼륨혈증 예방에는 생체이용 칼륨이 많은 가공식품 제한이 우선이다.</p>${R('P3.11.5.2')}`},
+k_m:{kind:'칼륨 측정', title:'측정 변동 인지', next:[], body:R('P3.11.1.1')},
+
+/* ---------- 심방세동 ---------- */
+a_1:{kind:'Figure 40 · 1단계', title:'진단', next:['a_2'], body:`${R('P3.16.1')}<p class="exp-src">† 새 심방세동의 표준 진단 평가: ① 진단, 심실 박동수, 전도 장애·허혈·구조 심질환 확인을 위한 12유도 심전도 ② 갑상선·신기능, 혈청 전해질, 전혈구 검사 ③ 좌심실 크기·기능, 좌심방 크기, 판막 질환, 우심 크기·기능을 평가하는 경흉부 심초음파.</p>`},
+a_2:{kind:'Figure 40 · 2단계', title:'뇌졸중·전신 색전 예방', next:['a_no','a_st'], body:`${R('R3.16.1')}<p class="exp-src">* CKD에서는 용량 조정이 필요한지 고려한다.</p>`},
+a_no:{kind:'NOAC', title:'NOAC 우선 · 용량 조정', next:['a_3'], body:RR('R3.16.1','P3.16.2')},
+a_st:{kind:'Figure 44', title:'시술 전 NOAC 중단 기간', next:[], body:`${R('P3.16.3')}${F44}`},
+a_3:{kind:'Figure 40 · 3단계', title:'심박수·리듬 조절', next:[], body:'<p>가역적 원인을 고려하고 안정 시 심박수 약 90회/분 미만을 목표로 한다. 충분한 조절에도 증상이 지속되면 심율동전환, 항부정맥제, 도자절제술을 고려한다.</p>'},
+
+/* ---------- 의뢰·신대체요법 ---------- */
+f_dx:{kind:'Figure 48', title:'CKD 진단 후 의뢰 판단', next:['c_ca','c_rk','c_al','c_ot'], body:RR('P5.1.1','P5.1.2')},
+c_ca:{kind:'Figure 48 · 원인', title:'원인', next:['e_ca'], body:RR('P1.1.4.1','R1.1.4.1')},
+c_rk:{kind:'Figure 48 · 위험', title:'eGFR·KRT 위험', next:['e_rk'], body:RR('R2.2.1','P2.2.4','P2.2.5')},
+c_al:{kind:'Figure 48 · 알부민뇨·혈뇨', title:'알부민뇨·현미경적 혈뇨', next:['e_al'], body:R('P2.1.5')},
+c_ot:{kind:'Figure 48 · 기타', title:'기타', next:['e_ot'], body:R('P5.1.1')},
+e_ca:{kind:'Figure 48 · 의뢰 상황', title:'원인 불확실·유전성·재발성 신결석', next:['x_ca'], body:`${R('P5.1.1')}<h5>Table 6. 원인 평가 추가 검사</h5>${T6}`},
+e_rk:{kind:'Figure 48 · 의뢰 상황', title:'KRT 위험·eGFR &lt;30·GFR 감소', next:['x_rk'], body:`${RR('P5.1.1','P2.2.1','P2.1.3','P2.1.4')}${DISC_RISK}`},
+e_al:{kind:'Figure 48 · 의뢰 상황', title:'알부민뇨·혈뇨 기준', next:['x_al'], body:`<p>ACR ≥300 mg/g(≥30 mg/mmol, AER ≥300 mg/24시간, PCR ≥500 mg/g, PER ≥500 mg/24시간)과 혈뇨, 감시 중 알부민뇨 2배 이상 증가, ACR &gt;700 mg/g 지속, 적혈구 원주 또는 RBC &gt;20/HPF 지속(쉽게 설명되지 않는 경우).</p>${RR('P5.1.1','P2.1.5')}`},
+e_ot:{kind:'Figure 48 · 의뢰 상황', title:'기타 의뢰 상황', next:['x_ot'], body:`<p>불응성 고혈압(4가지 이상 강압제), 지속적 칼륨 이상, 산증, 빈혈, 골질환, 영양실조.</p>${R('P5.1.1')}`},
+x_ca:{kind:'Figure 48 · 의뢰 목적', title:'추가 평가·진단별 전문 관리', next:[], body:RR('R1.1.4.1','P1.1.4.2')},
+x_rk:{kind:'Figure 48 · 의뢰 목적', title:'KRT 계획과 준비', next:['t_kr'], body:RR('P2.2.3','P5.4.3','P5.3.1','P5.3.2')},
+x_al:{kind:'Figure 48 · 의뢰 목적', title:'추가 평가와 관리', next:[], body:'<p>원인 진단(필요 시 신생검)과 진행 억제 치료 강화를 목표로 한다.</p>'+RR('R1.1.4.1','R3.6.1')},
+x_ot:{kind:'Figure 48 · 의뢰 목적', title:'CKD 합병증 관리', next:[], body:RR('P3.10.1','P3.11.5.1','P5.2.3.2','P5.2.3.3')},
+t_rf:{kind:'위험 기준', title:'5년 신부전 위험 3–5%', next:['t_md'], body:`${RR('R2.2.1','P2.2.1')}${DISC_RISK}`},
+t_md:{kind:'위험 기준', title:'2년 신부전 위험 &gt;10%', next:['t_kr'], body:RR('P2.2.2','P5.3.1','P5.3.2','P5.3.3')},
+t_kr:{kind:'위험 기준', title:'2년 위험 &gt;40% 또는 GFR &lt;15–20', next:['t_di','t_cc'], body:RR('P2.2.3','P5.4.3','P5.4.5')},
+t_di:{kind:'투석 시작', title:'투석 시작', next:[], body:`${RR('P5.4.1','P5.4.2','P5.4.4')}<h5>Table 41. 투석 시작 적응</h5>${T41}`},
+t_cc:{kind:'지지 치료', title:'포괄적 보존 관리', next:[], body:RR('P5.5.1','P5.5.2','P5.5.3','P5.2.2.1','P5.2.3.1')}
+};
+
+/* 격자 셀 */
+const RISK = {rk0:'저위험(다른 신손상 표지자가 없으면 CKD 아님)', rk1:'중등도 위험 증가', rk2:'고위험', rk3:'매우 고위험', rk4:'매우 고위험(가장 진한 색)'};
+const ACOL = ['A1','A2','A3'];
+GRID.forEach(([g,d,r,cells],i)=>cells.forEach(([c,t],j)=>{
+  const n = t.replace(/\D/g,''), plus = t.includes('+');
+  D[`gr_c${i}_${j}`] = {kind:'Figure 13 · 감시 빈도', title:`${g}${ACOL[j]} · ${RISK[c]}`, next:[],
+    body:`<p>${g}(${d}, eGFR ${r}) · ${ACOL[j]}</p><p>진행 위험: <b>${RISK[c]}</b></p><p>${t.startsWith('선별')?'CKD 선별 대상(Screen)':'CKD 치료 대상(Treat)'} · 연간 GFR·알부민뇨 검사 <b>${n}회${plus?' 이상':''}</b></p>${t.includes('*')?note('원문 표기','G4의 “Treat*” 별표에는 Figure 13 범례에 설명이 없다.'):''}${RR('P2.1.1','P2.1.2')}${i>=4?R('P5.1.1'):''}`};
+}));
+
+/* 하단 버튼 */
+const ALL = Object.keys(REC);
+const CH = [['1','1장 CKD 평가'],['2','2장 위험 평가'],['3','3장 진행 지연과 합병증 관리'],['4','4장 약물 관리'],['5','5장 최적 진료 모델']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'등급과 이 도구에 대하여', next:[], body:`${['1A','1B','1C','1D','2A','2B','2C','2D','PP'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','KDIGO 2024 CKD 지침의 권고 28개(Rec)와 실천 지침 141개(PP)를 모두 해라체로 번역해 수록했다. 여덟 탭은 Figure 3, 11, 13, 18, 21·26, 32·33, 40·44, 48과 2장 위험 기준을 재현했다. 진술을 누르면 해당 절 근거의 핵심 요약 번역이 펼쳐진다(본문 전문 번역은 아님). 원문의 소아 특별 고려 진술에는 “(소아)”, 노인 진술에는 “(노인)”을 붙였다.')}${note('원문 불일치','① 신부전 위험 기준: PP 2.2.1 “5년 3–5%”, Figure 48 “5년 &gt;3–5%”, Figure 14(a) 기준선 “2년 &gt;2% 신장내과 · &gt;10% 다학제 · 20–40% 접근로·이식”, PP 2.2.3 “2년 &gt;40%”가 서로 다르다. ② Figure 11 하단 상자 “Use GFRcr-cys”는 eGFRcr-cys의 오기로 보인다. ③ Figure 13 G4 칸 “Treat*”의 별표에 범례 설명이 없다. ④ Figure 26의 칼륨 기준은 작업반 스스로 보수적이라고 밝혔다(5.5–6.0 mmol/l에서도 MRA 지속 가능). ⑤ Table 11의 SCr SI 단위 “mmol/l”는 μmol/l의 오기로 보인다.')}${tip('한국 적용','약제 허가 범위(finerenone, SGLT2i 적응증 등)와 보험 급여 기준은 국내 상황과 다를 수 있다.')}`},
+ all:{kind:'전체', title:'권고 28개 · 실천 지침 141개', next:[], body:CH.map(([c,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.slice(1).split('.')[0]===c))}`).join('')},
+ tabs:{kind:'표', title:'Table 5·6·8·9·11·16·32·41, Figure 44', next:[], body:`<h5>Table 5. CKD 위험인자</h5>${T5}<h5>Table 6. 원인 평가 추가 검사</h5>${T6}<h5>Table 8. 시스타틴 C 사용 적응</h5>${T8}<h5>Table 9. 추정 GFR 대 측정 GFR</h5>${T9}<h5>Table 11. 검사실 시행 표준</h5>${T11}<h5>Table 16. 요 알부민·단백 변동 요인</h5>${T16}<h5>Table 32. 수술 전 일시 중단 고려 약물</h5>${T32}<h5>Table 41. 투석 시작 적응</h5>${T41}<h5>Figure 44. 시술 전 NOAC 중단</h5>${F44}`},
+ meds:{kind:'4장', title:'약물 관리·sick day·영상', next:[], body:`${RR(...sec('4'))}<h5>Table 32. 예정 수술 전 일시 중단 고려 약물</h5>${T32}`}
+});
+
+const ABBR = [
+ ['ABPM','Ambulatory blood pressure monitoring, 활동혈압측정'],['ACEi / ARB','Angiotensin-converting enzyme inhibitor / angiotensin II receptor blocker'],['ACR / PCR','Albumin- / protein-to-creatinine ratio'],
+ ['ADPKD','Autosomal dominant polycystic kidney disease'],['AER / PER','Albumin / protein excretion rate'],['AKI / AKD','Acute kidney injury / acute kidney disease'],['ASCVD','Atherosclerotic cardiovascular disease'],
+ ['CCB (DHP)','(Dihydropyridine) calcium channel blocker'],['CGA','Cause, GFR, Albuminuria 분류'],['CKD-MBD','CKD-mineral and bone disorder'],['CrCl','Creatinine clearance'],
+ ['DRI','Direct renin inhibitor'],['eGFRcr / eGFRcys / eGFRcr-cys','크레아티닌 / 시스타틴 C / 둘을 함께 쓴 추정 GFR'],['GLP-1 RA','Glucagon-like peptide-1 receptor agonist'],
+ ['HPF','High-power field'],['IgAN','IgA nephropathy'],['KFRE','Kidney Failure Risk Equation'],['KRT','Kidney replacement therapy, 신대체요법'],['LMWH / UFH','Low-molecular-weight / unfractionated heparin'],
+ ['MAP','Mean arterial pressure, 평균동맥압'],['mGFR','Measured GFR, 측정 GFR'],['MRA (ns-MRA)','(Nonsteroidal) mineralocorticoid receptor antagonist'],['NOAC','Non–vitamin K antagonist oral anticoagulant'],
+ ['NSAID','Nonsteroidal anti-inflammatory drug'],['PCSK9i','Proprotein convertase subtilisin/kexin type 9 inhibitor'],['POCT','Point-of-care testing, 현장검사'],['RASi','Renin-angiotensin system inhibitor'],
+ ['SBP','Systolic blood pressure'],['SCr / SCys','Serum creatinine / serum cystatin C'],['SGLT2i','Sodium-glucose cotransporter-2 inhibitor'],['T2D','Type 2 diabetes']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'scr';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: K, eGFR)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('scr');
+
+</script>
+</body>
+</html>
