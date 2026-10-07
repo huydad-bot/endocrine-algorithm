@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>갈색세포종·부신경절종 진단 (대한내분비학회 2021)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+#chart-nm .node{font-size:13.5px}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>갈색세포종·부신경절종(PPGL) 진단</h1>
+        <p class="src">Korean PPGL Task Force Joint Position Statement, Ku EJ, Kim KJ, et al. <a href="https://doi.org/10.3803/EnM.2020.908" target="_blank" rel="noopener noreferrer">Endocrinol Metab 2021;36:322–338</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Korean Endocrine Society</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사·평가 단계 박스 강조"><i class="sw test"></i>검사·평가 단계</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="이상 소견·주의 박스 강조"><i class="sw mal"></i>이상 소견·주의</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="진단·관찰 박스 강조"><i class="sw ben"></i>진단·관찰</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고문을 누르면 본문 번역이 펼쳐짐</li><li>Fig. 1 외 순서도는 요약 권고로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>근거 수준</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 권고">
+      <button type="button" data-id="summary"><span class="bt-ic" aria-hidden="true">＋</span>요약 권고 전체</button>
+      <button type="button" data-id="who"><span class="bt-ic" aria-hidden="true">＋</span>WHO 분류</button>
+      <button type="button" data-id="tnm"><span class="bt-ic" aria-hidden="true">＋</span>TNM</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 4–6</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ A:'A: 명확한 근거가 있는 권고. 일반화 가능한 다수의 무작위 대조시험 또는 메타분석 결과가 뒷받침',
+ B:'B: 신뢰할 만한 근거가 있는 권고. 잘 수행된 코호트 연구 또는 환자–대조군 연구가 뒷받침',
+ C:'C: 가능한 근거가 있는 권고. 무작위 임상연구, 증례보고, 소규모 기관의 관찰연구 등 신뢰성이 낮은 근거',
+ E:'E: 전문가 권고. 뒷받침하는 근거는 없으나 전문가 의견이나 임상 경험으로 지지됨'
+};
+const LVTXT = {A:'A', B:'B', C:'C', E:'E'};
+const LVCLS = {A:'l1', B:'l2', C:'l3', E:'l4'};
+const REC = {
+'1.1':['A','모든 갈색세포종과 부신경절종(PPGL)은 전이 잠재성이 있는 것으로 간주한다. 비전이성 PPGL과 전이성 PPGL을 구별하기 위해 ‘양성(benign)’과 ‘악성(malignant)’이라는 용어를 사용해서는 안 된다.'],
+'1.2':['A','PPGL 진단 시 종양-림프절-전이(TNM) 병기 체계를 평가해야 한다.'],
+'2.1':['A','PPGL의 초기 생화학 검사에는 혈장 유리 메타네프린 또는 소변 분획 메타네프린 측정을 포함해야 한다.'],
+'2.2':['C','소변 도파민과 혈장 3-메톡시티라민 측정은 도파민을 주로 분비하는 PPGL 및/또는 전이 고위험 PPGL의 생화학적 진단에 유용하다.'],
+'2.3':['C','크로모그라닌 A는 생화학적으로 무증상인 PPGL(메타네프린, 노르메타네프린, 3-메톡시티라민이 정상인 PPGL)의 생체표지자로 사용할 수 있다.'],
+'3.1':['A','PPGL의 명확한 생화학적 근거가 있으면 전산화단층촬영(CT)에 의한 해부 영상이 PPGL의 위치를 찾는 첫 번째 선택 영상이다. 자기공명영상(MRI)은 CT 소견이 불확정이거나 조영증강 CT를 받기에 부적합한 환자에서 두 번째 선택 영상이다.'],
+'3.2':['A','기능 영상은 질환 특성 평가와 전이 발견을 위해 권고되며, 특히 전이와 다발성 질환의 고위험 환자(예: 종양 크기 &gt;5.0 cm, 부신외, 양측성, 유전성)에서 그렇다.'],
+'3.3':['B','유전형, 위치, 방사성의약품의 가용성, 임상 상황에 따라 기능 영상으로 <sup>123</sup>I-MIBG 신티그래피/단일광자방출단층촬영(SPECT), <sup>68</sup>Ga-DOTA-소마토스타틴수용체 유사체(SSA) PET/CT, 또는 <sup>18</sup>F-DOPA PET/CT를 제안한다.'],
+'3.4':['B','<sup>131</sup>I-MIBG 치료를 계획하는 PPGL 환자에서는 치료 결정과 반응 모니터링을 위해 <sup>123</sup>I-MIBG가 필요하다. 펩타이드수용체 방사성핵종 치료(PRRT)를 계획하는 전이성 PPGL 환자에서는 <sup>68</sup>Ga-DOTA-SSA PET/CT가 필요하다.'],
+'4.1':['B','PASS(Pheochromocytoma of the Adrenal Gland Scaled Score)와 GAPP(Grading of Adrenal Pheochromocytoma and Paraganglioma)는 악성의 진단을 확정하는 데 사용할 수 없다.'],
+'4.2':['B','종양세포에서 면역조직화학 염색상 SDHB 단백 소실은 SDHx 유전자 중 하나의 생식세포 변이 존재를 시사한다. SDHB 변이와 관련된 PPGL은 전이 위험이 높다.'],
+'5.1':['A','PPGL로 진단된 모든 환자에게 유전검사를 권고한다.'],
+'5.2':['B','유전성 PPGL 환자의 1촌에게도 유전검사를 고려해야 한다.'],
+'5.3':['B','검증된 표적 차세대염기서열분석(NGS)이 PPGL의 유전 진단에 선호되는 방법이다.'],
+'5.4':['C','병원성 드라이버 상태에 대한 현재 근거 수준에 근거한 유전자 세트의 표적 NGS 패널을 권고한다: 기본 패널 10개(<i>FH, MAX, NF1, RET, SDHA, SDHB, SDHC, SDHD, TMEM127, VHL</i>)와 확장 패널 5개(<i>EGLN1/PHD2, EPAS1, KIF1B, MET, SDHAF2</i>).']
+};
+const RID = id => id;
+
+const EXP = {
+'1':{t:'1. 새로운 분류', ids:['1.1','1.2'], p:[
+'2017년 발표된 WHO 내분비종양 분류 4판에서는 2004년 3판에 비해 부신종양에 관한 상당한 변화가 있었다. ‘부신수질 및 부신외 부신경절 종양’이 독립된 장으로 기술되어 ‘부신피질 종양’ 장과 분리되었다(Table 2).',
+'#1.1 전이 잠재성',
+'2017년 WHO 개정 이전에는 PPGL을 원격전이 유무에 따라 ‘악성’과 ‘양성’으로 분류했다. 전이는 갈색세포종의 약 5–10%에서 발생한다. PASS, GAPP, COPPs 등 조직병리, 면역조직화학, 유전 변이, 분자생물학적 특성에 근거한 여러 지표가 전이 잠재성 예측을 위해 제안되었으나 충분히 검증되지 않았다. 생물학적 공격성에 대한 승인된 조직학적 체계가 없으므로 모든 PPGL은 전이 잠재성이 있는 것으로 간주한다. 따라서 ‘악성’과 ‘양성’이라는 용어는 폐기되어 ‘갈색세포종’ 하나로 통합되었고, 국소 침윤성과 원격전이성 PPGL을 명확히 구별하기 위해 ‘악성’은 ‘전이성(metastatic)’으로 대체되었다.',
+'#1.2 TNM 병기',
+'PPGL의 첫 병기 체계는 2017년 미국암연합위원회(AJCC)가 발표했다. TNM 병기는 치료와 예후 결정을 돕고 표준화된 의사소통 도구를 제공한다. 전이와 짧은 생존을 예측하는 인자인 큰 원발 종양(≥5.0 cm), 부신외 종양, 원격전이(골, 간, 폐, 림프절)를 반영한다(Table 3). &lt;5.0 cm 종양은 원격전이가 드물지만 ≥5.0 cm 종양은 원격전이 위험 증가로 전체 생존이 낮아, 갈색세포종은 크기에 따라 T1(&lt;5.0 cm)과 T2(≥5.0 cm)로 나뉜다. 간이나 신장 등 주위 조직 침범 종양은 광범위 수술이 필요하고 더 공격적이어서 T3로 분류한다. 교감신경 부신경절종은 원발 종양 크기와 관계없이 전이 잠재성이 높고 전체 생존이 짧아 T 병기에 반영된다.',
+'전이성 PPGL 환자는 과도한 카테콜아민으로 이환율과 사망률이 높으며, 5년 생존율이 전이 없는 환자보다 유의하게 낮다(60% 대 90%). 국내 전국 인구기반 연구에서도 전이성 PPGL의 사망 위험비는 비전이성의 2배였다. 흔한 전이 부위는 국소 및 원격 림프절, 골, 간, 폐이다. 골전이는 비골격 전이(5–7.5년)보다 덜 공격적이어서 중앙 전체 생존이 12년으로 길다. 전이 부위에 따라 중앙 생존이 다르므로 AJCC M 병기는 원격전이의 위치로 결정된다.']},
+'2.1':{t:'2.1 메타네프린', ids:['2.1'], p:[
+'카테콜아민 과다의 근거는 PPGL 임상 진단의 필수 전제조건이다. 메타네프린은 에피네프린과 노르에피네프린의 O-메틸화 대사물로, 부신 크롬친화세포나 PPGL 종양세포의 세포질에서 catechol-O-methyltransferase에 의해 생성된다. 이 과정은 세포외 배출에 의한 카테콜아민 분비와 독립적으로 지속적으로 일어나며, 이것이 카테콜아민보다 메타네프린 측정의 민감도가 우수한 이론적 근거이다.',
+'NIH와 유럽 기관의 갈색세포종 환자 214명을 포함한 초기 연구에서 혈장 유리 메타네프린의 민감도 99%, 특이도 89%였고, ROC 분석상 소변 카테콜아민이나 VMA보다 유의하게 우수했다. 메타분석에서 혈장 유리 메타네프린의 통합 민감도와 특이도는 97%와 94%였다. 혈장 유리 메타네프린이 소변 분획 메타네프린보다 민감도와 특이도가 높았으나 차이가 작고 통계적으로 유의하지 않아, 현재 둘 사이에 우선순위를 두지 않는다.',
+'국내 PPGL 환자 28명과 대조군 156명의 단일기관 연구에서 혈장 유리 메타네프린의 민감도와 특이도는 96%와 76%, 소변 분획 메타네프린은 96%와 94%였다. 국내 2개 대형 기관 연구에서도 소변 분획 메타네프린의 진단 정확도가 높았다.',
+'정확한 측정과 해석을 위해 측정법, 채혈 조건, 기준값을 고려해야 한다. 질량분석 또는 전기화학 검출을 이용한 액체크로마토그래피는 매우 정확하고 재현성이 높으며 간섭 위험이 낮다. 기존 연구는 앙와위 채혈을 사용했다. 기립은 노르에피네프린 분비를 자극하여 혈장 노르메타네프린을 높인다. 좌위 채혈은 대개 진단 기준값이 높고 특이도가 낮으므로, 특히 경계성 상승 후 재검 시 앙와위 채혈을 권고한다.']},
+'2.2':{t:'2.2 도파민과 3-메톡시티라민', ids:['2.2'], p:[
+'3-메톡시티라민은 catechol-O-methyltransferase에 의한 도파민의 O-메틸화 대사물이다. 전체 PPGL 진단에서 혈장 3-메톡시티라민의 정확도는 메타네프린보다 우수하지 않으며, 혈장 유리 메타네프린에 추가해도 진단 정확도가 유의하게 증가하지 않았다. 그러나 도파민을 주로 생성하는 일부 PPGL에서는 메타네프린보다 진단적 유용성이 우수하며, 도파민 생성 PGL에서 거의 100배 상승했다.',
+'혈장 3-메톡시티라민 상승은 전이성 PPGL의 고위험과 관련된다. 유럽 PPGL 코호트 365명 중 전이성 105명은 혈장 3-메톡시티라민과 소변 도파민이 유의하게 높았고, 평균 혈장 3-메톡시티라민은 비전이성보다 거의 4배 높았다. SDHB 변이 PPGL은 종양 내 도파민 생성이 증가하여 혈장·소변 도파민과 혈장 3-메톡시티라민이 높다. SDHB 변이는 전이 고위험을 부여하며, 이것이 도파민과 3-메톡시티라민이 높은 PPGL의 전이 고위험을 적어도 부분적으로 설명한다.']},
+'2.3':{t:'2.3 크로모그라닌 A', ids:['2.3'], p:['크로모그라닌 A는 신경내분비세포 분비과립 형성에 중요한 역할을 하며 신경내분비종양에서 혈장 또는 혈청 농도가 상승한다. PPGL 환자와 정상인을 구별하는 데 민감도와 특이도가 높다. 메타네프린, 노르메타네프린, 메톡시티라민이 정상인 생화학적 무증상 PPGL에서도 크로모그라닌 A는 상승했다. 무증상 PPGL의 조직학적 평가에서 티로신수산화효소 발현은 없으나 분비과립은 보존되어 있었으며, 이것이 생화학적 무증상 PPGL에서 크로모그라닌 A가 상승하는 분자 기전을 설명한다.']},
+'3.1':{t:'3.1 해부 영상', ids:['3.1'], p:['PPGL 위치 확인에 CT와 MRI 모두 민감도가 높다. 조영증강 CT의 발견율은 88–100%이다. 대부분의 PPGL이 복부에 있으므로 복부·골반 CT가 첫 해부 영상이어야 한다. 폐전이 발견에는 CT가 MRI보다 선호되며, 두개저와 경부 PGL 발견에는 MRI의 민감도가 90–95%로 CT보다 우수하다. CT 조영제 알레르기 환자, 그리고 방사선 노출을 제한해야 하는 환자(소아, 임신부, 생식세포 변이가 알려진 환자, 최근 과도한 방사선 노출이 있는 환자)에서도 MRI를 선호한다.']},
+'3.2':{t:'3.2–3.3 기능 영상', ids:['3.2','3.3'], p:[
+'큰 원발 종양, 부신외, 다발성(두개저·경부 PPGL 제외), 재발 질환 등 전이 고위험 환자에서는 전이 발견을 위해 기능 영상을 제안한다. <sup>18</sup>F-FDG PET이 이 목적으로 사용되었으나, 현재는 민감도와 특이도가 더 높은 다른 기능 영상을 첫 선택으로 권고한다. 각 기능 영상의 진단 성능은 질환 위치, 범위, 유전형에 따라 다르다(Table 4).',
+'<sup>123</sup>I/<sup>131</sup>I-MIBG 신티그래피는 갈색세포종에서 <sup>18</sup>F-DOPA PET/CT와 <sup>68</sup>Ga-DOTA-SSA PET/CT와 비슷한 민감도를 보이며, SPECT를 함께 사용하면 성능이 향상된다. 그러나 PGL과 전이성 PPGL, 특히 SDHx 관련 PPGL에서는 민감도가 상대적으로 낮다.',
+'<sup>68</sup>Ga-DOTA-SSA PET/CT는 최근 체계적 문헌고찰과 메타분석에 따르면 유전 상태를 모르는 환자에서 PPGL 발견에 가장 민감한 도구이다. 부신외 PGL과 두경부 PGL에서도 임상적 가치가 높으며, 전이성 PPGL에서 선호되고, SDHx 변이 PPGL에서도 권고할 수 있다. SDHx 관련 PPGL과 달리 <sup>18</sup>F-DOPA PET/CT는 VHL, RET, NF1, MAX, HIF2A, PHD1/2, FH 변이 PPGL에서 높은 종양 섭취를 보인다. 이 표현형의 정확한 기전은 대부분 밝혀지지 않았고 많은 보고가 극히 드문 코호트에 근거한다.',
+'유전형과 질환 특성에 따른 임상적 의미에도 불구하고 방사성의약품의 실제 가용성과 임상 상황을 고려해야 한다. <sup>68</sup>Ga은 대형 기관에서만 감당할 수 있는 발생기로 생산되는 반면, <sup>123</sup>I/<sup>131</sup>I-MIBG, <sup>18</sup>F-FDG, <sup>18</sup>F-DOPA는 한국을 포함한 여러 국가에서 상업적으로 이용할 수 있다. 또한 모든 기능 영상은 특정 상황에서 상대적으로 열등하더라도 유효하다. 따라서 각 기관에서 이용 가능한 권장 1순위 또는 대안 기능 영상을 적절히 활용할 것을 권고한다(Fig. 1).']},
+'3.4':{t:'3.4 표적 방사성의약품 치료 전 영상', ids:['3.4'], p:['전이성 PPGL에서는 표적 방사성의약품 치료를 고려할 수 있다. <sup>123</sup>I-MIBG 신티그래피 양성 전이성 PPGL에서는 고용량 <sup>131</sup>I-MIBG 치료가 이로울 수 있다. 특히 고비활성 <sup>131</sup>I-MIBG(Azedra)는 전이성 또는 국소 공격성 PPGL에 대해 FDA 승인을 받았으며, 2상 연구에서 영상 반응률 92%, 생화학 반응률 68%를 보였다. 적절한 후보 선택과 반응 모니터링에 치료 전후 <sup>123</sup>I/<sup>131</sup>I-MIBG가 필수적이다. PRRT를 계획하는 환자에서는 <sup>68</sup>Ga-DOTA-SSA PET/CT를 시행해야 한다. <sup>177</sup>Lu, <sup>90</sup>Y, <sup>225</sup>Ac 표지 DOTATOC와 DOTATATE가 현재 동정적 또는 허가 외로 사용 가능한 PRRT이며, <sup>177</sup>Lu-DOTATATE는 한국을 포함한 여러 국가에서 상업적으로 이용 가능하나 임상시험 부족으로 대부분의 국가에서 PPGL에 공식 승인되지 않았다. 메타분석에서 PRRT의 전체 질병조절률은 84%, 생화학 반응률은 61–64%였다. 따라서 기존 항암화학요법과 <sup>131</sup>I-MIBG 대상이 아니면서 <sup>68</sup>Ga-DOTA-SSA PET/CT에서 유효한 섭취가 관찰되는 전이성 PPGL에서 PRRT를 고려할 것을 권고한다.']},
+'4.1':{t:'4.1 PASS와 GAPP', ids:['4.1'], p:[
+'PPGL 전이 위험 예측을 위해 PASS와 GAPP 두 조직학적 체계가 확립되었다(Table 5). PASS는 2002년 Thompson이 만든 최초의 체계로 갈색세포종만을 대상으로 하며, 12개 조직 소견에 1–2점을 부여한다. 총 20점 중 ≥4점이면 생물학적으로 공격적, &lt;4점이면 전이 잠재성이 없는 것으로 본다. 검증 연구 결과는 일관되지 않았으며, 대체로 민감도는 높으나(100%) 특이도가 낮아 전이성 갈색세포종을 ‘포함(rule in)’하는 데 쓰일 수 있다. 그러나 관찰자 간·관찰자 내 변이가 있고, 유전 변이, 종양 특성, 임상 특성은 무시하고 조직 소견만 포함한다는 단점이 있다.',
+'GAPP는 Kimura 등이 PPGL 모두를 대상으로 개발했으며 PASS의 일부 조직 소견에 면역조직화학(Ki-67 지수)과 생화학(카테콜아민 유형) 자료를 추가했다. PPGL을 고분화(0–2점), 중등도 분화(3–6점), 저분화(7–10점)로 나눈다. PASS와 마찬가지로 민감도는 높으나(90%) 특이도는 낮다. PPGL 143명의 후향 코호트에서 GAPP 점수가 높을수록 전이성 PPGL과 관련되었으나 PASS는 그렇지 않았고, PASS의 관찰자 간 신뢰도는 낮거나 중등도인 반면 GAPP의 관찰자 간 변이는 유의하게 적었다. 연구진은 PASS에서 GAPP로의 전환을 권고했지만, 둘 다 PPGL 사망률과 관련되지 않아 여전히 불충분하다. 어느 것도 위험 층화에 100% 예측적이지 않지만 둘 다 민감도는 우수하다.']},
+'4.2':{t:'4.2 SDHB 면역조직화학', ids:['4.2'], p:[
+'SDHx 아단위 유전자(SDHA/B/C/D)의 병원성 생식세포 변이는 PPGL의 유전성 종양 발생과 관련된다. 유전성 PPGL 증후군 환자의 대부분(30–40%)은 이 유전자에 변이가 있다. SDHB 생식세포 변이는 전이의 고위험 인자로 널리 인정되며 변이 환자의 40% 이상에서 전이성 PPGL이 된다. 전이성 PPGL에서도 불량한 예후 인자로, 첫 전이 진단 후 5년 생존 확률은 SDHB 변이 보인자 0.36, 비보인자 0.67이었다(상대위험 2.6). 중앙 생존도 42개월 대 244개월로 짧았으며, 이는 진단 연령과 독립적이었다.',
+'SDHx 유전자 변이는 SDH 단백 복합체를 불안정하게 하여 면역조직화학에서 SDHB 발현 소실을 일으킨다. 따라서 종양 조직의 SDHB 염색 소실은 SDHx 유전자 중 하나의 생식세포 변이를 민감도 100%, 특이도 84%로 시사한다. 생화학, 조직학, SDHB 면역조직화학의 조합이 전이 예측에 유용할 수 있으며, 그 예로 2017년 Koh 등이 제안한 수정 GAPP(M-GAPP)가 있다. SDHB 면역조직화학은 기술적으로 쉽고 비용효과적이므로 특정 유전 형태의 가족력이나 임상 적응이 없어도 모든 PPGL에서 일상적으로 시행할 수 있다. 따라서 모든 PPGL 환자에서 SDHB 염색 소실로 SDHx(SDHB, SDHC, SDHD) 생식세포 변이를 확인할 필요가 있다.']},
+'5.1':{t:'5.1 모든 환자의 유전검사', ids:['5.1'], p:['PPGL은 높은 유전성과 유전적 이질성이 특징이며, 최소 30–40%가 유전 형태인 인간에서 가장 흔한 유전성 종양이다. 모든 환자에서 유전검사를 고려해야 하는 이유는 다음과 같다. 첫째, PPGL 환자의 1/3 넘게 감수성 유전자의 질환 유발 생식세포 변이를 가진다. 둘째, SDHB 변이 환자의 약 40% 이상이 전이 표현형을 보인다. 셋째, 유전성 또는 증후군 PPGL 환자는 산발성으로 보이는 환자보다 합병증 위험이 높다. 넷째, 메타분석에 따르면 가족력이 없는 단일 PPGL 등 산발성으로 보이는 환자의 약 11–13%가 감수성 유전자 변이를 가진다. 마지막으로, 발단자의 변이 확인은 가족 구성원의 감시 필요성에 의미가 있다.']},
+'5.2':{t:'5.2 가족 검사', ids:['5.2'], p:['PPGL은 NF1, VHL, MEN2, 부신경절종 증후군(PGL) 같은 증후군 양상을 보이는 가장 유전성이 강한 종양이다. 이 증후군들은 대부분 상염색체 우성 유전으로 가족력 빈도가 높다. 따라서 미국내분비학회는 가족력이나 증후군 양상이 있는 PPGL 환자에서 순차적 유전검사를 넘어 직접 표적 생식세포 변이 검사를 권고한다. Muth 등은 모든 유전성 PPGL에서 1촌에게, 그리고 SDHD, SDHAF2 관련 PPGL과 전이성 질환과 관련된 SDHB, SDHA, SDHC, FH, TMEM127, MAX 변이에서는 2촌에게도 유전검사를 적용할 것을 제안했다.']},
+'5.3':{t:'5.3 표적 NGS', ids:['5.3'], p:['1990년 이후 십여 개의 PPGL 감수성 유전자 생식세포 변이가 보고되었다. 미국내분비학회가 임상 양상에 근거한 유전자별 우선순위 진단 알고리즘을 제안한 이후, NGS의 등장으로 단일 검사로 모든 감수성 유전자를 선별할 수 있게 되었다. 따라서 유전검사 결정 알고리즘은 ‘환자에서 후보 유전자로’에서 ‘변이 유전자에서 이환 환자로’ 바뀌었다. NGSnPPGL 연구그룹은 명확한 가족력과 관계없이 모든 PPGL 환자에서 유전검사를 권고하고, 혈액(채취 7일 이내 신선 또는 동결) 또는 동결 백혈구 펠릿을 이용한 표적 NGS를 선호했다. 패널은 표적 유전자의 코딩 엑손과 인트론 경계를 포함해야 한다. 가능하면 NGS로 확인된 변이는 별도 DNA 분주액에서 Sanger 염기서열분석 같은 직교 방법으로 확인할 것을 강력히 권고한다.']},
+'5.4':{t:'5.4 유전자 패널', ids:['5.4'], p:[
+'NGSnPPGL 연구그룹은 세 가지 패널을 제안했다: 기본(생식세포 변이 근거 수준 3–4; FH, MAX, NF1, RET, SDHA, SDHB, SDHC, SDHD, TMEM127, VHL 10개), 확장(근거 수준 2; EGLN1/PHD2, EPAS1/HIF2A, KIF1B, MET, SDHAF2 5개 추가), 포괄(모든 체세포 변이와 모든 근거 수준; ATRX, BRAF, CDKN2A, EGLN2/PHD1, FGFR1, H3F3A, HRAS, IDH2, KMT2D, MDH2, MERTK, TP53 12개 추가). 근거 수준은 출처 수에 따라 0(해당 없음), 1(단일 출처), 2(기능 검증 없는 2개 이상 출처), 3(일부 기능 검증이 있는 2개 이상 출처), 4(임상·유전·전산 예측과 기능 근거 및/또는 인구 빈도 분석으로 확립)로 나눈다. NGS 검사는 기존 방법보다 변이 확인율이 높았으며, Ben Aim 등은 17개 유전자 패널 ‘MASTER Plus SDHv2’를 제안했다.',
+'국내 자료는 제한적이나, 최대 규모 국내 연구(161명)에서 가족력 없는 산발성 PPGL의 약 21%가 생식세포 변이를 가졌다. 다른 국내 연구(57명)에서는 11개 유전자에서 28개 변이가 확인되었고 생식세포 변이 유병률은 32.6%였으며, 가장 흔한 변이 유전자는 SDHB(31.4%), RET(22.3%), VHL(17.1%), NF1(5.7%), EPAS1(5.7%)이었다.',
+'이를 종합하여 NGSnPPGL 합의문에서 채택한 기본·확장 두 패널을 권고한다(Table 6). 표적 NGS에서 1차 변이가 발견되지 않으면 가능한 경우 전체엑솜 또는 전체게놈 염기서열분석 같은 포괄적 유전 연구를 고려할 수 있다. 이전 Sanger 또는 표적 패널이 음성인 36명에서 WES로 2개의 병원성 가능 변이가 추가로 발견되었다.']}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const CHARTS = {
+dx:{tab:'진단 흐름', fig:'권고 1–5', aria:'PPGL 진단 흐름 순서도', w:760, h:560,
+ nodes:[
+  {id:'c_sus', x:230,y:10, w:300,h:44, label:'PPGL 의심'},
+  {id:'c_bio', x:230,y:80, w:300,h:80, label:'생화학 검사<small>혈장 유리 메타네프린 또는 소변 분획 메타네프린 · 앙와위 채혈</small>', cls:'test fac'},
+  {id:'c_cga', x:10, y:80, w:200,h:80, label:'생화학적 무증상<small>MN·NMN·3-MT 정상 → 크로모그라닌 A</small>', cls:'fac'},
+  {id:'c_da',  x:560,y:80, w:190,h:80, label:'도파민 우세·전이 고위험<small>소변 도파민 · 혈장 3-MT</small>', cls:'fac'},
+  {id:'c_ct',  x:230,y:195,w:300,h:70, label:'해부 영상<small>1차: 복부·골반 조영증강 CT · 2차: MRI</small>', cls:'test fac'},
+  {id:'c_mri', x:560,y:195,w:190,h:70, label:'MRI 우선<small>두개저·경부 PGL · 조영제 알레르기 · 방사선 제한</small>', cls:'fac'},
+  {id:'c_risk',x:230,y:300,w:300,h:70, label:'전이·다발성 고위험?<small>&gt;5 cm · 부신외 · 양측성 · 유전성</small>', cls:'mal fac'},
+  {id:'c_func',x:560,y:300,w:190,h:70, label:'기능 영상<small>Fig. 1 알고리즘</small>', cls:'test fac'},
+  {id:'c_surg',x:230,y:405,w:300,h:56, label:'수술 · 병리 평가', cls:'tx'},
+  {id:'c_ihc', x:10, y:395,w:200,h:76, label:'SDHB 면역조직화학<small>소실 시 SDHx 생식세포 변이 시사</small>', cls:'test fac'},
+  {id:'c_gen', x:560,y:395,w:190,h:76, label:'유전검사<small>모든 환자 · 표적 NGS</small>', cls:'test fac'},
+  {id:'c_tnm', x:230,y:490,w:300,h:56, label:'TNM 병기 · 모든 PPGL은 전이 잠재성', cls:'fac'}
+ ],
+ edges:[
+  [A(380,54,380,80),1],[A(230,120,210,120),1,'dot'],[A(530,120,560,120),1,'dot'],
+  [A(380,160,380,195),1],[A(530,230,560,230),1,'dot'],[A(380,265,380,300),1],
+  [A(530,335,560,335),1],[A(380,370,380,405),1],['M655 370 V388 H500 V405',1,'dot'],
+  [A(230,433,210,433),1],[A(530,433,560,433),1],[A(380,461,380,490),1]
+ ], labels:[[538,328,'예'],[388,390,'아니오']]},
+nm:{tab:'핵의학 영상', fig:'Fig. 1', aria:'PPGL 핵의학 영상 알고리즘', w:760, h:490,
+ nodes:[
+  {id:'x_ppgl',x:10, y:230,w:80, h:44, label:'PPGL'},
+  {id:'x_stage',x:105,y:110,w:200,h:56, label:'진단 병기 평가<small>다발성·전이</small>', cls:'test fac'},
+  {id:'x_elig',x:105,y:400,w:200,h:56, label:'표적 방사성핵종 치료 적격성', cls:'test'},
+  {id:'x_spor',x:330,y:10, w:200,h:44, label:'산발성으로 보이는 갈색세포종'},
+  {id:'x_hn',  x:330,y:70, w:200,h:44, label:'두경부 부신경절종(HNPGL)'},
+  {id:'x_neg', x:330,y:130,w:200,h:52, label:'전이성 + 교감신경 PGL + <i>SDHx</i>(−)', cls:'mal'},
+  {id:'x_pos', x:330,y:195,w:200,h:52, label:'전이성 + 교감신경 PGL + <i>SDHx</i>(+)', cls:'mal'},
+  {id:'x_vhl', x:330,y:265,w:200,h:52, label:'<i>VHL, RET, NF1, MAX, HIF2A, PHD1/2, FH</i>'},
+  {id:'x_131', x:330,y:370,w:200,h:44, label:'<sup>131</sup>I-MIBG 치료', cls:'tx'},
+  {id:'x_prrt',x:330,y:430,w:200,h:44, label:'PRRT', cls:'tx'},
+  {id:'i_spor',x:545,y:10, w:210,h:44, label:'<sup>123</sup>I-MIBG, <sup>68</sup>Ga-DOTA-SSA 또는 <sup>18</sup>F-DOPA', cls:'test'},
+  {id:'i_ga',  x:545,y:70, w:115,h:177,label:'<sup>68</sup>Ga-DOTA-SSA', cls:'test'},
+  {id:'a_hn',  x:675,y:70, w:80, h:44, label:'<sup>18</sup>F&#8209;DOPA'},
+  {id:'a_neg', x:675,y:134,w:80, h:44, label:'<sup>18</sup>F&#8209;DOPA'},
+  {id:'a_pos', x:675,y:199,w:80, h:44, label:'<sup>18</sup>F&#8209;FDG'},
+  {id:'i_vhl', x:545,y:265,w:115,h:52, label:'<sup>123</sup>I-MIBG 또는 <sup>18</sup>F-DOPA', cls:'test'},
+  {id:'a_vhl', x:675,y:265,w:80, h:52, label:'<sup>68</sup>Ga-DOTA-SSA'},
+  {id:'i_131', x:545,y:370,w:210,h:44, label:'<sup>123</sup>I-MIBG', cls:'test'},
+  {id:'i_prrt',x:545,y:430,w:210,h:44, label:'<sup>68</sup>Ga-DOTA-SSA PET/CT', cls:'test'}
+ ],
+ edges:[
+  ['M50 230 V138 H105',1],['M50 274 V428 H105',1],
+  ['M305 138 H318',0],['M318 32 V291',0],[A(318,32,330,32),1],[A(318,92,330,92),1],[A(318,156,330,156),1],[A(318,221,330,221),1],[A(318,291,330,291),1],
+  ['M305 428 H318',0],['M318 392 V452',0],[A(318,392,330,392),1],[A(318,452,330,452),1],
+  [A(530,32,545,32),1],[A(530,92,545,92),1],[A(530,156,545,156),1],[A(530,221,545,221),1],[A(530,291,545,291),1],[A(530,392,545,392),1],[A(530,452,545,452),1],
+  [A(660,92,675,92),1,'dot'],[A(660,156,675,156),1,'dot'],[A(660,221,675,221),1,'dot'],[A(660,291,675,291),1,'dot']
+ ], labels:[[672,65,'이용 불가 시 ↓'],[560,338,'단, HIF2A·PHD1/2 대안은 ¹⁸F-FDG']]},
+gen:{tab:'유전·병리', fig:'권고 4–5', aria:'PPGL 유전검사와 병리 평가 순서도', w:760, h:450,
+ nodes:[
+  {id:'g_all', x:230,y:10, w:300,h:50, label:'PPGL로 진단된 모든 환자'},
+  {id:'g_ihc', x:10, y:100,w:220,h:80, label:'SDHB 면역조직화학<small>소실: SDHx 변이 민감도 100%, 특이도 84%</small>', cls:'test fac'},
+  {id:'g_ngs', x:270,y:100,w:220,h:80, label:'검증된 표적 NGS<small>혈액·동결 백혈구 · 직교 방법으로 확인</small>', cls:'test fac'},
+  {id:'g_path',x:530,y:100,w:220,h:80, label:'조직학적 점수<small>PASS·GAPP: 악성 확정에 사용 불가</small>', cls:'fac'},
+  {id:'g_basic',x:150,y:220,w:220,h:90, label:'기본 패널 10개<small>FH, MAX, NF1, RET, SDHA, SDHB, SDHC, SDHD, TMEM127, VHL</small>', cls:'fac'},
+  {id:'g_ext', x:390,y:220,w:220,h:90, label:'확장 패널 15개<small>기본 + EGLN1/PHD2, EPAS1, KIF1B, MET, SDHAF2</small>', cls:'fac'},
+  {id:'g_pos', x:150,y:350,w:220,h:56, label:'병원성 변이 확인', cls:'mal'},
+  {id:'g_neg', x:390,y:350,w:220,h:70, label:'1차 변이 미발견<small>WES·WGS 고려</small>', cls:'fac'},
+  {id:'g_fam', x:630,y:330,w:120,h:90, label:'1촌 가족 유전검사', cls:'test'}
+ ],
+ edges:[
+  ['M300 60 V80 H120 V100',1],[A(380,60,380,100),1],['M460 60 V80 H640 V100',1],
+  [A(230,140,270,140),1,'dot'],
+  ['M330 180 V200 H260 V220',1],['M430 180 V200 H500 V220',1],
+  [A(260,310,260,350),1],[A(500,310,500,350),1],['M370 378 H385 V430 H690 V420',1]
+ ], labels:[[232,132,'SDHx']]}
+};
+
+const EXPMAP = {}; Object.entries(EXP).forEach(([k,g])=>g.ids.forEach(id=>{ EXPMAP[id] = k; }));
+const R = id => {
+  const [g, t] = REC[id];
+  const key = id.replace(/\./g,'-');
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">근거 ${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${key}" data-rid="${id}"><span class="rid">${RID(id)}</span><p>${t}</p>${badge}</div><div class="exp" id="exp-${key}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  const paras = g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">${g.ids.join(', ')}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paras}<p class="exp-src">Ku EJ, Kim KJ, et al. Endocrinol Metab 2021;36:322–338 본문 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const TAB2 = `<ul><li>갈색세포종</li><li>두경부 부신경절종</li><li>교감신경 부신경절종</li><li>부신 신경모세포 종양: 신경모세포종, 신경절신경모세포종(결절형·혼합형), 신경절신경종</li><li>복합 갈색세포종</li><li>복합 부신경절종</li></ul><p class="small" style="color:var(--muted)">Table 2. 2017 WHO 부신수질 및 부신외 부신경절 종양 분류</p>`;
+const TAB3 = `<div class="tbl"><table><thead><tr><th>구분</th><th>정의</th></tr></thead><tbody>
+<tr><td>pT1</td><td>갈색세포종 최대 직경 &lt;5 cm</td></tr><tr><td>pT2</td><td>갈색세포종 ≥5 cm 또는 교감신경 부신경절종</td></tr><tr><td>pT3</td><td>주위 조직 침범(부신외 지방 포함)</td></tr>
+<tr><td>pN0 / pN1</td><td>국소 림프절 전이 없음 / 있음<sup>b</sup></td></tr>
+<tr><td>M0</td><td>원격전이 없음</td></tr><tr><td>pM1a</td><td>골 전이</td></tr><tr><td>pM1b</td><td>비국소 림프절, 간 또는 폐 전이</td></tr><tr><td>pM1c</td><td>골과 다발성 기타 부위 전이</td></tr>
+<tr><td><b>I기</b></td><td>T1 N0 M0</td></tr><tr><td><b>II기</b></td><td>T2 N0 M0</td></tr><tr><td><b>III기</b></td><td>T1–2 N1 M0 또는 T3 모든 N M0</td></tr><tr><td><b>IV기</b></td><td>모든 T 모든 N M1</td></tr></tbody></table></div>
+<p class="small" style="color:var(--muted)">Table 3. AJCC 병기. a 비기능성 부교감신경 부신경절종(두경부)은 제외. b 복부·골반 종양의 국소 림프절에는 대동맥 및 후복막 림프절이 포함된다.</p>`;
+const TAB4 = `<div class="tbl"><table><thead><tr><th></th><th><sup>68</sup>Ga-DOTA-SSA</th><th><sup>18</sup>F-DOPA</th><th><sup>18</sup>F-FDG</th><th><sup>123</sup>I/<sup>131</sup>I-MIBG</th></tr></thead><tbody><tr><td>발견율</td><td>93.0–100%</td><td>61.4–97.4%</td><td>49.2–85.8%</td><td>6.9–100%</td></tr></tbody></table></div><p class="small" style="color:var(--muted)">Table 4. 기능 영상의 진단 성능</p>`;
+const TAB5 = `<div class="tbl"><table><thead><tr><th>항목</th><th>PASS (갈색세포종만)</th><th>GAPP (갈색세포종·PGL)</th></tr></thead><tbody>
+<tr><td>기준</td><td>큰 세포둥지 또는 미만성 성장(2) · 중심성/융합성 괴사(2) · 높은 세포밀도(2) · 세포 단조성(2) · 방추형 세포(2) · 유사분열 &gt;3/10 HPF(2) · 비정형 유사분열(2) · 지방조직 침범(2) · 혈관 침범(1) · 피막 침범(1) · 심한 핵 다형성(1) · 핵 과염색(1)</td><td>조직 양상: Zellballen(0), 크고 불규칙한 세포둥지(1), 가성로제트(1) · 세포밀도: &lt;150 cells/U(0), 150–250(1), &gt;250(2) · 면포 괴사: 없음(0)/있음(2) · 혈관·피막 침범: 없음(0)/있음(1) · Ki-67: &lt;1%(0), 1–3%(1), &gt;3%(2) · 카테콜아민 유형: 에피네프린형(0), 노르에피네프린형(1), 비기능형(0)</td></tr>
+<tr><td>총점</td><td>0–20</td><td>0–10</td></tr>
+<tr><td>위험군</td><td>0–3: 양성 양상 · 4–20: 생물학적 공격성</td><td>0–2: 고분화 · 3–6: 중등도 분화 · 7–10: 저분화</td></tr>
+<tr><td>민감도 / 특이도<sup>a</sup></td><td>100% / 75%</td><td>90% / 87%</td></tr></tbody></table></div><p class="small" style="color:var(--muted)">Table 5. a 악성 발견 기준.</p>`;
+const TAB6 = `<div class="tbl"><table><thead><tr><th>패널</th><th>유전자</th></tr></thead><tbody><tr><td>기본 (n=10)</td><td><i>FH, MAX, NF1, RET, SDHA, SDHB, SDHC, SDHD, TMEM127, VHL</i></td></tr><tr><td>확장 (n=15)</td><td>기본 전체 + <i>EGLN1/PHD2, EPAS1, KIF1B, MET, SDHAF2</i></td></tr></tbody></table></div><p class="small" style="color:var(--muted)">Table 6. 현재 근거에 근거한 권장 표적 NGS 패널</p>`;
+const FN1 = `<div class="box fn"><b>Fig. 1 범위</b>원 그림의 실선은 1순위 영상, 회색 선(“If not available”)은 1순위를 이용할 수 없을 때의 대안이다. HNPGL, SDHx 음성·양성 전이성 교감신경 PGL은 원 그림에서 점선 상자로 묶여 공통으로 <sup>68</sup>Ga-DOTA-SSA를 1순위로 한다.</div>`;
+const D = {
+c_sus:{kind:'출발점', title:'PPGL 의심', next:['c_bio'], body:`<p>PPGL은 주로 노르에피네프린과 에피네프린을 분비하여 고혈압, 두통, 발한, 두근거림을 일으키며, 인지되지 않으면 치명적 부정맥, 심근경색, 뇌혈관 사건, 급사를 일으킬 수 있다. 연간 발생률은 100만 명당 2–8명이며, 국내 보고는 100만 명당 1.8명이다.</p>`},
+c_bio:{kind:'생화학', title:'혈장 유리 또는 소변 분획 메타네프린', next:['c_ct','c_da','c_cga'], body:`${R('2.1')}${tip('검사 성능','혈장 유리 메타네프린: 메타분석 통합 민감도 97%, 특이도 94%. 국내 연구: 혈장 96%/76%, 소변 분획 96%/94%. LC-MS/MS 또는 전기화학 검출 권장, 앙와위 채혈.')}`},
+c_da:{kind:'생화학', title:'도파민 우세·전이 고위험', next:[], body:`${R('2.2')}`},
+c_cga:{kind:'생화학', title:'생화학적 무증상 PPGL', next:[], body:`${R('2.3')}`},
+c_ct:{kind:'영상', title:'해부 영상', next:['c_risk','c_mri'], body:`${R('3.1')}`},
+c_mri:{kind:'영상', title:'MRI를 우선하는 경우', next:[], body:`<ul><li>두개저·경부 PGL (민감도 90–95%)</li><li>CT 조영제 알레르기</li><li>방사선 노출 제한 필요: 소아, 임신부, 생식세포 변이 보인자, 최근 과도한 방사선 노출</li></ul><p>폐전이 발견에는 CT가 우선이다.</p>`},
+c_risk:{kind:'판단', title:'전이·다발성 고위험', next:['c_func','c_surg'], body:`${R('3.2')}`},
+c_func:{kind:'영상', title:'기능 영상', next:['x_ppgl'], nextLabel:'Fig. 1로', body:`${RR('3.2','3.3','3.4')}${TAB4}`},
+c_surg:{kind:'치료', title:'수술과 병리 평가', next:['c_ihc','c_gen','c_tnm'], body:`${RR('4.1','4.2')}${TAB5}`},
+c_ihc:{kind:'병리', title:'SDHB 면역조직화학', next:['g_ihc'], body:`${R('4.2')}`},
+c_gen:{kind:'유전', title:'유전검사', next:['g_all'], nextLabel:'유전 흐름으로', body:`${RR('5.1','5.3')}`},
+c_tnm:{kind:'병기', title:'TNM 병기와 전이 잠재성', next:[], body:`${RR('1.1','1.2')}${TAB3}`},
+
+x_ppgl:{kind:'출발점', title:'PPGL 핵의학 영상', next:['x_stage','x_elig'], body:`${RR('3.3')}${FN1}`},
+x_stage:{kind:'목적', title:'진단 병기 평가 (다발성·전이)', next:['x_spor','x_hn','x_neg','x_pos','x_vhl'], body:`${R('3.2')}<p>큰 원발 종양, 부신외, 다발성(두개저·경부 PPGL 제외), 재발 질환에서 전이 발견을 위해 기능 영상을 제안한다. <sup>18</sup>F-FDG PET보다 민감도·특이도가 높은 다른 기능 영상을 첫 선택으로 권고한다.</p>${TAB4}`},
+x_elig:{kind:'목적', title:'표적 방사성핵종 치료 적격성', next:['x_131','x_prrt'], body:`${R('3.4')}`},
+x_spor:{kind:'유형', title:'산발성으로 보이는 갈색세포종', next:['i_spor'], body:`<p><sup>123</sup>I/<sup>131</sup>I-MIBG는 갈색세포종에서 <sup>18</sup>F-DOPA PET/CT와 <sup>68</sup>Ga-DOTA-SSA PET/CT와 비슷한 민감도를 보이며, SPECT로 성능이 향상된다.</p>`},
+x_hn:{kind:'유형', title:'두경부 부신경절종', next:['i_ga','a_hn'], body:`<p><sup>68</sup>Ga-DOTA-SSA PET/CT는 부신외 PGL과 두경부 PGL에서 임상적 가치가 높다.</p>`},
+x_neg:{kind:'유형', title:'전이성 + 교감신경 PGL + SDHx 음성', next:['i_ga','a_neg'], body:`<p><sup>68</sup>Ga-DOTA-SSA PET/CT는 유전 상태를 모르는 환자에서 가장 민감하며 전이성 PPGL에서 선호된다. MIBG는 PGL과 전이성 PPGL에서 민감도가 상대적으로 낮다.</p>`},
+x_pos:{kind:'유형', title:'전이성 + 교감신경 PGL + SDHx 양성', next:['i_ga','a_pos'], body:`<p>SDHx 변이 PPGL에서 <sup>68</sup>Ga-DOTA-SSA PET/CT를 권고할 수 있다. MIBG는 SDHx 관련 PPGL에서 특히 민감도가 낮다.</p>${R('4.2')}`},
+x_vhl:{kind:'유형', title:'VHL, RET, NF1, MAX, HIF2A, PHD1/2, FH 변이', next:['i_vhl','a_vhl'], body:`<p>SDHx 관련 PPGL과 달리 <sup>18</sup>F-DOPA PET/CT는 이 변이 PPGL에서 높은 종양 섭취를 보인다. 정확한 기전은 대부분 밝혀지지 않았고 극히 드문 코호트에 근거한다. HIF2A와 PHD1/2 변이에서는 대안으로 <sup>18</sup>F-FDG를 사용한다(Fig. 1).</p>`},
+x_131:{kind:'치료 계획', title:'¹³¹I-MIBG 치료', next:['i_131'], body:`${R('3.4')}<p>고비활성 <sup>131</sup>I-MIBG(Azedra): FDA 승인, 2상 연구에서 영상 반응 92%, 생화학 반응 68%.</p>`},
+x_prrt:{kind:'치료 계획', title:'PRRT', next:['i_prrt'], body:`${R('3.4')}<p>메타분석에서 PRRT의 질병조절률 84%, 생화학 반응률 61–64%.</p>`},
+i_spor:{kind:'1순위', title:'¹²³I-MIBG, ⁶⁸Ga-DOTA-SSA 또는 ¹⁸F-DOPA', next:[], body:`${R('3.3')}`},
+i_ga:{kind:'1순위', title:'⁶⁸Ga-DOTA-SSA PET/CT', next:['a_hn','a_neg','a_pos'], body:`${R('3.3')}<p><sup>68</sup>Ga은 발생기로 생산되어 대형 기관에서만 감당할 수 있으므로, 이용할 수 없으면 대안 영상을 사용한다.</p>${FN1}`},
+a_hn:{kind:'대안', title:'HNPGL 대안: ¹⁸F-DOPA', next:[], body:`<p><sup>68</sup>Ga-DOTA-SSA를 이용할 수 없을 때.</p>`},
+a_neg:{kind:'대안', title:'SDHx 음성 대안: ¹⁸F-DOPA', next:[], body:`<p><sup>68</sup>Ga-DOTA-SSA를 이용할 수 없을 때.</p>`},
+a_pos:{kind:'대안', title:'SDHx 양성 대안: ¹⁸F-FDG', next:[], body:`<p><sup>68</sup>Ga-DOTA-SSA를 이용할 수 없을 때.</p>`},
+i_vhl:{kind:'1순위', title:'¹²³I-MIBG 또는 ¹⁸F-DOPA', next:['a_vhl'], body:`${R('3.3')}`},
+a_vhl:{kind:'대안', title:'대안: ⁶⁸Ga-DOTA-SSA', next:[], body:`<p>1순위를 이용할 수 없을 때. 단, HIF2A와 PHD1/2 변이에서는 <sup>18</sup>F-FDG.</p>`},
+i_131:{kind:'필수 영상', title:'¹²³I-MIBG', next:[], body:`${R('3.4')}`},
+i_prrt:{kind:'필수 영상', title:'⁶⁸Ga-DOTA-SSA PET/CT', next:[], body:`${R('3.4')}`},
+
+g_all:{kind:'출발점', title:'PPGL로 진단된 모든 환자', next:['g_ihc','g_ngs','g_path'], body:`${R('5.1')}`},
+g_ihc:{kind:'병리', title:'SDHB 면역조직화학', next:['g_ngs'], body:`${R('4.2')}`},
+g_ngs:{kind:'유전', title:'검증된 표적 NGS', next:['g_basic','g_ext'], body:`${R('5.3')}`},
+g_path:{kind:'병리', title:'조직학적 점수 체계', next:[], body:`${R('4.1')}${TAB5}`},
+g_basic:{kind:'패널', title:'기본 패널 10개', next:['g_pos'], body:`${R('5.4')}${TAB6}`},
+g_ext:{kind:'패널', title:'확장 패널 15개', next:['g_neg'], body:`${R('5.4')}${TAB6}`},
+g_pos:{kind:'결과', title:'병원성 변이 확인', next:['g_fam'], body:`${R('4.2')}<p>SDHB 생식세포 변이: 40% 이상에서 전이, 중앙 생존 42개월 대 244개월.</p>`},
+g_neg:{kind:'결과', title:'1차 변이 미발견', next:[], body:`<p>표적 NGS에서 1차 변이가 발견되지 않으면 가능한 경우 전체엑솜 또는 전체게놈 염기서열분석을 고려할 수 있다.</p>${R('5.4')}`},
+g_fam:{kind:'가족', title:'1촌 가족 유전검사', next:[], body:`${R('5.2')}`}
+};
+const EXTRA = {
+levels:{kind:'참고', title:'근거 수준 (Table 1)', next:[], body:`${['A','B','C','E'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">근거 ${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}
+${note('이 도구에 대하여','‘핵의학 영상’ 탭은 원문 Fig. 1을 재현한 것이다. ‘진단 흐름’과 ‘유전·병리’ 탭은 원문에 그림이 없어 요약 권고(SUMMARY)를 바탕으로 본 도구에서 구성하였다.')}<p class="small" style="color:var(--muted)">대한내분비학회, 대한외과학회, 대한핵의학회, 대한병리학회, 대한영상의학회, 대한진단검사의학회로 구성된 다학제 위원회가 개발하였다.</p>`},
+who:{kind:'Table 2', title:'2017 WHO 분류', next:[], body:`${TAB2}${R('1.1')}`},
+tnm:{kind:'Table 3', title:'AJCC TNM 병기', next:[], body:`${TAB3}${R('1.2')}`},
+tabs:{kind:'Table 4–6', title:'기능 영상 · PASS/GAPP · NGS 패널', next:[], body:`<h4>Table 4. 기능 영상의 진단 성능</h4>${TAB4}<h4>Table 5. PASS와 GAPP 비교</h4>${TAB5}<h4>Table 6. 표적 NGS 패널</h4>${TAB6}`},
+summary:{kind:'SUMMARY', title:'요약 권고 전체', next:[], body:`<h4>1. 새로운 분류</h4>${RR('1.1','1.2')}<h4>2. 생화학 검사</h4>${RR('2.1','2.2','2.3')}<h4>3. 영상</h4>${RR('3.1','3.2','3.3','3.4')}<h4>4. 병리 등급</h4>${RR('4.1','4.2')}<h4>5. 유전검사</h4>${RR('5.1','5.2','5.3','5.4')}`}
+};
+Object.assign(D, EXTRA);
+const ABBR = [
+ ['3-MT','3-Methoxytyramine, 3-메톡시티라민'],['<sup>18</sup>F-DOPA','Fluorine-18-L-dihydroxyphenylalanine'],['<sup>18</sup>F-FDG','<sup>18</sup>F-fluorodeoxyglucose'],
+ ['<sup>68</sup>Ga-DOTA-SSA','Gallium-68 DOTA-somatostatin receptor analogs, 갈륨-68 소마토스타틴수용체 유사체'],['AJCC','American Joint Committee on Cancer, 미국암연합위원회'],
+ ['COMT','Catechol-O-methyltransferase'],['COPPs','Composite Pheochromocytoma/Paraganglioma Prognostic Score'],['CT','Computed tomography, 전산화단층촬영'],
+ ['DOTATATE / DOTATOC','DOTA-0-Tyr3-octreotate / DOTA-D-Phe1-Tyr3-octreotide'],['GAPP','Grading of Adrenal Pheochromocytoma and Paraganglioma'],
+ ['HNPGL','Head and neck paraganglioma, 두경부 부신경절종'],['HPF','High-power field, 고배율 시야'],['IHC','Immunohistochemistry, 면역조직화학'],
+ ['M-GAPP','Modified GAPP, 수정 GAPP'],['MEN2','Multiple endocrine neoplasia type 2, 다발성 내분비샘종양 2형'],['MIBG','Metaiodobenzylguanidine'],
+ ['MN / NMN','Metanephrine / normetanephrine, 메타네프린 / 노르메타네프린'],['MRI','Magnetic resonance imaging, 자기공명영상'],
+ ['NGS','Next-generation sequencing, 차세대염기서열분석'],['NGSnPPGL','NGS in PPGL Study Group'],['PASS','Pheochromocytoma of the Adrenal Gland Scaled Score'],
+ ['PET','Positron emission tomography, 양전자방출단층촬영'],['PGL','Paraganglioma, 부신경절종 (또는 부신경절종 증후군)'],['PHEO','Pheochromocytoma, 갈색세포종'],
+ ['PPGL','Pheochromocytoma and paraganglioma, 갈색세포종·부신경절종'],['PRRT','Peptide receptor radionuclide therapy, 펩타이드수용체 방사성핵종 치료'],
+ ['SDH(x)','Succinate dehydrogenase (subunit genes A/B/C/D), 숙신산탈수소효소'],['SPECT','Single-photon emission computed tomography, 단일광자방출단층촬영'],
+ ['TNM','Tumor-node-metastasis'],['VMA','Vanillylmandelic acid, 바닐릴만델산'],['WES / WGS','Whole-exome / whole-genome sequencing, 전체엑솜 / 전체게놈 염기서열분석'],
+ ['WHO','World Health Organization, 세계보건기구'],
+ ['FH, MAX, NF1, RET, VHL','Fumarate hydratase; myc-associated protein X; neurofibromatosis 1; rearranged during transfection; von Hippel-Lindau'],
+ ['TMEM127, SDHAF2','Transmembrane protein 127; SDH complex assembly factor 2'],
+ ['EGLN1/PHD2, EPAS1/HIF2A','Egl-9 family hypoxia inducible factor 1/prolyl hydroxylase domain 2; endothelial PAS domain-containing protein 1 (hypoxia-inducible factor 2A)'],
+ ['KIF1B, MET','Kinesin family member 1B; receptor tyrosine kinase MET']
+];
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (cm|mg)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: S, MIBG)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
