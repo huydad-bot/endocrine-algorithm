@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>방사성요오드 치료 KTA 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+.node.pr{border-color:#6FB6DA; background:#D4EEFA; color:#123A52}
+.sw.pr{border-color:#6FB6DA; background:#D4EEFA}
+.node.pr{--flash:#2F8FC0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .node.pr,:root:not([data-theme="light"]) .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}}
+:root[data-theme="dark"] .node.pr,:root[data-theme="dark"] .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}
+.node.rk1 small,.node.rk2 small{color:inherit;opacity:.88}
+.t2 td:not(:first-child){white-space:nowrap}
+.chart svg path.eb{fill:#9DBDE8;stroke:#4C7BC0;stroke-width:1.6}
+.chart svg path.eg{fill:#C9E0A5;stroke:#86AC4F;stroke-width:1.6}
+.chart svg path.er{fill:#EDBDC1;stroke:#C2505B;stroke-width:1.6}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>2025 대한갑상선학회 갑상선기능항진증의 방사성요오드 치료 진료권고안</h1>
+        <p class="src">김경진, 송의연, 김미진 외. 2025 갑상선기능항진증의 방사성요오드 치료에 대한 진료권고안. <a href="https://doi.org/10.11106/ijt.2025.18.1.65" target="_blank" rel="noopener noreferrer">Int J Thyroidol 2025;18(1):65–79</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Korean Thyroid Association</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="tx" aria-label="권고 박스 강조"><i class="sw tx"></i>치료·적극 고려</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="금기 박스 강조"><i class="sw mal"></i>권고하지 않음·주의</button>
+      <button type="button" class="lg" data-cls="test" aria-label="검사 박스 강조"><i class="sw test"></i>검사·추적</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>항목을 누르면 해당 본문 절 요약 번역이 펼쳐짐</li><li>권고문은 원문 그대로 수록 · 안병증 탭은 Table 2를 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>권고수준·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 권고</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 1·2</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·설문·맺음말</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ L1:'권고수준 1 — 강력히 권고함/강력히 권고하지 않음(strong for/against recommend): 권고한 행위를 하였을 때 중요한 건강상의 이득 또는 손실이 있다는 충분하고도 객관적인 근거가 있는 경우',
+ L2:'권고수준 2 — 일반적으로 권고함/일반적으로 권고하지 않음(conditional for/against recommend): 중요한 건강상의 이득 또는 손실이 있다는 근거가 있지만, 근거가 확실하지 않아 일률적으로 행하라고 권고하기 어렵거나 근거가 간접적인 경우',
+ L3:'권고수준 3 — 전문가 합의 권고(expert consensus): 임상적 근거는 부족하지만 환자의 상황과 전문가의 합의에 따라 권고하는 사항',
+ L4:'권고수준 4 — 권고 보류(inconclusive): 중요한 건강상의 이득 또는 손실이 있다는 근거가 없거나 이견이 많아서 찬성도 반대도 하지 않음'
+};
+const LVTXT = {L1:'권고수준 1', L2:'권고수준 2', L3:'권고수준 3', L4:'권고수준 4'};
+const LVCLS = {L1:'l1', L2:'l2', L3:'l3', L4:'l4'};
+/* 원문 번호 */
+const ONUM = {I1:'I.1.1',I2:'I.1.2',I3:'I.1.3',I4:'I.1.4',I5:'I.2.1',I6:'I.2.2',I7:'I.2.3',I8:'I.3.1',I9:'I.3.2',I10:'I.3.3',D1:'II.1',N1:'III.1',W1:'IV.1',W2:'IV.2',E1:'V.1',E2:'V.2',E3:'V.3',E4:'V.4',F1:'VI.1',F2:'VI.2',F3:'VI.3',F4:'VI.4'};
+/* [권고수준, 권고문(원문), 본문 절 키] */
+const REC = {
+'I1':['L1','다음과 같은 경우 방사성요오드 치료를 적극적으로 고려한다: 첫 치료로 완치율이 높은 치료를 원할 경우.','s1a'],
+'I2':['L1','다음과 같은 경우 방사성요오드 치료를 적극적으로 고려한다: 항갑상선제에 의한 중증의 부작용이 발생한 경우.','s1a'],
+'I3':['L1','다음과 같은 경우 방사성요오드 치료를 적극적으로 고려한다: 항갑상선제로 완치 후 재발한 환자 중 갑상선기능항진증에 대한 완치율이 높은 치료를 원하는 경우.','s1a'],
+'I4':['L1','다음과 같은 경우 방사성요오드 치료를 적극적으로 고려한다: 충분한 항갑상선제 치료에도 잘 조절되지 않는 경우.','s1a'],
+'I5':['L2','다음과 같은 경우 방사성요오드 치료를 고려한다: 항갑상선제 복용 순응도가 낮은 경우.','s1b'],
+'I6':['L2','다음과 같은 경우 방사성요오드 치료를 고려한다: 갑상선기능항진증 악화 시 임상 상태의 불안정이 우려되는 기저 질환(조절되지 않는 부정맥 또는 심부전 등)이 동반된 경우.','s1b'],
+'I7':['L3','다음과 같은 경우 방사성요오드 치료를 고려한다: 정상 갑상선기능을 유지하기 위해 고용량의 항갑상선제 치료가 지속적으로 필요한 경우(특히, 6개월 이후 임신을 계획 중인 여성 환자의 경우).','s1b'],
+'I8':['L1','다음과 같은 경우 방사성요오드 치료를 권고하지 않는다: 임신 중이거나 모유 수유 중인 여성.','s1c'],
+'I9':['L1','다음과 같은 경우 방사성요오드 치료를 권고하지 않는다: 중등도 이상의 활동성 안병증이 동반된 경우.','s1c'],
+'I10':['L1','다음과 같은 경우 방사성요오드 치료를 권고하지 않는다: 갑상선암이 동반된 경우.','s1c'],
+'D1':['L2','방사성요오드 치료 용량 결정 시 갑상선기능저하증을 유발할 만큼 충분한 고정된 용량(10-15 mCi)을 사용한다.','s2'],
+'N1':['L3','갑상선기능항진증의 방사성요오드 치료 전 저요오드 식사 처방은 권고하지 않으나 요오드 함유량이 높은 식품의 경우 최소 1주일 동안 피하도록 한다.','s3'],
+'W1':['L1','방사성요오드 치료 전 3-7일간 항갑상선제 복용을 중단할 것을 권고한다.','s4'],
+'W2':['L2','방사성요오드 치료 전 항갑상선제를 복용한 경우 또는 갑상선기능항진증의 악화로 인한 건강상의 위험성이 높은 경우에는 방사성요오드 치료 후 3-7일 이내에 항갑상선제의 재투여를 고려한다.','s4'],
+'E1':['L1','활동성 중등도-중증 갑상선 안병증이 동반된 환자에게 방사성요오드 치료를 권고하지 않는다.','s5'],
+'E2':['L1','활동성 경증 갑상선 안병증이 동반된 환자에게 방사성요오드 치료 시 예방적 스테로이드 치료를 권고한다.','s5'],
+'E3':['L2','비활동성 중등도-중증 갑상선 안병증이 동반된 환자에게 높은 TSH 수용체항체나 흡연과 같은 위험인자가 동반된 경우 방사성요오드 치료 시 예방적 스테로이드 치료를 고려한다.','s5'],
+'E4':['L1','비활동성 경증 갑상선 안병증이 동반된 환자에게 높은 TSH 수용체항체나 흡연과 같은 위험인자가 동반되지 않은 경우 방사성요오드 치료 시 예방적 스테로이드 치료를 권고하지 않는다.','s5'],
+'F1':['L2','방사성요오드 치료 후 4-6주 이내 TSH 및 유리 T4를 포함한 갑상선기능검사를 시행한다.','s6'],
+'F2':['L2','방사성요오드 치료 후 6개월 동안 또는 TSH가 정상범위에 도달할 때까지 2-3개월 정도 간격으로 갑상선기능을 평가한다.','s6'],
+'F3':['L2','갑상선기능이 2번 이상 정상으로 확인된 경우 6개월에서 1년 정도 간격으로 갑상선기능검사를 시행한다.','s6'],
+'F4':['L2','갑상선기능항진증 혹은 갑상선기능저하증의 증상이 의심되는 경우 갑상선기능검사를 바로 시행한다.','s6']
+};
+Object.keys(REC).forEach(k=>{ REC[k][1] = `<b>${ONUM[k]}</b> ${REC[k][1]}`; });
+
+const EXP = {
+intro:{t:'서론·방법', r:'66–67쪽', p:[
+ '갑상선기능항진증은 갑상선호르몬이 과도하게 생산되어 갑상선중독증이 나타나는 상태로 그레이브스병이 가장 흔한 원인이다. 우리나라 연령표준화 발생률은 2004년 10만 명당 42.23명에서 2018년 105.13명으로 증가했고 50–60세 여성에서 가장 높았다. 치료는 항갑상선제, 방사성요오드, 갑상선절제술이며 연령, 갑상선종 크기, 증상, 순응도뿐 아니라 사회경제적 여건, 시설 가용성, 선호도, 보험 체계를 종합해 선택한다.',
+ '우리나라 환자의 97.3%가 일차 치료로 항갑상선제를 받았고, 방사성요오드 비율은 2003년 5.46%에서 2018년 2.66%로 감소했으며 갑상선절제술은 1.43%에서 1.95%였다. 2013년 대한갑상선학회 협의안 이후 2016 ATA, 2018 ETA, 2019 NICE 권고안이 발표되었으나 국내 적용에 한계가 있어, 2022년 내과·핵의학과 전문의로 제정위원회를 구성하고 2013년 협의안의 방사성요오드 부분을 분리·보완하였다.',
+ '자가면역에 의한 갑상선기능항진증을 대상으로 하며 독성결절은 포함하지 않았다. 10회 회의로 핵심질문을 정하고 2013–2022년 PubMed·Embase 문헌(“hyperthyroidism, Graves’ disease”)을 검색했으며 작성 중 발표된 논문도 추가했다. 권고수준은 이전 학회 권고안과 일관되게 정했고(Table 1), 2024년 춘계학술대회 의견 수렴, 이사회와 대한내분비학회·대한핵의학회·대한내분비외과학회·대한두경부외과학회·대한갑상선영상의학회 추천 자문위원회 검토와 승인을 거쳤다. 성인 환자를 진료하는 의료진을 위한 것이며 항갑상선제와 수술은 다루지 않는다.'
+]},
+survey:{t:'방사성요오드 치료에 대한 국내 설문조사', r:'67쪽', p:[
+ '2024년 1월 24일–2월 4일 학회 회원 169명이 15문항 설문에 응답했다. 77%(130명)가 방사성요오드 치료 경험이 있었고, 일차 치료로 시행한 적이 있는 비율은 16%(27명)였다.',
+ '가장 큰 어려움은 부작용(안병증 악화, 침샘염, 이차암 등) 66.9%, 설명에 오래 걸림 63.9%, 환자·사회의 부정적 인식 60.4%였고, 89%는 항갑상선제보다 설명 시간이 더 걸린다고 답했다. 치료 후 기능저하증 우려(45.5% vs. 15.4%)와 부작용 우려(45.9% vs. 26.2%)는 치료 경험이 없는 응답자에서 더 컸다.',
+ '5년 이상 저용량 항갑상선제를 복용 중인 환자에게 71%가, 재발 환자에게 51%가 방사성요오드를 고려하지 않는다고 답해 실패·재발에도 미국·유럽보다 낮은 비율로 시행되고 있음을 확인하였다. 이에 핵심질문 6개를 도출하였다.'
+]},
+eff:{t:'방사성요오드 치료의 효과와 안정성', r:'69쪽', p:[
+ '과잉 생산 상태가 사라진 경우(정상 기능 또는 기능저하증)를 완치로 정의하면 방사성요오드 치료 환자의 50–90%가 3–12개월 내 완치된다. 국내 연구에서 첫 치료 후 1년 성공률 62.8%, 2년 76.8%였고, 항갑상선제의 2년 성공률은 41%였다.',
+ '한 번에 완치되도록 기능저하증이 생길 만한 충분한 용량을 투여하므로 다수에서 갑상선호르몬 복용이 필요하다. 1년째 기능저하증은 24–87%이며 용량이 클수록 위험이 높고, 1년 후 정상인 환자에서도 매년 3–5%가 추가로 기능저하증이 된다.',
+ '단기 부작용은 통증, 부종, 침샘염, 장기 부작용은 영구 기능저하증과 이차암이다. 479,452명 메타분석에서 전체 암 발생률 차이가 없었고(1.02, 95% CI 0.95–1.09), 국내 10,737명 대 53,003명 비교에서도 위험비 0.96(0.83–1.10)으로 유의하지 않았다. 메타분석에서 방사성요오드는 항갑상선제보다 전체·심혈관 사망률을 낮출 수 있었고, 수술이 방사성요오드보다 심혈관 위험이 낮다는 보고도 있다. 신속한 완치가 심혈관 사망률 감소에 기여할 수 있어 방사성요오드는 효과적이고 안전한 방법이다.'
+]},
+s1a:{t:'I.1 방사성요오드 치료를 적극적으로 고려하는 경우', r:'69–70쪽', p:[
+ '그레이브스병의 전향적 비교에서 재발률은 항갑상선제 34–42%, 방사성요오드 21%, 수술 3–8%였다. 항갑상선제는 완치율이 낮고(~50%) 재발이 많은 반면 방사성요오드 초치료 성공률은 75–81%이므로, 완치율이 높은 치료를 원하면 수술과 방사성요오드가 첫 치료로 고려된다. 전절제술은 완치율 면에서 가장 효과적이나 흉터, 전신마취, 저칼슘혈증, 성대마비 위험이 있어, 수술 위험이 높거나 숙련된 외과의가 없거나 환자가 원치 않으면 방사성요오드가 우선된다.',
+ '무과립구증, 간독성, 혈관염 같은 심각한 부작용, 완치 후 재발, 적절한 치료에도 조절되지 않는 경우에는 방사성요오드나 수술이 필요하다. 중증 부작용 후에는 교차반응 위험으로 다른 항갑상선제로의 전환이 권장되지 않으며, 무과립구증 후 방사성요오드 성공률은 88.8%였다.',
+ '표준 치료 기간은 12–18개월이며 26개 RCT(3388명) 메타분석에서 이를 넘는 치료는 완치율을 높이지 못했다. 유병 기간이 길고 조절되지 않을수록 사망률이 증가하므로 충분히 써도 조절되지 않으면 방사성요오드나 수술을 고려한다. 재발 후 항갑상선제 재투여 완치율은 약 23%로 낮고, 한국인 247명 연구에서 이차 치료로서 방사성요오드 성공률은 약 62.8%였다.'
+]},
+s1b:{t:'I.2 방사성요오드 치료를 고려하는 경우', r:'70–71쪽', p:[
+ '완치에 흔히 12–18개월 이상이 필요하므로 순응도가 낮은 환자에서는 완치 목적으로 방사성요오드를 고려할 수 있다. 다만 기능저하증 후에도 지속적인 갑상선호르몬 복용이 필요하므로 순응도와 건강 영향을 예측해 결정한다.',
+ '호르몬이 정상으로 유지되지 않거나 변동이 크면 부정맥·심부전 위험이 증가한다. 첫 진단 그레이브스병 4189명 후향 코호트에서 방사성요오드 후 호전군은 항갑상선제군보다 주요 심혈관 질환(0.59)과 사망률(0.5)이 낮았고, 지속군은 주요 심혈관 질환이 증가했다(1.51). 진단 1년 후 TSH가 낮으면 심혈관 질환과 사망률이 높았다.',
+ 'MMI 15–20 mg/일 또는 PTU 150–300 mg/일 이상이 지속적으로 필요하면 방사성요오드를 고려할 수 있으며, 용량이 높을수록 무과립구증·간독성 위험이 증가한다. 특히 6개월 이후 임신을 계획 중인 여성에서 그러하다. 치료 후 TSH 수용체항체가 일시적으로 상승할 수 있어 6개월간 임신을 미루고, 남성도 정자 생성 주기를 고려해 3–4개월 연기한다. 여성은 치료 변화 없이 기능이 2회 이상 정상일 때 임신을 시도하며, 6개월 이내 임신 계획이면 수술을 우선 고려한다. 임신 계획 여성은 한 가지 방법만 권고할 근거가 부족하므로 충분히 상의해 결정한다.'
+]},
+s1c:{t:'I.3 방사성요오드 치료를 권고하지 않는 경우', r:'71쪽', p:[
+ '방사성요오드는 태반을 자유롭게 통과해 태아 갑상선에 축적되어 태아 기능저하증과 신경발달 장애를 일으킬 수 있으므로 임신 중 절대적 금기다. 모유로도 배출되어 수유 중에도 금기이며 치료 전 반드시 수유를 중단한다. 치료 전 최소 48시간 이내에 임신 여부를 확인한다.',
+ '중등도 이상의 활동성 안병증은 방사성요오드가 악화시킬 수 있어 권고되지 않으며, 경증 안병증에서는 스테로이드를 고려할 수 있다(Part V). 갑상선암이 동반된 경우에도 항진증 치료 목적의 방사성요오드는 권고되지 않는다.',
+ '절대 금기는 아니지만 큰 갑상선종과 높은 TSH 수용체항체(&gt;40 U/L)는 실패율이 높아(388명 후향 연구 등) 빠른 완치를 원하면 수술이 바람직하다. 호르몬이 매우 높은 급성 갑상선중독증은 부작용 위험이 높고, 치료 직후 일시적 호르몬 상승이 있을 수 있으므로(갑상선급성발작은 매우 드묾) 항갑상선제로 정상화한 뒤 치료한다. 항갑상선제를 쓸 수 없으면 무기 요오드, 리튬, 혈장교환술이 제시되었으나, 무기 요오드는 도피 현상 때문에 7–10일만 쓰고 흡수를 저해하므로 최소 1–2주 전에 중단하며, 리튬은 독성과 농도 감시 필요로 국내 활용이 제한적이다.'
+]},
+s2:{t:'II. 방사성요오드 치료 용량', r:'71–72쪽', p:[
+ '목표는 완치이며 기능저하증을 유도할 충분한 용량을 투여한다. 용량은 고정 용량(10–15 mCi) 또는 갑상선 크기·섭취율을 고려한 선량 측정 방식으로 정한다. 88명을 평균 63개월 추적한 연구에서 고정 용량과 선량 측정 간 결과 차이가 없었고, 메타분석에서도 차이가 없거나 선량 측정에서 재발·지속이 더 많았다. 흡수선량 120–180 Gy에서 정상 기능 유지율이 높다는 메타분석도 있으나, 국내 적용의 한계와 연구 부족으로 고정 용량을 권고하였다.',
+ '용량별 성공률은 5.4 mCi 61%, 8.2 mCi 69%, 10 mCi 69–74%, 15 mCi 75–81%, 15.7 mCi 86%였다. 기존 연구는 항갑상선제 사용력이 없는 환자가 많아 적정 용량 근거가 명확하지 않으므로 최소 10 mCi, 항갑상선제 사용 여부 등을 고려해 10–15 mCi를 제시한다. 갑상선종이 크면 15 mCi보다 높은 용량을 고려할 수 있으나 일시적 갑상선염을 관찰한다.',
+ '갑상선 크기는 6개월부터 유의하게 감소해 평균 50–70% 이상 줄어든다. 다기관 연구에서 중앙 감소율은 6개월 57%, 12개월 71%였고, 초음파 연구에서 43.01 cm³에서 6개월 후 11.58 cm³로 약 73% 감소했다.'
+]},
+s3:{t:'III. 저요오드 식사', r:'72–73쪽', p:[
+ '저요오드 식이 처방은 일반적으로 권장되지 않으나 요오드 함유 영양제, 건강기능식품, 해조류는 치료 효과에 영향을 줄 수 있어 1주일 전부터 중단을 고려한다. 2013–2017 국민건강영양조사에서 한국인 평균 요오드 섭취량은 416.5 μg/일(중앙값 129.0)로 권장량 150 μg/일의 약 3배여서 일반 식이 후 치료하면 효과가 감소할 우려가 있다.',
+ '21명 단일군 연구에서 1주일 전부터 400 μg/일 미만으로 제한하자 소변 요오드가 511에서 41 μg/gCr로 감소했고 100 μg/gCr 미만이면 섭취율이 증가했다. 그러나 소규모 RCT(31 vs. 36명)에서 소변 요오드는 1주 23%, 2주 42% 감소했으나 6개월 완치율 차이는 없었다. 따라서 일괄적 저요오드 식사는 권고하지 않지만, 해조류(김, 미역, 다시마)와 고용량 요오드 보조식품은 1주일 전부터 피하도록 한다. 요오드 조영제, 아미오다론 사용을 고려해야 하며 무기 요오드 제제는 최소 1–2주 전에 중단한다.'
+]},
+s4:{t:'IV. 치료 전후 항갑상선제 중단 기간', r:'73쪽', p:[
+ '14개 RCT(1306명) 메타분석에서 치료 시까지 항갑상선제를 투여하면 기능저하증 위험은 감소했으나(RR 0.68) 치료 실패 위험이 증가했다(RR 1.28). 중단군은 3–7일 전에 중단했다. 치료 전 투여 시 실패 위험 RR 1.48, 치료 후 투여 시 RR 1.32였다. PTU는 방사선 보호 효과로 효과를 낮출 수 있어 유럽핵의학회는 최소 2주 중단을 권고하지만, 1주 이상 연장할 근거가 충분하지 않아 3–7일 중단을 권고한다.',
+ '치료 후 일시적 호르몬 증가가 있을 수 있고 드물게 갑상선중독발작은 중증 심혈관·뇌혈관 사건과 관련된다. 중증 항진증, 고령, 악화 위험이 큰 기저 질환(심방세동, 심부전, 폐고혈압, 신부전, 감염, 외상, 조절되지 않는 당뇨병, 뇌혈관·폐질환)이 있으면 미리 항갑상선제로 충분히 조절한 후 치료한다.',
+ '42명 RCT에서 전처치군은 치료 후 유리 T4·T3가 52.4%·61.8% 증가한 반면 비전처치군은 32.4%·32.9% 감소했다. 다른 RCT에서 비전처치군은 5일째부터 감소해 30일째 안정되었으나, 전처치군은 유리 T4가 7일째 70%, 14일째 107% 증가로 정점이었고 T3는 2일째 85% 상승했다. 따라서 3–7일 전에 중단하고, 고위험 고령 환자나 합병증 위험이 큰 환자에서는 3–7일 이내 재투여를 고려하며 주기적으로 측정해 지속 여부를 결정한다.'
+]},
+s5:{t:'V. 예방적 글루코코르티코이드와 갑상선 안병증', r:'74–75쪽', p:[
+ '그레이브스병의 약 1/3에서 안병증이 나타나고 약 5%는 중등도–중증이므로 중증도와 활동성 평가가 중요하다. 중등도–중증 또는 시신경병증·각막 궤양으로 시력을 위협하면 신속한 치료가 필요하며 수술이나 항갑상선제가 선호된다. 항갑상선제로 신속히 정상화하면 진행을 억제하고 장기 투여도 관해 유도에 안전·효과적이며, 활동성 중등도–중증 44명에서 갑상선절제술 3년 후 모두 호전되었다.',
+ '방사성요오드는 항갑상선제보다 안병증 악화 위험이 3.2–5.8배 높고, 최근 RCT에서 새로운 안병증이 38.7% 대 21.3%(1.8배)였다. 경증 또는 비활동성 안병증에서는 경구 저용량 스테로이드 예방요법이 새 발생·진행을 효과적으로 예방하며, 850명 메타분석에서 악화 위험비 0.14였다. 부작용(당뇨병 악화, 고혈압, 골다공증, 정신질환, 감염, 바이러스 간염 재활성화)이 있으나 일반적 예방요법(0.1–0.4 mg/kg로 시작해 감량)은 안전하고, 프레드니손 0.1–0.2 mg/kg 6주 감량 단기 요법이 고용량(0.3–0.5 mg/kg)과 동등했다. 저용량 정주 요법은 4주간 매주 입원이 필요하다.',
+ '비활동성 안병증은 진행·재활성화 빈도가 낮다. 72명에서 스테로이드 없이 치료해도 진행이 없었고, 일본 295명 연구에서 예방 여부에 따른 차이가 없었으며 위험인자가 없으면 진행률이 4.2%였다. 안병증이 없는 환자에서도 예방 스테로이드의 이점이 없었다. 따라서 위험인자 없는 비활동성 안병증이나 안병증이 없으면 스테로이드가 필요하지 않으며, 중증도·활성도·위험인자에 따른 권고를 Table 2에 정리하였다.'
+]},
+s6:{t:'VI. 치료 후 갑상선기능검사 간격', r:'75쪽', p:[
+ '초기 평가는 4–6주 이내가 권장되며, 이 시기에는 기능저하증이 생겨도 TSH가 억제되어 낮게 측정될 수 있어 TSH와 유리 T4를 함께 측정한다. 변화는 주로 2–6개월에 나타나고 빠르면 4주부터 기능저하증이 생길 수 있으며, 일시적 기능저하증은 주로 2개월째 시작해 1–4개월 지속된다. 8주에 약 40%, 16주에 80% 이상이 기능저하였고, 80–90% 이상이 6개월 이내 정상 또는 기능저하에 도달했으며, 3–12개월에 50–90%에서 안정되었다. 따라서 6–12개월 또는 TSH가 정상으로 회복될 때까지 2–3개월 간격으로 검사한다.',
+ '1년 이후에도 매년 3–5%에서 추가 기능저하증이 생길 수 있다. 그레이브스병의 누적 기능저하증은 1년 24%, 10년 59%, 25년 82%로 독성 다결절성 갑상선종(4%, 15%, 32%)보다 월등히 높았다. 따라서 정기적·장기적 검사가 필요하며 안정 후에도 연 1회 또는 이상이 의심되면 검사한다.'
+]},
+concl:{t:'맺음말', r:'75–76쪽', p:[
+ '2013년 협의안 중 방사성요오드 부분을 최신 지견으로 개정한 권고안이다. 항갑상선제, 방사성요오드, 갑상선절제술은 모두 쓸 수 있으며 환자 상태, 동반 질환, 효과와 부작용을 종합해 환자와 충분히 논의해 결정해야 한다. 이번 권고안은 방사성요오드가 선호되거나 금기인 환자의 적응증, 치료 전후 전처치, 안병증 동반 환자의 적응증과 예방적 스테로이드에 관한 권고를 제시하였다.',
+ '우리나라에서 방사성요오드 시행 비율이 낮은 현실을 감안할 때 장기 항갑상선제 치료와 방사성요오드 후 기능저하증·정상 기능 유지에 대한 환자별 장기 효과를 평가하는 추가 연구가 필요하다.'
+]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const P = (...pts)=>'M'+pts.map(p=>p.join(' ')).join(' L');
+const G3 = [10,260,510];
+const EX = [190,332,476,618], EW = 134;
+
+const CHARTS = {
+ind:{tab:'적응증', fig:'I', aria:'갑상선기능항진증에서 방사성요오드 치료의 적응증', w:760, h:630, nodes:[
+ {id:'i_hd', x:10, y:10, w:740,h:50, label:'자가면역 갑상선기능항진증(그레이브스병) · 방사성요오드 치료 적응증', cls:'test'},
+ {id:'i_s',  x:G3[0],y:80, w:240,h:44, label:'적극적으로 고려', cls:'tx'},
+ {id:'i_c',  x:G3[1],y:80, w:240,h:44, label:'고려', cls:'fac'},
+ {id:'i_n',  x:G3[2],y:80, w:240,h:44, label:'권고하지 않음', cls:'mal'},
+ {id:'i_1',  x:G3[0],y:140,w:240,h:72, label:'첫 치료로 높은 완치율을 원함<small>I.1.1 · 수준 1</small>', cls:'tx fac'},
+ {id:'i_2',  x:G3[0],y:222,w:240,h:72, label:'항갑상선제 중증 부작용<small>I.1.2 · 수준 1</small>', cls:'tx fac'},
+ {id:'i_3',  x:G3[0],y:304,w:240,h:72, label:'완치 후 재발 · 높은 완치율 원함<small>I.1.3 · 수준 1</small>', cls:'tx fac'},
+ {id:'i_4',  x:G3[0],y:386,w:240,h:72, label:'충분한 치료에도 조절 안 됨<small>I.1.4 · 수준 1 · 12–18개월</small>', cls:'tx fac'},
+ {id:'i_5',  x:G3[1],y:140,w:240,h:72, label:'항갑상선제 순응도 낮음<small>I.2.1 · 수준 2</small>', cls:'fac'},
+ {id:'i_6',  x:G3[1],y:222,w:240,h:72, label:'악화 시 불안정한 기저 질환<small>I.2.2 · 수준 2 · 부정맥·심부전</small>', cls:'fac'},
+ {id:'i_7',  x:G3[1],y:304,w:240,h:72, label:'고용량 항갑상선제 지속 필요<small>I.2.3 · 수준 3 · 6개월 이후 임신 계획</small>', cls:'fac'},
+ {id:'i_8',  x:G3[2],y:140,w:240,h:72, label:'임신·모유 수유<small>I.3.1 · 수준 1 · 절대 금기</small>', cls:'mal fac'},
+ {id:'i_9',  x:G3[2],y:222,w:240,h:72, label:'중등도 이상 활동성 안병증<small>I.3.2 · 수준 1</small>', cls:'mal fac'},
+ {id:'i_10', x:G3[2],y:304,w:240,h:72, label:'갑상선암 동반<small>I.3.3 · 수준 1</small>', cls:'mal fac'},
+ {id:'i_fl', x:10, y:478,w:365,h:70, label:'실패 위험 ↑<small>큰 갑상선종 · TRAb &gt;40 U/L → 빠른 완치 원하면 수술</small>', cls:'fac'},
+ {id:'i_hi', x:385,y:478,w:365,h:70, label:'갑상선호르몬 매우 높음<small>항갑상선제로 정상화 후 치료</small>', cls:'test fac'},
+ {id:'i_pg', x:10, y:562,w:740,h:56, label:'임신 연기<small>여성 6개월 · 남성 3–4개월 · 6개월 이내 임신 계획이면 수술 우선</small>', cls:'fac'}
+ ], edges:[...G3.map(x=>[P([380,60],[380,70],[x+120,70],[x+120,80]),1]),...G3.map(x=>[A(x+120,124,x+120,140),1])], labels:[]},
+
+proc:{tab:'치료 과정', fig:'II–IV · VI', aria:'방사성요오드 치료 전후 준비와 추적', w:760, h:480, nodes:[
+ {id:'p_c1', x:10, y:10, w:365,h:60, label:'임신 확인 · 수유 중단<small>치료 전 48시간 이내</small>', cls:'mal fac'},
+ {id:'p_c2', x:385,y:10, w:365,h:60, label:'요오드 고함유 식품 1주 회피<small>저요오드식 불필요 · 무기 요오드 1–2주 전 중단</small>', cls:'fac'},
+ {id:'p_at', x:10, y:90, w:740,h:56, label:'항갑상선제 3–7일 전 중단<small>중증·고령·고위험은 미리 충분히 조절</small>', cls:'tx fac'},
+ {id:'p_ds', x:10, y:166,w:740,h:56, label:'방사성요오드 고정 용량 10–15 mCi<small>최소 10 mCi · 큰 갑상선종은 &gt;15 mCi 고려</small>', cls:'tx fac'},
+ {id:'p_re', x:10, y:242,w:740,h:56, label:'고위험: 치료 후 3–7일 이내 항갑상선제 재투여 고려', cls:'tx'},
+ {id:'p_f1', x:G3[0],y:318,w:240,h:74, label:'4–6주 이내<small>TSH + 유리 T4</small>', cls:'test fac'},
+ {id:'p_f2', x:G3[1],y:318,w:240,h:74, label:'2–3개월마다<small>6개월 또는 TSH 정상 도달까지</small>', cls:'test fac'},
+ {id:'p_f3', x:G3[2],y:318,w:240,h:74, label:'2회 이상 정상<small>→ 6개월–1년마다</small>', cls:'test fac'},
+ {id:'p_f4', x:10, y:412,w:365,h:56, label:'증상 의심 시 즉시 검사', cls:'test'},
+ {id:'p_hy', x:385,y:412,w:365,h:56, label:'기능저하증 → 갑상선호르몬<small>누적 1년 24% · 10년 59% · 25년 82%</small>', cls:'fac'}
+ ], edges:[[A(192,70,192,90),1],[A(567,70,567,90),1],[A(380,146,380,166),1],[A(380,222,380,242),1],[P([380,298],[380,308],[130,308],[130,318]),1],[A(250,355,260,355),1],[A(500,355,510,355),1],[A(630,392,630,412),1]], labels:[]},
+
+eye:{tab:'갑상선 안병증', fig:'V · Table 2', aria:'갑상선 안병증 중증도와 활동성에 따른 방사성요오드 치료와 예방적 스테로이드', w:760, h:440, nodes:[
+ {id:'e_hd', x:10, y:10, w:170,h:86, label:'활동성 \\ 중증도', cls:'fac'},
+ {id:'e_m',  x:190,y:10, w:276,h:40, label:'경증', cls:'test'},
+ {id:'e_s',  x:476,y:10, w:276,h:40, label:'중등도–중증', cls:'test'},
+ {id:'e_m0', x:EX[0],y:56, w:EW,h:40, label:'위험인자 없음', cls:'fac'},
+ {id:'e_m1', x:EX[1],y:56, w:EW,h:40, label:'위험인자 있음', cls:'fac'},
+ {id:'e_s0', x:EX[2],y:56, w:EW,h:40, label:'위험인자 없음', cls:'fac'},
+ {id:'e_s1', x:EX[3],y:56, w:EW,h:40, label:'위험인자 있음', cls:'fac'},
+ {id:'e_in', x:10, y:106,w:170,h:74, label:'비활동성', cls:'test'},
+ {id:'e_ac', x:10, y:188,w:170,h:74, label:'활동성<small>CAS ≥3</small>', cls:'test fac'},
+ {id:'x_i0', x:EX[0],y:106,w:EW,h:74, label:'스테로이드 필요 없음<small>V.4</small>', cls:'rk0 fac'},
+ {id:'x_i1', x:EX[1],y:106,w:EW,h:74, label:'스테로이드 고려', cls:'rk1 fac'},
+ {id:'x_i2', x:EX[2],y:106,w:EW,h:74, label:'스테로이드 필요 없음', cls:'rk0 fac'},
+ {id:'x_i3', x:EX[3],y:106,w:EW,h:74, label:'스테로이드 권고<small>V.3은 “고려”</small>', cls:'rk2 fac'},
+ {id:'x_a0', x:EX[0],y:188,w:EW,h:74, label:'스테로이드 고려<small>V.2는 “권고”</small>', cls:'rk1 fac'},
+ {id:'x_a1', x:EX[1],y:188,w:EW,h:74, label:'스테로이드 권고<small>V.2</small>', cls:'rk2 fac'},
+ {id:'x_a2', x:EX[2],y:188,w:EW,h:74, label:'금기<small>방사성요오드 · V.1</small>', cls:'rk4 fac'},
+ {id:'x_a3', x:EX[3],y:188,w:EW,h:74, label:'금기<small>방사성요오드 · V.1</small>', cls:'rk4 fac'},
+ {id:'e_df', x:10, y:282,w:740,h:56, label:'정의<small>경증: 눈꺼풀 당김 &lt;2 mm · 중등도–중증: ≥2 mm, 돌출 ≥3 mm, 복시 · 위험인자: 흡연, 높은 TRAb</small>', cls:'fac'},
+ {id:'e_rg', x:10, y:356,w:365,h:72, label:'예방 스테로이드 요법<small>프레드니손 0.1–0.4 mg/kg 시작 후 감량 · 0.1–0.2 mg/kg 6주</small>', cls:'tx fac'},
+ {id:'e_al', x:385,y:356,w:365,h:72, label:'중등도–중증·시력 위협<small>신속한 치료 · 항갑상선제 또는 수술 선호</small>', cls:'mal fac'}
+ ], edges:[], labels:[]},
+
+eff:{tab:'효과·안정성', fig:'본문 · 설문', aria:'방사성요오드 치료의 효과와 안정성, 국내 현황', w:760, h:340, nodes:[
+ {id:'f_cu', x:10, y:10, w:365,h:70, label:'완치율<small>3–12개월 50–90% · 국내 1년 62.8%, 2년 76.8% · 항갑상선제 2년 41%</small>', cls:'tx fac'},
+ {id:'f_rl', x:385,y:10, w:365,h:70, label:'재발률<small>항갑상선제 34–42% · 방사성요오드 21% · 수술 3–8%</small>', cls:'test fac'},
+ {id:'f_hy', x:10, y:92, w:365,h:70, label:'갑상선기능저하증<small>1년 24–87% · 이후 매년 3–5%</small>', cls:'fac'},
+ {id:'f_ca', x:385,y:92, w:365,h:70, label:'이차암<small>증가 없음 · 메타분석 1.02 · 국내 0.96</small>', cls:'ben fac'},
+ {id:'f_cv', x:10, y:174,w:365,h:70, label:'사망률·심혈관<small>신속한 완치가 이득 · 지속 항진증은 위험 ↑</small>', cls:'ben fac'},
+ {id:'f_vo', x:385,y:174,w:365,h:70, label:'갑상선 부피<small>6개월 57–73% 감소 · 12개월 71%</small>', cls:'fac'},
+ {id:'f_ae', x:10, y:256,w:365,h:70, label:'부작용<small>통증 · 부종 · 침샘염 · 안병증 악화</small>', cls:'mal fac'},
+ {id:'f_sv', x:385,y:256,w:365,h:70, label:'국내 현황·설문<small>방사성요오드 2.66%(2018) · 일차 시행 경험 16%</small>', cls:'test fac'}
+ ], edges:[], labels:[]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${id}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Kim KJ, et al. Int J Thyroidol 2025;18(1):65–79 해당 절의 요약. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약.</p>`;
+
+const T1 = tbl(['권고수준','정의'],[
+ ['1','강력히 권고함/강력히 권고하지 않음(strong for/against recommend): 권고한 행위를 하였을 때 중요한 건강상의 이득 또는 손실이 있다는 충분하고도 객관적인 근거가 있는 경우'],
+ ['2','일반적으로 권고함/일반적으로 권고하지 않음(conditional for/against recommend): 중요한 건강상의 이득 또는 손실이 있다는 근거가 있지만, 근거가 확실하지 않아 일률적으로 행하라고 권고하기 어렵거나 근거가 간접적인 경우'],
+ ['3','전문가 합의 권고(expert consensus): 임상적 근거는 부족하지만 환자의 상황과 전문가의 합의에 따라 권고하는 사항'],
+ ['4','권고 보류(inconclusive): 권고한 행위를 하였을 때 중요한 건강상의 이득 또는 손실이 있다는 근거가 없거나 이견이 많아서, 해당 행위를 하는 것에 대해 찬성도 반대도 하지 않음']
+]) + '<p class="exp-src">Table 1. 권고 수준.</p>';
+const T2 = tbl(['활동성 \\ 중증도','경증 · 위험인자 없음','경증 · 위험인자 있음','중등도–중증 · 위험인자 없음','중등도–중증 · 위험인자 있음'],[
+ ['비활동성','예방적 스테로이드 필요 없음','예방적 스테로이드 고려','예방적 스테로이드 필요 없음','예방적 스테로이드 권고'],
+ ['활동성','예방적 스테로이드 고려','예방적 스테로이드 권고','방사성요오드 치료 금기','방사성요오드 치료 금기']
+]) + '<p class="exp-src">Table 2. 갑상선 안병증 중증도에 따른 방사성요오드 치료 및 예방적 스테로이드 권고. * 활동성: 임상 활동도(CAS; 자발적 안구 뒤 통증, 위·아래 방향 안구운동 시 통증, 눈꺼풀 발적, 결막 충혈, 내안각 구조물 부종, 눈꺼풀 부종, 결막 부종) 3개 이상 · * 경증: 일상생활 영향이 적고 면역치료가 필요 없는 경우로 눈꺼풀 당김 &lt;2 mm, 경도 안구 돌출, 인공눈물로 조절 가능한 복시 등 · * 중등도–중증: 시력에는 영향이 없으나 일상생활에 지장을 주며 면역치료가 필요한 상태로 눈꺼풀 당김 ≥2 mm, 안구 돌출 ≥3 mm, 지속적 또는 간헐적 복시 등 · * 위험인자: 흡연, 높은 TSH 수용체항체 농도.</p>';
+
+const DISC_E = note('원문 불일치','Table 2와 권고문이 다르다: ① 활동성 경증 안병증은 V.2가 위험인자와 무관하게 “예방적 스테로이드 권고(수준 1)”이나, Table 2는 위험인자 없으면 “고려”, 있으면 “권고”다. ② 비활동성 중등도–중증 + 위험인자는 V.3이 “고려(수준 2)”이나 Table 2는 “권고”다. ③ Table 2의 비활동성 경증 + 위험인자 “고려”에 해당하는 권고문은 없다.');
+const DISC_I = note('원문 표기','권고문 요약(68쪽)은 I.3.2를 “중증도 이상의 활동성 안병증”, 본문(71쪽)은 “중등도 이상”으로 적었다. 요약의 I.2.2 “조절되지 않은”과 본문 “조절되지 않는”도 표기가 다르다.');
+const DISC_F = note('원문 표기','VI.2는 “치료 후 6개월 동안 또는 TSH 정상 도달까지 2–3개월 간격”이지만, 본문 결론은 “6–12개월 또는 TSH 회복까지 2–3개월 간격”, 초록은 “안정될 때까지 2–3개월마다, 이후 6–12개월 간격”으로 기술한다.');
+const DISC_S = note('원문 표기','같은 국내 연구(참고문헌 10)의 62.8%가 효과 절에서는 “첫 번째 방사성요오드 치료 후 1년째 성공률”, I.1 절에서는 “이차 치료로 시행된 방사성요오드 치료의 성공률”로 인용된다. 완치율도 “3–12개월 내 50–90%”와 “초치료 성공률 75–81%”가 함께 제시된다. 4189명 코호트에서 지속군의 사망률 위험도(1.51, 95% CI 0.96–2.37)는 주요 심혈관 질환 위험도와 같은 값으로 적혀 있어 확인이 필요하다.');
+const TIP = tip('국내 적용','한국인 평균 요오드 섭취량은 권장량의 약 3배(416.5 μg/일)이므로 김·미역·다시마 등 해조류와 고용량 요오드 보조식품은 치료 1주일 전부터 피하도록 안내한다. 권고안은 자가면역 갑상선기능항진증만 대상으로 하며 독성결절은 포함하지 않는다.');
+
+const D = {
+i_hd:{kind:'I', title:'방사성요오드 치료의 적응증', next:['i_s','i_c','i_n'], body:`${ex('eff')}${TIP}`},
+i_s:{kind:'I.1', title:'적극적으로 고려하는 경우', next:['i_1','i_2','i_3','i_4'], body:`${RR('I1','I2','I3','I4')}${ex('s1a')}`},
+i_c:{kind:'I.2', title:'고려하는 경우', next:['i_5','i_6','i_7'], body:`${RR('I5','I6','I7')}${ex('s1b')}`},
+i_n:{kind:'I.3', title:'권고하지 않는 경우', next:['i_8','i_9','i_10'], body:`${RR('I8','I9','I10')}${ex('s1c')}${DISC_I}`},
+i_1:{kind:'I.1.1', title:'첫 치료로 높은 완치율을 원함', next:[], body:`${R('I1')}${paraHTML({p:EXP.s1a.p.slice(0,1)})}${DISC_S}`},
+i_2:{kind:'I.1.2', title:'항갑상선제 중증 부작용', next:[], body:`${R('I2')}${paraHTML({p:EXP.s1a.p.slice(1,2)})}`},
+i_3:{kind:'I.1.3', title:'완치 후 재발', next:[], body:`${R('I3')}${paraHTML({p:EXP.s1a.p.slice(2,3)})}${DISC_S}`},
+i_4:{kind:'I.1.4', title:'충분한 항갑상선제 치료에도 조절 안 됨', next:[], body:`${R('I4')}${paraHTML({p:EXP.s1a.p.slice(2,3)})}`},
+i_5:{kind:'I.2.1', title:'항갑상선제 순응도 낮음', next:[], body:`${R('I5')}${paraHTML({p:EXP.s1b.p.slice(0,1)})}`},
+i_6:{kind:'I.2.2', title:'악화 시 불안정이 우려되는 기저 질환', next:[], body:`${R('I6')}${paraHTML({p:EXP.s1b.p.slice(1,2)})}${DISC_S}`},
+i_7:{kind:'I.2.3', title:'고용량 항갑상선제 지속 필요', next:['i_pg'], body:`${R('I7')}${paraHTML({p:EXP.s1b.p.slice(2,3)})}`},
+i_8:{kind:'I.3.1', title:'임신·모유 수유', next:['p_c1'], body:`${R('I8')}${paraHTML({p:EXP.s1c.p.slice(0,1)})}`},
+i_9:{kind:'I.3.2', title:'중등도 이상 활동성 안병증', next:['e_hd'], body:`${RR('I9','E1')}${DISC_I}`},
+i_10:{kind:'I.3.3', title:'갑상선암 동반', next:[], body:R('I10')},
+i_fl:{kind:'I.3', title:'실패 위험이 높은 경우', next:[], body:paraHTML({p:EXP.s1c.p.slice(2,3)})},
+i_hi:{kind:'I.3 · IV', title:'갑상선호르몬이 매우 높은 경우', next:['p_at'], body:`${paraHTML({p:EXP.s1c.p.slice(2,3)})}${R('W2')}`},
+i_pg:{kind:'I.2.3', title:'치료 후 임신 연기', next:[], body:`${R('I7')}${paraHTML({p:EXP.s1b.p.slice(2,3)})}`},
+
+p_c1:{kind:'I.3.1', title:'임신 확인과 수유 중단', next:['p_at'], body:`${R('I8')}${paraHTML({p:EXP.s1c.p.slice(0,1)})}`},
+p_c2:{kind:'III', title:'요오드 섭취 조절', next:['p_at'], body:`${R('N1')}${ex('s3')}${TIP}`},
+p_at:{kind:'IV', title:'치료 전 항갑상선제 중단', next:['p_ds'], body:`${R('W1')}${ex('s4')}`},
+p_ds:{kind:'II', title:'고정 용량 10–15 mCi', next:['p_re'], body:`${R('D1')}${ex('s2')}`},
+p_re:{kind:'IV', title:'치료 후 항갑상선제 재투여', next:['p_f1'], body:`${R('W2')}${paraHTML({p:EXP.s4.p.slice(1,3)})}`},
+p_f1:{kind:'VI.1', title:'치료 후 4–6주 검사', next:['p_f2'], body:`${R('F1')}${ex('s6')}`},
+p_f2:{kind:'VI.2', title:'2–3개월 간격 평가', next:['p_f3'], body:`${R('F2')}${DISC_F}`},
+p_f3:{kind:'VI.3', title:'안정 후 6개월–1년 간격', next:['p_hy'], body:R('F3')},
+p_f4:{kind:'VI.4', title:'증상 시 즉시 검사', next:[], body:R('F4')},
+p_hy:{kind:'VI', title:'방사성요오드 후 갑상선기능저하증', next:[], body:`${paraHTML({p:EXP.s6.p.slice(1,2)})}${paraHTML({p:EXP.eff.p.slice(1,2)})}`},
+
+e_hd:{kind:'Table 2', title:'안병증 중증도·활동성에 따른 권고', next:[], body:`${RR('E1','E2','E3','E4')}${T2}${DISC_E}`},
+e_m:{kind:'Table 2', title:'경증 갑상선 안병증', next:[], body:`${RR('E2','E4')}${T2}`},
+e_s:{kind:'Table 2', title:'중등도–중증 갑상선 안병증', next:[], body:`${RR('E1','E3')}${T2}`},
+e_m0:{kind:'Table 2', title:'위험인자 없음', next:[], body:T2}, e_m1:{kind:'Table 2', title:'위험인자 있음', next:[], body:T2},
+e_s0:{kind:'Table 2', title:'위험인자 없음', next:[], body:T2}, e_s1:{kind:'Table 2', title:'위험인자 있음', next:[], body:T2},
+e_in:{kind:'Table 2', title:'비활동성 안병증', next:[], body:`${RR('E3','E4')}${paraHTML({p:EXP.s5.p.slice(2,3)})}`},
+e_ac:{kind:'Table 2', title:'활동성 안병증 (CAS ≥3)', next:[], body:`${RR('E1','E2')}${T2}`},
+x_i0:{kind:'비활동성 · 경증 · 위험인자 없음', title:'예방적 스테로이드 필요 없음', next:[], body:`${R('E4')}${paraHTML({p:EXP.s5.p.slice(2,3)})}`},
+x_i1:{kind:'비활동성 · 경증 · 위험인자 있음', title:'예방적 스테로이드 고려', next:[], body:`<p>Table 2는 이 경우 예방적 스테로이드를 고려하도록 하나, 이에 해당하는 권고문은 없다.</p>${DISC_E}`},
+x_i2:{kind:'비활동성 · 중등도–중증 · 위험인자 없음', title:'예방적 스테로이드 필요 없음', next:[], body:`<p>Table 2: 예방적 스테로이드 필요 없음.</p>${paraHTML({p:EXP.s5.p.slice(2,3)})}`},
+x_i3:{kind:'비활동성 · 중등도–중증 · 위험인자 있음', title:'예방적 스테로이드 권고 (Table 2)', next:[], body:`${R('E3')}${DISC_E}`},
+x_a0:{kind:'활동성 · 경증 · 위험인자 없음', title:'예방적 스테로이드 고려 (Table 2)', next:['e_rg'], body:`${R('E2')}${DISC_E}`},
+x_a1:{kind:'활동성 · 경증 · 위험인자 있음', title:'예방적 스테로이드 권고', next:['e_rg'], body:`${R('E2')}${paraHTML({p:EXP.s5.p.slice(1,2)})}`},
+x_a2:{kind:'활동성 · 중등도–중증', title:'방사성요오드 치료 금기', next:['e_al'], body:RR('E1','I9')},
+x_a3:{kind:'활동성 · 중등도–중증', title:'방사성요오드 치료 금기', next:['e_al'], body:RR('E1','I9')},
+e_df:{kind:'Table 2 각주', title:'활동성·중증도·위험인자의 정의', next:[], body:T2},
+e_rg:{kind:'V', title:'예방적 스테로이드 요법', next:[], body:paraHTML({p:EXP.s5.p.slice(1,2)})},
+e_al:{kind:'V', title:'중등도–중증·시력 위협 안병증', next:[], body:`${R('E1')}${paraHTML({p:EXP.s5.p.slice(0,1)})}`},
+
+f_cu:{kind:'효과', title:'완치율', next:[], body:`${paraHTML({p:EXP.eff.p.slice(0,1)})}${DISC_S}`},
+f_rl:{kind:'효과', title:'치료별 재발률', next:[], body:paraHTML({p:EXP.s1a.p.slice(0,1)})},
+f_hy:{kind:'안정성', title:'갑상선기능저하증', next:['p_hy'], body:paraHTML({p:EXP.eff.p.slice(1,2)})},
+f_ca:{kind:'안정성', title:'이차암 위험', next:[], body:paraHTML({p:EXP.eff.p.slice(2,3)})},
+f_cv:{kind:'안정성', title:'사망률과 심혈관 질환', next:[], body:`${paraHTML({p:EXP.eff.p.slice(2,3)})}${paraHTML({p:EXP.s1b.p.slice(1,2)})}${DISC_S}`},
+f_vo:{kind:'효과', title:'갑상선 부피 감소', next:[], body:paraHTML({p:EXP.s2.p.slice(2,3)})},
+f_ae:{kind:'안정성', title:'부작용', next:['e_hd'], body:`${paraHTML({p:EXP.eff.p.slice(2,3)})}${paraHTML({p:EXP.s5.p.slice(1,2)})}`},
+f_sv:{kind:'국내', title:'국내 현황과 설문조사', next:[], body:`${paraHTML({p:EXP.intro.p.slice(1,2)})}${ex('survey')}`}
+};
+
+const ALL = Object.keys(REC);
+const GROUP = [['I','I. 방사성요오드 치료의 적응증'],['D','II. 치료 용량'],['N','III. 저요오드 식사'],['W','IV. 항갑상선제 중단'],['E','V. 갑상선 안병증과 예방적 스테로이드'],['F','VI. 치료 후 갑상선기능검사']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'권고수준과 도구 설명', next:[], body:`${['L1','L2','L3','L4'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','핵심질문 6개(I–VI)의 권고문 ${ALL.length}개를 원문 그대로, 원문 번호와 권고수준을 붙여 수록했다. 권고를 누르면 해당 절의 본문 요약이 펼쳐진다. Table 1(권고수준)과 Table 2(안병증별 권고)를 재현했다.')}${DISC_E}${DISC_I}${DISC_F}${DISC_S}${TIP}`},
+ all:{kind:'전체', title:`권고문 ${ALL.length}개`, next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.replace(/\d+$/,'')===g))}`).join('')},
+ tabs:{kind:'표', title:'Table 1·2', next:[], body:`<h5>Table 1. 권고 수준</h5>${T1}<h5>Table 2. 갑상선 안병증 중증도에 따른 권고</h5>${T2}`},
+ intro:{kind:'서론', title:'서론·설문·맺음말', next:[], body:`${paraHTML(EXP.intro)}${ex('survey')}${ex('concl')}`}
+});
+
+const ABBR = [
+ ['ATA','American Thyroid Association'],['ATD','Antithyroid drug, 항갑상선제'],['CAS','Clinical activity score, 임상 활동도'],['ETA','European Thyroid Association'],
+ ['fT4','Free T4, 유리 T4'],['MMI','Methimazole, 메티마졸'],['NICE','National Institute for Health and Care Excellence'],['PTU','Propylthiouracil, 프로필티오우라실'],
+ ['RAI','Radioactive iodine, 방사성요오드'],['RCT','Randomized controlled trial'],['TRAb','TSH receptor antibody, TSH 수용체항체'],['TSH','Thyroid stimulating hormone']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'ind';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: R, TRAb)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('ind');
+
+</script>
+</body>
+</html>
