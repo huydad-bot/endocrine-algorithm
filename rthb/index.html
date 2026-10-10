@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RTHβ 치료 합의문 JTA 2023</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+.node.pr{border-color:#6FB6DA; background:#D4EEFA; color:#123A52}
+.sw.pr{border-color:#6FB6DA; background:#D4EEFA}
+.node.pr{--flash:#2F8FC0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .node.pr,:root:not([data-theme="light"]) .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}}
+:root[data-theme="dark"] .node.pr,:root[data-theme="dark"] .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}
+.cs{color:var(--muted);font-size:.86em;white-space:nowrap}
+.node.rk1 small,.node.rk2 small{color:inherit;opacity:.88}
+.t2 td:not(:first-child){white-space:nowrap}
+.chart svg path.eb{fill:#9DBDE8;stroke:#4C7BC0;stroke-width:1.6}
+.chart svg path.eg{fill:#C9E0A5;stroke:#86AC4F;stroke-width:1.6}
+.chart svg path.er{fill:#EDBDC1;stroke:#C2505B;stroke-width:1.6}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>갑상선호르몬 β 저항 증후군(RTHβ) 치료: 일본갑상선학회 2023 합의문</h1>
+        <p class="src">Ishii S, Onigata K, Sasaki S, et al. Treatment of syndrome of resistance to thyroid hormone beta: 2023 consensus statements from the Japan Thyroid Association. <a href="https://doi.org/10.1016/j.thscie.2025.100025" target="_blank" rel="noopener noreferrer">Thyroid Science 2025;2:100025</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Japan Thyroid Association</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="tx" aria-label="권고 박스 강조"><i class="sw tx"></i>치료·권고</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="금기 박스 강조"><i class="sw mal"></i>권고하지 않음·주의</button>
+      <button type="button" class="lg" data-cls="test" aria-label="검사 박스 강조"><i class="sw test"></i>검사·추적</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>답변을 누르면 해설·근거·문헌 요약 번역이 펼쳐짐</li><li>원문에 그림·표가 없어 흐름도는 본문으로 구성</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>등급·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 답변</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>근거 요약표</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·방법·결론</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ WL:'약한 권고 · 근거 수준 낮음(weak / low) — GRADE 접근으로 FCQ에 부여한 권고 강도(strong 또는 weak)와 근거 수준(high, moderate, low, very low)',
+ WV:'약한 권고 · 근거 수준 매우 낮음(weak / very low) — GRADE 접근으로 FCQ에 부여한 권고 강도와 근거 수준',
+ VL:'근거 수준 매우 낮음(very low) — 원문에 권고 강도는 제시되지 않고 근거 수준과 합의도만 제시됨',
+ BQ:'배경 임상질문(BCQ) — 서술형 질문으로 권고 강도와 근거 수준을 부여하지 않음',
+ CO:'칼럼(Column) — 일본 건강보험에서 RTHβ 적응증이 없는 약제로 임상질문에서 제외하고 칼럼으로 다룸, 등급 없음'
+};
+const LVTXT = {WL:'약함 · 근거 낮음', WV:'약함 · 근거 매우 낮음', VL:'근거 매우 낮음', BQ:'BCQ · 등급 없음', CO:'칼럼 · 등급 없음'};
+const LVCLS = {WL:'l2', WV:'l3', VL:'l3', BQ:'l4', CO:'l4'};
+/* 원문 번호 · 합의도 */
+const ONUM = {F1:'FCQ1',F2:'FCQ2 답 1',F3:'FCQ2 답 2',F4:'FCQ3',F5:'FCQ4',
+ B1:'BCQ1',B2:'BCQ1',B3:'BCQ1',B4:'BCQ2',B5:'BCQ2',B6:'BCQ3',B7:'BCQ3',B8:'BCQ3',B9:'BCQ4',B10:'BCQ4',B11:'BCQ5',B12:'BCQ5',
+ C1:'Column 1',C2:'Column 1',C3:'Column 1',C4:'Column 2',C5:'Column 3',C6:'Column 3',C7:'Column 4'};
+const CONS = {F1:'100',F2:'92',F3:'92',F4:'92',F5:'92'};
+/* [등급, 답변(원문 번역), 본문 키] */
+const REC = {
+'F1':['WV','높은 수준의 근거는 없고 일부 증례보고만 있다. 일부 증례보고에서 베타차단제가 빈맥, 두근거림, 심방세동에 효과적이었다. RTHβ에서는 빈맥이 더 흔하고 심방세동의 유병률은 나이에 따라 증가하므로, 베타차단제를 선택 약제로 권고한다.','f1'],
+'F2':['WL','그레이브스병이 동반된 경우를 제외하고 항갑상선제를 사용하지 않을 것을 권고한다.','f2'],
+'F3':['VL','일부 소아 환자에서 항갑상선제는 갑상선중독 증상을 완화하고 성장 장애를 피하는 데 효과적이었다. 그러나 장기 투여는 권고하지 않는다.','f2'],
+'F4':['WV','근거가 없으므로, 현저한 갑상선종이나 종양이 동반된 경우가 아니면 시행하지 않을 것을 권고한다.','f3'],
+'F5':['WV','방사성요오드 치료의 효과를 보인 보고는 없고 오히려 부작용으로 뇌하수체 비대가 나타난 증례보고가 있으므로, 시행하지 않을 것을 권고한다.','f4'],
+'B1':['BQ','RTHβ 산모에서는 유산율이 높다.','b1'],
+'B2':['BQ','RTHβ 산모의 야생형 태아에서는 체중이 낮고 혈청 TSH가 측정되지 않았다.','b1'],
+'B3':['BQ','태아가 RTHβ이면 RTHβ 산모를 치료하지 않아야 한다. 그러나 태아가 야생형이면 RTHβ 산모의 혈청 유리 T4가 참고범위 상한의 150%를 넘지 않도록 신중해야 한다.','b1'],
+'B4':['BQ','RTHβ에서 일반적인 AD/HD 약제를 사용한 보고는 없지만 완화 치료로 시도해 볼 만하다. 그러나 동물실험에서 메틸페니데이트는 RTHβ 모델 마우스의 행동 이상에 효과가 없었다.','b2'],
+'B5':['BQ','RTHβ 연관 AD/HD의 치료로 L-T3가 소규모 무작위대조시험에서 효과적이었다. L-T4, TRIAC, D-T4를 사용한 증례보고도 있다.','b2'],
+'B6':['BQ','RTHβ에 동반된 그레이브스병의 치료 목표는 “정상” 갑상선기능을 유지하는 것이지만, 이를 정하기는 어렵다.','b3'],
+'B7':['BQ','그레이브스병 발병 전의 갑상선기능을 알고 있다면 이를 목표로 해야 한다.','b3'],
+'B8':['BQ','그레이브스병 발병 전의 갑상선기능을 모르는 경우, 혈청 TSH를 정상 내지 약간 높은 수준으로 유지한 증례보고들이 있다.','b3'],
+'B9':['BQ','증례보고들은 각각 1) 다른 원인에 의한 갑상선기능저하증 발생 전의 검사값, 2) 명백한 기능저하 증상이 있는 경우 증상 개선, 3) 가족 내 다른 환자의 검사값을 목표로 하였다.','b4'],
+'B10':['BQ','많은 보고에서 이들 환자는 RTHβ가 없는 갑상선기능저하증 환자보다 더 많은 용량의 L-T4가 필요하였다.','b4'],
+'B11':['BQ','분화갑상선암으로 갑상선전절제술을 받은 RTHβ 환자는 문헌에서 11례만 확인되어 근거가 충분하지 않다.','b5'],
+'B12':['BQ','목표는 RTHβ가 아닌 경우와 같을 것으로 예상된다. 그러나 절반 이상에서 혈청 TSH를 수술 전 수준까지도 억제하기 어려웠다. 비RTHβ 환자에서 정해진 목표 중 하나인 참고범위 하한까지 TSH가 억제된 경우는 2례뿐이었고, 1례는 L-T4 단독으로 억제되었으나 다른 1례는 L-T4에 TRIAC 추가가 필요하였다.','b5'],
+'C1':['CO','일부 보고는 TRIAC이 유리 T4와 TSH를 낮춘다고 하나 통계적으로 유의하지는 않다.','c1'],
+'C2':['CO','효과는 돌연변이 코돈과 그 아미노산 변화에 따라 다를 수 있다.','c1'],
+'C3':['CO','주목할 만한 이상반응은 보고되지 않았으나, 일본을 포함한 일부 국가에서는 지속적으로 구하기 어렵다.','c1'],
+'C4':['CO','일본에서 건강보험이 적용되지 않으며 근거가 부족하다.','c2'],
+'C5':['CO','옥트레오타이드 아세테이트가 시험되었다. 많은 연구에서 단기적으로는 효과적이었으나 탈출 현상으로 장기적으로는 효과를 잃었다.','c3'],
+'C6':['CO','일본에 옥트레오타이드의 장기 효과를 보인 증례보고가 1건 있으나, 이 증례는 유전자검사로 RTHβ가 확진되지 않았다. 다른 소마토스타틴 유사체는 향후 연구가 필요하다.','c3'],
+'C7':['CO','높은 수준의 근거는 없고 증례보고만 있다.','c4']
+};
+Object.keys(REC).forEach(k=>{ REC[k][1] = `<b>${ONUM[k]}</b> ${REC[k][1]}${CONS[k]?` <span class="cs">(합의도 ${CONS[k]}%)</span>`:''}`; });
+
+const EXP = {
+intro:{t:'서론', r:'1–2쪽', p:[
+ '갑상선호르몬 β 저항 증후군(RTHβ)은 갑상선호르몬 감수성 장애 증후군의 주된 형태로, 1967년 표적 조직의 갑상선호르몬 반응성이 감소한 가족성 증후군으로 처음 기술되었다. 주로 갑상선호르몬 수용체(TR) β형을 암호화하는 THRB 유전자의 돌연변이로 생기며, THRB 돌연변이가 없는 경우는 nonTR-RTHβ라 하고 원인은 알려지지 않았다. 돌연변이 TRβ가 야생형 TRβ와 TRα의 기능을 방해하는 우성음성 효과 때문에 상염색체 우성으로 유전한다.',
+ 'TRβ는 시상하부-뇌하수체-갑상선 축을 조절하므로 RTHβ에서는 음성되먹임이 교란되어, 혈청 갑상선호르몬이 높은데도 TSH가 억제되지 않는다. 이를 부적절 TSH 분비 증후군(SITSH)이라 한다.',
+ 'SITSH에 의한 고농도 갑상선호르몬은 조직의 반응성에 따라 갑상선중독증부터 갑상선기능저하증까지 다양한 증상을 일으킨다. 심장과 뇌처럼 TRα가 풍부한 장기에서는 갑상선중독이 뚜렷할 수 있어 심장 증상과 정신 증상이 비교적 흔하다. 돌연변이 TRβ의 우성음성 효과가 강하면 기능저하를 보일 수 있다. 실제로는 고농도 호르몬으로 감수성 장애가 보상되어 무증상인 경우가 많으나, 일부는 빈맥이나 주의력결핍 과잉행동장애(AD/HD) 같은 심한 증상으로 치료가 필요하다.',
+ '야생형 아이를 임신하면 유산과 저체중 출생 가능성이 높다. 높은 TSH의 여포세포 증식 효과 때문에 갑상선종도 흔하다.',
+ 'RTHβ는 갑상선호르몬이 높아 그레이브스병으로 잘못 진단되어 불필요한 치료를 받기도 한다. 유병률은 출생 40,000명당 1명으로 추정되지만, 인구 1억 2천만 명인 일본에서 2021년까지 문헌에 보고된 환자는 103례뿐이어서 많은 환자가 진단되지 않았을 것으로 보인다. 치료 방법도 널리 알려져 있지 않아, 일본갑상선학회는 2016년 진단기준과 중증도를 정한 데 이어 체계적 문헌고찰로 치료 합의문을 만들었다. 2023년 4월 일본어 단행본(Nankodo)으로 출간되었고 이를 영어로 게재하였다.',
+ '이 합의문은 근거와 일본의 실제 진료, 전문가 의견을 바탕으로 현재 표준으로 여겨지는 치료를 기술한다. 개별 환자와 시설의 여건을 충분히 고려해 현실적이고 유연하게 참고해야 하며, 개별 치료를 제한하지 않는다. 일본의 법과 규정에 따라 해석해야 한다.'
+]},
+meth:{t:'방법', r:'2쪽', p:[
+ 'GRADE 접근으로 체계적 문헌고찰을 시행하였다. 중요한 임상질문 4개를 전경 임상질문(FCQ)으로 정하고, 서술형 질문 5개를 배경 임상질문(BCQ)으로 다루었다. 일본 건강보험이 적용되지 않는 약제 4개는 칼럼으로 다루었다.',
+ '편향 없는 검색을 위해 일본의학도서관협회가 PubMed, Cochrane library, 의학중앙잡지(JAMAS) 데이터베이스를 검색하였다. 출판 기간은 1967–2018년으로 하되 일부 문헌을 수기로 추가하였고, 영어와 일본어 문헌만 선택하였다. 주제마다 위원 3명이 독립적으로 선별해 2명 이상이 선택한 문헌만 사용하였고, 유전자검사로 RTHβ를 진단하지 않은 문헌은 근거에서 제외하였다. 근거가 부족해 결론을 내기 어려우면 전문가 의견을 참고하였다.',
+ 'FCQ의 권고 강도는 강함 또는 약함, 근거 수준은 높음·중등도·낮음·매우 낮음으로 정의하였다. FCQ는 투표에 부쳐 합의도가 모두 90%를 넘어 전부 제시하였다. 위원 합의 후 공개 의견을 반영해 수정하였고 일본갑상선학회의 승인을 받았다.'
+]},
+f1:{t:'FCQ1. RTHβ의 빈맥에 베타차단제를 권고하는가?', r:'3.2.1 · 2–3쪽', p:[
+ '#해설',
+ 'RTHβ의 심장 합병증에는 갑상선중독에 의한 빈맥, 두근거림, 부정맥이 있다. 다른 원인에 의한 이들 증상에는 베타차단제가 강하게 권고되지만, RTHβ의 빈맥에 대해서도 권고되는지는 분명하지 않다.',
+ '빈맥의 빈도는 성인 약 40%, 소아 약 60%로 추정된다. 심방세동은 약 6–7%(평균 연령 40세 이하 집단)이나 나이에 따라 증가한다. 빈맥에 베타차단제를 쓴 보고는 많고 심방세동에 쓴 보고도 흩어져 있으나 근거는 증례보고에 한정된다. 일부 교과서는 β1 선택적 약제인 atenolol을 선호하나 추가 연구가 필요하다.',
+ '#근거',
+ '높은 수준의 근거는 없다.',
+ '#문헌 요약',
+ '104명(THRB 돌연변이 64례 포함)의 표현형 연구에서 16%가 심장 합병증, 6%가 심방세동을 보였다. 54명(4–64세)의 다른 연구에서는 빈맥 26%, 심방세동 7%로 갑상선기능항진증보다 낮았다. 심장 합병증 위험은 나이에 따라 증가한다. 여러 증례에서 베타차단제가 심방세동에 효과적이었고, 1례는 bisoprolol로 3년간 무증상이었다.',
+ '프랑스 기관들의 220가계(성인 260명, 소아 60명) 보고에서 빈맥은 성인 37.1%, 소아 65.5%, 두근거림은 성인 31.9%, 소아 8.7%, 심방세동은 성인 20%였다. 베타차단제는 성인 66%, 소아 50%에 투여되었다.'
+]},
+f2:{t:'FCQ2. RTHβ에 항갑상선제를 권고하는가?', r:'3.2.2 · 3쪽', p:[
+ '#해설',
+ 'RTHβ 환자는 높은 갑상선호르몬과 일부 갑상선중독 증상 때문에 그레이브스병으로 오진되어 항갑상선제로 부적절하게 치료받고 다양한 나쁜 결과를 겪기도 한다. 반면 RTHβ 확진 뒤 의도적으로 사용해 갑상선중독 증상을 완화하고 성장 장애를 피한 보고도 있어 이득 여부를 검토하였다.',
+ '① THRB 돌연변이 확인, ② 그레이브스병 비동반을 기준으로 21편 23례(성인 13례, 신생아 3례를 포함한 소아 10례)를 평가하였다. 성인 13례 중 효과 1, 유해 2, 무효 5, 불필요 5례였고, 소아 10례 중 효과 5(신생아 2), 불필요 3(신생아 1), 유해 2례였다.',
+ '#근거',
+ '효과 6례: 성인 1(신생아의 모친), 소아 5(신생아 2). 비효과 17례: 유해 4(성인 2 — 1례는 소아기부터 치료, 소아 2), 무효 5(모두 성인), 불필요 8(성인 5, 소아 3 — 신생아 1).',
+ '#문헌 요약',
+ '성인 효과: M313T 26세 여성이 불임으로 PTU를 복용한 뒤 둘째(야생형)를 출산하고, 셋째(RTHβ) 임신 중기부터 산후 6개월까지 PTU를 복용해 불임과 임신 경과에 효과적이었다.',
+ '성인 유해: R243W 63세 여성은 MMI로 갑상선종이 커졌다가 중단 후 줄었다. 소아기부터 약 10개월간 L-T4 후 MMI를 복용한 20세 여성은 18개월에 성장 장애, 3세에 지능 저하를 보였고 9세에 기관 압박을 피하려 갑상선절제술을 받았다.',
+ '성인 무효 5례: PTU 후 갑상선종 증가로 중단, PTU 1년 후 독성 갑상선종으로 부분절제, MMI 무효로 중단, 무기 요오드·MMI·PTU·갑상선절제·절제술을 거쳐 80세에 MRI에서 뇌하수체 비대가 발견된 20년 추적례, 심방세동이 주 증상이었으나 항갑상선제가 무효였던 예.',
+ '성인 불필요 5례: 수개월에서 44년, 3대에 걸친 추적에서 항갑상선제가 필요하지 않았다.',
+ '소아 효과: 11세(R243Q), 9세(R243Q 동형접합), 3세에게 각각 15, 26, 8개월간 MMI를 투여해 유리 T4를 참고범위 상한으로 맞추었고 성장 곡선, 심박수, 보챔 등이 개선되었다. 신생아 2례는 PTU 10 mg/kg/일을 생후 28일부터 27일간, MMI 0.65 mg/kg/일과 무기 요오드 12.6 mg/일을 생후 3주부터 28일간 일시 투여해 성장과 갑상선중독 증상(보챔, 심박수, 장운동 증가)이 호전되었다.',
+ '소아 불필요: 갑상선종과 빈맥이 있던 12세 여아의 PTU+L-T4 3개월, 모친 병력으로 투약하지 않은 4세 여아, RTHβ 진단 후 PTU 또는 MMI를 중단하고 경과가 좋았던 신생아.',
+ '소아 유해: MMI로 갑상선종이 커졌다가 중단 후 호전된 12세 남아(P453L), 문헌에 따라 RTHβ 진단 후 MMI+L-T4를 투여했다가 갑상선종 증가로 중단한 10세 여아(L346F).',
+ '요약하면, 빈맥과 갑상선종에 항갑상선제를 쉽게 쓰는 것은 권고하지 않는다. 반면 갑상선중독 증상을 완화하거나 성장 장애를 피하기 위한 일시적 투여는 일부 소아에서 효과적이라 볼 수 있다.'
+]},
+f3:{t:'FCQ3. RTHβ에 갑상선절제술을 권고하는가?', r:'3.2.3 · 3–4쪽', p:[
+ '수술과 관련된 중대한 이상반응은 보고되지 않았으나, 수술 후 갑상선호르몬 보충 용량을 조절하기 쉽지 않다(BCQ4·5 참조).',
+ '#해설',
+ 'RTHβ는 갑상선종과 갑상선중독증이 흔해 갑상선절제술을 치료로 고려할 수 있지만, 수술의 이득과 불이익은 충분히 논의되지 않았다. 현저한 갑상선종이나 갑상선암이 동반된 경우에만 고려할 수 있다. 수술 후 보충 용량은 수술 전 TSH 유지 또는 갑상선중독 증상 회피 등을 기준으로 할 수 있고, L-T4 단독 또는 L-T4+L-T3로 보충한다.',
+ '#근거',
+ '수술 자체의 이상반응 보고는 없어 술기 자체는 문제가 없어 보인다. 그러나 많은 경우 수술 후 용량을 적정하며 조절하였다. 수술 전 TSH를 유지하려면 비RTHβ 환자보다 많은 용량이 필요해 흔히 L-T4 약 300 μg/일이 필요하였고 L-T3 병용이 필요할 수도 있다.',
+ '#문헌 요약',
+ '1–2례 증례보고만 있었다. 수술 이유는 대부분 성인의 양성·악성 갑상선 종양이었고, 미만성 갑상선종으로 수술한 경우는 4세 1례뿐이었다. 따라서 치료로 권고할 근거는 충분하지 않다. 전절제 후 수술 전 TSH를 유지하려면 L-T4 150–600 μg/일이 필요하였고 L-T3 30 μg/일–200 μg/격일을 병용하기도 하였다. 대부분 갑상선중독 증상은 없었으나, 수술 전 TSH를 맞추려 L-T4를 증량했다가 중독 증상이 생긴 1례에서는 약 3 μg/kg/일이 적절하다고 보았다.'
+]},
+f4:{t:'FCQ4. RTHβ에 방사성요오드 치료를 권고하는가?', r:'3.2.4 · 4쪽', p:[
+ '#해설',
+ '방사성요오드는 RTHβ 갑상선중독의 치료로 고려될 수 있으나, 그레이브스병으로 오진되어 방사성요오드 치료를 받는 경우도 있어 권고 여부를 평가하였다. 문헌은 증례보고뿐이었고, 효과 보고는 찾지 못했으나 방사성요오드로 인한 뇌하수체 비대 보고가 있었다.',
+ '#근거',
+ '방사성요오드로 치료한 RTHβ 환자에서 뇌하수체 비대가 보고되었다.',
+ '#문헌 요약',
+ '충분한 수의 증례를 검토한 보고는 없고 효과 보고도 없었다. RTHβ 진단 없이 방사성요오드를 받은 한 가계 5례 보고는 결과가 기능저하증뿐이었다며 불필요한 치료를 피해야 한다고 결론지었으나, 불필요한 이유는 기술하지 않았다.',
+ 'Gurnell 등은 진단되지 않은 RTHβ 환자에서 갑상선호르몬 보충 중에도 방사성요오드 40주 후 뇌하수체 비대를 관찰하였다. 고용량 갑상선호르몬으로 TSH를 기저 수준까지 억제하자 비대가 호전되어 종양이 아닌 가역적 과형성으로 보였다. Marazuela 등도 방사성요오드 후 20년간 보충 치료를 받은 미진단 RTHβ 환자의 뇌하수체 비대를 보고했으며, 소마토스타틴 수용체 신티그래피에서 섭취를 보여 이 검사로는 뇌하수체 비대와 종양을 감별할 수 없다고 결론지었다. 두 보고 모두 RTHβ를 방사성요오드로 치료해서는 안 됨을 시사한다.'
+]},
+b1:{t:'BCQ1. 임신한 RTHβ 환자는 어떻게 치료하는가?', r:'3.3.1 · 4–5쪽', p:[
+ '#해설',
+ 'RTHβ 산모 자녀의 절반이 RTHβ다. 모체 T4가 태반을 통과하므로 야생형 태아는 갑상선중독을 겪는다. 산모와 태아를 동시에 어떻게 치료할지는 어려운 문제다.',
+ '태아가 RTHβ이면 산모를 치료하지 않아야 한다. 태아가 야생형이면, 산모의 유리 T4를 참고범위 상한의 150%를 넘지 않게 조절했을 때 자녀의 TSH가 RTHβ 자녀와 비슷하였다.',
+ '#근거',
+ 'RTHβ가 흔한 아조레스 제도의 자연경과 연구에서 RTHβ 산모의 유산율이 높았다. RTHβ 산모의 자녀 중 야생형은 RTHβ 자녀보다 체중이 낮고 TSH가 측정되지 않았다.',
+ 'RTHβ 임신부 비교 연구에서, 돌연변이 태아를 임신한 산모를 유리 T4가 상한의 120%가 되도록 항갑상선제로 치료했을 때 RTHβ와 야생형 자녀 사이에 출생체중, Apgar 점수, TSH 차이가 없었다. 여러 요인을 고려해, RTHβ 임신부에서는 유리 T4가 상한의 150%를 넘지 않도록 신중하게 억제해야 한다.',
+ '#문헌 요약',
+ '아조레스 연구에서 유산율은 RTHβ 부친이나 RTHβ 환자의 친척 부모보다 RTHβ 산모에서 훨씬 높았다. 야생형 자녀는 RTHβ 자녀보다 체중이 유의하게 낮았고, TSH가 측정되지 않은 것은 RTHβ 산모의 야생형 자녀뿐이었다. 다만 R243Q 돌연변이에 한정된 연구로 다른 돌연변이에도 해당하는지는 알 수 없다.',
+ '비교 연구에서 RTHβ 임신부 13명을 유리 T4 상한 120%로 치료했고 야생형과 RTHβ 자녀 간 출생체중, Apgar, TSH 차이가 없었다.',
+ '그 밖의 증례: 산모를 치료하지 않고도 야생형·RTHβ 영아 모두 정상 기능을 보인 2례, 저신장·저체중·빈맥·보챔을 보인 RTHβ 영아 1례, 출생 후 일시적 PTU가 필요했던 RTHβ 남아 1례가 있다. 산모에게 PTU, D-T4(8 mg), TRIAC, 갑상선종 축소를 위한 L-T4, 반복 무통성 갑상선염에 의한 기능저하에 L-T4, 방사성요오드 후 기능저하에 T3를 투여한 경우 RTHβ 자녀는 출생 시 일시적 기능 이상에도 장기 발달이 정상이었다.',
+ '임신 중 태아 유전형 결과를 보고한 문헌은 1편뿐으로, 17명이 양수검사, 1명이 융모막 융모 검사를 받았으나 시기는 기술되지 않았다. 양수검사의 위험을 고려할 때 태아 유전형 검사를 권고할지는 향후 연구 과제다.'
+]},
+b2:{t:'BCQ2. RTHβ의 AD/HD는 어떻게 치료하는가?', r:'3.3.2 · 5쪽', p:[
+ '#해설',
+ 'AD/HD는 소아의 6–11%에서 발생하는 정신질환이며, RTHβ에는 AD/HD가 흔히 동반된다(48–73%). 반면 AD/HD 환자 중 RTHβ의 비율은 매우 낮다. RTHβ의 AD/HD를 일반 AD/HD와 같이 치료해야 하는지는 분명하지 않다.',
+ 'RTHβ 연관 AD/HD에 일반 AD/HD 약제를 쓴 보고는 찾지 못했지만 완화 치료로 시도해 볼 만하다. L-T3, L-T4, TRIAC, D-T4를 쓴 보고가 있으며, 이 중 L-T3는 소규모 RCT에서 효과적이었다. 반면 RTHβ가 없는 AD/HD에는 L-T3가 효과가 없었다. 나머지는 모두 증례보고다. 동물실험에서 메틸페니데이트는 RTHβ 모델 마우스의 행동 이상에 효과가 없었다.',
+ '#근거',
+ 'L-T3를 사용한 소규모 RCT 1건과 L-T3, L-T4, TRIAC, D-T4를 사용한 증례보고들이 있다.',
+ '#문헌 요약',
+ 'L-T3: Weiss 등은 AD/HD가 있는 RTHβ 환자 8명(R군)과 정상 갑상선기능 9명(C군)에서 전향적 무작위 이중맹검 교차 연구를 하였다. Connors 과잉행동 지수가 R군에서 5명 개선, 3명 불변이었고, C군에서는 1명 개선, 7명 불변, 1명 악화였다. 중증 RTHβ 8세 여아는 출생부터 L-T4를 복용했으나 유리 T3 상승으로 불면과 과잉행동이 악화되어 고용량 L-T3 격일 투여로 바꾼 뒤 호전되었다.',
+ 'L-T4: 고용량 L-T4로 과잉행동을 포함한 증상이 뚜렷이 개선된 5세 nonTR-RTHβ 남아가 있다. MMI로 시작했다가 유리 T4 감소로 L-T4를 보충한 11개월 RTHβ 여아는 발달 지연과 과잉행동이 개선되었다.',
+ 'TRIAC: 16개월 남아에게 16개월간 투여해 주의력·집중력 검사가 개선되었다. 8세 남아에게 3년간 투여해 AD/HD 평가척도 IV가 21에서 9로 개선되었다. AD/HD가 있는 9세 여아를 9년 추적한 보고에서는 하시모토병 동반 고TSH가 TRIAC으로 정상화되었으나, 이후 갑상선암으로 전절제 후 L-T4와 TRIAC을 쓸 때 조증 악화로 고용량 TRIAC을 견디지 못했고 만성 조증 증상이 지속되었다. Chiesa 등의 6례 중 9세와 10세 여아는 난치성 AD/HD였고, 후자는 항불안제로 불안장애가 개선되었으나 메틸페니데이트는 AD/HD에 무효였고 심장 영향을 고려하면 해로울 수 있었다.',
+ 'D-T4: 15개월 nonTR-RTH 남아에게 투여해 과잉행동을 포함한 증상과 성장 장애가 개선되었다.'
+]},
+b3:{t:'BCQ3. RTHβ에 동반된 그레이브스병의 치료 목표는?', r:'3.3.3 · 5–6쪽', p:[
+ '#해설',
+ '흔하지 않지만 RTHβ에 그레이브스병이 동반될 수 있으며 치료가 필요하다. 그러나 SITSH 때문에 치료 목표를 정하기 어렵다. 목표는 RTHβ가 없는 그레이브스병처럼 정상 갑상선기능 유지이지만, 발병 전 기능을 모르면 “정상”을 판단하기 어렵다.',
+ '발병 전 갑상선기능을 알면 발병 전 TSH를 목표로 한다. 모르면 항갑상선제로 TSH를 정상 내지 약간 높게 유지한다. 그 밖의 지표로 갑상선중독 증상 같은 임상 소견과 콜레스테롤 같은 대사 지표가 있다.',
+ '방사성요오드나 갑상선전절제술은 그다지 권고되지 않는다. 발병 전 기능을 모르면 L-T4로 갑상선기능을 조절하기가 특히 어렵다.',
+ '#근거',
+ 'RTHβ와 그레이브스병이 모두 확진된 8례 중 발병 전 갑상선호르몬을 알 수 있었던 것은 2례였다. 1례는 항갑상선제, 1례는 방사성요오드로 치료했고, 후자는 기능저하가 되었으나 L-T4 용량이 부적절하였다. 나머지 6례 중 5례는 항갑상선제로 TSH를 정상 내지 약간 높게 유지했고 1례는 방사성요오드를 받았다. TSH가 정상 하한까지 낮아지면 갑상선중독이 나타나는 것으로 보였다. 방사성요오드 후 기능저하가 된 환자는 L-T4 325 μg/일로 TSH가 참고범위 안에 있었으나 이 상태가 기능적으로 정상인지는 분명하지 않다.',
+ '#문헌 요약',
+ 'Sato는 발병 전 갑상선기능이 분명한 RTHβ 동반 그레이브스병 1례를 보고하였다. Ramos-Levi 등은 발병 전 기능을 아는 환자를 방사성요오드로 치료했으나 L-T4 용량이 부적절해 보였다.'
+]},
+b4:{t:'BCQ4. 다른 원인의 갑상선기능저하증이 동반된 RTHβ의 치료 목표는?', r:'3.3.4 · 6쪽', p:[
+ '#해설',
+ '만성 갑상선염이 동반되거나 암으로 갑상선절제술을 받은 RTHβ 환자에게는 호르몬 보충이 필요할 수 있으나, 호르몬 참고범위는 치료 목표로 유용하지 않다. 문헌은 증례보고뿐이었다.',
+ '기능저하 발생 전 호르몬 값을 알면 이를 목표로 했지만 대개 알 수 없다. 기능저하 증상이 뚜렷하면 증상 개선이 필요하다는 데 모든 문헌이 동의했으나, 목표 호르몬 값으로 증상이 개선되었다는 보고와 목표값 사용에 부정적인 보고가 공존한다. 같은 돌연변이의 다른 환자 값을 목표로 한 문헌도 있으나, 같은 돌연변이라도 증상이 일치하지 않아 타당성은 분명하지 않다. 많은 보고에서 다량의 L-T4가 필요하였다.',
+ '#문헌 요약',
+ '유두암이 동반된 일본 증례는 전절제 후 TSH 억제 대상이 아니었고, 수술 전 호르몬 값 유지와 기능저하 증상 회피를 목표로 했으나 L-T4가 500 μg/일 넘게 필요하였다. 유전자 진단은 없었지만 기능저하 발생 전 값을 목표로 L-T4 300 μg/일에서 피로가 개선된 보고도 있다.',
+ '이소성 갑상선이 동반된 2세 RTHβ 여아는 성장 장애, 골연령 지연, 정신 발달 지연이 있었고, L-T4 125–150 μg으로 TSH 4–10 mU/L를 맞추자 호전되었다. 목표 근거는 기술되지 않았으나 저자들은 성장·골연령·정신 발달 개선의 중요성과 갑상선 예비능이 제한된 경우 치료가 특히 필요함을 강조하였다.',
+ '아전절제 병력에도 SITSH를 보인 환자는 하시모토병이 악화되어 피로가 생기고 T4가 참고범위로, TSH는 높아졌다. L-T4 100 μg/일로 피로가 개선되었고, 검사 지표가 증상과 상관하지 않아 임상 증상을 치료 지표로 삼아야 한다고 결론지었다.',
+ '생후 2주부터 이소성 갑상선으로 보충 중이던 환자는 16세에 RTHβ로 진단되었고, 같은 돌연변이의 무증상 환자와 같은 호르몬 값을 L-T4 300 μg/일로 달성하였다. 유전자 진단이 없어 근거에서 제외했지만, 만성 갑상선염이 동반된 RTHβ 의심례에서 같은 가족 환자의 평균 TSH를 목표로 L-T4 400 μg/일을 투여한 보고도 있다.'
+]},
+b5:{t:'BCQ5. 분화갑상선암 수술 후 TSH 억제요법 대상인 RTHβ 환자의 치료 목표는?', r:'3.3.5 · 6–7쪽', p:[
+ '#해설',
+ '분화갑상선암으로 갑상선절제술을 받은 환자는 TSH가 여포세포 증식을 자극하므로 재발 예방을 위해 TSH 억제요법 대상이 될 수 있다. 그러나 RTHβ에서는 TSH가 억제되지 않아 목표를 정하기 쉽지 않다.',
+ '일본내분비외과학회는 비RTHβ 환자의 TSH 억제요법 적응증은 제시하지만 억제 목표는 제시하지 않는다. Thyroid Disease Manager는 모든 수술 후 환자에서 L-T4로 TSH를 억제하고, 첫 수술 후 평가에서 분화암이 남아 있으면 TSH 약 0.1 µU/mL, 잔여 종양이 없으면 참고범위 하한, 재발 위험이 없으면 참고범위 안으로 제안한다. 더 강한 억제는 갑상선중독 빈도를 높이고 결과가 좋지 않다.',
+ 'TSH를 0.1 µU/mL 미만으로 억제한 보고는 없었고, 정상 하한까지 억제한 경우는 2례뿐이었다. 수술 전 수준(참고범위 안)까지 억제한 경우는 3례였는데, 1례는 L-T4에 브로모크립틴이 필요했고 부작용으로 곧 중단하자 TSH가 정상 상한을 넘었다. 근거는 부족하지만 RTHβ에서는 수술 전 수준까지 억제하기도 어려워 답하기 어려운 질문이다.',
+ '#근거',
+ '갑상선암이 동반되어 갑상선절제술을 받은 RTHβ는 11가계 12례뿐이었다. 다발결절성 갑상선종으로 아전절제한 1례를 제외하고 모두 전절제를 받았다. 모두 유두암이었고, 프레임이동 돌연변이 1가계를 제외하면 모두 THRB 과오 점돌연변이였다. L-T4 외에 L-T3 2례(1례는 격일), 브로모크립틴 2례, TRIAC 1례가 투여되었다.',
+ '#문헌 요약',
+ '참고범위 하한까지 억제된 2례: L-T4 350 μg/일 단독으로 TSH 0.45 μU/mL(참고범위 0.5–4.3), 중독 증상 없음. L-T4 200 μg/일+TRIAC 1.4 mg/일로 TSH 24.8에서 0.423 μU/mL(0.35–4.94)로 억제되었으나 신경과민과 조증으로 TRIAC을 더 늘리기 어려웠다.',
+ '수술 전 수준(참고범위 안)까지 억제된 3례: 브로모크립틴이 필요했다가 부작용으로 중단 후 TSH가 상한을 넘은 예, L-T4 400 μg/일로 처음엔 기능저하 증상이 호전되었으나 TSH 37.98 μU/mL로 높았고 이후 심방세동이 생겨 L-T3 20 μg 격일을 추가하자 3개월 후 TSH 1.15 μU/mL가 된 예, 수술 전 TSH 1.82 μU/mL였으며 L-T4 250 μg/일 단독으로 수술 전 수준까지 억제했다고 값 없이 보고한 예. 주제가 달라 근거에서 제외했으나, L-T4 없이 L-T3 250 μg 격일로 TSH를 억제하고 미만성 갑상선종을 줄인 보고도 있다.',
+ '나머지 4가계 5례는 갑상선중독 증상 때문에 수술 전 수준까지 억제하기 어려웠다. RTHβ 동반 갑상선암의 첫 보고는 일본의 독성 다발결절성 갑상선종 증례에서 부분절제 표본에 우연히 발견된 유두암이었으나, TSH 억제요법에 대한 기술이 없어 근거에서 제외하였다.'
+]},
+c1:{t:'Column 1. RTHβ에서 TRIAC(3,3′,5-트리요오도티로아세트산)', r:'3.4.1 · 7–8쪽', p:[
+ '#해설',
+ 'TRIAC은 T3의 대사물로 건강인에도 T3의 약 1/50 농도로 존재한다. 시험관 연구에서 야생형 TRβ1에 대한 결합력과 전사 조절 효과가 T3보다 강하고 TRα1에는 T3와 비슷하다. 시상하부·뇌하수체의 주된 TR인 TRβ2는 리간드 결합 부위의 아미노산 서열이 TRβ1과 같아 비슷한 효과가 예상되며, 실제로 건강인에게 투여하면 TSH 생성이 감소해 유리 T4가 낮아진다. RTHβ의 돌연변이 TRβ는 T3 결합과 전사 활성이 손상되어 있지만 일부 돌연변이에는 TRIAC이 T3보다 높은 친화도와 활성을 가질 수 있다.',
+ '모든 RTHβ는 SITSH를 보이며, TRα1 자극에 의한 빈맥 같은 중독 증상은 치료가 필요할 수 있다. 많은 보고에서 TRIAC이 SITSH를 개선했으나 항상 통계적으로 유의하지는 않았고, AD/HD에 유용하다는 보고도 있으나 증례 수가 부족하다. 반감기가 6–7시간으로 짧아 하루 2회 투여가 필요할 수 있고, 측정계에서 T3와 교차반응한다.',
+ '주된 투여 대상은 뇌하수체형 RTHβ(PRTHβ)지만 임상 표현형이 돌연변이 위치와 아미노산 변화로 항상 정해지지는 않는다. PRTHβ와 전신형(GRTHβ)을 구분하는 엄격한 검사 기준은 없고 대부분 임상 증상으로 분류한다. SITSH 외 지표(갑상선종, 빈맥·두근거림, 과다 발한, AD/HD)는 보고마다 다르고 통계적 의미도 알 수 없으며, 효과가 없던 사례는 보고되지 않았을 수 있다.',
+ 'TRIAC은 프랑스에서 판매되었으나 낮은 수요와 남용 우려로 2020년 중단되었다. 최근 MCT8 결핍증(Allan-Herndon-Dudley 증후군) 치료에 효과적이라는 보고가 있으나, PRTHβ 치료 적응증은 일본 등 일부 국가에서 현재 공식 승인되지 않았다.',
+ '#근거',
+ '한 문헌에 따르면 RTHβ 34례 중 약 90%에서 TRIAC 투여 후 SITSH가 다양한 정도로 개선되었다. 이 중 16명(실제로는 17명)이 THRB 돌연변이가 확인되었고 2–3례를 제외하면 어느 정도 효과를 보였다. 이 34례 외에 일본어로 보고된 THRB 돌연변이 PRTHβ 3례도 TRIAC으로 SITSH가 개선되었다.',
+ '#문헌 요약',
+ '대부분의 RTHβ는 이형접합이며 돌연변이 TRβ가 야생형의 기능을 방해한다. TRIAC의 작용 기전은 ① 돌연변이 TRβ에 직접 결합해 우성음성 효과를 약화하거나, ② 야생형 TRβ에 T3보다 강하게 결합해 우성음성 효과를 극복하는 것일 수 있다.',
+ '34례 중 인용된 PRTHβ 1례는 이후 R316H 돌연변이가 확인되었고 TRIAC으로 SITSH가 부분 개선되었다. R316H는 우성음성 효과가 매우 약해 처음엔 없다고 여겨졌다. PRTHβ에서 처음 보고된 R338W도 GRTHβ 돌연변이 K443E보다 우성음성 효과가 약하다. 이처럼 우성음성 효과가 약한 PRTHβ에 대한 적응증은 더 연구해야 한다.',
+ '돌연변이 위치와 효과의 관계: TRβ hinge 부위(hot spot cluster 3)의 V264D와 R243Q에는 효과가 없을 수 있다. R243Q 이형접합 1례는 SITSH가 부분 개선되었으나 전신 상태 개선이 미미해 5.5년 후 중단하였다. 반면 R243Q 동형접합 환자에서는 TRIAC과 carbimazole 병용이 효과적이었고, hinge 부위 R243W 증례도 TRIAC으로 개선되었다. 최적 용량은 돌연변이마다 다를 수 있다. TRIAC은 말초 조직의 전사 활성도 자극하므로 전신 증상 개선은 SITSH 개선만큼 크지 않을 수 있으며, 한 PRTHβ 증례에서는 빈맥이나 높은 기초대사율에 효과가 없었다.',
+ 'P453T 돌연변이는 이탈리아와 일본의 AD/HD 소아에서 각각 보고되었고 두 증례 모두 TRIAC으로 SITSH와 AD/HD가 개선되어, 같은 돌연변이라면 효과가 있을 수 있음을 시사한다. 한 보고에서는 TRIAC으로 β차단제를 끊을 수 있었으나 성장과 골에는 효과가 적었다. 0.5–12.5세 6례 보고에서는 2례에 효과적이었으나 빈맥과 학습장애를 동반한 AD/HD 환자에서는 효과가 없었다. T337A 임신례에서 TRIAC은 산모에게 효과적이었으나 아이에 대한 효과는 분명하지 않았다.',
+ '분화갑상선암 환자에서는 대개 낮은 TSH가 바람직하며, R243W 증례는 유두암으로 전절제 후 TRIAC과 T4를 병용하였다. 그러나 앞서 언급한 대로 일본 등에서는 TRIAC을 구할 수 없다.'
+]},
+c2:{t:'Column 2. RTHβ에서 브로모크립틴', r:'3.4.2 · 8쪽', p:[
+ '#해설',
+ '브로모크립틴은 뇌하수체 TSH 분비를 억제하며, TSH가 억제되면 유리 T4와 T3가 따라서 감소한다. 실제로 많은 TSH 분비 선종(TSHoma)에서 효과적이다. RTHβ에서 유리 T4·T3를 낮추는 것이 좋은지는 논란이 있으나, 뇌하수체 저항이 말초 저항보다 커서 갑상선중독을 겪는 환자에게는 이득일 수 있다.',
+ '#근거',
+ '브로모크립틴으로 치료한 RTHβ 22례가 보고되었다. 11례는 호르몬 자료가 부족해 나머지 11례로 평가했으며 효과 4례, 반응했으나 불충분 6례, 무효 1례였다. 그러나 “효과” 증례 중 4개월 넘게 치료한 것은 2례뿐이었다. 대부분 오래된 보고로 1례를 제외하면 THRB 유전자 검사를 하지 않았다.',
+ '고프로락틴혈증에 흔히 쓰이고 부작용이 적은 카베르골린은 1례 보고되었으나 다약제 병용이어서 효과를 판단하기 어려웠다.',
+ '#문헌 요약',
+ 'Takamatsu 등은 PRTH 환자에게 4개월간 경구 브로모크립틴을 적정 투여해 갑상선호르몬과 자각 증상이 개선됨을 보였다. Arima 등은 PRTH에서 5 mg/일 약 4개월 투여로 호르몬과 증상이 개선되었다고 보고하였다. Dulgeroff 등은 2주–1년 미만 치료로 유리 T4, 총 T3, TSH가 정상화되고 심박수가 감소했다고 보고하였다. Custro 등은 TSH와 T4 개선을 보였으나 치료 기간은 짧았던 것으로 보인다. Crino 등은 브로모크립틴이 무효였고 TRIAC이 효과적이었던 증례를 보고하였다.'
+]},
+c3:{t:'Column 3. RTHβ에서 소마토스타틴 유사체', r:'3.4.3 · 8–9쪽', p:[
+ '#해설',
+ '일본에서는 피하 옥트레오타이드, 근주 옥트레오타이드, 피하 란레오타이드, 근주 파시레오타이드가 말단비대증과 일부는 쿠싱병에 보험 적용되며, 최근 피하 란레오타이드가 TSHoma 치료로 승인되었다. 이 중 RTHβ에서 시험된 것은 옥트레오타이드다. TSHoma에서는 장기 효과가 입증되었지만 RTHβ에서는 많은 연구가 단기 효과만 보였고 탈출 현상으로 장기적으로 효과를 잃었다.',
+ '일본의 사용 보고는 드물다. Ito 등이 1991년 장기 효과 증례를 보고했으나 유전자검사로 확진되지 않아 결론을 내리기 어렵다. 따라서 현재 RTHβ에 옥트레오타이드를 권고할 수 없으며, 다른 소마토스타틴 유사체는 향후 연구가 필요하다.',
+ '#근거',
+ '피하 옥트레오타이드 임상 연구 5건은 모두 유전자검사가 없었고, 4건은 증례보고, 1건은 TSHoma와의 비교 연구였다. 서방형 옥트레오타이드 임상시험 1건은 유전자검사를 시행했으며 TSHoma 대조 8명에서는 효과적이었으나 RTHβ 4명에서는 효과가 없었다.',
+ '#문헌 요약',
+ '유전자검사 없는 비종양성 SITSH: 1986–1991년 증례보고 4건 중 해외 3건은 치료 기간이 3–5일로 짧았고, 2례에서 TSH가 감소했으나 1례는 변화가 없었다. 세 번째 증례는 carbimazole 중단 후 항진증이 재발해 상심실성 빈맥으로 입원이 필요하였다. Ito 등의 일본 증례는 임상적으로 PRTH로 진단된 51세 여성으로, 옥트레오타이드 500 μg/일을 하루 2회 6개월간 피하 투여하고 처음 2개월간 MMI 5 mg/일을 병용해 TSH 36.9→9.5 mU/L, 유리 T4 3.1→2.1 ng/dL로 감소했으나 유리 T3는 6.3→6.4 pg/mL로 변화가 없었다. MMI 중단 2주 후 TSH 12.6 mU/L로 상승한 뒤 4.2–6.4 mU/L를 유지했으나 유리 T3·T4가 상승하고 중독 증상이 나타나 MMI를 재개했으며, 옥트레오타이드 병용으로 갑상선종이 줄었다.',
+ '유전자검사 없는 대조 연구(1989): 5일 단기 투여에서 종양성 4례와 비종양성 3례 모두 TSH가 감소했으나, 종양성에서는 약 1/10로, 비종양성에서는 절반 정도로만 감소하였다. 4–6주 지속 투여에서는 종양성 2례는 단기와 비슷한 효과를 보였으나 비종양성 2례는 TSH가 원래 값으로 돌아가 탈출 현상을 보였다. 일부 환자에서 오심, 지방변, 복부 경련, 배변 횟수 증가 같은 일시적 부작용이 있었다.',
+ 'RTHβ 대조 연구(2005): 서방형 옥트레오타이드를 2개월간 근주했으나 RTHβ 4례에서 효과가 없었다(TSH 1.8±0.10→1.8±0.15 mU/L, 유리 T4 53.1±37.6→53.3±37.9 pmol/L, 유리 T3 22.0±18.9→19.1±15.9 pmol/L, 모두 유의하지 않음). TSHoma 대조 8례에서는 유리 T4 37.9±15.8→21.9±8.8 pmol/L(p=0.02), 유리 T3 14.8±5.5→7.4±3.2 pmol/L(p=0.005)로 감소했으나 TSH 변화(3.8±3.4→2.7±2.8 mU/L)는 유의하지 않았다.'
+]},
+c4:{t:'Column 4. RTHβ에서 D-티록신(D-T4)', r:'3.4.4 · 9쪽', p:[
+ '#해설',
+ 'L-T4의 광학 이성질체인 D-T4로 TSH를 억제하고 내인성 갑상선호르몬 생성을 줄이려는 시도가 몇 차례 보고되었으나, RCT는 없고 흩어진 증례보고뿐이다.',
+ '#문헌 요약',
+ 'PRTH(R243Q) 9세 소아를 D-T4로 1.5년, 이어 TRIAC으로 5.5년 치료한 결과 TRIAC이 D-T4보다 TSH와 갑상선호르몬을 더 강하게 억제했으나 두 약 모두 갑상선종을 줄이지 못했다. 증상에도 의미 있는 영향이 없었고 증상은 나이가 들며 저절로 호전되었다.',
+ '기능저하와 중독 증상을 함께 보인 동형접합 돌연변이(Δ337T) 3세 RTHβ 환아는 D-T4 6 mg/일로 TSH가 억제되었으나 임상 효과는 없었다.'
+]},
+concl:{t:'결론', r:'9쪽', p:[
+ '일본갑상선학회의 RTHβ 치료 합의문을 기술하였다. 체계적 문헌고찰을 바탕으로 13개 주제를 논의하고 권고를 제시했지만, RTHβ 치료에 대한 근거가 부족함이 드러났다. 합의문을 갱신하기 전에 추가 연구가 필요하다.'
+]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const P = (...pts)=>'M'+pts.map(p=>p.join(' ')).join(' L');
+const G3 = [10,260,510];
+const G4 = [10,196,382,568], W4 = 182;
+const LR = y => [A(375,y,385,y),1];
+
+const CHARTS = {
+ov:{tab:'개요', fig:'서론', aria:'RTHβ의 병태생리와 임상 양상', w:760, h:486, nodes:[
+ {id:'o_sit', x:10, y:10, w:740,h:56, label:'SITSH<small>유리 T4·T3 높음 + TSH 억제되지 않음</small>', cls:'test fac'},
+ {id:'o_gen', x:10, y:86, w:480,h:60, label:'RTHβ<small>THRB 돌연변이 · 상염색체 우성 · 우성음성 효과</small>', cls:'test fac'},
+ {id:'o_non', x:500,y:86, w:250,h:60, label:'nonTR-RTHβ<small>THRB 돌연변이 없음 · 원인 미상</small>', cls:'fac'},
+ {id:'o_tox', x:G3[0],y:166,w:240,h:72, label:'갑상선중독 양상<small>TRα 우세 조직 · 빈맥 · AD/HD</small>', cls:'mal fac'},
+ {id:'o_asx', x:G3[1],y:166,w:240,h:72, label:'대부분 무증상<small>고농도 호르몬으로 보상</small>', cls:'ben fac'},
+ {id:'o_hyp', x:G3[2],y:166,w:240,h:72, label:'갑상선기능저하 양상<small>강한 우성음성 효과</small>', cls:'fac'},
+ {id:'o_gt',  x:10, y:258,w:365,h:60, label:'갑상선종 흔함<small>TSH의 여포세포 증식 효과</small>', cls:'fac'},
+ {id:'o_pg',  x:385,y:258,w:365,h:60, label:'야생형 태아 임신<small>유산 · 저체중 출생 위험</small>', cls:'mal fac'},
+ {id:'o_mis', x:10, y:338,w:740,h:56, label:'그레이브스병 오진 주의<small>불필요한 항갑상선제 · 방사성요오드 · 수술</small>', cls:'mal fac'},
+ {id:'o_ep',  x:10, y:414,w:365,h:60, label:'출생 40,000명당 1명<small>일본 보고 103례(2021) → 미진단 많음</small>', cls:'test fac'},
+ {id:'o_ty',  x:385,y:414,w:365,h:60, label:'PRTHβ vs GRTHβ<small>엄격한 검사 기준 없음 · 임상 증상으로 구분</small>', cls:'fac'}
+ ], edges:[[A(250,66,250,86),1],[A(625,66,625,86),1],...G3.map(x=>[P([250,146],[250,156],[x+120,156],[x+120,166]),1])], labels:[]},
+
+sx:{tab:'증상별 치료', fig:'FCQ1–4', aria:'RTHβ의 증상과 동반 상태에 따른 치료 선택', w:760, h:546, nodes:[
+ {id:'s_hd', x:10, y:10, w:740,h:50, label:'RTHβ 확진 · 대부분 무증상이면 치료 불필요', cls:'test'},
+ {id:'s_hr', x:10, y:80, w:365,h:60, label:'빈맥 · 두근거림 · 심방세동<small>성인 ~40% · 소아 ~60%</small>', cls:'test fac'},
+ {id:'s_bb', x:385,y:80, w:365,h:60, label:'β차단제를 선택 약제로<small>FCQ1 · 약한 권고</small>', cls:'tx fac'},
+ {id:'s_tx', x:10, y:160,w:365,h:60, label:'갑상선중독 증상 · 갑상선종', cls:'test'},
+ {id:'s_atd',x:385,y:160,w:365,h:60, label:'항갑상선제 사용하지 않음<small>FCQ2 · 그레이브스병 동반 제외</small>', cls:'mal fac'},
+ {id:'s_ch', x:10, y:240,w:365,h:60, label:'소아: 갑상선중독 증상 · 성장 장애', cls:'test'},
+ {id:'s_tmp',x:385,y:240,w:365,h:60, label:'일시적 항갑상선제<small>FCQ2 · 장기 투여 권고하지 않음</small>', cls:'fac'},
+ {id:'s_ri', x:10, y:320,w:365,h:60, label:'갑상선중독 근치 목적', cls:'test'},
+ {id:'s_rai',x:385,y:320,w:365,h:60, label:'방사성요오드 시행하지 않음<small>FCQ4 · 뇌하수체 비대 보고</small>', cls:'mal fac'},
+ {id:'s_gt', x:10, y:400,w:365,h:60, label:'현저한 갑상선종 · 종양', cls:'test'},
+ {id:'s_op', x:385,y:400,w:365,h:60, label:'갑상선절제술 고려<small>FCQ3 · 그 외에는 시행하지 않음</small>', cls:'fac'},
+ {id:'s_mis',x:10, y:480,w:365,h:56, label:'오진 후 항갑상선제 유해례<small>갑상선종 증대 · 성장·지능 장애</small>', cls:'mal fac'},
+ {id:'s_po', x:385,y:480,w:365,h:56, label:'수술 후 호르몬 보충<small>L-T4 150–600 μg/일 · L-T3 병용</small>', cls:'fac'}
+ ], edges:[[A(192,60,192,80),1],LR(110),LR(190),LR(270),LR(350),LR(430),[A(567,460,567,480),1]], labels:[]},
+
+ch:{tab:'소아·AD/HD', fig:'BCQ2 · FCQ2', aria:'RTHβ 소아의 AD/HD와 갑상선중독 증상 치료', w:760, h:470, nodes:[
+ {id:'a_hd', x:10, y:10, w:740,h:50, label:'RTHβ 소아', cls:'test'},
+ {id:'a_ad', x:10, y:80, w:365,h:60, label:'AD/HD<small>RTHβ의 48–73% · 일반 소아 6–11%</small>', cls:'test fac'},
+ {id:'a_ft', x:385,y:80, w:365,h:60, label:'갑상선중독 증상 · 성장 장애<small>빈맥 · 보챔 · 성장 곡선</small>', cls:'test fac'},
+ {id:'a_std',x:10, y:160,w:365,h:60, label:'일반 AD/HD 약제 시도<small>BCQ2 · 완화 치료 · RTHβ 보고 없음</small>', cls:'tx fac'},
+ {id:'a_mph',x:10, y:240,w:365,h:60, label:'메틸페니데이트<small>모델 마우스 무효 · 심장 영향 주의</small>', cls:'mal fac'},
+ {id:'a_t3', x:10, y:320,w:365,h:60, label:'L-T3<small>소규모 RCT에서 효과 (8명 중 5명 개선)</small>', cls:'tx fac'},
+ {id:'a_oth',x:10, y:400,w:365,h:60, label:'L-T4 · TRIAC · D-T4<small>증례보고</small>', cls:'fac'},
+ {id:'a_atd',x:385,y:160,w:365,h:60, label:'일시적 항갑상선제<small>FCQ2 · 장기 투여 권고하지 않음</small>', cls:'fac'},
+ {id:'a_cs', x:385,y:240,w:365,h:60, label:'소아 10례 결과<small>효과 5 · 불필요 3 · 유해 2</small>', cls:'test fac'},
+ {id:'a_bb', x:385,y:320,w:365,h:60, label:'β차단제<small>빈맥 · FCQ1</small>', cls:'tx fac'},
+ {id:'a_tri',x:385,y:400,w:365,h:60, label:'TRIAC<small>P453T 소아 SITSH·AD/HD 개선</small>', cls:'fac'}
+ ], edges:[[A(192,60,192,80),1],[A(567,60,567,80),1],[A(192,140,192,160),1],[A(567,140,567,160),1]], labels:[]},
+
+pg:{tab:'임신', fig:'BCQ1', aria:'RTHβ 산모의 임신 관리', w:760, h:532, nodes:[
+ {id:'p_m',  x:10, y:10, w:740,h:50, label:'RTHβ 산모의 임신', cls:'test'},
+ {id:'p_rk', x:10, y:80, w:740,h:56, label:'유산율 높음<small>아조레스 R243Q 가계 · RTHβ 부친보다 높음</small>', cls:'mal fac'},
+ {id:'p_g',  x:10, y:156,w:740,h:50, label:'태아 유전형 · 자녀의 절반이 RTHβ', cls:'test fac'},
+ {id:'p_mu', x:10, y:226,w:365,h:50, label:'태아 RTHβ', cls:'test'},
+ {id:'p_wt', x:385,y:226,w:365,h:50, label:'태아 야생형', cls:'test'},
+ {id:'p_no', x:10, y:296,w:365,h:66, label:'산모를 치료하지 않음<small>BCQ1</small>', cls:'ben fac'},
+ {id:'p_ft', x:385,y:296,w:365,h:66, label:'유리 T4 ≤ 상한의 150%<small>BCQ1 · 신중하게 조절</small>', cls:'tx fac'},
+ {id:'p_ou', x:10, y:376,w:365,h:66, label:'RTHβ 자녀의 장기 발달<small>일시적 기능 이상에도 정상</small>', cls:'fac'},
+ {id:'p_wx', x:385,y:376,w:365,h:66, label:'야생형 태아 갑상선중독<small>모체 T4 태반 통과 · 저체중 · TSH 측정 안 됨</small>', cls:'mal fac'},
+ {id:'p_gt', x:10, y:456,w:365,h:66, label:'태아 유전형 검사<small>양수검사 위험 · 향후 연구 과제</small>', cls:'fac'},
+ {id:'p_12', x:385,y:456,w:365,h:66, label:'비교 연구: 상한 120% 목표<small>출생체중 · Apgar · TSH 차이 없음</small>', cls:'fac'}
+ ], edges:[[A(380,60,380,80),1],[A(380,136,380,156),1],[P([380,206],[380,216],[192,216],[192,226]),1],[P([380,206],[380,216],[567,216],[567,226]),1],[A(192,276,192,296),1],[A(567,276,567,296),1]], labels:[]},
+
+co:{tab:'동반 질환', fig:'BCQ3–5', aria:'그레이브스병, 갑상선기능저하증, 분화갑상선암이 동반된 RTHβ의 치료 목표', w:760, h:484, nodes:[
+ {id:'c_gd', x:G3[0],y:10, w:240,h:60, label:'그레이브스병 동반<small>BCQ3</small>', cls:'test fac'},
+ {id:'c_hy', x:G3[1],y:10, w:240,h:60, label:'갑상선기능저하증 동반<small>BCQ4 · 갑상선염 · 수술 후</small>', cls:'test fac'},
+ {id:'c_dt', x:G3[2],y:10, w:240,h:60, label:'분화갑상선암 수술 후<small>BCQ5</small>', cls:'test fac'},
+ {id:'c_g1', x:G3[0],y:90, w:240,h:72, label:'발병 전 기능 앎<small>발병 전 TSH가 목표</small>', cls:'tx fac'},
+ {id:'c_g2', x:G3[0],y:172,w:240,h:72, label:'발병 전 기능 모름<small>항갑상선제로 TSH 정상~약간 높게</small>', cls:'tx fac'},
+ {id:'c_g3', x:G3[0],y:254,w:240,h:72, label:'방사성요오드·전절제<small>그다지 권고되지 않음</small>', cls:'mal fac'},
+ {id:'c_g4', x:G3[0],y:336,w:240,h:72, label:'보조 지표<small>중독 증상 · 콜레스테롤</small>', cls:'fac'},
+ {id:'c_h1', x:G3[1],y:90, w:240,h:72, label:'목표 ① 발병 전 검사값', cls:'tx'},
+ {id:'c_h2', x:G3[1],y:172,w:240,h:72, label:'목표 ② 증상 개선<small>명백한 기능저하 증상</small>', cls:'tx fac'},
+ {id:'c_h3', x:G3[1],y:254,w:240,h:72, label:'목표 ③ 가족 환자 검사값<small>같은 변이도 증상 다양</small>', cls:'fac'},
+ {id:'c_h4', x:G3[1],y:336,w:240,h:72, label:'고용량 L-T4 필요<small>300–500 μg/일 이상 보고</small>', cls:'fac'},
+ {id:'c_d1', x:G3[2],y:90, w:240,h:72, label:'목표는 비RTHβ와 같음<small>예상</small>', cls:'tx fac'},
+ {id:'c_d2', x:G3[2],y:172,w:240,h:72, label:'TSH 억제 어려움<small>절반 이상 수술 전 수준도 안 됨</small>', cls:'mal fac'},
+ {id:'c_d3', x:G3[2],y:254,w:240,h:72, label:'하한까지 억제 2례<small>L-T4 단독 1 · +TRIAC 1</small>', cls:'fac'},
+ {id:'c_d4', x:G3[2],y:336,w:240,h:72, label:'병용 약제<small>L-T3 2 · 브로모크립틴 2 · TRIAC 1</small>', cls:'fac'},
+ {id:'c_po', x:10, y:418,w:740,h:56, label:'수술 후 호르몬 보충<small>L-T4 150–600 μg/일(흔히 약 300) · 수술 전 TSH 유지 또는 증상 기준</small>', cls:'fac'}
+ ], edges:[...G3.map(x=>[A(x+120,70,x+120,90),1])], labels:[]},
+
+dr:{tab:'비보험 약제', fig:'Column 1–4', aria:'일본 보험 미적용 약제 TRIAC, 브로모크립틴, 소마토스타틴 유사체, D-T4', w:760, h:416, nodes:[
+ {id:'d_tr', x:G4[0],y:10, w:W4,h:60, label:'TRIAC<small>Column 1</small>', cls:'fac'},
+ {id:'d_br', x:G4[1],y:10, w:W4,h:60, label:'브로모크립틴<small>Column 2</small>', cls:'fac'},
+ {id:'d_ss', x:G4[2],y:10, w:W4,h:60, label:'소마토스타틴 유사체<small>Column 3</small>', cls:'fac'},
+ {id:'d_dt', x:G4[3],y:10, w:W4,h:60, label:'D-T4<small>Column 4</small>', cls:'fac'},
+ {id:'d_t1', x:G4[0],y:90, w:W4,h:76, label:'TSH·유리 T4 감소<small>34례 중 ~90% SITSH 개선</small>', cls:'tx fac'},
+ {id:'d_b1', x:G4[1],y:90, w:W4,h:76, label:'TSH 분비 억제<small>평가 11례 중 효과 4</small>', cls:'fac'},
+ {id:'d_s1', x:G4[2],y:90, w:W4,h:76, label:'단기 효과 → 탈출<small>서방형: RTHβ 4례 무효</small>', cls:'mal fac'},
+ {id:'d_d1', x:G4[3],y:90, w:W4,h:76, label:'TSH 억제<small>증례보고만</small>', cls:'fac'},
+ {id:'d_t2', x:G4[0],y:176,w:W4,h:76, label:'변이별 효과 차이<small>hinge 부위 R243Q · V264D</small>', cls:'fac'},
+ {id:'d_b2', x:G4[1],y:176,w:W4,h:76, label:'장기 근거 부족<small>4개월 넘는 효과례 2례</small>', cls:'mal fac'},
+ {id:'d_s2', x:G4[2],y:176,w:W4,h:76, label:'TSHoma와 다름<small>TSHoma는 장기 효과</small>', cls:'fac'},
+ {id:'d_d2', x:G4[3],y:176,w:W4,h:76, label:'임상 효과 없음<small>갑상선종 · 증상</small>', cls:'mal fac'},
+ {id:'d_t3', x:G4[0],y:262,w:W4,h:76, label:'반감기 6–7시간<small>하루 2회 · T3 측정 교차반응</small>', cls:'test fac'},
+ {id:'d_b3', x:G4[1],y:262,w:W4,h:76, label:'카베르골린<small>1례 · 다약제 병용</small>', cls:'fac'},
+ {id:'d_s3', x:G4[2],y:262,w:W4,h:76, label:'권고할 수 없음<small>다른 유사체는 연구 필요</small>', cls:'mal fac'},
+ {id:'d_d3', x:G4[3],y:262,w:W4,h:76, label:'RCT 없음<small>흩어진 증례보고</small>', cls:'fac'},
+ {id:'d_av', x:10, y:350,w:740,h:56, label:'일본 보험 미적용 → 임상질문에서 제외<small>TRIAC은 프랑스에서 2020년 판매 중단</small>', cls:'mal fac'}
+ ], edges:[...G4.map(x=>[A(x+W4/2,70,x+W4/2,90),1])], labels:[]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${id}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Ishii S, et al. Thyroid Science 2025;2:100025 해당 절의 요약 번역. 참고문헌 번호와 일부 돌연변이 표기는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약.</p>`;
+const pp = (k,i,j) => paraHTML({p:EXP[k].p.slice(i,j===undefined?i+1:j)});
+
+const TA = tbl(['질문','답','권고 강도','근거 수준','합의도'],[
+ ['FCQ1 빈맥에 β차단제','선택 약제로 권고','약함','매우 낮음','100%'],
+ ['FCQ2 항갑상선제 (답 1)','그레이브스병 동반 외에는 사용하지 않음','약함','낮음','92%'],
+ ['FCQ2 항갑상선제 (답 2)','일부 소아 일시 사용 · 장기 투여 안 함','제시 안 됨','매우 낮음','92%'],
+ ['FCQ3 갑상선절제술','현저한 갑상선종·종양 외에는 시행하지 않음','약함','매우 낮음','92%'],
+ ['FCQ4 방사성요오드','시행하지 않음','약함','매우 낮음','92%']
+]) + '<p class="exp-src">전경 임상질문(FCQ)의 권고 강도·근거 수준·합의도 정리(원문 본문에서 발췌, 원문에는 표가 없음).</p>';
+const TB = tbl(['대상','효과','유해','무효','불필요','계'],[
+ ['성인','1','2','5','5','13'],
+ ['소아 (신생아)','5 (2)','2','0','3 (1)','10'],
+ ['계','6','4','5','8','23']
+]) + '<p class="exp-src">FCQ2 근거: THRB 돌연변이가 확인되고 그레이브스병이 없는 RTHβ에서 항갑상선제 투여 결과(21편 23례). 비효과 17례 = 유해 4 + 무효 5 + 불필요 8.</p>';
+const TC = tbl(['약제','근거','결론'],[
+ ['TRIAC','34례 중 약 90% SITSH 개선(THRB 확인 16–17례 중 2–3례 제외 효과) · 일본 PRTHβ 3례','유리 T4·TSH 감소, 유의성 없음 · 변이별 차이 · 구하기 어려움'],
+ ['브로모크립틴','22례 보고, 평가 가능 11례: 효과 4 · 불충분 6 · 무효 1','보험 미적용 · 근거 부족'],
+ ['옥트레오타이드','피하 5건(유전자검사 없음) · 서방형 RTHβ 4례 무효','단기 효과 후 탈출 · 권고할 수 없음'],
+ ['D-T4','증례보고 2건','높은 수준의 근거 없음']
+]) + '<p class="exp-src">칼럼(일본 건강보험 미적용 약제) 요약.</p>';
+
+const DISC_B5 = note('원문 수치','BCQ5의 답은 “11례”, 근거는 “11가계 12례”로 적었다. 문헌 요약은 참고범위 하한까지 억제 2례, 수술 전 수준까지 억제 3례, 억제가 어려웠던 “나머지 4가계 5례”로 나누어 합이 10례여서 12례와 맞지 않는다.');
+const DISC_C1 = note('원문 표기','Column 1 근거는 “16명(실제로는 17명)”으로 THRB 확인 환자 수를 적었고, 일본의 PRTHβ 3례가 TRIAC으로 SITSH가 개선되었다는 문장이 거의 같은 내용으로 두 번 반복된다.');
+const DISC_F2 = note('원문 표기','FCQ2 답 2에는 권고 강도가 제시되지 않고 근거 수준(매우 낮음)과 합의도(92%)만 있다. 도구에서는 “근거 매우 낮음”으로 표시하였다.');
+const NOTE_JP = tip('적용 범위','이 합의문은 일본갑상선학회 2023 합의문의 영문판이며 일본의 법과 보험 규정을 전제로 한다. 칼럼의 4개 약제는 일본 건강보험상 RTHβ 적응증이 없어 임상질문에서 제외되었다. 진단기준과 중증도(2016)는 별도 문서로 이 논문에는 포함되지 않았다.');
+const NOTE_MIS = tip('임상 포인트','높은 갑상선호르몬과 억제되지 않은 TSH(SITSH)를 보이면 그레이브스병으로 단정하기 전에 RTHβ를 고려한다. 오진 후 항갑상선제는 갑상선종 증대와 소아 성장 장애를, 방사성요오드는 뇌하수체 비대를 일으킨 보고가 있다.');
+
+const D = {
+o_sit:{kind:'서론', title:'SITSH (부적절 TSH 분비 증후군)', next:['o_gen','o_non'], body:`${pp('intro',1)}${NOTE_MIS}`},
+o_gen:{kind:'서론', title:'RTHβ의 원인과 유전', next:['o_tox','o_asx','o_hyp'], body:`${pp('intro',0)}${pp('intro',2)}`},
+o_non:{kind:'서론', title:'nonTR-RTHβ', next:[], body:`<p>THRB 유전자 돌연변이가 없는 RTHβ를 nonTR-RTHβ라 하며 원인은 알려져 있지 않다. 이 합의문은 유전자검사로 RTHβ를 진단하지 않은 문헌을 근거에서 제외하였다.</p>${pp('meth',1)}`},
+o_tox:{kind:'서론', title:'갑상선중독 양상', next:['s_hr','a_ad'], body:`${pp('intro',2)}${R('F1')}`},
+o_asx:{kind:'서론', title:'대부분 무증상', next:['s_hd'], body:`${pp('intro',2)}<p>무증상 환자에서는 항갑상선제가 불필요했다는 성인 5례(수개월–44년, 3대 추적)와 소아 3례가 있다.</p>${R('F2')}`},
+o_hyp:{kind:'서론', title:'갑상선기능저하 양상', next:['c_hy'], body:`${pp('intro',2)}${ex('b4')}`},
+o_gt:{kind:'서론', title:'갑상선종', next:['s_gt'], body:`${pp('intro',3)}${R('F4')}`},
+o_pg:{kind:'서론', title:'야생형 태아 임신', next:['p_m'], body:`${pp('intro',3)}${RR('B1','B2','B3')}`},
+o_mis:{kind:'서론', title:'그레이브스병 오진', next:['s_atd','s_rai'], body:`${pp('intro',4)}${RR('F2','F5')}${NOTE_MIS}`},
+o_ep:{kind:'서론', title:'유병률과 합의문 제정', next:[], body:`${pp('intro',4,6)}${ex('meth')}`},
+o_ty:{kind:'Column 1', title:'뇌하수체형(PRTHβ)과 전신형(GRTHβ)', next:['d_tr'], body:`${pp('c1',3)}${pp('c1',9)}`},
+
+s_hd:{kind:'FCQ1–4', title:'증상과 동반 상태에 따른 치료', next:['s_hr','s_tx','s_ch','s_ri','s_gt'], body:`${RR('F1','F2','F3','F4','F5')}${TA}${NOTE_MIS}`},
+s_hr:{kind:'FCQ1', title:'빈맥·두근거림·심방세동', next:['s_bb'], body:`${R('F1')}${pp('f1',2)}${pp('f1',6,8)}`},
+s_bb:{kind:'FCQ1', title:'β차단제', next:[], body:`${R('F1')}${ex('f1')}`},
+s_tx:{kind:'FCQ2', title:'갑상선중독 증상·갑상선종', next:['s_atd'], body:`${R('F2')}${pp('f2',1,3)}${pp('f2',13)}`},
+s_atd:{kind:'FCQ2', title:'항갑상선제를 사용하지 않음', next:[], body:`${RR('F2','F3')}${TB}${DISC_F2}`},
+s_ch:{kind:'FCQ2', title:'소아의 갑상선중독 증상·성장 장애', next:['s_tmp','a_ft'], body:`${R('F3')}${pp('f2',10)}`},
+s_tmp:{kind:'FCQ2', title:'일시적 항갑상선제', next:[], body:`${R('F3')}${pp('f2',10)}${pp('f2',13)}${DISC_F2}`},
+s_ri:{kind:'FCQ4', title:'갑상선중독의 근치 치료', next:['s_rai'], body:`${R('F5')}${pp('f4',1)}`},
+s_rai:{kind:'FCQ4', title:'방사성요오드 치료를 시행하지 않음', next:[], body:`${R('F5')}${ex('f4')}`},
+s_gt:{kind:'FCQ3', title:'현저한 갑상선종·종양', next:['s_op'], body:`${R('F4')}${pp('f3',2)}`},
+s_op:{kind:'FCQ3', title:'갑상선절제술', next:['s_po'], body:`${R('F4')}${ex('f3')}`},
+s_mis:{kind:'FCQ2', title:'오진 후 항갑상선제 유해례', next:[], body:`${R('F2')}${pp('f2',7)}${pp('f2',12)}${NOTE_MIS}`},
+s_po:{kind:'FCQ3 · BCQ4', title:'수술 후 갑상선호르몬 보충', next:['c_po'], body:`${R('F4')}${pp('f3',4)}${pp('f3',6)}${R('B10')}`},
+
+a_hd:{kind:'BCQ2 · FCQ2', title:'RTHβ 소아', next:['a_ad','a_ft'], body:`${RR('B4','B5','F3')}${pp('b2',1)}`},
+a_ad:{kind:'BCQ2', title:'AD/HD', next:['a_std'], body:`${RR('B4','B5')}${ex('b2')}`},
+a_ft:{kind:'FCQ2', title:'갑상선중독 증상·성장 장애', next:['a_atd'], body:`${R('F3')}${pp('f2',10)}`},
+a_std:{kind:'BCQ2', title:'일반 AD/HD 약제', next:[], body:`${R('B4')}${pp('b2',2)}`},
+a_mph:{kind:'BCQ2', title:'메틸페니데이트', next:[], body:`${R('B4')}<p>RTHβ 모델 마우스(TRβPV knock-in)에서 메틸페니데이트는 행동 이상에 효과가 없었다.</p>${pp('b2',8)}`},
+a_t3:{kind:'BCQ2', title:'L-T3', next:[], body:`${R('B5')}${pp('b2',6)}`},
+a_oth:{kind:'BCQ2', title:'L-T4 · TRIAC · D-T4', next:['d_tr'], body:`${R('B5')}${pp('b2',7,10)}`},
+a_atd:{kind:'FCQ2', title:'일시적 항갑상선제', next:[], body:`${R('F3')}${pp('f2',10)}${pp('f2',13)}${DISC_F2}`},
+a_cs:{kind:'FCQ2', title:'소아 증례 결과', next:[], body:`${R('F3')}${TB}`},
+a_bb:{kind:'FCQ1', title:'β차단제', next:[], body:`${R('F1')}${pp('f1',2)}`},
+a_tri:{kind:'Column 1', title:'TRIAC (소아)', next:['d_tr'], body:`${R('C2')}${pp('c1',11)}${pp('b2',8)}`},
+
+p_m:{kind:'BCQ1', title:'RTHβ 산모의 임신', next:['p_rk'], body:`${RR('B1','B2','B3')}${ex('b1')}`},
+p_rk:{kind:'BCQ1', title:'유산율 증가', next:['p_g'], body:`${R('B1')}${pp('b1',4)}${pp('b1',7)}`},
+p_g:{kind:'BCQ1', title:'태아 유전형', next:['p_mu','p_wt'], body:`${pp('b1',1)}${pp('b1',10)}`},
+p_mu:{kind:'BCQ1', title:'태아가 RTHβ', next:['p_no'], body:`${R('B3')}${pp('b1',2)}`},
+p_wt:{kind:'BCQ1', title:'태아가 야생형', next:['p_ft'], body:`${RR('B2','B3')}${pp('b1',1)}`},
+p_no:{kind:'BCQ1', title:'산모를 치료하지 않음', next:[], body:`${R('B3')}${pp('b1',2)}`},
+p_ft:{kind:'BCQ1', title:'유리 T4 ≤ 참고범위 상한의 150%', next:[], body:`${R('B3')}${pp('b1',2)}${pp('b1',5)}`},
+p_ou:{kind:'BCQ1', title:'RTHβ 자녀의 경과', next:[], body:pp('b1',9)},
+p_wx:{kind:'BCQ1', title:'야생형 태아의 갑상선중독', next:[], body:`${R('B2')}${pp('b1',1)}${pp('b1',7)}`},
+p_gt:{kind:'BCQ1', title:'태아 유전형 검사', next:[], body:pp('b1',10)},
+p_12:{kind:'BCQ1', title:'상한 120% 목표 비교 연구', next:[], body:`${pp('b1',5)}${pp('b1',8)}`},
+
+c_gd:{kind:'BCQ3', title:'그레이브스병 동반', next:['c_g1','c_g2'], body:`${RR('B6','B7','B8')}${ex('b3')}`},
+c_g1:{kind:'BCQ3', title:'발병 전 갑상선기능을 아는 경우', next:[], body:`${R('B7')}${pp('b3',2)}`},
+c_g2:{kind:'BCQ3', title:'발병 전 갑상선기능을 모르는 경우', next:[], body:`${R('B8')}${pp('b3',5)}`},
+c_g3:{kind:'BCQ3', title:'방사성요오드·갑상선전절제술', next:['s_rai'], body:`${pp('b3',3)}${R('F5')}`},
+c_g4:{kind:'BCQ3', title:'보조 지표', next:[], body:`${R('B6')}${pp('b3',2)}`},
+c_hy:{kind:'BCQ4', title:'갑상선기능저하증 동반', next:['c_h1','c_h2','c_h3','c_h4'], body:`${RR('B9','B10')}${ex('b4')}`},
+c_h1:{kind:'BCQ4', title:'목표 ① 발병 전 검사값', next:[], body:`${R('B9')}${pp('b4',2)}`},
+c_h2:{kind:'BCQ4', title:'목표 ② 증상 개선', next:[], body:`${R('B9')}${pp('b4',5,7)}`},
+c_h3:{kind:'BCQ4', title:'목표 ③ 가족 내 환자의 검사값', next:[], body:`${R('B9')}${pp('b4',7)}`},
+c_h4:{kind:'BCQ4', title:'고용량 L-T4', next:[], body:`${R('B10')}${pp('b4',4)}${pp('b4',7)}`},
+c_dt:{kind:'BCQ5', title:'분화갑상선암 수술 후 TSH 억제', next:['c_d1','c_d2'], body:`${RR('B11','B12')}${ex('b5')}${DISC_B5}`},
+c_d1:{kind:'BCQ5', title:'목표는 비RTHβ와 같음', next:[], body:`${R('B12')}${pp('b5',1,3)}`},
+c_d2:{kind:'BCQ5', title:'TSH 억제가 어려움', next:[], body:`${R('B12')}${pp('b5',3)}${pp('b5',9)}${DISC_B5}`},
+c_d3:{kind:'BCQ5', title:'참고범위 하한까지 억제된 2례', next:[], body:`${R('B12')}${pp('b5',7)}`},
+c_d4:{kind:'BCQ5', title:'병용 약제', next:['d_tr'], body:`${R('B11')}${pp('b5',5)}${pp('b5',8)}`},
+c_po:{kind:'FCQ3 · BCQ4', title:'수술 후 호르몬 보충', next:[], body:`${R('B10')}${pp('f3',4)}${pp('f3',6)}`},
+
+d_tr:{kind:'Column 1', title:'TRIAC', next:['d_t1','d_t2','d_t3'], body:`${RR('C1','C2','C3')}${ex('c1')}${DISC_C1}`},
+d_t1:{kind:'Column 1', title:'TSH·유리 T4 감소', next:[], body:`${R('C1')}${pp('c1',6)}${pp('c1',2)}${DISC_C1}`},
+d_t2:{kind:'Column 1', title:'돌연변이별 효과 차이', next:[], body:`${R('C2')}${pp('c1',10)}`},
+d_t3:{kind:'Column 1', title:'약동학과 측정 간섭', next:[], body:`${R('C3')}${pp('c1',2)}${pp('c1',4)}`},
+d_br:{kind:'Column 2', title:'브로모크립틴', next:['d_b1'], body:`${R('C4')}${ex('c2')}`},
+d_b1:{kind:'Column 2', title:'TSH 분비 억제', next:[], body:`${R('C4')}${pp('c2',1)}${pp('c2',3)}`},
+d_b2:{kind:'Column 2', title:'장기 사용 근거 부족', next:[], body:`${R('C4')}${pp('c2',3)}`},
+d_b3:{kind:'Column 2', title:'카베르골린', next:[], body:`${R('C4')}${pp('c2',4)}`},
+d_ss:{kind:'Column 3', title:'소마토스타틴 유사체', next:['d_s1'], body:`${RR('C5','C6')}${ex('c3')}`},
+d_s1:{kind:'Column 3', title:'단기 효과와 탈출 현상', next:[], body:`${R('C5')}${pp('c3',7,9)}`},
+d_s2:{kind:'Column 3', title:'TSHoma와의 차이', next:[], body:`${R('C5')}${pp('c3',1)}${pp('c3',8)}`},
+d_s3:{kind:'Column 3', title:'권고할 수 없음', next:[], body:`${R('C6')}${pp('c3',2)}`},
+d_dt:{kind:'Column 4', title:'D-T4', next:['d_d1'], body:`${R('C7')}${ex('c4')}`},
+d_d1:{kind:'Column 4', title:'TSH 억제', next:[], body:`${R('C7')}${pp('c4',1)}`},
+d_d2:{kind:'Column 4', title:'임상 효과 없음', next:[], body:`${R('C7')}${pp('c4',3,5)}`},
+d_d3:{kind:'Column 4', title:'근거 수준', next:[], body:`${R('C7')}${pp('c4',1)}`},
+d_av:{kind:'Column', title:'보험 미적용 약제와 구입 가능성', next:[], body:`${R('C3')}${pp('c1',4)}${TC}${NOTE_JP}`}
+};
+
+const ALL = Object.keys(REC);
+const GROUP = [['F','전경 임상질문 (FCQ1–4)'],['B','배경 임상질문 (BCQ1–5)'],['C','칼럼 (Column 1–4) · 일본 보험 미적용 약제']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'권고 등급과 도구 설명', next:[], body:`${['WL','WV','VL','BQ','CO'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','13개 주제(FCQ 4, BCQ 5, 칼럼 4)의 답변 ${ALL.length}개를 원문 번호와 함께 한국어로 번역해 수록했다. FCQ는 권고 강도·근거 수준·합의도를 표시했다. 답변을 누르면 해설·근거·문헌 요약의 번역이 펼쳐진다. 원문에는 그림과 표가 없어 흐름도와 근거 요약표는 본문을 바탕으로 구성하였다.')}${DISC_F2}${DISC_B5}${DISC_C1}${NOTE_JP}`},
+ all:{kind:'전체', title:`답변 ${ALL.length}개`, next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.replace(/\d+$/,'')===g))}`).join('')},
+ tabs:{kind:'표', title:'근거 요약표', next:[], body:`<h5>FCQ 권고 요약</h5>${TA}<h5>항갑상선제 투여 증례 결과 (FCQ2)</h5>${TB}<h5>보험 미적용 약제 (칼럼)</h5>${TC}`},
+ intro:{kind:'서론', title:'서론·방법·결론', next:[], body:`${paraHTML(EXP.intro)}${ex('meth')}${ex('concl')}`}
+});
+
+const ABBR = [
+ ['AD/HD','Attention-deficit/hyperactivity disorder, 주의력결핍 과잉행동장애'],['BCQ','Background clinical question, 배경 임상질문'],['D-T4','D-thyroxine, D-티록신'],
+ ['F-T4','Free thyroxine, 유리 T4'],['FCQ','Foreground clinical question, 전경 임상질문'],['GRADE','Grading of Recommendations Assessment, Development and Evaluation'],
+ ['GRTHβ','Generalized RTHβ, 전신형'],['L-T3','L-triiodothyronine, 리오티로닌'],['L-T4','L-thyroxine, 레보티록신'],['MCT8','Monocarboxylate transporter 8'],
+ ['MMI','Methimazole, 메티마졸'],['PRTHβ','Pituitary RTHβ, 뇌하수체형'],['PTU','Propylthiouracil, 프로필티오우라실'],['RCT','Randomized controlled trial, 무작위대조시험'],
+ ['RTHβ','Resistance to thyroid hormone beta, 갑상선호르몬 β 저항 증후군'],['SITSH','Syndrome of inappropriate secretion of TSH, 부적절 TSH 분비 증후군'],
+ ['THRB','Thyroid hormone receptor beta gene, 갑상선호르몬 수용체 β 유전자'],['TR','Thyroid hormone receptor, 갑상선호르몬 수용체'],
+ ['TRIAC','3,3′,5-triiodothyroacetic acid, 트리요오도티로아세트산'],['TSH','Thyrotropin, 갑상선자극호르몬'],['TSHoma','TSH-secreting pituitary adenoma, TSH 분비 뇌하수체 선종']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'ov';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: T, SITSH)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('ov');
+
+</script>
+</body>
+</html>

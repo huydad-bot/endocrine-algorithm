@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>원발성 부신기능저하증 ES 2016</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+.node.pr{border-color:#6FB6DA; background:#D4EEFA; color:#123A52}
+.sw.pr{border-color:#6FB6DA; background:#D4EEFA}
+.node.pr{--flash:#2F8FC0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .node.pr,:root:not([data-theme="light"]) .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}}
+:root[data-theme="dark"] .node.pr,:root[data-theme="dark"] .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}
+.cs{color:var(--muted);font-size:.86em;white-space:nowrap}
+.node.rk1 small,.node.rk2 small{color:inherit;opacity:.88}
+.t2 td:not(:first-child){white-space:nowrap}
+.chart svg path.eb{fill:#9DBDE8;stroke:#4C7BC0;stroke-width:1.6}
+.chart svg path.eg{fill:#C9E0A5;stroke:#86AC4F;stroke-width:1.6}
+.chart svg path.er{fill:#EDBDC1;stroke:#C2505B;stroke-width:1.6}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>원발성 부신기능저하증의 진단과 치료: Endocrine Society 진료지침 2016</h1>
+        <p class="src">Bornstein SR, Allolio B, Arlt W, et al. Diagnosis and treatment of primary adrenal insufficiency: an Endocrine Society clinical practice guideline. <a href="https://doi.org/10.1210/jc.2015-1710" target="_blank" rel="noopener noreferrer">J Clin Endocrinol Metab 2016;101(2):364–389</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the Endocrine Society</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="tx" aria-label="권고 박스 강조"><i class="sw tx"></i>치료·권고</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="금기 박스 강조"><i class="sw mal"></i>위험·금기</button>
+      <button type="button" class="lg" data-cls="test" aria-label="검사 박스 강조"><i class="sw test"></i>검사·추적</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>권고를 누르면 해당 절 근거의 요약 번역이 펼쳐짐</li><li>GRADE 등급 표시 · Figure 1과 Table 1–4 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>등급·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 권고</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 1–4</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·방법·전망</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ S4:'강한 권고(1, “we recommend”) · 근거의 질 높음(⊕⊕⊕⊕)',
+ S3:'강한 권고(1, “we recommend”) · 근거의 질 중등도(⊕⊕⊕○)',
+ S2:'강한 권고(1, “we recommend”) · 근거의 질 낮음(⊕⊕○○)',
+ W3:'약한 권고(2, “we suggest”) · 근거의 질 중등도(⊕⊕⊕○)',
+ W2:'약한 권고(2, “we suggest”) · 근거의 질 낮음(⊕⊕○○)',
+ W1:'약한 권고(2, “we suggest”) · 근거의 질 매우 낮음(⊕○○○)',
+ BP:'등급 없는 모범 진료 진술(ungraded best practice statement) — 직접 근거가 없거나 체계적으로 평가되지 않았으나 부신위기 예방 등 진료 원칙을 상기시키기 위한 진술'
+};
+const LVTXT = {S4:'1 ⊕⊕⊕⊕', S3:'1 ⊕⊕⊕○', S2:'1 ⊕⊕○○', W3:'2 ⊕⊕⊕○', W2:'2 ⊕⊕○○', W1:'2 ⊕○○○', BP:'모범 진료'};
+const LVCLS = {S4:'l1', S3:'l1', S2:'l1', W3:'l2', W2:'l2', W1:'l2', BP:'l4'};
+const ONUM = {T1:'1.1',T2:'1.2',T3:'1.3',D1:'2.1',D2:'2.2',D3:'2.3',D4:'2.4',D5:'2.5',D6:'2.6',
+ G1:'3.1',G2:'3.2',G3:'3.3',G4:'3.4',G5:'3.5',G6:'3.6',M1:'3.7',M2:'3.8',M3:'3.9',M4:'3.10',H1:'3.11',H2:'3.12',H3:'3.13',
+ P1:'3.14',P2:'3.15',P3:'3.16',P4:'3.16',P5:'3.17',C1:'3.18',C2:'3.19',C3:'3.20',C4:'3.21',
+ K1:'4.1',K2:'4.2',K3:'4.3',K4:'4.4',K5:'4.5',K6:'4.6',F1:'5.1',F2:'5.2',F3:'5.3',F4:'5.4',F5:'5.5'};
+/* [등급, 권고문(원문 번역), 본문 키] */
+const REC = {
+'T1':['S3','설명되지 않는 PAI 시사 증상이나 징후(체액 감소, 저혈압, 저나트륨혈증, 고칼륨혈증, 발열, 복통, 색소침착, 특히 소아의 저혈당)가 있는 급성 질환 환자에서 PAI를 배제하기 위한 진단 검사를 권고한다.','e1'],
+'T2':['S4','PAI를 시사하는 임상 증상이나 징후가 있는 환자에서 환자의 상태와 여건이 허락하면 코르티코트로핀 자극검사로 확진할 것을 권고한다.','e1'],
+'T3':['S3','중증 부신기능저하 증상이나 부신위기가 있는 환자에서는 진단 검사 결과가 나오기 전에 적절한 스트레스 용량의 정맥 하이드로코르티손으로 즉시 치료할 것을 권고한다.','e1'],
+'D1':['W2','부신기능저하증 진단에는 다른 진단 검사보다 표준 용량(성인과 2세 이상 소아 250 μg, 영아 15 μg/kg, 2세 미만 소아 125 μg) 정맥 코르티코트로핀 자극검사(30분 또는 60분)를 제안한다. 30분 또는 60분 최고 코르티솔이 500 nmol/L(18 μg/dL) 미만(측정법에 따라 다름)이면 부신기능저하증을 뜻한다.','e21'],
+'D2':['W2','저용량(1 μg) 코르티코트로핀 검사는 약제 자체가 부족한 경우에만 PAI 진단에 사용할 것을 제안한다.','e21'],
+'D3':['W1','코르티코트로핀 자극검사를 할 수 없으면, 자극검사로 확진할 수 있을 때까지 부신기능저하증을 시사하는 예비 검사로 아침 코르티솔 140 nmol/L(5 μg/dL) 미만을 ACTH와 함께 사용할 것을 제안한다.','e23'],
+'D4':['S3','PAI를 확립하기 위해 혈장 ACTH 측정을 권고한다. 검체는 코르티코트로핀 검사의 기저 검체와 동시에 채취하거나 아침 코르티솔 검체와 짝지어 채취할 수 있다. 코르티솔 결핍이 확인된 환자에서 혈장 ACTH가 참고범위 상한의 2배를 넘으면 PAI에 부합한다.','e24'],
+'D5':['S3','광물코르티코이드 결핍 여부를 확인하기 위해 PAI에서 혈장 레닌과 알도스테론을 동시에 측정할 것을 권고한다.','e24'],
+'D6':['BP','확진된 모든 환자에서 PAI의 원인을 규명할 것을 제안한다(진단 과정은 Table 2와 Figure 1 참조).','e26'],
+'G1':['S4','확진된 모든 PAI 환자에게 글루코코르티코이드 치료를 권고한다.','e3g'],
+'G2':['W2','하이드로코르티손(15–25 mg) 또는 코르티손 아세테이트(20–35 mg)를 하루 2–3회 나누어 경구 투여할 것을 제안한다. 가장 많은 용량은 아침 기상 시에, 다음 용량은 이른 오후(점심 2시간 후, 2회 요법) 또는 점심과 오후(3회 요법)에 투여한다. 개별 환자에서는 더 잦은 투여나 체격에 따른 용량이 유익할 수 있다.','e3g'],
+'G3':['W1','하이드로코르티손의 대안으로, 특히 순응도가 낮은 환자에서 프레드니솔론(3–5 mg/일)을 하루 1–2회 경구 투여할 것을 제안한다.','e3g'],
+'G4':['W2','용량 적정이 어려워 쿠싱양 부작용 위험이 있으므로 PAI 치료에 덱사메타손을 사용하지 않을 것을 제안한다.','e3g'],
+'G5':['W3','체중, 기립 혈압, 활력 수준, 명백한 글루코코르티코이드 과잉 징후를 포함한 임상 평가로 글루코코르티코이드 보충을 모니터링할 것을 제안한다.','e3g'],
+'G6':['W3','글루코코르티코이드 보충을 호르몬 검사로 모니터링하지 말고 임상 반응에만 근거해 치료를 조정할 것을 제안한다.','e3g'],
+'M1':['S4','알도스테론 결핍이 확인된 모든 환자는 플루드로코르티손으로 광물코르티코이드를 보충하고(성인 시작 용량 50–100 μg) 염분 섭취를 제한하지 않을 것을 권고한다.','e3m'],
+'M2':['S3','광물코르티코이드 보충은 주로 임상 평가(염분 갈망, 기립성 저혈압, 부종)와 혈중 전해질 측정으로 모니터링할 것을 권고한다.','e3m'],
+'M3':['W1','플루드로코르티손 복용 중 고혈압이 생긴 환자에서는 플루드로코르티손 용량을 줄일 것을 제안한다.','e3m'],
+'M4':['W1','혈압이 계속 조절되지 않으면 항고혈압 치료를 시작하고 플루드로코르티손은 계속할 것을 제안한다.','e3m'],
+'H1':['W2','글루코코르티코이드와 광물코르티코이드 보충을 최적화했는데도 성욕 저하, 우울 증상, 활력 저하가 있는 PAI 여성에게 DHEA 보충을 시험적으로 사용할 것을 제안한다.','e3h'],
+'H2':['W2','DHEA 보충은 처음 6개월간 시행할 것을 제안한다. 6개월 후 환자가 지속적인 이득을 보고하지 않으면 DHEA를 중단한다.','e3h'],
+'H3':['W2','DHEA 보충은 그날의 DHEA 복용 전 아침 혈청 DHEAS를 측정해 모니터링하고 정상 범위의 중간을 목표로 할 것을 제안한다.','e3h'],
+'P1':['BP','PAI 임신부는 글루코코르티코이드 과다·과소 보충의 임상 증상과 징후(정상 체중 증가, 피로, 기립성 저혈압 또는 고혈압, 고혈당 등)를 최소 삼분기마다 한 번 평가받을 것을 제안한다.','e3p'],
+'P2':['BP','개별 임상 경과에 따라, 특히 3삼분기에 하이드로코르티손 용량을 늘릴 것을 제안한다.','e3p'],
+'P3':['W2','PAI 임신부에게는 코르티손 아세테이트, 프레드니솔론, 프레드니손보다 하이드로코르티손을 사용할 것을 제안한다.','e3p'],
+'P4':['S2','PAI 임신부에게 덱사메타손은 태반에서 불활성화되지 않으므로 사용하지 않을 것을 권고한다.','e3p'],
+'P5':['S2','분만 활동기에는 대수술 스트레스에 쓰는 것과 비슷한 하이드로코르티손 스트레스 용량을 권고한다.','e3p'],
+'C1':['W2','PAI 소아에게는 다른 글루코코르티코이드 보충 요법보다 하이드로코르티손을 하루 3–4회 나누어(총 시작 용량 8 mg/m² 체표면적) 투여하고, 개인 필요에 따라 용량을 조정할 것을 제안한다.','e3c'],
+'C2':['W2','PAI 소아에서는 합성 장기작용 글루코코르티코이드(프레드니솔론, 덱사메타손 등)를 피할 것을 제안한다.','e3c'],
+'C3':['BP','성장 속도, 체중, 혈압, 활력 수준을 포함한 임상 평가로 글루코코르티코이드 보충을 모니터링할 것을 제안한다.','e3c'],
+'C4':['S2','알도스테론 결핍이 확인된 PAI 소아에게 플루드로코르티손(시작 용량 100 μg/일)을 권고한다. 영아에게는 신생아기부터 12개월까지 염화나트륨 보충을 권고한다.','e3c'],
+'K1':['S3','부신위기가 의심되는 환자는 즉시 하이드로코르티손 100 mg(소아 50 mg/m²)을 비경구 주사하고, 이어 적절한 수액 소생술과 함께 하이드로코르티손 200 mg/24시간(소아 50–100 mg/m²)을 지속 정맥 투여 또는 6시간마다 주사로 투여할 것을 권고한다. 소아에서는 나이와 체표면적에 맞는 용량이 필요하다(Table 3).','e4a'],
+'K2':['W2','하이드로코르티손을 구할 수 없으면 프레드니솔론을 대안으로 제안한다. 덱사메타손은 가장 덜 선호되는 대안이며 다른 글루코코르티코이드가 없을 때만 투여해야 한다.','e4a'],
+'K3':['W2','부신위기 예방을 위해 질병의 중증도나 스트레스의 크기에 따라 글루코코르티코이드 용량을 조정할 것을 제안한다.','e4b'],
+'K4':['BP','스트레스 상황에서의 글루코코르티코이드 조정과, 응급 글루코코르티코이드를 비경구로 자가 투여하거나 비의료인이 투여하는 것을 포함한 부신위기 예방 전략에 대해 환자 교육을 제안한다.','e4c'],
+'K5':['BP','모든 환자는 스테로이드 응급 카드와 의료 경고 표식을 지녀, 부신위기를 피하거나 치료하기 위해 글루코코르티코이드 증량이 필요하고 응급 시 즉시 비경구 스테로이드 치료가 필요함을 의료진에게 알리도록 권고한다.','e4c'],
+'K6':['BP','모든 환자는 응급용 글루코코르티코이드 주사 키트를 지니고 그 사용법을 교육받도록 권고한다.','e4c'],
+'F1':['BP','성인과 소아 PAI 환자는 적어도 1년에 한 번 내분비내과 전문의나 내분비 전문성을 갖춘 의료인의 진료를 받을 것을 제안한다. 영아는 적어도 3–4개월마다 진료받아야 한다.','e5'],
+'F2':['BP','PAI 환자는 매년 과다·과소 보충의 증상과 징후를 평가받을 것을 제안한다.','e5'],
+'F3':['W2','자가면역 원인이 배제되지 않은 PAI 환자에서는 PAI에 더 흔한 자가면역질환을 주기적으로 선별할 것을 제안한다. 최적 빈도는 알려지지 않았으나 매년 시행할 수 있다. 대상 질환은 갑상선질환, 당뇨병, 조기 난소부전, 셀리악병, 비타민 B12 결핍을 동반한 자가면역 위염이다.','e5'],
+'F4':['BP','병발 질환, 발열, 스트레스 시 글루코코르티코이드 증량에 대해 환자를 교육할 것을 제안한다. 교육에는 유발 증상과 징후의 인지, 임박한 부신위기 때의 대처가 포함된다.','e5'],
+'F5':['BP','단일유전자 질환에 의한 PAI 환자에게 유전상담을 제안한다.','e5']
+};
+Object.keys(REC).forEach(k=>{ REC[k][1] = `<b>${ONUM[k]}</b> ${REC[k][1]}`; });
+
+const EXP = {
+intro:{t:'서론', r:'367–368쪽', p:[
+ 'PAI는 부신피질이 글루코코르티코이드나 광물코르티코이드를 충분히 만들지 못하는 상태로, 에너지·염분·수분 항상성에서 이 호르몬들의 역할 때문에 생명을 위협할 수 있다. Thomas Addison이 처음 기술해 애디슨병이라고도 한다. 코르티솔 결핍으로 시상하부-뇌하수체 되먹임이 줄어 ACTH가 오르고, 광물코르티코이드 합성이 손상되어 레닌 분비가 늘어난다. 이 점이 ACTH 부족에 의한, 레닌-안지오텐신-알도스테론계에 영향이 없는 이차성 부신기능저하증과의 감별에 중요하다.',
+ '징후는 체중 감소, 탈수에 의한 기립성 저혈압, 저나트륨혈증, 고칼륨혈증, 혈구 변화(빈혈, 호산구증가, 림프구증가), 저혈당이며(Table 1), ACTH와 다른 POMC 펩타이드 분비 증가로 피부·점막 색소침착이 특징적이다. 여성은 부신 안드로겐 소실로 겨드랑이털과 음모가 빠진다. 염분 갈망을 제외하면 증상이 비특이적이어서 진단이 늦어지고 생명을 위협하는 부신위기로 처음 나타나기도 한다. 표준 보충 치료에도 삶의 질(HRQoL)이 떨어지는 경우가 많고, 장기 HRQoL은 진단 지연과 반비례한다.',
+ '서구에서 유병률은 100만 명당 100–140명, 발생률은 연간 100만 명당 4명이며, 독일 보험 자료에서는 특히 여성에서 유병률이 증가하고 있다. 가장 흔한 원인은 자가면역(서구에서 최대 90%)이고 결핵 같은 감염, 부신절제술, 종양, 다양한 유전 원인(소아에서 더 흔함)이 뒤따른다. 만성 중환자가 늘면서 항응고제 관련 부신출혈, 아미노글루테티미드나 에토미데이트에 의한 코르티솔 합성 억제, 페니토인·페노바비탈·리팜피신에 의한 글루코코르티코이드 대사 촉진 같은 의인성 요인도 늘고 있다.',
+ '이차성 부신기능저하증, 중증 질환 관련 코르티코스테로이드 부족, 21-수산화효소 결핍 CAH는 별도 문헌이 있어 이 지침은 PAI만 다룬다.'
+]},
+meth:{t:'지침 개발 방법과 체계적 문헌고찰', r:'368–369쪽', p:[
+ 'GRADE 접근을 따랐다. 강한 권고는 “we recommend”와 숫자 1, 약한 권고는 “we suggest”와 숫자 2로 표시하고, 근거의 질은 ⊕○○○ 매우 낮음, ⊕⊕○○ 낮음, ⊕⊕⊕○ 중등도, ⊕⊕⊕⊕ 높음으로 표시한다. 강한 권고를 따르면 평균적으로 득이 실보다 크다고 확신하며, 약한 권고는 개인의 상황, 가치, 선호를 더 신중히 고려해야 한다. 부신위기의 중증 이환과 사망을 막기 위한 모니터링과 환자 교육은 등급 없는 모범 진료 진술로 표시했으며, 등급 권고로 간주해서는 안 된다.',
+ '#의뢰한 체계적 문헌고찰',
+ '첫째, 고용량과 저용량 ACTH 자극검사의 진단 정확도를 비교하였다. PAI에서 고용량 검사의 정확도를 볼 수 있는 연구는 5편이었고 저용량 검사 연구는 없었다. 고용량 검사의 PAI 진단 민감도는 92%(95% CI 81–97%)였다. 이차성 부신기능저하증 30편에서는 저용량과 고용량 검사 간 유의한 차이가 없었으나 PAI에는 간접 근거다.',
+ '둘째, 글루코코르티코이드 보충 요법을 비교한 관찰 연구 15편을 찾았다. 사망률, 골밀도, 부신위기 자료는 거의 없었다. HRQoL은 하이드로코르티손 30 mg/일 이상과 미만 사이에 유의한 차이가 없었다. 서방형·이중 방출형이 1–3회 투여보다 HRQoL 점수가 높을 수 있다는 매우 낮은 질의 근거가 있었으나 결정에 불충분해 무작위 시험으로 확인이 필요하다.'
+]},
+e1:{t:'1.0 누구를 어떻게 검사할 것인가', r:'369–371쪽', p:[
+ 'PAI 진단은 전통적으로 낮은 아침 코르티솔과 낮은 자극 코르티솔로 한다. 나이·성별 하한보다 훨씬 낮은 DHEAS는 유용한 초기 징후이지만 고령자 등에서 PAI 없이도 낮을 수 있어 단독으로 진단할 수 없다. 대부분 코르티솔 140 nmol/L(5 μg/dL) 미만과 ACTH가 참고범위 상한의 2배를 넘으면 진단 가능성이 높다. ACTH 66 pmol/L 초과는 코르티솔 분비의 최대 자극이다. 기저 결과가 명백하지 않으면 대부분 코르티코트로핀 자극검사로 확진한다.',
+ '코르티코트로핀 자극검사(코신트로핀 검사, ACTH 검사, 짧은 Synacthen 검사)는 인슐린 저혈당 검사 대비 정확도가 검증되어 PAI(이차성은 아님) 진단의 표준이다. 일주기 변동의 영향을 크게 받지 않아 시간 제약 없이 시행할 수 있으나, CBG 결핍, 글루코코르티코이드 저항·과민 같은 드문 질환에서는 결과가 크게 달라질 수 있다.',
+ '#근거',
+ '증상은 서서히 수개월–수년에 걸쳐 비특이적으로 나타나므로 진단 평가 역치를 낮게 유지해야 한다. 증상이 있는 급성 환자에서는 검사 결과를 기다리느라 치료를 늦춰서는 안 되며, 스테로이드 투여 전에 진단용 혈액(기저 ACTH와 코르티솔)을 채취하는 것이 중요하다. 안전하다면 코신트로핀 검사를 할 수도 있으며, 안정된 뒤 글루코코르티코이드를 일시 중단하고 확진 검사를 할 수 있다.',
+ 'PAI 소인으로 자가면역질환(1형 당뇨병, 자가면역 위염·악성빈혈, 백반증)과 감염(결핵, HIV, CMV, 칸디다증, 히스토플라스마증)이 있다. 부신효소억제제(미토탄, 케토코나졸, 메티라폰, 에토미데이트)는 부신기능저하증을 유발할 수 있고, 페니토인, 카바마제핀, 미토탄, 세인트존스워트는 코르티솔 대사를 늘리므로 이들 약물 사용자에서도 진단 역치를 낮게 유지한다.',
+ '혈장 코르티솔의 80%는 CBG, 10–15%는 알부민에 결합하므로 CBG를 낮추는 상황(염증, 드문 유전 질환)이나 높이는 상황(에스트로겐, 임신, 미토탄)을 해석에 고려한다.',
+ '임신 중 PAI 진단은 매우 드물고 구역, 저혈압 같은 증상이 겹치며 생리적 변화(임신 중 코르티솔 생산 증가)가 있어 특히 어렵다. 치료하지 않으면 사망률이 높지만 충분히 치료하면 정상 임신 경과를 기대할 수 있어 조기 인지가 중요하다. 코르티솔·ACTH 짝 검체와 함께, 필요하면 코르티코트로핀 자극으로 임신 중에도 안전하게 평가할 수 있다. 검체 채취 후 결과 전 즉시 치료하라는 강한 권고는 중대한 위해 예방에 높은 가치를 둔 것이다.',
+ '#기술적 언급',
+ '증상의 범위와 중증도는 부신기능저하 또는 부신위기로 분류할 수 있다(Table 1). 자가면역질환이나 관련 약물처럼 PAI와 연관된 질환이 있으면서 부합하는 증상이 있으면 의심을 높인다(Table 2). 중증 질환과 임신에서는 비부신 원인으로 코르티솔이 달라지고, CBG가 질병에서 낮아지고 임신에서 높아져 해석을 바꿀 수 있다. 부신 기능에 영향을 주는 자가면역·전신 질환이 있거나 코르티솔 대사를 늘리는 약(예: T4)을 쓰는 환자는 PAI 위험이 높다.'
+]},
+e21:{t:'2.1–2.2 코르티코트로핀 자극검사', r:'371–373쪽', p:[
+ '메타분석에서 250 μg 검사의 민감도는 최고 코르티솔 500 nmol/L(18 μg/dL) 기준 0.92(95% CI 0.81–0.97)였다. 면역측정법마다 검출 항체가 달라 방법 간 편향이 크며, 예를 들어 자극 30분 코르티솔 하한은 418–574 nmol/L(15.2–20.8 μg/dL)로 다양하다. 실제 진단 기준은 측정법별 정상 자료에 근거해야 하며, 검사실은 사용하는 방법의 편향을 제공할 수 있어야 한다. 전통적으로 최고 코르티솔 500 nmol/L 초과를 충분한 반응으로 본다.',
+ 'CBG와 알부민 결합을 바꾸는 요인을 고려해야 한다. 에스트로겐 함유 경구피임약은 CBG와 코르티솔을 높이고, 신증후군, 간질환, 수술 직후, 중환자는 CBG·알부민이 낮아 코르티솔이 낮게 측정될 수 있다.',
+ '#저용량 검사',
+ '건강인에서 30분 또는 60분 코르티솔 상승은 1 μg과 250 μg 검사가 비슷해 하한(평균 −2SD) 500 nmol/L이지만, 60분에는 고용량에서 더 오르고 저용량에서 떨어져 크게 다르다. 60분 값이 30분보다 약간 높지만 인슐린 저혈당 검사로 검증된 것은 30분이다. PAI 진단에서 두 검사는 비슷하고 저용량이 민감도나 특이도를 더하지 않는다. 이차성 부신기능저하증에서는 저용량이 더 민감하다는 근거가 있고, 중증 질환 관련 코르티코스테로이드 부족에서도 제안되었으나 근거가 더 필요하다.',
+ '따라서 저용량 검사는 코르티코트로핀이 부족하거나 구조적·경제적 이유가 있을 때 적용할 수 있다. 희석과 보관이 문제지만, 생리식염수에 1 μg/mL로 희석한 테트라코삭타이드는 2–8°C에서 최대 60일 안정하다고 보고되었다.',
+ '#기술적 언급',
+ '250 μg 앰플을 그대로 주사하면 부신피질에 매우 강한 자극이 되어 재현성 있는 결과를 얻고 내약성도 좋다. 1 μg 검사는 희석이 필요해 용량 오류와 오염 가능성이 생긴다. 일부 국가에서 쓰는 돼지 ACTH는 합성 유사체보다 근거가 훨씬 적다.'
+]},
+e23:{t:'2.3 아침 코르티솔', r:'373쪽', p:[
+ '코르티코트로핀 자극을 기다리면 적절한 치료가 불필요하게 늦어지는 급성 상황에만 적용하며, 지역사회 선별에 써서는 안 된다. 외인성 글루코코르티코이드가 없을 때 아침(6–10시) 기저 코르티솔 140 nmol/L(5 μg/dL) 미만은 부신기능저하증을 시사한다. 그러나 이 기준을 다룬 일차 보고는 대부분 PAI 대상이 아니었다. 또한 140 nmol/L는 최신 측정법의 정상인 하한(113–131 nmol/L, 4.1–4.7 μg/dL) 근처이거나 그 아래이므로, 측정법 차이를 고려해 검사실과 함께 기준을 정해야 한다.',
+ '부신기능저하증을 배제(민감도 100%)하는 아침 코르티솔 값은 285 nmol/L(10.3 μg/dL) 초과부터 480 nmol/L(17 μg/dL) 초과까지 논란이 있다. 무작위 코르티솔로 부신기능저하증을 배제하는 근거는 없다.'
+]},
+e24:{t:'2.4–2.5 ACTH, 레닌, 알도스테론', r:'373–374쪽', p:[
+ '혈장 ACTH 300 ng/L(66 pmol/L) 초과는 글루코코르티코이드 합성을 최대로 자극하므로, 낮은 코르티솔(140 nmol/L 미만)과 높은 ACTH의 조합은 부신피질이 ACTH에 반응하지 못함을 뜻해 PAI를 강하게 예측한다. 코르티솔이 정상인데 ACTH가 높으면 초기 PAI의 첫 징후일 수 있다. ACTH 측정법 간 편향이 커 기준을 정하기 어렵고, 대조군과 함께 진단 시 ACTH 범위를 보고한 연구는 2편뿐으로 대개 크게 높았다. 그래서 상한의 2배를 권고했지만 일부 PAI에서는 참고범위만 넘고 2배에는 못 미칠 수 있다.',
+ '진행 중인 PAI의 초기에는 광물코르티코이드 결핍이 우세하거나 유일한 징후일 수 있어 레닌과 알도스테론 측정이 진단에 도움이 된다. 레닌 활성 또는 농도가 높고 알도스테론이 (부적절하게) 정상이거나 낮으면 PAI를 시사한다. 두 검사 모두 검사실 측면의 어려움이 있어 보고서의 참고범위로 해석한다. 가족성 글루코코르티코이드 결핍이나 경한 CAH 변이에서는 광물코르티코이드 생산이 유지될 수 있다.'
+]},
+e26:{t:'2.6 원인 규명', r:'374쪽 · Figure 1 · Table 2', p:[
+ 'PAI가 호르몬으로 확인되면 치료를 위해 원인을 규명하는 것이 중요하다. 성인의 대다수는 자가면역 부신염이므로 CYP21A2(21-수산화효소) 자가항체와 동반 자가면역질환을 선별한다. 다만 자가항체 검사는 표준화되지 않아 방법 간 차이가 크다. CYP21A2 자가항체는 생화학적·임상적 PAI 수년 전부터 존재할 수 있어, 항체 양성자를 추적하면 5년 동안 약 30%가 현성 PAI로 진행하였다.',
+ '자가면역 PAI 소아에서는 APS-1을 고려해 부갑상선기능저하증과 점막피부 칸디다증을 평가하고, 진단 민감도·특이도가 높은 인터페론 ω 또는 α 항체를 측정한다. 젊은 남성과 자가항체 음성 남성은 극장쇄 지방산(VLCFA)으로 부신백질이영양증을 선별한다. 부신기능저하가 부신백질이영양증의 유일한 첫 징후일 수 있으며 대개 2–10세 남아에서 나타난다.',
+ 'CYP21A2 자가항체 음성이고 원인 미상이면 결핵 같은 감염과 종양을 찾기 위해 부신 CT를 제안한다. CT는 침윤성 질환에 특이적이지 않고, 결핵에 의한 PAI라도 부신이 모두 커지지는 않는다. ACTH가 만성적으로 높은 유전 질환은 양측 부신비대를 일으키므로 일부에서 고려한다. 드문 질환은 혈청·미생물 검사가 추가로 필요할 수 있다. 비자가면역 PAI는 소아와 노인에서 더 흔하며, 영아기 부신기능저하증의 가장 흔한 원인은 21-수산화효소 결핍 CAH다.',
+ '#Figure 1 진단 알고리즘',
+ '성인에서 가장 흔한 원인은 자가면역 부신피질 파괴, 소아에서는 CAH이며, 21-수산화효소 항체와 기저 17-OH-프로게스테론으로 선별한다. 17-OH-프로게스테론 1000 ng/dL 초과는 21-수산화효소 결핍을 진단한다. 21-수산화효소 항체 음성 남성은 혈장 VLCFA로 부신백질이영양증을 검사하며, 사춘기 전 남아는 첫 평가에서 VLCFA를 측정한다. 이들이 배제되면 부신 CT로 침윤성 질환이나 전이를 찾는다. 임상 양상과 가족력에 따라 일부 단계가 불필요하거나 특정 유전 증후군(APS 아형, 부신부전을 포함한 드문 유전 질환)을 시사할 수 있다.'
+]},
+e3g:{t:'3.1–3.6 글루코코르티코이드 보충', r:'374–375쪽', p:[
+ '글루코코르티코이드는 박동성·일주기로 분비되어 아침에 최고, 저녁에 낮고 자정 무렵 최저다. 평균 코르티솔 생산율은 나이와 체성분에 따라 약 5–8 mg/m²/일로, 성인에서 하이드로코르티손 15–25 mg/일(과다 치료를 피하려 하한 쪽으로) 또는 코르티손 아세테이트 20–35 mg/일 경구 보충에 해당한다. 대부분 산업국가에서는 하이드로코르티손을 선호하고, 일부 국가에서는 프레드니솔론만 쓸 수 있다.',
+ '하이드로코르티손과 프레드니솔론은 활성형이고, 코르티손 아세테이트와 프레드니손은 간의 11β-HSD1로 활성화되어야 하므로 약동학의 개인차가 더 클 수 있다. 하이드로코르티손의 반감기가 약 90분으로 짧아 생리를 모방하려면 여러 번 투여한다. 첫 번째이자 가장 많은 용량은 기상 시, 두 번째는 점심 후, 3회 요법이면 마지막이자 가장 적은 용량은 취침 4–6시간 전보다 늦지 않게 준다. 저녁 고용량은 수면과 인슐린 감수성을 해칠 수 있다.',
+ '용량 요법을 비교한 연구는 작다. 기상 시 10 mg, 점심 5 mg, 이른 저녁 5 mg이 제안되었다. 단회 아침 투여 연구에서 체표면적(5.5 mg/m²)이나 체중(0.12 mg/kg)으로 조정한 용량은 6시간 코르티솔이 정상 범위 안에 들었으나 고정 10 mg은 그렇지 않았다. 코르티손 아세테이트 하루 3회는 2회보다 ACTH를 낮추고 생리적 곡선에 가까웠다. 2회 대 4회 하이드로코르티손 이중맹검 교차 연구에서는 4회가 더 생리적이었고 환자도 선호했지만, 3회가 2회보다 HRQoL이 비슷하거나 일부 더 나빴다는 연구도 있다. 3–4회 투여가 더 생리적이고 체중 조정 용량이 정상 범위 코르티솔 가능성을 높이지만 결과 연구는 없으며, 투여 횟수가 적으면 순응도가 좋을 수 있다.',
+ '코르티손 아세테이트는 하이드로코르티손보다 흡수 곡선이 완만하고 늦어 짧은 반감기를 고려하면 유리할 수 있으며, 환자마다 선호가 다를 수 있다. HRQoL과 업무 능력이 회복되지 않거나 다회 투여를 지키기 어려우면 프레드니솔론 3–5 mg/일 1–2회를 처방할 수 있다. 프레드니솔론이나 덱사메타손을 포함한 고용량 사용자는 체중 증가, 이상지질혈증, 당뇨병 경향을 보였으나 전향적 비교 연구는 없다. 덱사메타손은 쿠싱양 부작용이 흔해 피한다. 하루 1회 이중 방출 하이드로코르티손은 혈압과 HbA1c를 약간 낮췄으나 PAI에서 항상 바람직하지는 않고, 생체이용률 차이를 반영할 수 있다.',
+ '#모니터링',
+ '모니터링은 주로 임상 평가에 의존한다. 과다 보충 징후는 체중 증가, 불면, 말초 부종이고, 부족하면 구역, 식욕 저하, 체중 감소, 무기력, 색소침착이 나타난다. 일상 습관, 근무 형태(교대 근무), 활력, 집중력, 낮 졸림, 활력 저하 시점을 자세히 물어 복용 시간과 횟수, 용량을 조정한다. 순응도와 추가 복용을 파악하고, 흡수장애가 의심되면 혈청 또는 타액 코르티솔 일중 곡선이 도움이 될 수 있다.',
+ '적절히 보충받는 환자도 ACTH가 흔히 높으므로 혈장 ACTH로 용량을 정하지 않는다. ACTH에 맞춰 조정하면 과다 보충으로 이어진다.'
+]},
+e3m:{t:'3.7–3.10 광물코르티코이드 보충', r:'375–376쪽', p:[
+ '광물코르티코이드는 수분·전해질 항상성과 혈압 유지에 필수적이다. 합성 9α-플루드로코르티손을 쓰지만 PAI에서 체계적으로 연구되지는 않았다. 알도스테론도 코르티솔처럼 아침에 가장 높아 보통 아침에 1회 복용한다. 용량은 개인의 수분·전해질 섭취와 손실에 따라 다르며, 성인과 청소년은 대개 0.05–0.2 mg/일이면 충분하다. 신생아와 소아는 광물코르티코이드 감수성이 낮아 성인보다 많은 용량이 필요하다. 더운 기후나 땀을 많이 흘리는 상황에서는 50–100% 일시 증량하거나 염분 섭취를 늘리며, 염분을 제한하지 않도록 한다. 프레드니솔론은 광물코르티코이드 활성이 적어 하이드로코르티손보다 플루드로코르티손이 더 필요할 수 있고, 덱사메타손은 광물코르티코이드 활성이 없다.',
+ '보충은 염분 갈망이나 어지럼, 앉은 자세와 선 자세 혈압, 말초 부종(민감도 낮음)으로 임상적으로 평가한다. 전반적 안녕, 정상 전해질, 기립성 저혈압 없는 정상 혈압이면 적절하다. 참고범위 상단의 혈장 레닌 활성이 적정 용량의 유용한 지표다. 감초와 자몽 주스는 하이드로코르티손의 광물코르티코이드 효과를 강화하므로 피하고, 페니토인은 플루드로코르티손 대사를 늘려 더 많은 용량이 필요할 수 있다.',
+ 'PAI에도 본태성 고혈압이 있을 수 있다. 고혈압 환자는 플루드로코르티손뿐 아니라 글루코코르티코이드 용량도 평가해야 하며, 둘 다 과다하면 고혈압이 생긴다. 조정 후에도 고혈압이 지속되고 정상 체액량이면, 높은 안지오텐신 II의 혈관수축을 상쇄하는 안지오텐신 수용체 차단제나 ACE 억제제를 쓰고, 이차 약제로 디하이드로피리딘 칼슘차단제를 쓸 수 있다. 이뇨제는 피하고, 스피로노락톤과 에플레레논 같은 알도스테론 수용체 차단제는 금기다.'
+]},
+e3h:{t:'3.11–3.13 DHEA 보충', r:'376–377쪽', p:[
+ '여성에서는 부신의 DHEA와 안드로스테네디온이 안드로겐의 주요 공급원이어서 부신기능저하증에 안드로겐 결핍이 흔히 동반된다. 혈청 DHEAS는 20–30세에 최고였다가 폐경과 무관하게 서서히 감소한다. DHEA는 말초 조직과 생식샘에서 성스테로이드로 활성화되며, 뇌에서 항우울 작용이 가능한 신경스테로이드 성질도 있다. 1회 경구 DHEA 보충은 안드로겐 전구체와 안드로겐을 정상 범위로 회복시킨다.',
+ '일부(전부는 아님) 연구에서 DHEA는 HRQoL과 기분을 개선하고 우울·불안 점수를 낮췄다. 그러나 무작위 위약대조 연구의 체계적 문헌고찰·메타분석에서는 뚜렷한 임상적 이득이 없어 부신기능저하 여성에서 일상적 사용을 뒷받침하기에 근거가 부족하다. 여러 연구가 성욕 개선을 보였고, 청소년 환자에서 음모 발생을 회복시켰다. 상업적 관심이 적고 처방전 없이 구할 수 있어 장기 결과 연구는 당분간 기대하기 어렵다.',
+ 'DHEA 보충(아침 1회 25–50 mg 경구)은 글루코코르티코이드와 광물코르티코이드 보충을 최적화했는데도 성욕 저하나 소실, 우울, 불안, 활력 저하가 있는 폐경 전 PAI 여성에서 고려할 수 있다. 임상 효과와 부작용을 관찰하면서, 다음 복용 전 아침 혈청 DHEAS로 용량 적정성을 평가하고 폐경 전 여성 참고 집단의 중간 범위를 목표로 한다.'
+]},
+e3p:{t:'3.14–3.17 임신 중 치료', r:'377쪽', p:[
+ '정상 임신에서는 CBG 증가로 1삼분기부터 혈중 코르티솔이 2–3배 계속 증가한다. 임신 22주부터 유리 코르티솔도 유의하게 증가하고, 분만 직전 CBG 감소로 더 오르며, 분만 후 정상으로 돌아온다. 임신 중 글루코코르티코이드 용량 조정이 부족해 부신위기가 생긴 보고가 있다. 최적 요법의 근거는 적지만, 흔한 접근은 유리 코르티솔의 생리적 증가를 반영해 24주부터 하이드로코르티손을 20–40% 늘리는 것이다.',
+ '임신 중 쓸 수 있는 글루코코르티코이드는 하이드로코르티손, 코르티손 아세테이트, 프레드니솔론, 프레드니손이다. 덱사메타손은 태반의 11β-HSD2로 불활성화되지 않고 태아에게 넘어가므로 대개 금기다.',
+ '임신 중 새로 생긴 부신기능저하증은 피로, 구역, 구토 같은 증상이 임신 자체와 구별되지 않아 진단이 어렵다. 의심되면 코신트로핀 자극검사가 선택 검사다. 건강한 임신부 소규모 코호트에서 ACTH 후 최고 총 코르티솔은 2·3삼분기에 비임신 상태보다 유의하게 높았고(중앙값 1000 nmol/L, 37 μg/dL), 산후에는 임신 전 수준(중앙값 700 nmol/L, 26 μg/dL)으로 돌아왔다. 그래서 1·2·3삼분기에 각각 700 nmol/L(25 μg/dL), 800 nmol/L(29 μg/dL), 900 nmol/L(32 μg/dL)의 더 높은 진단 기준이 제안되었다.',
+ '임신 중 광물코르티코이드 요구량은 부종이나 기립성 저혈압 같은 증상이 정상 임신과 겹쳐 평가가 더 어렵다. 혈액과 소변의 나트륨·칼륨을 모니터링할 수 있으나, 혈장 레닌은 임신 중 생리적으로 증가하므로 모니터링에 쓸 수 없다. 알도스테론이 증가하고 프로게스테론이 꾸준히 올라 항광물코르티코이드 효과를 내므로 플루드로코르티손 조정이 필요할 때도 있지만, 대개 임신 후기의 글루코코르티코이드 증량으로 충당된다.',
+ '분만 활동기(자궁경부 4 cm 초과 개대 그리고/또는 지난 1시간 동안 5분마다 수축)가 시작되면 대수술 스트레스에 상응하는 하이드로코르티손 100 mg 정맥 일시 주사 후 200 mg/24시간 지속 주입을 시작한다. 분만 후에는 임신 전 용량으로 빠르게 줄일 수 있다.'
+]},
+e3c:{t:'3.18–3.21 소아의 치료와 모니터링', r:'377–378쪽', p:[
+ '소아 PAI의 치료 요법을 비교한 무작위대조시험은 없다. 치료 목표는 적절한 성장과 사춘기 발달을 허용하는 용량으로 부신기능저하 증상을 조절하는 것이다. 하이드로코르티손은 반감기가 짧아 소아에서 적정이 쉽고, 더 강력한 장기작용 제제보다 부작용이 적다. 소아 자료는 대부분 CAH에서 나왔는데, CAH는 치료 부족 시 고안드로겐혈증 위험 때문에 더 많은 용량이 필요해 다른 원인의 PAI와 다르다.',
+ '정상 코르티솔 분비율로 시작 용량을 정하며, 하루 용량은 대개 2회 또는 바람직하게는 3회로 나누고 보통 약 8 mg/m²다. 코르티손 아세테이트를 쓸 수도 있으나 소아기 11β-HSD1 활성이 다양해 성인의 용량 환산이 적용되는지 불확실하다.',
+ '과다 치료를 피해야 하며, 임상 상태와 성장에 따라 조정하고 체표면적 증가에 맞춰 늘린다. 과도한 체중 증가와 키 성장 속도 감소, 쿠싱 증후군 징후는 과다 보충을 뜻한다. CAH에서 영아 20 mg/m²/일, 청소년 15–17 mg/m²/일을 넘는 용량은 키 손실과 최종 키 감소를 일으켰고, 8 mg/m²/일을 넘으면 생리 범위를 초과할 수 있어 더 낮은 용량에서도 성장 억제가 가능하다. 따라서 성장·체중 속도와 전반적 안녕을 면밀히 추적하는 것이 가장 중요하다. 혈장 ACTH는 대개 정상보다 높아 일상 모니터링에 쓸모없다. 체중 증가 부족, 피로, 식욕부진, 색소침착은 증량이 필요함을 시사한다.',
+ 'PAI 소아는 플루드로코르티손 보충이 필요하며 통상 100 μg/일이다. 체표면적에 따른 조정은 필요 없고 평생 같은 용량을 유지하는 경우가 많다. 그러나 영아, 특히 생후 6개월까지는 미성숙 신장의 광물코르티코이드 저항과 분유·모유의 낮은 나트륨 때문에 염화나트륨 1–2 g/일(17–34 mmol/일)을 여러 번 수유에 나누어 보충해야 한다.',
+ '광물코르티코이드 부족 징후는 체중 증가 부족, 염분 갈망, 탈수, 고칼륨혈증을 동반한 저나트륨혈증, 높은 혈장 레닌이고, 과다하면 고혈압과 레닌 억제가 나타난다. 혈압은 일상적으로 측정하고, 혈장 레닌은 임상 상태가 바뀌거나 순응도가 의심될 때 주기적으로 측정한다. 영아는 성장, 혈압, 전반적 안녕을 평가하기 위해 최소 3–4개월마다 진료하며, 생후 수개월 동안 광물코르티코이드 감수성이 커지므로 첫 1년간 혈압 모니터링이 특히 중요하다.'
+]},
+e4a:{t:'4.1–4.2 부신위기의 치료', r:'378–380쪽 · Table 3', p:[
+ 'PAI 환자는 생명을 위협하는 부신위기 위험이 있다. 부신위기는 증가한 요구에 부신이 충분한 코르티솔을 만들지 못할 때 생기며, 주요 양상은 저혈압과 체액 감소다. 글루코코르티코이드와 광물코르티코이드가 함께 결핍되면 소변 나트륨 손실, 저나트륨혈증, 고칼륨혈증, 요소 증가, 저혈당이 생기는데, 저혈당은 주로 소아에서 의미 있고 성인에서는 드물다.',
+ '부신위기에서 글루코코르티코이드를 부족하게 쓰는 것은 위험할 수 있으나 체계적 용량-반응 연구가 없어 권고 용량은 대부분 경험에 근거한다. 이 요법은 단기 과다 투여의 잠재적 해보다 과소 투여 예방에 더 높은 가치를 둔다.',
+ '부신위기는 환자 교육과 스트레스 상황의 증량으로 가장 잘 예방된다. 444명 후향 분석에서 성인 PAI의 부신위기 빈도는 6.6회/100환자년이었고 주된 유발요인은 위장관 질환(32.6%)과 다른 감염(24.3%)이었다. 4개국 1000명 이상 우편 설문에서는 매년 8%가 부신위기를 겪었고, 첫 전향 연구(768환자년)에서는 8.3회/100환자년이었다. 즉 약 12명 중 1명이 다음 1년 안에 부신위기를 겪으며, 부신위기 사망률은 0.5/100환자년이었다. 고전형 CAH 122명에서는 5.8회/100환자년(신생아 염분 소실 위기 보정 시 4.9회)이었고, 어린 시기에는 호흡기 감염, 나이가 들면 위장관 감염이 주된 유발요인이었으며 첫 증상에서 현성 위기까지 중앙값은 1일이었다.',
+ '코르티솔 청소율을 바꾸는 병용 약물도 위기를 유발할 수 있어 증량과 재평가를 고려한다. T4 보충 시작은 코르티솔 대사를 늘려 위기를 유발할 수 있고, 카바마제핀, 미토탄, 세인트존스워트 같은 CYP3A4 유도제도 청소율을 높여 더 많은 용량이 필요하다. 플루드로코르티손 없이 덱사메타손만 쓰면 광물코르티코이드 활성이 없어 위기를 유발할 수 있다. 하이드로코르티손 40 mg은 플루드로코르티손 100 μg에 해당하는 것으로 여겨져, 고용량 하이드로코르티손은 광물코르티코이드 활성도 충분히 제공할 가능성이 높다.',
+ '20분 고강도 운동은 CAH 환자에서 추가 하이드로코르티손이 필요하지 않았다. 장시간 고강도 훈련에 5–10 mg 추가가 논의되었으나 일반 권고의 근거는 없다.'
+]},
+e4b:{t:'4.3 부신위기 예방을 위한 용량 조정', r:'380쪽 · Table 3', p:[
+ '마취, 수술, 외상, 중증 질환에서 내인성 코르티솔이 증가하며 개인차가 크다. 중증 질환의 글루코코르티코이드 분비 증가는 사이토카인 같은 방어 기전의 과잉 반응을 막는 데 필요하다. 코르티솔 요구가 증가할 때 PAI 환자의 용량을 평가한 무작위 연구는 없으며, 용량은 스트레스의 중증도와 기간에 근거한다. 전통적으로 성인은 대수술에 75–100 mg/일, 소수술에 50 mg/일의 코르티솔을 분비한다고 추정한다. 고용량을 쓰는 이유는 정상인의 중앙값을 흉내 내는 것만이 아니라 합병증에 따른 예상치 못한 요구를 감당하기 위해서이며, 이 용량의 해는 입증되지 않았고 더 낮은 용량이 안전하다는 직접 연구도 없다. 글루코코르티코이드 치료 환자의 수술 후 24시간 코르티솔 분비는 200 mg을 넘는 일이 드물고 수술 기간·범위와 상관한다.',
+ '수술 스트레스에 더 낮은 하이드로코르티손(25–75 mg/24시간)이 이차성 부신기능저하증에서 주장되었으나 PAI에서는 연구되지 않았다. 중증 질환에서는 코르티솔 대사가 감소해, 중환자 158명에서 청소율이 50% 넘게 줄고 코르티손으로의 불활성화가 감소하였다. PAI 환자의 용량에 대한 의미는 연구되지 않았다.',
+ '발열 질환에서는 대개 회복까지(보통 2–3일) 평소 하루 용량의 2–3배를 경구로 복용한다(Table 3). 구토나 외상으로 경구 복용을 못 하면 조기에 하이드로코르티손 100 mg을 비경구(정맥, 근육, 피하)로 투여한다. 하이드로코르티손이 50 mg/24시간을 넘으면 광물코르티코이드 보충은 필요 없다.',
+ 'PAI 12명의 무작위 교차 연구에서 피하와 근육 주사의 약동학은 비슷했으나, 피하는 2회 주사가 필요하고 코르티솔 1000 nmol/L 초과 도달이 더 늦었다(22분 대 11분). 환자는 피하 자가 주사를 선호했고, 이 지연은 응급 연락부터 의료진이 투여할 때까지의 시간보다 짧다. 직장 좌약(프레드니솔론 100 mg)이나 관장(프레드니솔론 20 mg/100 mL, 하이드로코르티손 아세테이트 10%)도 쓰였으나 설사 시에는 쓰지 말아야 하고, 연구가 적으며 쉽게 구할 수 없다(예: 미국).',
+ '이 권고는 단기 과다 치료의 잠재적 부작용을 줄이는 것보다 부신위기 예방에 더 높은 가치를 둔다. 해당 상황은 수술, 외상, 중증 질환, 분만이다.'
+]},
+e4c:{t:'4.4–4.6 환자 교육, 응급 카드, 주사 키트', r:'380–381쪽 · Table 4', p:[
+ 'PAI 환자의 사망률은 일부 연구에서 증가했으나 모두 그렇지는 않았다. 그러나 모든 보고에서 부신위기가 주요 사망 원인이었으므로 부신위기 예방과 응급 글루코코르티코이드 사용에 대한 교육이 꼭 필요하다. 그런데 환자의 46%는 신체 스트레스 시 스테로이드 관리에 충분히 숙련되지 않았으므로 외래 방문마다 반복 교육해야 한다.',
+ '대규모 국제 설문에서 의학적 응급의 약 1/3은 집 밖에서 일어났다. 지난 1년 부신위기 환자 중 자가 주사한 사람은 12%뿐이었고 2/3 이상이 의료진의 첫 치료에 의존하였다. 영국 애디슨병 환자 26명 중 비경구 하이드로코르티손을 자가 투여할 수 있는 사람은 2명뿐이었고 10명은 주사 교육을 받은 적이 없다고 답했다. 미국 CAH 소아 보호자 60명 중 70%가 스트레스 용량 지침을 받았고 절반이 주사 교육을 받았다. 독일 PAI 254명 중 스트레스 용량에 대해 잘 안다고 느낀 사람은 63%였다.',
+ '부신위기의 즉시 치료 필요성을 모르는 의사도 많아 스테로이드 카드가 도움이 된다. 스웨덴어·영어 간단 지침의 새 카드가 도입되었고 여러 유럽 국가가 자국어와 영어 양면 카드를 도입하고 있다. 모든 환자에게 카드를 발급해 진단과 부신위기 치료법을 의료진에게 알리고, 의료 경고 팔찌나 목걸이도 유용하다. 모든 환자에게 응급용 주사 하이드로코르티손을 제공해야 하며, 자가 주사 교육은 비경구 투여의 문턱을 낮춘다. 설사가 없으면 직장 좌약(프레드니솔론 100 mg)도 대안이다. 환자 교육과 응급 치료에 대한 강한 권고는 부신위기의 이환과 사망 감소에 높은 가치를 두고, 환자와 의료진의 낮은 인식을 고려한 것이다(Table 4).'
+]},
+e5:{t:'5.0 추가 모니터링', r:'381–383쪽', p:[
+ '치료와 추적의 목표는 정상적인 안녕, 안정된 체중, 정상 성기능, 완전한 직업 활동의 회복이다. 정기 진료에서 과다·과소 보충, 적절한 용량, HRQoL을 평가하고 가족 관계, 직업, 자존감을 묻는다. 모든 부신위기를 다뤄야 한다.',
+ '모니터링은 주로 임상적이다. 충분히 보충하면 대부분 색소침착이 정상화되고, 혈압은 정상, 체중은 안정적이어야 한다. 기립성 저혈압은 광물코르티코이드 부족이나 낮은 염분 섭취를 뜻한다. 정기 검사에는 혈청 나트륨과 칼륨을 포함한다. 코르티솔 측정은 일상 모니터링에 권하지 않으나 코르티솔 흡수 확인에 유용할 수 있다. 혈장 레닌 활성은 플루드로코르티손 모니터링에 유용하며 참고범위 상단이나 약간 높은 값을 목표로 한다.',
+ '#동반 자가면역질환',
+ '자가면역 갑상선질환은 PAI 여성의 절반, 남성의 25%에서 나타난다. 1형 당뇨병은 스칸디나비아에서 10–15%이나 다른 집단에서는 드물다. 따라서 매년 TSH, 유리 T4, HbA1c를 측정하면 도움이 된다. 여성에게는 조기 난소부전 위험을 알려야 하며, 노르웨이 전국 조사에서 8%, 이탈리아 258명 코호트에서 20.2%였다(APS-1 40.8%, APS-4 33.3%, APS-2 16%, 단독 PAI 0%). CYP11A1 자가항체는 조기 난소부전과 연관되지만 예측력은 평가되지 않았고, 스테로이드세포 자가항체 양성 13명 중 3명만 평균 8년 동안 조기 난소부전이 생겨 예측력이 높지 않다. 자가면역 PAI에서는 진단 후 수년까지 난포 기능이 유지될 수 있어 난소 조직 동결보존의 기회가 있으나 아직 실험적이다.',
+ '매년 전혈구 검사도 고려한다. 자가면역 위염에 의한 비타민 B12 결핍이 흔해 매년 B12를 측정할 수 있으며, 의심되면 홀로트랜스코발라민, 호모시스테인, 메틸말론산, 벽세포·내인자 항체를 검사한다. PAI의 셀리악병 유병률이 약 5%이므로 복부 증상이 없어도 가끔 조직 트랜스글루타미나제 2 항체와 총 IgA를 선별할 수 있다. 백반증과 원형탈모는 흔한 자가면역 표지다.',
+ '#유전',
+ '여러 형태의 PAI가 가족성이며, 노르웨이 PAI 환자의 10%는 자가면역 PAI 친척이 있다. 부신백질이영양증, 선천성 저생식샘자극호르몬 생식샘저하증, 선천성 부신형성저하증은 X연관 유전, CAH와 APS-1은 상염색체 열성이다.'
+]},
+fut:{t:'향후 연구 과제', r:'383쪽', p:[
+ 'PAI의 진단과 치료는 아직 최적과 거리가 멀다. 중증 질환에서 부신 기능장애를 정의하는 일, 기저 질환·병용 약물과 관련한 부신 스테로이드 모니터링이 과제다. 타액 코르티솔은 바이오마커로서 가능성을 보이고, LC-MS/MS는 약물·식이 간섭과 교차반응이 적어 코르티솔 측정을 표준화하고 한 번에 15개 이상의 스테로이드를 정량해 원인 규명을 넓힐 수 있다.',
+ '최적 보충에도 상당수 환자가 과다·과소 보충 증상, 활력과 건강 인식 저하, 특히 여성의 신체 기능 저하를 겪어 업무 능력이 떨어지며, 고혈압 같은 대사·심혈관 합병증도 있다. 현재 보충은 생리적 되먹임, 일주기·박동성 분비를 회복하지 못하며 부신수질 기능도 손상되어 있다.',
+ '일주기를 모방하는 변형·지연 방출 하이드로코르티손이 개발 중이다. 인슐린 펌프를 이용한 지속 피하 주입은 이른 아침 상승을 포함한 일주기를 재현하며 개방 교차 연구에서 HRQoL이 개선되었으나 소규모 이중맹검 연구에서는 효과가 없었다. 번거로워 기존 치료에 큰 어려움이 있는 환자에게만 쓰며, 이때는 ACTH를 용량 지표로 쓸 수 있다. 최선의 글루코코르티코이드 보충을 밝힐 대규모 무작위 시험이 필요하다.',
+ '진단 시 대부분 어느 정도 코르티솔 생산이 남아 있으며, 새로 진단된 자가면역 PAI의 리툭시맙 치료와 기존 PAI의 데포 테트라코삭타이드 치료로 코르티솔 생산 재생이 가능함이 보였다. 부신피질 줄기세포의 재생 잠재력과 면역조절 치료의 결합, 일부 단일유전자 PAI의 유전자 치료가 향후 과제다.'
+]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const P = (...pts)=>'M'+pts.map(p=>p.join(' ')).join(' L');
+const G3 = [10,260,510];
+const G5 = [10,158,306,454,602], W5 = 142;
+const LR = y => [A(375,y,385,y),1];
+
+const CHARTS = {
+dx:{tab:'진단', fig:'1.0–2.5', aria:'원발성 부신기능저하증의 진단 검사', w:760, h:676, nodes:[
+ {id:'x_s',  x:10, y:10, w:740,h:56, label:'부신기능저하 의심<small>피로 · 체중 감소 · 기립 어지럼 · 색소침착 · 저나트륨 · 고칼륨</small>', cls:'test fac'},
+ {id:'x_r',  x:10, y:86, w:740,h:56, label:'진단 역치를 낮게<small>자가면역질환 · 결핵·HIV · 부신효소억제제 · CYP3A4 유도제 · 임신</small>', cls:'fac'},
+ {id:'x_ac', x:10, y:162,w:365,h:56, label:'급성 중증 · 부신위기 의심<small>1.1 · 1.3</small>', cls:'mal fac'},
+ {id:'x_st', x:385,y:162,w:365,h:56, label:'상태가 안정된 환자<small>1.2</small>', cls:'test fac'},
+ {id:'x_bl', x:10, y:238,w:365,h:56, label:'치료 전 채혈<small>기저 코르티솔 + ACTH</small>', cls:'test fac'},
+ {id:'x_hc', x:10, y:314,w:365,h:56, label:'즉시 정맥 하이드로코르티손<small>결과를 기다리지 않음</small>', cls:'tx fac'},
+ {id:'x_lt', x:10, y:390,w:365,h:56, label:'안정 후 확진 검사<small>글루코코르티코이드 일시 중단</small>', cls:'test fac'},
+ {id:'x_ct', x:385,y:238,w:365,h:56, label:'250 μg 코르티코트로핀 검사<small>2.1 · 30 또는 60분</small>', cls:'test fac'},
+ {id:'x_nf', x:385,y:314,w:365,h:56, label:'자극검사 불가 시<small>2.3 · 아침 코르티솔 &lt;140 nmol/L + ACTH</small>', cls:'fac'},
+ {id:'x_1u', x:385,y:390,w:365,h:56, label:'1 μg 검사<small>2.2 · 약제가 부족할 때만</small>', cls:'fac'},
+ {id:'x_pk', x:10, y:466,w:740,h:50, label:'최고 코르티솔 &lt;500 nmol/L (18 μg/dL) → 부신기능저하증<small>측정법에 따라 다름</small>', cls:'mal fac'},
+ {id:'x_at', x:10, y:536,w:365,h:60, label:'ACTH &gt;2배 상한<small>2.4 · PAI 확립</small>', cls:'test fac'},
+ {id:'x_ra', x:385,y:536,w:365,h:60, label:'레닌 ↑ · 알도스테론 정상/↓<small>2.5 · 광물코르티코이드 결핍</small>', cls:'test fac'},
+ {id:'x_et', x:10, y:616,w:740,h:50, label:'원인 규명<small>2.6 · 원인 감별 탭</small>', cls:'tx fac'}
+ ], edges:[[A(380,66,380,86),1],[P([380,142],[380,152],[192,152],[192,162]),1],[P([380,142],[380,152],[567,152],[567,162]),1],
+  [A(192,218,192,238),1],[A(192,294,192,314),1],[A(192,370,192,390),1],[A(567,218,567,238),1],[A(192,446,192,466),1],[A(567,446,567,466),1],
+  [P([380,516],[380,526],[192,526],[192,536]),1],[P([380,516],[380,526],[567,526],[567,536]),1],[A(192,596,192,616),1],[A(567,596,567,616),1]], labels:[]},
+
+et:{tab:'원인 감별', fig:'Figure 1', aria:'원발성 부신기능저하증의 원인 진단 알고리즘', w:760, h:542, nodes:[
+ {id:'e_p',  x:10, y:10, w:740,h:44, label:'원발성 부신기능저하증 확진', cls:'test'},
+ {id:'e_17', x:10, y:84, w:300,h:56, label:'17-OH-프로게스테론<small>영아 · 일부 소아·성인</small>', cls:'test fac'},
+ {id:'e_21', x:330,y:84, w:420,h:56, label:'21-수산화효소 항체<small>6개월 초과 모든 연령</small>', cls:'test fac'},
+ {id:'e_ct', x:310,y:180,w:200,h:56, label:'부신 CT', cls:'test'},
+ {id:'e_vl', x:560,y:180,w:190,h:56, label:'VLCFA (남성)', cls:'test'},
+ {id:'e_ca', x:G5[0],y:300,w:W5,h:86, label:'CAH<small>17-OHP &gt;1000 ng/dL</small>', cls:'fac'},
+ {id:'e_gs', x:G5[1],y:300,w:W5,h:86, label:'유전 증후군<small>드문 CAH · AHC</small>', cls:'fac'},
+ {id:'e_in', x:G5[2],y:300,w:W5,h:86, label:'침윤·출혈<small>감염 · 악성종양</small>', cls:'fac'},
+ {id:'e_ai', x:G5[3],y:300,w:W5,h:86, label:'자가면역<small>APS-1·2 고려</small>', cls:'tx fac'},
+ {id:'e_al', x:G5[4],y:300,w:W5,h:86, label:'부신백질<br>이영양증', cls:'fac'},
+ {id:'e_id', x:G5[1],y:406,w:W5,h:50, label:'특발성 PAI', cls:'fac'},
+ {id:'e_ap', x:10, y:476,w:365,h:56, label:'소아 자가면역 PAI<small>APS-1: 부갑상선 · 칸디다 · 인터페론 항체</small>', cls:'fac'},
+ {id:'e_dr', x:385,y:476,w:365,h:56, label:'약물·기타 (Table 2)<small>미토탄 · 에토미데이트 · CTLA-4 억제제</small>', cls:'fac'}
+ ], edges:[[P([380,54],[380,64],[160,64],[160,84]),1],[P([380,54],[380,64],[540,64],[540,84]),1],
+  [A(81,140,81,300),1],[A(229,140,229,300),1],[A(410,140,410,180),1],[A(525,140,525,300),1],[A(655,140,655,180),1],
+  [P([330,236],[330,262],[260,262],[260,300]),1],[A(377,236,377,300),1],[A(673,236,673,300),1],[A(229,386,229,406),1]],
+ labels:[[87,176,'(+)'],[235,176,'(−)'],[416,166,'(−)'],[531,176,'(+)'],[661,166,'(−)'],[268,256,'(−)'],[383,276,'(+)'],[679,276,'(+)']]},
+
+rp:{tab:'보충 치료', fig:'3.1–3.13', aria:'글루코코르티코이드, 광물코르티코이드, DHEA 보충', w:760, h:414, nodes:[
+ {id:'g_gc', x:G3[0],y:10, w:240,h:56, label:'글루코코르티코이드<small>3.1–3.6</small>', cls:'test fac'},
+ {id:'g_mc', x:G3[1],y:10, w:240,h:56, label:'광물코르티코이드<small>3.7–3.10</small>', cls:'test fac'},
+ {id:'g_dh', x:G3[2],y:10, w:240,h:56, label:'DHEA (여성)<small>3.11–3.13</small>', cls:'test fac'},
+ {id:'g_hc', x:G3[0],y:86, w:240,h:72, label:'하이드로코르티손 15–25 mg<small>또는 코르티손 아세테이트 20–35 · 2–3회</small>', cls:'tx fac'},
+ {id:'g_pr', x:G3[0],y:168,w:240,h:72, label:'프레드니솔론 3–5 mg<small>순응도 낮을 때 · 1–2회</small>', cls:'fac'},
+ {id:'g_dx', x:G3[0],y:250,w:240,h:72, label:'덱사메타손 사용 안 함<small>쿠싱양 부작용</small>', cls:'mal fac'},
+ {id:'g_mo', x:G3[0],y:332,w:240,h:72, label:'임상 모니터링<small>체중 · 기립 혈압 · 활력 · ACTH 안 씀</small>', cls:'test fac'},
+ {id:'g_fl', x:G3[1],y:86, w:240,h:72, label:'플루드로코르티손 50–100 μg<small>염분 제한 안 함</small>', cls:'tx fac'},
+ {id:'g_mm', x:G3[1],y:168,w:240,h:72, label:'임상·전해질 모니터링<small>염분 갈망 · 기립 저혈압 · 레닌</small>', cls:'test fac'},
+ {id:'g_ht', x:G3[1],y:250,w:240,h:72, label:'고혈압 → 감량<small>지속 시 항고혈압제 + 유지</small>', cls:'fac'},
+ {id:'g_ab', x:G3[1],y:332,w:240,h:72, label:'ARB·ACE 억제제<small>이뇨제 피함 · MR 길항제 금기</small>', cls:'fac'},
+ {id:'g_dt', x:G3[2],y:86, w:240,h:72, label:'성욕·우울·활력 저하<small>최적 보충에도 지속</small>', cls:'test fac'},
+ {id:'g_dd', x:G3[2],y:168,w:240,h:72, label:'DHEA 25–50 mg 시험<small>6개월 후 효과 없으면 중단</small>', cls:'fac'},
+ {id:'g_ds', x:G3[2],y:250,w:240,h:72, label:'아침 DHEAS<small>복용 전 · 정상 중간 목표</small>', cls:'test fac'},
+ {id:'g_dm', x:G3[2],y:332,w:240,h:72, label:'메타분석<small>뚜렷한 임상적 이득 없음</small>', cls:'fac'}
+ ], edges:[...G3.map(x=>[A(x+120,66,x+120,86),1]),[A(380,158,380,168),1],[A(380,240,380,250),1],[A(630,158,630,168),1],[A(630,240,630,250),1]], labels:[]},
+
+sp:{tab:'임신·소아', fig:'3.14–3.21', aria:'임신과 소아의 원발성 부신기능저하증 치료', w:760, h:476, nodes:[
+ {id:'s_pg', x:10, y:10, w:365,h:50, label:'임신<small>3.14–3.17</small>', cls:'test fac'},
+ {id:'s_p1', x:10, y:80, w:365,h:60, label:'삼분기마다 평가<small>과다·과소 보충 징후</small>', cls:'test fac'},
+ {id:'s_p2', x:10, y:160,w:365,h:60, label:'3삼분기 하이드로코르티손 증량<small>흔히 24주부터 20–40%</small>', cls:'tx fac'},
+ {id:'s_p3', x:10, y:240,w:365,h:60, label:'하이드로코르티손 선호 · 덱사메타손 금지<small>태반에서 불활성화 안 됨</small>', cls:'mal fac'},
+ {id:'s_p4', x:10, y:320,w:365,h:60, label:'분만 활동기 스트레스 용량<small>100 mg 정주 → 200 mg/24시간</small>', cls:'tx fac'},
+ {id:'s_p5', x:10, y:400,w:365,h:66, label:'임신 중 새 진단<small>자극 코르티솔 기준 700 / 800 / 900 nmol/L</small>', cls:'test fac'},
+ {id:'s_ch', x:385,y:10, w:365,h:50, label:'소아<small>3.18–3.21</small>', cls:'test fac'},
+ {id:'s_c1', x:385,y:80, w:365,h:60, label:'하이드로코르티손 8 mg/m²/일<small>3–4회 분할</small>', cls:'tx fac'},
+ {id:'s_c2', x:385,y:160,w:365,h:60, label:'장기작용 합성제제 피함<small>프레드니솔론 · 덱사메타손</small>', cls:'mal fac'},
+ {id:'s_c3', x:385,y:240,w:365,h:60, label:'성장 속도·체중·혈압 모니터링<small>ACTH는 유용하지 않음</small>', cls:'test fac'},
+ {id:'s_c4', x:385,y:320,w:365,h:60, label:'플루드로코르티손 100 μg/일<small>체표면적 조정 불필요</small>', cls:'tx fac'},
+ {id:'s_c5', x:385,y:400,w:365,h:66, label:'영아 염화나트륨 1–2 g/일<small>12개월까지 · 3–4개월마다 진료</small>', cls:'fac'}
+ ], edges:[[A(192,60,192,80),1],[A(567,60,567,80),1]], labels:[]},
+
+cr:{tab:'부신위기', fig:'4.0 · Table 3–4', aria:'부신위기의 치료와 예방', w:760, h:552, nodes:[
+ {id:'k_s',  x:10, y:10, w:740,h:56, label:'부신위기 의심<small>저혈압 · 복통·구토 · 의식 저하 · 저나트륨 · 고칼륨 · 저혈당</small>', cls:'mal fac'},
+ {id:'k_hc', x:10, y:86, w:365,h:60, label:'하이드로코르티손 100 mg 즉시 주사<small>4.1 · 소아 50 mg/m²</small>', cls:'tx fac'},
+ {id:'k_fl', x:385,y:86, w:365,h:60, label:'수액 소생<small>1시간 내 생리식염수 1000 mL · 소아 20 mL/kg</small>', cls:'tx fac'},
+ {id:'k_mt', x:10, y:166,w:740,h:56, label:'200 mg/24시간 지속 정주<small>또는 6시간마다 50 mg · 다음 날 100 mg/일</small>', cls:'tx fac'},
+ {id:'k_al', x:10, y:242,w:365,h:60, label:'하이드로코르티손이 없으면<small>4.2 · 프레드니솔론 → 덱사메타손은 최후</small>', cls:'fac'},
+ {id:'k_tp', x:385,y:242,w:365,h:60, label:'빠른 감량 → 경구 전환<small>임상 상태에 따라</small>', cls:'fac'},
+ {id:'k_pv', x:10, y:322,w:740,h:44, label:'예방: 질병·스트레스 크기에 따른 증량 (4.3)', cls:'test'},
+ {id:'k_fv', x:G3[0],y:386,w:240,h:80, label:'발열 질환<small>&gt;38°C 2배 · &gt;39°C 3배 · 2–3일</small>', cls:'fac'},
+ {id:'k_vo', x:G3[1],y:386,w:240,h:80, label:'경구 불가<small>구토·외상 · 100 mg 근주·피하주사</small>', cls:'fac'},
+ {id:'k_sg', x:G3[2],y:386,w:240,h:80, label:'수술·분만·중환자<small>100 mg 정주 → 200 mg/24시간</small>', cls:'fac'},
+ {id:'k_ed', x:10, y:486,w:740,h:56, label:'교육 · 응급 카드 · 주사 키트<small>4.4–4.6 · 부신위기 6.6–8.3회/100환자년</small>', cls:'tx fac'}
+ ], edges:[[A(192,66,192,86),1],[A(567,66,567,86),1],[A(192,146,192,166),1],[A(567,146,567,166),1],
+  ...G3.map(x=>[P([380,366],[380,376],[x+120,376],[x+120,386]),1]),...G3.map(x=>[A(x+120,466,x+120,486),1])], labels:[]},
+
+fu:{tab:'추적', fig:'5.0', aria:'원발성 부신기능저하증의 추적 관찰', w:760, h:566, nodes:[
+ {id:'f_v',  x:10, y:10, w:365,h:60, label:'연 1회 이상 전문의 진료<small>5.1 · 영아 3–4개월마다</small>', cls:'test fac'},
+ {id:'f_r',  x:385,y:10, w:365,h:60, label:'과다·과소 보충 평가<small>5.2 · 매년</small>', cls:'test fac'},
+ {id:'f_lb', x:10, y:90, w:740,h:56, label:'정기 검사<small>나트륨 · 칼륨 · 레닌(상한 근처 목표) · 전혈구</small>', cls:'test fac'},
+ {id:'f_ai', x:10, y:166,w:740,h:44, label:'자가면역질환 선별 (5.3) · 매년 가능', cls:'test'},
+ {id:'f_th', x:G3[0],y:230,w:240,h:80, label:'갑상선질환<small>여성 50% · 남성 25% · TSH·유리 T4</small>', cls:'fac'},
+ {id:'f_dm', x:G3[1],y:230,w:240,h:80, label:'1형 당뇨병<small>스칸디나비아 10–15% · HbA1c</small>', cls:'fac'},
+ {id:'f_po', x:G3[2],y:230,w:240,h:80, label:'조기 난소부전<small>8–20% · APS-1 40.8%</small>', cls:'fac'},
+ {id:'f_b1', x:G3[0],y:320,w:240,h:80, label:'자가면역 위염<small>비타민 B12 결핍</small>', cls:'fac'},
+ {id:'f_ce', x:G3[1],y:320,w:240,h:80, label:'셀리악병<small>약 5% · tTG 항체 + 총 IgA</small>', cls:'fac'},
+ {id:'f_vi', x:G3[2],y:320,w:240,h:80, label:'백반증 · 원형탈모<small>자가면역 표지</small>', cls:'fac'},
+ {id:'f_ed', x:10, y:420,w:365,h:60, label:'스트레스 용량 교육<small>5.4 · 46% 대처 미숙 · 매 방문</small>', cls:'tx fac'},
+ {id:'f_gc', x:385,y:420,w:365,h:60, label:'유전상담<small>5.5 · 단일유전자 PAI</small>', cls:'fac'},
+ {id:'f_fr', x:10, y:500,w:740,h:56, label:'향후 연구<small>LC-MS/MS · 타액 코르티솔 · 서방형·펌프 · 재생 치료</small>', cls:'fac'}
+ ], edges:[[A(380,146,380,166),1],...G3.map(x=>[P([380,210],[380,220],[x+120,220],[x+120,230]),1])], labels:[]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${id}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Bornstein SR, et al. J Clin Endocrinol Metab 2016;101(2):364–389 해당 절의 요약 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약.</p>`;
+const pp = (k,i,j) => paraHTML({p:EXP[k].p.slice(i,j===undefined?i+1:j)});
+
+const T1 = tbl(['','증상','징후','일반 검사'],[
+ ['부신기능저하','피로 · 체중 감소 · 기립 어지럼 · 식욕부진, 복부 불편감','색소침착(일차성만; 햇빛 노출 부위, 피부 주름, 점막, 흉터, 유륜) · 기립 시 혈압 저하가 커진 저혈압 · 소아 성장 장애','저나트륨혈증 · 고칼륨혈증 · 드물게 저혈당, 고칼슘혈증'],
+ ['부신위기','심한 쇠약 · 실신 · 복통, 구역, 구토(급성 복증과 유사) · 요통 · 혼동','저혈압 · 복부 압통·근성 방어 · 의식 저하, 섬망','저나트륨혈증 · 고칼륨혈증 · 저혈당 · 고칼슘혈증']
+]) + '<p class="exp-src">Table 1. 부신기능저하증과 부신위기의 임상 양상. 대부분 비특이적이고 만성이어서 진단이 늦어지며, 저나트륨혈증과 이후 고칼륨혈증이 흔히 진단의 계기가 된다. 색소침착은 특이적이나 개인차가 있어 형제 등 원래 피부색과 비교한다.</p>';
+const T2 = tbl(['원인','동반 특징'],[
+ ['자가면역 — 단독','다른 자가면역질환 없음'],
+ ['자가면역 — APS 1형 (APECED)','만성 점막피부 칸디다증, 부갑상선기능저하증'],
+ ['자가면역 — APS 2형','자가면역 갑상선질환, 1형 당뇨병'],
+ ['부신 출혈','패혈증, 항응고제, 항카디오리핀·루푸스 항응고인자 증후군'],
+ ['부신 전이','폐암, 유방암, 대장암, 흑색종, 림프종'],
+ ['감염성 부신염','결핵, HIV/AIDS, CMV, 칸디다증, 히스토플라스마증, 매독, 아프리카 트리파노소마증, 파라콕시디오이데스진균증'],
+ ['침윤','혈색소침착증, 원발성 아밀로이드증'],
+ ['양측 부신절제술','난치성 쿠싱 증후군, 양측 갈색세포종'],
+ ['CAH (대부분 염분 소실 가능)','소아 PAI의 가장 흔한 원인(80%) · 21-수산화효소 결핍(고안드로겐), 11β-수산화효소 결핍(고안드로겐, 고혈압), 3β-HSD II 결핍, CYP11A1·POR·StAR 변이(XY 성역전, 골격 기형 등)'],
+ ['선천성 부신형성저하증','X연관 NR0B1, Xp21 결실(뒤센 근이영양증 동반), SF-1 변이(XY 성역전), IMAGe 증후군'],
+ ['ACTH 불감 증후군','1형 MC2R · 2형 MRAP · 가족성 글루코코르티코이드 결핍(MCM4, NNT, TXNRD2) · Triple A(Allgrove) 증후군'],
+ ['약물','부신효소억제제(미토탄, 케토코나졸, 메티라폰, 에토미데이트, 아미노글루테티미드) · 코르티솔 대사 촉진 약물 · T4 · CTLA-4 억제제'],
+ ['기타 대사 질환','미토콘드리아 질환 · 남성 부신백질이영양증 · Wolman병']
+]) + '<p class="exp-src">Table 2. PAI의 주요 원인과 동반 특징(일부 요약).</p>';
+const T3 = tbl(['상황','권장 조치'],[
+ ['집에서의 발열 질환','하이드로코르티손 보충 용량을 &gt;38°C 2배, &gt;39°C 3배로 회복까지(보통 2–3일) · 전해질 함유 수분 섭취 증가'],
+ ['위장관염·외상으로 경구 복용 불가','성인 하이드로코르티손 100 mg 근주 또는 피하주사 · 소아 50 mg/m² 근주 또는 추정치(영아 25 mg, 학령기 50 mg, 청소년 100 mg)'],
+ ['경도–중등도 수술 스트레스','하이드로코르티손 25–75 mg/24시간(보통 1–2일) · 소아 50 mg/m² 근주 또는 보충 용량 2–3배'],
+ ['전신마취 대수술, 외상, 분만, 중환자 질환','하이드로코르티손 100 mg 정주 후 200 mg/24시간 지속 정주(또는 6시간마다 50 mg 정주·근주) · 소아 50 mg/m² 정주 후 50–100 mg/m²/일 6시간마다 · 5% 포도당과 0.2 또는 0.45% NaCl 지속 수액 · 임상 상태에 따라 빠른 감량과 경구 전환'],
+ ['급성 부신위기','첫 1시간 생리식염수 1000 mL 급속 주입(또는 5% 포도당 생리식염수) 후 필요에 따라 지속 · 하이드로코르티손 100 mg 즉시 정주 후 200 mg/일 24시간 지속 주입, 다음 날 100 mg/일 · 소아: 생리식염수 20 mL/kg 급속 주입(쇼크 시 1시간 내 총 60 mL/kg까지), 하이드로코르티손 50–100 mg/m² 일시 주사 후 50–100 mg/m²/일 6시간마다 · 저혈당: 포도당 0.5–1 g/kg 또는 D25W 2–4 mL/kg(1회 최대 25 g) 2–3 mL/분 서서히, 12세 미만은 D10W 5–10 mL/kg · 심장 모니터링 · 빠른 감량과 경구 전환']
+]) + '<p class="exp-src">Table 3. 특수 상황에서 PAI의 관리.</p>';
+const T4 = tbl(['조치','내용'],[
+ ['문제 확인','스테로이드 응급 카드(있는지, 최신인지 확인) · 의료 경고 팔찌·목걸이 “부신기능저하 – 스테로이드 필요!”'],
+ ['환자(배우자·부모) 교육','병가 규칙 1: 발열이나 침상 안정이 필요한 질병, 항생제가 필요한 감염, 소규모 외래 시술(치과 등) 전에는 평소 경구 용량을 2배로 · 병가 규칙 2: 중증 질환, 외상, 지속적 구토, 시술을 위한 금식(대장내시경!), 수술 시에는 글루코코르티코이드를 근주 또는 정주 — 하이드로코르티손 100 mg 정주·근주·피하 후 200 mg 지속 정주 또는 6시간마다 반복'],
+ ['특히 주의할 점','스트레스·질병 시 증량의 이유 설명 · 증량이 필요한 상황 논의 · 임박한 부신위기의 증상과 징후 · 비경구 자가 투여 교육 · 응급 주사 후 반드시 병원에 가도록 강조'],
+ ['제공할 것','병가를 고려한 충분한 하이드로코르티손·플루드로코르티손 · 응급 주사 키트(하이드로코르티손 100 mg 바이알, 주사기, 바늘; 또는 좌약) · 의료진에게 보여 줄 안내문(100 mg 즉시 정주·근주 후 200 mg/24시간) · 내분비 전문팀 응급 전화번호'],
+ ['추적','매 방문마다 교육을 강화하고 이해를 확인(특별한 문제나 최근 위기가 없으면 최소 연 1회, 아니면 더 자주)']
+]) + '<p class="exp-src">Table 4. 부신위기 예방 조치.</p>';
+const TG = tbl(['표시','의미'],[['1','강한 권고 “we recommend”'],['2','약한 권고 “we suggest”'],['⊕○○○','근거의 질 매우 낮음'],['⊕⊕○○','낮음'],['⊕⊕⊕○','중등도'],['⊕⊕⊕⊕','높음'],['모범 진료','등급 없는 모범 진료 진술(ungraded best practice statement)']]) + '<p class="exp-src">GRADE 표시.</p>';
+
+const DISC_C = note('원문 불일치','3.18 권고문은 소아 하이드로코르티손을 “하루 3–4회” 나누도록 하지만, 근거 본문은 “대개 2회 또는 바람직하게는 3회”로 적었다. 3.21은 영아 염화나트륨을 “12개월까지” 권고하나 본문은 “특히 생후 6개월까지 1–2 g/일”로 기술한다.');
+const DISC_K = note('원문 불일치','4.1 권고문의 소아 초기 용량은 하이드로코르티손 50 mg/m²인데, Table 3의 급성 부신위기 항목은 소아 50–100 mg/m² 일시 주사다. Table 3은 성인에서 둘째 날 100 mg/일로 줄이도록 적었다. 또한 Table 3은 경도–중등도 수술에 25–75 mg/24시간을 제시하지만, 본문은 이 낮은 용량이 이차성 부신기능저하증에서 주장된 것이며 PAI에서는 연구되지 않았다고 기술한다.');
+const DISC_B = note('원문 표기','4.5와 4.6은 “we recommend”로 표현되었으나 등급 없는 모범 진료 진술로 표시되었다. 2.6은 “ungraded best practice recommendation”으로, 다른 진술은 “statement”로 적혀 있다. 3.11은 “여성”이 대상이지만 본문의 DHEA 25–50 mg 고려 대상은 “폐경 전 여성”이다.');
+const TIP_X = tip('진단 요점','급성 환자는 스테로이드 투여 전 코르티솔과 ACTH를 채혈하고 결과를 기다리지 말고 치료한다. 아침 코르티솔 140 nmol/L(5 μg/dL)과 자극 코르티솔 500 nmol/L(18 μg/dL) 기준은 측정법마다 다르므로 검사실의 측정법별 기준을 확인한다. 에스트로겐(경구피임약), 임신은 CBG를 높이고 신증후군, 간질환, 수술 직후, 중환자는 낮춘다.');
+
+const D = {
+x_s:{kind:'1.0 · Table 1', title:'부신기능저하증 의심', next:['x_r'], body:`${R('T1')}${T1}`},
+x_r:{kind:'1.0', title:'진단 역치를 낮게 유지', next:['x_ac','x_st'], body:`${pp('e1',3,6)}${pp('e1',8)}`},
+x_ac:{kind:'1.1 · 1.3', title:'급성 중증 환자', next:['x_bl'], body:`${RR('T1','T3')}${pp('e1',3)}`},
+x_st:{kind:'1.2', title:'상태가 안정된 환자', next:['x_ct'], body:`${R('T2')}${pp('e1',1)}`},
+x_bl:{kind:'1.3', title:'치료 전 채혈', next:['x_hc'], body:`${R('T3')}${pp('e1',3)}${TIP_X}`},
+x_hc:{kind:'1.3 · 4.1', title:'즉시 정맥 하이드로코르티손', next:['k_s'], body:`${RR('T3','K1')}`},
+x_lt:{kind:'1.3', title:'안정 후 확진 검사', next:['x_pk'], body:`${R('T2')}${pp('e1',3)}`},
+x_ct:{kind:'2.1', title:'250 μg 코르티코트로핀 자극검사', next:['x_pk'], body:`${R('D1')}${ex('e21')}`},
+x_nf:{kind:'2.3', title:'아침 코르티솔과 ACTH', next:['x_at'], body:`${R('D3')}${ex('e23')}`},
+x_1u:{kind:'2.2', title:'1 μg 저용량 검사', next:[], body:`${R('D2')}${pp('e21',3,5)}${pp('e21',6)}`},
+x_pk:{kind:'2.1', title:'최고 코르티솔 기준', next:['x_at','x_ra'], body:`${R('D1')}${pp('e21',0,2)}${TIP_X}`},
+x_at:{kind:'2.4', title:'혈장 ACTH', next:['x_et'], body:`${R('D4')}${pp('e24',0)}`},
+x_ra:{kind:'2.5', title:'레닌과 알도스테론', next:['x_et'], body:`${R('D5')}${pp('e24',1)}`},
+x_et:{kind:'2.6', title:'원인 규명', next:['e_p'], body:`${R('D6')}${pp('e26',0)}`},
+
+e_p:{kind:'Figure 1', title:'원인 진단 알고리즘', next:['e_17','e_21'], body:`${R('D6')}${pp('e26',4)}${T2}`},
+e_17:{kind:'Figure 1', title:'17-OH-프로게스테론', next:['e_ca','e_gs'], body:`${R('D6')}<p>영아와 일부 소아·성인에서 측정한다. 17-OH-프로게스테론 1000 ng/dL 초과는 21-수산화효소 결핍을 진단한다. 음성이면 드문 CAH나 선천성 부신형성저하증 같은 유전 증후군을 고려한다.</p>${pp('e26',2)}`},
+e_21:{kind:'Figure 1', title:'21-수산화효소 항체', next:['e_ai','e_ct','e_vl'], body:`${R('D6')}${pp('e26',0)}`},
+e_ct:{kind:'Figure 1', title:'부신 CT', next:['e_in','e_gs'], body:`${R('D6')}${pp('e26',2)}`},
+e_vl:{kind:'Figure 1', title:'극장쇄 지방산 (남성)', next:['e_al'], body:`${R('D6')}${pp('e26',1)}<p>사춘기 전 남아는 첫 평가에서 VLCFA를 측정한다(Figure 1 각주).</p>`},
+e_ca:{kind:'Figure 1', title:'선천성 부신과형성 (CAH)', next:['s_ch'], body:`<p>소아 PAI의 가장 흔한 원인(80%)이며 고령에서도 진단될 수 있다. 가장 흔한 형태는 고안드로겐을 동반하는 21-수산화효소 결핍이다.</p>${T2}`},
+e_gs:{kind:'Figure 1', title:'유전 증후군', next:['e_id','f_gc'], body:`<p>드문 CAH, 선천성 부신형성저하증(AHC), ACTH 불감 증후군, Triple A 증후군 등이 있다. 임상 양상과 가족력이 특정 유전 증후군을 시사할 수 있다.</p>${R('F5')}${T2}`},
+e_in:{kind:'Figure 1', title:'침윤·출혈·감염·악성종양', next:[], body:`${pp('e26',2)}${T2}`},
+e_ai:{kind:'Figure 1', title:'자가면역 부신기능저하증', next:['f_ai'], body:`${pp('e26',0,2)}${R('F3')}`},
+e_al:{kind:'Figure 1', title:'부신백질이영양증', next:['f_gc'], body:`${pp('e26',1)}${R('F5')}`},
+e_id:{kind:'Figure 1', title:'특발성 PAI', next:[], body:'<p>유전 증후군 검사에서도 원인이 밝혀지지 않으면 특발성 PAI로 분류한다(Figure 1).</p>'},
+e_ap:{kind:'2.6', title:'소아의 자가면역 PAI와 APS-1', next:[], body:pp('e26',1)},
+e_dr:{kind:'Table 2', title:'약물과 기타 원인', next:[], body:`${pp('e1',4)}${T2}`},
+
+g_gc:{kind:'3.1–3.6', title:'글루코코르티코이드 보충', next:['g_hc'], body:`${RR('G1','G2','G3','G4','G5','G6')}${ex('e3g')}`},
+g_hc:{kind:'3.2', title:'하이드로코르티손 · 코르티손 아세테이트', next:['g_mo'], body:`${RR('G1','G2')}${pp('e3g',0,4)}`},
+g_pr:{kind:'3.3', title:'프레드니솔론', next:[], body:`${R('G3')}${pp('e3g',3)}`},
+g_dx:{kind:'3.4', title:'덱사메타손', next:[], body:`${R('G4')}${pp('e3g',3)}`},
+g_mo:{kind:'3.5–3.6', title:'글루코코르티코이드 모니터링', next:[], body:`${RR('G5','G6')}${pp('e3g',5,7)}`},
+g_mc:{kind:'3.7–3.10', title:'광물코르티코이드 보충', next:['g_fl'], body:`${RR('M1','M2','M3','M4')}${ex('e3m')}`},
+g_fl:{kind:'3.7', title:'플루드로코르티손', next:['g_mm'], body:`${R('M1')}${pp('e3m',0)}`},
+g_mm:{kind:'3.8', title:'광물코르티코이드 모니터링', next:['g_ht'], body:`${R('M2')}${pp('e3m',1)}`},
+g_ht:{kind:'3.9–3.10', title:'플루드로코르티손 복용 중 고혈압', next:['g_ab'], body:`${RR('M3','M4')}${pp('e3m',2)}`},
+g_ab:{kind:'3.10', title:'항고혈압제 선택', next:[], body:`${R('M4')}${pp('e3m',2)}`},
+g_dh:{kind:'3.11–3.13', title:'DHEA 보충', next:['g_dt'], body:`${RR('H1','H2','H3')}${ex('e3h')}${DISC_B}`},
+g_dt:{kind:'3.11', title:'DHEA 시험 대상', next:['g_dd'], body:`${R('H1')}${pp('e3h',2)}`},
+g_dd:{kind:'3.12', title:'6개월 시험 후 판단', next:['g_ds'], body:`${R('H2')}${pp('e3h',2)}`},
+g_ds:{kind:'3.13', title:'DHEAS 모니터링', next:[], body:`${R('H3')}${pp('e3h',2)}`},
+g_dm:{kind:'3.11', title:'DHEA 근거', next:[], body:`${R('H1')}${pp('e3h',0,2)}`},
+
+s_pg:{kind:'3.14–3.17', title:'임신 중 PAI', next:['s_p1'], body:`${RR('P1','P2','P3','P4','P5')}${ex('e3p')}`},
+s_p1:{kind:'3.14', title:'삼분기마다 평가', next:['s_p2'], body:`${R('P1')}${pp('e3p',3)}`},
+s_p2:{kind:'3.15', title:'3삼분기 증량', next:['s_p3'], body:`${R('P2')}${pp('e3p',0)}`},
+s_p3:{kind:'3.16', title:'임신 중 글루코코르티코이드 선택', next:['s_p4'], body:`${RR('P3','P4')}${pp('e3p',1)}`},
+s_p4:{kind:'3.17', title:'분만 활동기 스트레스 용량', next:[], body:`${R('P5')}${pp('e3p',4)}`},
+s_p5:{kind:'1.0 · 3.0', title:'임신 중 새로 생긴 PAI의 진단', next:[], body:`${pp('e3p',2)}${pp('e1',6)}`},
+s_ch:{kind:'3.18–3.21', title:'소아 PAI', next:['s_c1'], body:`${RR('C1','C2','C3','C4')}${ex('e3c')}${DISC_C}`},
+s_c1:{kind:'3.18', title:'소아 하이드로코르티손', next:['s_c2'], body:`${R('C1')}${pp('e3c',0,2)}${DISC_C}`},
+s_c2:{kind:'3.19', title:'장기작용 합성제제 피함', next:['s_c3'], body:`${R('C2')}${pp('e3c',0)}`},
+s_c3:{kind:'3.20', title:'소아 모니터링', next:['s_c4'], body:`${R('C3')}${pp('e3c',2)}`},
+s_c4:{kind:'3.21', title:'소아 플루드로코르티손', next:['s_c5'], body:`${R('C4')}${pp('e3c',3,5)}`},
+s_c5:{kind:'3.21 · 5.1', title:'영아의 염화나트륨과 진료 간격', next:[], body:`${RR('C4','F1')}${pp('e3c',3,5)}${DISC_C}`},
+
+k_s:{kind:'4.1 · Table 1', title:'부신위기 의심', next:['k_hc','k_fl'], body:`${R('K1')}${pp('e4a',0)}${T1}`},
+k_hc:{kind:'4.1', title:'하이드로코르티손 즉시 주사', next:['k_mt'], body:`${R('K1')}${pp('e4a',1)}${DISC_K}`},
+k_fl:{kind:'Table 3', title:'수액 소생', next:['k_mt'], body:`${R('K1')}${T3}`},
+k_mt:{kind:'4.1 · Table 3', title:'유지 용량', next:['k_tp'], body:`${R('K1')}${T3}${DISC_K}`},
+k_al:{kind:'4.2', title:'하이드로코르티손이 없을 때', next:[], body:`${R('K2')}${pp('e4a',3)}`},
+k_tp:{kind:'Table 3', title:'감량과 경구 전환', next:[], body:`${R('K1')}<p>임상 상태에 따라 빠르게 감량하고 경구 요법으로 전환한다(Table 3). 하이드로코르티손이 50 mg/24시간을 넘으면 광물코르티코이드 보충은 필요 없다.</p>`},
+k_pv:{kind:'4.3', title:'부신위기 예방', next:['k_fv','k_vo','k_sg'], body:`${R('K3')}${ex('e4b')}`},
+k_fv:{kind:'4.3 · Table 3', title:'발열 질환', next:[], body:`${R('K3')}${pp('e4b',2)}`},
+k_vo:{kind:'4.3 · Table 3', title:'경구 복용 불가', next:[], body:`${R('K3')}${pp('e4b',2,4)}`},
+k_sg:{kind:'4.3 · Table 3', title:'수술·외상·분만·중환자', next:['s_p4'], body:`${R('K3')}${pp('e4b',0,2)}${T3}${DISC_K}`},
+k_ed:{kind:'4.4–4.6', title:'교육, 응급 카드, 주사 키트', next:['f_ed'], body:`${RR('K4','K5','K6')}${ex('e4c')}${pp('e4a',2)}${T4}${DISC_B}`},
+
+f_v:{kind:'5.1', title:'정기 진료', next:['f_lb'], body:`${R('F1')}${pp('e5',0)}`},
+f_r:{kind:'5.2', title:'과다·과소 보충 평가', next:['f_lb'], body:`${R('F2')}${pp('e5',1)}${pp('e3g',5)}`},
+f_lb:{kind:'5.0', title:'정기 검사', next:['f_ai'], body:`${RR('F2','M2')}${pp('e5',1)}`},
+f_ai:{kind:'5.3', title:'자가면역질환 선별', next:['f_th','f_dm','f_po'], body:`${R('F3')}${pp('e5',3,5)}`},
+f_th:{kind:'5.3', title:'자가면역 갑상선질환', next:[], body:`${R('F3')}${pp('e5',3)}${pp('e4a',3)}`},
+f_dm:{kind:'5.3', title:'1형 당뇨병', next:[], body:`${R('F3')}${pp('e5',3)}`},
+f_po:{kind:'5.3', title:'조기 난소부전', next:[], body:`${R('F3')}${pp('e5',3)}`},
+f_b1:{kind:'5.3', title:'자가면역 위염과 비타민 B12', next:[], body:`${R('F3')}${pp('e5',4)}`},
+f_ce:{kind:'5.3', title:'셀리악병', next:[], body:`${R('F3')}${pp('e5',4)}`},
+f_vi:{kind:'5.3', title:'백반증과 원형탈모', next:[], body:`${R('F3')}${pp('e5',4)}`},
+f_ed:{kind:'5.4', title:'스트레스 용량 교육', next:[], body:`${RR('F4','K4')}${pp('e4c',0,2)}${T4}`},
+f_gc:{kind:'5.5', title:'유전상담', next:[], body:`${R('F5')}${pp('e5',6)}`},
+f_fr:{kind:'전망', title:'향후 연구 과제', next:[], body:paraHTML(EXP.fut)}
+};
+
+const ALL = Object.keys(REC);
+const GROUP = [['T','1.0 누구를 어떻게 검사할 것인가'],['D','2.0 최적의 진단 검사'],['G','3.0 성인 치료 · 글루코코르티코이드'],['M','3.0 성인 치료 · 광물코르티코이드'],['H','3.0 성인 치료 · DHEA'],['P','3.0 임신 중 치료'],['C','3.0 소아 치료와 모니터링'],['K','4.0 부신위기의 관리와 예방'],['F','5.0 추가 모니터링']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'권고 등급과 도구 설명', next:[], body:`${['S4','S3','S2','W3','W2','W1','BP'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${TG}${note('구성','권고 ${ALL.length}개를 원문 번호와 GRADE 등급을 붙여 번역해 수록했다(3.16은 제안과 권고로 나누었다). 권고를 누르면 해당 절 근거의 요약 번역이 펼쳐진다. Figure 1과 Table 1–4를 재현했다.')}${DISC_C}${DISC_K}${DISC_B}`},
+ all:{kind:'전체', title:`권고 ${ALL.length}개`, next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.replace(/\d+$/,'')===g))}`).join('')},
+ tabs:{kind:'표', title:'Table 1–4', next:[], body:`<h5>Table 1. 임상 양상</h5>${T1}<h5>Table 2. 주요 원인</h5>${T2}<h5>Table 3. 특수 상황의 관리</h5>${T3}<h5>Table 4. 부신위기 예방 조치</h5>${T4}`},
+ intro:{kind:'서론', title:'서론·방법·전망', next:[], body:`${paraHTML(EXP.intro)}${ex('meth')}${ex('fut')}`}
+});
+
+const ABBR = [
+ ['ACTH','Adrenocorticotropic hormone, 부신피질자극호르몬'],['AHC','Adrenal hypoplasia congenita, 선천성 부신형성저하증'],['APS','Autoimmune polyendocrine syndrome, 자가면역 다내분비선 증후군'],
+ ['CAH','Congenital adrenal hyperplasia, 선천성 부신과형성'],['CBG','Cortisol-binding globulin, 코르티솔 결합 글로불린'],['CT','Computed tomography'],
+ ['CYP21A2','21-hydroxylase, 21-수산화효소'],['DHEA','Dehydroepiandrosterone'],['DHEAS','DHEA sulfate'],['GRADE','Grading of Recommendations, Assessment, Development, and Evaluation'],
+ ['HRQoL','Health-related quality of life, 건강 관련 삶의 질'],['LC-MS/MS','Liquid chromatography/tandem mass spectrometry'],['PAI','Primary adrenal insufficiency, 원발성 부신기능저하증'],
+ ['VLCFA','Very long chain fatty acid, 극장쇄 지방산'],['11β-HSD','11β-hydroxysteroid dehydrogenase'],['17-OHP','17-hydroxyprogesterone, 17-OH-프로게스테론']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: C, CBG)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
