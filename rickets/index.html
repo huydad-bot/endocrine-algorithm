@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>구루병 SIEDP 2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+.node.pr{border-color:#6FB6DA; background:#D4EEFA; color:#123A52}
+.sw.pr{border-color:#6FB6DA; background:#D4EEFA}
+.node.pr{--flash:#2F8FC0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .node.pr,:root:not([data-theme="light"]) .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}}
+:root[data-theme="dark"] .node.pr,:root[data-theme="dark"] .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}
+.node.rk1 small,.node.rk2 small{color:inherit;opacity:.88}
+.t2 td:not(:first-child){white-space:nowrap}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>구루병의 진단·치료·관리: 이탈리아 소아내분비학회(SIEDP) 입장 성명 2024</h1>
+        <p class="src">Baroncelli GI, Comberiati P, Aversa T, et al. Diagnosis, treatment, and management of rickets: a position statement from the Bone and Mineral Metabolism Group of the Italian Society of Pediatric Endocrinology and Diabetology. <a href="https://doi.org/10.3389/fendo.2024.1383681" target="_blank" rel="noopener noreferrer">Front Endocrinol 2024;15:1383681</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the SIEDP or the authors</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사 박스 강조"><i class="sw test"></i>검사·감별</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="영양성 박스 강조"><i class="sw ben"></i>영양성</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="비타민 D 의존성·주의 박스 강조"><i class="sw mal"></i>비타민 D 의존성·주의</button>
+      <button type="button" class="lg" data-cls="pr" aria-label="저인산혈증성 박스 강조"><i class="sw pr"></i>저인산혈증성</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>항목을 누르면 해당 본문 절 요약 번역이 펼쳐짐</li><li>탭은 원문 Figure 1·3과 Table 1–10을 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>권고 표기·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 항목</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 1–10</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·결론</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ STR:'권고: 원문이 “should / is recommended / must / is necessary / is required”로 표현한 진술(이 문서는 권고 강도를 등급화하지 않았다)',
+ SUG:'제안·고려: 원문이 “may / is suggested / is proposed / may be useful”로 표현한 진술',
+ TAB:'표 권고: Table 8–10의 추적·치료 권고(다른 지침과 저자 경험을 각색)'
+};
+const LVTXT = {STR:'권고', SUG:'제안', TAB:'표 권고'};
+const LVCLS = {STR:'l1', SUG:'l2', TAB:'l4'};
+/* [구분, 번역, 본문 절 키] */
+const REC = {
+/* 진단 */
+'D1':['STR','병력, 신체 진찰, 생화학 결과가 구루병 진단의 주된 근거이며, 구루병 진단은 방사선 검사로 확인해야 한다. 비타민 D 보충 투여력, 구루병을 앓은 가족, 식이 칼슘 섭취량 추정, 임신·출생 정보를 정확히 조사해야 한다.','clin'],
+'D2':['SUG','신체 진찰로는 활동성 구루병과 회복 중인 구루병, 여러 형태의 구루병을 구별할 수 없다. 임상 징후에만 의존하면 활동성 구루병의 유병률을 과대평가하고 불필요한 치료로 이어질 수 있다.','clin'],
+'D3':['STR','혈청 인산 농도와 알칼리성 인산분해효소(ALP) 활성은 적절한 연령별 참고치에 따라 해석해야 한다. ALP 활성 증가는 저인산효소증(HPP)을 제외한 모든 형태의 구루병에서 나타난다.','bio'],
+'D4':['SUG','영양성 비타민 D 결핍 구루병의 진단 시 1,25(OH)₂D 농도는 질병 시기에 따라 변하므로(초기 증가, 후기 감소) 측정이 유용하지 않다.','bio'],
+'D5':['SUG','FGF23 측정으로 FGF23 의존성과 비의존성 저인산혈증 질환을 구별할 수 있다. 저인산혈증에 동반된 intact FGF23 &gt;40 pg/mL는 소아 XLH 조기 진단의 핵심 표지자일 수 있으며, FGF23은 25(OH)D 농도가 겹치는 경우 영양성 비타민 D 결핍 구루병과 저인산혈증성 구루병을 구별하는 가장 중요한 생화학 표지자다. TIO가 의심될 때도 FGF23 측정이 적응이 된다.','bio'],
+'D6':['SUG','25(OH)D &lt;30 nmol/L(&lt;12 ng/mL)에서 영양성 비타민 D 결핍 구루병이 발생한다는 강한 근거가 있으나 &gt;30 nmol/L에서도 생길 수 있다. 메타분석은 칼슘 섭취가 적절한 소아에서 약 28 nmol/L(11 ng/mL), 칼슘 섭취가 낮은 소아에서 40 nmol/L(16 ng/mL)를 최소 위험 역치로 제시했다.','bio'],
+'D7':['STR','구루병이 의심되는 소아의 초기 평가에는 가장 빠르게 성장하는 골격 부위(연령에 따라 다름)의 방사선 촬영이 포함되어야 한다. 대부분 손목과 무릎에서 징후가 뚜렷하며, 원위 척골이 조기 변화를 보이기에 가장 좋은 부위다. 신생아·미숙아와 생후 1년 이내 영아에서는 흉부 촬영이 유용할 수 있다.','rad'],
+'D8':['SUG','방사선 검사로 Rickets Severity Score(RSS, 0–10점)를 이용해 구루병 중증도를 평가할 수 있고, RGI-C는 RSS를 보완한다. 방사선 검사는 진단 확인과 치료 효과 평가(치료 3–4주 내 임시 석회화대 출현)에 유용하지만 병인을 알려주지는 않는다.','rad'],
+'D9':['SUG','Figure 3 알고리즘은 칼슘, 인산, PTH로 저칼슘혈증성과 저인산혈증성 구루병을 먼저 구별한다. 저칼슘혈증성은 25(OH)D와 1,25(OH)₂D로, 저인산혈증성은 TmP/GFR 다음 FGF23으로 감별한다.','alg'],
+'D10':['STR','임상·생화학·방사선 소견이 유전적 원인을 시사하면 특이 분자유전 검사가 필요하다. 가족력이 없어도 유전성 구루병이 의심되면 유전 분석이 특히 중요하다(Figure 3 * 표시 질환은 유전 검사로 확진).','gen'],
+'D11':['STR','XLH가 의심되면 PHEX 유전자 분석을 시행해야 하며, 병적 변이가 모든 엑손과 비암호화 영역에서 발견되고 삽입·결실도 많아 이질성이 크다는 점을 염두에 둔다.','gen'],
+'D12':['SUG','HPP는 표현형이 다양해 진단이 어렵고, 특히 신경·치아 침범 때문에 다학제 진단 접근이 필요하다.','clin'],
+
+/* 영양성 비타민 D 결핍 */
+'N1':['SUG','비타민 D는 매일 투여하거나 단회 고용량(bolus)으로 투여할 수 있으며 권장 용량은 Table 4와 같다. 순응도가 낮으면 100,000 IU를 20일마다 3–4회 투여하는 방법이 효과적일 수 있다.','nvd'],
+'N2':['STR','최대 600,000 IU까지 단일일 고용량(stoss) 요법이 제안되었으나 고칼슘혈증이 생길 수 있으므로 고용량 반복 투여는 권고하지 않는다.','nvd'],
+'N3':['STR','매일 비타민 D 치료는 3–4개월 지속해야 하지만 기간은 개별화한다. 방사선 회복이 불완전하거나 생화학이 정상화되지 않으면 치료를 연장해야 한다.','nvd'],
+'N4':['SUG','치료 순응도가 낮아 치유가 실패·지연되면 단회 근육주사 stoss 요법(3개월 이상 50,000 IU부터 12세 초과 300,000 IU까지)을 권고할 수 있다.','nvd'],
+'N5':['SUG','매일 투여 시 비타민 D3와 D2의 25(OH)D 상승 효과는 비슷하지만 bolus 투여에서는 D3가 더 효과적이다. 비타민 D 대사체(활성형)는 비타민 D 상태를 회복시키지 못하고 고칼슘혈증 위험이 있으므로 영양성 비타민 D 결핍 구루병 치료에 적응이 없다.','nvd'],
+'N6':['STR','강직, 경련, 확장성 심근병증 같은 증상성 저칼슘혈증 환자는 혈청 칼슘이 정상화될 때까지 정맥 글루콘산칼슘을 투여해야 하며, 정상화 후 경구 칼슘으로 전환한다(Table 5).','nvd'],
+'N7':['STR','연령·체중과 무관하게 비타민 D와 함께 식이 또는 보충제로 하루 500 mg의 경구 칼슘을 일상적으로 보충해야 한다. 또는 원소 칼슘 30–75 mg/kg/일을 3회 분할로 2–4주 투여할 수 있다. 칼슘 보충은 PTH 정상화에 따른 저칼슘혈증(“hungry-bone” 증후군), 특히 stoss 요법 후를 막는 데 중요하다.','nvd'],
+'N8':['SUG','혈청 칼슘·인산은 보통 3주 내(빠르면 6–10일) 정상화되고, 25(OH)D는 4–6주에 정상에 도달하며, ALP는 3–6개월까지 높을 수 있다. ALP는 골격 병변 회복과 관련되므로 치료 효과를 감시하는 신뢰할 만하고 경제적인 표지자다.','nvd'],
+'N9':['STR','영양성 비타민 D 결핍 구루병의 재발을 막기 위해 비타민 D 보충을 지속해야 한다. 구루병 해소 후 생후 12개월 전에는 적어도 400 IU/일, 이후 600 IU/일을 권고한다.','nvd'],
+'N10':['STR','치료 3개월 후 임상·생화학·방사선 평가로 반응을 확인해야 하며, 일부 환자는 추가 치료가 필요하다. 하루 칼슘 섭취는 식이 또는 보충제로 적어도 500 mg을 보장해야 한다(Table 4 각주).','nvd'],
+
+/* 칼슘 결핍 */
+'C1':['STR','영양성 칼슘 결핍 구루병 소아에서는 치유가 완료될 때까지 원소 칼슘 1000 mg/일(2–3회 분할)을 권고하며, 일부는 24주 이상 걸린다. 비타민 D 보충(4주마다 50,000 IU)을 더하면 치유 속도가 개선될 수 있다.','nca'],
+'C2':['SUG','성장판의 방사선 치유는 보통 칼슘 투여 3–6개월 후 나타나지만, 임상 징후는 생화학·방사선 이상보다 해소에 더 오래 걸린다.','nca'],
+
+/* 인산 결핍·미숙아 */
+'P1':['SUG','식이 인산 결핍의 관리는 주로 적절한 식이 보충이며, 광범위 위장관 수술, 단장증후군, 중증 위장관 질환으로 인산 흡수가 손상된 환자에게는 경구 또는 비경구 인산염을 투여한다.','nph'],
+'P2':['SUG','미숙아 대사성 골질환에서 PTH 측정이 치료에 핵심이다. PTH는 칼슘 결핍에서 증가하고 인산 결핍에서는 정상 또는 감소한다. 극소저출생체중아에는 보통 모유강화제와 미숙아 분유가 적응이 된다.','nph'],
+'P3':['SUG','혈청 인산 &lt;4 mg/dL(1 mmol/L)이면 인산 보충을 고려하고, &lt;5.5 mg/dL(1.3 mmol/L)이어도 특히 ALP 증가가 동반되면 골 무기질화 개선과 고칼슘뇨 예방을 위해 적응이 될 수 있다.','nph'],
+'P4':['STR','경장 영양의 권장 칼슘·인산 섭취는 각각 150–220, 75–140 mg/kg/일이며 칼슘:인산 비 1.5:1–1.7:1(mg 기준)을 제안한다. 정맥영양에서는 칼슘 75–100, 인산 50–80 mg/kg/일을 권고한다.','nph'],
+'P5':['STR','모유강화제나 미숙아 분유를 견디지 못하는 영아는 원소 칼슘 20 mg/kg/일, 원소 인 10–20 mg/kg/일로 시작해 내약성에 따라 최대 칼슘 70–80, 인 40–50 mg/kg/일까지 늘린다. 인산·칼슘 대 인산 비 조정을 위해 PTH와 ALP를 1–2주마다 측정해야 한다.','nph'],
+'P6':['SUG','미숙아 비타민 D 보충은 지역마다 다르다: ESPGHAN은 800–1000 IU/일, 미국은 1500 g 미만 200 IU/일, 1500 g 초과 400 IU/일을 권고한다. 칼슘 섭취가 낮으면 높은 비타민 D(ESPGHAN), 칼슘 섭취가 높으면 낮은 비타민 D(미국)가 적합할 수 있다.','nph'],
+
+/* 비타민 D 의존성 */
+'V1':['STR','VDDR1A는 평생 활성형 비타민 D와 칼슘 보충으로 치료해야 한다. 칼시트리올은 반감기가 짧아 하루 2회 생리적 용량을 투여하며, 알파칼시돌은 반감기가 길어 하루 1회 투여할 수 있고 영아에게는 점적 제형이 유용하다. 용량은 혈청 칼슘에 따라 조정한다.','v1a'],
+'V2':['SUG','VDDR1A 치료 첫 몇 달에는 비무기질화 골격의 칼슘 요구량이 커서 유지기보다 2–5배 높은 활성형 비타민 D 용량이 필요할 수 있다. 칼시트리올·알파칼시돌에 대한 반응은 빠르며 7–9주 내 구루병 치유와 생화학 정상화가 나타난다.','v1a'],
+'V3':['STR','VDDR1A 유지 치료 중 혈청 칼슘·인산·PTH와 요 칼슘 배설을 적어도 4–6개월마다 정기 측정해야 하며, 첫 몇 주 저칼슘혈증이 지속되면 간격을 줄인다. 혈청 칼슘은 PTH를 정상 상한 아래로 유지하도록 정상 하한 범위로, 요 칼슘은 연령·체중별 정상 한계 아래로 유지해야 한다.','v1a'],
+'V4':['STR','신석회화 감시를 위해 신장 초음파를 1–2년마다(고칼슘뇨가 있으면 더 자주) 시행해야 한다. 저자들의 경험으로는 경미한 신결석의 조기 진단을 위해 6–12개월마다 시행하는 것이 유용할 수 있다.','v1a'],
+'V5':['SUG','VDDR1B의 최선의 치료는 간 전환 장애로 비타민 D 효과가 없거나 미미하므로 칼시페디올과 칼슘 보충의 병용이다. 칼시트리올이나 알파칼시돌도 혈청 칼슘과 PTH 개선에 효과적일 수 있다(Table 6).','v1b'],
+'V6':['SUG','VDDR2A의 치료 성공은 VDR 변이에 따라 다르다. 탈모가 있는 환자는 반응이 낮아 약 절반은 최고 용량에도 저항성이며 나머지 절반은 탈모 없는 환자보다 10배 높은 용량이 필요하다. 반응이 매우 다양하므로 비타민 D 대사체와 칼슘 용량을 개별화해야 한다.','v2'],
+'V7':['SUG','일부 중증 VDDR2 환자는 정상 칼슘혈증을 위해 수개월간 장기 정맥 칼슘 투여(12시간, 흔히 야간)가 필요하다. 사춘기 이후에는 장 칼슘 흡수가 증가해 적은 칼슘이나 칼슘 없이도 정상 칼슘혈증을 유지하는 환자가 있다. VDDR2B 관리는 VDDR2A와 비슷하다.','v2'],
+'V8':['STR','VDDR3는 치료 자료가 적다. 비타민 D 또는 대사체에 반응할 수 있지만 영양성 결핍보다 더 높은 용량이 필요하며, 임상·생화학 관해를 위해 평생 고용량 비타민 D 치료가 필요하다(Table 6).','v3'],
+
+/* FGF23 의존성: 고전 치료 */
+'X1':['SUG','XLH, ADHR, ARHR1, ARHR2를 포함한 FGF23 의존성 저인산혈증성 구루병의 고전 치료는 경구 무기 인산염과 활성형 비타민 D(칼시트리올 또는 알파칼시돌)의 병용이다. 시작·유지 용량은 Table 7과 같다.','conv'],
+'X2':['STR','인산염과 활성형 비타민 D는 점진적으로 증량하고, 질병 중증도와 내약성에 맞춰 개인화하며, 두 약은 균형 잡힌 용량으로 반드시 병용하고 주의 깊게 감시해야 한다(Table 7 각주).','conv'],
+'X3':['SUG','영아기 초기에 시작한 고전 치료는 골격 이상을 완전히 정상화하지 못해도 결과를 개선한다. 그러나 대부분 치유가 느리고 골격 변형이 남으며, 1세까지 키 성장이 감소하고 이후에도 인구 기준 아래에 머문다.','conv'],
+'X4':['STR','FGF23 의존성 저인산혈증성 구루병에서 고전 치료의 이득은 과잉 치료 위험과 균형을 이뤄야 한다. 설사, 혈변, 복통으로 순응도가 낮은 경우(특히 영아) 인산염 용량을 줄이면 개선될 수 있다. 고칼슘혈증, 2차·3차 부갑상선기능항진증, 고칼슘뇨, 신석회화, 신결석이 합병증으로 보고되었다.','conv'],
+'X5':['TAB','고전 치료 중인 XLH 추적(Table 8): 임상·신체계측 진찰 5세 미만 1–3개월, 5세 초과 3–6개월마다 · 혈청 칼슘·인산·크레아티닌·ALP·PTH와 요 칼슘·인산·크레아티닌 3–6개월마다 · 치과 6–12개월, 정형외과 12개월마다, 이비인후과 8세 초과 · 손목·무릎·기립 하지 촬영 1–2년마다 · 신장 초음파 매년(신석회화 시 6개월마다) · 삶의 질 매년 · 두개골유합·두개 형태 이상·두통·신경·시각 증상 시 뇌 MRI.','conv'],
+'X6':['STR','ADHR에서는 철 결핍이 표현형 중증도에 영향을 주고 철 보충이 FGF23과 인산을 개선하므로, 고전 치료의 감량·중단은 경구 철(원소 철 3–6 mg/kg, 최대 200 mg/일, 3개월)로 철 상태를 최적화한 뒤에만 시도해야 한다. 철 보충 필요 평가를 위해 페리틴 측정을 제안한다.','adhr'],
+'X7':['STR','ARHR2(ENPP1 결핍)는 동맥·심장·관절 석회화나 전신 동맥 석회화를 동반할 수 있으므로 경동맥 내중막 두께와 심장 초음파 평가를 강력히 권고한다. 최근 연구에서는 고전 치료가 석회화를 늘리지 않았다. 양대립 ENPP1 변이 환자는 정상칼슘혈증 원발성 부갑상선기능항진증이 생겨 부분 부갑상선절제술이 필요할 수 있다.','adhr'],
+
+/* 부로수맙 */
+'B1':['TAB','지침과 급여 기준이 허용하면 부로수맙은 1세 이상(미국 등 일부 국가는 6개월 이상)에서 가능한 한 빨리, 특히 중증 구루병(RSS ≥2)에서 시작해야 한다. 고전 치료로 시작한 경우 반응이 불충분하면 즉시 부로수맙으로 전환해야 한다.','buro'],
+'B2':['TAB','고전 치료는 부로수맙 시작 적어도 7–10일 전에 중단해야 한다.','buro'],
+'B3':['TAB','부로수맙 시작 용량은 0.8 mg/kg 피하주사 2주마다이며, 연령별 정상 범위 하단의 공복 혈청 인산을 목표로 0.4 mg/kg씩 최대 2.0 mg/kg(최대 90 mg)까지 증량한다.','buro'],
+'B4':['TAB','증량 기간에는 효과 확인과 고인산혈증 방지를 위해 주사 사이, 이상적으로는 마지막 주사 7–11일 후 공복 혈청 인산을 측정한다. 안정 용량 3–4개월 후 정상 상태에 도달하면 저용량 투여를 찾기 위해 주사 직전에 측정한다.','buro'],
+'B5':['TAB','공복 혈청 인산이 연령별 정상 상한을 넘으면 부로수맙을 중단한다(SmPC: 다음 투여를 보류하고 2주 후 재평가, 인산이 정상 범위 아래가 되면 이전 용량의 약 절반으로 4주마다 재개, 용량 변경 후 2주에 재평가).','buro'],
+'B6':['TAB','ALP의 지속적 감소, 구루병 개선, 임상 반응이 있으면 연령·성별 정상 하한 미만의 혈청 인산도 허용할 수 있다. ALP가 아직 정상 상한을 넘더라도 점진적으로 감소하면 충분한 반응일 수 있다.','buro'],
+'B7':['STR','2차 부갑상선기능항진증과 그에 따른 인산뇨를 예방하고 부로수맙에 의한 1,25(OH)₂D 합성을 돕기 위해 혈청 25(OH)D를 &gt;50 nmol/L(20 ng/mL)로 유지할 것을 권고한다.','buro'],
+'B8':['SUG','부로수맙 치료 중 1,25(OH)₂D 측정은 논란이 있다. 한 합의 성명은 증가 정도 평가를 위해 감시를 권고했으나 용량 조정에서의 역할은 입증되지 않았고, 다른 저자들은 비용만 늘고 이득이 불분명해 권고하지 않는다.','buro'],
+'B9':['TAB','부로수맙을 시작한 환자는 성장판이 닫힐 때까지 청소년기 내내 치료를 지속해야 한다. 소아(2주마다)에서 성인 용량(4주마다)으로 바꾸는 시점은 성장판 폐쇄 같은 생리적 연령 지표가 더 적절할 것이다. 이행기에는 성인 진료팀과 다학제 평가를 시행해 성인기 부로수맙 추적을 고려해야 한다.','buro'],
+'B10':['TAB','부로수맙 치료 중인 XLH 추적(Table 10): 공복 혈청 칼슘·인산·크레아티닌·ALP·PTH와 요 칼슘·인산·크레아티닌은 첫 3개월 4주마다, 이후 적어도 3개월마다 · 25(OH)D와 1,25(OH)₂D 3–4개월마다(특히 겨울) · 신장 초음파 1–2년마다(고전 치료 중 신석회화가 있었으면 매년) · 삶의 질 3–6개월마다 1–2년까지 · 이상반응의 지속적 수집·보고. 임상·치과·정형외과·이비인후과·영상 일정은 Table 8과 같다.','buro'],
+'B11':['SUG','부로수맙은 내약성이 좋고 안전하며, 소아에서 가장 흔한 이상반응은 일시적 주사 부위 반응, 두통, 사지 통증이다. 고령 환자의 신체 능력과 삶의 질 변화에는 성인 XLH와 같은 도구(6분 보행, 악력, Brief Pain·Fatigue Inventory, WOMAC)가 필요할 수 있다.','buro'],
+'B12':['STR','성장호르몬(GH)을 고전 치료나 부로수맙과 일상적으로 병용하는 것은 권고하지 않는다. 고전 치료와 병용하면 단기 키 성장이 늘 수 있으나 최종 키 효과는 결론적이지 않으며, 부로수맙 추가 시 GH의 역할을 볼 장기 연구가 필요하다.','gh'],
+
+/* 기타 FGF23 의존성·비의존성 */
+'O1':['SUG','섬유성 이형성증과 비치명적 Raine 증후군에 동반된 저인산혈증성 구루병은 경구 무기 인산염과 활성형 비타민 D의 고전 치료로 치료할 수 있다.','oth23'],
+'O2':['STR','TIO는 FGF23 과잉 생산 종양을 제거하면 완치될 수 있으며, 혈중 FGF23 측정이 절제 후 감소나 재발 감시에 유용하다. 절제가 불가능하거나 종양을 찾지 못한 경우, 수술 대기 중에는 XLH와 비슷한 고전 치료를 시행해야 한다.','oth23'],
+'O3':['SUG','부로수맙은 ARHR1 성인, 섬유성 이형성증 소아, 피부골격 저인산혈증 증후군 소아 증례에서 인산 정상화와 골격 개선을 보여 유망한 치료일 수 있다.','oth23'],
+'O4':['STR','HHRH는 경구 무기 인산 단독 요법이 일반적이며, 1,25(OH)₂D가 이미 높으므로 활성형 비타민 D는 금기다. 인산 치료는 1,25(OH)₂D 감소, 장 칼슘 흡수·고칼슘뇨 감소, 골 무기질화 개선을 목표로 한다.','indep'],
+'O5':['SUG','HHRH의 고칼슘뇨 감소에 구연산칼륨, 염분 제한, 수분 과부하가 유용할 수 있다. 플루코나졸(100 mg 1일 1회)은 1α-수산화효소를 억제해 1,25(OH)₂D와 고칼슘뇨를 거의 정상으로 낮추는 방법으로 제안되었고, GH 병용은 신 인산 누출을 개선하고 키 성장을 가속했다. 다만 플루코나졸과 GH의 장기 효과·안전성은 추가 연구가 필요하다.','indep'],
+'O6':['SUG','세뇨관병증, 판코니 증후군, Dent 병, 기타 전신 질환에 따른 저인산혈증성 구루병에는 각 질환의 권고 치료와 함께 인산 보충과 활성형 비타민 D를 제안한다.','indep'],
+
+/* 결론 */
+'K1':['STR','구루병은 영아와 소아의 보건 우선순위로 간주해야 한다. 조기 진단과 적절한 치료가 이후 심각한 결과를 피하는 1차 목표이며, 영양성과 유전성을 구별하는 것이 올바른 치료의 중요한 단계다. 각 형태는 고유한 진단 경로, 별개의 치료, 다학제 관리를 필요로 한다.','concl']
+};
+
+const EXP = {
+intro:{t:'초록·서론·방법', r:'1–2쪽', p:[
+ '구루병은 칼슘·인산 항상성 변화로 성장하는 뼈의 무기질화가 손상되어 생긴다. 임상 징후는 환자의 연령, 질병 기간, 기저 질환에 따라 다르며, 가장 흔한 징후는 손목·무릎·발목 종창, 다리 휨(X자 다리, O자 다리 또는 둘 다), 보행 불능이다. 그러나 임상 특징만으로는 여러 형태를 구별할 수 없다.',
+ '구루병은 후천성과 유전성 질환의 이질적 집합이다. 영양성 구루병은 비타민 D, 식이 칼슘 또는 인산 결핍 때문이며, 비타민 D 대사·작용, FGF23의 생산·분해, 신장 인산 조절, 골 무기질화를 담당하는 유전자 변이가 유전성 구루병을 일으킨다. 영양성 구루병이 전 세계적으로 가장 흔하지만 분자유전 기법 발달로 유전성 진단이 늘었다.',
+ '이 입장 성명은 이탈리아 소아내분비·당뇨병학회(SIEDP) 골·무기질대사 그룹이 문헌과 전문가 경험을 바탕으로 진단, 치료, 관리의 실용 지침을 제공하려는 것이다. 세 저자가 Medline/PubMed에서 관련 연구를 독립적으로 찾고 그룹 토론으로 절차를 표준화했다.',
+ '권고의 강도는 등급화하지 않았으나 본문 정보의 상당 부분은 등급화 방법을 쓴 연구에서 얻었다. 문헌 고찰이 목적이 아니라 조기 진단을 위한 올바른 접근과 진단 알고리즘, 최근 지침에 비춘 치료 접근, 특히 XLH의 특정 치료를 제시하는 것이 목적이다.'
+]},
+clsn:{t:'구루병의 분류', r:'2–4쪽', p:[
+ '이 문서는 주된 병인에 따라 구루병을 영양성, 유전성, 비유전성 저인산혈증성, 기타의 네 범주로 나눈다(Figure 1).',
+ '#영양성 구루병',
+ '개발도상국에서 가장 흔하고 서구에서는 주로 아프리카·동유럽 출신 이민 소아에서 진단된다. 대개 자외선 노출 부족에 따른 비타민 D 결핍 및/또는 식이 칼슘 부족 또는 둘 다 때문이다. 유제품 섭취가 적은 지역에서는 영아기 이후 소아 영양성 구루병의 주 원인이 칼슘 결핍이다. 인산 결핍은 드물지만 극도의 기아, 성분·저알레르기 분유나 정맥영양, 위장관 수술·단장증후군, 인산 결합제 과용, CKD의 과도한 인산 제한에서 생길 수 있고, 인산 보충 없이 모유 수유하는 극소저출생체중아는 위험이 높다.',
+ '#유전성 구루병',
+ '인산 대사 장애(저인산혈증성)와 비타민 D 대사 장애(비타민 D 의존성)로 나뉜다. 저인산혈증성은 FGF23 과잉 생산과 관련된 FGF23 의존성과, 혈중 FGF23이 정상인 1차 신장 결함인 FGF23 비의존성으로 나뉜다.',
+ 'XLH는 가장 흔한 유전성 구루병(유병률 1:20,000–60,000)으로 FGF23 발현을 조절하는 PHEX 변이 때문이다. FGF23 과잉은 세뇨관 인산 재흡수와 1α-수산화효소를 억제하고 24-수산화효소를 자극하여 저인산혈증과 낮거나 부적절하게 정상인 1,25(OH)₂D를 보인다. FGF23, DMP1, ENPP1 변이는 ADHR, ARHR1, ARHR2를 일으키며 합쳐서 20% 미만이다. 기타 드문 FGF23 의존성 형태로 Raine 증후군(FAM20C), 다골성 섬유성 이형성증(PFD, GNAS 기능획득), KLOTHO 프로모터 전위에 따른 저인산혈증성 구루병·부갑상선기능항진증, 골이형성증(FGFR1), opsismodysplasia, Jansen형 골간단 연골이형성증(PTH1R)이 있다.',
+ 'FGF23 비의존성으로 SLC34A3(NaPi2c) 변이의 HHRH, SLC34A1(NaPi2a)의 NPHLOP1, NHERF1 변이가 있으며, 판코니 증후군이나 원위 신세뇨관산증에서도 저인산혈증성 구루병이 생길 수 있다.',
+ '비타민 D 의존성 구루병: VDDR1A는 신장 1α-수산화효소(CYP27B1), VDDR1B는 간 25-수산화효소(CYP2R1) 변이, VDDR2는 VDR 변이(2A) 또는 VDR–DNA 상호작용을 방해하는 핵 리보핵단백(2B), VDDR3는 비타민 D 분해효소 CYP3A4의 기능획득 변이에 따른 1,25(OH)₂D 불활성화 증가 때문이다. 가장 뚜렷한 생화학 소견은 2차 부갑상선기능항진증을 동반한 중증 저칼슘혈증이다.',
+ '#비유전성 저인산혈증성 구루병',
+ 'FGF23 의존성: TIO는 서서히 자라는 양성 중간엽 종양이 FGF23 등 인산뇨 인자를 과잉 생산하며 소아에서는 드물다. 경구 철이 효과가 없거나 금기여서 정맥 철(특히 카르복시말토오스철, 폴리말토오스철)을 투여하면 FGF23 절단이 급성으로 억제되어 intact FGF23 일시 상승과 저인산혈증, 부적절하게 낮은 1,25(OH)₂D가 나타난다. FGF23 비의존성: 발프로산, 시스플라틴, 이포스파마이드, 젠타마이신, 인산 결합제 과용, 중금속 등 독소, 항레트로바이러스제·항암제에 따른 의인성 판코니 증후군.',
+ '#기타 원인',
+ '간부전·신부전이 비타민 D 대사 장애의 주원인이며, 낭성 섬유증, 염증성 장질환, 셀리악병, 광범위 장절제 같은 흡수장애가 비타민 D 흡수를 방해한다. 이들은 다양한 정도의 골밀도 감소를 동반하며 DXA로 평가할 수 있다. 성장판 무기질화의 직접 장애로 전신 동맥 석회화에서 장기간 에티드로네이트 투여, 영아형 저인산효소증(HPP; 무기질화가 불량한 흉곽은 호흡부전 동반 가능), 알루미늄 함유 제산제 장기 사용에 따른 저칼슘뇨 저인산혈증성 구루병, 칼슘 결핍 인도 소아의 풍토성 불소 과다 노출(&gt;2.5 mg/일)이 있다.'
+]},
+clin:{t:'임상 접근', r:'4–5쪽', p:[
+ '병력, 신체 진찰, 생화학 결과가 진단의 주된 근거이며 방사선 검사로 확인해야 한다. 비타민 D 보충력, 구루병 가족, 식이 칼슘 섭취, 임신·출생 정보를 정확히 조사해야 한다.',
+ '영아에서는 두개골 연화(craniotabes; 누르면 안쪽으로 함몰되었다가 떼면 튀어나옴)가 첫 징후일 수 있고, 대천문 폐쇄 지연과 전두부 돌출도 초기 징후다. 나이 든 소아에서는 손목·무릎·발목 종창, X자 다리(외반슬)나 O자 다리(내반슬), 보행 불능이 주된 특징이다. 다른 골격 징후로 구루병 염주, 부드러운 흉곽 변형, 골통이 있다.',
+ '비골성 특징으로 성장 부진, 운동 발달 지연, 저칼슘혈증에 따른 경련, 근긴장 저하, 확장성 심근병증, 빈혈, 기면, 과민, 법랑질 이상을 동반한 치아 맹출 지연, 호흡기 감염 소인이 있다. HPP는 표현형이 다양하며 신경·치아 침범 때문에 다학제 진단이 필요하다.',
+ '신체 진찰로는 활동성과 회복 중인 구루병, 여러 형태를 구별할 수 없으며, 임상적으로 골 이상이 보이면 이미 질병이 확립된 상태다. 임상 징후에만 의존하면 유병률을 과대평가하고 불필요하게 치료할 수 있다. 주요 골격 징후는 Table 1에 요약했다.'
+]},
+bio:{t:'생화학 특징', r:'5–7쪽', p:[
+ '혈청 칼슘, 인산, ALP, PTH, 비타민 D 대사체가 진단에 핵심이다. ALP 증가는 HPP를 제외한 모든 형태에서 나타나며, 인산과 ALP는 연령별 참고치로 해석해야 한다.',
+ '저칼슘혈증은 중증 영양성 비타민 D 결핍 구루병과 비타민 D 의존성 구루병의 주 소견이다. 정상 칼슘을 동반한 저인산혈증은 저인산혈증성 구루병의 특이 소견이지만, 중증 영양성 비타민 D 결핍에서도 2차 부갑상선기능항진증으로 저인산혈증(대개 저칼슘혈증 동반)이 생길 수 있다. 저인산혈증은 성장판 비대세포의 세포자멸사를 방해하는 모든 구루병의 공통 분모다.',
+ '세뇨관 인산 재흡수는 TmP/GFR로 평가한다. 영양성 비타민 D 결핍과 비타민 D 의존성에서 TmP/GFR 감소는 2차 부갑상선기능항진증을, 저인산혈증성 구루병에서는 FGF23 과잉 생산 또는 분해 감소를 반영한다. 고칼슘뇨는 HHRH의 중요한 진단 기준이다. PTH는 저칼슘혈증성 형태에서 뚜렷이 증가하고 저인산혈증성에서는 정상 또는 약간 증가하며, HHRH에서는 정상 하한 또는 감소한다.',
+ '영양성 비타민 D 결핍 구루병은 25(OH)D &lt;30 nmol/L(&lt;12 ng/mL)에서 발생한다는 강한 근거가 있으나 그 이상에서도 생길 수 있고, 비타민 D 결핍 소아 대부분은 무증상이며 칼슘 섭취가 정상이면 골 건전성이 유지될 수 있다. 30–34 nmol/L(12–13.6 ng/mL)가 임계치일 수 있다는 근거가 있고, 메타분석은 칼슘 섭취 적절 시 약 28 nmol/L(11 ng/mL), 칼슘 섭취 부족 시 40 nmol/L(16 ng/mL)를 최소 위험 역치로 제시했다. 25(OH)D는 결핍의 중증도·기간, 칼슘 섭취·생체이용률, 골 성장 속도, 유전 다형성의 영향을 받는다.',
+ '25(OH)D는 VDDR1B와 VDDR3에서 감소하고, VDDR1A와 VDDR2A·2B에서는 정상 또는 증가한다. 1,25(OH)₂D는 영양성 비타민 D 결핍에서 초기에는 증가하고 후기에는 기질 고갈로 감소하므로 측정이 유용하지 않다. 저인산혈증성에서는 감소할 수 있으나 대부분 저인산혈증 대비 부적절하게 정상이며, VDDR2A·2B, 영양성 칼슘 결핍, X연관 열성 저인산혈증성 구루병, HHRH, NPHLOP1에서는 증가한다.',
+ 'FGF23은 FGF23 의존성에서 증가하므로 비의존성과 구별할 수 있다. 저인산혈증에 동반된 intact FGF23 &gt;40 pg/mL는 소아 XLH 조기 진단의 핵심 표지자일 수 있고, TIO 의심 시에도 측정한다. FGF23은 25(OH)D가 겹치는 경우 영양성 비타민 D 결핍과 저인산혈증성을 구별하는 가장 중요한 표지자이며, 칼슘 결핍 구루병에서도 증가한다. 고칼슘혈증·고인산혈증과 ALP 감소는 감별(HPP)에 유용하다. 주요 형태의 생화학 소견은 Table 2와 같다.'
+]},
+rad:{t:'방사선 평가', r:'6–8쪽', p:[
+ '단순 촬영이 1차 영상 도구이며 가장 이른 징후는 골감소와 장골의 피질 얇아짐이다. 초기 평가는 가장 빠르게 자라는 부위(연령에 따라 다름)를 촬영한다. 신생아, 특히 미숙아와 생후 1년 이내 영아에서는 흉부 촬영이 유용하며, 근위 상완골과 전방 늑골 끝(구루병 염주)의 골간단-골단판 무기질화 부족을 볼 수 있다.',
+ '대부분의 소아에서 징후는 성장이 빠른 손목과 무릎에서 뚜렷하며, 특히 어린 소아에서 원위 척골이 조기 변화를 보이기에 가장 좋다. 고전적 소견은 모든 골단판의 확장과 불규칙, 골간단의 확장·벌어짐·컵 모양·해어짐이며, 거친 골소주 양상이 보일 수 있다. 골단 골화 중심은 흐려지거나 겉보기만 남는다. 두개 변형과 다리 휨은 비무기질화 유골에 따른 골연화증의 전형 징후다.',
+ '병적 골절(늑골 포함)은 극미숙아를 제외하면 드물고 교정 연령 6개월 이후에는 매우 드물며, 대개 중증 구루병에서 나타난다. 장골 골절은 칼슘결핍성·인결핍성(XLH 제외) 구루병에서 골감소와 전형적 골간단 병변을 동반해 가끔 생긴다.',
+ 'RSS는 손목·무릎·발목의 골간단 해어짐, 오목함, 침범된 성장판 비율로 정하는 10점 척도(10 최중증, 0 이상 없음)이며, 영양성 비타민 D 결핍과 XLH의 치료 반응을 평가할 수 있고 ALP와 상관한다. RGI-C는 두 촬영 사진을 나란히 비교해 변화 점수를 매기는 보완 평가로, HPP에서 검증되었고 XLH에서도 신뢰도·타당도·민감도가 있다.',
+ '방사선 검사는 진단 확인에 유용하지만 영양성, 저인산혈증성, 비타민 D 의존성의 방사선 징후가 비슷하므로 병인을 알려주지 않는다(Figure 2). 영양성 비타민 D 결핍에서 치료 효과를 보는 데 유용하며, 보통 치료 3–4주 내 골간단 끝에 임시 석회화대가 나타난다.'
+]},
+alg:{t:'진단 알고리즘', r:'8–9쪽', p:[
+ 'Figure 3은 임상 징후와 전형적 방사선 병변으로 확진되고 ALP가 증가한 구루병 환자의 평가 알고리즘으로, 저칼슘혈증과 저인산혈증의 병인에 기반한다. 혈청 칼슘, 인산, PTH가 저칼슘혈증성과 저인산혈증성을 구별하는 핵심 지표다.',
+ '저칼슘혈증성은 대개 저칼슘혈증, 낮거나 정상인 인산, PTH 증가를 보이고, 대부분의 저인산혈증성은 정상 칼슘을 동반한 저인산혈증과 정상 PTH를 보인다.',
+ '저칼슘혈증성에서 비타민 D 대사체가 병인을 시사한다. 25(OH)D와 1,25(OH)₂D가 모두 낮으면 VDDR1B 또는 VDDR3, 25(OH)D 정상·증가와 낮은 1,25(OH)₂D는 VDDR1A, 25(OH)D와 1,25(OH)₂D가 모두 정상·증가하면 영양성 칼슘 결핍 또는 VDDR2를 시사한다.',
+ 'FGF23은 FGF23 매개와 비매개 저인산혈증을 구별한다. 높은 FGF23은 유전성·후천성(TIO 등) 형태에서 보이고, 정상 또는 낮은 FGF23을 동반한 저인산혈증은 판코니 증후군이나 HHRH를 시사하며 HHRH는 대개 고칼슘뇨를 보인다. TmP/GFR이 높은 저인산혈증은 영양성 인산 결핍을 시사한다.'
+]},
+gen:{t:'유전학', r:'8–9쪽', p:[
+ '임상·생화학·방사선 근거가 유전적 원인을 시사하면 특이 분자유전 검사가 필요하다. Table 3에 유전성 구루병·저인산혈증 관련 유전자를 요약했다.',
+ 'XLH 의심 시 PHEX 분석을 시행하되 병적 변이의 이질성이 크다는 점을 고려해야 한다. 변이는 모든 엑손과 비암호화 영역에서 발견되며 삽입과 결실도 많다.'
+]},
+nvd:{t:'영양성 비타민 D 결핍 구루병', r:'9–10쪽', p:[
+ '비타민 D는 매일 또는 단회 bolus로 투여할 수 있으며 권장 용량은 Table 4와 같다. 순응도가 낮으면 100,000 IU를 20일마다 3–4회 투여할 수 있다. 최대 600,000 IU의 stoss 요법이 제안되었으나 고칼슘혈증 위험이 있어 고용량 반복 투여는 권고하지 않는다.',
+ '매일 치료는 3–4개월 지속하되 개별화하며, 이 기간에 보통 골격 병변이 정상화된다. 방사선 회복이 불완전하거나 생화학이 정상화되지 않으면 연장한다. 순응도 부족으로 치유가 실패·지연되면 단회 근육주사 stoss 요법(3개월 이상 50,000 IU부터 12세 초과 300,000 IU)을 권고할 수 있다.',
+ '매일 투여 시 D3와 D2의 효과는 비슷하나 bolus에서는 D3가 더 효과적이다. 비타민 D 대사체는 비타민 D 상태를 회복시키지 못하고 고칼슘혈증 위험이 있어 적응이 없다.',
+ '증상성 저칼슘혈증(강직, 경련, 확장성 심근병증)은 칼슘이 정상화될 때까지 정맥 글루콘산칼슘을 투여하고 이후 경구로 전환한다. 비타민 D와 함께 연령·체중과 무관하게 하루 500 mg의 칼슘을 식이 또는 보충제로 공급하며, 기간은 칼슘 정상화 시점에 따라 다르다. 또는 원소 칼슘 30–75 mg/kg/일을 3회 분할로 2–4주 투여할 수 있다. 칼슘 보충은 PTH 정상화 과정의 저칼슘혈증(hungry-bone 증후군), 특히 stoss 요법 후를 막는 데 중요하다(Table 5).',
+ '감시는 중증도와 반응에 따라 다르다. 칼슘·인산은 보통 3주 내(빠르면 6–10일) 정상화되고 PTH는 칼슘 정상화와 함께 정상화된다. 25(OH)D는 빠르게 올라 4–6주에 정상에 도달하고, 1,25(OH)₂D는 빠르게 올라 최대 10주까지 높게 유지된다. ALP는 점진적으로 감소하나 결핍 중증도에 따라 3–6개월 높을 수 있으며 골격 회복과 관련되어 신뢰할 만하고 경제적인 감시 표지자다.',
+ '재발 방지를 위해 보충을 지속하며, 해소 후 12개월 미만은 적어도 400 IU/일, 이후 600 IU/일을 권고한다.'
+]},
+nca:{t:'영양성 칼슘 결핍 구루병', r:'10–11쪽', p:[
+ '영양성 칼슘 결핍 구루병 소아의 무작위 대조 연구에서 원소 칼슘 500, 1000, 2000 mg/일 모두 방사선 치유를 얻었으나 1000 mg과 2000 mg이 500 mg보다 효과적이었고 2000 mg은 1000 mg과 비슷했다.',
+ '따라서 치유가 완료될 때까지 원소 칼슘 1000 mg/일(2–3회 분할)을 권고하며 일부는 24주 이상 걸린다. 비타민 D(4주마다 50,000 IU)를 더하면 치유 속도가 개선될 수 있다. 성장판의 방사선 치유는 보통 칼슘 투여 3–6개월 후에 나타나지만 임상 징후의 해소는 더 오래 걸린다.'
+]},
+nph:{t:'영양성 인산 결핍 구루병·미숙아 대사성 골질환', r:'11쪽', p:[
+ '식이 인산 결핍의 관리는 주로 적절한 식이 보충이다. 광범위 위장관 수술, 단장증후군, 중증 위장관 질환으로 인산 흡수가 손상되면 경구 또는 비경구 인산염을 투여한다.',
+ '미숙아 대사성 골질환에서는 상대적 저칼슘혈증·저인산혈증 같은 생화학 지표가 관리의 주 요인이며, PTH가 칼슘 결핍에서는 증가하고 인산 결핍에서는 정상 또는 감소하므로 PTH 측정이 핵심이다. 극소저출생체중아에는 보통 모유강화제와 미숙아 분유가 적응이 된다.',
+ '혈청 인산 &lt;4 mg/dL(1 mmol/L)이면 인산 보충을 고려하고, &lt;5.5 mg/dL(1.3 mmol/L)이어도 특히 ALP 증가가 동반되면 골 무기질화 개선과 고칼슘뇨 예방을 위해 적응이 될 수 있다. 경장 영양 권장 섭취는 칼슘 150–220, 인산 75–140 mg/kg/일이며 칼슘:인산 비 1.5:1–1.7:1(mg 기준)이 제안된다. 정맥영양에서는 칼슘 75–100, 인산 50–80 mg/kg/일을 권고한다.',
+ '모유강화제나 미숙아 분유를 견디지 못하면 원소 무기질을 경구로 추가한다. 보통 원소 칼슘 20 mg/kg/일, 원소 인 10–20 mg/kg/일로 시작해 내약성에 따라 최대 칼슘 70–80, 인 40–50 mg/kg/일까지 늘린다. 인산과 칼슘:인산 비 조정을 위해 PTH와 ALP를 1–2주마다 측정해야 한다.',
+ '미숙아 비타민 D 보충은 미국과 유럽 권고가 다르다. ESPGHAN은 800–1000 IU/일, 미국은 1500 g 미만 200 IU/일, 1500 g 초과 400 IU/일을 권고한다. 칼슘 섭취가 낮으면 ESPGHAN처럼 높은 비타민 D, 칼슘 섭취가 높으면 미국처럼 낮은 비타민 D가 유리할 수 있다.'
+]},
+v1a:{t:'VDDR1A', r:'11쪽', p:[
+ 'VDDR1A의 고전 치료는 활성형 비타민 D와 칼슘 보충의 병용이다. 칼시트리올은 반감기가 짧아 생리적 용량을 하루 2회 평생 투여해야 한다. 알파칼시돌은 반감기가 길어 하루 1회 투여할 수 있고 영아에게는 점적 제형이 유용하다. 두 약의 용량은 혈청 칼슘에 따라 조정한다.',
+ '치료 첫 몇 달은 비무기질화 골격의 칼슘 요구량이 커서 유지기보다 2–5배 높은 용량이 필요할 수 있다. 칼슘·PTH 정상화 후 유지 용량은 Table 6과 같다. 반응은 빠르며 7–9주 내 구루병 치유와 생화학 정상화가 나타난다.',
+ '칼슘·PTH를 정상으로 유지하려면 장기 순응도가 중요하다. 유지 치료 중 혈청 칼슘·인산·PTH와 요 칼슘 배설을 적어도 4–6개월마다 측정하고, 첫 몇 주 저칼슘혈증이 지속되면 간격을 줄인다. 혈청 칼슘은 PTH를 정상 상한 아래로 유지하도록 정상 하한 범위로, 요 칼슘은 연령·체중별 정상 한계 아래로 유지한다.',
+ '신석회화 감시를 위해 신장 초음파를 1–2년마다, 고칼슘뇨가 있으면 더 자주 시행한다. 저자들의 경험으로는 경미한 신결석 조기 진단에 6–12개월마다 시행하는 것이 유용할 수 있다.'
+]},
+v1b:{t:'VDDR1B', r:'11쪽', p:[
+ 'VDDR1B는 간 전환 장애로 비타민 D의 효과가 없거나 미미하므로 칼시페디올과 칼슘 보충의 병용이 최선이다(Table 6).',
+ '이형접합 환자는 비타민 D bolus에 25(OH)D가 상승하지만 대조군보다 낮고, CYP2R1 동형접합 환자는 같은 bolus에 25(OH)D가 거의 또는 전혀 오르지 않았다. 칼시트리올이나 알파칼시돌도 혈청 칼슘과 PTH 개선에 효과적일 수 있다.'
+]},
+v2:{t:'VDDR2A·VDDR2B', r:'12쪽', p:[
+ 'VDDR2A의 치료 성공은 VDR 변이에 따라 다르다. 리간드 결합 영역 변이는 다양한 정도의 1,25(OH)₂D 저항성을, DNA 결합 영역 변이는 거의 완전한 저항성과 탈모를 일으킨다. 탈모 환자는 반응이 낮으며, 약 절반은 최고 용량에도 저항성이고 나머지 절반은 탈모 없는 환자보다 10배 높은 용량이 필요하다. 반응이 매우 다양하므로 대사체와 칼슘 용량을 개별화해야 한다.',
+ 'Levine은 유지 치료가 다음에 근거한다고 제시했다: (a) 일부는 1,25(OH)₂D 생성 기질인 칼시페롤(D2, D3, 칼시페디올)에 반응하고, (b) 일부는 1α-수산화된 대사체(칼시트리올, 알파칼시돌)의 고용량에만 반응하며, (c) 소수는 칼시페롤에 반응하지 않는다. 중증 환자 일부는 정상 칼슘혈증을 위해 수개월간 장기 정맥 칼슘(12시간, 흔히 야간)이 필요했다.',
+ '사춘기 중·후에는 장 칼슘 흡수가 정상인보다도 커질 수 있어, 적은 칼슘으로 또는 칼슘 없이도 정상 칼슘혈증을 유지하는 환자가 있다. VDDR2B 관리는 VDDR2A와 비슷하다.'
+]},
+v3:{t:'VDDR3', r:'12쪽', p:[
+ 'VDDR3 치료 자료는 적다. 비타민 D 또는 대사체에 반응할 수 있으나 영양성 비타민 D 결핍보다 더 높은 용량이 필요하며, 임상·생화학 관해를 위해 평생 고용량 비타민 D 치료가 필요하다. 치료 제안은 Table 6과 같다.'
+]},
+conv:{t:'FGF23 의존성: 고전 치료', r:'12–13쪽', p:[
+ 'XLH, ADHR, ARHR1, ARHR2의 고전 치료는 경구 무기 인산염과 활성형 비타민 D(칼시트리올 또는 알파칼시돌)의 병용이며, 자료 대부분은 XLH 관리에서 나왔다. 시작·유지 용량은 Table 7과 같다.',
+ '고전 치료는 일부 환자에서만 혈청 인산을 일시적으로 올리며 TmP/GFR은 유의하게 바꾸지 못한다. 영아기 초기에 시작하면 골격 이상을 완전히 정상화하지 못해도 결과가 개선된다. 그러나 대부분 치유가 느리고 골격 변형이 남으며, 고전 치료를 받은 XLH 환자는 1세까지 키 성장이 감소하고 이후에도 인구 기준 아래였다. 이는 XLH가 생애 초기부터 골격 성장과 무기질화에 영향을 주며 고전 치료가 경과를 개선하지 못할 수 있음을 시사한다.',
+ '고전 치료는 시작 시기, 순응도, 기간에 따라 치아·치주 병변을 개선할 수 있으나 구강 표현형에 효과가 낮다는 연구도 있다.',
+ '이득은 과잉 치료 위험과 균형을 이뤄야 한다. 설사, 혈변, 복통 같은 위장관 증상으로 특히 영아에서 순응도가 낮으며 인산염 감량으로 개선될 수 있다. 합병증으로 고칼슘혈증, 2차·3차 부갑상선기능항진증, 고칼슘뇨, 신석회화, 신결석이 보고되었다. 추적 권고는 Table 8과 같다.'
+]},
+adhr:{t:'ADHR·ARHR', r:'13쪽', p:[
+ 'ADHR과 ARHR1에서 인산염과 활성형 비타민 D 용량은 중증도와 반응에 따라 다를 수 있다. ADHR에서는 철 결핍이 표현형 중증도에 영향을 주고 철 보충이 증가했던 FGF23을 정상화하며 인산을 개선했다. 따라서 고전 치료의 감량·중단은 경구 철(원소 철 3–6 mg/kg, 최대 200 mg/일, 3개월)로 철 상태를 최적화한 후에만 시도해야 하며, 철 보충 필요 평가에 페리틴 측정을 제안한다.',
+ 'ARHR2도 무기 인산염과 활성형 비타민 D가 고전 치료다. 그러나 ENPP1 결핍은 동맥·심장·관절 석회화나 전신 동맥 석회화를 동반할 수 있고 이 표현형은 고전 치료를 어렵게 하므로, 경동맥 내중막 두께와 심장 초음파 평가를 강력히 권고한다. 최근 연구에서는 고전 치료가 석회화를 늘리지 않았다. 양대립 ENPP1 변이 환자는 정상칼슘혈증 원발성 부갑상선기능항진증이 생겨 부분 부갑상선절제술이 필요할 수 있다.'
+]},
+buro:{t:'XLH의 부로수맙 치료', r:'13–15쪽', p:[
+ '부로수맙은 FGF23을 표적하는 재조합 인간 IgG1 단클론항체로 FDA, EMA, 일본 PMDA에서 XLH 치료로 승인되었다. 유럽에서는 방사선상 구루병이 있는 1세 이상 소아와 성장 중인 청소년에게 적응이 되며, 투여 기준은 조기 접근 프로그램이나 급여 기준에 따라 나라마다 다르다.',
+ '부로수맙은 혈청 인산과 TmP/GFR을 개선하고 구루병의 빠른 방사선 치유, 골관절·근육통과 신체 기능 개선과 관련되었다. RSS 2 이상인 XLH에서 고전 치료 지속보다 구루병 중증도, 키 성장, 생화학이 더 개선되었다. 주요 치료 권고는 Table 9와 같다.',
+ '혈청 인산이 용량 조정의 주 지표이며, 목표인 정상 하한 범위에 도달하거나 증량 후 더 오르지 않을 때까지 조정한다. 연령별 정상 범위 하단의 공복 인산을 목표로 하는 것이 이소성 무기질화 위험을 줄이는 가장 안전한 접근일 것이다. ALP 연속 측정도 질병 경과 평가에 중요하며, ALP가 아직 정상 상한을 넘더라도 점진적으로 감소하면 충분한 반응일 수 있다. 정상 하한 미만의 인산도 ALP의 지속적 감소와 구루병 징후 개선이 동반되면 충분한 반응으로 볼 수 있다.',
+ '일조 감소와 부로수맙 자체의 영향으로 비타민 D 상태가 떨어질 수 있어 25(OH)D의 주기적 측정을 제안하며, 2차 부갑상선기능항진증 예방과 부로수맙 매개 1,25(OH)₂D 합성을 위해 &gt;50 nmol/L(20 ng/mL) 유지를 권고한다. 1,25(OH)₂D 측정은 논란이 있다: 한 합의 성명은 감시를 권고했으나 용량 조정 역할은 입증되지 않았고, 다른 저자들은 비용만 늘고 이득이 불분명하다며 권고하지 않는다.',
+ '추적 권고는 Table 10과 같으며 임상 평가와 생화학 측정 시기는 환자별로 조정한다. 부로수맙은 내약성이 좋고 안전하며, 소아에서 가장 흔한 이상반응은 일시적 주사 부위 반응, 두통, 사지 통증이다.'
+]},
+gh:{t:'XLH의 성장호르몬 치료', r:'14–15쪽', p:[
+ '일부 연구에서 GH를 고전 치료와 병용하면 단기 키 성장이 늘었으나 최종 키 효과는 결론적이지 않다. 최근 대규모 연구는 고전 치료에서 부로수맙으로 전환한 후에도 키 예후가 나쁘면 GH를 지속하는 것이 최종 키에 유익할 수 있다고 시사했다.',
+ '그럼에도 GH를 고전 치료나 부로수맙과 일상적으로 병용하는 것은 권고하지 않으며, 부로수맙에 GH를 더하는 역할을 볼 장기 연구가 필요하다.'
+]},
+oth23:{t:'기타 FGF23 의존성 저인산혈증성 골질환', r:'15쪽', p:[
+ '저인산혈증성 구루병은 비치명적 Raine 증후군(ARHR3) 일부와 섬유성 이형성증에서 드문 합병증일 수 있다. 섬유성 이형성증/McCune-Albright 증후군의 약 50%에서 저인산혈증이 보고되며 구루병이나 골연화증과 관련된다. 섬유성 골 병변의 FGF23 생산 세포 덩어리 때문에 FGF23이 증가하며, 경구 무기 인산염과 활성형 비타민 D의 고전 치료로 치료할 수 있다.',
+ 'TIO는 FGF23 과잉 생산 종양을 제거하면 완치될 수 있고, 혈중 FGF23 측정은 절제 후 감소나 재발 감시에 유용하다. 절제가 불가능하거나 종양을 찾지 못한 경우, 수술 대기 중에는 XLH와 비슷한 고전 치료를 시행해야 한다.',
+ '부로수맙은 ARHR1 성인 2명(인산 정상화, 가성골절 치유, 피로·골통 감소), 섬유성 이형성증 소아 2명(인산 정상화, ALP 감소), 피부골격 저인산혈증 증후군 소아 증례(인산 대사, 골 교체, 골격 이상, 삶의 질 개선)에 투여되어 이 드문 질환의 유망한 치료일 수 있음을 시사했다.'
+]},
+indep:{t:'FGF23 비의존성 저인산혈증성 구루병', r:'15–16쪽', p:[
+ 'HHRH는 경구 무기 인산 단독 요법이 일반적이며, 1,25(OH)₂D가 증가해 있으므로 활성형 비타민 D는 금기다. 인산 치료는 1,25(OH)₂D 감소, 장 칼슘 흡수와 고칼슘뇨 감소, 골 무기질화 개선을 목표로 한다.',
+ '구연산칼륨, 염분 제한, 수분 과부하가 고칼슘뇨 감소에 유용할 수 있다. 플루코나졸(100 mg 1일 1회)은 1α-수산화효소를 억제해 1,25(OH)₂D와 고칼슘뇨를 거의 정상으로 낮추는 방법으로 제안되었다. GH와 경구 인산 병용은 신 인산 누출을 개선하고 키 성장을 가속했으며, GH, 플루코나졸, 염분 제한의 추가는 인산 보충과 구연산칼륨의 고전 치료 효과를 높였다. 다만 플루코나졸과 GH의 단독·병용 장기 효과와 안전성은 추가 연구가 필요하다.',
+ '세뇨관병증, 판코니 증후군, Dent 병, 기타 전신 질환에 따른 저인산혈증성 구루병에는 각 질환의 권고 치료와 함께 인산 보충과 활성형 비타민 D를 제안한다.'
+]},
+concl:{t:'결론', r:'16쪽', p:[
+ '구루병은 영아와 소아의 보건 우선순위로 간주해야 한다. 올바른 임상·생화학 접근이 구루병 의심 환자를 찾는 데 기본이며, 조기 진단과 적절한 치료가 이후 심각한 결과를 피하는 1차 목표다.',
+ '영양성과 유전성을 구별하는 것이 올바른 치료의 중요한 단계이며, 각 형태는 고유한 진단 경로, 별개의 치료, 다학제 관리가 필요하다. 이 문서는 진단 알고리즘과 드문 유전성 구루병의 적절한 치료 권고를 제시한다.'
+]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const P = (...pts)=>'M'+pts.map(p=>p.join(' ')).join(' L');
+const C4 = [10,198,386,574], CW = 176;
+const br = (x1,y1,x2,y2)=>P([x1,y1],[(x1+x2)/2,y1],[(x1+x2)/2,y2],[x2,y2]);
+
+const CHARTS = {
+cls:{tab:'분류', fig:'Figure 1', aria:'병인에 따른 구루병의 분류', w:760, h:660, nodes:[
+ {id:'k_root', x:10, y:10, w:70, h:640, label:'구루병', cls:'test'},
+ {id:'k_nut',  x:100,y:10, w:150,h:146,label:'영양성<small>가장 흔함</small>', cls:'ben fac'},
+ {id:'k_vd',   x:270,y:10, w:480,h:32, label:'비타민 D 결핍', cls:'fac'},
+ {id:'k_ca',   x:270,y:48, w:480,h:32, label:'칼슘 결핍', cls:'fac'},
+ {id:'k_cv',   x:270,y:86, w:480,h:32, label:'칼슘·비타민 D 복합 결핍', cls:'fac'},
+ {id:'k_p',    x:270,y:124,w:480,h:32, label:'인산 결핍', cls:'fac'},
+ {id:'k_her',  x:100,y:180,w:150,h:191,label:'유전성', cls:'pr fac'},
+ {id:'k_hp',   x:270,y:180,w:170,h:120,label:'저인산혈증성', cls:'pr fac'},
+ {id:'k_d23',  x:460,y:180,w:290,h:56, label:'FGF23 의존성<small>XLH · ADHR · ARHR1–2 · Raine · PFD · KLOTHO 전위 · 골이형성증 · Jansen형</small>', cls:'fac'},
+ {id:'k_i23',  x:460,y:244,w:290,h:56, label:'FGF23 비의존성<small>HHRH · NPHLOP1 · NHERF1 · 판코니 증후군 · 원위 RTA</small>', cls:'fac'},
+ {id:'k_vdd',  x:270,y:315,w:170,h:56, label:'비타민 D 의존성', cls:'mal fac'},
+ {id:'k_vddl', x:460,y:315,w:290,h:56, label:'VDDR1A · VDDR1B · VDDR2A–2B · VDDR3', cls:'fac'},
+ {id:'k_non',  x:100,y:390,w:150,h:120,label:'비유전성 저인산혈증성', cls:'tx fac'},
+ {id:'k_n23',  x:270,y:390,w:170,h:56, label:'FGF23 의존성', cls:'tx fac'},
+ {id:'k_n23l', x:460,y:390,w:290,h:56, label:'TIO · 정맥 철 유발', cls:'fac'},
+ {id:'k_ni',   x:270,y:454,w:170,h:56, label:'FGF23 비의존성', cls:'tx fac'},
+ {id:'k_nil',  x:460,y:454,w:290,h:56, label:'의인성 판코니 증후군 · 독소', cls:'fac'},
+ {id:'k_oth',  x:100,y:530,w:150,h:120,label:'기타', cls:'na fac'},
+ {id:'k_org',  x:270,y:530,w:170,h:56, label:'장기 부전', cls:'na fac'},
+ {id:'k_orgl', x:460,y:530,w:290,h:56, label:'흡수장애 · 간부전 · 신부전', cls:'fac'},
+ {id:'k_gp',   x:270,y:594,w:170,h:56, label:'성장판 직접 장애', cls:'na fac'},
+ {id:'k_gpl',  x:460,y:594,w:290,h:56, label:'HPP · 에티드로네이트 · 불소 과다 · 알루미늄 과다', cls:'fac'}
+ ], edges:[
+ [A(80,83,100,83),1],[A(80,275,100,275),1],[A(80,450,100,450),1],[A(80,590,100,590),1],
+ ...[26,64,102,140].map(y=>[br(250,83,270,y),1]),
+ [br(250,275,270,240),1],[br(250,275,270,343),1],[br(440,240,460,208),1],[br(440,240,460,272),1],[A(440,343,460,343),1],
+ [br(250,450,270,418),1],[br(250,450,270,482),1],[A(440,418,460,418),1],[A(440,482,460,482),1],
+ [br(250,590,270,558),1],[br(250,590,270,622),1],[A(440,558,460,558),1],[A(440,622,460,622),1]
+ ], labels:[]},
+
+clin:{tab:'임상 접근', fig:'Table 1 · 2', aria:'구루병의 임상·생화학·방사선 진단 접근', w:760, h:470, nodes:[
+ {id:'a_hx',  x:10, y:10, w:240,h:80, label:'병력<small>비타민 D 보충 · 가족력 · 칼슘 섭취 · 임신·출생</small>', cls:'test fac'},
+ {id:'a_px',  x:260,y:10, w:240,h:80, label:'신체 진찰<small>연령별 골격·치아 징후 (Table 1)</small>', cls:'test fac'},
+ {id:'a_bio', x:510,y:10, w:240,h:80, label:'생화학<small>Ca · P · ALP · PTH · 25(OH)D · 1,25(OH)₂D · FGF23 · uCa · TmP/GFR</small>', cls:'test fac'},
+ {id:'a_rad', x:10, y:125,w:740,h:60, label:'방사선 검사로 확인<small>손목·무릎 · 원위 척골 · 영아는 흉부</small>', cls:'test fac'},
+ {id:'a_alg', x:10, y:220,w:365,h:60, label:'생화학 감별 → Figure 3', cls:'tx fac'},
+ {id:'a_gen', x:385,y:220,w:365,h:60, label:'유전 검사<small>유전성 의심 시 · PHEX (Table 3)</small>', cls:'pr fac'},
+ {id:'a_nos', x:10, y:315,w:240,h:70, label:'비골성 특징<small>성장 부진 · 경련 · 근긴장 저하 · 심근병증</small>', cls:'fac'},
+ {id:'a_25',  x:260,y:315,w:240,h:70, label:'25(OH)D 역치<small>&lt;30 nmol/L · 칼슘 섭취에 따라 28–40</small>', cls:'fac'},
+ {id:'a_fgf', x:510,y:315,w:240,h:70, label:'FGF23<small>intact &gt;40 pg/mL + 저인산혈증 → XLH 시사</small>', cls:'fac'},
+ {id:'a_rss', x:10, y:400,w:365,h:56, label:'RSS · RGI-C<small>중증도와 치료 반응</small>', cls:'fac'},
+ {id:'a_hpp', x:385,y:400,w:365,h:56, label:'HPP 감별<small>ALP 감소 · 고칼슘혈증 · 고인산혈증</small>', cls:'mal fac'}
+ ], edges:[
+ [A(130,90,130,125),1],[A(380,90,380,125),1],[A(630,90,630,125),1],
+ [A(192,185,192,220),1],[A(567,185,567,220),1],[A(375,250,385,250),1]
+ ], labels:[]},
+
+alg:{tab:'알고리즘', fig:'Figure 3', aria:'확진된 구루병의 생화학 감별 알고리즘', w:760, h:500, nodes:[
+ {id:'f_conf', x:240,y:10, w:280,h:74, label:'구루병 확진<small>임상 징후 · ALP 증가 · 방사선 변화</small>', cls:'test fac'},
+ {id:'f_hc',   x:10, y:115,w:370,h:74, label:'저칼슘혈증성 구루병<small>칼슘 낮음/정상 · 인산 낮음/정상 · PTH 높음</small>', cls:'mal fac'},
+ {id:'f_hp',   x:400,y:115,w:350,h:74, label:'저인산혈증성 구루병<small>칼슘 정상 · 인산 낮음 · PTH 정상/정상 상한</small>', cls:'pr fac'},
+ {id:'f_25',   x:10, y:215,w:370,h:40, label:'25(OH)D', cls:'test'},
+ {id:'f_tmp',  x:400,y:215,w:350,h:40, label:'TmP/GFR', cls:'test'},
+ {id:'f_125a', x:10, y:300,w:180,h:40, label:'1,25(OH)₂D', cls:'test'},
+ {id:'f_125b', x:200,y:300,w:180,h:40, label:'1,25(OH)₂D', cls:'test'},
+ {id:'f_fgf',  x:400,y:300,w:230,h:40, label:'FGF23', cls:'test'},
+ {id:'d_1b3',  x:10, y:390,w:86, h:90, label:'VDDR1B*<small>VDDR3*</small>', cls:'tx fac'},
+ {id:'d_nvd',  x:104,y:390,w:86, h:90, label:'영양성 비타민 D 결핍', cls:'ben fac'},
+ {id:'d_1a',   x:200,y:390,w:86, h:90, label:'VDDR1A*', cls:'tx fac'},
+ {id:'d_nca',  x:294,y:390,w:86, h:90, label:'영양성 칼슘 결핍<small>VDDR2*</small>', cls:'ben fac'},
+ {id:'d_xlh',  x:400,y:390,w:110,h:90, label:'XLH* · ADHR* · ARHR*<small>TIO</small>', cls:'tx fac'},
+ {id:'d_hhrh', x:520,y:390,w:110,h:90, label:'HHRH*<small>판코니 증후군*</small>', cls:'tx fac'},
+ {id:'d_nph',  x:640,y:390,w:110,h:90, label:'영양성 인산 결핍', cls:'ben fac'}
+ ], edges:[
+ [P([240,47],[195,47],[195,115]),1],[P([520,47],[575,47],[575,115]),1],
+ [A(195,189,195,215),1],[A(575,189,575,215),1],
+ [P([195,255],[195,270],[100,270],[100,300]),1],[P([195,270],[290,270],[290,300]),1],
+ [P([100,340],[100,360],[53,360],[53,390]),1],[P([100,360],[147,360],[147,390]),1],
+ [P([290,340],[290,360],[243,360],[243,390]),1],[P([290,360],[337,360],[337,390]),1],
+ [P([575,255],[575,275],[515,275],[515,300]),1],[P([575,275],[695,275],[695,390]),1],
+ [P([515,340],[515,360],[455,360],[455,390]),1],[P([515,360],[575,360],[575,390]),1]
+ ], labels:[[86,290,'L'],[296,290,'N/H'],[40,378,'L'],[150,378,'L/N/H'],[230,378,'L'],[340,378,'N/H'],[500,290,'L'],[700,290,'H'],[440,378,'H'],[580,378,'N/L']]},
+
+nut:{tab:'영양성', fig:'Table 4 · 5', aria:'영양성 구루병의 치료와 감시', w:760, h:510, nodes:[
+ {id:'n_vd',  x:10, y:10, w:360,h:50, label:'영양성 비타민 D 결핍 구루병', cls:'ben'},
+ {id:'n_dose',x:10, y:80, w:360,h:70, label:'비타민 D 매일 3개월 또는 단회 (Table 4)<small>고용량 반복·활성형 비타민 D 쓰지 않음</small>', cls:'tx fac'},
+ {id:'n_ca',  x:10, y:170,w:360,h:70, label:'칼슘 ≥500 mg/일 병용<small>증상성 저칼슘혈증 → 정맥 글루콘산칼슘 (Table 5)</small>', cls:'mal fac'},
+ {id:'n_mon', x:10, y:260,w:360,h:70, label:'감시<small>Ca·P ~3주 · 25(OH)D 4–6주 · ALP 3–6개월</small>', cls:'test fac'},
+ {id:'n_3m',  x:10, y:350,w:360,h:60, label:'3개월 후 반응 평가<small>불완전하면 연장 · 순응도 낮으면 근육주사 stoss</small>', cls:'test fac'},
+ {id:'n_pre', x:10, y:430,w:360,h:60, label:'재발 예방<small>&lt;12개월 400 IU/일 · 이후 600 IU/일</small>', cls:'ben fac'},
+ {id:'c_ca',  x:390,y:10, w:360,h:50, label:'영양성 칼슘 결핍 구루병', cls:'ben'},
+ {id:'c_tx',  x:390,y:80, w:360,h:70, label:'원소 칼슘 1000 mg/일 (2–3회)<small>± 비타민 D 50,000 IU 4주마다</small>', cls:'tx fac'},
+ {id:'c_heal',x:390,y:170,w:360,h:70, label:'방사선 치유 3–6개월<small>일부 &gt;24주 · 임상 징후는 더 늦게 해소</small>', cls:'test fac'},
+ {id:'p_ph',  x:390,y:260,w:360,h:50, label:'영양성 인산 결핍 · 미숙아 대사성 골질환', cls:'ben'},
+ {id:'p_pre', x:390,y:330,w:360,h:70, label:'PTH로 칼슘 결핍과 인산 결핍 구별<small>모유강화제 · 미숙아 분유</small>', cls:'test fac'},
+ {id:'p_sup', x:390,y:420,w:360,h:70, label:'인산 &lt;4 (또는 &lt;5.5) mg/dL → 보충<small>PTH·ALP 1–2주마다 · 비타민 D 200–1000 IU</small>', cls:'tx fac'}
+ ], edges:[
+ [A(190,60,190,80),1],[A(190,150,190,170),1],[A(190,240,190,260),1],[A(190,330,190,350),1],[A(190,410,190,430),1],
+ [A(570,60,570,80),1],[A(570,150,570,170),1],[A(570,310,570,330),1],[A(570,400,570,420),1]
+ ], labels:[]},
+
+vdd:{tab:'비타민 D 의존성', fig:'Table 6', aria:'비타민 D 의존성 구루병의 치료', w:760, h:420, nodes:[
+ {id:'v_1a',  x:C4[0],y:10, w:CW,h:58, label:'VDDR1A<small>CYP27B1 · 1α-수산화효소</small>', cls:'mal fac'},
+ {id:'v_1b',  x:C4[1],y:10, w:CW,h:58, label:'VDDR1B<small>CYP2R1 · 25-수산화효소</small>', cls:'mal fac'},
+ {id:'v_2',   x:C4[2],y:10, w:CW,h:58, label:'VDDR2A·2B<small>VDR</small>', cls:'mal fac'},
+ {id:'v_3',   x:C4[3],y:10, w:CW,h:58, label:'VDDR3<small>CYP3A4 기능획득</small>', cls:'mal fac'},
+ {id:'v_1at', x:C4[0],y:95, w:CW,h:120,label:'칼시트리올 1일 2회 또는 알파칼시돌 1일 1회 + 칼슘<small>평생 · 초기 2–5배 용량</small>', cls:'tx fac'},
+ {id:'v_1bt', x:C4[1],y:95, w:CW,h:120,label:'칼시페디올 + 칼슘<small>또는 칼시트리올·알파칼시돌</small>', cls:'tx fac'},
+ {id:'v_2t',  x:C4[2],y:95, w:CW,h:120,label:'용량 개별화<small>칼시페롤 → 고용량 활성형 → 정맥 칼슘 · 탈모 시 저항성</small>', cls:'tx fac'},
+ {id:'v_3t',  x:C4[3],y:95, w:CW,h:120,label:'평생 고용량 비타민 D<small>영양성 결핍보다 고용량</small>', cls:'tx fac'},
+ {id:'v_1am', x:C4[0],y:240,w:CW,h:90, label:'Ca·P·PTH·요 Ca ≥4–6개월마다<small>신장 초음파 1–2년</small>', cls:'test fac'},
+ {id:'v_1bm', x:C4[1],y:240,w:CW,h:90, label:'25(OH)D 반응<small>이형접합 반응 · 동형접합 거의 무반응</small>', cls:'test fac'},
+ {id:'v_2m',  x:C4[2],y:240,w:CW,h:90, label:'사춘기 이후<small>장 칼슘 흡수 증가 → 칼슘 감량 가능</small>', cls:'test fac'},
+ {id:'v_3m',  x:C4[3],y:240,w:CW,h:90, label:'치료 자료 적음', cls:'na fac'},
+ {id:'v_t6',  x:10, y:355,w:740,h:50, label:'Table 6 유지 용량', cls:'fac'}
+ ], edges:[
+ ...[0,1,2,3].flatMap(i=>[[A(C4[i]+88,68,C4[i]+88,95),1],[A(C4[i]+88,215,C4[i]+88,240),1]])
+ ], labels:[]},
+
+hp:{tab:'저인산혈증성', fig:'Table 7–10', aria:'저인산혈증성 구루병의 치료와 추적', w:760, h:520, nodes:[
+ {id:'h_d23', x:10, y:10, w:470,h:44, label:'FGF23 의존성 (XLH · ADHR · ARHR)', cls:'pr'},
+ {id:'h_i23', x:500,y:10, w:250,h:44, label:'FGF23 비의존성', cls:'pr'},
+ {id:'h_conv',x:10, y:75, w:220,h:80, label:'고전 치료<small>인산염 + 활성형 비타민 D (Table 7)</small>', cls:'tx fac'},
+ {id:'h_buro',x:260,y:75, w:220,h:80, label:'부로수맙 (Table 9)<small>XLH · ≥1세 · 특히 RSS ≥2</small>', cls:'tx fac'},
+ {id:'h_cfu', x:10, y:175,w:220,h:62, label:'추적 (Table 8)<small>합병증: 고칼슘뇨 · 신석회화 · 부갑상선</small>', cls:'test fac'},
+ {id:'h_tit', x:260,y:175,w:220,h:80, label:'용량 조정<small>0.8 mg/kg 2주마다 → 0.4씩 · 최대 2.0 mg/kg (90 mg) · 공복 인산 정상 하단</small>', cls:'tx fac'},
+ {id:'h_adhr',x:10, y:257,w:220,h:70, label:'ADHR<small>철 상태 최적화 후 감량·중단</small>', cls:'fac'},
+ {id:'h_bfu', x:260,y:275,w:220,h:62, label:'추적 (Table 10)<small>첫 3개월 4주마다</small>', cls:'test fac'},
+ {id:'h_arhr',x:10, y:347,w:220,h:70, label:'ARHR2 (ENPP1)<small>경동맥 IMT · 심장 초음파</small>', cls:'mal fac'},
+ {id:'h_vd',  x:260,y:357,w:220,h:60, label:'25(OH)D &gt;50 nmol/L<small>GH 일상 병용 안 함</small>', cls:'fac'},
+ {id:'h_hhrh',x:500,y:75, w:250,h:80, label:'HHRH<small>인산 단독 · 활성형 비타민 D 금기</small>', cls:'tx fac'},
+ {id:'h_hc',  x:500,y:175,w:250,h:80, label:'고칼슘뇨 조절<small>구연산칼륨 · 염분 제한 · 수분 · 플루코나졸</small>', cls:'fac'},
+ {id:'h_fan', x:500,y:275,w:250,h:62, label:'판코니 · Dent · 세뇨관병증<small>인산 + 활성형 비타민 D + 원질환 치료</small>', cls:'tx fac'},
+ {id:'h_tio', x:10, y:445,w:365,h:60, label:'TIO<small>종양 절제 · FGF23 감시 · 불가 시 고전 치료</small>', cls:'tx fac'},
+ {id:'h_fd',  x:385,y:445,w:365,h:60, label:'섬유성 이형성증 · Raine<small>고전 치료 · 부로수맙 증례</small>', cls:'tx fac'}
+ ], edges:[
+ [A(120,54,120,75),1],[A(370,54,370,75),1],[A(625,54,625,75),1],
+ [A(230,115,260,115),1],
+ [A(120,155,120,175),1],[A(370,155,370,175),1],[A(370,255,370,275),1],[A(370,337,370,357),1],
+ [A(625,155,625,175),1],[A(625,255,625,275),1]
+ ], labels:[[232,108,'전환']]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${id}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Baroncelli GI, et al. Front Endocrinol 2024;15:1383681 해당 절의 요약 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약 번역.</p>`;
+
+/* ---------- 표 ---------- */
+const T1 = tbl(['부위','징후'],[
+ ['두개','전두부 돌출 · 두개골유합증 · 주상두 · 후두부 “bullet” 변형 · 대천문 폐쇄 지연 · 두개골 연화<sup>a</sup> · 중안면 저형성<sup>b</sup>'],
+ ['흉곽·골반','늑연골 접합부 비대(구루병 염주)<sup>a</sup> · Harrison 구<sup>a</sup> · 늑골 병적 골절<sup>a</sup> · 새가슴 · 흉벽 비대칭 · 함몰 늑골 · 골반 출구 협착'],
+ ['사지','손목·무릎·발목 확장 · 내반슬 · 외반슬 · 내반슬/외반슬 복합 · 짧은 상완골<sup>b</sup> · 짧은 대퇴골<sup>b</sup> · 경골 염전<sup>c</sup> · 내반고'],
+ ['전신·척추','성장 저하 · “Taylorwise” 자세<sup>a</sup> · 불균형 저신장(짧은 사지)<sup>b</sup> · 척추 만곡 · 후만'],
+ ['치아·치주','다발성 충치<sup>a</sup> · 법랑질 변색 · 법랑질 저형성 · 치아 맹출 지연 · 치은 누공을 동반한 농양<sup>d</sup>']
+]) + '<p class="exp-src">Table 1. a 주로 영양성 비타민 D 결핍 구루병 또는 비타민 D 의존성 구루병 · b 주로 XLH · c 안짱걸음 또는 밖짱걸음 · d XLH의 전형: 주로 앞니와 송곳니에서 외상이나 충치 없이 발생.</p>';
+const G = t => [`<b>${t}</b>`,'','','','','','','','',''];
+const T2 = (x=>x.replace('<div class="tbl">','<div class="tbl t2">'))(tbl(['질환','sCa','sP','ALP','PTH','25(OH)D','1,25(OH)₂D','FGF23','uCa','TmP'],[
+ G('영양성 구루병'),
+ ['영양성 비타민 D 결핍','N, ↓','↓','↑','↑','↓','↑, N, ↓','N','↓','↓'],
+ ['영양성 칼슘 결핍','N, ↓','↓','↑','↑','N, ↓','↑','N, ↑','↓','↓'],
+ ['영양성 인산 결핍','N, ↑','↓','↑','N, ↓','N','N, ↑','N, ↓','N, ↑<sup>a</sup>','N, ↓<sup>b</sup>'],
+ G('유전성 FGF23 의존성 저인산혈증'),
+ ['XLH, ADHR, ARHR1, ARHR2','N','↓','↑','N, ↑<sup>c</sup>','N','N<sup>d</sup>, ↓','N, ↑','N, ↓','↓'],
+ ['Raine 증후군','N, ↓<sup>e</sup>','N, ↓<sup>e</sup>','↑','N, ↑','N','N, ↓','N, ↑','N','↓'],
+ ['PFD','N, ↑','N, ↓','↑','N, ↑','N','N, ↓','N, ↑','N','N, ↓'],
+ ['저인산혈증성 구루병·부갑상선기능항진증','N, ↑','↓','↑','↑','N','N<sup>d</sup>, ↓','↑','N, ↑','↓'],
+ ['골이형성증(osteoglophonic)','N','↓','N, ↑','N','N','N<sup>d</sup>, ↓','N, ↑','N','↓'],
+ ['Opsismodysplasia','N','↓','N, ↑','N','N','N, ↓<sup>d</sup>','N, ↑','N','↓'],
+ ['Jansen형 골간단 연골이형성증','N, ↑','↓','↑','N, ↓','N','N, ↑','↑','N, ↑','↓'],
+ G('유전성 FGF23 비의존성 저인산혈증'),
+ ['HHRH','N','↓','↑','N, ↓','N','N, ↑','N, ↓','↑','↓'],
+ ['NPHLPO1','N','↓','↑','다양','N','↑','↓','↑','↓'],
+ ['NHERF1','N','↓','?','N','N','N, ↑','N','↑','↓'],
+ ['X연관 열성 저인산혈증성 구루병','N','↓','↑','다양','N','↑','?','N, ↑','↓'],
+ ['판코니 증후군 또는 원위 RTA','↑, N, ↓','N, ↓','↑','N, ↑<sup>e</sup>','N','N, ↓','N, ↑<sup>f</sup>','N, ↑','N, ↓'],
+ ['선형 피지선 모반 증후군','N, ↓','↓','↑','N, ↑<sup>c</sup>','N','N<sup>d</sup>, ↓','N, ↑','N, ↓','↓'],
+ G('비타민 D 의존성 구루병'),
+ ['VDDR1A','↓','↓','↑','↑','N','↓','N, ↓','↓','↓'],
+ ['VDDR1B','↓','↓','↑','↑','↓','↓','N','↓','↓'],
+ ['VDDR2A–2B','↓','↓','↑','↑','N','↑','N, ↓','↓','↓'],
+ ['VDDR3','↓','↓','↑','↑','↓','↓','?','↓','↓'],
+ G('후천성 FGF23 의존성 저인산혈증'),
+ ['종양 유발 골연화증(TIO)','N, ↓','↓','↑','N, ↑<sup>c</sup>','N','N<sup>d</sup>, ↓','N, ↑','N, ↓','↓'],
+ ['카르복시말토오스철 정맥 주입','↓','↓','↑','↑','N','↓','↑<sup>f</sup>, ↓<sup>g</sup>','?','↓'],
+ G('후천성 FGF23 비의존성 저인산혈증'),
+ ['의인성 근위 판코니 증후군','N','↓','↑','다양','N','↑','↓','다양','↓'],
+ G('기타 원인'),
+ ['흡수장애, 간부전, 신부전','N, ↓','↑, N, ↓','↑','N, ↑','N, ↓','다양','↑<sup>h</sup>','다양','↓<sup>i</sup>'],
+ ['에티드로네이트 치료','N','↓','↑','N','N','↑','?','N','↓'],
+ ['HPP','N, ↑','↑','↓','N, ↓','N','N, ↓','N','↑','↑']
+])) + '<p class="exp-src">Table 2. ↑ 증가 · ↓ 감소 · N 정상 · ? 알려지지 않음. 영양성 인산 결핍은 극소저출생체중아의 식이 인산 결핍 기준. a 인산 섭취 회복 후 정상, 회복 전 거짓 증가 · b 회복 후 정상, 회복 전 거짓 감소(회복 전 요 인산 배설은 매우 낮거나 측정되지 않음) · c 정상 상한을 중등도로 넘을 수 있음 · d 혈청 인산에 비해 감소 · e CKD 병기에 따라 다름 · f intact FGF23 · g C-말단 FGF23 · h 신부전에서 · i 2차 부갑상선기능항진증 또는 신부전에 따른 FGF23 과잉 시.</p>';
+const T3 = tbl(['질환','유전자','OMIM #'],[
+ ['XLH','PHEX','307800'],['ADHR','FGF23','193100'],['ARHR1','DMP1','241520'],['ARHR2','ENPP1','613312'],['Raine 증후군','FAM20C','259775'],['PFD','GNAS','174800'],
+ ['HHRH','SLC34A3','241530'],['저인산혈증성 구루병·부갑상선기능항진증','13q13.1','612089'],['골이형성증(osteoglophonic)','FGFR1','166250'],['Opsismodysplasia','INPPL1','258480'],
+ ['Jansen형 골간단 연골이형성증','PTH1R','156400'],['NPHLOP1','SLC34A1','612286'],['NHERF1','SLC9A3','604990'],['X연관 열성 저인산혈증성 구루병','CLCN5','300554'],
+ ['VDDR1A','CYP27B1','264700'],['VDDR1B','CYP2R1','600081'],['VDDR2A','VDR','277440'],['VDDR2B','VDR','600785'],['VDDR3','CYP3A4','619073']
+]) + '<p class="exp-src">Table 3. 유전성 구루병 또는 저인산혈증 관련 유전자.</p>';
+const T4 = tbl(['연령','3개월 매일 용량 (IU)','단회 용량 (IU)','유지 매일 용량 (IU)'],[
+ ['&lt;3개월','2000','–','400'],['3–12개월','2000','50,000','400'],['12개월 초과–12세','3000–6000','150,000','600'],['12세 초과','6000','300,000','600']
+]) + '<p class="exp-src">Table 4. 영양성 비타민 D 결핍 구루병의 비타민 D 치료. 비타민 D 투여 3개월 후 임상·생화학·방사선 평가로 반응을 확인해야 하며 일부는 추가 치료가 필요하다. 하루 칼슘 섭취를 식이 또는 보충제로 적어도 500 mg 보장해야 한다. IU를 µg으로 바꾸려면 40으로 나눈다. Munns 등에서 각색.</p>';
+const T5 = tbl(['상황','칼슘염','용량 (원소 칼슘)<sup>a</sup>','투여'],[
+ ['증상성 급성 저칼슘혈증','10% 글루콘산칼슘<sup>b</sup>','5–20 mg/kg (0.5–2.0 mL/kg)','정맥으로 10–15분에 걸쳐 천천히(서맥 방지<sup>c</sup>), 0.9% 생리식염수 또는 5% 포도당에 희석'],
+ ['무증상 저칼슘혈증 또는 정상 칼슘혈증','탄산칼슘, 구연산칼슘','30–75 mg/kg · 5세: 500 mg/일<sup>d</sup> · 10세: 1000 mg/일<sup>d</sup>','경구, 하루 2–3회 분할']
+]) + '<p class="exp-src">Table 5. a 원소 칼슘 기준: 탄산칼슘은 원소 칼슘 40%, 구연산칼슘은 21% · b 1앰플(10 mL)에 원소 칼슘 약 90 mg · c 심전도 감시를 강력히 권고 · d Lambert와 Linglart의 제안.</p>';
+const T6 = tbl(['약제','VDDR1A','VDDR1B','VDDR2','VDDR3'],[
+ ['비타민 D','NI','이형접합: 5,000–10,000 IU/일<br>동형접합: 600,000 IU 3개월마다','LI','50,000/일'],
+ ['칼시페디올','NI','15–50 µg/일','20–200 µg/일<sup>a</sup>','?'],
+ ['알파칼시돌','10–100 ng/kg/일<br>0.5–3 µg/일','0.5–3 µg/일','10–400 ng/kg/일<sup>b</sup><br>5–60 µg/일<sup>b</sup>','?'],
+ ['칼시트리올','10–100 ng/kg/일<br>0.3–2 µg/일','0.3–2 µg/일','10–400 ng/kg/일<sup>b</sup><br>5–60 µg/일<sup>b</sup>','?'],
+ ['칼슘염(경구)','0.5–3 g/일','0.5–2 g/일','3–5 g/일<br>400–1400 mg/m²/일<sup>c</sup>','?']
+]) + '<p class="exp-src">Table 6. 비타민 D 의존성 구루병의 유지 치료. NI 적응 아님 · LI 적응 거의 없음 · a 탈모 없는 일부 환자만 반응 가능 · b 최대 용량에도 반응하지 않는 환자가 있음 · c 수년간 정맥 투여. Levine MA에서 각색.</p>';
+const T7 = tbl(['','신생아 또는 임상·방사선 징후 발생 전','임상·방사선 징후가 있는 경우'],[
+ ['시작 용량','알파칼시돌 25–40 ng/kg/일(0.8–1 µg/일) 1일 1회 · 무기 인산염 20–40 mg/kg/일 하루 4–6회','알파칼시돌 40–80 ng/kg/일(1–1.5 µg/일) 1일 1회 · 칼시트리올 20–40 ng/kg/일 하루 2–3회 · 무기 인산염 40–60 mg/kg/일 하루 4–6회'],
+ ['유지 용량','알파칼시돌 25–40 ng/kg/일(1–2 µg/일) 1일 1회 · 칼시트리올 20–30 ng/kg/일 하루 2–3회 · 무기 인산염 20–60 mg/kg/일 하루 4–6회','(왼쪽과 같음)']
+]) + '<p class="exp-src">Table 7. 저인산혈증성 구루병의 무기 인산염과 활성형 비타민 D 시작·유지 용량. 인산 보충제와 활성형 비타민 D는 점진적으로 증량할 것을 권고하며, 치료는 질병 중증도와 내약성에 맞춰 개인화하고, 두 약은 균형 잡힌 용량으로 반드시 병용하며 주의 깊게 감시해야 한다.</p>';
+const T8 = tbl(['평가','시기'],[
+ ['임상·신체계측 진찰<sup>a</sup>','5세 미만 1–3개월, 5세 초과 3–6개월마다'],['치과 진찰','6–12개월마다<sup>b</sup> 또는 임상 증상에 따라'],['정형외과 진찰','12개월마다<sup>c</sup> 또는 임상 증상에 따라'],['이비인후과','8세 초과 또는 임상 증상에 따라'],
+ ['혈청 칼슘, 인산, 크레아티닌, ALP, PTH','3–6개월마다'],['요 칼슘, 인산, 크레아티닌<sup>d</sup>','3–6개월마다'],['손목<sup>e</sup>·무릎<sup>e</sup>·기립 하지<sup>f</sup> 촬영','1–2년마다 또는 임상 징후에 따라'],
+ ['신장 초음파','매년<sup>g</sup>'],['뇌 MRI','두개골유합증, 두개 형태 이상, 두통, 신경 증상, 시각 장애가 있을 때'],['삶의 질','매년<sup>h</sup>']
+]) + '<p class="exp-src">Table 8. 고전 치료 중인 XLH 추적. a 키, 체중, BMI, 사춘기 단계, 무릎 사이·발목 사이 거리, 두위와 두개 형태, 구루병 징후, 통증, 경직, 피로, 신경학적 평가(두개골유합증·척추관 협착 시) · b 치아 맹출 후 · c 보행 시작 후 · d 칼슘/크레아티닌 비 또는 24시간 칼슘 배설과 TmP/GFR · e 적절하면 RSS 평가 · f 내반·외반 정도 정량 · g 신석회화 진단 시 6개월마다 · h 연령·질환에 맞는 척도.</p>';
+const T9 = `<ul class="plain"><li>지침과 급여 기준이 허용하면 1세 이상(미국 등 일부 국가는 6개월 이상), 특히 중증 구루병(RSS ≥2)에서 가능한 한 빨리 시작해야 한다. 고전 치료로 시작한 경우 반응이 불충분하면 즉시 부로수맙으로 전환해야 한다.</li><li>고전 치료는 부로수맙 시작 적어도 7–10일 전에 중단해야 한다.</li><li>시작 용량 0.8 mg/kg 피하 2주마다를 권고한다.</li><li>연령별 정상 범위 하단의 공복 인산을 목표로 0.4 mg/kg씩 최대 2.0 mg/kg(최대 90 mg)까지 증량한다.</li><li>증량 기간에는 주사 사이, 이상적으로 마지막 주사 7–11일 후 공복 인산을 측정한다.</li><li>안정 용량 3–4개월 후 정상 상태에 도달하면 저용량 투여를 찾기 위해 주사 직전에 측정한다.</li><li>공복 인산이 연령별 정상 상한을 넘으면 중단한다<sup>a</sup>.</li><li>ALP의 지속적 감소, 구루병 개선, 임상 반응이 있으면 연령·성별 정상 하한 미만의 인산도 허용할 수 있다.</li><li>2차 부갑상선기능항진증과 인산뇨 예방을 위해 25(OH)D를 &gt;50 nmol/L(20 ng/mL)로 유지한다.</li><li>성장판 폐쇄까지 청소년기 내내 지속한다.</li><li>소아(2주마다)에서 성인 용량(4주마다)으로 바꾸는 시점은 성장판 폐쇄 같은 생리적 연령 지표가 더 적절할 것이다.</li><li>이행기에는 성인 진료팀과 다학제 평가를 시행해 성인기 추적을 고려한다.</li><li>고령 환자의 신체 능력과 삶의 질 변화에는 성인 XLH와 같은 감시 도구가 필요할 수 있다<sup>b</sup>.</li></ul><p class="exp-src">Table 9. a SmPC: 다음 투여를 보류하고 2주 후 공복 인산을 재평가하며, 인산이 정상 범위 아래가 되면 이전 용량의 약 절반으로 4주마다 재개하고, 용량 변경 후 2주에 재평가 · b 예: 6분 보행 검사, 악력, Brief Pain·Fatigue Inventory, WOMAC.</p>`;
+const T10 = tbl(['평가','시기'],[
+ ['임상·신체계측 진찰<sup>a</sup>','5세 미만 1–3개월, 5세 초과 3–6개월마다'],['치과 진찰<sup>b</sup>','6–12개월마다 또는 임상 증상에 따라'],['정형외과 진찰<sup>c</sup>','12개월마다 또는 임상 증상에 따라'],['이비인후과 진찰','8세 초과 또는 임상 증상에 따라'],
+ ['공복 혈청 칼슘, 인산, 크레아티닌, ALP, PTH','첫 3개월 4주마다, 이후 적어도 3개월마다 또는 임상·생화학 양상에 따라'],['혈청 25(OH)D와 1,25(OH)₂D<sup>d</sup>','3–4개월마다, 특히 겨울'],['요 칼슘, 인산, 크레아티닌<sup>e</sup>','첫 3개월 4주마다, 이후 적어도 3개월마다 또는 임상·생화학 양상에 따라'],
+ ['손목<sup>f</sup>·무릎<sup>f</sup>·기립 하지<sup>g</sup> 촬영','1–2년마다 또는 임상 징후에 따라'],['신장 초음파','1–2년마다<sup>h</sup>'],['뇌 MRI','두개골유합증, 두개 형태 이상, 두통, 신경 증상, 시각 장애가 있을 때'],['삶의 질 감시','3–6개월마다 1–2년까지<sup>i</sup>'],['이상반응 감시<sup>j</sup>','지속적 능동 수집과 보고']
+]) + '<p class="exp-src">Table 10. 부로수맙 치료 중인 XLH 추적. a–c Table 8과 같음 · d 충분한 25(OH)D 저장은 부로수맙 매개 1,25(OH)₂D 합성을 도울 수 있으며, 일부 저자는 1,25(OH)₂D 측정을 권고하지 않음 · e 칼슘/크레아티닌 비 또는 24시간 칼슘 배설과 TmP/GFR · f 적절하면 RSS 평가 · g 내반·외반 정도 정량 · h 고전 치료 중 신석회화가 진단되었던 환자는 매년 · i 연령·질환에 맞는 척도, 시기는 증상에 따라 다름 · j 많은 유럽 국가에서 의심 이상반응을 국가 데이터베이스에 보고하도록 함.</p>';
+
+/* ---------- 주석 ---------- */
+const DISC_F1 = note('원문 그림','Figure 1에서 PFD가 FGF23 의존성과 FGF23 비의존성 목록에 모두 들어 있다. 본문(3.2.1.1)과 Table 2는 PFD를 GNAS 기능획득에 따른 FGF23 의존성으로 분류한다. 그림의 “Klotho traslocation”, “Eldronate treatment”는 각각 KLOTHO 전위, 에티드로네이트의 오기로 보이며, 질환명도 NPHLOP1(본문·Table 3)과 NPHLPO1(그림 범례·Table 2)이 혼용된다.');
+const DISC_F3 = note('원문 그림','Figure 3에서 25(OH)D 낮음 분기의 1,25(OH)₂D “L”은 VDDR1B·VDDR3로, “L/N/H”는 영양성 비타민 D 결핍으로 이어져 1,25(OH)₂D가 낮은 경우가 두 분기에 겹친다. 영양성 칼슘 결핍은 25(OH)D N/H 분기에 놓였으나 Table 2는 25(OH)D를 “N, ↓”로 표시한다. 저인산혈증성 상자의 PTH “정상/정상 상한”은 Table 2의 XLH PTH “N, ↑(정상 상한을 중등도로 넘을 수 있음)”과 표현이 다르다.');
+const DISC_T7 = note('원문 표기','Table 7에서 같은 알파칼시돌 25–40 ng/kg/일이 시작 용량에서는 “0.8–1 µg/일”, 유지 용량에서는 “1–2 µg/일”로 환산되어 있다. Table 6 VDDR3의 비타민 D “50,000/day”는 단위가 없다(IU로 보임).');
+const DISC_US = note('원문 표기','신장 초음파 주기가 표마다 다르다: Table 8(고전 치료)은 매년, 신석회화 시 6개월마다. Table 10(부로수맙)은 1–2년마다, 고전 치료 중 신석회화가 있었으면 매년. VDDR1A 본문은 1–2년마다(고칼슘뇨 시 더 자주)이며 저자 경험으로는 6–12개월마다.');
+const DISC_CA = note('원문 표기','무증상 저칼슘혈증의 경구 원소 칼슘 30–75 mg/kg/일이 본문은 “3회 분할로 2–4주”, Table 5는 “하루 2–3회 분할”로 다르다. 고용량 stoss 요법(최대 600,000 IU)은 권고하지 않지만, 순응도 부족 시 근육주사 stoss(50,000–300,000 IU)는 권고할 수 있다고 하여 용량 범위로 구분된다.');
+const TIP_KR = tip('국내 적용','부로수맙 투여 대상과 급여 기준은 국가마다 다르므로 국내 허가·급여 기준을 함께 확인한다. 25(OH)D 환산: 1 ng/mL ≈ 2.5 nmol/L, 비타민 D 1 µg = 40 IU.');
+
+const D = {
+/* ---------- Figure 1 ---------- */
+k_root:{kind:'Figure 1', title:'구루병의 분류', next:['k_nut','k_her','k_non','k_oth'], body:`${ex('clsn')}${DISC_F1}`},
+k_nut:{kind:'Figure 1', title:'영양성 구루병', next:['n_vd','c_ca','p_ph'], body:paraHTML({p:EXP.clsn.p.slice(1,3)})},
+k_vd:{kind:'영양성', title:'비타민 D 결핍', next:['n_vd'], body:`${RR('D6','N1')}${paraHTML({p:EXP.clsn.p.slice(2,3)})}`},
+k_ca:{kind:'영양성', title:'칼슘 결핍', next:['c_ca'], body:R('C1')},
+k_cv:{kind:'영양성', title:'칼슘·비타민 D 복합 결핍', next:['n_vd','c_ca'], body:`<p>자외선 노출 부족에 따른 비타민 D 결핍과 식이 칼슘 부족이 함께 있는 경우로, 영양성 구루병의 흔한 원인이다.</p>${RR('D6','N7','C1')}`},
+k_p:{kind:'영양성', title:'인산 결핍', next:['p_ph'], body:RR('P1','P2','P3')},
+k_her:{kind:'Figure 1', title:'유전성 구루병', next:['k_hp','k_vdd'], body:`${paraHTML({p:EXP.clsn.p.slice(3,8)})}${R('D10')}`},
+k_hp:{kind:'유전성', title:'저인산혈증성 구루병', next:['k_d23','k_i23'], body:`${paraHTML({p:EXP.clsn.p.slice(4,7)})}${R('D5')}`},
+k_d23:{kind:'유전성 · FGF23 의존성', title:'FGF23 의존성 저인산혈증성 구루병', next:['h_d23'], body:`${paraHTML({p:EXP.clsn.p.slice(5,6)})}${RR('D11','X1')}${T3}${DISC_F1}`},
+k_i23:{kind:'유전성 · FGF23 비의존성', title:'FGF23 비의존성 저인산혈증성 구루병', next:['h_i23'], body:`${paraHTML({p:EXP.clsn.p.slice(6,7)})}${RR('O4','O6')}${DISC_F1}`},
+k_vdd:{kind:'유전성', title:'비타민 D 의존성 구루병', next:['v_1a','v_1b','v_2','v_3'], body:paraHTML({p:EXP.clsn.p.slice(7,8)})},
+k_vddl:{kind:'유전성', title:'VDDR1A · 1B · 2A–2B · 3', next:['v_1a'], body:`${paraHTML({p:EXP.clsn.p.slice(7,8)})}${T3}`},
+k_non:{kind:'Figure 1', title:'비유전성 저인산혈증성 구루병', next:['k_n23','k_ni'], body:paraHTML({p:EXP.clsn.p.slice(9,10)})},
+k_n23:{kind:'비유전성', title:'후천성 FGF23 의존성', next:['h_tio'], body:`${paraHTML({p:EXP.clsn.p.slice(9,10)})}${R('O2')}`},
+k_n23l:{kind:'비유전성', title:'TIO · 정맥 철 유발 저인산혈증', next:['h_tio'], body:`${RR('O2','D5')}`},
+k_ni:{kind:'비유전성', title:'후천성 FGF23 비의존성', next:['h_fan'], body:`${paraHTML({p:EXP.clsn.p.slice(9,10)})}${R('O6')}`},
+k_nil:{kind:'비유전성', title:'의인성 판코니 증후군 · 독소', next:['h_fan'], body:`<p>발프로산, 시스플라틴, 이포스파마이드, 젠타마이신, 인산 결합제 과용, 중금속 등 독소, 항레트로바이러스제·항암제가 원인이다.</p>${R('O6')}`},
+k_oth:{kind:'Figure 1', title:'기타 원인', next:['k_org','k_gp'], body:paraHTML({p:EXP.clsn.p.slice(11,12)})},
+k_org:{kind:'기타', title:'장기 부전', next:[], body:paraHTML({p:EXP.clsn.p.slice(11,12)})},
+k_orgl:{kind:'기타', title:'흡수장애 · 간부전 · 신부전', next:[], body:`${paraHTML({p:EXP.clsn.p.slice(11,12)})}<p>Table 2: 25(OH)D 정상·감소, FGF23 증가(신부전), TmP 감소(2차 부갑상선기능항진증 또는 신부전에 따른 FGF23 과잉).</p>`},
+k_gp:{kind:'기타', title:'성장판 직접 장애', next:['a_hpp'], body:paraHTML({p:EXP.clsn.p.slice(11,12)})},
+k_gpl:{kind:'기타', title:'HPP · 에티드로네이트 · 불소 · 알루미늄', next:['a_hpp'], body:`${R('D12')}${paraHTML({p:EXP.clsn.p.slice(11,12)})}`},
+
+/* ---------- 임상 접근 ---------- */
+a_hx:{kind:'임상 접근', title:'병력', next:['a_px'], body:`${R('D1')}${ex('clin')}`},
+a_px:{kind:'Table 1', title:'신체 진찰: 골격·치아 징후', next:['a_bio'], body:`${R('D2')}${T1}`},
+a_bio:{kind:'Table 2', title:'생화학 검사', next:['a_rad'], body:`${RR('D3','D4','D5','D6')}${ex('bio')}`},
+a_rad:{kind:'방사선', title:'방사선 검사로 확인', next:['a_alg','a_gen'], body:`${RR('D1','D7','D8')}${ex('rad')}`},
+a_alg:{kind:'진단', title:'생화학 감별 (Figure 3)', next:['f_conf'], body:`${R('D9')}${ex('alg')}`},
+a_gen:{kind:'Table 3', title:'유전 검사', next:[], body:`${RR('D10','D11')}${T3}`},
+a_nos:{kind:'임상', title:'비골성 특징', next:[], body:paraHTML({p:EXP.clin.p.slice(2,3)})},
+a_25:{kind:'생화학', title:'25(OH)D 역치', next:[], body:`${R('D6')}${paraHTML({p:EXP.bio.p.slice(3,4)})}${TIP_KR}`},
+a_fgf:{kind:'생화학', title:'FGF23', next:['f_fgf'], body:`${R('D5')}${paraHTML({p:EXP.bio.p.slice(5,6)})}`},
+a_rss:{kind:'방사선', title:'Rickets Severity Score · RGI-C', next:[], body:`${R('D8')}${paraHTML({p:EXP.rad.p.slice(3,5)})}`},
+a_hpp:{kind:'감별', title:'저인산효소증(HPP) 감별', next:[], body:`${RR('D12','D3')}<p>HPP는 ALP가 감소하고(다른 구루병은 증가), 혈청 칼슘 정상·증가, 인산 증가, 요 칼슘 증가, TmP 증가를 보인다(Table 2). 영아형 HPP의 방사선 병변은 구루병과 비슷할 수 있고 무기질화가 불량한 흉곽은 호흡부전을 동반할 수 있다.</p>`},
+
+/* ---------- Figure 3 ---------- */
+f_conf:{kind:'Figure 3', title:'구루병 확진', next:['f_hc','f_hp'], body:`<p>임상 징후, ALP 활성 증가, 방사선 변화로 구루병이 확진된 환자의 평가 알고리즘이다. 1차 감별은 저칼슘혈증(저칼슘혈증성 구루병)과 저인산혈증(저인산혈증성 구루병)의 존재에 근거한다.</p>${RR('D9','D1')}${DISC_F3}`},
+f_hc:{kind:'Figure 3', title:'저칼슘혈증성 구루병', next:['f_25'], body:`<p>칼슘 낮음/정상, 인산 낮음/정상, PTH 높음.</p>${paraHTML({p:EXP.alg.p.slice(1,3)})}`},
+f_hp:{kind:'Figure 3', title:'저인산혈증성 구루병', next:['f_tmp'], body:`<p>칼슘 정상, 인산 낮음, PTH 정상/정상 상한.</p>${paraHTML({p:EXP.alg.p.slice(3,4)})}${DISC_F3}`},
+f_25:{kind:'Figure 3', title:'25(OH)D 측정', next:['f_125a','f_125b'], body:`<p>25(OH)D 낮음(L) → 1,25(OH)₂D 측정(왼쪽), 정상/높음(N/H) → 1,25(OH)₂D 측정(오른쪽).</p>${R('D6')}`},
+f_tmp:{kind:'Figure 3', title:'TmP/GFR', next:['f_fgf','d_nph'], body:`<p>TmP/GFR 측정이 저인산혈증성 구루병 환자 선별의 첫 단계다. 낮음(L) → FGF23 측정, 높음(H) → 영양성 인산 결핍.</p>${paraHTML({p:EXP.bio.p.slice(2,3)})}`},
+f_125a:{kind:'Figure 3', title:'1,25(OH)₂D (25(OH)D 낮음)', next:['d_1b3','d_nvd'], body:`<p>1,25(OH)₂D 낮음(L) → VDDR1B 또는 VDDR3 · 낮음/정상/높음(L/N/H) → 영양성 비타민 D 결핍.</p>${R('D4')}${DISC_F3}`},
+f_125b:{kind:'Figure 3', title:'1,25(OH)₂D (25(OH)D 정상·높음)', next:['d_1a','d_nca'], body:`<p>1,25(OH)₂D 낮음(L) → VDDR1A · 정상/높음(N/H) → 영양성 칼슘 결핍 또는 VDDR2.</p>`},
+f_fgf:{kind:'Figure 3', title:'FGF23 측정', next:['d_xlh','d_hhrh'], body:`<p>FGF23 높음(H) → XLH, ADHR, ARHR, TIO · 정상/낮음(N/L) → HHRH, 판코니 증후군.</p>${R('D5')}`},
+d_1b3:{kind:'Figure 3 · 진단', title:'VDDR1B* · VDDR3*', next:['v_1b','v_3'], body:`<p>25(OH)D와 1,25(OH)₂D가 모두 낮다. * 의심 진단의 확진에 유전 검사가 중요하다.</p>${R('D10')}`},
+d_nvd:{kind:'Figure 3 · 진단', title:'영양성 비타민 D 결핍', next:['n_vd'], body:`<p>25(OH)D 낮음, 1,25(OH)₂D는 질병 시기에 따라 낮음·정상·높음.</p>${RR('D4','D6')}`},
+d_1a:{kind:'Figure 3 · 진단', title:'VDDR1A*', next:['v_1a'], body:`<p>25(OH)D 정상·높음, 1,25(OH)₂D 낮음. * 유전 검사로 확진.</p>${R('D10')}`},
+d_nca:{kind:'Figure 3 · 진단', title:'영양성 칼슘 결핍 · VDDR2*', next:['c_ca','v_2'], body:`<p>25(OH)D와 1,25(OH)₂D 모두 정상·높음. * VDDR2는 유전 검사로 확진.</p>${RR('C1','D10')}${DISC_F3}`},
+d_xlh:{kind:'Figure 3 · 진단', title:'XLH* · ADHR* · ARHR* · TIO', next:['h_d23','h_tio'], body:`<p>낮은 TmP/GFR과 높은 FGF23. * 유전 검사로 확진.</p>${RR('D5','D11','O2')}`},
+d_hhrh:{kind:'Figure 3 · 진단', title:'HHRH* · 판코니 증후군*', next:['h_hhrh','h_fan'], body:`<p>낮은 TmP/GFR과 정상·낮은 FGF23. HHRH는 대개 고칼슘뇨를 보인다. * 유전 검사로 확진.</p>${RR('O4','O6')}`},
+d_nph:{kind:'Figure 3 · 진단', title:'영양성 인산 결핍', next:['p_ph'], body:`<p>저인산혈증과 높은 TmP/GFR은 영양성 인산 결핍을 시사한다.</p>${RR('P1','P2')}`},
+
+/* ---------- 영양성 치료 ---------- */
+n_vd:{kind:'영양성', title:'영양성 비타민 D 결핍 구루병', next:['n_dose'], body:`${ex('nvd')}`},
+n_dose:{kind:'Table 4', title:'비타민 D 투여', next:['n_ca'], body:`${RR('N1','N2','N3','N5')}${T4}${DISC_CA}`},
+n_ca:{kind:'Table 5', title:'칼슘 병용과 저칼슘혈증 치료', next:['n_mon'], body:`${RR('N6','N7')}${T5}${DISC_CA}`},
+n_mon:{kind:'감시', title:'치료 감시', next:['n_3m'], body:R('N8')},
+n_3m:{kind:'감시', title:'3개월 후 반응 평가', next:['n_pre'], body:RR('N10','N3','N4')},
+n_pre:{kind:'예방', title:'재발 예방', next:[], body:R('N9')},
+c_ca:{kind:'영양성', title:'영양성 칼슘 결핍 구루병', next:['c_tx'], body:ex('nca')},
+c_tx:{kind:'치료', title:'원소 칼슘 1000 mg/일', next:['c_heal'], body:`${R('C1')}${T5}`},
+c_heal:{kind:'치료 반응', title:'치유 경과', next:[], body:R('C2')},
+p_ph:{kind:'영양성', title:'영양성 인산 결핍 · 미숙아 대사성 골질환', next:['p_pre'], body:`${R('P1')}${ex('nph')}`},
+p_pre:{kind:'미숙아', title:'PTH에 따른 감별과 영양', next:['p_sup'], body:RR('P2','P4')},
+p_sup:{kind:'미숙아', title:'인산·칼슘 보충과 비타민 D', next:[], body:RR('P3','P5','P6')},
+
+/* ---------- 비타민 D 의존성 ---------- */
+v_1a:{kind:'비타민 D 의존성', title:'VDDR1A', next:['v_1at'], body:`${paraHTML({p:EXP.clsn.p.slice(7,8)})}${ex('v1a')}`},
+v_1b:{kind:'비타민 D 의존성', title:'VDDR1B', next:['v_1bt'], body:ex('v1b')},
+v_2:{kind:'비타민 D 의존성', title:'VDDR2A · VDDR2B', next:['v_2t'], body:ex('v2')},
+v_3:{kind:'비타민 D 의존성', title:'VDDR3', next:['v_3t'], body:ex('v3')},
+v_1at:{kind:'VDDR1A 치료', title:'활성형 비타민 D + 칼슘', next:['v_1am'], body:`${RR('V1','V2')}${T6}`},
+v_1bt:{kind:'VDDR1B 치료', title:'칼시페디올 + 칼슘', next:['v_1bm'], body:`${R('V5')}${T6}`},
+v_2t:{kind:'VDDR2 치료', title:'용량 개별화', next:['v_2m'], body:`${RR('V6','V7')}${T6}`},
+v_3t:{kind:'VDDR3 치료', title:'평생 고용량 비타민 D', next:['v_3m'], body:`${R('V8')}${T6}${DISC_T7}`},
+v_1am:{kind:'VDDR1A 감시', title:'유지 치료 감시', next:[], body:`${RR('V3','V4')}${DISC_US}`},
+v_1bm:{kind:'VDDR1B', title:'비타민 D 반응: 이형접합 vs 동형접합', next:[], body:`${paraHTML({p:EXP.v1b.p.slice(1,2)})}${T6}`},
+v_2m:{kind:'VDDR2', title:'사춘기 이후 칼슘 요구', next:[], body:R('V7')},
+v_3m:{kind:'VDDR3', title:'치료 자료', next:[], body:R('V8')},
+v_t6:{kind:'Table 6', title:'비타민 D 의존성 구루병의 유지 치료', next:[], body:`${T6}${DISC_T7}`},
+
+/* ---------- 저인산혈증성 치료 ---------- */
+h_d23:{kind:'저인산혈증성', title:'FGF23 의존성 저인산혈증성 구루병', next:['h_conv','h_buro'], body:`${R('X1')}${ex('conv')}`},
+h_i23:{kind:'저인산혈증성', title:'FGF23 비의존성 저인산혈증성 구루병', next:['h_hhrh','h_fan'], body:ex('indep')},
+h_conv:{kind:'Table 7', title:'고전 치료', next:['h_cfu','h_buro'], body:`${RR('X1','X2','X3','X4')}${T7}${DISC_T7}`},
+h_buro:{kind:'Table 9', title:'부로수맙', next:['h_tit'], body:`${RR('B1','B2','B11')}${ex('buro')}`},
+h_cfu:{kind:'Table 8', title:'고전 치료 중 추적', next:[], body:`${RR('X5','X4')}${T8}${DISC_US}`},
+h_tit:{kind:'Table 9', title:'부로수맙 용량 조정', next:['h_bfu'], body:`${RR('B3','B4','B5','B6')}${T9}`},
+h_adhr:{kind:'ADHR · ARHR1', title:'ADHR: 철 상태 최적화', next:[], body:`${R('X6')}${ex('adhr')}`},
+h_bfu:{kind:'Table 10', title:'부로수맙 치료 중 추적', next:['h_vd'], body:`${RR('B10','B9')}${T10}${DISC_US}`},
+h_arhr:{kind:'ARHR2', title:'ARHR2 (ENPP1 결핍)', next:[], body:R('X7')},
+h_vd:{kind:'부로수맙', title:'25(OH)D 유지 · 1,25(OH)₂D · GH', next:[], body:`${RR('B7','B8','B12')}${ex('gh')}${TIP_KR}`},
+h_hhrh:{kind:'FGF23 비의존성', title:'HHRH', next:['h_hc'], body:R('O4')},
+h_hc:{kind:'HHRH', title:'고칼슘뇨 조절', next:[], body:R('O5')},
+h_fan:{kind:'FGF23 비의존성', title:'판코니 증후군 · Dent 병 · 세뇨관병증', next:[], body:R('O6')},
+h_tio:{kind:'후천성 FGF23 의존성', title:'종양 유발 골연화증(TIO)', next:[], body:`${R('O2')}${paraHTML({p:EXP.clsn.p.slice(9,10)})}`},
+h_fd:{kind:'기타 FGF23 의존성', title:'섬유성 이형성증 · Raine 증후군', next:[], body:`${RR('O1','O3')}${ex('oth23')}`}
+};
+
+const ALL = Object.keys(REC);
+const GROUP = [['D','진단'],['N','영양성 비타민 D 결핍 구루병'],['C','영양성 칼슘 결핍 구루병'],['P','영양성 인산 결핍·미숙아'],['V','비타민 D 의존성 구루병'],['X','FGF23 의존성: 고전 치료'],['B','XLH: 부로수맙·GH'],['O','기타 저인산혈증성'],['K','결론']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'권고 표기와 도구 설명', next:[], body:`${['STR','SUG','TAB'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','원문은 이탈리아 소아내분비·당뇨병학회(SIEDP) 골·무기질대사 그룹의 입장 성명(Policy and Practice Review)으로, “권고의 강도를 등급화하지 않았다”고 밝힌다. 따라서 원문의 서술 강도(should·recommended vs may·suggested)와 표 권고를 구분해 배지로 표시했다. 진단·치료 진술 ${ALL.length}개(번호는 이 도구에서 부여)를 해라체로 번역했고, 항목을 누르면 해당 본문 절의 요약 번역이 펼쳐진다. Figure 1·3과 Table 1–10을 재현했으며 Figure 2(방사선 사진)는 생략했다.')}${note('원문 불일치','① Figure 1에서 PFD가 FGF23 의존성·비의존성 양쪽에 표기됨(본문은 의존성). ② “Klotho traslocation”, “Eldronate” 오기, NPHLOP1/NPHLPO1 혼용. ③ Figure 3에서 25(OH)D 낮음 + 1,25(OH)₂D 낮음이 VDDR1B·3와 영양성 비타민 D 결핍에 겹침. 영양성 칼슘 결핍의 25(OH)D가 그림은 N/H, Table 2는 N·↓. ④ Table 7 알파칼시돌 25–40 ng/kg/일의 µg 환산이 시작(0.8–1)과 유지(1–2)에서 다름. ⑤ Table 6 VDDR3 비타민 D “50,000/day” 단위 누락. ⑥ 신장 초음파 주기가 Table 8(매년), Table 10(1–2년), VDDR1A 본문(1–2년 또는 저자 경험 6–12개월)에서 다름. ⑦ 경구 칼슘 30–75 mg/kg/일의 분할 횟수가 본문(3회)과 Table 5(2–3회)에서 다름. ⑧ Table 1 “Taylorwise” 자세는 “tailor-wise”의 오기로 보임.')}${TIP_KR}`},
+ all:{kind:'전체', title:`진단·치료 진술 ${ALL.length}개`, next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.replace(/\d+$/,'')===g))}`).join('')},
+ tabs:{kind:'표', title:'Table 1–10', next:[], body:`<h5>Table 1. 주요 골격·치아·치주 징후</h5>${T1}<h5>Table 2. 구루병 유형별 생화학 소견</h5>${T2}<h5>Table 3. 관련 유전자</h5>${T3}<h5>Table 4. 영양성 비타민 D 결핍 구루병의 비타민 D 치료</h5>${T4}<h5>Table 5. 저칼슘혈증의 칼슘 치료</h5>${T5}<h5>Table 6. 비타민 D 의존성 구루병의 유지 치료</h5>${T6}<h5>Table 7. 저인산혈증성 구루병의 고전 치료 용량</h5>${T7}<h5>Table 8. 고전 치료 중 XLH 추적</h5>${T8}<h5>Table 9. XLH 부로수맙 치료 권고</h5>${T9}<h5>Table 10. 부로수맙 치료 중 XLH 추적</h5>${T10}`},
+ intro:{kind:'서론', title:'초록·서론·결론', next:[], body:`${paraHTML(EXP.intro)}${R('K1')}${ex('concl')}`}
+});
+D.a_bio.body += T2;
+
+const ABBR = [
+ ['1,25(OH)₂D','1,25-dihydroxyvitamin D, 칼시트리올'],['25(OH)D','25-hydroxyvitamin D'],['ADHR','Autosomal dominant hypophosphatemic rickets'],['ALP','Alkaline phosphatase'],
+ ['ARHR1 / 2','Autosomal recessive hypophosphatemic rickets type 1 / 2'],['CKD','Chronic kidney disease'],['DXA','Dual energy X-ray absorptiometry'],['ENPP1','Ectonucleotide pyrophosphatase/phosphodiesterase 1'],
+ ['ESPGHAN','European Society for Paediatric Gastroenterology, Hepatology and Nutrition'],['FGF23','Fibroblast growth factor 23'],['GH','Growth hormone, 성장호르몬'],['HHRH','Hereditary hypophosphatemic rickets with hypercalciuria'],
+ ['HPP','Hypophosphatasia, 저인산효소증'],['IMT','Intima-media thickness, 내중막 두께'],['NHERF1','Nephrolithiasis/osteoporosis, hypophosphatemic, 2'],['NPHLOP1','Nephrolithiasis/osteoporosis, hypophosphatemic, 1'],
+ ['PFD','Polyostotic fibrous dysplasia, 다골성 섬유성 이형성증'],['PHEX','Phosphate-regulating endopeptidase homolog, X-linked'],['PTH','Parathyroid hormone'],['RGI-C','Radiographic Global Impression of Change'],
+ ['RSS','Rickets Severity Score'],['RTA','Renal tubular acidosis, 신세뇨관산증'],['sCa / sP','Serum calcium / phosphate'],['SIEDP','Italian Society of Pediatric Endocrinology and Diabetology'],
+ ['SmPC','Summary of Product Characteristics'],['TIO','Tumor-induced osteomalacia, 종양 유발 골연화증'],['TmP/GFR','Tubular maximum reabsorption of phosphate to GFR'],['uCa','Urinary calcium'],
+ ['VDDR1A / 1B','Vitamin D-dependent rickets type 1A / 1B'],['VDDR2A / 2B','Vitamin D-dependent rickets type 2A / 2B'],['VDDR3','Vitamin D-dependent rickets type 3'],['VDR','Vitamin D receptor'],
+ ['XLH','X-linked hypophosphatemic rickets']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'cls';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: F, VDDR)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('cls');
+
+</script>
+</body>
+</html>

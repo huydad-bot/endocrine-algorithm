@@ -79,6 +79,7 @@ const GROUPS = [
  ['당뇨병·비만·지질','💉','#2563EB','#DCE8FD','#1D4ED8',[
   ['mody','MODY','체계적 문헌고찰 2026'],
   ['midd','MIDD','Diabetes Obes Metab 2026'],
+  ['lada','LADA','Diabetes 2020'],
   ['obesity','비만 / ABCD','AACE 2025'],
   ['dyslipidemia','이상지질혈증','ACC/AHA 2026']]],
  ['부신','🔺','#D9622B','#FDE6D8','#B84E1D',[
@@ -99,7 +100,8 @@ const GROUPS = [
   ['ckm','CKM 증후군','AHA 2023']]],
  ['부갑상선·골','🦴','#C28A0E','#FBEFCF','#9A6B05',[
   ['phpt','원발성 부갑상선기능항진증','국제 워크숍 2022'],
-  ['osteoporosis','골다공증 (영국 NOGG)','NOGG 2024']]]
+  ['osteoporosis','골다공증 (영국 NOGG)','NOGG 2024'],
+  ['rickets','구루병','SIEDP 2024']]]
 ];
 document.getElementById('grid').innerHTML = GROUPS.map(([g,ic,c,soft,ink,items])=>
  `<section class="card" style="--c:${c};--soft:${soft};--inkc:${ink}">

@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LADA 관리 합의 2020</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+.node.pr{border-color:#6FB6DA; background:#D4EEFA; color:#123A52}
+.sw.pr{border-color:#6FB6DA; background:#D4EEFA}
+.node.pr{--flash:#2F8FC0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .node.pr,:root:not([data-theme="light"]) .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}}
+:root[data-theme="dark"] .node.pr,:root[data-theme="dark"] .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}
+.node.rk1 small,.node.rk2 small{color:inherit;opacity:.88}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>성인 잠재 자가면역 당뇨병(LADA) 관리: 국제 전문가 패널 합의 2020</h1>
+        <p class="src">Buzzetti R, Tuomi T, Mauricio D, et al. Management of Latent Autoimmune Diabetes in Adults: A Consensus Statement From an International Expert Panel. <a href="https://doi.org/10.2337/dbi20-0017" target="_blank" rel="noopener noreferrer">Diabetes 2020;69:2037–2047</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the authors or the American Diabetes Association</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사 박스 강조"><i class="sw test"></i>검사·평가</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="주의 박스 강조"><i class="sw mal"></i>고위험·주의</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="생활습관 박스 강조"><i class="sw ben"></i>생활습관·위험 낮음</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>항목을 누르면 해당 본문 절 요약 번역이 펼쳐짐</li><li>C-펩티드 색: 빨강 &lt;0.3 · 주황 회색지대 · 노랑 &gt;0.7 nmol/L</li><li>탭은 원문 Figure 1–3과 Table 1을 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>근거 표기·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 항목</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>표</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·향후 과제</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ MOD:'Data Quality Assessment 종합(Overall) 중등도(Moderate): 해당 약제·중재에 대한 패널의 근거 질 평가',
+ LOW:'Data Quality Assessment 종합(Overall) 낮음(Low): 해당 약제·중재에 대한 패널의 근거 질 평가',
+ CON:'패널 제안(Consensus proposal): “Proposal for Management of LADA” 절의 전문가 합의 제안으로 근거 질 평가가 붙어 있지 않음',
+ FIG:'알고리즘 그림(Figure 1–3)에 제시된 단계: 본문 제안을 도식화한 것으로 별도 등급 없음'
+};
+const LVTXT = {MOD:'근거 중등도', LOW:'근거 낮음', CON:'패널 제안', FIG:'알고리즘'};
+const LVCLS = {MOD:'l2', LOW:'l3', CON:'l1', FIG:'l4'};
+/* [구분, 번역, 본문 절 키] */
+const REC = {
+/* 약제·중재별 패널 결론 (Data Quality Assessment) */
+'Q1':['LOW','LADA 환자는 대부분 처음에 T2D로 진단되어 LADA로 확인되기 전에 메트포르민으로 치료받는다. 패널은 메트포르민 사용을 뒷받침하는 근거는 적지만 사용에 반대하는 근거도 없다고 결론지었다.','met'],
+'Q2':['LOW','메트포르민 사용을 뒷받침하는 근거는 제한적이고 TZD 연구는 소수이므로 두 약제의 효과는 결론을 내릴 수 없다. TZD는 비전형 골절, 황반부종, 체중 증가의 잠재 위험이 사용을 제한할 수 있다.','met'],
+'Q3':['MOD','인슐린 중재는 LADA 환자에서 효과적이고 안전하다. 다만 상당한 잔존 β세포 기능이 있는 LADA 초기 단계에 인슐린을 투여해야 하는지는 아직 확립되지 않았다.','ins'],
+'Q4':['MOD','이 치료의 결과로 β세포 기능이 악화될 가능성을 배제할 수 없으므로 설포닐우레아(SU)는 LADA 치료에 권고하지 않는다.','su'],
+'Q5':['MOD','DPP-4i는 LADA 환자에서 양호한 안전성으로 혈당 조절을 개선할 수 있다. DPP-4i가 C-펩티드 분비를 보존하는지 증명하려면 더 큰 무작위 연구가 필요하다.','dpp'],
+'Q6':['MOD','SGLT2i가 T2D와 일부 T1D 환자(특히 과체중)에서 승인되어 있다는 점은 LADA에서도 유망한 약제일 수 있음을 시사한다. 그러나 LADA에서 수행된 연구는 없으며, C-펩티드가 중간–낮은 환자에서는 케토산증에 주의해야 한다.','sglt'],
+'Q7':['MOD','SGLT2i는 인슐린 결핍으로의 진행 징후(흔히 식후 고혈당)를 가리면서 케토산증 위험은 높일 수 있다. 따라서 환자에게 케톤증을 감시하도록, 즉 혈중·요 케톤을 정기적으로(권고에 따라 매일이라도) 측정하도록 하고, 수술 예정 전이나 케토산증 증상·징후와 관련될 수 있는 대사 스트레스 상황 전에는 SGLT2i를 중단하도록 안내해야 한다.','sglt'],
+'Q8':['MOD','GLP-1RA는 C-펩티드가 매우 낮은 경우가 아니면 LADA 환자의 대사 조절 개선에 유익한 결과를 보였다. 이 약제는 T2D와 인슐린 치료 환자에서 승인되어 있지만 LADA 환자에서는 더 많은 근거가 필요하다.','glp'],
+'Q9':['LOW','LADA에서 면역 중재에 대한 현재 자료는 매우 제한적이며, 결론을 내리기 전에 더 광범위한 2상 연구가 필요하다.','imm'],
+'Q10':['MOD','생활습관 교정은 T2D 치료에서 중요하다. 체중 감량과 신체활동이 LADA 발생에 미치는 역할을 검토하는 중재 연구가 필요하다. 필요하면 의학적 도움을 받은 체중 감량, 신체활동 증가, 금연을 장려해야 한다.','life'],
+
+/* 진단 */
+'P1':['CON','LADA 환자를 효과적으로 찾아내기 위해 새로 진단된 모든 T2D 환자에서 GADA(민감도가 가장 높은 면역 표지자) 양성 여부를 선별해야 한다. 이는 신속한 진단, 적절한 치료의 시행, 진행하는 β세포 부전의 추적을 가능하게 한다. 비용이 들 수 있으나 GADA 1회 측정 비용(현재 약 5유로 또는 6달러)은 정당화된다.','dx'],
+'P2':['CON','GADA 외 다른 췌도 자가항원을 표적으로 하는 비용 효과적인 새 생물검정법이 이용 가능해지면 LADA 진단에 고려해야 한다.','dx'],
+'P3':['CON','경제적 문제가 장애가 되는 경우에는 GADA를 측정할 환자를 고르기 위해 다음 임상 인자 중 적어도 하나를 찾아야 한다: T1D 또는 자가면역질환 가족력, 정상 또는 경도 과체중 BMI(&lt;27), 젊은 발병 연령(&lt;60세), 불량한 대사 조절.','dx'],
+'P4':['CON','GADA 양성이면 Figure 1에 따라 관리한다. GADA 음성이라도 LADA가 강하게 의심되면 다른 췌도 자가항체(예: ICA 또는 IA-2A, ZnT8A)를 측정해야 한다. GADA 음성(자가항체 음성)으로 T2D 가능성이 높은 환자는 Figure 1에 따라 관리한다.','dx'],
+'P5':['CON','높은 GADA 수치는 낮은 수치에 비해 인슐린 필요 위험이 크지만, 고·저를 가르는 기준을 정하기 어렵고 생물검정이 반정량적이며 검사실 간 차이가 있으므로 GADA 수치를 임상에서 치료 선택에 사용할 수는 없다.','dx'],
+'P6':['CON','패널은 췌도세포 관련 자가항체 양성 환자에서 인슐린 분비의 대리 지표로 혈청(혈장) C-펩티드 측정을 권고한다.','cpep'],
+'P7':['CON','C-펩티드 평가를 위한 채혈 시에는 비정상적으로 낮거나 높은 혈당의 영향을 피하기 위해 혈당을 함께 측정하여 80–180 mg/dL 범위인지 확인해야 한다.','cpep'],
+'P8':['CON','C-펩티드는 공복, 임의 시점, 식후에 채취한 검체로 측정할 수 있다. 혼합식 내성검사가 식후 C-펩티드 측정의 표준이지만 일상 진료에서는 시행하기 어렵다. 많은 검사실이 임의 식사 2시간 후 측정한 C-펩티드에 혼합식 내성검사 값을 적용해 왔으나 아직 표준화되지 않았다. C-펩티드 검사는 상용화되어 있고 저렴하며 널리 이용 가능하다.','cpep'],
+'P9':['CON','치료 실패 시에는 인슐린 결핍으로의 진행과 인슐린 치료 필요성을 확인하기 위해 C-펩티드 측정을 반복해야 한다.','cpep'],
+'P10':['CON','C-펩티드 측정이 LADA 치료 선택의 의사결정을 이끌어야 한다. 패널은 C-펩티드를 세 개의 넓은 범주(&lt;0.3, ≥0.3–≤0.7, &gt;0.7 nmol/L)로 나누었다.','cat'],
+
+/* C-펩티드 범주 */
+'C1':['CON','C-펩티드 &lt;0.3 nmol/L: 다회 인슐린 요법을 권고한다. 진단 시점에 이 범주라면 T1D로 간주하고 이후 승인된 국내·국제 T1D 지침을 따를 수 있다.','cat'],
+'C2':['CON','C-펩티드 ≥0.3 및 ≤0.7 nmol/L: 패널이 “회색지대(gray area)”로 정의한 범주로, 수정한 ADA/EASD T2D 알고리즘을 권고한다(Figure 2·3). 수정 내용은 β세포 기능을 악화시킬 수 있는 혈당강하제의 사용을 피하는 것이다.','cat'],
+'C3':['CON','회색지대에서는 당뇨병 합병증을 조절·예방하기 위해 다른 치료와 병용한 인슐린을 고려해야 한다. 특정 계열 약제를 단독으로 처방할 때는 그 장단점과 위험까지 고려해야 한다.','cat'],
+'C4':['CON','회색지대 환자의 추적은 적어도 6개월마다 시행해야 한다. 성인 발병 T1D 환자의 상당수도 진단 시 C-펩티드가 이 범위에 있으므로, 고혈당이 뚜렷한 환자는 인슐린으로 시작하고 자주 재평가해야 할 수 있다.','cat'],
+'C5':['CON','C-펩티드 &gt;0.7 nmol/L: 약간 수정한 ADA/EASD T2D 알고리즘 사용을 제안한다. 유일한 차이는 혈당 조절이 악화되면 C-펩티드를 반복 측정하며 추적한다는 점이다. 이 가운데 일부는 위양성 자가항체를 가진 실제 T2D일 것이다.','cat'],
+
+/* 개인 맞춤 치료 */
+'T1':['CON','LADA 개인 맞춤 관리의 전반적 목표는 양호한 대사 조절과 β세포 기능 보존이다.','pers'],
+'T2':['CON','LADA 제안은 β세포 기능 평가를 위한 C-펩티드 측정에 따라 ADA/EASD T2D 알고리즘으로부터의 “이탈(deviation)·변형”으로 정의되며, 각 이탈은 Figure 1–3에 제시된다. 메트포르민과 인슐린 사용에 대해 패널 내 논의가 많았으나 둘 다 역할이 있다고 결론지었다.','pers'],
+'T3':['CON','개인 맞춤 치료의 첫 단계는 치료 경로를 정하기 전에 질병의 기본 특성을 확립하는 것이다. 다만 일반 진료에서 C-펩티드와 당뇨병 관련 자가항체 측정은 드물게 시행될 가능성이 높다.','pers'],
+'T4':['CON','식사요법만으로 “조절”되지 않는 GADA 양성 환자(특히 비만한 경우)에서는 메트포르민을 권고한다.','pers'],
+'T5':['CON','인크레틴 기반 치료(GLP-1RA 또는 DPP-4i), TZD, SGLT2i 같은 다른 혈당강하제를 추가하면 체중 감소, 심혈관·신장 보호 같은 추가 이점이 있을 수 있다(Figure 2·3).','pers'],
+
+/* 알고리즘 그림 */
+'F1':['FIG','Figure 1: GADA를 선별한다. 양성이면 혈청/혈장 C-펩티드를 측정한다. 음성이면 T2D로 보되 췌장염이나 단일유전자 당뇨병도 고려한다. GADA 음성이라도 LADA가 의심되면(예: 마른 체형 또는 다른 자가면역질환) IA-2A를 선별하고, 양성이면 C-펩티드를 측정한다. 이 경로는 재정적 제약이 없는 경우에 사용한다.','dx'],
+'F2':['FIG','Figure 1: C-펩티드 &lt;0.3 nmol/L와 ≥0.3–≤0.7 nmol/L는 LADA 알고리즘을 적용하고, &gt;0.7 nmol/L는 T2D로서 ADA/EASD 지침을 적용하되 6개월 간격 또는 혈당 조절 악화 시 C-펩티드를 반복 측정한다.','cat'],
+'F3':['FIG','Figure 2: C-펩티드 &lt;0.3 nmol/L이면 인슐린(기저 및/또는 식사 인슐린)을 사용한다.','cat'],
+'F4':['FIG','Figure 2: C-펩티드 ≥0.3 및 ≤0.7 nmol/L이면 메트포르민을 사용하고 6개월마다 재평가하며 SU는 사용하지 않는다. ADA/EASD 지침을 적용한다.','cat'],
+'F5':['FIG','Figure 2: 고위험 지표인 확립된 ASCVD 또는 CKD가 있으면 ASCVD 우세형과 심부전·CKD 우세형으로 나누어 약제를 선택한다.','pers'],
+'F6':['FIG','Figure 2 · ASCVD 우세: ① CVD 이익이 입증된 GLP-1RA, ② eGFR이 적절하고 BMI &gt;27 kg/m²이면 CVD 이익이 입증된 SGLT2i(향후 인슐린 필요와 악화, 케토산증 위험을 고려), ③ HbA1c &gt;9%이면 기저 인슐린과 GLP-1RA 또는 SGLT2i 병용 중에서 선택한다. HbA1c가 목표를 넘으면 기저-식전(basal bolus) 인슐린으로 전환한다.','pers'],
+'F7':['FIG','Figure 2 · 심부전 또는 CKD 우세: eGFR이 적절하고 BMI &gt;27 kg/m²이면 CVD 이익이 입증된 SGLT2i를 사용하되 향후 인슐린 필요와 악화, 케토산증 위험을 고려한다. SGLT2i가 불내약이거나 금기이면 CVD 이익이 입증된 GLP-1RA를 추가한다. HbA1c가 목표를 넘으면 ADA/EASD 지침대로 유지하되 SU는 제외한다.','pers'],
+'F8':['FIG','Figure 3: C-펩티드 ≥0.3 및 ≤0.7 nmol/L이고 확립된 ASCVD·CKD가 없으면 DPP-4i, GLP-1RA, SGLT2i, TZD 중에서 선택한다. 이 C-펩티드 기반 분기 자체가 ADA/EASD T2D 알고리즘으로부터의 이탈이다. SGLT2i는 특히 BMI ≤27인 환자에서 당뇨병성 케토산증 위험이 증가한다.','pers'],
+'F9':['FIG','Figure 3: HbA1c가 목표를 넘으면 DPP-4i 다음에는 기저 인슐린 또는 GLP-1RA 또는 SGLT2i, GLP-1RA 다음에는 기저 인슐린 또는 SGLT2i, SGLT2i 다음에는 기저 인슐린 또는 GLP-1RA 또는 DPP-4i, TZD 다음에는 DPP-4i 또는 GLP-1RA 또는 SGLT2i를 추가한다.','pers'],
+'F10':['FIG','Figure 3: 2단계 치료 후에도 HbA1c가 목표를 넘으면 기저-식전(basal-bolus) 인슐린으로 진행한다.','pers'],
+
+/* 향후 과제 */
+'K1':['CON','향후 과제: a) LADA 선별, b) 개인 맞춤 의학, c) 혈당강하제의 무작위 대조 비교 시험 확대, d) 면역 치료의 추가 연구, e) 다양한 환자군의 대규모 장기 연구, f) 삶의 질·생활습관 문제, g) 다양한 인종 집단을 포함한 연구, h) 자가항체 검사(GADA, IA-2 등)의 특성과 질, i) GADA 자가항체와 혈청 C-펩티드 측정의 비용-편익 균형.','gap']
+};
+
+const EXP = {
+intro:{t:'초록·서론', r:'2037–2038쪽', p:[
+ '성인 발병 당뇨병 환자의 상당수는 T1D와 T2D의 특징을 함께 가진다. 이들은 진단 시 인슐린이 필요하지 않아 임상적으로 T2D와 비슷하지만 T1D와 관련된 면역유전 표지자를 가진다. 이렇게 천천히 진행하는 자가면역 당뇨병을 성인 잠재 자가면역 당뇨병(LADA)이라 하며, 인구 특성과 확인 방법에 따라 차이가 크지만 성인 발병 당뇨병의 2–12%를 차지한다.',
+ '치료 전략은 대사 조절과 잔존 인슐린 분비능의 보존을 목표로 하며, LADA 안의 내형(endotype) 이질성 때문에 개인 맞춤 접근이 필요하다. 대규모 임상시험이 부족한 상황에서 전문가 패널은 자료를 검토해 하나의 치료 접근을 제시했다. 2020 ADA/EASD T2D 합의와 자가면역 당뇨병의 이질성을 바탕으로 ADA/EASD 지침으로부터의 LADA “이탈(deviation)”을 제안한다.',
+ 'LADA 안에서는 β세포 기능의 대리 지표인 C-펩티드가 치료 결정을 이끈다. 패널은 임의 C-펩티드를 세 범주로 나누었다: ① &lt;0.3 nmol/L는 T1D처럼 다회 인슐린 요법, ② ≥0.3–≤0.7 nmol/L는 “회색지대”로 수정한 ADA/EASD 알고리즘과 β세포 부전 조절·합병증 억제를 위한 인슐린 병용 고려, ③ &gt;0.7 nmol/L는 T2D처럼 수정한 ADA/EASD 알고리즘을 쓰되 LADA의 진행 가능성을 고려해 C-펩티드를 추적한다. 패널은 새로 진단된 인슐린 비의존 당뇨병에서 LADA의 일반 선별을 권하고, 대규모 무작위 임상시험이 필요하다고 결론지었다.',
+ 'T1D와 T2D는 모두 임상 경과가 매우 다양한 복합 이질성 질환이며 모든 환자가 현재의 이분 분류에 맞지는 않는다. LADA(1.5형 당뇨병이라고도 함)는 T1D로 포괄되는 자가면역 당뇨병 스펙트럼의 일부이지만 내표현형에 뚜렷한 차이가 있다. 중국에만 약 600만 명이 있는 것으로 추정되며, 북유럽과 중국 일부 지역(7–14%)이 아프리카계·히스패닉 미국인보다 유병률이 높다.',
+ 'LADA는 잘 알려진 당뇨병 형태이지만 관리 지침이 없다. 국제 전문가 모임은 ① LADA 환자 식별, ② 현재 치료 선택지 검토, ③ LADA 관리 제안의 세 부분으로 이 보고서를 구성했다.'
+]},
+ident:{t:'LADA 환자의 식별', r:'2038쪽', p:[
+ '성인 발병(진단 시 &gt;30세), 당뇨병 관련 자가항체 존재, 진단 후 적어도 6개월 동안 인슐린이 필요하지 않음이 현재 LADA의 핵심 진단 기준이다(Table 1). 그러나 어느 기준도 범주적이지 않다. LADA는 임상·대사적으로 T1D와 T2D의 잡종이어서 범주적 면역유전·표현형 특징을 정의하기 어렵다.',
+ '비슷한 서서히 진행하는 자가면역 당뇨병은 젊은 발병 환자에서도 나타나며 LADY(latent autoimmune diabetes in the young)라 한다. Andersen 등은 GADA가 높은(최고 사분위) LADA 환자도 성인 발병(&gt;35세) T1D보다 인슐린 분비가 좋고 BMI가 높음을 보였다. 반면 단면 연구에서 진단 후 1–6개월 사이 인슐린을 시작한 GADA 양성 환자(T1D로 간주)는 표현형으로 LADA와 구별되지 않았다. GADA 양성은 임상 당뇨병 발생 전 일시적일 수도 있다.',
+ 'LADA의 이질성 때문에 당뇨병 관련 자가항체를 측정하지 않고는 LADA 여부를 확신할 수 없다. 다만 50세 미만, 가족력 및/또는 본인의 자가면역질환, BMI &lt;25 kg/m², 발병 시 급성 증상 같은 병력·임상 특징이 LADA 가능성이 높은 환자를 찾는 데 도움이 된다.',
+ '최근 진단 연령, BMI, GADA, IA-2A, T1D 유전 위험 점수의 다섯 변수로 3년 내 인슐린 필요와 낮은 C-펩티드(T1D)를 판별하는 임상 진단 모델이 단면 자료로 개발되었다. ROC AUC는 임상 특징만으로 0.90, 다섯 변수 모두로 0.97이지만, 18–50세 유럽계 환자에만 적용되고 단면 연구라 예측 모델은 아니다.'
+]},
+pheno:{t:'표현형 특징', r:'2038–2039쪽', p:[
+ 'UKPDS와 Botnia 연구 등 주요 연구에서 T2D로 진단된 환자의 자가항체(GADA) 빈도는 젊을수록 높다(UKPDS에서 25–34세 34%, 55–65세 7%). 평균적으로 LADA는 항체 음성 T2D보다 진단 연령이 낮고 BMI가 낮으며 본인 또는 가족의 자가면역질환 병력이 있다.',
+ '대사증후군 빈도는 성인 발병 T1D와 비슷하거나 높지만 항체 음성 T2D보다는 낮고, HOMA-IR과 혈압이 낮으며 당뇨병성 이상지질혈증이 적다. 그러나 이질성이 커서 일부는 대사증후군이 없는 T1D 표현형, 일부는 대사증후군이 있는 T2D와 구별되지 않는 표현형을 보인다.',
+ 'LADA는 주요 심혈관 위험인자가 적지만(더 마르고 지질·혈압 프로필이 좋음), 전통적 위험인자를 보정하면 T2D와 심혈관 결과에 차이가 없다. UKPDS 사후 분석에서 LADA는 발병 초기 미세혈관 합병증 위험이 T2D보다 낮지만 이후 혈당 조절이 나빠지면서 더 높아졌으며, 이는 혈당 최적화가 이후 합병증 위험을 막을 수 있음을 시사한다.',
+ 'C-펩티드는 LADA에서 T1D보다 천천히 감소하며, 잔존 β세포 기능과 인슐린 필요로의 진행에 따라 LADA를 병기화하는 데 사용할 수 있다. 인슐린 결핍으로의 진행 위험은 진단 연령, 자가항체 수치, 다중 췌도 자가항체 여부에 따라 다르다.'
+]},
+aab:{t:'자가항체', r:'2039쪽', p:[
+ 'GADA는 유럽과 중국, 1차와 2차 진료 모두에서 주된 자가항체이므로 LADA의 가장 민감한 표지자로 간주된다. Action LADA 연구에서 당뇨병 관련 자가항체 양성 LADA의 약 90%가 GADA 양성이었다. GADA는 상용 방사면역측정법과 ELISA로 측정할 수 있으며, 국제 췌도 자가항체 표준화 프로그램에 따르면 특이도가 2010년 94%에서 2018년 99%로 향상되었다.',
+ 'GADA가 높은 환자는 BMI가 낮고 대사증후군이 적은 T1D 유사 표현형을 보이며, UKPDS와 다른 모든 연구에서 높은 GADA는 인슐린 필요 위험 증가와 관련되었다.',
+ '일부 자가항체 양성은 검사 변동 또는 인슐린 의존 예측력의 한계로 위양성일 수 있어 개별 자가항체의 예측값을 떨어뜨린다. 검사 특이도를 높이고 대상 집단을 LADA로 농축하면 양성 예측도가 높아진다. 따라서 GADA 양성 환자 일부는 T2D이며 그렇게 치료해야 하는데, C-펩티드에 더 비중을 두면 이 딜레마를 일부 피할 수 있다.',
+ '다른 자가항체로 IA-2 에피토프(IA-2A), 인슐린(IAA), ZnT8A, tetraspanin 7 항체가 있으며 다른 GADA 에피토프는 LADA에서 드물다. N-말단 절단 GADA 양성 LADA는 전장 GADA 양성보다 고전적 T1D에 가깝고 조기 인슐린 치료 진행의 교차비가 높았다. IA-2IC 에피토프 항체는 LADA를 민감도 약 30%, 특이도 약 100%로, IA-2(256–760) 단편 항체는 민감도 40%, 특이도 97%로 식별한다.',
+ '당뇨병 관련 자가항체 양성은 인슐린 비의존 당뇨병으로의 진행, 특히 진단 후 향후 인슐린 의존을 예측한다. UKPDS에서 LADA의 적어도 50%가 진단 6년 후 인슐린 치료가 필요했지만, 10년이 지나도 인슐린이 필요하지 않은 환자도 있었다. LADA는 다른 장기 특이 자가항체와 자가면역질환 위험이 높다. GADA는 갑상선 자가면역을, 중국에서 IA-2 항체는 셀리악병 관련 자가면역을 예측하며, 높은 GADA는 갑상선 자가면역과 강하게 관련된다.'
+]},
+gen:{t:'유전 감수성', r:'2039쪽', p:[
+ 'LADA와 T1D가 공유하는 유전 감수성에는 HLA DQB1·DRB1, 인슐린 유전자, PTPN22 다형성이 있으며, 최근 대규모 전장유전체 연관 연구에서 이들과 SH2B3 유전자가 확인되었다.',
+ '소규모 연구에서는 LADA가 가장 강한 T2D 변이인 TCF7L2와 관련되었고 특히 과체중에서 그러했으나, 전장유전체 연관 연구와 중국 연구에서는 관련이 없었다(인종 차이 가능성). 소아 발병 T1D와 강하게 관련된 HLA class I 유전자(HLA-A, HLA-B)는 LADA와 관련이 없다.',
+ '유전 위험 점수는 당뇨병 관련 자가항체 양성 환자에서 인슐린 의존 진행 속도를 층화하고 위양성 자가항체를 가진 환자를 찾는 데 도움이 될 수 있다.'
+]},
+ovr:{t:'치료 개관', r:'2039쪽', p:[
+ 'LADA 환자는 정의상 진단 시 기능하는 β세포가 있으므로 대사 조절 개선과 함께 인슐린 분비능 보존을 목표로 하는 치료 전략이 필수적이다.',
+ '패널은 현재 임상시험 자료를 검토했고, 장기 추적을 갖춘 양질의 대규모 대조 시험이 없다는 Cochrane 리뷰의 결론을 재확인했다. 이 제안은 처음에 인슐린이 필요하지 않다고 판단된 환자에만 적용된다.',
+ '각 약제의 근거는 Data Quality Assessment(Limitations Coherence, Relevance, Adequacy, Overall)로 평가했다.'
+]},
+met:{t:'인슐린 감작제(메트포르민, TZD)', r:'2039–2040쪽', p:[
+ '대부분의 LADA 환자는 T2D로 임상 진단되어 LADA로 확인되기 전에 메트포르민으로 치료받는다. 메트포르민은 T1D에서 인슐린 감수성을 높일 수 있으나 장기 혈당 조절 개선의 근거는 없고, 체중, LDL 콜레스테롤, 죽상경화 진행 위험을 줄일 수 있다. LADA에서 메트포르민 단독·병용의 대사 조절, β세포 기능, 내약성을 보는 임상시험이 진행 중이다.',
+ '소규모 연구(23명)에서 TZD를 인슐린과 병용했을 때 β세포 기능이 보존되었으나 재현이 필요하다. 중국인 54명의 4군 무작위 시험에서 GADA &lt;175 units/mL이고 공복 C-펩티드 &gt;0.3 nmol/L인 LADA 환자를 SU(14명) 또는 로시글리타존(15명)에 배정했을 때, 공복 C-펩티드는 차이가 없었지만 경구 당부하 후 C-펩티드와 delta C-펩티드는 18개월부터 36개월까지 로시글리타존군이 높았다(모두 P &lt;0.05).',
+ '#Data Quality Assessment',
+ 'Limitations Coherence: Moderate · Relevance: Moderate · Adequacy: Minor · <b>Overall: Low</b>'
+]},
+ins:{t:'인슐린', r:'2040쪽', p:[
+ 'C-펩티드를 검출할 수 없는 모든 경우에 인슐린 치료는 필수이지만, LADA는 정의상 잔존 β세포 기능이 있고 일반적으로 인슐린 의존으로 천천히 진행한다. 핵심 질문은 인슐린을 LADA의 초기 치료로 써야 하는가이며, 결론을 내릴 만한 충분한 추적 기간의 대규모 무작위 대조 시험은 없다.',
+ '일본 무작위 시험(인슐린 30명 vs SU 30명, 5년)에서 인슐린군의 통합 C-펩티드 반응이 유의하게 좋았고 인슐린 필요 당뇨병으로의 진행이 적었다(P = 0.003). 반면 Thunander 등(37명)은 조기 인슐린 치료가 β세포 기능을 보존하지 못했다고 결론지었으나, 내약성이 좋고 대사 조절이 더 나았다(대조군만 36개월에 HbA1c가 유의하게 상승, P = 0.006). C-펩티드 감소는 연령, 성별, BMI, HbA1c, 자가항체 수치와 무관하게 진행했다.',
+ 'UKPDS에서 환자의 11.6%가 자가항체 양성이었고 다른 배정 치료와 무관하게 더 일찍 인슐린이 필요했다. 제한된 자료이지만 인슐린 중재는 LADA의 대사 조절에 효과적이다. 그러나 임상 질환 초기 단계에 투여해야 하는지, 질병 단계와 무관하게 최적 치료인지는 확립되지 않았으며 최적의 중재 시점을 밝히는 연구가 필요하다.',
+ '#Data Quality Assessment',
+ 'Limitations Coherence: Moderate · Relevance: High · Adequacy: Moderate · <b>Overall: Moderate</b>'
+]},
+su:{t:'설포닐우레아', r:'2040쪽', p:[
+ 'LADA에서 SU의 효과를 시사하는 근거는 제한적이다. 일본의 다기관 무작위 비맹검 연구에서 인슐린 또는 글리벤클라미드(각 30명)에 배정된 LADA 환자를 최대 5년 추적했을 때, SU군은 대사 조절이 나빴고 C-펩티드 감소가 더 빨랐다(P = 0.005).',
+ 'T2D에서 메트포르민 추가 요법으로 글리메피리드와 리나글립틴을 비교한 무작위 시험의 소규모 LADA 하위군(38명: 리나글립틴 21명, 글리메피리드 17명) 사후 탐색 분석에서, 혈당 효과는 비슷했지만 글리메피리드군은 28·52·104주에 공복 C-펩티드가 감소했고 리나글립틴군은 증가했다. 군 간 차이는 28주와 58주에 유의했다(모두 P &lt;0.01).',
+ '앞의 중국인 54명 4군 시험의 3년 자료에서도 SU군(14명)은 로시글리타존군(15명)보다 delta C-펩티드와 75 g 당부하 2시간 C-펩티드가 낮았고 혈당 조절은 차이가 없었다(모두 P &lt;0.05). 전체 자료는 결론적이지 않지만 SU 치료가 인슐린 분비를 감소시킬 가능성을 배제할 수 없다. 따라서 SU는 LADA 치료에 권고하지 않으며, T2D에서도 일반적으로 1차 치료로 권고되지 않는다.',
+ '#Data Quality Assessment',
+ 'Limitations Coherence: Moderate · Relevance: High · Adequacy: Minor · <b>Overall: Moderate</b>'
+]},
+dpp:{t:'DPP-4 억제제', r:'2040–2041쪽', p:[
+ 'LADA에서 DPP-4i의 소규모 임상시험은 위약, 글리메피리드, 피오글리타존에 비해 양호한 안전성으로 혈당 조절을 개선하고 β세포 기능을 보존할 수 있음을 시사한다. 위약 대조 무작위 연구 5개의 통합 사후 분석(2,709명)에서 삭사글립틴은 GADA 양성(98명)과 음성(1,849명) 모두에서 HOMA2-β와 식후 C-펩티드를 기저치보다 개선했다.',
+ '진단 3년 이내이며 인슐린 적응증이 없는 GADA 양성 LADA(64명)에서 인슐린과 시타글립틴 21개월 치료 후 글루카곤 자극 C-펩티드를 비교한 연구에서, 중재 기간 대사 조절과 중재 후 β세포 기능은 두 군이 비슷했다. 치료와 무관하게 GADA가 높은 군에서 자극 C-펩티드 반응이 더 크게 악화되었다. 다른 소규모 연구(30명)에서는 인슐린에 시타글립틴을 추가하면 인슐린 단독보다 C-펩티드 감소에 유리했다.',
+ '삭사글립틴과 비타민 D3 병용도 유망한 결과를 보였다. 사후 분석, 작은 표본, 짧은 추적, 연구 간 이질성 같은 한계가 있으나 DPP-4i는 LADA의 효과적 관리를 위한 잠재적 대안이다.',
+ '#Data Quality Assessment',
+ 'Limitations Coherence: Moderate · Relevance: High · Adequacy: Moderate · <b>Overall: Moderate</b>'
+]},
+sglt:{t:'SGLT2 억제제', r:'2041쪽', p:[
+ 'SGLT2i는 저혈당 없이 혈당 조절을 개선하며 T2D 관리에 쓰인다. LADA 중재 연구는 없지만, 5,000명 이상의 T1D 환자를 대상으로 한 국제 다기관 무작위 시험들이 기존 인슐린 요법에 SGLT2i를 추가하는 효과와 안전성을 확인했다.',
+ '다파글리플로진은 최적 인슐린 치료에도 혈당 조절이 불충분한 BMI 27 kg/m² 이상 성인 T1D에서 유럽의약품청(EMA)의 승인을 받았으나(DEPICT 3상 근거), 미국에서 T1D 사용은 여전히 허가 외다. SGLT 억제는 HbA1c 감소, 혈당 변동성 감소, 소폭의 체중 감소, 저혈당 위험 증가 없는 총 인슐린 용량 감소의 이점이 있다.',
+ '그러나 고혈당을 동반하지 않는 경우가 많은 케토산증 위험이 증가하며, 특히 과체중이 아닌 환자(BMI &lt;27 kg/m²)에서 그렇다. 이는 C-펩티드가 중간–낮고 인슐린을 쓰지 않는 LADA 환자에서 특히 중요한데, 인슐린 결핍으로 진행할 위험이 높기 때문이다. SGLT2i는 흔히 식후 고혈당으로 나타나는 인슐린 결핍 진행 징후를 가리면서 케토산증 위험을 높일 수 있다.',
+ '#Data Quality Assessment',
+ 'Limitations Coherence: Low · Relevance: High · Adequacy: Low · <b>Overall: Moderate</b>'
+]},
+glp:{t:'GLP-1 수용체 작용제', r:'2041–2042쪽', p:[
+ 'GLP-1RA는 저혈당이 적게 고혈당을 줄이고 체중 감소와 유지에 도움이 되며 식욕 억제, 섭취 감소, 위 배출 지연 효과가 있다.',
+ 'GADA를 측정한 3상 무작위 시험 3개(AWARD-2, -4, -5)의 통합 사후 분석에서 둘라글루티드는 LADA에서 HbA1c를 효과적으로 낮추었다. 1년 시점 HbA1c 감소는 GADA 음성(−1.09%)과 양성(−0.94%)이 비슷했고, 자가항체 수치가 낮은 LADA에서 약간 더 효과적이었다.',
+ '예상대로 당뇨병 관련 자가항체가 있고 공복 C-펩티드가 낮은(≤0.25 nmol/L) 소규모 환자군(19명)에서는 GLP-1RA(엑세나타이드·리라글루티드)에 대한 혈당 반응이 감소했다. 대사 조절 유지와 인슐린 의존 진행 지연 효과를 확인하려면 장기 추적 대규모 전향적 무작위 시험이 필요하다.',
+ '#Data Quality Assessment',
+ 'Limitations Coherence: Low · Relevance: High · Adequacy: Moderate · <b>Overall: Moderate</b>'
+]},
+imm:{t:'면역 중재', r:'2042쪽', p:[
+ 'LADA 면역 중재 연구는 하나뿐이다. 인슐린이 필요하지 않은 GADA 양성 환자 47명을 대상으로 알룸 제형 재조합 GAD(GAD-alum)를 용량 증량 방식으로 피하 투여한 소규모 위약 대조 2상 연구다. 1차 결과는 신경학적 검사, 약물 사용, β세포 기능으로 평가한 안전성이었고 시험 종료 시점인 5년까지 평가했다.',
+ '5년 추적 동안 중대한 연구 관련 이상반응은 없었고, 활성 치료가 위약보다 인슐린 시작 위험을 높이지 않았다. 5년 후 공복 C-펩티드는 가장 높은 두 용량군에 비해 위약군에서 감소했다. 저자들은 안전성 1차 결과를 달성했고 β세포 기능에 유익한 효과의 근거가 있다고 결론지었다. 이 치료를 권고하기 전에 더 큰 시험이 필요하며 현재 진행 중이다.',
+ '#Data Quality Assessment',
+ 'Limitations Coherence: Low · Relevance: Moderate · Adequacy: Low · <b>Overall: Low</b>'
+]},
+life:{t:'생활습관 교정', r:'2042쪽', p:[
+ 'LADA는 저출생체중, 과체중·비만, 신체활동 부족, 흡연, 가당 음료 섭취 등 인슐린 저항성과 T2D를 촉진하는 요인과 관련된다. 비만과 인슐린 저항성이 LADA의 위험인자라는 근거는 풍부하다.',
+ '따라서 T2D처럼 생활습관 변화를 조합해 LADA를 치료할 수 있을 것이다. 필요하면 의학적 도움을 받은 체중 감량, 신체활동 증가, 금연을 장려해야 한다. 소수의 연구가 모두 스칸디나비아 인구에서만 수행되어 현재 지식이 제한되므로 LADA 발생에서 생활습관 요인의 역할을 보는 중재 연구가 필요하다.',
+ '#Quality Assessment',
+ 'Limitations Coherence: Low · Relevance: High · Adequacy: Low · <b>Overall: Moderate</b>'
+]},
+dx:{t:'LADA 진단의 과제', r:'2042–2043쪽', p:[
+ '패널은 LADA 환자를 효과적으로 찾기 위해 새로 진단된 모든 T2D 환자에서 GADA 양성 여부를 선별해야 한다는 데 동의했다. 이는 신속한 진단, 적절한 치료, 진행하는 β세포 부전의 추적을 가능하게 한다. 비용이 들 수 있지만 GADA 1회 측정 비용(약 5유로 또는 6달러)은 정당화된다.',
+ 'GADA 외 다른 췌도 자가항원을 표적으로 하는 비용 효과적인 새 생물검정법이 나오면 LADA 진단에 고려해야 한다. 경제적 문제가 있으면 T1D·자가면역질환 가족력, 정상 또는 경도 과체중 BMI(&lt;27), 젊은 발병 연령(&lt;60세), 불량한 대사 조절 중 적어도 하나로 GADA 측정 대상을 고른다.',
+ 'GADA 양성이면 Figure 1에 따라 관리한다. GADA 음성이지만 LADA가 강하게 의심되면 다른 췌도 자가항체(ICA, IA-2A, ZnT8A 등)를 측정한다. GADA 음성(자가항체 음성)으로 T2D 가능성이 높은 환자도 Figure 1에 따라 관리한다.',
+ '높은 GADA는 낮은 GADA보다 인슐린 필요 위험이 크지만, 고·저를 구분할 기준을 정하기 어렵고, 생물검정이 반정량적이며, 검사실 간 GADA 수치 차이가 있어 임상에서 치료 선택에 쓸 수 없다.'
+]},
+cpep:{t:'C-펩티드 측정', r:'2043쪽', p:[
+ '패널은 췌도세포 관련 자가항체 양성 환자에서 인슐린 분비의 대리 지표로 혈청(혈장) C-펩티드 측정을 권고한다. 비정상적으로 낮거나 높은 혈당의 영향을 피하려면 채혈 시 혈당을 함께 측정해 80–180 mg/dL 범위인지 확인해야 한다.',
+ 'C-펩티드는 공복, 임의 시점, 식후 검체로 측정할 수 있다. 공복 C-펩티드 자료는 이 제안과 일치하는 유럽과 중국의 최근 전향적 연구 2개가 뒷받침한다. 혼합식 내성검사가 식후 C-펩티드 측정의 표준이지만 일상 진료에서 시행하기 어렵다. 많은 검사실이 임의 식사 2시간 후 측정한 C-펩티드에 혼합식 내성검사 값을 적용하지만 아직 표준화되지 않았다. C-펩티드 검사는 상용화되어 있고 저렴하며 널리 이용 가능하다.',
+ 'LADA는 정의상 진단 시 C-펩티드가 검출되며, 일반적으로 T1D보다 천천히(유전 특성에 따라 다름), T2D보다 빨리 감소한다. 치료 실패 시에도 인슐린 결핍으로의 진행과 인슐린 치료 필요성을 확인하기 위해 C-펩티드를 반복 측정해야 한다.'
+]},
+cat:{t:'C-펩티드 범주별 치료', r:'2043–2044쪽', p:[
+ 'C-펩티드 측정이 LADA 치료 선택의 의사결정을 이끌어야 하며, 패널은 세 개의 넓은 범주를 제안했다.',
+ '<b>C-펩티드 &lt;0.3 nmol/L</b>: 다회 인슐린 요법을 권고한다. 진단 시점에 이 범주라면 T1D로 간주하고 이후 승인된 국내·국제 T1D 지침을 따를 수 있다.',
+ '<b>C-펩티드 ≥0.3 및 ≤0.7 nmol/L</b>: 패널이 “회색지대”로 정의한 범주로, 수정한 ADA/EASD T2D 알고리즘을 권고한다(Figure 2·3). 수정 내용은 β세포 기능을 악화시킬 수 있는 혈당강하제의 사용을 피하는 것이다. 당뇨병 합병증을 조절·예방하기 위해 다른 치료와 병용한 인슐린을 고려해야 하며, 특정 계열 약제를 단독으로 처방할 때의 장단점과 위험을 고려해야 한다. 이 범주의 추적은 적어도 6개월마다 시행한다. 성인 발병 T1D 환자의 상당수도 진단 시 이 범위이므로 고혈당이 뚜렷하면 인슐린으로 시작하고 자주 재평가해야 할 수 있다.',
+ '<b>C-펩티드 &gt;0.7 nmol/L</b>: 약간 수정한 ADA/EASD T2D 알고리즘을 쓴다. 유일한 차이는 혈당 조절이 악화되면 C-펩티드를 반복 측정하며 추적한다는 점이다. 이 중 일부는 위양성 자가항체를 가진 실제 T2D일 것이다.'
+]},
+pers:{t:'LADA 개인 맞춤 치료와 ADA/EASD 지침', r:'2044쪽', p:[
+ 'LADA 개인 맞춤 관리의 전반적 목표는 양호한 대사 조절과 β세포 기능 보존이다. T2D 고혈당 관리 지침은 LADA의 다양한 대사 표현형을 고려하지 않으며, 2020 ADA/EASD T2D 지침은 성인 발병 당뇨병의 상당 부분을 차지하는 LADA에 대한 특정 치료를 제시하지 않는다. 패널은 진료 현장에서 이 환자들의 관리 권고를 제공하는 것이 중요하다고 보았다.',
+ 'LADA 제안은 β세포 기능 평가를 위한 C-펩티드 측정에 따라 ADA/EASD T2D 알고리즘으로부터의 이탈·변형으로 정의되며, 각 이탈은 Figure 1–3에 제시된다. 메트포르민과 인슐린 사용에 관해 많은 논의가 있었으나 둘 다 역할이 있다고 결론지었다.',
+ '개인 맞춤 치료의 첫 단계는 치료 경로를 정하기 전에 질병의 기본 특성을 확립하는 것이다. 다만 일반 진료에서 C-펩티드와 당뇨병 관련 자가항체 측정은 드물게 시행될 가능성이 높다. 식사요법만으로 조절되지 않는 GADA 양성 환자(특히 비만)에서는 메트포르민을 권고한다. 인크레틴 기반 치료(GLP-1RA 또는 DPP-4i), TZD, SGLT2i를 추가하면 체중 감소, 심혈관·신장 보호 같은 추가 이점이 있을 수 있다(Figure 2·3).'
+]},
+gap:{t:'핵심 지식 공백과 향후 전망', r:'2044쪽', p:[
+ 'LADA로 확인된 환자는 당뇨병 진료 환자의 최대 12%를 차지한다. 이 제안은 LADA의 기술적·기능적 특징에 근거해 일반적이고 특정한 권고를 함께 제시하려는 시도이며, 의사가 LADA를 관리할 수 있도록 개인 맞춤, 다차원, 통합 안내를 제공한다.',
+ 'LADA의 식별과 치료는 의사에게 큰 과제다. 패널은 향후 과제로 a) LADA 선별, b) 개인 맞춤 의학, c) 혈당강하제의 무작위 대조 비교 시험 확대, d) 면역 치료의 추가 연구, e) 다양한 환자군의 대규모 장기 연구, f) 삶의 질·생활습관 문제, g) 다양한 인종 집단을 포함한 연구, h) 자가항체 검사(GADA, IA-2 등)의 특성과 질, i) GADA와 혈청 C-펩티드 측정의 비용-편익 균형을 제시했다.'
+]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const P = (...pts)=>'M'+pts.map(p=>p.join(' ')).join(' L');
+const C4 = [10,198,386,574], CW = 176;
+
+const CHARTS = {
+dx:{tab:'진단 경로', fig:'Figure 1', aria:'자가항체 선별과 C-펩티드에 따른 LADA 진단 경로', w:760, h:560, nodes:[
+ {id:'x_scr', x:10, y:10, w:440,h:50, label:'GADA 선별<small>새로 진단된 T2D 전원</small>', cls:'test fac'},
+ {id:'x_t2d', x:580,y:10, w:170,h:50, label:'T2D**<small>음성</small>', cls:'na fac'},
+ {id:'x_sus', x:480,y:100,w:270,h:72, label:'LADA 의심<small>마른 체형 또는 다른 자가면역질환 → IA-2A 선별</small>', cls:'mal fac'},
+ {id:'x_cp',  x:10, y:110,w:440,h:52, label:'혈청/혈장 C-펩티드 측정<small>동시 혈당 80–180 mg/dL</small>', cls:'test fac'},
+ {id:'x_c1',  x:10, y:225,w:140,h:56, label:'&lt;0.3 nmol/L', cls:'rk3 fac'},
+ {id:'x_c2',  x:160,y:225,w:150,h:56, label:'≥0.3–≤0.7 nmol/L<small>회색지대</small>', cls:'rk2 fac'},
+ {id:'x_c3',  x:320,y:225,w:130,h:56, label:'&gt;0.7 nmol/L', cls:'rk1 fac'},
+ {id:'x_rep', x:480,y:220,w:270,h:66, label:'C-펩티드 재측정<small>6개월 간격 또는 혈당 조절 악화 시</small>', cls:'test fac'},
+ {id:'x_lada',x:10, y:335,w:300,h:56, label:'LADA 알고리즘 적용<small>→ Figure 2·3</small>', cls:'tx fac'},
+ {id:'x_t2g', x:320,y:335,w:430,h:56, label:'T2D: ADA/EASD 지침 적용<small>위양성 자가항체 가능</small>', cls:'tx fac'},
+ {id:'x_sel', x:10, y:440,w:360,h:100, label:'비용 제약 시 GADA 측정 대상<small>T1D·자가면역 가족력 · BMI &lt;27 · 발병 &lt;60세 · 불량한 대사 조절 중 ≥1개</small>', cls:'fac'},
+ {id:'x_gl',  x:390,y:440,w:360,h:100, label:'GADA 수치와 치료 선택<small>고·저 기준 없음 · 반정량 · 검사실 간 차이 → 치료 선택에 쓰지 않음</small>', cls:'fac'}
+ ], edges:[
+ [A(450,35,580,35),1],[A(665,35,665,100),1],[A(480,136,450,136),1],
+ [A(230,60,230,110),1],
+ [P([230,162],[230,193],[80,193],[80,225]),1],[A(235,193,235,225),1],[P([230,193],[385,193],[385,225]),1],
+ [A(450,253,480,253),1],
+ [A(80,281,80,335),1],[A(235,281,235,335),1],[A(385,281,385,335),1]
+ ], labels:[[492,28,'음성'],[240,90,'양성'],[455,128,'+']]},
+
+f2:{tab:'약제 선택 ①', fig:'Figure 2', aria:'C-펩티드 0.3 미만 또는 회색지대에서 ASCVD·CKD가 있을 때의 혈당강하제 선택', w:760, h:620, nodes:[
+ {id:'f2_cp', x:290,y:10, w:180,h:44, label:'C-펩티드', cls:'test'},
+ {id:'f2_ins',x:10, y:90, w:200,h:70, label:'인슐린<small>기저 및/또는 식사 인슐린</small>', cls:'tx fac'},
+ {id:'f2_met',x:230,y:90, w:520,h:70, label:'메트포르민 · 6개월마다 재평가 · SU 금지<small>ADA/EASD 지침 적용</small>', cls:'tx fac'},
+ {id:'f2_hr', x:230,y:185,w:520,h:46, label:'고위험 지표: 확립된 ASCVD 또는 CKD', cls:'mal'},
+ {id:'f2_as', x:230,y:255,w:330,h:44, label:'ASCVD 우세', cls:'mal'},
+ {id:'f2_hf', x:570,y:255,w:180,h:44, label:'심부전 또는 CKD 우세', cls:'mal'},
+ {id:'f2_g',  x:230,y:320,w:110,h:150,label:'GLP-1RA<small>CVD 이익 입증</small>', cls:'tx fac'},
+ {id:'f2_s',  x:345,y:320,w:110,h:150,label:'SGLT2i<small>CVD 이익 입증 · eGFR 적절 · BMI &gt;27 · 인슐린 필요·DKA 위험 고려</small>', cls:'tx fac'},
+ {id:'f2_b',  x:460,y:320,w:100,h:150,label:'기저 인슐린<small>+ GLP-1RA 또는 SGLT2i · HbA1c &gt;9%</small>', cls:'tx fac'},
+ {id:'f2_hs', x:570,y:320,w:180,h:150,label:'SGLT2i<small>CVD 이익 입증 · eGFR 적절 · BMI &gt;27 · DKA 위험 고려 · 불내약·금기 시 GLP-1RA 추가</small>', cls:'tx fac'},
+ {id:'f2_t1', x:230,y:495,w:330,h:40, label:'HbA1c 목표 초과', cls:'test'},
+ {id:'f2_t2', x:570,y:495,w:180,h:40, label:'HbA1c 목표 초과', cls:'test'},
+ {id:'f2_bb', x:230,y:560,w:330,h:46, label:'기저-식전(basal bolus) 인슐린', cls:'tx'},
+ {id:'f2_kp', x:570,y:560,w:180,h:52, label:'ADA/EASD 유지<small>SU는 제외</small>', cls:'tx fac'}
+ ], edges:[
+ [P([290,32],[110,32],[110,90]),1],[P([470,32],[490,32],[490,90]),1],
+ [A(490,160,490,185),1],[A(395,231,395,255),1],[A(660,231,660,255),1],
+ [P([395,299],[395,310],[285,310],[285,320]),1],[P([395,310],[400,310],[400,320]),1],[P([395,310],[510,310],[510,320]),1],[A(660,299,660,320),1],
+ [A(285,470,285,495),1],[A(400,470,400,495),1],[A(510,470,510,495),1],[A(660,470,660,495),1],
+ [A(395,535,395,560),1],[A(660,535,660,560),1]
+ ], labels:[[120,25,'<0.3 nmol/L'],[498,25,'≥0.3 및 ≤0.7 nmol/L']]},
+
+f3:{tab:'약제 선택 ②', fig:'Figure 3', aria:'회색지대에서 ASCVD·CKD가 없을 때의 혈당강하제 선택', w:760, h:540, nodes:[
+ {id:'f3_hd', x:180,y:10, w:400,h:40, label:'LADA의 혈당강하제', cls:'fac'},
+ {id:'f3_cp', x:180,y:62, w:400,h:40, label:'C-펩티드 ≥0.3 및 ≤0.7 nmol/L*', cls:'test'},
+ {id:'f3_no', x:180,y:114,w:400,h:40, label:'확립된 ASCVD·CKD 없음', cls:'ben'},
+ {id:'f3_d',  x:C4[0],y:185,w:CW,h:44, label:'DPP-4i', cls:'tx'},
+ {id:'f3_g',  x:C4[1],y:185,w:CW,h:44, label:'GLP-1RA', cls:'tx'},
+ {id:'f3_s',  x:C4[2],y:185,w:CW,h:44, label:'SGLT2i**', cls:'mal'},
+ {id:'f3_t',  x:C4[3],y:185,w:CW,h:44, label:'TZD', cls:'tx'},
+ {id:'f3_a1', x:C4[0],y:252,w:CW,h:38, label:'HbA1c 목표 초과', cls:'test'},
+ {id:'f3_a2', x:C4[1],y:252,w:CW,h:38, label:'HbA1c 목표 초과', cls:'test'},
+ {id:'f3_a3', x:C4[2],y:252,w:CW,h:38, label:'HbA1c 목표 초과', cls:'test'},
+ {id:'f3_a4', x:C4[3],y:252,w:CW,h:38, label:'HbA1c 목표 초과', cls:'test'},
+ {id:'f3_n1', x:C4[0],y:315,w:CW,h:58, label:'기저 인슐린 또는 GLP-1RA 또는 SGLT2i', cls:'tx'},
+ {id:'f3_n2', x:C4[1],y:315,w:CW,h:58, label:'기저 인슐린 또는 SGLT2i', cls:'tx'},
+ {id:'f3_n3', x:C4[2],y:315,w:CW,h:58, label:'기저 인슐린 또는 GLP-1RA 또는 DPP-4i', cls:'tx'},
+ {id:'f3_n4', x:C4[3],y:315,w:CW,h:58, label:'DPP-4i 또는 GLP-1RA 또는 SGLT2i', cls:'tx'},
+ {id:'f3_a5', x:C4[1],y:398,w:CW,h:38, label:'HbA1c 목표 초과', cls:'test'},
+ {id:'f3_bb', x:C4[1],y:465,w:CW,h:50, label:'기저-식전(basal-bolus) 인슐린', cls:'tx'}
+ ], edges:[
+ [A(380,50,380,62),1],[A(380,102,380,114),1],
+ [P([380,154],[380,168],[98,168],[98,185]),1],[A(286,168,286,185),1],[P([380,168],[662,168],[662,185]),1],[A(474,168,474,185),1],
+ ...[0,1,2,3].flatMap(i=>[[A(C4[i]+88,229,C4[i]+88,252),1],[A(C4[i]+88,290,C4[i]+88,315),1]]),
+ [A(286,373,286,398),1],[A(286,436,286,465),1],
+ [A(98,373,198,478),1],[A(474,373,374,478),1]
+ ], labels:[]},
+
+drug:{tab:'약제별 근거', fig:'Data Quality Assessment', aria:'C-펩티드 범주와 약제별 패널 결론', w:760, h:470, nodes:[
+ {id:'g_c1', x:10, y:30, w:240,h:78, label:'C-펩티드 &lt;0.3<small>다회 인슐린 · T1D 지침</small>', cls:'rk3 fac'},
+ {id:'g_c2', x:260,y:30, w:240,h:78, label:'C-펩티드 ≥0.3–≤0.7<small>수정 ADA/EASD · 인슐린 병용 고려 · ≥6개월마다 추적</small>', cls:'rk2 fac'},
+ {id:'g_c3', x:510,y:30, w:240,h:78, label:'C-펩티드 &gt;0.7<small>약간 수정한 ADA/EASD · 악화 시 C-펩티드 재측정</small>', cls:'rk1 fac'},
+ {id:'g_met',x:10, y:150,w:180,h:90, label:'메트포르민·TZD<small>근거 낮음 · 효과 불확실</small>', cls:'tx fac'},
+ {id:'g_ins',x:200,y:150,w:180,h:90, label:'인슐린<small>근거 중등도 · 효과적·안전</small>', cls:'tx fac'},
+ {id:'g_su', x:390,y:150,w:180,h:90, label:'설포닐우레아<small>근거 중등도 · 권고하지 않음</small>', cls:'mal fac'},
+ {id:'g_dpp',x:580,y:150,w:170,h:90, label:'DPP-4i<small>근거 중등도 · 혈당 개선·안전</small>', cls:'tx fac'},
+ {id:'g_sg', x:10, y:255,w:180,h:90, label:'SGLT2i<small>근거 중등도 · 유망 · 케토산증 주의</small>', cls:'tx fac'},
+ {id:'g_glp',x:200,y:255,w:180,h:90, label:'GLP-1RA<small>근거 중등도 · C-펩티드 매우 낮으면 효과 감소</small>', cls:'tx fac'},
+ {id:'g_imm',x:390,y:255,w:180,h:90, label:'면역 중재 (GAD-alum)<small>근거 낮음 · 연구 단계</small>', cls:'na fac'},
+ {id:'g_lf', x:580,y:255,w:170,h:90, label:'생활습관 교정<small>근거 중등도 · 중요</small>', cls:'ben fac'},
+ {id:'g_ps', x:10, y:375,w:370,h:78, label:'개인 맞춤 치료<small>목표: 대사 조절 + β세포 기능 보존</small>', cls:'test fac'},
+ {id:'g_gap',x:390,y:375,w:360,h:78, label:'지식 공백·향후 과제<small>선별 · 비교 RCT · 면역 치료 · 검사 질 · 비용-편익</small>', cls:'fac'}
+ ], edges:[], labels:[[10,20,'C-펩티드 범주 (nmol/L)','sec'],[10,140,'약제·중재별 패널 결론','sec']]},
+
+feat:{tab:'LADA 특징', fig:'Table 1', aria:'LADA의 진단 기준과 특징', w:760, h:330, nodes:[
+ {id:'e_def', x:10, y:10, w:740,h:62, label:'진단 기준<small>성인 발병(&gt;30세) · 당뇨병 관련 자가항체 · 진단 후 ≥6개월 인슐린 불필요</small>', cls:'test fac'},
+ {id:'e_t1',  x:10, y:92, w:240,h:100,label:'Table 1 넓은 특징<small>어느 것도 LADA를 범주적으로 정의하지 않음</small>', cls:'fac'},
+ {id:'e_ph',  x:260,y:92, w:240,h:100,label:'표현형<small>젊고 마른 체형 · 자가면역 병력 · 대사증후군 적음 · 심혈관 결과는 T2D와 같음</small>', cls:'fac'},
+ {id:'e_ab',  x:510,y:92, w:240,h:100,label:'자가항체<small>GADA 가장 민감(~90%) · IA-2A · ZnT8A · IAA · tetraspanin 7</small>', cls:'fac'},
+ {id:'e_gn',  x:10, y:212,w:240,h:100,label:'유전 감수성<small>HLA DQB1·DRB1 · INS · PTPN22 · SH2B3</small>', cls:'fac'},
+ {id:'e_cl',  x:260,y:212,w:240,h:100,label:'임상 단서·예측 모델<small>&lt;50세 · 자가면역 · BMI &lt;25 · 급성 증상 · 5변수 모델</small>', cls:'fac'},
+ {id:'e_ep',  x:510,y:212,w:240,h:100,label:'역학·경과<small>성인 발병 당뇨병의 2–12% · 6년 후 ≥50% 인슐린 필요</small>', cls:'fac'}
+ ], edges:[], labels:[]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${id}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Buzzetti R, et al. Diabetes 2020;69:2037–2047 해당 절의 요약 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약 번역.</p>`;
+
+/* ---------- 표 ---------- */
+const T1 = `<ul class="plain"><li>연령 &gt;30세**</li><li>자가면역질환의 가족력·개인력</li><li>T2D보다 대사증후군 빈도 감소: T2D보다 낮은 HOMA, 낮은 BMI, 낮은 혈압, 정상 HDL</li><li>심혈관 결과는 T2D와 질환 특이적 차이가 없음</li><li>C-펩티드가 T1D보다 천천히 감소</li><li>가장 민감한 표지자는 GADA 양성이며, 다른 자가항체(ICA, IA-2A, ZnT8A, tetraspanin 7 항체)는 덜 흔함</li><li>당뇨병 발병 시 인슐린 불필요</li></ul><p class="exp-src">Table 1. LADA의 넓은 특징*. * 어느 특징도 LADA를 범주적으로 정의하지 않는다. ** 고령 환자의 자료는 제한적이며, 젊은 환자일수록 T1D 가능성이 높다.</p>`;
+const QT = tbl(['약제·중재','Limitations Coherence','Relevance','Adequacy','Overall'],[
+ ['메트포르민·TZD','Moderate','Moderate','Minor','<b>Low</b>'],
+ ['인슐린','Moderate','High','Moderate','<b>Moderate</b>'],
+ ['설포닐우레아','Moderate','High','Minor','<b>Moderate</b>'],
+ ['DPP-4i','Moderate','High','Moderate','<b>Moderate</b>'],
+ ['SGLT2i','Low','High','Low','<b>Moderate</b>'],
+ ['GLP-1RA','Low','High','Moderate','<b>Moderate</b>'],
+ ['면역 중재','Low','Moderate','Low','<b>Low</b>'],
+ ['생활습관 교정','Low','High','Low','<b>Moderate</b>']
+]) + '<p class="exp-src">원문 각 절 끝의 Data Quality Assessment를 한 표로 모았다(생활습관 절은 “Quality Assessment”로 표기).</p>';
+const CPT = tbl(['C-펩티드','해석','치료','추적'],[
+ ['&lt;0.3 nmol/L<br><span class="nt-cc">≈ &lt;0.9 ng/mL</span>','진단 시 해당하면 T1D로 간주','다회 인슐린 요법(기저 및/또는 식사 인슐린), T1D 지침','T1D 지침'],
+ ['≥0.3–≤0.7 nmol/L<br><span class="nt-cc">≈ 0.9–2.1 ng/mL</span>','회색지대','수정 ADA/EASD: 메트포르민, SU 금지, β세포 악화 약제 회피, 인슐린 병용 고려(Figure 2·3)','적어도 6개월마다'],
+ ['&gt;0.7 nmol/L<br><span class="nt-cc">≈ &gt;2.1 ng/mL</span>','T2D에 가까움, 일부는 위양성 자가항체','약간 수정한 ADA/EASD','혈당 악화 시 C-펩티드 재측정(Figure 1: 6개월 간격)']
+]) + '<p class="exp-src">ng/mL 환산값(1 nmol/L ≈ 3.02 ng/mL)은 이 도구에서 덧붙인 것이다.</p>';
+
+/* ---------- 주석 ---------- */
+const DISC_BMI = note('원문 표기','SGLT2i의 BMI 기준이 곳마다 다르다: Figure 2는 “BMI &gt;27 kg/m²”이면 사용, Figure 3 각주는 “BMI ≤27”에서 케토산증 위험 증가, SGLT2i 본문은 과체중이 아닌 “BMI &lt;27”에서 위험, EMA 다파글리플로진 T1D 승인은 “BMI 27 이상(≥27)”이다. 따라서 BMI 정확히 27의 해석이 갈린다.');
+const DISC_U = note('원문 표기','Figure 2 캡션은 “C-peptide &lt;0.3 mmol/L”로 적었으나 그림과 본문은 nmol/L이므로 단위 오기로 보인다.');
+const DISC_AGE = note('원문 표기','연령 기준이 맥락마다 다르다: 진단 기준과 Table 1은 &gt;30세, LADA를 시사하는 임상 단서는 &lt;50세(Fourlanos 등), 비용 제약 시 GADA 측정 대상 선별은 발병 &lt;60세다.');
+const DISC_SU = note('원문 표기','리나글립틴–글리메피리드 사후 분석에서 C-펩티드 측정 시점은 28·52·104주로 제시되었는데 군 간 유의 차이는 “28주와 58주”로 적혀 있어 52주의 오기로 보인다. 또 인슐린 vs SU(각 30명) 일본 시험이 인슐린 절에서는 참고문헌 60(P = 0.003), SU 절에서는 참고문헌 63(P = 0.005)으로 인용되어 같은 시험인지 원문만으로는 분명하지 않다.');
+const DISC_F3 = note('원문 그림','Figure 3의 TZD 경로는 2단계 약제 추가(DPP-4i 또는 GLP-1RA 또는 SGLT2i)에서 끝나며 기저-식전 인슐린으로 이어지는 화살표가 없다. 또 Figure 3에는 메트포르민이 표시되지 않으나 Figure 2의 회색지대 첫 단계가 메트포르민이므로, 이 도구는 Figure 3의 약제를 메트포르민에 추가하는 선택지로 해석했다(원문에 명시되지 않음).');
+const DISC_F1 = note('원문 그림','Figure 1 상자의 “Action Screen for IA-2A”는 “조치: IA-2A 선별”로 해석했다. Figure 1은 &gt;0.7 nmol/L를 “T2D – ADA/EASD guidelines applied”로 표시하지만 본문은 C-펩티드 반복 측정을 더한 “약간 수정한” ADA/EASD 알고리즘으로 기술한다.');
+const DISC_Q = note('원문 표기','Data Quality Assessment의 Adequacy 항목에 Moderate·Low 외에 “Minor”(메트포르민·TZD, SU)가 쓰여 척도가 일관되지 않다. 생활습관 결론은 “T2D 치료에서 중요하다”로 적혀 있어 LADA 맥락에서는 표현이 어색하다.');
+const TIP_KR = tip('국내 적용','국내 검사실은 C-펩티드를 ng/mL로 보고하는 경우가 많다: 0.3 nmol/L ≈ 0.9 ng/mL, 0.7 nmol/L ≈ 2.1 ng/mL. 이 합의는 2020 ADA/EASD T2D 합의를 기반으로 하므로 이후 개정된 지침의 약제 우선순위와 다를 수 있다.');
+
+const D = {
+/* ---------- Figure 1 ---------- */
+x_scr:{kind:'Figure 1', title:'GADA 선별', next:['x_cp','x_t2d'], body:`${RR('P1','F1','P2')}${ex('dx')}`},
+x_t2d:{kind:'Figure 1', title:'GADA 음성: T2D**', next:['x_t2g'], body:`<p>GADA 음성(자가항체 음성)으로 T2D 가능성이 높은 환자는 T2D로 관리한다. ** 췌장염이나 단일유전자 당뇨병도 고려한다.</p>${R('P4')}`},
+x_sus:{kind:'Figure 1', title:'LADA 의심 → IA-2A 선별', next:['x_cp'], body:`<p>GADA 음성이라도 마른 체형이나 다른 자가면역질환으로 LADA가 의심되면 IA-2A를 선별하고, 양성이면 C-펩티드를 측정한다.</p>${RR('P4','F1')}${DISC_F1}`},
+x_cp:{kind:'Figure 1', title:'혈청/혈장 C-펩티드 측정', next:['x_c1','x_c2','x_c3'], body:`${RR('P6','P7','P8','P10')}${ex('cpep')}`},
+x_c1:{kind:'Figure 1', title:'C-펩티드 &lt;0.3 nmol/L', next:['x_lada','f2_ins'], body:`${RR('C1','F2')}${CPT}`},
+x_c2:{kind:'Figure 1', title:'C-펩티드 ≥0.3–≤0.7 nmol/L (회색지대)', next:['x_lada','f2_met'], body:`${RR('C2','C3','C4','F2')}${CPT}`},
+x_c3:{kind:'Figure 1', title:'C-펩티드 &gt;0.7 nmol/L', next:['x_rep','x_t2g'], body:`${RR('C5','F2')}${CPT}${DISC_F1}`},
+x_rep:{kind:'Figure 1', title:'C-펩티드 재측정', next:['x_cp'], body:`<p>Figure 1은 C-펩티드 &gt;0.7 nmol/L인 환자에서 6개월 간격 또는 혈당 조절 악화 시 C-펩티드를 반복 측정하도록 한다.</p>${RR('P9','C5')}`},
+x_lada:{kind:'Figure 1', title:'LADA 알고리즘 적용', next:['f2_cp','f3_cp'], body:`<p>C-펩티드 &lt;0.3 nmol/L와 회색지대(≥0.3–≤0.7 nmol/L)는 LADA 알고리즘(Figure 2·3)을 적용한다.</p>${RR('T2','P10')}${ex('cat')}`},
+x_t2g:{kind:'Figure 1', title:'T2D: ADA/EASD 지침 적용', next:['x_rep'], body:`${RR('C5','P9')}${DISC_F1}`},
+x_sel:{kind:'진단', title:'비용 제약 시 GADA 측정 대상', next:['x_scr'], body:`${RR('P3','P1')}${DISC_AGE}`},
+x_gl:{kind:'진단', title:'GADA 수치와 치료 선택', next:['x_cp'], body:`${R('P5')}${ex('aab')}`},
+
+/* ---------- Figure 2 ---------- */
+f2_cp:{kind:'Figure 2', title:'C-펩티드에 따른 분기', next:['f2_ins','f2_met'], body:`<p>Figure 2는 C-펩티드 &lt;0.3 nmol/L 또는 ≥0.3 및 ≤0.7 nmol/L인 LADA 환자의 혈당강하제 알고리즘이다.</p>${RR('P10','C1','C2')}${DISC_U}${TIP_KR}`},
+f2_ins:{kind:'Figure 2', title:'인슐린 (기저 및/또는 식사)', next:[], body:`${RR('F3','C1','Q3')}${ex('ins')}`},
+f2_met:{kind:'Figure 2', title:'메트포르민 · 6개월마다 재평가 · SU 금지', next:['f2_hr','f3_no'], body:`${RR('F4','T4','C4','Q1','Q4')}`},
+f2_hr:{kind:'Figure 2', title:'고위험 지표: 확립된 ASCVD 또는 CKD', next:['f2_as','f2_hf'], body:`${RR('F5','T5')}<p>ASCVD·CKD가 없으면 Figure 3을 따른다.</p>`},
+f2_as:{kind:'Figure 2', title:'ASCVD 우세', next:['f2_g','f2_s','f2_b'], body:R('F6')},
+f2_hf:{kind:'Figure 2', title:'심부전 또는 CKD 우세', next:['f2_hs'], body:R('F7')},
+f2_g:{kind:'Figure 2 · ASCVD', title:'GLP-1RA (CVD 이익 입증)', next:['f2_t1'], body:`${RR('F6','Q8')}${ex('glp')}`},
+f2_s:{kind:'Figure 2 · ASCVD', title:'SGLT2i (CVD 이익 입증)', next:['f2_t1'], body:`${RR('F6','Q6','Q7')}${DISC_BMI}`},
+f2_b:{kind:'Figure 2 · ASCVD', title:'기저 인슐린 + GLP-1RA 또는 SGLT2i', next:['f2_t1'], body:`<p>HbA1c &gt;9%이면 기저 인슐린을 GLP-1RA 또는 SGLT2i와 병용한다.</p>${RR('F6','C3','Q3')}`},
+f2_hs:{kind:'Figure 2 · 심부전·CKD', title:'SGLT2i (CVD 이익 입증), 불내약 시 GLP-1RA', next:['f2_t2'], body:`${RR('F7','Q6','Q7','Q8')}${DISC_BMI}`},
+f2_t1:{kind:'Figure 2', title:'HbA1c 목표 초과 (ASCVD)', next:['f2_bb'], body:R('F6')},
+f2_t2:{kind:'Figure 2', title:'HbA1c 목표 초과 (심부전·CKD)', next:['f2_kp'], body:R('F7')},
+f2_bb:{kind:'Figure 2', title:'기저-식전 인슐린', next:[], body:RR('F6','Q3')},
+f2_kp:{kind:'Figure 2', title:'ADA/EASD 지침 유지, SU 제외', next:[], body:RR('F7','Q4','T2')},
+
+/* ---------- Figure 3 ---------- */
+f3_hd:{kind:'Figure 3', title:'LADA의 혈당강하제', next:['f3_cp'], body:`${RR('T1','T3','T5')}${ex('pers')}`},
+f3_cp:{kind:'Figure 3', title:'C-펩티드 ≥0.3 및 ≤0.7 nmol/L*', next:['f3_no'], body:`<p>* ADA/EASD T2D 알고리즘으로부터의 이탈(deviation).</p>${RR('C2','C3','C4','T2')}`},
+f3_no:{kind:'Figure 3', title:'확립된 ASCVD·CKD 없음', next:['f3_d','f3_g','f3_s','f3_t'], body:`${R('F8')}${DISC_F3}`},
+f3_d:{kind:'Figure 3', title:'DPP-4i', next:['f3_a1'], body:`${RR('F8','Q5')}${ex('dpp')}`},
+f3_g:{kind:'Figure 3', title:'GLP-1RA', next:['f3_a2'], body:`${RR('F8','Q8')}${ex('glp')}`},
+f3_s:{kind:'Figure 3', title:'SGLT2i**', next:['f3_a3'], body:`<p>** 특히 BMI ≤27인 환자에서 당뇨병성 케토산증 위험 증가.</p>${RR('Q6','Q7')}${DISC_BMI}${ex('sglt')}`},
+f3_t:{kind:'Figure 3', title:'TZD', next:['f3_a4'], body:`${RR('F8','Q2')}${ex('met')}`},
+f3_a1:{kind:'Figure 3', title:'HbA1c 목표 초과 (DPP-4i)', next:['f3_n1'], body:R('F9')},
+f3_a2:{kind:'Figure 3', title:'HbA1c 목표 초과 (GLP-1RA)', next:['f3_n2'], body:R('F9')},
+f3_a3:{kind:'Figure 3', title:'HbA1c 목표 초과 (SGLT2i)', next:['f3_n3'], body:R('F9')},
+f3_a4:{kind:'Figure 3', title:'HbA1c 목표 초과 (TZD)', next:['f3_n4'], body:R('F9')},
+f3_n1:{kind:'Figure 3', title:'기저 인슐린 또는 GLP-1RA 또는 SGLT2i', next:['f3_bb'], body:RR('F9','F10')},
+f3_n2:{kind:'Figure 3', title:'기저 인슐린 또는 SGLT2i', next:['f3_a5'], body:RR('F9')},
+f3_n3:{kind:'Figure 3', title:'기저 인슐린 또는 GLP-1RA 또는 DPP-4i', next:['f3_bb'], body:RR('F9','F10')},
+f3_n4:{kind:'Figure 3', title:'DPP-4i 또는 GLP-1RA 또는 SGLT2i', next:[], body:`${R('F9')}${DISC_F3}`},
+f3_a5:{kind:'Figure 3', title:'HbA1c 목표 초과', next:['f3_bb'], body:R('F10')},
+f3_bb:{kind:'Figure 3', title:'기저-식전 인슐린', next:[], body:RR('F10','Q3')},
+
+/* ---------- 약제별 근거 ---------- */
+g_c1:{kind:'C-펩티드 범주', title:'C-펩티드 &lt;0.3 nmol/L', next:['f2_ins'], body:`${RR('C1','F3')}${CPT}`},
+g_c2:{kind:'C-펩티드 범주', title:'C-펩티드 ≥0.3–≤0.7 nmol/L', next:['f2_met','f3_no'], body:`${RR('C2','C3','C4','F4')}${CPT}`},
+g_c3:{kind:'C-펩티드 범주', title:'C-펩티드 &gt;0.7 nmol/L', next:['x_t2g'], body:`${RR('C5')}${CPT}`},
+g_met:{kind:'Data Quality: Low', title:'인슐린 감작제 (메트포르민, TZD)', next:['f3_t'], body:`${RR('Q1','Q2','T4')}${ex('met')}`},
+g_ins:{kind:'Data Quality: Moderate', title:'인슐린', next:['f2_ins'], body:`${RR('Q3','C3')}${ex('ins')}`},
+g_su:{kind:'Data Quality: Moderate', title:'설포닐우레아', next:[], body:`${R('Q4')}${ex('su')}${DISC_SU}`},
+g_dpp:{kind:'Data Quality: Moderate', title:'DPP-4 억제제', next:['f3_d'], body:`${R('Q5')}${ex('dpp')}`},
+g_sg:{kind:'Data Quality: Moderate', title:'SGLT2 억제제', next:['f3_s'], body:`${RR('Q6','Q7')}${ex('sglt')}${DISC_BMI}`},
+g_glp:{kind:'Data Quality: Moderate', title:'GLP-1 수용체 작용제', next:['f3_g'], body:`${R('Q8')}${ex('glp')}`},
+g_imm:{kind:'Data Quality: Low', title:'면역 중재 (GAD-alum)', next:[], body:`${R('Q9')}${ex('imm')}`},
+g_lf:{kind:'Quality: Moderate', title:'생활습관 교정', next:[], body:`${R('Q10')}${ex('life')}`},
+g_ps:{kind:'개인 맞춤 치료', title:'LADA 개인 맞춤 치료와 ADA/EASD 지침', next:['f2_cp','f3_hd'], body:`${RR('T1','T2','T3','T4','T5')}${ex('ovr')}`},
+g_gap:{kind:'향후 과제', title:'핵심 지식 공백과 향후 전망', next:[], body:`${R('K1')}${ex('gap')}`},
+
+/* ---------- 특징 ---------- */
+e_def:{kind:'진단 기준', title:'LADA의 핵심 진단 기준', next:['x_scr'], body:`${ex('ident')}${DISC_AGE}`},
+e_t1:{kind:'Table 1', title:'LADA의 넓은 특징', next:[], body:T1},
+e_ph:{kind:'특징', title:'표현형 특징', next:[], body:ex('pheno')},
+e_ab:{kind:'특징', title:'자가항체', next:['x_gl'], body:`${RR('P4','P5')}${ex('aab')}`},
+e_gn:{kind:'특징', title:'유전 감수성', next:[], body:ex('gen')},
+e_cl:{kind:'특징', title:'임상 단서와 진단 예측 모델', next:['x_sel'], body:`${R('P3')}${paraHTML({p:EXP.ident.p.slice(2,4)})}${DISC_AGE}`},
+e_ep:{kind:'특징', title:'역학과 경과', next:[], body:`${paraHTML({p:EXP.intro.p.slice(3,4)})}${paraHTML({p:EXP.aab.p.slice(4,5)})}${paraHTML({p:EXP.pheno.p.slice(3,4)})}`}
+};
+
+const ALL = Object.keys(REC);
+const GROUP = [['Q','약제·중재별 패널 결론'],['P','진단과 C-펩티드 측정'],['C','C-펩티드 범주별 관리'],['T','개인 맞춤 치료'],['F','알고리즘 그림 (Figure 1–3)'],['K','향후 과제']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'근거 표기와 도구 설명', next:[], body:`${['MOD','LOW','CON','FIG'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','원문은 국제 전문가 패널의 합의 성명(Perspectives in Diabetes)으로 GRADE식 권고 등급이 없다. 각 약제 절 끝의 Data Quality Assessment 종합 평가를 해당 패널 결론의 배지로 표시했고, “Proposal for Management of LADA”의 제안은 ‘패널 제안’, 그림의 단계는 ‘알고리즘’으로 표시했다. 총 ${ALL.length}개 항목(번호는 이 도구에서 부여)을 해라체로 번역했으며, 항목을 누르면 해당 본문 절의 요약 번역이 펼쳐진다.')}<h5>Data Quality Assessment</h5>${QT}${note('원문 불일치','① SGLT2i BMI 기준: Figure 2 “&gt;27”, Figure 3 각주 “≤27”에서 DKA 위험, 본문 “&lt;27”, EMA 승인 “≥27”. ② Figure 2 캡션 “mmol/L”은 nmol/L의 오기로 보임. ③ 연령 기준: 진단 &gt;30세, 임상 단서 &lt;50세, GADA 선별 대상 &lt;60세. ④ SU 절 “28주와 58주”는 52주의 오기로 보임. 같은 일본 시험이 참고문헌 60(P = 0.003)과 63(P = 0.005)으로 다르게 인용됨. ⑤ Figure 3 TZD 경로에 기저-식전 인슐린으로 가는 화살표가 없고, 메트포르민이 표시되지 않음. ⑥ Figure 1의 &gt;0.7 nmol/L “ADA/EASD guidelines applied”와 본문의 “약간 수정한” 알고리즘의 표현 차이. ⑦ Adequacy 척도에 “Minor”가 섞여 있고, 생활습관 결론은 “T2D 치료에서 중요”로 표기.')}${TIP_KR}`},
+ all:{kind:'전체', title:`패널 결론·제안 ${ALL.length}개`, next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.replace(/\d+$/,'')===g))}`).join('')},
+ tabs:{kind:'표', title:'Table 1 · 근거 질 · C-펩티드 범주', next:[], body:`<h5>Table 1. LADA의 넓은 특징</h5>${T1}<h5>Data Quality Assessment 요약</h5>${QT}<h5>C-펩티드 범주별 관리 요약</h5>${CPT}`},
+ intro:{kind:'서론', title:'초록·서론·향후 전망', next:[], body:`${paraHTML(EXP.intro)}${ex('ovr')}${ex('gap')}`}
+});
+
+const ABBR = [
+ ['ADA / EASD','American Diabetes Association / European Association for the Study of Diabetes'],['ASCVD','Atherosclerotic cardiovascular disease'],['CKD','Chronic kidney disease'],['CVD','Cardiovascular disease'],
+ ['DKA','Diabetic ketoacidosis, 당뇨병성 케토산증'],['DPP-4i','Dipeptidyl peptidase 4 inhibitor'],['eGFR','Estimated glomerular filtration rate'],['EMA','European Medicines Agency, 유럽의약품청'],
+ ['GADA','Glutamic acid decarboxylase autoantibody, GAD 자가항체'],['GAD-alum','Alum-formulated recombinant GAD65'],['GLP-1RA','Glucagon-like peptide 1 receptor agonist'],['HF','Heart failure, 심부전'],
+ ['HOMA-IR','Homeostasis model assessment of insulin resistance'],['IA-2A','Insulinoma-associated antigen 2 (tyrosine phosphatase) autoantibody'],['IAA','Insulin autoantibody'],['ICA','Islet cell antibody, 췌도세포 항체'],
+ ['LADA','Latent autoimmune diabetes in adults, 성인 잠재 자가면역 당뇨병'],['LADY','Latent autoimmune diabetes in the young'],['MMTT','Mixed meal tolerance test, 혼합식 내성검사'],['PTPN22','Protein tyrosine phosphatase nonreceptor 22'],
+ ['SGLT2i','Sodium–glucose cotransporter 2 inhibitor'],['SH2B3','Src homology 2-B adaptor protein 3'],['SU','Sulfonylurea, 설포닐우레아'],['T1D / T2D','Type 1 / type 2 diabetes'],
+ ['TCF7L2','Transcription factor 7–like 2'],['TZD','Thiazolidinedione'],['UKPDS','UK Prospective Diabetes Study'],['ZnT8A','Zinc transporter 8 autoantibody']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'dx';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: G, LADA)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('dx');
+
+</script>
+</body>
+</html>
