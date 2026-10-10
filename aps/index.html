@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>자가면역 다내분비선 증후군</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+.node.pr{border-color:#6FB6DA; background:#D4EEFA; color:#123A52}
+.sw.pr{border-color:#6FB6DA; background:#D4EEFA}
+.node.pr{--flash:#2F8FC0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .node.pr,:root:not([data-theme="light"]) .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}}
+:root[data-theme="dark"] .node.pr,:root[data-theme="dark"] .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}
+.node.rk1 small,.node.rk2 small{color:inherit;opacity:.88}
+.t2 td:not(:first-child){white-space:nowrap}
+.chart svg path.eb{fill:#9DBDE8;stroke:#4C7BC0;stroke-width:1.6}
+.chart svg path.eg{fill:#C9E0A5;stroke:#86AC4F;stroke-width:1.6}
+.chart svg path.er{fill:#EDBDC1;stroke:#C2505B;stroke-width:1.6}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>자가면역 다내분비선 증후군(APS): Endotext 2024</h1>
+        <p class="src">Sperling MA, Angelousi A, Yau M. Autoimmune Polyglandular Syndromes. In: Feingold KR, et al., editors. <a href="https://www.ncbi.nlm.nih.gov/books/NBK279152/" target="_blank" rel="noopener noreferrer">Endotext</a>. South Dartmouth (MA): MDText.com; updated 2024 Jul 18.</p>
+        <p class="disclaimer">This tool is not officially endorsed by the authors or Endotext</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="test" aria-label="검사 박스 강조"><i class="sw test"></i>검사·선별</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="주요 질환 박스 강조"><i class="sw mal"></i>주요 질환·위험</button>
+      <button type="button" class="lg" data-cls="pr" aria-label="면역·유전 박스 강조"><i class="sw pr"></i>면역·유전</button>
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료·유형</button>
+      <button type="button" class="lg" data-cls="ben" aria-label="정상 관용 박스 강조"><i class="sw ben"></i>정상 관용</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>항목을 누르면 해당 본문 절 요약 번역이 펼쳐짐</li><li>탭은 원문 Figure 1과 Table 1·2를 재현</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>항목 표기·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 항목</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>Table 1·2</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>개요·전망</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ STR:'권고: 원문이 “should / is required / is mandatory / is advised / is recommended”로 표현한 진술(이 장은 Endotext 총설로 권고 등급이 없다)',
+ SUG:'제안·고려: 원문이 “may / is suggested / consideration should be given / some recommend”로 표현한 진술',
+ FACT:'임상 특징·자료: 원문이 기술한 정의, 빈도, 기전, 검사 소견'
+};
+const LVTXT = {STR:'권고', SUG:'제안', FACT:'임상 자료'};
+const LVCLS = {STR:'l1', SUG:'l2', FACT:'l4'};
+/* [구분, 번역, 본문 절 키] */
+const REC = {
+/* 개요·분류 */
+'G1':['FACT','자가면역 다내분비선 증후군(APS)은 면역조절 이상이 있는 사람에서 일정한 양상으로 나타나는 내분비 이상의 군집이며, 이를 알면 치료와 함께 동반될 전신·호르몬 결핍을 예측할 수 있다. 주요 질환은 APS1, APS2, APS3이며 FOXP3 변이에 의한 매우 드문 X연관 IPEX 증후군도 APS에 해당한다.','ov'],
+'G2':['FACT','면역관문억제제 같은 면역조절제로 치료받는 암 환자에서 생기는 범주가 늘고 있다. 회피하던 종양 항원을 표적할 수 있게 되지만 그 대가로 내분비 장기에 대한 자가면역이 활성화된다.','ov'],
+'G3':['FACT','APS2와 APS3는 다른 자가면역질환처럼 여성에서 훨씬 흔하고, APS1은 성별 차이가 없다.','ov'],
+'G4':['FACT','APS2와 APS3의 면역 이상을 일으키는 유전자는 6번 염색체 단완 HLA 복합체의 DQ·DR 영역에 있으며, 특정 대립유전자가 수지상세포·대식세포 같은 항원제시세포의 자가항원 제시를 촉진하고 조절 T세포 발현 저하 등과 함께 자가면역을 시작한다.','ov'],
+'G5':['FACT','자가항체의 존재가 반드시 샘 기능부전과 그 임상 발현을 예측하지는 않는다.','ov'],
+
+/* 면역관용 */
+'M1':['FACT','APS1은 흉선 상피를 지나며 성숙하는 동안 자가항원에 높은 친화성 수용체를 얻은 T세포를 제거하지 못해 생긴다. 정상적으로는 흉선이 말초 조직에만 발현되는 항원(예: 췌장 β세포의 인슐린)을 이소성으로 발현하므로, 해당 고친화성 수용체를 가진 발달 T세포는 세포자멸사로 제거되어 말초에 들어가지 못한다(음성 선택).','tol'],
+'M2':['FACT','흉선의 이소성 항원 발현은 21번 염색체(21q22.3)의 AIRE 유전자가 매개한다. AIRE는 1997년 APS1의 원인 유전자로 발견되었고, 이제 적응면역 반응의 필수 요소로 알려져 있으며 관련 질환 스펙트럼은 APS1을 넘어선다.','tol'],
+'M3':['FACT','Figure 1: 거의 모든(약 99%) T세포는 흉선에서 자가항원에 반응해 사멸하고(중추 관용), 말초로 나가는 소수(약 1%)는 자가항원에 무반응(anergy)인 채 비자가 항원에 면역반응을 일으킨다(말초 관용). AIRE 불활성화로 자가항원이 발현되지 않으면 중추 관용과 자가항원 인식이 모두 실패하여 자가면역이 생긴다.','tol'],
+'M4':['FACT','AIRE는 흉선에서 자가반응 세포를 억제하는 FOXP3 양성 조절 T세포(Treg)의 고유 집단을 유도하는 추가 기전으로도 면역관용을 조절한다. 따라서 더 많은 자가반응 세포가 제거를 피할 뿐 아니라 이를 제한할 Treg도 발달하지 않거나 기능이 떨어진다.','tol'],
+'M5':['FACT','AIRE 변이는 상염색체 우성 효과로 고전 APS1과 다른 양상의 자가면역질환으로 늦게 나타날 수 있다. 이런 변이의 빈도는 1:1000에 이를 수 있어(APS1은 이란계 유대인 1:9000, 사르데냐 1:14,500, 핀란드 1:25,000) AIRE의 영향은 생각보다 훨씬 넓을 수 있다. 21번 삼염색체증(다운 증후군)의 자가면역 증가도 AIRE 기능 이상 때문일 수 있다.','tol'],
+
+/* APS1 임상 */
+'A1':['STR','APS1의 3대 고전 특징은 만성 점막피부 칸디다증, 저칼슘혈증·고인산혈증·낮은 PTH를 동반한 부갑상선기능저하증, 코르티솔 결핍과 ACTH의 현저한 상승(때로 알도스테론 결핍)을 보이는 Addison병이다. APS1 진단에는 3가지 중 2가지가 필요하다.','a1'],
+'A2':['FACT','다른 발현으로 발열을 동반한 주기적 발진, 각결막염, 만성 설사, 사춘기 전후의 1차 생식샘 기능부전, Hashimoto 갑상선염과 갑상선기능저하증, 비타민 B12 결핍, 만성 활동성 간염, T1DM, 외배엽 이영양증(APECED라는 이름의 유래: 영구치만 침범하는 법랑질 저형성, 칸디다와 무관한 함몰 손발톱 이영양증, 고막의 석회 침착)이 있다. 홍채염, 시신경 위축, 각막병증, 탈모, 백반증도 보고된다.','a1'],
+'A3':['FACT','대부분 5세까지 발현한다. 약 75%에서 비내분비 발현이 내분비 발현보다 먼저 나타나며, 첫 발현은 점막피부(구강 포함) 칸디다증 약 60%, 흡수장애 약 10%, 백반증·탈모·간염·각막병증 각 약 5%다. 이 경우 내분비 발현까지의 중앙 간격은 약 4년(0.1–33년)이다.','a1'],
+'A4':['FACT','내분비 질환이 첫 발현이면 거의 항상 부갑상선기능저하증이다. 전체의 약 70–80%가 부갑상선기능저하증을 보이고, 이것이 먼저 생긴 환자의 약 60%가 Addison병으로 진행하며, Addison병이 먼저면 약 1/3이 부갑상선기능저하증을 보인다.','a1'],
+'A5':['FACT','핀란드 코호트(Perheentupa 2006)에서 가장 흔한 3가지는 점막피부 칸디다증(약 80%), 부갑상선기능저하증(약 80%), Addison병(약 70%)이다. 난소 기능부전은 여성의 약 60%, 고환 기능부전은 남성의 약 15%이며, 벽세포 위축·위축성 위염·B12 결핍과 T1DM은 약 12%(당뇨병은 늦은 합병증), 갑상선기능저하증은 항갑상선항체가 흔해도 약 5%에서만 생긴다. 드물게 요붕증, 뇌하수체염에 의한 성장호르몬 결핍, 정자 항체에 의한 불임이 있다.','a1'],
+'A6':['FACT','APS1 환자는 평균 4–5개(1–20개)의 발현을 보이며 APS2보다 일찍, 더 심하게 나타난다. 만성 점막피부 칸디다증 때문에 시간이 지나며 구강·식도 편평세포암에 취약하다. 암, 부신·저칼슘혈증 위기, 간염·신염·폐렴 같은 자가면역 질환으로 사망 위험이 높다.','a1'],
+'A7':['FACT','사춘기 전후가 일부 발현의 흔한 시기이지만 생후 1년 이내에 시작할 수도 있다. 당뇨병은 드물고 대개 30–40대의 늦은 발현이다. 드문 특징으로 만성 신질환, 겉보기 광질코르티코이드 과잉, 무비증, 구강·식도 악성종양이 있다.','a1'],
+'A8':['FACT','부갑상선 항원 NALP5에 대한 항체는 APS1의 부갑상선기능저하증에 매우 특이적이며 다른 자가면역 증후군이나 부갑상선기능저하증 없는 APS1에서는 없다. 부신 P450 효소(CYP21, CYP17, CYP11A1) 항체는 많은 환자에 있으나 글루코코르티코이드 치료로 감소한다. GAD65·IA2 항체는 T1DM의, TPO·티로글로불린 항체는 갑상선기능저하증의 강한 예측인자가 아니다.','a1ab'],
+'A9':['STR','제1형 인터페론(주로 IFN-α, IFN-ω)을 중화하는 자가항체는 APS1에 특이적이어서 진단적 유용성이 있으며, 환자의 95% 이상에서 있으므로 APS1이 의심되는 환자의 진단 평가에 포함해야 한다고 제안되었다. IL-17 계열 사이토카인, 특히 IL-22 항체도 일부 연구에서 90%를 넘는다.','a1ab'],
+'A10':['FACT','고전형은 AIRE 불활성화 변이에 의한 상염색체 열성 유전 질환이다. 100개 이상의 변이가 보고되었으며 가장 흔한 것은 SAND 도메인의 핀란드 주요 변이 p.R257X(핀란드·러시아·동유럽)와 PHD1 영역의 13 bp 결실 p.C322del13(노르웨이·영국·프랑스·북미)이다.','a1g'],
+'A11':['FACT','PHD1·SAND 도메인의 우성 음성 AIRE 변이는 상염색체 우성 유전으로 더 가벼운 질환을 일으키며, 흔히 악성빈혈, 백반증, 자가면역 갑상선질환, T1DM을 동반해 훨씬 흔한 APS2와 혼동될 수 있다.','a1g'],
+'A12':['FACT','같은 가족 안에서도 표현형과 발병 연령이 크게 달라, MHC 등 다른 유전자나 환경 노출이 표현형과 자연 경과에 영향을 주는 것으로 보이며 이 때문에 APS1 진단이 어려울 수 있다.','a1g'],
+
+/* APS1 치료·추적 */
+'T1':['SUG','제안된 APS1 치료 지침은 프레드니손 등 글루코코르티코이드, 사이클로스포린, 타크로리무스, 시롤리무스, 메토트렉세이트, 마이코페놀레이트 모페틸, CD20 억제제 리툭시맙을 이용한 면역억제·조절에 기반하며, 특히 자가면역 간염, 장병증, 세뇨관간질 신염, 간질성 폐질환, 각결막염에 쓴다. 일반적으로 APS 관리는 필요한 호르몬 대체와 합병증 치료다.','a1t'],
+'T2':['STR','알려진 호르몬 결핍에는 호르몬과 비타민(비타민 D, B12) 대체를 시행해야 하며, 다른 결핍은 예상하고 주기적으로 선별해야 한다. 특히 부신 스테로이드 생성 효소(21-수산화효소, 17-수산화효소), 갑상선(TPO, TG) 항체가 있는 환자에서 그러하며, 칼슘·인산·PTH를 필요에 따라 측정한다.','a1t'],
+'T3':['STR','HbA1c, 공복 혈당, ALT·AST 간기능의 주기적 평가를 6개월–1년 간격의 면밀한 임상 평가와 함께 시행해야 한다.','a1t'],
+'T4':['SUG','부갑상선기능저하증과 만성 점막피부 칸디다증이 첫 발현인 경우 오후 ACTH 농도로 원발성 부신기능저하증을 6개월마다, 적어도 매년 선별할 것을 제안한다. ACTH &gt;80 pg/mL는 강하게 시사하고 &gt;100 pg/mL는 사실상 진단적이다.','a1t'],
+'T5':['SUG','부신 예비능 확인을 위해 ACTH 자극검사를 권하는 의견과, 코르티솔 대체를 시작하고 나트륨·칼륨과 누운 자세·선 자세 혈압을 감시해 진행하는 알도스테론 결핍을 배제하자는 의견이 있다.','a1t'],
+'T6':['STR','칸디다증 치료에 케토코나졸 같은 항진균제를 쓰면 코르티솔 합성을 방해해 부신기능저하증의 출현을 앞당기거나 악화시킬 수 있으므로 부신기능저하증 가능성을 배제해야 한다.','a1t'],
+'T7':['STR','진단이 확립되면 코르티솔을 처음 며칠은 스트레스 용량(일일 유지량 약 10 mg/m²/일의 2–3배)으로 주고, 이후 약 8–10 mg/m²/일을 하루 3회 분할 경구 투여한다. 입원 중 진단된 경우에는 식도·하부 위장관 칸디다증으로 흡수가 떨어질 수 있으므로 히드로코르티손의 정맥 또는 근육 주사를 고려해야 한다.','a1t'],
+'T8':['STR','교통사고나 부신 위기·저혈당에 의한 혼수 시 코르티솔 치료가 지연되지 않도록 환자에게 의료 경고 팔찌, 목걸이 또는 열쇠고리를 착용하게 해야 한다.','a1t'],
+'T9':['SUG','고전 3징(부갑상선기능저하증, 만성 점막피부 칸디다증, 원발성 부신기능저하증) 또는 그중 2가지가 없으면 많은 증례가 놓칠 가능성이 높으므로, 간염, 만성 설사, 발열을 동반한 주기적 발진 환자에서 AIRE 변이 분석을 고려한다.','a1t'],
+'T10':['STR','APS1 환자는 학술 의료기관의 소아 또는 성인 내분비내과 의사가 이끄는 다학제팀이 추적하는 것이 가장 좋다. 복잡성 때문에 연 2회 이상 외래 추적이 필요하고, 무증상 변이 보인자는 적어도 매년 추적해야 한다.','a1t'],
+'T11':['STR','APS1 환자의 모든 형제자매는 성인이고 겉보기에 건강해도 반드시 검사해야 한다. 21-수산화효소와 NALP5 항체 선별은 각각 부신기능저하증과 부갑상선기능저하증 발생 위험 평가에 유용하다.','a1t'],
+'T12':['FACT','AIRE 변이에 의한 조직 손상은 JAK-STAT 신호 경로와 인터페론 감마가 매개한다. JAK-STAT 억제제 룩솔리티닙은 쥐 모델과 환자에서 임상·생화학 발현을 개선하여 예후를 크게 바꿀 가능성을 보였으며, 더 큰 연구가 기대된다. 장래에는 특정 변이의 유전적 조작으로 흉선 감시를 회복할 가능성도 제기된다.','a1t'],
+
+/* APS2·APS3 */
+'S1':['FACT','APS2(APS2a, Schmidt 증후군)는 T1DM, Addison병, 갑상선 자가면역(갑상선기능저하증, 갑상선기능항진증 또는 Hashimoto 갑상선염)의 3징이 특징이다. T1DM과 Addison병은 필수 요소이지만 갑상선 자가면역은 그렇지 않으며, 셀리악병, 백반증, 탈모, 중증근무력증, 악성빈혈, IgA 결핍, 간염, 생식샘저하증이 동반될 수 있다.','a2'],
+'S2':['FACT','APS2의 유병 정점은 20–40세로 APS1보다 늦게, 주로 청년기에 시작한다. 여성에 흔하고 HLA DR3·DR4 일배체형 및 셀리악병과도 강하게 연관된 class II 대립유전자 DQ2·DQ8과 관련된다. 유전은 복합적이며 하위 유형으로 나눌 근거가 적어 넓은 의미의 APS2가 적절하다.','a2'],
+'S3':['STR','췌도(GAD65, IA2, ZnT8), 갑상선(TG, TPO), 부신(21-수산화효소, 17-수산화효소), 셀리악병(조직 transglutaminase, gliadin) 자가항체가 흔하며, Addison병과 T1DM처럼 두 가지 자가면역 내분비질환이 있는 환자에서는 주기적으로 찾아야 한다.','a2'],
+'S4':['SUG','APS2를 찾아내는 고유 검사는 없지만, 관련 자가항체는 발병 수년 전부터 검출되는 경우가 많아 자가항체 검사가 질환 위험 평가에 도움이 될 수 있다.','a2'],
+'S5':['STR','APS2 치료는 각 주요 구성 질환의 최신 지침에 따른 결핍 호르몬 대체에 초점을 둔다. 입원 중에도 각 질환의 치료를 지속하고 코르티솔 용량은 스트레스에 맞춰 조정해야 한다.','a2'],
+'S6':['STR','APS2 환자는 다른 장기 특이 자가면역질환이 생길 위험이 높다는 점을 의사가 특히 알고 있어야 한다. 특히 조기 발병 자가면역질환이 가족에 대량 집적되면 단일유전자 질환, 특히 백반증과 악성빈혈이 많다면 “비고전” APS1을 시사할 수 있다.','a2'],
+'S7':['FACT','APS3(APS2b, 문헌에 따라 Carpenter 증후군)는 APS2와 같은 내분비 자가면역 이상을 보이나 Addison병이 없다. T1DM 환자의 약 20%가 TG·TPO 항체를 가지지만 소수만 임상적·생화학적 갑상선기능저하증으로 진행하므로 비교적 흔한 질환으로 볼 수 있다.','a3'],
+'S8':['FACT','예시 증례: 12세부터 T1DM인 16세 여아가 심한 저혈당 혼수로 입원했다. 혀·잇몸·입술의 색소반과 짙게 그을린 피부가 있었고, 최근 3개월간 원인 모를 저혈당으로 인슐린을 약 50% 줄였다. ACTH 현저 상승, 낮은 아침 코르티솔, 21-수산화효소 항체 상승, 현저히 높은 TSH와 낮은 T4로 APS2 기준을 모두 만족했다. 저혈당은 코르티솔 결핍에 의한 반대조절 부족과 갑상선기능저하증에 의한 인슐린 청소 지연이 합쳐진 결과였다.','case'],
+
+/* 부신기능저하증 */
+'D1':['FACT','부신기능저하증은 APS1과 APS2a의 핵심이자 가장 생명을 위협하는 특징이다. 스트레스 시 코르티솔은 정상 혈당과 혈역학적 안정에 필요하며, 모세혈관 투과성을 낮춰 혈압을 유지하고 노르에피네프린을 에피네프린으로 바꾸는 효소를 활성화한다. 알도스테론은 주로 레닌-안지오텐신계가 조절한다.','ai'],
+'D2':['FACT','만성 경과로 피로, 식욕부진, 체중 감소, 구강 점막과 피부 주름의 색소침착 또는 전신 착색이 나타난다. 색소침착은 ACTH 상승에 동반된 MSH 증가 때문이며 겨드랑이, 손바닥 주름, 유륜, 생식기, 잇몸 색소선에서 두드러진다. 2차 부신기능저하증에서는 ACTH가 오르지 않아 색소침착이 없다.','ai'],
+'D3':['FACT','패혈증, 수술, 마취, 외상 같은 유발 사건이 있으면 부신 위기로 급성 발현할 수 있다: 오심, 구토, 복통, 탈수, 의식 변화, 저혈압, 저혈당, 쇼크. 코르티솔 결핍 때문에 저혈압이 수액 소생만으로 교정되지 않을 수 있고, 알도스테론 결핍으로 염분 소실(저나트륨혈증, 고칼륨혈증)이 생긴다. 2차 원인과 알도스테론을 침범하지 않는 일부 원발성 형태는 염분 소실과 Addison 위기를 보이지 않는다.','ai'],
+'D4':['FACT','ACTH와 코르티솔의 일주기 변동 때문에 이른 아침 혈청 코르티솔과 ACTH가 내인성 부신 기능의 가장 좋은 평가다. 이른 아침 코르티솔 &lt;10 µg/dL는 부신기능저하증을 의심하게 하며, ACTH는 원발성에서 상승하고 낮으면 2차를 의심한다. 성인 급성 질환에서는 임의 코르티솔 &lt;15 µg/dL가 우려 소견으로 제안되었다.','ai'],
+'D5':['STR','색소침착 같은 원발성의 임상 단서가 없으면 ACTH 자극검사가 가장 좋은 진단 검사다. 기저 ACTH와 코르티솔을 측정하고 합성 ACTH(cosyntropin) 250 µg을 정맥 또는 근육 주사하여 60분 최고 코르티솔이 18 µg/dL 미만이면 진단적이다. 고용량 ACTH가 시상하부-뇌하수체 결함을 극복할 수 있으므로, 고용량 검사가 정상이어도 2차가 강하게 의심되면 이른 아침 코르티솔과 ACTH가 더 유익할 수 있다.','ai'],
+'D6':['FACT','소아·청소년·청년의 원발성 부신질환의 흔한 원인은 자가면역, 후복막 외상, 부신 형성·코르티솔 생합성·ACTH 반응에 관한 드문 유전 증후군이다. 2차 부신기능저하증은 외상, 신경외과 수술, 종양에 의한 시상하부·뇌하수체 손상이 가장 흔하며, 강력한 글루코코르티코이드 장기 치료에 따른 HPA 축 억제가 더 흔하다.','ai'],
+
+/* 면역관문억제제 */
+'I1':['FACT','CTLA-4 억제제(이필리무맙)와 PD-1·PD-L1/PD-L2 차단제에 따른 내분비 자가면역 증후군은 “암 면역치료의 아킬레스건”으로 불리며, 뇌하수체염과 전엽 호르몬 이상, 갑상선기능저하·항진증, 부신기능저하증, T1DM을 포함한다.','ici'],
+'I2':['STR','의사는 이런 자가면역 발현을 알고 내분비 조직 침범이나 그 임상 발현을 선별해야 한다. 일부는 면역치료 시작 수개월–수년 후에 나타날 수 있다.','ici'],
+'I3':['FACT','가장 흔한 내분비 장기 병변은 항PD-1 항체에 따른 갑상선 질환과 항CTLA-4 치료에 따른 뇌하수체염이다. 모든 등급 irAE는 CTLA-4 53.8%, PD-1 26.5%, PD-L1 17.1%, CTLA-4+PD-1/PD-L1 병용 61.1%이며, 내분비 이상반응은 5–20%, 임상적으로 의미 있는 내분비병증은 약 10%다.','ici'],
+'I4':['FACT','뇌하수체염은 60세 초과 남성에 가장 많고 여성보다 2–5배 흔하며, 이필리무맙 4–20%, 이필리무맙+니볼루맙 8%, 니볼루맙 0.6%, 펨브롤리주맙 0.7%다. 갑상선기능저하증 6–13%, 갑상선중독증 3–16%이며 무증상 이상을 포함하면 각각 28%와 22%에 이른다. 항CTLA-4는 10 mg/kg 이상에서만 위험이 관찰되는 용량 의존성이었다.','ici'],
+'I5':['FACT','드물게 T1DM, 중추성 요붕증, 부갑상선기능저하증, 원발성 부신기능저하증, 부갑상선기능항진증에 의한 고칼슘혈증이 생긴다. 원발성 부신기능저하증은 단독요법 &lt;1%, 병용 4–8%, T1DM은 항PD-1/PD-L1에서 0.4%(항CTLA-4에서는 없음)이며 최근 2,960명 연구에서 0.9%였다.','ici'],
+'I6':['FACT','실제 진료에서 2등급 이상 irAE는 주로 코르티코스테로이드로 전신 면역억제한다: 메틸프레드니솔론 2등급 0.5–1 mg/kg, 2–3등급 1–2 mg/kg. 4등급 irAE에서는 해당 약 재투여가 금기이며, 스테로이드가 효과 없거나 금기이면 드물게 항TNF-α 제제를 쓴다.','ici'],
+
+/* IPEX·전망 */
+'X1':['FACT','IPEX는 조기 발병 T1DM, 난치성 설사·흡수장애를 동반한 자가면역 장병증, 습진·어린선·건선 양상 피부염이 특징인 매우 드문 X연관 유전 증후군이다. 호산구증가와 IgE 상승이 흔하고 막성 사구체신염·간질성 신염, 이후 자가면역 갑상선염, 탈모, 자가면역 혈구감소증, 간염, 외분비 췌장염이 생길 수 있다. APS1과 겹치지만 훨씬 이른 0.1–0.4세에 나타난다.','ipex'],
+'X2':['STR','IPEX는 진단 후 즉시 면역억제제로 치료하거나 가능하면 완치가 가능한 동종 골수이식을 받지 않으면 생후 수년 내 흔히 사망한다. 원인은 Treg의 핵심 전사인자 FOXP3의 변이(100개 이상)이며, 순환 자가항체가 진단에 도움이 된다.','ipex'],
+'X3':['SUG','유전 검사와 자가항체 분석 같은 진단 도구가 발전하여, 조기 진단과 개인 맞춤 유전체학으로 비가역적 장기 손상 전에 면역조절 치료를 적용할 수 있을 것이다. 줄기세포 공학으로 면역조절 기능이 온전한 흉선 상피를 회복하는 것은 장기 목표이며, JAK-STAT 경로 조절은 초기 단계이나 매우 유망하다.','new']
+};
+
+const EXP = {
+ov:{t:'초록·개요', r:'1–4쪽', p:[
+ 'APS는 면역조절 이상이 있는 사람에서 일정한 양상으로 나타나는 내분비 이상의 군집으로, 이를 알면 치료와 함께 동반될 전신·호르몬 결핍을 예측할 수 있다. 주요 질환은 APS1, APS2, APS3이며, FOXP3 변이에 의한 매우 드문 X연관 IPEX 증후군도 APS에 해당한다. 면역관문억제제로 치료받는 암 환자에서 생기는 범주가 늘고 있는데, 회피하던 종양 항원을 표적할 수 있게 되지만 내분비 조직에 대한 자가면역 활성화라는 대가가 따른다.',
+ 'APS1은 만성 점막피부 칸디다증, 부갑상선기능저하증, 원발성 부신기능저하증과 외배엽 이영양증, 여러 내분비·비내분비 조직의 자가면역 파괴가 특징이다. 원인은 AIRE 유전자의 동형접합 불활성화 변이로, AIRE는 말초 조직에만 발현되는 이소성 항원(예: 인슐린)을 흉선 안에서 발현시켜 자가항원 수용체를 얻은 T세포를 제거(음성 선택)하게 한다. 고전 동형접합 변이 외에 단일 우성 AIRE 변이도 자가면역 조절과 그 질환에 중요한 역할을 한다.',
+ 'APS1의 조직 손상은 JAK-STAT 신호와 인터페론 감마가 매개하며, 룩솔리티닙으로 JAK-STAT를 억제하면 쥐 모델과 환자에서 임상·생화학 발현이 개선되어 예후 개선의 희망을 준다. 더 큰 연구가 기대된다.',
+ 'APS2와 APS3는 T세포 수용체에 대한 항원 제시를 조절하는 HLA DQ/DR 영역과 관련되지만 유전 양상은 더 복잡하다. APS2는 T1DM, Addison병, 갑상선기능저하증이 특징이고 APS3는 Addison병이 없다는 점만 다르다. 다른 자가면역질환처럼 여성에 흔하지만 APS1은 성별 차이가 없다.',
+ 'APS3는 APS2와 본질적으로 같으나 부신피질 기능부전이 없어 각각 APS2a, APS2b로 부르기도 한다. APS2a는 드물지만 APS2b는 비교적 흔한데, T1DM 환자의 약 20%가 Hashimoto 갑상선염과 관련된 TPO·TG 항체를 가지기 때문이다. 그러나 자가항체가 반드시 샘 기능부전과 임상 발현을 예측하지는 않는다. APS2·APS3의 면역 이상 유전자는 6번 염색체 단완 HLA DQ·DR 영역에 있으며, 특정 대립유전자가 항원제시세포의 자가항원 제시를 촉진하고 조절 T세포 발현 저하 등과 함께 자가면역을 시작한다.'
+]},
+tol:{t:'면역관용과 AIRE', r:'2–3쪽', p:[
+ 'APS1은 흉선 상피를 지나며 성숙하는 동안 자가항원에 높은 친화성 수용체를 얻은 T세포를 제거하지 못해 생긴다. 정상에서는 흉선이 특정 조직에만 발현되는 여러 항원(예: β세포의 인슐린)을 이소성으로 발현하므로, 인슐린에 고친화성 수용체를 가진 발달 T세포는 흉선 안의 인슐린에 결합하여 세포자멸사를 겪고 말초로 들어가 자가면역을 일으키지 못한다(Figure 1).',
+ '이 이소성 발현은 21번 염색체의 AIRE가 매개한다. 1997년 APS1의 원인으로 발견된 AIRE는 적응면역 반응 연쇄의 필수 요소이며, 변이로 인한 질환 스펙트럼은 APS1을 넘어선다. 21번 삼염색체증에서 자가면역이 증가하는 것도 AIRE 기능 이상 때문일 수 있다. AIRE 변이는 상염색체 우성 효과로 고전 APS1과 다른 양상의 자가면역질환으로 늦게 나타날 수 있으며, 그 빈도는 1:1000에 이를 수 있어(APS1은 이란계 유대인 1:9000, 사르데냐 1:14,500, 핀란드 1:25,000) AIRE의 영향은 생각보다 훨씬 넓을 수 있다. Treg도 AIRE 결핍 이상에 관여한다.',
+ 'APS1에서는 T세포와 B세포 이상이 모두 관찰되어, 스테로이드·갑상선 합성 효소 등 호르몬, 결합조직, 단백 항원에 대한 순환 항체가 APS1과 모든 형태의 APS에서 보인다.',
+ 'Figure 1 왼쪽: 골수에서 기원한 발달 T세포는 흉선으로 이동하여 성숙하며 수용체 레퍼토리를 얻는다. AIRE가 매개하는 이소성 발현을 포함한 자가항원 발현은 상보적 수용체를 가진 T세포의 세포자멸사를 일으켜 말초 진입을 막으며, 이것이 거의 모든 T세포의 운명이다. 소수의 T세포만 말초로 나가 자가항원에 무반응으로 남지만 비자가 항원에는 면역반응을 일으킨다. 오른쪽: AIRE 불활성화 변이처럼 자가항원이 발현되지 않으면 중추 관용과 자가항원 인식이 실패하여 자가면역 반응이 생긴다.',
+ 'AIRE는 흉선에서 자가반응 세포를 억제하는 FOXP3 양성 Treg의 고유 집단을 유도하는 추가 기전으로도 면역관용을 조절한다. 따라서 더 많은 자가반응 세포가 제거를 피할 뿐 아니라 이를 제한할 Treg도 발달하지 않거나 기능이 떨어진다.'
+]},
+a1:{t:'APS1(APECED)의 임상 특징', r:'4–6쪽', p:[
+ 'APS1의 3대 고전 특징은 만성 점막피부 칸디다증, 저칼슘혈증·고인산혈증·낮은 PTH를 보이는 부갑상선기능저하증, 코르티솔 결핍과 때로 알도스테론 결핍 및 ACTH의 현저한 상승을 보이는 Addison병이다. 원발성 부신기능저하증은 색소침착(ACTH와 함께 MSH 증가), 복통, 구토, 체중 감소, 전해질 이상, 공복 저혈당으로 나타난다. 진단에는 3가지 중 2가지가 필요하다.',
+ '다른 발현으로 발열을 동반한 주기적 발진, 각결막염, 만성 설사, 사춘기 전후 1차 생식샘 기능부전, Hashimoto 갑상선염과 갑상선기능저하증, 비타민 B12 결핍, 만성 활동성 간염, T1DM, 외배엽 이영양증이 있어 APECED라는 이름이 붙었다. 외배엽 이영양증은 영구치만 침범하는 법랑질 저형성, 칸디다와 무관한 함몰 손발톱 이영양증, 석회 침착에 의한 고막 변화를 포함한다. 홍채염, 시신경 위축, 각막병증, 탈모, 백반증도 보고된다.',
+ '대부분 5세까지 발현한다. 약 75%에서 비내분비 발현이 먼저 나타나며, 첫 발현은 점막피부(구강 포함) 칸디다증 약 60%, 흡수장애 약 10%, 백반증·탈모·간염·각막병증 약 5%다(Table 1). 가장 흔한 비내분비 발현인 점막피부 칸디다증은 단핵구의 수용체 매개 칸디다 내재화 결함과 키나아제 활성 감소 때문이다. 이 경우 내분비 발현까지 중앙 간격은 약 4년(0.1–33년)이다.',
+ '내분비 질환이 첫 발현이면 거의 항상 부갑상선기능저하증이다. 전체의 약 70–80%가 부갑상선기능저하증을 보이고, 먼저 생긴 환자의 약 60%가 Addison병을 보이며, Addison병이 먼저면 약 1/3이 부갑상선기능저하증을 보인다. 2006년 Perheentupa의 핀란드 증례 기술은 가장 상세한 연구로 남아 있으며, 칸디다증(약 80%), 부갑상선기능저하증(약 80%), Addison병(약 70%)이 가장 흔하다.',
+ '난소 기능부전은 여성의 약 60%, 고환 기능부전은 남성의 약 15%이고, 벽세포 위축·위축성 위염·B12 결핍과 T1DM은 약 12%(당뇨병은 부갑상선·부신 결핍보다 늦은 합병증)다. 항갑상선항체는 흔하지만 갑상선기능저하증은 약 5%에서만 생긴다. 드물게 요붕증, 뇌하수체염에 의한 GH 결핍, 남성의 정자 항체에 의한 불임과 여성의 난소 기능부전이 있다.',
+ 'APS1의 발현은 APS2보다 일찍, 더 심하게 나타나며 평균 4–5개(1–20개)다. 만성 칸디다증 때문에 시간이 지나며 구강·식도 편평세포암에 취약하다. 암, 부신·저칼슘혈증 위기, 간염·신염·폐렴 같은 자가면역 질환으로 사망 위험이 높다.',
+ '사춘기 전후가 흔한 발현 시기이지만 생후 1년 이내에 시작할 수도 있다. 고전형은 드물어 전 세계 수백 명으로 추정되지만, 핀란드 1:25,000, 사르데냐 1:14,500, 이란계 유대인 1:9000처럼 과거 “고립” 집단에서 창시자 효과로 흔하다. 당뇨병은 드물고 대개 30–40대에 늦게 나타난다. 드문 특징으로 만성 신질환, 겉보기 광질코르티코이드 과잉, 무비증, 구강·식도 악성종양이 있으며, 빈도·양상·장기 결과는 변이가 다른 집단(사르데냐, 노르웨이, 인도)마다 다르다. 핀란드 코호트의 고전 특징은 Table 1과 같다.'
+]},
+a1ab:{t:'APS1의 자가항체', r:'5쪽', p:[
+ '부갑상선, 부신, 갑상선, 췌도 성분에 대한 순환 항체가 T세포와 B세포 기능을 모두 침범하는 이 질환의 특징이다. 부갑상선의 림프구 침윤은 흔하지만 면역반응 항원인 NALP5는 2008년에야 발견되었다. NALP5 항체는 매우 특이적이어서 APS1의 부갑상선기능저하증에서만 있고 다른 자가면역 증후군이나 부갑상선기능저하증 없는 APS1에는 없다.',
+ '부신 P450 효소(CYP21, CYP17, CYP11A1) 항체는 많은 환자에 있으나 글루코코르티코이드 치료로 감소한다. GAD65·IA2 항체가 있을 수 있으나 T1DM의 강한 예측인자가 아니고, TPO·티로글로불린 항체도 흔하지만 갑상선기능저하증을 예측하지 않는다. 간 미세소체 단백, 벽세포(H+/K+ ATPase α·β), 내인자 항체도 보고되며, 덜 흔한 항체로 BPIFB1, 폐에 발현하는 칼륨 채널 조절자 KCNRG, 전립선에만 발현하는 transglutaminase-4 항체가 있다.',
+ '고유한 특징은 제1형 인터페론(주로 IFN-α, IFN-ω)을 중화하는 자가항체로, 이 질환에 특이적이어서 진단적 유용성이 있다. APS1 환자의 95% 이상이 가지고 있으므로 APS1 의심 환자의 진단 평가에 포함해야 한다고 제안되었다. AIRE 변이 환자는 질환을 완화하는 고친화성 자가항체도 가지는데, 이것이 APS1에서 T1DM이 드물고 늦게 나타나는 이유일 수 있다. IL-17 계열, 특히 IL-22 항체도 매우 흔하여 일부 연구에서 90%를 넘는다.'
+]},
+a1g:{t:'APS1의 유전', r:'2–6쪽', p:[
+ '원인은 21q22.3의 AIRE 불활성화 변이다. 고전형은 상염색체 열성이지만 상염색체 우성 형태를 일으키는 점 변이도 보고되었고, 우성 형태는 덜 심해 이 유전 질환이 지금까지 AIRE 변이와 무관하게 여겨진 여러 면역질환에서 더 흔할 수 있음을 시사한다.',
+ '100개 이상의 질환 변이가 보고되었다. 가장 흔한 것은 SAND 도메인(Sp100, AIRE-1, NucP41/75, DEAF-1)의 핀란드 주요 변이 p.R257X로 핀란드, 러시아, 동유럽에 흔하다. 다른 흔한 변이는 PHD1 영역의 13 bp 결실(p.C322del13)로 노르웨이, 영국, 프랑스, 북미에 흔하다.',
+ '최근 상염색체 우성 유전의 고유한 우성 음성 AIRE 변이가 확인되었다. 이 변이는 PHD1과 SAND 도메인에 있으며, 흔히 악성빈혈, 백반증, 자가면역 갑상선질환, T1DM을 동반한 더 가벼운 질환과 관련되어 복합 유전을 보이는 훨씬 흔한 APS2와 혼동될 수 있다.',
+ '같은 가족 안에서도 표현형과 발병 연령이 크게 달라, MHC 같은 다른 유전자나 환경 노출이 표현형과 자연 경과에 영향을 주는 것으로 보이며, 이런 다양성이 APS1 진단을 어렵게 한다.'
+]},
+a1t:{t:'APS1의 치료와 추적', r:'7–8쪽', p:[
+ '제안된 치료 지침은 프레드니손 등 글루코코르티코이드, 사이클로스포린, 타크로리무스, 시롤리무스, 메토트렉세이트, 마이코페놀레이트 모페틸, 리툭시맙을 이용한 면역억제·조절에 기반하며 특히 자가면역 간염, 장병증, 세뇨관간질 신염, 간질성 폐질환, 각결막염에 쓴다. 일반적으로 APS 관리는 필요한 호르몬 대체와 합병증 치료다.',
+ '조직 손상이 JAK-STAT 신호와 인터페론 감마로 매개된다는 발견에 따라 JAK-STAT 차단이 조직 손상을 줄일 수 있으며, 룩솔리티닙은 쥐 모델과 환자에서 임상·생화학 발현을 개선했다. 더 큰 연구가 기대된다.',
+ '표준 치료는 알려진 결핍에 대한 호르몬과 비타민(비타민 D, B12) 대체이며, 다른 결핍은 예상하고 주기적으로 선별해야 한다. 특히 부신 스테로이드 생성(21-수산화효소, 17-수산화효소), 갑상선(TPO, TG) 항체가 있는 환자에서 그러하고, 칼슘·인산·PTH를 필요에 따라 측정한다. HbA1c, 공복 혈당, ALT·AST를 6개월–1년 간격의 임상 평가와 함께 주기적으로 본다.',
+ '부갑상선기능저하증과 만성 점막피부 칸디다증이 첫 발현이면 오후 ACTH로 원발성 부신기능저하증을 6개월마다, 적어도 매년 선별할 것을 제안한다. ACTH &gt;80 pg/mL는 강하게 시사하고 &gt;100 pg/mL는 사실상 진단적이다. ACTH 자극검사로 부신 예비능을 확인하자는 의견과, 코르티솔 대체를 시작하고 나트륨·칼륨과 누운·선 자세 혈압으로 알도스테론 결핍 진행을 감시하자는 의견이 있다. 케토코나졸 같은 항칸디다제는 코르티솔 합성을 방해해 부신기능저하증을 앞당기거나 악화시킬 수 있으므로 이를 배제해야 한다.',
+ '진단 후 처음 며칠은 일일 유지량 약 10 mg/m²/일의 2–3배인 스트레스 용량으로 코르티솔을 주고, 이후 약 8–10 mg/m²/일을 하루 3회 분할 경구 투여한다. 입원 중 진단되었거나 이후 입원 시에는 식도·하부 위장관 칸디다증으로 흡수가 떨어질 수 있어 정맥 또는 근육 주사를 고려한다. 교통사고나 부신 위기·저혈당 혼수 시 치료가 지연되지 않도록 의료 경고 팔찌·목걸이·열쇠고리를 착용하게 한다.',
+ '고전 3징 또는 그중 2가지가 없으면 많은 증례가 놓칠 가능성이 높으므로, 간염, 만성 설사, 발열을 동반한 주기적 발진 환자에서 AIRE 변이 분석을 고려한다. 장래에는 특정 변이의 유전적 조작으로 흉선 감시를 회복할 가능성도 있다.',
+ 'APS1 환자는 학술 의료기관의 소아 또는 성인 내분비내과 의사가 이끄는 다학제팀이 추적하는 것이 가장 좋다. 연 2회 이상 추적이 필요하고, 무증상 변이 보인자는 적어도 매년 추적한다. 모든 형제자매는 성인이고 건강해 보여도 반드시 검사해야 하며, 21-수산화효소와 NALP5 항체 선별은 각각 부신기능저하증과 부갑상선기능저하증 위험 평가에 유용하다.'
+]},
+a2:{t:'APS2(APS2a, Schmidt 증후군)', r:'8–9쪽', p:[
+ 'APS2는 T1DM, Addison병, 갑상선 자가면역(갑상선기능저하증, 갑상선기능항진증 또는 Hashimoto 갑상선염)의 3징이 특징이다. T1DM과 Addison병은 필수 요소이나 갑상선 자가면역은 그렇지 않으며, 셀리악병, 백반증, 탈모, 중증근무력증, 악성빈혈, IgA 결핍, 간염, 생식샘저하증이 동반될 수 있다.',
+ '유병 정점은 20–40세다. 자가면역 기반에 맞게 여성에 흔하고, HLA DR3·DR4 일배체형 및 셀리악병과도 강하게 연관된 class II 대립유전자 DQ2·DQ8과 관련된다. 췌도(GAD65, IA2, ZnT8), 갑상선(TG, TPO), 부신(21-수산화효소, 17-수산화효소), 셀리악병(조직 transglutaminase, gliadin) 자가항체가 흔하며, Addison병과 T1DM처럼 두 가지 자가면역 내분비질환이 있는 환자에서는 주기적으로 찾아야 한다. 입원 중에도 각 질환의 치료를 지속하고 코르티솔은 스트레스에 맞춰 조정한다. 바이러스 질환이 장의 자가면역을 촉발해 셀리악병을 일으키는 기전이 최근 제안되었고 다른 구성 질환에도 관련될 수 있다.',
+ 'APS2는 대개 APS1보다 늦게, 주로 청년기에 시작한다. 고유한 진단 검사는 없으나 관련 자가항체가 발병 수년 전부터 검출되는 경우가 많아 위험 평가에 도움이 된다. 유전자 발견이 크게 진전되었지만 유전은 복합적이다. 하위 유형으로 더 나누자는 제안도 있으나 원인이 다르다는 근거가 적어 넓은 의미의 APS2가 적절하다.',
+ '치료는 주요 구성 질환의 최신 지침에 따른 결핍 호르몬 대체에 초점을 둔다. APS2 환자는 다른 장기 특이 자가면역질환 위험이 높다는 점을 특히 알고 있어야 한다. 특히 조기 발병 자가면역질환이 가족에 대량 집적되면 단일유전자 질환, 특히 백반증과 악성빈혈이 많으면 “비고전” APS1을 시사할 수 있다.'
+]},
+a3:{t:'APS3(APS2b)', r:'9–10쪽', p:[
+ 'APS3는 APS2b라고도 하고 때로 Carpenter 증후군으로 불리며, APS2와 같은 내분비 조직 자가면역 이상을 보이지만 Addison병이 없다. T1DM 환자의 약 20%가 TG·TPO 항체를 가지지만 소수만 임상적·생화학적 갑상선기능저하증으로 진행하므로 비교적 흔한 질환으로 볼 수 있다.',
+ 'Table 2: APS2는 T1DM, 갑상선 자가면역, 부신기능저하증, APS3는 T1DM과 갑상선 자가면역이다.'
+]},
+case:{t:'예시 증례', r:'9쪽', p:[
+ '16세 여아가 혼수로 입원했고 심한 저혈당이었다. 혀·잇몸·입술의 색소반과 짙게 그을린 피부가 눈에 띄었다(Figure 2). 어머니에 따르면 12세부터 T1DM이 있었고 음식·운동과 무관한 저혈당이 잦아 3개월 전보다 인슐린을 약 50% 줄였다.',
+ '포도당 주입에 반응해 의식을 완전히 회복했다. 검사에서 ACTH 현저 상승, 낮은 아침 코르티솔, 21-수산화효소 항체 상승, 현저히 높은 TSH와 낮은 T4가 확인되어 APS2의 모든 기준을 만족했다. 저혈당은 코르티솔 결핍에 따른 호르몬 반대조절 부족과 갑상선기능저하증에 따른 인슐린 청소 지연이 합쳐진 결과였다.'
+]},
+ai:{t:'부신기능저하증', r:'10–11쪽', p:[
+ '부신기능저하증은 APS1과 APS2a의 핵심이자 가장 생명을 위협하는 특징이다. 스트레스 시 속상대의 코르티솔은 정상 혈당과 혈역학적 안정에 필요하다. 코르티솔은 탄수화물 대사를 조절하고, 모세혈관 투과성을 낮춰 혈압을 유지하며, 노르에피네프린을 에피네프린으로 바꾸는 효소를 활성화한다. 시상하부-뇌하수체-부신 축은 CRF와 ACTH에 대한 코르티솔의 음성 되먹임으로 조절된다. 사구대의 알도스테론은 주로 레닌-안지오텐신계가 조절하며 나트륨·수분 재흡수와 칼륨 배설을 촉진한다. 고농도 코르티솔은 11β-HSD2를 포화시켜 광질코르티코이드 수용체에도 작용한다.',
+ '발현은 흔히 만성적이며 피로, 식욕부진, 체중 감소와, 원발성에서는 ACTH 생성 부산물인 MSH 과잉에 따른 구강 점막·피부 주름 색소침착 또는 전신 착색을 보인다. 원발성 원인은 소아·청소년·청년에서 자가면역, 후복막 외상, 부신 형성·코르티솔 생합성·ACTH 반응에 관한 드문 유전 증후군이며, 중증 결함은 신생아기에 나타나거나 패혈증·외상 같은 생리적 스트레스로 늦게 드러난다. 2차 부신기능저하증은 외상, 신경외과 수술, 종양에 의한 시상하부·뇌하수체 손상이 가장 흔하고, 강력한 글루코코르티코이드 장기 치료에 따른 HPA 축 억제가 더 흔하다.',
+ '패혈증, 수술, 마취, 외상 같은 유발 사건이 있으면 부신 위기로 급성 발현한다: 오심, 구토, 복통, 탈수, 의식 변화, 저혈압, 저혈당, 쇼크. 코르티솔이 β-아드레날린 수용체와 혈관 긴장 활성화에 필요하므로 저혈압이 수액만으로 교정되지 않을 수 있고, 알도스테론 결핍으로 염분 소실(저나트륨혈증, 고칼륨혈증)이 생긴다. 원발성의 핵심 특징인 색소침착은 겨드랑이, 손바닥 주름, 유륜, 생식기, 잇몸 색소선에서 두드러지며 2차에서는 생기지 않는다. 2차 원인과 알도스테론을 침범하지 않는 일부 원발성은 염분 소실과 Addison 위기를 보이지 않는다.',
+ '일주기 변동 때문에 이른 아침 혈청 코르티솔과 ACTH가 내인성 부신 기능의 가장 좋은 평가다. 이른 아침 코르티솔 &lt;10 µg/dL는 의심 소견이며 ACTH는 원발성에서 상승, 낮으면 2차를 의심한다. 성인의 급성 질환에서는 임의 코르티솔 &lt;15 µg/dL가 우려 소견으로 제안되었다.',
+ '색소침착 같은 원발성 단서가 없으면 ACTH 자극검사가 가장 좋은 진단 검사다. 기저 ACTH와 코르티솔 측정 후 cosyntropin 250 µg을 정맥 또는 근육 주사하고 60분 최고 코르티솔이 18 µg/dL 미만이면 진단적이다. 초생리적 용량의 ACTH가 시상하부-뇌하수체 결함을 극복할 수 있으므로, 고용량 검사가 정상이어도 2차가 강하게 의심되면 이른 아침 코르티솔과 ACTH가 더 유익할 수 있다.'
+]},
+ici:{t:'암 면역치료 관련 자가면역', r:'11–12쪽', p:[
+ '여러 암에서 면역치료가 1차 또는 후속 치료로 늘면서 내분비 자가면역 증후군의 중요한 원인이 되고 있다. 이필리무맙 같은 CTLA-4 억제제와 PD-1 및 그 리간드 PD-L1·PD-L2 차단에 따른 내분비 자가면역의 다양성과 중증도는 “암 면역치료의 아킬레스건”으로 불린다. 뇌하수체염과 전엽 호르몬 이상, 갑상선기능저하·항진증, 부신기능저하증, T1DM이 포함된다. 정상인의 자가면역 조절 관문을 종양이 면역 회피에 이용하는데, 이를 차단하면 종양 항원을 이물로 인식해 파괴하지만 자가항원에 대한 자가면역도 자극된다.',
+ '의사는 이런 발현을 알고 내분비 조직 침범과 그 임상 발현을 선별해야 하며, 일부는 면역치료 시작 수개월–수년 후에 나타날 수 있다. 가장 흔한 내분비 장기 병변은 항PD-1에 따른 갑상선 질환과 항CTLA-4에 따른 뇌하수체염이다. 대규모 코호트에서 모든 등급 irAE는 CTLA-4 53.8%, PD-1 26.5%, PD-L1 17.1%, CTLA-4+PD-1/PD-L1 병용 61.1%였다. 내분비 이상반응은 5–20%, 최근 메타분석의 임상적으로 의미 있는 내분비병증은 약 10%다.',
+ '뇌하수체염은 60세 초과 남성에 가장 많고 여성보다 2–5배 흔하며, 이필리무맙 4–20%, 이필리무맙+니볼루맙 8%, 니볼루맙 0.6%, 펨브롤리주맙 0.7%다. 갑상선기능저하증 6–13%, 갑상선중독증 3–16%이며 무증상 이상을 포함하면 각각 28%와 22%에 이른다. 위험은 용량 의존적이어서 항CTLA-4는 10 mg/kg 이상에서만 관찰되었다.',
+ '드물게 T1DM, 중추성 요붕증, 부갑상선기능저하증이 생기고, 덜 보고되는 내분비병증으로 당뇨병, 원발성 부신기능저하증, 부갑상선기능항진증에 의한 고칼슘혈증이 있다. 원발성 부신기능저하증은 단독요법 &lt;1%, 병용 4–8%이고, T1DM은 항PD-1/PD-L1에서 0.4%(항CTLA-4에서는 없음), 최근 ICI 치료 2,960명 연구에서 0.9%였다.',
+ '진료에서 2등급 이상 irAE는 주로 코르티코스테로이드로 전신 면역억제한다(메틸프레드니솔론 2등급 0.5–1 mg/kg, 2–3등급 1–2 mg/kg). 4등급 irAE에서는 해당 약 재개가 금기이며, 스테로이드가 효과 없거나 금기이면 드물게 항TNF-α 제제를 쓴다.'
+]},
+ipex:{t:'IPEX 증후군', r:'12–13쪽', p:[
+ 'IPEX(X연관 면역조절이상·다내분비병증·장병증)는 조기 발병 T1DM, 난치성 설사와 흡수장애를 동반한 자가면역 장병증, 습진·어린선·건선 양상 피부염이 특징인 매우 드문 유전 증후군이다. 호산구증가와 IgE 상승이 흔하고, 일부는 막성 사구체신염이나 간질성 신염을 보인다. 이후 자가면역 갑상선염, 탈모, 자가면역 혈구감소증, 간염, 외분비 췌장염이 생길 수 있다. APS1과 겹치지만 0.1–0.4세로 훨씬 이른 시기에 나타난다.',
+ '진단 후 즉시 면역억제제로 치료하거나, 가능하면 완치가 가능한 동종 골수이식을 받지 않으면 생후 수년 내 흔히 사망한다. 원인 유전자는 FOXP3이며 100개 이상의 변이가 보고되었다. FOXP3는 CD4, CTLA-4, 고친화성 IL-2 수용체 CD25와 함께 Treg에 높게 발현되는 주 전사인자다. APS1처럼 순환 자가항체가 진단에 도움이 된다. 드문 질환이지만 환자 연구는 Treg 이해에 기여한 자기관용의 핵심 경로를 밝혔고, 이식과 자가면역질환 치료에서 Treg 기능을 높이는 연구로 이어졌다.'
+]},
+new:{t:'새로운 방향', r:'13쪽', p:[
+ '지난 10년간 유전 검사와 자가항체 분석 같은 더 나은 진단 도구가 APS 관련 질환의 발견과 관리를 위해 개발되었다. 조기 진단과 개인 맞춤 유전체학으로 비가역적 장기 손상 전에 조기 면역조절 치료를 적용해 자가면역 과정을 완화할 수 있을 것이다.',
+ '줄기세포 공학으로 면역조절 기능이 온전한 흉선 상피를 회복하여 결함 있는 면역계를 되돌리는 것은 장기 목표로 추진 중이다. APS1의 유해 효과를 개선하기 위한 JAK-STAT 신호 조절은 초기 단계이지만 이 증후군과 관련 증후군에 매우 유망하다.'
+]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const P = (...pts)=>'M'+pts.map(p=>p.join(' ')).join(' L');
+const C5 = [10,160,310,460,610], C4 = [10,198,386,574], CW = 176, G3 = [10,260,510];
+
+const CHARTS = {
+cls:{tab:'분류', fig:'개요', aria:'자가면역 다내분비선 증후군의 분류', w:760, h:440, nodes:[
+ {id:'k_root', x:230,y:10, w:300,h:56, label:'자가면역 다내분비선 증후군 (APS)', cls:'test'},
+ {id:'k_1',  x:C5[0],y:100,w:140,h:70, label:'APS1 (APECED)<small>AIRE · 상염색체 열성</small>', cls:'mal fac'},
+ {id:'k_2',  x:C5[1],y:100,w:140,h:70, label:'APS2 (APS2a)<small>Schmidt · HLA</small>', cls:'tx fac'},
+ {id:'k_3',  x:C5[2],y:100,w:140,h:70, label:'APS3 (APS2b)<small>HLA</small>', cls:'tx fac'},
+ {id:'k_ip', x:C5[3],y:100,w:140,h:70, label:'IPEX<small>FOXP3 · X연관</small>', cls:'pr fac'},
+ {id:'k_ic', x:C5[4],y:100,w:140,h:70, label:'면역관문억제제<small>암 면역치료</small>', cls:'na fac'},
+ {id:'k_1c', x:C5[0],y:190,w:140,h:130,label:'칸디다증 · 부갑상선기능저하 · Addison<small>3가지 중 2가지</small>', cls:'fac'},
+ {id:'k_2c', x:C5[1],y:190,w:140,h:130,label:'T1DM + Addison<small>필수 · ± 갑상선 자가면역</small>', cls:'fac'},
+ {id:'k_3c', x:C5[2],y:190,w:140,h:130,label:'T1DM + 갑상선 자가면역<small>Addison 없음</small>', cls:'fac'},
+ {id:'k_ipc',x:C5[3],y:190,w:140,h:130,label:'조기 T1DM · 장병증 · 피부염', cls:'fac'},
+ {id:'k_icc',x:C5[4],y:190,w:140,h:130,label:'뇌하수체염 · 갑상선 · 부신 · T1DM', cls:'fac'},
+ {id:'k_1o', x:C5[0],y:340,w:140,h:84, label:'소아 발병<small>대부분 5세까지 · 성별 차이 없음</small>', cls:'test fac'},
+ {id:'k_2o', x:C5[1],y:340,w:140,h:84, label:'청년 발병<small>20–40세 · 여성</small>', cls:'test fac'},
+ {id:'k_3o', x:C5[2],y:340,w:140,h:84, label:'비교적 흔함<small>T1DM의 ~20% 갑상선 항체</small>', cls:'test fac'},
+ {id:'k_ipo',x:C5[3],y:340,w:140,h:84, label:'0.1–0.4세<small>치료 없으면 흔히 사망</small>', cls:'test fac'},
+ {id:'k_ico',x:C5[4],y:340,w:140,h:84, label:'치료 수개월–수년 후<small>내분비 irAE ~10%</small>', cls:'test fac'}
+ ], edges:[
+ ...C5.map(x=>[P([380,66],[380,84],[x+70,84],[x+70,100]),1]),
+ ...C5.flatMap(x=>[[A(x+70,170,x+70,190),1],[A(x+70,320,x+70,340),1]])
+ ], labels:[]},
+
+tol:{tab:'면역관용', fig:'Figure 1', aria:'AIRE와 T세포 자기관용, 그 실패', w:760, h:445, nodes:[
+ {id:'t_bm',  x:10, y:10, w:360,h:50, label:'골수 기원 발달 T세포', cls:'fac'},
+ {id:'t_th',  x:10, y:80, w:360,h:60, label:'흉선<small>성숙 · 수용체 레퍼토리 획득</small>', cls:'test fac'},
+ {id:'t_ag',  x:10, y:160,w:360,h:64, label:'AIRE 매개 이소성 자가항원 발현<small>예: 인슐린</small>', cls:'pr fac'},
+ {id:'t_d',   x:10, y:245,w:175,h:76, label:'~99% 세포자멸사<small>중추 관용 (음성 선택)</small>', cls:'ben fac'},
+ {id:'t_p',   x:195,y:245,w:175,h:76, label:'~1% 말초로<small>자가항원 무반응 · 비자가 면역반응</small>', cls:'ben fac'},
+ {id:'t_tr',  x:10, y:345,w:360,h:64, label:'FOXP3+ Treg 유도<small>자가반응 세포 억제</small>', cls:'pr fac'},
+ {id:'r_mut', x:390,y:10, w:360,h:50, label:'AIRE 불활성화 변이', cls:'mal'},
+ {id:'r_no',  x:390,y:80, w:360,h:60, label:'흉선 자가항원 미발현', cls:'mal fac'},
+ {id:'r_c',   x:390,y:160,w:360,h:64, label:'중추 관용 실패<small>자가반응 T세포 말초 진입</small>', cls:'mal fac'},
+ {id:'r_p',   x:390,y:245,w:360,h:76, label:'말초 관용 실패<small>Treg 미발달·기능 저하 · B세포 자가항체</small>', cls:'mal fac'},
+ {id:'r_ai',  x:390,y:345,w:360,h:64, label:'자가면역 → APS1<small>조직 손상: JAK-STAT · IFN-γ</small>', cls:'mal fac'}
+ ], edges:[
+ [A(190,60,190,80),1],[A(190,140,190,160),1],[P([190,224],[190,234],[97,234],[97,245]),1],[P([190,234],[282,234],[282,245]),1],[P([97,321],[97,345]),1],
+ [A(570,60,570,80),1],[A(570,140,570,160),1],[A(570,224,570,245),1],[A(570,321,570,345),1]
+ ], labels:[[10,436,'정상: 자기관용 발달','sec'],[390,436,'AIRE 결핍: 자기관용 실패','sec']]},
+
+a1:{tab:'APS1 임상', fig:'Table 1', aria:'APS1의 진단과 임상 특징', w:760, h:470, nodes:[
+ {id:'a_dx',  x:10, y:10, w:740,h:52, label:'APS1 진단<small>3대 고전 특징 중 2가지</small>', cls:'test fac'},
+ {id:'a_cmc', x:G3[0],y:85, w:240,h:80, label:'만성 점막피부 칸디다증<small>~80% · 첫 발현 ~60%</small>', cls:'mal fac'},
+ {id:'a_hp',  x:G3[1],y:85, w:240,h:80, label:'부갑상선기능저하증<small>70–80% · 첫 내분비 발현</small>', cls:'mal fac'},
+ {id:'a_ad',  x:G3[2],y:85, w:240,h:80, label:'Addison병<small>60–70%</small>', cls:'mal fac'},
+ {id:'a_oth', x:10, y:185,w:365,h:80, label:'기타 발현 (Table 1)<small>생식샘 기능부전 · 위축성 위염 · 간염 · T1DM · 갑상선</small>', cls:'fac'},
+ {id:'a_ect', x:385,y:185,w:365,h:80, label:'외배엽 이영양증<small>영구치 법랑질 저형성 · 손발톱 · 고막 석회화</small>', cls:'fac'},
+ {id:'a_seq', x:G3[0],y:285,w:240,h:84, label:'발현 순서<small>비내분비 먼저 ~75% · 내분비까지 중앙 4년</small>', cls:'test fac'},
+ {id:'a_ab',  x:G3[1],y:285,w:240,h:84, label:'자가항체<small>IFN-α/ω &gt;95% · NALP5 · IL-22</small>', cls:'test fac'},
+ {id:'a_gen', x:G3[2],y:285,w:240,h:84, label:'AIRE 변이<small>R257X · 13 bp 결실 · 우성 음성</small>', cls:'pr fac'},
+ {id:'a_prg', x:10, y:390,w:740,h:62, label:'경과와 예후<small>평균 4–5개 발현 · 구강·식도 편평세포암 · 부신·저칼슘혈증 위기 · 사망 위험 증가</small>', cls:'mal fac'}
+ ], edges:[
+ [A(130,62,130,85),1],[A(380,62,380,85),1],[A(630,62,630,85),1]
+ ], labels:[]},
+
+a1tx:{tab:'APS1 치료', fig:'본문', aria:'APS1의 치료와 추적', w:760, h:440, nodes:[
+ {id:'b_rep', x:10, y:10, w:360,h:62, label:'호르몬·비타민 대체<small>비타민 D · B12 · 결핍 호르몬</small>', cls:'tx fac'},
+ {id:'b_scr', x:10, y:92, w:360,h:62, label:'주기적 선별<small>항체 · Ca·P·PTH · HbA1c · 간기능 · 6개월–1년</small>', cls:'test fac'},
+ {id:'b_act', x:10, y:174,w:360,h:72, label:'부신 선별: ACTH 6개월마다<small>&gt;80 pg/mL 시사 · &gt;100 사실상 진단적</small>', cls:'test fac'},
+ {id:'b_hc',  x:10, y:266,w:360,h:72, label:'히드로코르티손<small>스트레스 2–3배 → 8–10 mg/m²/일 3회 · 입원 시 비경구</small>', cls:'tx fac'},
+ {id:'b_al',  x:10, y:358,w:360,h:62, label:'의료 경고 팔찌 착용', cls:'fac'},
+ {id:'b_imm', x:390,y:10, w:360,h:62, label:'면역억제<small>간염 · 장병증 · 신염 · 폐질환 · 각결막염</small>', cls:'tx fac'},
+ {id:'b_ket', x:390,y:82, w:360,h:56, label:'케토코나졸: 부신기능저하 악화 주의', cls:'mal'},
+ {id:'b_jak', x:390,y:148,w:360,h:62, label:'JAK-STAT 억제<small>룩솔리티닙 · 연구 단계</small>', cls:'pr fac'},
+ {id:'b_mdt', x:390,y:220,w:360,h:62, label:'다학제팀 추적<small>연 2회 이상 · 보인자 매년</small>', cls:'fac'},
+ {id:'b_sib', x:390,y:292,w:360,h:62, label:'형제자매 전원 검사<small>21-수산화효소 · NALP5 항체</small>', cls:'test fac'},
+ {id:'b_gen', x:390,y:364,w:360,h:56, label:'AIRE 분석 고려<small>간염 · 만성 설사 · 발열 동반 발진</small>', cls:'test fac'}
+ ], edges:[[A(190,72,190,92),1],[A(190,154,190,174),1],[A(190,246,190,266),1],[A(190,338,190,358),1]], labels:[]},
+
+a23:{tab:'APS2·APS3', fig:'Table 2', aria:'APS2와 APS3', w:760, h:520, nodes:[
+ {id:'s_2',  x:10, y:10, w:360,h:56, label:'APS2 (APS2a · Schmidt 증후군)', cls:'tx'},
+ {id:'s_3',  x:390,y:10, w:360,h:56, label:'APS3 (APS2b)', cls:'tx'},
+ {id:'s_2c', x:10, y:86, w:360,h:70, label:'T1DM + Addison병 (필수)<small>± 갑상선 자가면역</small>', cls:'mal fac'},
+ {id:'s_3c', x:390,y:86, w:360,h:70, label:'T1DM + 갑상선 자가면역<small>Addison병 없음</small>', cls:'fac'},
+ {id:'s_as', x:10, y:176,w:360,h:80, label:'동반 질환<small>셀리악병 · 백반증 · 탈모 · 중증근무력증 · 악성빈혈 · IgA 결핍 · 간염 · 생식샘저하증</small>', cls:'fac'},
+ {id:'s_3f', x:390,y:176,w:360,h:80, label:'T1DM의 ~20% TPO·TG 항체<small>소수만 갑상선기능저하로 진행</small>', cls:'test fac'},
+ {id:'s_gn', x:10, y:276,w:360,h:70, label:'HLA DR3·DR4 · DQ2·DQ8<small>여성 · 20–40세 · 복합 유전</small>', cls:'pr fac'},
+ {id:'s_ab', x:390,y:276,w:360,h:70, label:'자가항체 주기적 검사<small>GAD65·IA2·ZnT8 · TPO·TG · 21OH · tTG</small>', cls:'test fac'},
+ {id:'s_tx', x:10, y:366,w:360,h:60, label:'치료: 결핍 호르몬 대체<small>입원 시 스트레스 용량</small>', cls:'tx fac'},
+ {id:'s_mo', x:390,y:366,w:360,h:60, label:'가족 집적·조기 발병<small>→ 비고전 APS1 의심</small>', cls:'mal fac'},
+ {id:'s_cs', x:10, y:446,w:740,h:60, label:'예시 증례: 16세 저혈당 혼수 (Figure 2)<small>색소침착 · ACTH↑ · 21OH 항체 · TSH↑ T4↓</small>', cls:'test fac'}
+ ], edges:[[A(190,66,190,86),1],[A(570,66,570,86),1]], labels:[]},
+
+ai:{tab:'부신기능저하', fig:'본문', aria:'부신기능저하증의 발현과 진단', w:760, h:450, nodes:[
+ {id:'d_sus', x:10, y:10, w:740,h:56, label:'부신기능저하증 의심<small>피로 · 식욕부진 · 체중 감소 · 색소침착</small>', cls:'test fac'},
+ {id:'d_cr',  x:10, y:86, w:360,h:70, label:'부신 위기<small>유발: 패혈증 · 수술 · 마취 · 외상</small>', cls:'mal fac'},
+ {id:'d_am',  x:390,y:86, w:360,h:70, label:'이른 아침 코르티솔·ACTH<small>코르티솔 &lt;10 µg/dL 의심 · 급성 질환 임의 &lt;15</small>', cls:'test fac'},
+ {id:'d_cs',  x:10, y:176,w:360,h:90, label:'위기 증상<small>오심 · 구토 · 복통 · 탈수 · 의식 변화 · 수액 불응 저혈압 · 저혈당 · 쇼크</small>', cls:'mal fac'},
+ {id:'d_st',  x:390,y:176,w:360,h:70, label:'ACTH 자극검사<small>cosyntropin 250 µg · 60분 최고 코르티솔 &lt;18 µg/dL</small>', cls:'test fac'},
+ {id:'d_p',   x:390,y:266,w:175,h:84, label:'원발성<small>ACTH↑ · 색소침착 · 염분 소실</small>', cls:'mal fac'},
+ {id:'d_s',   x:575,y:266,w:175,h:84, label:'2차<small>ACTH 낮음 · 색소침착 없음</small>', cls:'fac'},
+ {id:'d_ph',  x:10, y:286,w:360,h:64, label:'코르티솔·알도스테론 생리', cls:'fac'},
+ {id:'d_ca',  x:10, y:370,w:740,h:62, label:'원인<small>자가면역 · 후복막 외상 · 유전 증후군 · 시상하부·뇌하수체 손상 · 글루코코르티코이드 장기 치료</small>', cls:'fac'}
+ ], edges:[[A(190,66,190,86),1],[A(570,66,570,86),1],[A(190,156,190,176),1],[A(570,156,570,176),1],[P([570,246],[570,256],[477,256],[477,266]),1],[P([570,256],[662,256],[662,266]),1]], labels:[]},
+
+ici:{tab:'ICI', fig:'본문', aria:'면역관문억제제 관련 내분비 자가면역', w:760, h:450, nodes:[
+ {id:'i_hd', x:10, y:10, w:740,h:56, label:'면역관문억제제<small>항CTLA-4 (이필리무맙) · 항PD-1 · 항PD-L1</small>', cls:'pr fac'},
+ {id:'i_hy', x:C4[0],y:86, w:CW,h:100,label:'뇌하수체염<small>주로 항CTLA-4 · 이필리무맙 4–20%</small>', cls:'mal fac'},
+ {id:'i_th', x:C4[1],y:86, w:CW,h:100,label:'갑상선<small>주로 항PD-1 · 저하 6–13% · 중독증 3–16%</small>', cls:'mal fac'},
+ {id:'i_ad', x:C4[2],y:86, w:CW,h:100,label:'원발성 부신기능저하<small>단독 &lt;1% · 병용 4–8%</small>', cls:'mal fac'},
+ {id:'i_dm', x:C4[3],y:86, w:CW,h:100,label:'T1DM<small>항PD-1/PD-L1 0.4–0.9%</small>', cls:'mal fac'},
+ {id:'i_ra', x:10, y:206,w:740,h:50, label:'드문 발현: 중추성 요붕증 · 부갑상선기능저하증 · 부갑상선기능항진증 고칼슘혈증', cls:'fac'},
+ {id:'i_in', x:10, y:276,w:365,h:80, label:'irAE 빈도<small>CTLA-4 53.8% · PD-1 26.5% · PD-L1 17.1% · 병용 61.1%</small>', cls:'test fac'},
+ {id:'i_sc', x:385,y:276,w:365,h:80, label:'내분비 선별<small>수개월–수년 후에도 발생</small>', cls:'test fac'},
+ {id:'i_tx', x:10, y:376,w:740,h:60, label:'2등급 이상 irAE: 메틸프레드니솔론<small>4등급 재투여 금기 · 드물게 항TNF-α</small>', cls:'tx fac'}
+ ], edges:[...C4.map(x=>[P([380,66],[380,76],[x+88,76],[x+88,86]),1])], labels:[]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${id}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Sperling MA, Angelousi A, Yau M. Endotext (updated 2024-07-18) 해당 절의 요약 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약 번역.</p>`;
+
+const T1 = tbl(['증상','환자 비율'],[
+ ['점막피부 칸디다증','80%'],['부갑상선기능저하증','70–80%'],['부신기능저하증','60%'],['1형 당뇨병','12%'],['갑상선기능저하증','4%'],['난소 기능부전(여성)','60%'],['고환 기능부전(남성)','14%'],
+ ['위 벽세포 기능부전','15%'],['간염','13%'],['외배엽 이형성','33%'],['각막병증','22%'],['탈모','27%'],['백반증','13%']
+]) + '<p class="exp-src">Table 1. APS1의 임상 특징(핀란드 코호트, 참고문헌 1–4 기반).</p>';
+const T2 = tbl(['APS2','APS3'],[['1형 당뇨병','1형 당뇨병'],['갑상선 자가면역','갑상선 자가면역'],['부신기능저하증','–']]) + '<p class="exp-src">Table 2. APS2와 APS3의 임상 특징.</p>';
+const CMP = tbl(['','APS1','APS2','APS3','IPEX'],[
+ ['원인','AIRE(21q22.3) 변이','HLA DQ/DR(6p) 복합 유전','HLA DQ/DR 복합 유전','FOXP3 변이'],
+ ['유전','상염색체 열성(우성 음성 변이도)','복합','복합','X연관'],
+ ['발병','대부분 5세까지','20–40세, 청년기','–','0.1–0.4세'],
+ ['성별','차이 없음','여성에 흔함','여성에 흔함','–'],
+ ['핵심 구성','칸디다증, 부갑상선기능저하, Addison(2/3)','T1DM + Addison ± 갑상선','T1DM + 갑상선, Addison 없음','조기 T1DM, 장병증, 피부염'],
+ ['특징적 항체','IFN-α/ω(&gt;95%), NALP5, IL-22','GAD65·IA2·ZnT8, TPO·TG, 21OH, tTG','TPO·TG','순환 자가항체']
+]) + '<p class="exp-src">본문 내용을 바탕으로 이 도구에서 정리한 비교표다.</p>';
+
+const DISC_T1 = note('원문 표기','Table 1과 본문 수치가 다르다: 부신기능저하증 60%(표) vs 약 70%(본문, 핀란드 코호트), 갑상선기능저하증 4% vs 약 5%, 고환 기능부전 14% vs 약 15%, 위 벽세포 기능부전 15% vs 본문은 벽세포 위축·B12 결핍과 T1DM을 묶어 약 12%. 표의 “Ectodermal Dysplasia”는 본문의 “ectodermal dystrophy”와 용어가 다르다. Perheentupa가 본문에서 “Peerhentupa”로 표기되었다.');
+const DISC_RX = note('원문 표기','룩솔리티닙은 초록과 본문에서 “monoclonal antibody/Ab”로 기술되었으나 실제로는 경구 저분자 JAK1/2 억제제다. 면역억제제 목록에서 시롤리무스를 타크로리무스와 함께 “calcineurin inhibitors”로 묶었으나 시롤리무스는 mTOR 억제제다.');
+const DISC_AC = note('원문 표기','APS1의 부신 선별은 “오후(afternoon) ACTH”로 적었으나, 부신기능저하증 절은 일주기 변동 때문에 이른 아침 코르티솔·ACTH가 가장 좋은 평가라고 한다. 히드로코르티손 유지량은 “~10 mg/m²/d”와 “~8–10 mg/m²/day”로 함께 제시된다.');
+const DISC_MP = note('원문 표기','irAE의 메틸프레드니솔론 용량이 “2등급 0.5–1 mg/kg, 2–3등급 1–2 mg/kg”으로 2등급이 겹친다(3–4등급의 오기일 수 있음). ICI 관련 드문 발현과 “덜 보고된” 발현 목록에 당뇨병이 중복된다.');
+const DISC_CL = note('분류','본문은 APS2에서 T1DM과 Addison병을 필수, 갑상선 자가면역을 선택으로 보지만, 서론은 T1DM·부신피질 기능부전·갑상선기능저하증의 3징으로, Table 2는 세 가지를 나란히 제시한다. 초록은 APS2·APS3가 HLA DQ/DR 영역의 “변이(mutations)” 때문이라 했으나 본문은 감수성 대립유전자로 기술한다. 다른 문헌(예: Neufeld 분류)은 APS2를 Addison병 + 자가면역 갑상선질환 및/또는 T1DM으로, APS3를 Addison병 없는 자가면역 갑상선질환 + 다른 자가면역질환으로 정의하며, “Carpenter 증후군”도 문헌마다 가리키는 범위가 달라 해석에 주의한다.');
+const TIP_KR = tip('진료 적용','ACTH 자극검사의 코르티솔 기준(60분 &lt;18 µg/dL)은 사용하는 면역측정법에 따라 달라질 수 있으므로 검사실 기준을 확인한다. 이 장은 Endotext 총설로 권고 등급이 없다.');
+
+const D = {
+k_root:{kind:'개요', title:'자가면역 다내분비선 증후군 (APS)', next:['k_1','k_2','k_3','k_ip','k_ic'], body:`${RR('G1','G2','G3')}${CMP}${ex('ov')}`},
+k_1:{kind:'분류', title:'APS1 (APECED)', next:['a_dx'], body:`${RR('A1','A10')}${CMP}`},
+k_2:{kind:'분류', title:'APS2 (APS2a · Schmidt 증후군)', next:['s_2'], body:`${RR('S1','S2','G4')}${DISC_CL}`},
+k_3:{kind:'분류', title:'APS3 (APS2b)', next:['s_3'], body:`${R('S7')}${T2}${DISC_CL}`},
+k_ip:{kind:'분류', title:'IPEX 증후군', next:[], body:`${RR('X1','X2')}${ex('ipex')}`},
+k_ic:{kind:'분류', title:'면역관문억제제 관련 내분비 자가면역', next:['i_hd'], body:RR('G2','I1','I2')},
+k_1c:{kind:'APS1', title:'APS1의 3대 고전 특징', next:['a_dx'], body:R('A1')},
+k_2c:{kind:'APS2', title:'APS2의 구성', next:['s_2c'], body:`${R('S1')}${T2}${DISC_CL}`},
+k_3c:{kind:'APS3', title:'APS3의 구성', next:['s_3c'], body:`${R('S7')}${T2}`},
+k_ipc:{kind:'IPEX', title:'IPEX의 임상 특징', next:[], body:R('X1')},
+k_icc:{kind:'ICI', title:'ICI 관련 내분비병증', next:['i_hy','i_th'], body:RR('I1','I3')},
+k_1o:{kind:'APS1', title:'APS1 발병 연령과 성별', next:[], body:RR('A3','A7','G3')},
+k_2o:{kind:'APS2', title:'APS2 발병 연령과 성별', next:[], body:RR('S2','G3')},
+k_3o:{kind:'APS3', title:'APS3의 빈도', next:[], body:RR('S7','G5')},
+k_ipo:{kind:'IPEX', title:'IPEX의 발병과 예후', next:[], body:R('X2')},
+k_ico:{kind:'ICI', title:'ICI 내분비 이상반응의 시기와 빈도', next:['i_sc'], body:RR('I2','I3')},
+
+t_bm:{kind:'Figure 1', title:'골수 기원 발달 T세포', next:['t_th'], body:`${R('M3')}${ex('tol')}`},
+t_th:{kind:'Figure 1', title:'흉선에서의 성숙', next:['t_ag'], body:RR('M1','M3')},
+t_ag:{kind:'Figure 1', title:'AIRE 매개 이소성 자가항원 발현', next:['t_d','t_p'], body:RR('M1','M2','M5')},
+t_d:{kind:'Figure 1', title:'중추 관용: 음성 선택', next:[], body:RR('M1','M3')},
+t_p:{kind:'Figure 1', title:'말초 관용', next:[], body:R('M3')},
+t_tr:{kind:'AIRE', title:'FOXP3+ 조절 T세포 유도', next:['k_ip'], body:R('M4')},
+r_mut:{kind:'Figure 1', title:'AIRE 불활성화 변이', next:['r_no','a_gen'], body:RR('A10','A11','M5')},
+r_no:{kind:'Figure 1', title:'흉선 자가항원 미발현', next:['r_c'], body:R('M3')},
+r_c:{kind:'Figure 1', title:'중추 관용 실패', next:['r_p'], body:RR('M1','M3')},
+r_p:{kind:'Figure 1', title:'말초 관용 실패', next:['r_ai'], body:`${R('M4')}${paraHTML({p:EXP.tol.p.slice(2,3)})}`},
+r_ai:{kind:'Figure 1', title:'자가면역 → APS1', next:['a_dx','b_jak'], body:`${RR('A1','T12')}${DISC_RX}`},
+
+a_dx:{kind:'APS1 진단', title:'APS1 진단: 3가지 중 2가지', next:['a_cmc','a_hp','a_ad'], body:`${R('A1')}${ex('a1')}`},
+a_cmc:{kind:'APS1', title:'만성 점막피부 칸디다증', next:['b_ket'], body:`${RR('A3','A5','A6')}${T1}`},
+a_hp:{kind:'APS1', title:'부갑상선기능저하증', next:['a_ad'], body:`${RR('A4','A8')}${T1}`},
+a_ad:{kind:'APS1', title:'Addison병', next:['b_act','d_sus'], body:`${RR('A1','A4','A5')}${T1}${DISC_T1}`},
+a_oth:{kind:'Table 1', title:'기타 발현', next:[], body:`${RR('A2','A5','A7')}${T1}${DISC_T1}`},
+a_ect:{kind:'APS1', title:'외배엽 이영양증', next:[], body:R('A2')},
+a_seq:{kind:'APS1', title:'발현 순서와 시기', next:[], body:RR('A3','A4','A7')},
+a_ab:{kind:'APS1', title:'APS1의 자가항체', next:[], body:`${RR('A9','A8')}${ex('a1ab')}`},
+a_gen:{kind:'APS1', title:'AIRE 변이', next:['b_gen'], body:`${RR('A10','A11','A12')}${ex('a1g')}`},
+a_prg:{kind:'APS1', title:'경과와 예후', next:[], body:R('A6')},
+
+b_rep:{kind:'APS1 치료', title:'호르몬·비타민 대체', next:['b_scr'], body:`${R('T2')}${ex('a1t')}`},
+b_scr:{kind:'APS1 추적', title:'주기적 선별', next:['b_act'], body:RR('T2','T3')},
+b_act:{kind:'APS1 추적', title:'부신기능저하증 선별 (ACTH)', next:['b_hc'], body:`${RR('T4','T5')}${DISC_AC}`},
+b_hc:{kind:'APS1 치료', title:'히드로코르티손 투여', next:['b_al'], body:`${R('T7')}${DISC_AC}`},
+b_al:{kind:'APS1', title:'의료 경고 팔찌', next:[], body:R('T8')},
+b_imm:{kind:'APS1 치료', title:'면역억제·조절', next:[], body:`${R('T1')}${DISC_RX}`},
+b_ket:{kind:'APS1 주의', title:'케토코나졸과 부신기능저하증', next:['b_act'], body:R('T6')},
+b_jak:{kind:'APS1 치료', title:'JAK-STAT 억제 (룩솔리티닙)', next:[], body:`${RR('T12','X3')}${DISC_RX}`},
+b_mdt:{kind:'APS1 추적', title:'다학제팀 추적', next:[], body:R('T10')},
+b_sib:{kind:'APS1 추적', title:'형제자매 검사', next:[], body:R('T11')},
+b_gen:{kind:'APS1', title:'AIRE 변이 분석', next:[], body:RR('T9','A12')},
+
+s_2:{kind:'APS2', title:'APS2 (APS2a · Schmidt 증후군)', next:['s_2c'], body:`${R('S1')}${ex('a2')}${DISC_CL}`},
+s_3:{kind:'APS3', title:'APS3 (APS2b)', next:['s_3c'], body:`${R('S7')}${ex('a3')}`},
+s_2c:{kind:'APS2', title:'T1DM + Addison병', next:['s_as'], body:`${R('S1')}${T2}${DISC_CL}`},
+s_3c:{kind:'APS3', title:'T1DM + 갑상선 자가면역', next:['s_3f'], body:`${R('S7')}${T2}`},
+s_as:{kind:'APS2', title:'동반 자가면역질환', next:[], body:R('S1')},
+s_3f:{kind:'APS3', title:'T1DM의 갑상선 항체', next:[], body:RR('S7','G5')},
+s_gn:{kind:'APS2', title:'HLA와 역학', next:[], body:RR('S2','G4')},
+s_ab:{kind:'APS2', title:'자가항체 검사', next:[], body:RR('S3','S4')},
+s_tx:{kind:'APS2 치료', title:'APS2 치료', next:[], body:R('S5')},
+s_mo:{kind:'APS2', title:'비고전 APS1 의심', next:['a_gen'], body:RR('S6','A11')},
+s_cs:{kind:'Figure 2', title:'예시 증례', next:['d_sus'], body:`${R('S8')}${ex('case')}`},
+
+d_sus:{kind:'부신기능저하증', title:'부신기능저하증 의심', next:['d_cr','d_am'], body:`${RR('D1','D2')}${ex('ai')}`},
+d_cr:{kind:'부신기능저하증', title:'부신 위기', next:['d_cs'], body:R('D3')},
+d_cs:{kind:'부신기능저하증', title:'부신 위기의 증상', next:['b_hc'], body:R('D3')},
+d_am:{kind:'진단', title:'이른 아침 코르티솔·ACTH', next:['d_st'], body:`${R('D4')}${DISC_AC}`},
+d_st:{kind:'진단', title:'ACTH 자극검사', next:['d_p','d_s'], body:`${R('D5')}${TIP_KR}`},
+d_p:{kind:'진단', title:'원발성 부신기능저하증', next:[], body:RR('D2','D3','D6')},
+d_s:{kind:'진단', title:'2차 부신기능저하증', next:[], body:RR('D2','D6')},
+d_ph:{kind:'생리', title:'코르티솔과 알도스테론의 역할', next:[], body:R('D1')},
+d_ca:{kind:'원인', title:'부신기능저하증의 원인', next:[], body:R('D6')},
+
+i_hd:{kind:'ICI', title:'면역관문억제제 관련 내분비 자가면역', next:['i_hy','i_th','i_ad','i_dm'], body:`${RR('I1','I2')}${ex('ici')}`},
+i_hy:{kind:'ICI', title:'뇌하수체염', next:[], body:RR('I3','I4')},
+i_th:{kind:'ICI', title:'갑상선 질환', next:[], body:RR('I3','I4')},
+i_ad:{kind:'ICI', title:'원발성 부신기능저하증', next:['d_sus'], body:R('I5')},
+i_dm:{kind:'ICI', title:'1형 당뇨병', next:[], body:R('I5')},
+i_ra:{kind:'ICI', title:'드문 내분비 발현', next:[], body:`${R('I5')}${DISC_MP}`},
+i_in:{kind:'ICI', title:'irAE 빈도', next:[], body:RR('I3','I4')},
+i_sc:{kind:'ICI', title:'내분비 선별', next:[], body:R('I2')},
+i_tx:{kind:'ICI', title:'irAE 치료', next:[], body:`${R('I6')}${DISC_MP}`}
+};
+
+const ALL = Object.keys(REC);
+const GROUP = [['G','개요·분류'],['M','면역관용과 AIRE'],['A','APS1 임상'],['T','APS1 치료·추적'],['S','APS2·APS3'],['D','부신기능저하증'],['I','면역관문억제제'],['X','IPEX·새로운 방향']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'항목 표기와 도구 설명', next:[], body:`${['STR','SUG','FACT'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${note('구성','원문은 Endotext의 APS 총설(2024년 7월 개정)로 권고 등급이 없다. 원문의 서술 강도에 따라 권고·제안·임상 자료로 나누어 ${ALL.length}개 항목을 해라체로 번역했다(번호는 이 도구에서 부여). 항목을 누르면 해당 본문 절의 요약 번역이 펼쳐진다. Figure 1과 Table 1·2를 재현했고, Figure 2(환자 사진)는 증례 설명으로 대신했다.')}${DISC_T1}${DISC_RX}${DISC_AC}${DISC_MP}${DISC_CL}${TIP_KR}`},
+ all:{kind:'전체', title:`전체 항목 ${ALL.length}개`, next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.replace(/\d+$/,'')===g))}`).join('')},
+ tabs:{kind:'표', title:'Table 1·2 · 비교표', next:[], body:`<h5>Table 1. APS1의 임상 특징</h5>${T1}<h5>Table 2. APS2와 APS3의 임상 특징</h5>${T2}<h5>APS 유형 비교</h5>${CMP}`},
+ intro:{kind:'서론', title:'초록·개요·새로운 방향', next:[], body:`${paraHTML(EXP.ov)}${ex('ipex')}${ex('new')}`}
+});
+
+const ABBR = [
+ ['ACTH','Adrenocorticotropic hormone'],['AIRE','Autoimmune regulator'],['APECED','Autoimmune polyendocrinopathy, candidiasis, ectodermal dystrophy'],['APS','Autoimmune polyglandular syndrome'],
+ ['BPIFB1','BPI fold containing family B member 1'],['CTLA-4','Cytotoxic T-lymphocyte–associated protein 4'],['FOXP3','Forkhead box P3'],['GAD65','Glutamic acid decarboxylase 65'],
+ ['HLA','Human leukocyte antigen'],['HPA','Hypothalamic-pituitary-adrenal'],['IA2','Insulinoma-associated antigen 2'],['ICI','Immune checkpoint inhibitor'],['IFN','Interferon'],
+ ['IPEX','Immunodysregulation, polyendocrinopathy, enteropathy, X-linked'],['irAE','Immune-related adverse event'],['JAK-STAT','Janus kinase–signal transducer and activator of transcription'],
+ ['KCNRG','Potassium channel regulator'],['MSH','Melanocyte-stimulating hormone'],['NALP5','NACHT leucine-rich-repeat protein 5'],['PD-1 / PD-L1','Programmed death 1 / ligand 1'],
+ ['PHD1','Plant homeodomain 1'],['SAND','Sp100, AIRE-1, NucP41/75, DEAF-1 domain'],['T1DM','Type 1 diabetes mellitus'],['TG / TPO','Thyroglobulin / thyroid peroxidase'],
+ ['Treg','Regulatory T cell, 조절 T세포'],['tTG','Tissue transglutaminase'],['ZnT8','Zinc transporter 8'],['21OH','21-hydroxylase']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'cls';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: A, IPEX)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('cls');
+
+</script>
+</body>
+</html>
