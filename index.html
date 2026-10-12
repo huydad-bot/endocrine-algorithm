@@ -107,10 +107,11 @@ const GROUPS = [
   ['hyponatremia','저나트륨혈증','NDT 2024'],
   ['ckm','CKM 증후군','AHA 2023'],
   ['ckd-mbd','CKD-MBD','KDIGO 2017']]],
- ['부갑상선·골','🦴','#C28A0E','#FBEFCF','#9A6B05',[
+ ['부갑상선·골·기타','🦴','#C28A0E','#FBEFCF','#9A6B05',[
   ['phpt','원발성 부갑상선기능항진증','국제 워크숍 2022'],
   ['osteoporosis','골다공증 (영국 NOGG)','NOGG 2024'],
-  ['rickets','구루병','SIEDP 2024']]]
+  ['rickets','구루병','SIEDP 2024'],
+  ['dynamic','내분비 동적 검사 (HEDTA)','ESA·AACB·RCPA 2021']]]
 ];
 document.getElementById('grid').innerHTML = GROUPS.map(([g,ic,c,soft,ink,items])=>
  `<section class="card" style="--c:${c};--soft:${soft};--inkc:${ink}">
