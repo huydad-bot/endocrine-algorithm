@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0HC1J201FL');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>신장 저칼륨혈증 JCEM 2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#16212B; --muted:#56646F;
+  --line:#7F8D99; --test:#DCE5EB; --test-ink:#12304A;
+  --accent:#1F5E7E; --accent-soft:#E3EEF4;
+  --mal:#A13D33; --mal-bg:#FBEDEA; --ben:#2C6A43; --ben-bg:#E9F3EC;
+  --tx:#6A4C93; --tx-bg:#F1ECF8; --warn:#85600F; --warn-bg:#FBF3DF;
+  --border:#C9D3DA;
+  --fn:#C2410C; --fn-bg:#FFF1E6;
+  --hdr-bg:#1F4F6B; --hdr-ink:#FFFFFF; --hdr-sub:#CFE1EC; --hdr-link:#FFE8A3; --hdr-rule:#E0B44C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+    --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+    --accent:#7FB7D6; --accent-soft:#1D3140;
+    --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+    --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+    --border:#2E3E4A;
+    --fn:#F59E62; --fn-bg:#3A2418;
+    --fn:#F59E62; --fn-bg:#3A2418;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161C; --surface:#172129; --ink:#E4EAEE; --muted:#9AA8B3;
+  --line:#7D8C98; --test:#243645; --test-ink:#D7E6F1;
+  --accent:#7FB7D6; --accent-soft:#1D3140;
+  --mal:#F08B80; --mal-bg:#3A1F1C; --ben:#86C79C; --ben-bg:#1B3124;
+  --tx:#C2A8EA; --tx-bg:#2A2238; --warn:#E3C06A; --warn-bg:#352B14;
+  --border:#2E3E4A;
+  --hdr-bg:#1A3446; --hdr-ink:#EEF3F6; --hdr-sub:#A9C2D2; --hdr-link:#F2D27E; --hdr-rule:#B88F33;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:16px; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.6; -webkit-text-size-adjust:100%;
+}
+.top{
+  background:var(--hdr-bg); color:var(--hdr-ink);
+  border:1px solid var(--hdr-bg); border-bottom:0; border-radius:10px 10px 0 0; margin:0;
+  box-shadow:inset 0 -3px 0 var(--hdr-rule);
+}
+.fig .chart-wrap{border-top:0; border-radius:0 0 10px 10px}
+.chart-note{position:absolute; right:1rem; bottom:.55rem; margin:0; padding-left:1.1em; font-size:calc(var(--ui-font,13px) * .88); line-height:1.55; color:var(--muted); white-space:nowrap}
+.chart-note a{color:var(--accent)}
+.top .disclaimer{font-size:.74rem; font-style:italic; color:var(--hdr-sub); opacity:.85; margin:.15rem 0 0}
+.top-inner{padding:.8rem 1.25rem .9rem; text-align:center}
+.top h1{font-size:1.25rem; margin:0; font-weight:700; letter-spacing:-.01em; color:var(--hdr-ink)}
+.top .src{font-size:.84rem; color:var(--hdr-sub); margin:.2rem 0 0}
+.top .src a{color:var(--hdr-link); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--hdr-rule)}
+.top .src a:hover{text-decoration-thickness:2px}
+.top .src a:focus-visible{outline-color:var(--hdr-link)}
+.btn{
+  font:inherit; font-size:.85rem; color:var(--ink); background:var(--surface);
+  border:1px solid var(--border); border-radius:6px; padding:.35rem .7rem; cursor:pointer;
+}
+.btn:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+
+main{max-width:1180px; margin:0 auto; padding:1rem 1.25rem .75rem}
+.intro{max-width:70ch; color:var(--muted); font-size:.95rem; margin:0 0 1rem}
+.legend{order:2; display:flex; flex-direction:column; gap:.2rem; font-size:var(--ui-font,13px); color:var(--muted); flex:none; align-self:flex-start; padding:.25rem .25rem 0 .25rem}
+.legend span{white-space:nowrap}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.sw{width:18px; height:12px; border-radius:3px; border:1.5px solid var(--line); display:inline-block}
+.sw.test{background:var(--test)}
+.sw.mal{border-color:var(--mal); background:var(--mal-bg)}
+.sw.ben{border-color:var(--ben); background:var(--ben-bg)}
+.sw.tx{border-color:var(--tx); background:var(--tx-bg)}
+
+.chart-wrap{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  overflow-x:auto; padding:.75rem; display:flex; gap:1rem; align-items:flex-start; position:relative;
+}
+.chart-size{flex:none}
+.fig{width:fit-content; max-width:100%; margin:0 auto}
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.sep{width:1px; height:1.4rem; background:var(--border); margin:0 .25rem}
+.fn-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem .75rem}
+.fn-panel .fn-list{margin:0}
+.chart-size{position:relative}
+.chart{position:absolute; left:0; top:0; transform-origin:0 0}
+.chart svg{position:absolute; inset:0; overflow:visible}
+.chart svg path{fill:none; stroke:var(--line); stroke-width:1.4}
+.chart svg path.dot{stroke-dasharray:3 4}
+.chart svg marker path{fill:var(--line); stroke:none}
+
+.node{
+  position:absolute; display:flex; align-items:center; justify-content:center; text-align:center;
+  font:inherit; font-size:15px; line-height:1.2; font-weight:500; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:4px;
+  padding:2px 8px; cursor:pointer;
+  transition:box-shadow .15s ease, border-color .15s ease;
+}
+.node sup{font-size:13px; margin-left:2px; color:var(--accent); font-weight:700; vertical-align:baseline; position:relative; top:-.5em; line-height:0}
+.node.test{background:var(--test); color:var(--test-ink); font-weight:600}
+.node.mal{border-color:var(--mal); background:var(--mal-bg)}
+.node.ben{border-color:var(--ben); background:var(--ben-bg)}
+.node.tx{border-color:var(--tx); background:var(--tx-bg)}
+.node:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.node.is-active{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent)}
+
+.fn-list{margin:0; padding:0; list-style:none; display:grid; gap:.4rem}
+.fn-list button{
+  width:100%; text-align:left; font:inherit; font-size:.86rem; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-radius:6px; padding:.35rem .5rem; cursor:pointer;
+  display:grid; grid-template-columns:1.4rem 1fr; gap:.25rem;
+}
+.fn-list button:hover{background:var(--accent-soft); border-color:var(--border)}
+.fn-list b{color:var(--accent)}
+.caption{font-size:.82rem; color:var(--muted); margin:.75rem 0 0}
+
+.abbr-panel{margin-top:.6rem; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.25rem .9rem .75rem}
+.abbr-toggle{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.fn-toggle:hover,.abbr-toggle:hover{border-color:var(--accent); background:var(--accent-soft)}
+.abbr-search{margin:.6rem 0; width:100%; max-width:360px; font:inherit; font-size:.9rem; padding:.4rem .6rem; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--ink)}
+.abbr dl{display:grid; grid-template-columns:max-content 1fr; gap:.25rem 1rem; margin:0; font-size:.88rem}
+.abbr dt{font-weight:600; color:var(--accent)}
+.abbr dd{margin:0}
+
+/* recommendations */
+.rec{display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .6rem; align-items:start; border:1px solid var(--border); border-radius:6px; padding:.5rem .65rem; margin:.5rem 0; background:var(--bg)}
+.rec p{margin:0; font-size:.9rem}
+.rid{font-weight:700; color:var(--accent); font-size:.85rem; white-space:nowrap; padding-top:.05rem}
+.lv{font-size:.72rem; font-weight:600; padding:.1rem .45rem; border-radius:999px; white-space:nowrap; cursor:help; border:1px solid currentColor}
+.lv.l1{color:var(--ben); background:var(--ben-bg)}
+.lv.l2{color:var(--accent); background:var(--accent-soft)}
+.lv.l3{color:var(--warn); background:var(--warn-bg)}
+.lv.l4{color:var(--muted); background:transparent}
+.small,.d-body ul.small li{font-size:.86rem}
+.d-body ul.small{color:var(--ink)}
+@media (max-width:520px){ .rec{grid-template-columns:auto 1fr} .rec .lv{grid-column:2; justify-self:start} }
+.extras{display:contents}
+.extras button{font:inherit; font-size:var(--ui-font,13px); padding:.4rem .7rem; border-radius:6px; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer}
+.extras button:hover{border-color:var(--accent); background:var(--accent-soft)}
+
+.d-body .fn-list{padding-left:0; margin:0 0 .5rem}
+.d-body .fn-list li{margin:0}
+.d-body a{color:var(--accent)}
+.xp{border:1px solid var(--border); border-radius:6px; margin:.4rem 0; background:var(--bg)}
+.xp summary{cursor:pointer; padding:.5rem .7rem; font-size:.92rem; list-style:none; display:flex; gap:.5rem; align-items:baseline}
+.xp summary::-webkit-details-marker{display:none}
+.xp summary::before{content:"▸"; color:var(--accent); flex:none; transition:transform .15s}
+.xp[open] summary::before{transform:rotate(90deg)}
+.xp[open] summary{border-bottom:1px solid var(--border); font-weight:600}
+.xp > div{padding:.3rem .8rem .6rem; background:var(--surface); border-radius:0 0 6px 6px}
+.xp h5{font-size:.88rem; margin:.6rem 0 .2rem}
+@media (prefers-reduced-motion: reduce){.xp summary::before{transition:none}}
+.d-body h5{font-size:.9rem; margin:.7rem 0 .25rem; color:var(--accent)}
+.kt th,.kt td:first-child{white-space:nowrap}
+.kt td:nth-child(3),.kt td:nth-child(4){white-space:nowrap}
+.fnl{margin:.4rem 0 0; padding-left:1.3rem}
+.fnl li{margin:.25rem 0}
+.fnl li::marker{font-weight:700; color:var(--fn)}
+.kt sup, .d-body h4 sup{color:var(--fn); font-weight:700; background:var(--fn-bg); border-radius:3px; padding:0 .2em; margin-left:.1em}
+.fnl{background:var(--fn-bg); border-left:3px solid var(--fn); border-radius:0 6px 6px 0; padding:.5rem .7rem .5rem 1.9rem}
+.term{font:inherit; color:var(--accent); font-weight:700; background:var(--accent-soft); border:0; border-bottom:2px dotted var(--accent); border-radius:3px; padding:0 .25em; cursor:pointer}
+.term::after{content:" ▸"; font-size:.8em}
+.term[aria-expanded="true"]::after{content:" ▾"}
+.term:hover{background:var(--test)}
+.pop{margin:.5rem 0 .3rem; border:1px solid var(--accent); border-radius:8px; background:var(--surface); padding:.6rem .8rem; box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.pop-h{display:block; color:var(--accent); margin-bottom:.3rem}
+.pop ul{margin:.2rem 0; padding-left:1.1rem}
+.pop li{font-size:.9rem; margin:.3rem 0}
+.pop-src{font-size:.78rem; color:var(--muted); margin:.4rem 0 0}
+.pop .tbl table{min-width:0}
+.pop .tbl td:first-child{width:38%}
+/* drawer */
+.backdrop{position:fixed; inset:0; background:rgba(10,20,28,.35); z-index:40; opacity:0; pointer-events:none; transition:opacity .2s}
+.backdrop.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:50; top:0; right:0; bottom:0; width:min(560px,100%);
+  background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; transform:translateX(100%); transition:transform .22s ease;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.drawer.open{transform:none}
+.d-head{display:flex; gap:1rem; align-items:flex-start; padding:1rem 1.25rem .75rem; border-bottom:1px solid var(--border)}
+.d-head > div{flex:1}
+.d-kind{margin:0; font-size:.8rem; color:var(--accent); font-weight:600}
+.d-head h2{margin:.15rem 0 0; font-size:1.25rem; line-height:1.35}
+.d-body{flex:1; overflow-y:auto; padding:1rem 1.25rem 1.5rem; font-size:.95rem}
+.d-body h4{font-size:.98rem; margin:1.25rem 0 .4rem; color:var(--ink)}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:.4rem 0}
+.d-body ul{margin:.3rem 0; padding-left:1.2rem}
+.d-body li{margin:.2rem 0}
+.tbl{overflow-x:auto; margin:.5rem 0}
+.tbl table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:440px}
+.tbl th,.tbl td{border:1px solid var(--border); padding:.4rem .5rem; vertical-align:top; text-align:left}
+.tbl th{background:var(--test); color:var(--test-ink); font-weight:600}
+.box{border-radius:6px; padding:.6rem .8rem; margin:.75rem 0; font-size:.9rem}
+.box.fn{background:var(--accent-soft); border-left:3px solid var(--accent)}
+.box.tip{background:var(--ben-bg); border-left:3px solid var(--ben)}
+.box.verify{background:var(--warn-bg); border-left:3px solid var(--warn)}
+.box b{display:block; margin-bottom:.15rem}
+.d-next{padding:.75rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:.4rem; align-items:center}
+.d-next:empty{display:none}
+.d-next .lbl{font-size:.8rem; color:var(--muted); margin-right:.25rem}
+.d-next button{font:inherit; font-size:.85rem; padding:.3rem .65rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer}
+.d-next button:hover{background:var(--accent-soft)}
+
+@media (max-width:700px){
+  .drawer{top:auto; height:86%; width:100%; border-left:0; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%)}
+  .drawer.open{transform:none}
+  main{padding:1rem .75rem}
+  .chart-wrap{padding:.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .drawer,.backdrop,.node{transition:none}
+}
+
+/* 범례 클릭 시 해당 박스 깜빡임 */
+.legend .lg{font:inherit; color:inherit; background:transparent; border:1px solid transparent; border-radius:6px; padding:.15rem .35rem; margin:0 -.35rem; display:inline-flex; align-items:center; gap:.4rem; white-space:nowrap; cursor:pointer; text-align:left}
+.legend .lg:hover{background:var(--accent-soft); border-color:var(--border); color:var(--ink)}
+.legend .lg.on{background:var(--accent-soft); border-color:var(--accent); color:var(--ink)}
+.node{--flash:var(--accent)}
+.node.test{--flash:var(--test-ink)} .node.tx{--flash:var(--tx)} .node.ben{--flash:var(--ben)} .node.mal{--flash:var(--mal)}
+@keyframes nodeFlash{0%,100%{box-shadow:0 0 0 0 transparent; transform:scale(1)} 50%{box-shadow:0 0 0 5px var(--flash); transform:scale(1.04)}}
+.chart.hl .node{transition:opacity .2s}
+.chart.hl .node:not(.flash){opacity:.3}
+.node.flash{animation:nodeFlash .8s ease-in-out 3; z-index:3}
+@media (prefers-reduced-motion: reduce){
+  .node.flash{animation:none; box-shadow:0 0 0 4px var(--flash)}
+  .chart.hl .node{transition:none}
+}
+
+/* ---- DTC 형식 이식: 권고 설명, 하단 버튼 ---- */
+.below{display:flex; flex-wrap:nowrap; align-items:center; gap:.4rem; margin-top:.6rem; overflow-x:auto; padding-bottom:2px}
+.below button{flex-shrink:0; white-space:nowrap}
+.node small{font-size:11px; font-weight:500; color:var(--muted); margin-left:5px; white-space:nowrap}
+.lv-ic::after{content:"▸"; font-size:.8em}
+.exp{margin:-.3rem 0 .7rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 0 6px 6px; background:var(--surface); padding:.55rem .8rem .6rem; font-size:.88rem; line-height:1.7}
+.exp-h{display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; color:var(--accent); margin-bottom:.2rem}
+.exp-h span{font-size:.78rem; color:var(--muted)}
+.exp p{margin:.45rem 0}
+.exp h5{margin:.7rem 0 .2rem; font-size:.86rem; color:var(--ink)}
+.exp p.exp-li{margin:.2rem 0 .2rem .9rem; padding-left:1.4em; text-indent:-1.4em}
+.exp-note,.exp-src{font-size:.78rem; color:var(--muted)}
+.exp-src{border-top:1px dashed var(--border); padding-top:.4rem; margin-top:.6rem}
+.rec.has-exp{cursor:pointer; transition:border-color .15s, box-shadow .15s}
+.rec.has-exp:hover{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"]{border-color:var(--accent); border-bottom-left-radius:0; border-bottom-right-radius:0; margin-bottom:0; background:var(--accent-soft)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▾"}
+.exp{margin:0 0 .8rem; border-top:0}
+.exp-h{position:sticky; top:-1rem; z-index:2; background:var(--surface); margin:-.55rem -.8rem .3rem; padding:.55rem .8rem .45rem; border-bottom:1px solid var(--border); align-items:center}
+.exp-h .exp-r{margin-left:auto}
+.exp-close{font:inherit; font-size:.78rem; padding:.2rem .55rem; border-radius:6px; border:1px solid var(--accent); color:var(--accent); background:var(--surface); cursor:pointer; white-space:nowrap}
+.exp-close:hover{background:var(--accent-soft)}
+.exp-close-b{display:block; margin:.5rem 0 0 auto}
+@media (prefers-reduced-motion: reduce){.rec.has-exp{transition:none}}
+.rec.has-exp .lv{display:inline-flex; align-items:center; gap:.35rem; padding-right:.2rem}
+.rec.has-exp .lv-ic{display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--accent); color:#fff; flex:none; transition:transform .2s, background .15s}
+.rec.has-exp .lv-ic::after{content:"▸"; font-size:.95rem; line-height:1; margin-left:.1rem}
+.rec.has-exp:hover .lv-ic{background:var(--accent-ink, var(--ink)); transform:scale(1.12)}
+.rec.has-exp[aria-expanded="true"] .lv-ic{transform:rotate(90deg)}
+.rec.has-exp[aria-expanded="true"] .lv-ic::after{content:"▸"}
+@media (prefers-reduced-motion: reduce){.rec.has-exp .lv-ic{transition:none}}
+.below{gap:.4rem; margin-top:.6rem}
+.below .sep{background:var(--border)}
+.below button{--b:var(--accent); display:inline-flex; align-items:center; gap:.3rem; font-weight:500; font-size:var(--ui-font,13px); border:1px solid var(--b) !important; background:color-mix(in srgb, var(--b) 12%, var(--surface)) !important; color:var(--ink) !important; border-radius:6px; padding:.3rem .6rem; transition:transform .12s, box-shadow .12s, background .12s}
+.below button:hover{background:color-mix(in srgb, var(--b) 24%, var(--surface)) !important; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.below button:focus-visible{outline:2px solid var(--b); outline-offset:2px}
+.below .bt-ic{display:inline-flex; align-items:center; justify-content:center; min-width:1.05rem; height:1.05rem; padding:0 .15rem; border-radius:999px; background:var(--b); color:var(--surface); font-size:.6rem; font-weight:700; line-height:1}
+.below .bt-lv, .below .bt-preg, .below .bt-peds, .below .bt-abbr{--b:var(--ben)}
+@media (prefers-reduced-motion: reduce){.below button{transition:none} .below button:hover{transform:none}}
+.node{flex-wrap:wrap; column-gap:0}
+.below button{--b:var(--ben)}
+
+/* ---- 프로락틴종 도구 추가 ---- */
+.ctabs{display:flex; gap:.35rem; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-top:0; border-bottom:0; padding:.6rem .75rem 0}
+.ctab{font:inherit; font-size:var(--ui-font,13px); font-weight:600; color:var(--muted); background:var(--bg); border:1px solid var(--border); border-bottom:0; border-radius:8px 8px 0 0; padding:.4rem .85rem; cursor:pointer; display:inline-flex; gap:.45rem; align-items:baseline}
+.ctab span{font-weight:500; font-size:.8em; color:var(--muted)}
+.ctab:hover{color:var(--ink); background:var(--accent-soft)}
+.ctab.on{color:var(--hdr-ink); background:var(--hdr-bg); border-color:var(--hdr-bg)}
+.ctab.on span{color:var(--hdr-sub)}
+.fig .chart-wrap{border-top:1px solid var(--border); border-radius:0 0 10px 10px}
+.chart[hidden]{display:none}
+.chart svg path.sepl{stroke:var(--border); stroke-dasharray:6 5; stroke-width:1.2}
+.chart svg text{font-family:inherit; font-size:12.5px; fill:var(--muted)}
+.chart svg text.sec{font-size:14px; font-weight:700; fill:var(--accent)}
+.node.fac{flex-direction:column; flex-wrap:nowrap; gap:3px; font-weight:600}
+.node.fac small{white-space:normal; margin:0; font-size:12.5px; line-height:1.35}
+.node.test.fac small{color:var(--test-ink); opacity:.85}
+.legend .chart-note{position:static; white-space:normal; max-width:11.5rem; margin:.9rem 0 0; padding-left:1.1em}
+.lv.l1,.lv.l2,.lv.l3{cursor:help}
+.d-body .fn-list button{grid-template-columns:1.2rem 1fr}
+.node small sup{font-size:9px; top:-.45em; margin-left:1px; color:inherit}
+.node.fac .nt sup{font-size:11px}
+.node sup{font-size:.62em; line-height:0}
+.node .nt{display:inline}
+.below{flex-wrap:wrap; overflow-x:visible; row-gap:.4rem}
+.node.xs{font-size:11.5px; line-height:1.2; padding:2px 1px; font-weight:500}
+.node.na{background:var(--surface); color:var(--muted)}
+.node.rk0{background:#86BE8C;border-color:#5f9a66;color:#10301a}
+.node.rk1{background:#F7DC7A;border-color:#cfb24f;color:#3a2e05}
+.node.rk2{background:#EFA54A;border-color:#c47f2a;color:#3a1f00}
+.node.rk3{background:#E0625A;border-color:#b5433c;color:#fff}
+.node.rk4{background:#C42B35;border-color:#93161f;color:#fff}
+.chart svg path.f0{fill:#86BE8C;stroke:none}
+.chart svg path.f1{fill:#EFA54A;stroke:none}
+.chart svg path.f2{fill:#E0625A;stroke:none}
+.chart svg path.f3{fill:#B3242F;stroke:none}
+.chart svg path.thl{stroke:#fff;stroke-width:2;stroke-dasharray:6 4}
+.chart svg path.ax{stroke:var(--muted);stroke-width:1.2}
+.chart svg text.gl{fill:#fff;font-weight:700;font-size:12px}
+.node.rk3 small,.node.rk4 small{color:#fff;opacity:.92}
+.node.pr{border-color:#6FB6DA; background:#D4EEFA; color:#123A52}
+.sw.pr{border-color:#6FB6DA; background:#D4EEFA}
+.node.pr{--flash:#2F8FC0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .node.pr,:root:not([data-theme="light"]) .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}}
+:root[data-theme="dark"] .node.pr,:root[data-theme="dark"] .sw.pr{background:#173447; border-color:#4C9CC6; color:#D5ECF8}
+.cs{color:var(--muted);font-size:.86em;white-space:nowrap}
+.node.rk1 small,.node.rk2 small{color:inherit;opacity:.88}
+.t2 td:not(:first-child){white-space:nowrap}
+.chart svg path.eb{fill:#9DBDE8;stroke:#4C7BC0;stroke-width:1.6}
+.chart svg path.eg{fill:#C9E0A5;stroke:#86AC4F;stroke-width:1.6}
+.chart svg path.er{fill:#EDBDC1;stroke:#C2505B;stroke-width:1.6}
+ul.plain{margin:.3rem 0 .6rem; padding-left:1.2rem}
+ul.plain li{margin:.2rem 0}
+.nt-cc{display:block; margin-top:.25rem; font-size:.9em; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="fig" id="fig">
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>신장 저칼륨혈증: 내분비적 관점</h1>
+        <p class="src">Culver SA, Suleman N, Kavuru V, Siragy HM. Renal hypokalemia: an endocrine perspective. <a href="https://doi.org/10.1210/clinem/dgae201" target="_blank" rel="noopener noreferrer">J Clin Endocrinol Metab 2024;109:1694–1706</a></p>
+        <p class="disclaimer">This tool is not officially endorsed by the authors or the publisher</p>
+      </div>
+    </div>
+  </header>
+  <div class="ctabs" id="ctabs" role="tablist" aria-label="순서도 선택"></div>
+  <div class="chart-wrap" id="chartWrap">
+    <div class="legend" id="legend" aria-label="범례">
+      <button type="button" class="lg" data-cls="tx" aria-label="치료 박스 강조"><i class="sw tx"></i>치료</button>
+      <button type="button" class="lg" data-cls="mal" aria-label="위험 박스 강조"><i class="sw mal"></i>질환·병변</button>
+      <button type="button" class="lg" data-cls="test" aria-label="평가 박스 강조"><i class="sw test"></i>평가·검사</button>
+      <ul class="chart-note">
+        <li>각각의 박스를 클릭하면 자세한 내용을 확인할 수 있음</li>
+        <li>진술을 누르면 해당 절 요약 번역이 펼쳐짐</li><li>미니 종설(등급 없음) · Fig. 2 진단 알고리즘 재구성</li><li>↑ 증가 · ↓ 감소 · PRA 혈장 레닌 활성 · PAC 혈장 알도스테론</li>
+        <li>관련 문의: <a href="mailto:jugkim@knu.ac.kr">jugkim@knu.ac.kr</a></li>
+      </ul>
+    </div>
+    <div class="chart-size" id="chartSize"></div>
+  </div>
+
+  <div class="below">
+    <div class="extras"><button type="button" data-id="levels"><span class="bt-ic" aria-hidden="true">★</span>구분·도구 설명</button></div>
+    <span class="sep" aria-hidden="true"></span>
+    <div class="extras" role="group" aria-label="순서도 밖의 내용">
+      <button type="button" data-id="all"><span class="bt-ic" aria-hidden="true">＋</span>전체 진술</button>
+      <button type="button" data-id="tabs"><span class="bt-ic" aria-hidden="true">＋</span>요약 표</button>
+      <button type="button" data-id="intro"><span class="bt-ic" aria-hidden="true">＋</span>서론·결론</button>
+    </div>
+    <button type="button" class="abbr-toggle" id="abbrToggle"><span class="bt-ic" aria-hidden="true">A–Z</span>약어</button>
+  </div>
+  </div>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <header class="d-head">
+    <div>
+      <p class="d-kind" id="dKind"></p>
+      <h2 id="dTitle"></h2>
+    </div>
+    <button class="btn" id="dClose" type="button">닫기</button>
+  </header>
+  <div class="d-body" id="dBody"></div>
+  <nav class="d-next" id="dNext" aria-label="다음 단계"></nav>
+</aside>
+
+<script>
+const LV = {
+ STR:'권고: 본문이 “should / is required / mainstay / definitive”로 표현하거나 진단 알고리즘의 단계로 제시한 진술(등급 없음)',
+ SUG:'제안·고려: 본문이 “may / can / is sometimes used / has been reported / potential”로 표현한 진술(등급 없음)',
+ FACT:'임상 자료: 본문이 기술한 정의, 빈도, 유전, 기전, 검사 소견'
+};
+const LVTXT = {STR:'권고', SUG:'제안', FACT:'임상 자료'};
+const LVCLS = {STR:'l2', SUG:'l3', FACT:'l4'};
+/* [구분, 번역, 본문 키] */
+const REC = {
+'O1':['FACT','저칼륨혈증의 유병률은 일반 인구에서 최대 11%로 추정되며 사망률을 높인다. 신장 칼륨 소실 질환은 대부분 부신의 신장 칼륨 조절 이상이 직접 원인이거나 부신 호르몬 분비 이상을 간접적으로 일으키므로 내분비 의사에게 중요하다.','intro'],
+'O2':['FACT','여과된 칼륨의 대부분은 근위세관에서 재흡수되며, 요 칼륨 배설은 주로 헨레고리 굵은 오름가지(TAL)의 Na·K 재흡수와 함께 집합관의 칼륨 분비 정도로 결정된다. 원위부로의 나트륨 전달은 주세포의 칼륨 분비 정도를 결정하는 핵심 요인이다.','phys'],
+'O3':['FACT','알도스테론은 사구대 세포에서 생성되며 안지오텐신 II(AT1R)와 혈장 칼륨 상승이 두 주요 자극이다. 둘 다 세포를 탈분극시켜 전압 개폐 칼슘 통로를 열고 CYP11B2 전사를 늘린다. ACTH는 급성으로 알도스테론을 자극하며, PA 환자는 ACTH에 더 크게 반응한다.','ald'],
+'O4':['FACT','신장에서 알도스테론은 집합관 주세포의 MR에 결합해 관강 ENaC와 ROMK의 활성·발현과 기저외측 Na⁺/K⁺-ATPase 활성을 높여 나트륨 재흡수와 칼륨 분비를 촉진한다.','ald'],
+'A1':['STR','먼저 요 칼륨 배설로 신장 원인을 확인하고, 칼륨 소실 이뇨제 사용과 비신장 원인(위장관 손실, 세포 내 이동)을 배제한다.','ddx'],
+'A2':['STR','다음 핵심 단계는 고혈압 유무의 구분이다. 고혈압이 없으면 혈청 Cl⁻·Mg²⁺와 요 Cl⁻·Ca²⁺를, 고혈압이 있으면 PAC와 PRA를 측정한다(Fig. 2).','ddx'],
+'B1':['FACT','고혈압 없는 신장 칼륨 소실은 Bartter 증후군(BS), Gitelman 증후군(GS), EAST 증후군 같은 세뇨관병증을 시사한다. 모두 TAL 또는 DCT의 NaCl 흡수 장애로 사구체옆장치가 활성화되어 이차성 알도스테론증과 원위 나트륨 전달 증가가 생기고, 저칼륨혈증, 저염소성 대사성 알칼리증, 레닌·알도스테론 상승을 공유한다.','ddx'],
+'B2':['FACT','BS는 TAL 이온 수송체 변이에 의한 유전 세뇨관 질환으로 최소 7개 유전자, 5개 형이 있다. I형 SLC12A1(NKCC2, 산전형), II형 KCNJ1(ROMK), III형 CLCNKB(가장 흔함), IV형 CLC-Kb와 CLC-Ka 동시 장애(감각신경성 난청), V형 MAGED2(X연관). I–IV형은 상염색체 열성이다. CASR 활성 변이에 의한 상염색체 우성 저칼슘혈증 동반 BS도 I형과 비슷하다.','bs'],
+'B3':['FACT','BS 유병률은 약 100만 명당 1명이며 대개 영아기에 나타나지만 III형은 성인기에 나타나기도 한다. 고리이뇨제 복용자와 비슷하며, 요농축 장애(등장뇨, 때로 저장뇨), 다양한 정도의 고칼슘뇨, COX-2 활성에 의한 PGE₂ 과잉, 신석회증(III형 약 20%)을 보인다. 주산기에는 양수과다, 조산, 성장 지연이 있다.','bs'],
+'B4':['FACT','GS는 SLC12A3(NCC) 변이에 의한 상염색체 열성 세뇨관 질환으로 가장 흔한 유전 세뇨관 질환 중 하나다(약 4만 명당 1명–4천 명당 1명, 아시아에서 약간 높음). 최대 45%는 복합 이형접합이고 400개 넘는 변이가 알려져 있다.','gs'],
+'B5':['FACT','GS는 티아지드 복용자와 비슷하다. 저혈량, 레닌·알도스테론 상승, 저칼륨혈증, 저염소성 대사성 알칼리증에 더해, TAL의 칼슘 흡수가 유지되어 저칼슘뇨가 생기고 TRPM6 감소 등으로 저마그네슘혈증이 있다. DCT가 여과량의 10% 미만을 담당해 증상이 BS보다 가볍고 늦게 인지되며 성장은 대개 정상이다.','gs'],
+'B6':['FACT','EAST 증후군은 DCT 기저외측 칼륨 통로 Kir4.1을 암호화하는 KCNJ10 변이에 의한 상염색체 열성 질환으로, GS와 비슷한 세뇨관병증에 뇌전증, 운동실조, 감각신경성 난청이 동반된다.','gs'],
+'B7':['STR','BS와 GS의 주요 감별점은 칼슘뇨(BS 고칼슘뇨, GS 저칼슘뇨)다. 성장 장애는 BS에서만 보이고 BS는 대개 어릴 때 진단된다. GS는 진단 연령과 증상 중증도가 다양하며 프로스타글란딘은 대개 정상이다. EAST는 신경 소견으로 GS와 구분한다. BS III형에서는 저마그네슘혈증이 있을 수 있어 겹친다.','bgd'],
+'B8':['SUG','이뇨제 부하 검사로 BS의 고리이뇨제 효과 결여, GS의 티아지드 효과 결여를 보이기도 한다. BS I형과 GS에는 유용하나 다른 BS형에는 제한적이고, 심한 용적 감소 같은 중대한 부작용이 있으며 GS의 반응 변이가 커서 오해석될 수 있다.','bgd'],
+'B9':['STR','표현형 변이가 커서 유전자 검사가 BS와 GS 진단의 가장 확정적인 도구다. 치료 전략, 동반질환 정보, 산전 진단에도 유용하며, 차세대 염기서열분석(NGS)과 복제수 변이(CNV) 분석으로 GS를 더 확실히 진단할 수 있다.','bgd'],
+'B10':['STR','BS·GS 치료는 주로 대증 치료로, 저칼륨혈증과 대사성 알칼리증 교정, RAS 억제, BS에서는 PGE₂ 과잉 합성 억제다. 칼륨 보충이 흔하나 지속적 세뇨관 누출 때문에 정상화가 어렵고 최적 투여 빈도는 불확실하다.','bgt'],
+'B11':['SUG','아밀로라이드, 트리암테렌, MRA는 이차성 알도스테론증을 차단해 칼륨을 올리고 저마그네슘혈증을 일부 교정하지만 고칼슘뇨, 염분 소실, 용적 감소를 악화시킬 수 있다.','bgt'],
+'B12':['STR','GS의 저마그네슘혈증은 염화마그네슘으로 치료한다. 저칼륨혈증, 산염기 불균형, 저칼슘뇨 교정에도 도움이 되나 설사가 생길 수 있다.','bgt'],
+'B13':['SUG','ACE 억제제는 RAS를 억제해 저칼륨혈증을 개선할 수 있으나 저혈압에 주의한다. 프로스타글란딘 합성 억제제는 혈압과 전해질 균형을 개선하지만 사구체여과율 감소, 궤양, 영아의 괴사성 장염·위장관 천공을 감시해야 한다. 아세타졸아미드 보조 요법과 NKCC2 유전자 치료(동물)도 보고되었다.','bgt'],
+'P1':['STR','고혈압이 있는 신장 저칼륨혈증은 저레닌 고혈압으로, 알도스테론 수준으로 나눈다. 알도스테론이 높으면 원발성 알도스테론증(PA, 가장 흔함), 억제되어 있으면 위알도스테론증(AME, 고코르티솔증, 일부 CAH의 MR 자극 증가 또는 Liddle 증후군의 자율적 ENaC 활성)이다.','pa'],
+'P2':['FACT','PA는 RAS와 무관한 자율적 알도스테론 과잉 생성이다. 고혈압 환자의 5–10%, 저항성 고혈압의 최대 20%에서 있으나 저칼륨혈증은 PA의 9–37%에서만 보인다. 조직학적으로 알도스테론 생성 선종(APA), 결절(APN, &lt;1 cm), 미세결절(APM, CYP11B2 양성 피막하 세포군)이 있다.','pa'],
+'P3':['FACT','생식세포 변이에 의한 가족성 알도스테론증(FH)은 PA의 약 2%이고 모두 상염색체 우성이다. FH-I은 CYP11B1 프로모터와 CYP11B2 융합 유전자(글루코코르티코이드 반응성), FH-II는 CLCN2, FH-III는 KCNJ5, FH-IV는 CACNA1H, 다섯째 아형 PASNA는 CACNA1D(경련, 신경 이상) 변이다.','pag'],
+'P4':['FACT','체세포 변이는 일측성 PA의 90% 이상을 차지하며 FH-I을 제외한 같은 유전자와 ATP1A1, ATP2B3, CTNNB1, GNA11/GNAQ, SLC30A1(ZNT1), CADM1에서 보고되었다. 한 부신 안의 여러 병변이 서로 다른 변이를 갖는 경우가 많다.','pag'],
+'P5':['FACT','KCNJ5 변이 선종은 더 크고 알도스테론이 높으며 저칼륨혈증이 더 심하고 복부 대동맥벽이 두껍다. 젊은 환자의 작은 결절에는 CACNA1D 변이가 많았다. 양측성 분비 병변에서는 CACNA1D 58%, KCNJ5 1%였으나 표본이 작아 신중히 해석해야 한다.','pag'],
+'P6':['STR','PA 진단은 PAC/PRA(또는 직접 레닌 농도) 비로 선별하고 PAC 억제 확진 검사를 하는 다단계 알고리즘에 의존하며, 일측·양측 구분에는 현재 부신정맥채혈이 필요하다. 약물의 영향과 같은 개인 내 PAC 변동이 문제다.','pad'],
+'P7':['SUG','DNA 메틸화 서명은 PA를 일차성 고혈압과 다른 이차성 고혈압에서 구분할 수 있고, 혈장 스테로이드 프로필(18-옥소코르티솔, 18-하이드록시코르티솔)과 기계학습은 KCNJ5 변이와 일측성 질환을 예측한다(민감도 85%, 특이도 97%). 아직 부신정맥채혈을 대체하지는 못한다.','pad'],
+'P8':['STR','치료는 확인된 일측성 질환에 부신절제술, 양측성이거나 수술 대상이 아니면 MR 길항제다. 알도스테론 합성효소 억제제가 새로운 선택지로 기대된다.','pam'],
+'P9':['FACT','일측성 질환의 체세포 KCNJ5 변이는 고혈압 관해, 항고혈압제 감소, 저칼륨혈증 해소, 좌심실비대·대동맥벽 두께 개선 등 수술 결과의 유의한 예측인자다. CACNA1D 변이는 수술 비완치군에서 더 흔하다는 보고가 있다(다만 비관해군의 30%는 KCNJ5).','pam'],
+'C1':['STR','고혈압성 저칼륨혈증에서 PA가 아니고 무기질코르티코이드 전구체가 높거나 성 발달 이상이 있으면 CAH를 의심한다.','cah'],
+'C2':['FACT','17α-수산화효소 결핍(17OHD)은 CYP17A1 변이에 의한 상염색체 열성 질환으로 CAH의 1% 미만이다. 글루코코르티코이드와 성스테로이드가 부족하고 데옥시코르티코스테론(DOC)과 코르티코스테론이 증가해 고혈압과 저칼륨혈증이 생긴다. 46,XY는 모호 생식기, 46,XX는 2차 성징 결여·무월경·불임을 보인다.','cah'],
+'C3':['FACT','11β-수산화효소 결핍(11OHD)은 CYP11B1 변이에 의한 상염색체 열성 질환으로 CAH의 약 8%다. 코르티솔과 알도스테론이 줄고 DOC, 11-데옥시코르티솔, 안드로겐이 증가한다. 약 2/3에서 고혈압이 있고 저칼륨혈증은 다양하다. XX는 모호 생식기·남성화(고전형) 또는 다모증·여드름(경증)을 보이고, 성조숙증, 과색소침착, 저신장이 있을 수 있다.','cah'],
+'C4':['STR','두 질환 모두 레닌과 코르티솔이 낮고 ACTH가 높으며 알도스테론은 대개 낮지만 다양하다. 17OHD는 고생식샘자극호르몬성 생식샘저하증, 11OHD는 안드로겐 과잉을 보인다. DOC는 둘 다 높고, 코르티코스테론은 17OHD에서만, 11-데옥시코르티솔은 11OHD에서만 높다.','cahd'],
+'C5':['STR','과거에는 ACTH 자극 후 전구체 상승으로 진단했고, 이제는 유전자 검사로 확진할 수 있다(각각 약 100개 변이).','cahd'],
+'C6':['STR','두 질환 치료의 근간은 ACTH 유도 전구체 합성을 줄이는 글루코코르티코이드다. 11OHD에서 과잉 치료는 무기질코르티코이드 결핍을 일으킬 수 있다. 글루코코르티코이드는 11OHD의 안드로겐도 줄이며, 17OHD는 대개 성스테로이드 보충이 필요하다.','cahm'],
+'C7':['SUG','혈압 조절과 저칼륨혈증 교정에 MR 길항제나 칼슘통로차단제가 필요할 수 있고, 11OHD에서는 최후 수단으로 양측 부신절제술이 쓰였다.','cahm'],
+'L1':['FACT','Liddle 증후군(LS), 겉보기 무기질코르티코이드 과잉(AME), 이소성 ACTH 증후군은 모두 알도스테론이나 다른 무기질코르티코이드 전구체 과잉 없이 저칼륨성 고혈압을 보인다.','ls'],
+'L2':['FACT','LS는 ENaC 소단위를 암호화하는 SCNN1A, SCNN1B, SCNN1G의 생식세포 변이에 의한 상염색체 우성 질환으로, 다른 이차성 원인이 없는 40세 미만 고혈압 환자의 1.52%에서 보고되었다. 자율적 ENaC 활성으로 조기 발병 고혈압, 저칼륨혈증, 대사성 알칼리증, 낮은 PRA와 PAC를 보인다.','ls'],
+'L3':['FACT','유전성 AME는 코르티솔을 비활성 코르티손으로 바꾸는 11HSD2를 암호화하는 HSD11B2 변이에 의한 상염색체 열성 질환으로, 코르티솔이 MR을 자극해 고혈압, 저칼륨혈증, 대사성 알칼리증, 낮은 알도스테론을 보인다. 고전형은 소아기의 심한 고혈압과 저체중 출생, 비고전형은 늦게 경한 고혈압으로 나타나며 일부 인구에서 7%까지 보고되었다.','ame'],
+'L4':['STR','후천성 AME가 유전성보다 흔하다. 감초의 글리시레틴산(11HSD2 억제, MR 작용 가능성), 자몽의 나린제닌, 일부 아졸 항진균제가 원인이며, 임상의는 이러한 음식·약물에 의한 후천성 형태를 배제해야 한다.','ame'],
+'L5':['FACT','고코르티솔증은 11HSD2를 압도해 MR 활성화와 저칼륨혈증을 일으키며, 저칼륨혈증은 이소성 ACTH 생성에서 가장 흔하고 고코르티솔증 정도와 상관한다. 기관지·흉선 유암종이 가장 흔한 원인이며 갑상선 수질암, 소세포폐암, 췌장·부신 신경내분비종양도 있다. 대부분 산발성이나 MEN1, VHL, NF1, MEN2에서의 보고도 있다.','eac'],
+'L6':['STR','LS는 MRA에 반응하지 않고 24시간 요 코르티솔/코르티손 비가 정상이어서 AME(비 상승)와 구분된다. LS의 확진은 유전자 검사다. 요 엑소좀 11HSD2 mRNA는 AME의 잠재적 바이오마커다.','lad'],
+'L7':['STR','고코르티솔증 검사는 글루코코르티코이드 과잉의 임상 소견이 있을 때 코르티솔 억제 검사, 요 유리 코르티솔, 심야 타액 코르티솔로 한다. 이소성과 뇌하수체 기원은 하추체정맥동 채혈(일부 기관은 CRH 자극 검사)로 구분하고, CT와 기능 영상을 함께 써서 이소성 ACTH 원천을 찾는다.','lad'],
+'L8':['STR','LS의 ENaC 활성은 무기질코르티코이드와 무관하므로 아밀로라이드나 트리암테렌 같은 칼륨 보존 이뇨제로 ENaC를 직접 억제한다. 반면 AME 치료의 중심은 MRA이며 때로 아밀로라이드나 트리암테렌을 병용한다.','lam'],
+'L9':['SUG','AME에서 덱사메타손과 MRA 병용이 코르티솔 억제로 추가 이득이 있다는 단독 증례 보고가 있으나 글루코코르티코이드 과잉 합병증 위험이 있다.','lam'],
+'L10':['STR','이소성 ACTH의 확정 치료는 종양 절제이며 극단적 경우 양측 부신절제술이 선택지다. 수술로 완치되지 않으면 케토코나졸, 레보케토코나졸, 메티라폰, 오실로드로스타트, 미토탄, 에토미데이트 같은 스테로이드 합성 억제제를 쓴다.','lam'],
+'L11':['SUG','메티라폰과 오실로드로스타트는 무기질코르티코이드 전구체를 축적시켜 고혈압과 저칼륨혈증을 일으킬 수 있으며 칼륨 보충과 MRA로 완화한다. 미페프리스톤은 효과적이나 과잉 코르티솔에 의한 저칼륨혈증 위험이 남는다. 소마토스타틴 유사체, 티로신키나제 억제제, 종양 고주파 절제도 있다.','lam'],
+'F1':['FACT','신장 매개 저칼륨혈증은 부신 호르몬 이상의 원인이자 결과일 수 있다. 많은 질환이 드물어 인지가 어렵고 흔히 놓쳐 관리가 늦어지므로, 병태생리 이해와 체계적 접근이 내분비 관련 원인을 찾고 적절한 치료를 정하는 데 도움이 된다.','conc']
+};
+
+const EXP = {
+intro:{t:'초록·서론',r:'1694쪽',p:[
+ '신장 칼륨 소실을 일으키는 질환 대부분은 부신 호르몬 분비 이상을 동반한다. 이 때문에 환자들이 흔히 내분비 평가를 받지만 정확한 진단이 어려워 치료가 늦어지고 진료에 악영향을 준다. 동시에 이들 질환의 유전·분자 기전에 대한 이해가 늘면서 진단과 관리가 개선되고 있다. 이 종설은 내분비 진료에서 보는 신장 저칼륨혈증 증후군의 실용적 통합 평가 접근을 제시하고 유전학과 병태생리의 최근 진전을 정리한다.',
+ '#검색 전략',
+ 'PubMed, Web of Science, OVID Medline, Google에서 Bartter 증후군, Gitelman 증후군, 원발성 알도스테론증 유전학, Liddle 증후군, 겉보기 무기질코르티코이드 과잉, 17α-수산화효소 결핍, 11β-수산화효소 결핍, 이소성 ACTH 증후군을 검색했고 대부분 최근 5년 문헌으로 제한했다. 교과서(Harrison, Greenspan)는 Access Medicine을 이용했다.',
+ '#서론',
+ '저칼륨혈증은 중요한 임상 문제로 일반 인구 유병률이 최대 11%로 추정되며 사망률을 높인다는 근거가 있다. 감별진단은 섭취 감소, 세포 내 이동, 위장관 배설, 이뇨제에 의한 칼륨 손실까지 넓지만, 신장 칼륨 배설을 늘리는 질환군은 중요하면서도 잘 인지되지 않는다. 대부분 부신의 신장 칼륨 조절 이상이 직접 원인이거나 부신 호르몬 이상을 간접적으로 일으키므로 내분비 의사에게 중요하다. 저자들은 신장 칼륨 처리의 생리와 부신의 역할을 먼저 설명하고 진단·관리의 통합적 최신 접근을 제시한다.'
+]},
+phys:{t:'신장 칼륨 처리의 생리',r:'1694–1695쪽 · Fig. 1',p:[
+ '신장에서 칼륨의 재흡수와 분비는 정상 혈중·세포 내 칼륨을 유지하도록 정밀하게 조절된다. 여과된 칼륨의 대부분은 근위세관에서 재흡수되지만, 요 칼륨 배설은 주로 헨레고리 굵은 오름가지(TAL)의 나트륨·칼륨 재흡수와 함께 집합관의 칼륨 분비 정도로 결정된다.',
+ '#TAL (Fig. 1A)',
+ '관강의 Na-K-2Cl 공동수송체(NKCC2)가 나트륨, 칼륨, 염소 2개를 세포 안으로 재흡수한다. 염소는 기저외측 염소 통로, 주로 CLCNKB와 일부 CLCNKA로 나간다. 기저외측 Na-K-ATPase는 나트륨 3개를 내보내고 칼륨 2개를 들인다. 칼륨은 ROMK를 통해 관강으로 재순환되어, 칼슘과 마그네슘이 클라우딘을 통해 흡수되는 데 필요한 관강 양전위를 만든다.',
+ '#DCT (Fig. 1B)',
+ '관강의 나트륨-염소 공동수송체(NCC)가 NaCl을 세포 안으로 들이고, 염소는 기저외측 CLCNKB로, 나트륨은 Na-K-ATPase로 나간다. 칼슘은 관강 TRPV5로 들어와 기저외측 Na/Ca 교환체로, 마그네슘은 TRPM6로 들어와 Na/Mg 교환체로 나가는 세포 경유 흡수가 일어난다.',
+ '#집합관 (Fig. 1C)',
+ '주세포에서는 아밀로라이드 민감 상피 나트륨 통로(ENaC)로 나트륨이 들어와 관강 음전위를 만들고, 칼륨이 관강 칼륨 통로(ROMK, BK)로 수동 분비된다. 원위 나트륨 전달은 나트륨 흡수를 늘려 칼륨 분비의 전기화학적 경사를 키우므로 칼륨 분비 정도를 결정하는 핵심이다. α-사이세포는 H⁺/K⁺-ATPase로 수소 이온과 교환해 칼륨을 재흡수한다.'
+]},
+ald:{t:'알도스테론의 조절과 작용',r:'1695–1696쪽',p:[
+ '알도스테론은 부신 사구대(ZG) 세포에서 생성되며 신장 나트륨·칼륨 항상성의 일차 내분비 인자다. ZG 세포는 Na⁺/K⁺-ATPase로 세포막 칼륨 경사를 유지한다. 세포가 탈분극되면 전압 개폐 칼슘 통로가 열려 세포 내 칼슘이 늘고, 칼슘/칼모듈린 의존 키나아제를 통해 스테로이드 합성용 콜레스테롤 수송과 알도스테론 합성효소(CYP11B2) 전사가 증가한다.',
+ '두 주요 자극은 RAS의 안지오텐신 II와 혈장 칼륨 상승이다. 안지오텐신 II는 저혈량이나 나트륨 감소에 반응해 늘어나 AT1R에 결합하고, 여러 신호 경로로 세포를 탈분극시켜 CYP11B2 합성을 늘린다. 세포외 칼륨 증가도 막 전기화학 경사를 줄여 같은 결과를 낸다.',
+ 'ACTH는 멜라노코르틴 2형 수용체(MC2R)를 통해 급성으로 알도스테론 생성을 자극한다. 만성 지속 노출은 알도스테론을 줄이지만 박동성 ACTH는 지속적 상승을 일으킨다. PA 환자는 안지오텐신 II와 무관하게 ACTH에 대한 알도스테론 증가가 더 크고 ZG의 MC2R 발현이 많아 ACTH가 비정상 분비에도 관여함을 시사한다.',
+ '신장에서 알도스테론은 집합관 주세포의 무기질코르티코이드 수용체(MR)에 결합해 관강 ENaC와 ROMK의 활성과 발현을 높이고, 기저외측 Na⁺/K⁺-ATPase 활성을 올려 나트륨 재흡수와 칼륨 분비를 이끄는 전기화학 경사를 키운다.'
+]},
+ddx:{t:'감별진단과 통합 접근',r:'1696–1697쪽 · Fig. 2',p:[
+ '신장 저칼륨혈증 원인 진단의 통합 접근을 Fig. 2에 제시했다. 먼저 칼륨 소실 이뇨제 사용과 비신장 원인을 배제해야 하며, 요 칼륨 배설 측정으로 할 수 있다.',
+ '#고혈압이 없는 환자',
+ '첫 주요 단계는 고혈압 유무의 구분이다. 고혈압 없는 신장 칼륨 소실은 Bartter 증후군(BS), Gitelman 증후군(GS), EAST 증후군 같은 세뇨관병증을 우려하게 한다. 모두 TAL이나 DCT의 나트륨·염소 흡수 장애라는 병태생리를 공유한다. 그 결과 사구체옆장치가 상향 조절되어 이차성 알도스테론증과 원위 나트륨 전달 증가가 생기고, 집합관의 Na-K 교환과 칼륨 배설이 늘어난다. 공통 소견은 저칼륨혈증, 저염소성 대사성 알칼리증, 사구체옆장치 비대, 레닌·알도스테론 상승이다.',
+ '#Fig. 2 알고리즘',
+ '신장 원인 확인(요 K⁺ 증가, 칼륨 소실 이뇨제·위장관 손실·세포 내 이동 배제) → 혈압 상승? 아니오: 혈청 Cl⁻·Mg²⁺, 요 Cl⁻·Ca²⁺ 측정 → BS(저염소혈증, 요 Cl⁻↑, 요 Ca²⁺↑, PRA↑·PAC↑) 또는 GS(저마그네슘혈증, 요 Cl⁻↑, 요 Ca²⁺↓, PRA↑·PAC↑)와 EAST(GS 소견 + 뇌전증, 운동실조, 난청). 예: PAC와 PRA 측정 → PRA↓·PAC↑이면 PA(알칼리증 ± 저칼륨혈증), PRA↓·PAC↓이면 무기질코르티코이드 전구체 상승 여부로 17OHD·11OHD(예) 또는 AME·이소성 ACTH·Liddle(아니오).'
+]},
+bs:{t:'Bartter 증후군',r:'1696쪽 · Fig. 3',p:[
+ 'BS는 TAL 이온 수송체 변이에 의한 유전 신세관 질환이다. 최소 7개 유전 변이가 알려져 임상 양상이 다양한 5개 형을 이룬다. I–IV형은 상염색체 열성, V형은 X연관 유전이다.',
+ 'I형(산전 BS)은 TAL의 NKCC2를 암호화하는 SLC12A1 변이로 NaCl 흡수가 준다. II형은 관강 칼륨 농도와 TAL의 NaCl 재흡수를 유지하는 칼륨 통로 ROMK를 암호화하는 KCNJ1의 기능 소실 변이에 의한다(원문은 “이형접합”으로 표기). 가장 흔한 III형은 TAL과 DCT의 염소 재흡수를 담당하는 CLC-Kb를 암호화하는 CLCNKB 변이에 의한다. IV형은 CLC-Kb와 CLC-Ka 통로를 함께 침범하는 불활성 변이로 TAL 염소 수송이 소실된다. V형은 MAGED2 변이로 NKCC2의 NaCl 재흡수가 준다. 끝으로 칼슘감지수용체(CaSR)를 암호화하는 CASR의 활성 변이에 의한 상염색체 우성 저칼슘혈증 동반 BS는 KCNJ1, NKCC2, Na-K-ATPase를 줄여 I형과 비슷한 표현형을 보인다.',
+ 'BS 유병률은 약 100만 명당 1명이며 대개 영아기에 나타나지만, 특히 III형은 성인기에 나타나기도 한다. 주요 특징은 고리이뇨제 복용자와 비슷하다. TAL은 요농축에 필수이므로 요농축 장애(대개 등장뇨, 때로 저장뇨)가 있다. 관강 양전위 소실로 양이온 흡수가 줄어 다양한 정도의 고칼슘뇨가 생긴다. III형의 요 전해질 손실은 다른 염소 통로의 보상으로 I·II형보다 덜할 수 있다.',
+ '신장 염분 손실과 국소 안지오텐신 분비가 COX-2 활성을 높여 PGE₂를 과잉 생성한다. 신석회증이 있을 수 있으나 III형에서는 한 연구에서 20%에 불과했다. IV형은 CLC-Ka가 달팽이관에도 있어 감각신경성 난청을 동반한다. 주산기 소견으로 양수과다, 조산, 성장 지연이 있으며 성장 지연은 이후에도 지속된다.'
+]},
+gs:{t:'Gitelman 증후군과 EAST',r:'1696–1698쪽 · Fig. 4',p:[
+ 'GS도 상염색체 열성 유전 신세관 질환이다. 가장 흔한 유전 신세관 질환 중 하나로 유병률은 약 4만 명당 1명에서 4천 명당 1명이며 아시아인에서 약간 높다. 한 연구에서 일본인 유병률은 10,000명당 10.3명에서 1,000명당 2.3명으로 추정되었다.',
+ 'GS는 NCC를 암호화하는 SLC12A3와 DCT의 Kb 염소 통로 유전자 CLCNKB 변이에 의한다(원문 표기). 최대 45%는 실제로 복합 이형접합 변이일 수 있고, 400개 넘는 변이 부위가 확인되었으며 대부분 과오 변이다.',
+ 'NCC 기능 부전으로 DCT의 NaCl 재흡수가 줄어 BS처럼 저혈량, 레닌·알도스테론 상승, 저칼륨혈증, 저염소성 대사성 알칼리증이 생긴다. 그러나 전해질 변화는 티아지드 복용자에 더 가깝다. BS와 달리 세뇨관사구체 되먹임과 TAL의 칼슘 흡수가 유지되고, 근위세관의 염분·칼슘 재흡수 보상 증가로 저칼슘뇨가 생긴다.',
+ 'GS는 저마그네슘혈증도 보이며, DCT의 TRPM6 마그네슘 통로 발현 감소, 막전위 소실, DCT 위축이 원인으로 추정된다. 저마그네슘혈증은 대개 BS에는 없지만 III형에서 보고되었다. DCT는 전체 여과량의 10% 미만을 담당하므로 GS 증상은 BS보다 가볍고 흔히 늦게 인지되며 성장은 대개 정상이다.',
+ '#EAST 증후군',
+ 'DCT의 기저외측 칼륨 통로 Kir4.1을 암호화하는 KCNJ10 변이에 의한 상염색체 열성 질환이다. GS와 비슷한 세뇨관병증과 전해질 이상을 보이며, 뇌전증(E), 운동실조(A), 감각신경성 난청(S), 원위세관 기능 결함에 의한 신염분 소실 세뇨관병증(T)의 신경 소견이 특징이다.'
+]},
+bgd:{t:'BS·GS·EAST의 진단',r:'1698쪽',p:[
+ 'BS와 GS는 흔히 전해질 소견으로 구분할 수 있으나 BS III형의 저마그네슘혈증처럼 겹치는 부분이 있다.',
+ '주요 감별점은 칼슘뇨다(원문: “BS에서 저칼슘뇨와 고칼슘뇨의 존재” — GS의 저칼슘뇨와 BS의 고칼슘뇨를 뜻하는 것으로 보인다). 성장 장애는 BS에서만 보이며 BS는 대개 이른 나이에 진단되는 반면 GS의 진단 연령과 증상 중증도는 다양하다. GS의 프로스타글란딘은 대개 정상이다. EAST는 특이 신경 소견으로 GS와 구분한다.',
+ '이뇨제 검사로 BS의 고리이뇨제 효과 결여, GS의 티아지드 효과 결여를 보이기도 한다. BS 1형과 GS에는 유용하나 다른 BS형에는 제한적이다. 또한 심한 용적 감소 같은 중대한 부작용이 생길 수 있고 GS의 이뇨제 반응 변이가 커서 오해석될 수 있다.',
+ '높은 표현형 변이로 혼동될 수 있어 유전자 검사가 BS와 GS 진단의 가장 확정적인 도구다. 진단 외에도 치료 전략, 동반질환에 대한 정보를 주고 산전 진단을 가능하게 한다. 초고속 염기서열분석·차세대 염기서열분석(NGS)과 복제수 변이(CNV) 확인으로 GS를 더 확실히 진단할 수 있다.'
+]},
+bgt:{t:'BS·GS·EAST의 치료',r:'1698–1699쪽',p:[
+ 'BS와 GS 치료는 주로 대증적이며, 저칼륨혈증과 대사성 알칼리증 교정, RAS 활성 억제, BS에서는 PGE₂ 과잉 합성 억제를 포함한다. 칼륨 보충이 흔한 방법이지만 세뇨관 누출이 계속되어 혈청 전해질 정상화가 어렵다. 최적 투여 빈도는 불확실하고 혈청 농도는 마지막 투여 시점에 크게 좌우된다.',
+ '이차성 알도스테론증을 차단하는 아밀로라이드, 트리암테렌, MRA는 한계가 있다. 혈청 칼륨을 올리고 저마그네슘혈증을 일부 교정할 수 있으나 고칼슘뇨와 염분 소실을 악화시키고 용적 감소를 일으킬 수 있다.',
+ 'GS의 저마그네슘혈증 치료에는 염화마그네슘을 쓴다. 저칼륨혈증, 산염기 불균형, 저칼슘뇨 교정에도 도움이 되지만 설사가 부작용일 수 있다.',
+ 'ACE 억제제는 RAS 억제, 알도스테론 분비 감소, 저칼륨혈증 개선에 효과적일 수 있으나 저혈압 같은 부작용을 고려해야 한다. 프로스타글란딘 합성 억제제는 PGE₂ 과잉 합성을 막아 혈압 조절과 전해질 균형을 개선한다. 영아에서 사구체여과율 감소, 궤양, 괴사성 장염, 위장관 천공을 감시해야 한다.',
+ '최근 연구는 탄산탈수효소 억제제 아세타졸아미드의 BS 보조 치료 가능성을 보였다. 동물 연구에서는 신동맥에 벡터를 주입해 TAL의 NKCC2 유전자를 표적화하여 외인성·내인성 NKCC2가 함께 발현되었고, BS·GS 유전자 치료의 가능성을 보였으나 안전성과 영구 형질전환에 대한 연구가 더 필요하다.'
+]},
+pa:{t:'고혈압 동반 환자와 원발성 알도스테론증',r:'1699쪽',p:[
+ '#고혈압이 있는 환자',
+ '신장 저칼륨혈증과 고혈압이 함께 있는 상태는 저레닌 고혈압이라 하며 알도스테론 수준으로 크게 나눈다. 알도스테론이 높으면 원발성 알도스테론증(PA)으로, 이 군에서 단연 가장 흔하다. 반대로 알도스테론 억제는 위알도스테론증을 뜻하며, 겉보기 무기질코르티코이드 과잉(AME), 고코르티솔증, 일부 선천부신과형성(CAH)의 MR 자극 증가, 또는 Liddle 증후군(LS)의 자율적 ENaC 활성이 특징인 내인성·외인성 질환군이다.',
+ '#원발성 알도스테론증',
+ 'PA는 RAS 자극과 무관한 자율적 알도스테론 과잉 생성으로, 신장의 MR과 ENaC 자극 증가로 나트륨 저류, 칼륨 배설, 혈관 내 용적 증가가 생긴다. 주된 특징은 고혈압이며 유병률은 고혈압 환자의 5–10%, 저항성 고혈압의 최대 20%로 추정된다. 그러나 저칼륨혈증은 PA의 9–37%로 상대적 소수에서만 생긴다.',
+ 'PA는 부신 형태로 아형을 나눈다. 과거에는 일측 알도스테론 생성 선종과 양측 특발성 부신 과형성으로 나누었으나, 이제 더 다양한 조직병리로 생김이 분명해졌다. 알도스테론 생성 선종(APA), 조직학적으로 구분되는 1 cm 미만의 알도스테론 생성 결절(APN), 피막 아래의 경계가 불분명한 CYP11B2 양성 세포군인 알도스테론 생성 미세결절(APM)이 있다.'
+]},
+pag:{t:'원발성 알도스테론증의 유전학',r:'1699–1700쪽 · Fig. 5',p:[
+ '생식세포와 체세포 변이 모두 PA를 일으킨다. 생식세포 변이에 의한 가족성 알도스테론증(FH)은 PA의 약 2%에 불과하지만 체세포 변이는 훨씬 흔해 일측성 PA의 90% 이상을 차지한다. FH는 5개 아형이 있고 모두 상염색체 우성이다(Fig. 5).',
+ 'FH-I은 CYP11B1의 ACTH 반응 프로모터와 CYP11B2 암호화 부위의 키메라 유전자로, ACTH가 알도스테론 과잉 생성을 이끌어 글루코코르티코이드로 억제되는 “글루코코르티코이드 반응성 알도스테론증”이다. FH-II(CLCN2)와 FH-III(KCNJ5)는 ZG 세포막 염소·칼륨 통로 변이로 막 이온 투과성이 늘어 탈분극, 칼슘 유입 증가, CYP11B2 상향을 일으킨다. FH-IV(CACNA1H)와 다섯째 아형(CACNA1D, 경련·신경 이상을 동반해 PASNA)은 칼슘 통로 활성 변이로 세포 내 칼슘을 직접 늘린다.',
+ '체세포 변이는 FH-I을 제외한 같은 유전자에서 보고되었고, Na⁺/K⁺ATPase(ATP1A1)와 Ca²⁺ ATPase(ATP2B3) 변이는 각각 Na⁺·H⁺ 투과성 증가와 칼슘 유입을 일으킨다. β-카테닌(CTNNB1) 변이는 사구대 세포 증식을 늘리고, 안지오텐신 II 반응을 매개하는 GNA11·GNAQ 변이는 흔히 CTNNB1과 함께 생겨 알도스테론 분비에 상가 효과를 낸다. 최근 보고된 SLC30A1(아연 수송체 ZNT1, 나트륨 유입 증가와 탈분극), CADM1(세포 간극 연접 장애로 알도스테론 합성효소 활성 증가) 변이도 있다. 한 부신의 여러 병변이 서로 다른 변이를 갖는 경우가 많아 여러 변이 사건이 기여할 수 있다.',
+ 'KCNJ5 변이 선종은 더 크고 알도스테론이 높으며 저칼륨혈증이 심하고 복부 대동맥벽이 두꺼울 수 있다. 젊은 PA 환자 연구에서는 작은 결절에 CACNA1D 변이가 더 많았다. KCNJ5는 일측성 분비에서 가장 흔한 유전형이며, 양측성 분비 환자는 다른 유전 양상일 수 있다. 양측성 분비 환자 조직 분석에서 병변의 58%가 CACNA1D, 1%만 KCNJ5 변이였으나, 양측성 환자는 대개 수술하지 않아 표본이 작고 비뚤림 가능성이 있으므로 신중히 해석해야 한다.'
+]},
+pad:{t:'원발성 알도스테론증의 진단',r:'1699–1700쪽',p:[
+ 'PA 진단은 현재 혈장 알도스테론 농도(PAC)와 혈장 레닌 활성(PRA)(일부 기관은 직접 레닌 농도[DRC]) 비로 선별하고 PAC 억제 확진 검사를 하는 복잡한 다단계 알고리즘에 의존한다. 이 지표는 약물 등에 영향을 받고, 최근 같은 개인 내 PAC 측정치의 변동이 크다는 우려스러운 자료가 있다. 또한 일측·양측 분비 아형 판정에는 현재 침습적이고 시술자 의존적인 부신정맥채혈이 필요하다.',
+ '이에 말초혈액 소견과 유전 응용을 이용해 PA를 비침습적으로 진단하고 아형을 나누는 방법에 관심이 커지고 있다. 예를 들어 특정 DNA 메틸화 “서명”은 PA를 일차성 고혈압 및 고코르티솔증, 갈색세포종 같은 다른 이차성 고혈압과 구분할 수 있다.',
+ '아형 판정에서는 혈장 스테로이드 프로필이 유전 변이와 PA 아형에 상관한다. KCNJ5 변이 병변은 18-옥소코르티솔, 18-하이드록시코르티솔 같은 혼성 스테로이드가 높고, 혈장 스테로이드 프로필 모형이 95% 정확도로 유전 변이를 예측했다. 기계학습은 KCNJ5 변이에 의한 일측성 질환을 민감도 85%, 특이도 97%로 예측했다. 아직 부신정맥채혈을 대체하지는 못하지만 수술 또는 내과 치료 대상을 가리는 강력한 도구가 될 수 있다.'
+]},
+pam:{t:'원발성 알도스테론증의 관리',r:'1700–1701쪽',p:[
+ '지금까지 치료는 확인된 일측성 질환에 부신절제술, 양측성 질환이거나 수술 대상이 아닌 환자에 무기질코르티코이드 길항제였다. 최근 알도스테론 합성효소 억제제가 추가 치료 선택지로 기대를 모은다.',
+ '환자별 PA의 유전 기반 지식이 치료 방향을 정하는 데 도움이 될 수 있다. 일측성 질환의 체세포 KCNJ5 변이는 고혈압 관해, 필요 항고혈압제 수 감소, 저칼륨혈증 해소, 좌심실비대와 대동맥벽 두께 개선 같은 수술 결과의 유의한 예측인자다. 반대로 적어도 한 연구는 수술 완치에 이르지 못한 환자에서 CACNA1D 변이가 더 흔하다고 했으나, 관해에 실패한 환자의 30%도 KCNJ5 변이를 가졌다. 앞의 스테로이드체 연구와 함께 비침습 진단법이 향후 치료 결정 도구가 될 수 있음을 시사한다.'
+]},
+cah:{t:'17α-수산화효소 결핍과 11β-수산화효소 결핍',r:'1701쪽',p:[
+ '고혈압성 저칼륨혈증에서 PA가 없고 무기질코르티코이드 전구체가 높거나 성 발달 이상이 있으면 CAH를 의심해야 한다.',
+ '#17OHD',
+ '17α-수산화효소 결핍(17OHD)은 p450c17 효소를 암호화하는 CYP17A1 변이에 의한 상염색체 열성 질환으로 매우 드물어 CAH의 1% 미만이다. p450c17은 프레그네놀론과 프로게스테론의 17α-수산화(17-하이드록시프레그네놀론, 17-하이드록시프로게스테론)와, 이를 DHEA와 안드로스텐디온으로 바꾸는 17,20 분해효소 활성을 모두 담당한다. 결손은 부신과 생식샘을 모두 침범해 글루코코르티코이드와 성스테로이드가 부족하고 DOC와 코르티코스테론 같은 무기질코르티코이드 전구체가 증가한다. 과잉 DOC는 MR을 자극해 염분 저류, 고혈압, 저칼륨혈증을 일으킨다. 성스테로이드 결핍으로 46,XY는 모호 생식기, 46,XX는 2차 성징 결여, 무월경, 불임을 보인다.',
+ '#11OHD',
+ '11β-수산화효소 결핍(11OHD)은 8번 염색체 CYP11B1 변이에 의한 상염색체 열성 질환으로 17OHD보다 흔해 CAH의 약 8%다. DOC→코르티코스테론, 11-데옥시코르티솔→코르티솔 전환이 줄어 코르티솔과 알도스테론이 모두 감소하고 DOC 같은 전구체와 안드로겐 생성이 증가한다. 중증도에 따라 고전형과 비고전형으로 나눈다. 약 2/3에서 고혈압이 있고 저칼륨혈증은 다양하다.',
+ 'XX는 고전형에서 모호 생식기와 남성화, 경증에서 다모증과 여드름 같은 고안드로겐 증상을 보인다. XX와 XY 모두 성조숙증을 겪을 수 있고 과색소침착과 저신장도 있다. 검사상 DOC, 11-데옥시코르티솔, 안드로겐이 높고 코르티솔과 알도스테론은 다양한 정도로 억제된다. DOC의 무기질코르티코이드 작용으로 레닌은 낮고 ACTH는 높다. 17OHD와 달리 코르티코스테론은 감소한다.'
+]},
+cahd:{t:'17OHD·11OHD의 진단',r:'1701쪽',p:[
+ '검사 소견은 낮은 레닌과 코르티솔, 높은 ACTH다. 알도스테론은 대개 낮지만 두 질환 모두에서 다양할 수 있다. 17OHD와 11OHD의 핵심 감별점은 17OHD의 고생식샘자극호르몬성 생식샘저하증과 11OHD의 안드로겐 과잉이다. 또한 DOC는 둘 다 높지만 코르티코스테론은 17OHD에서만, 11-데옥시코르티솔은 11OHD에서만 상승한다.',
+ '과거에는 ACTH 자극 후 스테로이드 전구체 상승으로 진단했다. 이제는 변이 유전자 검사로 확진할 수 있으나, 각 질환마다 약 100개의 다른 변이가 기술되었다.'
+]},
+cahm:{t:'17OHD·11OHD의 관리',r:'1701쪽',p:[
+ '두 질환 치료의 근간은 ACTH 유도 무기질코르티코이드 전구체 합성을 줄이는 글루코코르티코이드 투여다. 다만 11OHD에서 과잉 치료는 무기질코르티코이드 결핍을 일으킬 수 있다. 글루코코르티코이드는 11OHD의 안드로겐 생성도 줄이며, 17OHD 환자는 대개 성스테로이드 보충이 필요하다.',
+ '일부는 혈압을 충분히 조절하고 저칼륨혈증을 교정하기 위해 무기질코르티코이드 길항제가, 고혈압에 칼슘통로차단제가 필요할 수 있다. 11OHD에서는 최후 수단으로 양측 부신절제술이 쓰이기도 했다.'
+]},
+ls:{t:'Liddle 증후군',r:'1701쪽',p:[
+ 'Liddle 증후군, 겉보기 무기질코르티코이드 과잉 증후군, 이소성 ACTH 증후군은 모두 알도스테론이나 다른 무기질코르티코이드 전구체 과잉 없이 저칼륨성 고혈압으로 나타난다.',
+ 'LS는 ENaC의 세 소단위를 각각 암호화하는 SCNN1A, SCNN1B, SCNN1G 중 하나 이상의 생식세포 변이에 의한 상염색체 우성 질환이다. 그러나 매우 드물어 다른 이차성 고혈압 원인이 없는 40세 미만 고혈압 환자의 1.52%에서만 보고되었다.',
+ 'LS는 신 집합관 ENaC의 자율적 활성 증가가 특징으로, 나트륨과 수분 재흡수가 늘고 칼륨 배설이 증가하며 레닌과 알도스테론 분비가 하향 조절된다. 칼륨은 관강에서 나트륨이 빠져나가며 생긴 관강 전위차로 ROMK와 BK를 통해 관강으로 빠져나간다. PA처럼 근위세관 암모니아 생성 증가, α-사이세포의 H⁺ 배설 증가, β-사이세포의 HCO₃⁻ 분비 감소로 대사성 알칼리증도 보인다. 그래서 조기 발병 고혈압과 저칼륨혈증에 낮은 PRA와 PAC를 동반해 위알도스테론증이라 부른다.'
+]},
+ame:{t:'겉보기 무기질코르티코이드 과잉 (AME)',r:'1701–1702쪽',p:[
+ '유전성 AME는 코르티솔을 생물학적으로 비활성인 코르티손으로 바꾸는 11β-하이드록시스테로이드 탈수소효소 2형(11HSD2)을 암호화하는 HSD11B2(원문 “HD11B2”) 변이에 의한 상염색체 열성 질환이다. 전환 결함으로 코르티솔이 MR에 과도하게 접근해 ENaC를 통한 신 나트륨 재흡수가 늘고 칼륨과 수소 이온 배설이 증가한다. 고혈압, 저칼륨혈증, 대사성 알칼리증, 낮은 알도스테론을 보인다.',
+ '여러 11HSD2 변이가 보고되었으며 최근 AME 환자 101명에서 동형 또는 복합 이형접합 변이 54개가 발견되었다. 변이가 11HSD2 활성을 얼마나 손상시키는지에 따라 중증도가 달라 고전형과 비고전형으로 나눈다. 고전형은 대개 소아 초기에 심한 고혈압, 저칼륨혈증, 알칼리증, 저체중 출생으로 나타나고, 비고전형은 늦게 경한 고혈압만 보일 수 있다. 전체 유병률은 불분명하나 비고전형이 일부 인구에서 7%에 이른다는 최근 연구가 있다.',
+ '#후천성 AME',
+ '11HSD2를 억제하는 물질 노출에 의한 후천성 AME가 유전성보다 실제로 더 흔하다. 감초의 글리시레틴산은 11HSD2를 억제하며 MR 작용제로도 작용할 수 있다. 자몽의 나린제닌도 11HSD2를 억제한다. 일부 의약품, 특히 일부 아졸 항진균제도 관련된다.'
+]},
+eac:{t:'고코르티솔증과 이소성 ACTH',r:'1702쪽',p:[
+ '고코르티솔증도 11HSD2를 압도해 MR 활성화와 저칼륨혈증을 일으킬 수 있다. 내인성 고코르티솔증은 대부분 ACTH 생성 뇌하수체 선종이나 자율적 부신 코르티솔 생성에 의하지만, 저칼륨혈증은 이소성 ACTH 생성에서 가장 흔하며 고코르티솔증 정도와 상관한다.',
+ '기관지와 흉선 유암종이 이소성 ACTH의 가장 흔한 원천이며 갑상선 수질암, 소세포폐암, 췌장·부신 신경내분비종양도 관련된다. 대부분 산발성이지만 MEN1, VHL 증후군, NF1 환자의 흉선암과 MEN2의 갑상선 수질암에서 ACTH 분비가 보고되었다.'
+]},
+lad:{t:'LS·AME·이소성 ACTH의 진단',r:'1702쪽',p:[
+ 'LS는 MRA에 반응하지 않고, 24시간 요 코르티솔/코르티손 비가 LS에서는 정상이지만 AME에서는 높다는 점으로 AME와 구분된다. LS의 확진은 유전자 검사다. 집필 시점에 Genetic Testing Registry에 여러 임상 검사가 등록되어 있으며 대부분 “전체 암호화 부위 염기서열 분석”이다.',
+ '최근 요 엑소좀의 11HSD2 mRNA가 AME의 잠재적 바이오마커로 밝혀졌고, 비고전형 AME에 식별 가능한 대사체 프로필이 있는지 연구 중이다.',
+ '고코르티솔증 검사는 대개 글루코코르티코이드 과잉의 임상 소견이 계기가 되며, 코르티솔 억제 검사, 요 유리 코르티솔, 심야 타액 코르티솔로 한다. 이소성 ACTH와 뇌하수체 기원은 하추체정맥동 채혈로 구분하며 일부 기관에서는 CRH 자극 검사가 쓰였다. 이소성 ACTH 원천의 위치 확인에는 CT와 기능 영상을 함께 써야 한다.'
+]},
+lam:{t:'LS·AME·이소성 ACTH의 관리',r:'1702쪽',p:[
+ 'LS의 ENaC 활성은 무기질코르티코이드 활성과 무관하므로 치료는 아밀로라이드나 트리암테렌 같은 칼륨 보존 이뇨제로 ENaC를 직접 억제하는 것이다. 반대로 MRA는 AME 치료의 중심이며 혈압을 낮추는 데 효과적이고 때로 아밀로라이드나 트리암테렌과 병용한다. AME에서 덱사메타손과 MRA 병용이 코르티솔 억제로 추가 이득이 있었다는 단독 증례 보고가 있으나 글루코코르티코이드 과잉 합병증 위험이 있다.',
+ '이소성 ACTH의 확정 치료는 종양 절제이며 극단적 경우 양측 부신절제술도 선택지다. 수술로 완치되지 않으면 케토코나졸, 레보케토코나졸, 메티라폰, 오실로드로스타트, 미토탄, 에토미데이트 같은 스테로이드 합성 억제제를 쓸 수 있다. 메티라폰과 오실로드로스타트는 무기질코르티코이드 전구체를 축적시켜 고혈압과 저칼륨혈증을 일으킬 수 있으며 칼륨 보충과 MRA로 완화할 수 있다.',
+ '글루코코르티코이드 수용체 길항제 미페프리스톤도 효과적이나 과잉 코르티솔에 의한 저칼륨혈증에는 여전히 취약하다. 이소성 ACTH 치료 전체는 이 논문의 범위를 넘지만 소마토스타틴 유사체, 티로신키나제 억제제, 종양 고주파 절제 같은 전략도 있다.'
+]},
+conc:{t:'결론',r:'1702쪽',p:[
+ '저칼륨혈증은 내분비 진료에서 여전히 흔한 문제이며 전반적 건강 결과에 중요한 영향을 준다. 신장 매개 저칼륨혈증은 부신 호르몬 이상의 원인일 수도 결과일 수도 있다. 이들 질환 상당수가 비교적 드물어 인지가 어렵고 흔히 놓쳐 관리가 늦어진다. 병태생리를 이해하고 체계적 접근을 쓰면 내분비 관련 저칼륨혈증 원인을 찾고 적절한 치료를 정하는 데 도움이 된다.'
+]}
+};
+
+const A = (x1,y1,x2,y2)=>`M${x1} ${y1} L${x2} ${y2}`;
+const P = (...pts)=>'M'+pts.map(p=>p.join(' ')).join(' L');
+const G3 = [10,260,510];
+const V = (x,y1,y2)=>[A(x,y1,x,y2),1];
+const F3 = (y,yb)=>[[P([380,y],[380,y+10],[130,y+10],[130,yb]),1],[A(380,y+10,380,yb),1],[P([380,y],[380,y+10],[630,y+10],[630,yb]),1]];
+const F2 = (y,yb,x=380)=>[[P([x,y],[x,y+10],[192,y+10],[192,yb]),1],[P([x,y],[x,y+10],[567,y+10],[567,yb]),1]];
+const J2 = (ya,yb,y,x=380)=>[[P([192,ya],[192,y-10],[x,y-10],[x,y]),1],[P([567,yb],[567,y-10],[x,y-10]),0]];
+const B = (x,y,xa,xb,yb)=>[[P([x,y],[x,y+10],[xa,y+10],[xa,yb]),1],[P([x,y],[x,y+10],[xb,y+10],[xb,yb]),1]];
+
+const CHARTS = {
+alg:{tab:'진단 (Fig 2)', fig:'Fig 2', aria:'신장 저칼륨혈증의 유전 원인 진단 통합 접근', w:760, h:462, nodes:[
+ {id:'a_c',  x:10, y:10, w:740,h:56, label:'신장 원인 확인: 요 K⁺ 증가<small>칼륨 소실 이뇨제 · 위장관 손실 · 세포 내 K⁺ 이동 배제</small>', cls:'test fac'},
+ {id:'a_bp', x:280,y:86, w:200,h:44, label:'혈압 상승?', cls:'test'},
+ {id:'a_no', x:10, y:150,w:280,h:56, label:'혈청 Cl⁻·Mg²⁺ · 요 Cl⁻·Ca²⁺', cls:'test'},
+ {id:'a_yes',x:300,y:150,w:450,h:56, label:'PAC · PRA 측정', cls:'test'},
+ {id:'a_bs', x:10, y:226,w:135,h:126, label:'Bartter<small>저염소혈증<br>요 Cl⁻↑ · 요 Ca²⁺↑<br>PRA↑ · PAC↑</small>', cls:'fac'},
+ {id:'a_gs', x:155,y:226,w:135,h:126, label:'Gitelman · EAST<small>저마그네슘혈증<br>요 Cl⁻↑ · 요 Ca²⁺↓<br>PRA↑ · PAC↑<br>EAST: 뇌전증·실조·난청</small>', cls:'fac'},
+ {id:'a_pa', x:300,y:226,w:140,h:126, label:'원발성 알도스테론증<small>PRA↓ · PAC↑<br>알칼리증<br>± 저칼륨혈증</small>', cls:'mal fac'},
+ {id:'a_mc', x:450,y:226,w:300,h:56, label:'PRA↓ · PAC↓<small>무기질코르티코이드 전구체 상승?</small>', cls:'test fac'},
+ {id:'a_ca', x:450,y:302,w:145,h:150, label:'예: CAH<small>17OHD: DOC · 코르티코스테론 · 18-OH 코르티코스테론↑ · 안드로겐 결핍<br>11OHD: DOC · 11-데옥시코르티솔↑ · 여성 남성화</small>', cls:'mal fac'},
+ {id:'a_ls', x:605,y:302,w:145,h:150, label:'아니오<small>AME: 코르티솔/코르티손 비↑<br>이소성 ACTH: 코르티솔↑<br>Liddle 증후군</small>', cls:'mal fac'}
+ ], edges:[V(380,66,86),[P([380,130],[380,140],[150,140],[150,150]),1],[P([380,130],[380,140],[525,140],[525,150]),1],
+  ...B(150,206,77,222,226),...B(525,206,370,600,226),...B(600,282,522,677,302)],
+ labels:[[160,136,'아니오'],[533,136,'예']]},
+
+ph:{tab:'생리', fig:'Fig 1', aria:'신장 칼륨 처리와 알도스테론 조절의 생리', w:760, h:548, nodes:[
+ {id:'p_pt', x:10, y:10, w:740,h:50, label:'근위세관: 여과된 K⁺의 대부분 재흡수', cls:'test'},
+ {id:'p_tal',x:G3[0],y:80,w:240,h:120, label:'TAL (Fig 1A)<small>NKCC2 · CLCNKB/A · Na-K-ATPase<br>ROMK 재순환 → 관강 양전위<br>Ca²⁺·Mg²⁺ 흡수<br>장애: Bartter</small>', cls:'fac'},
+ {id:'p_dct',x:G3[1],y:80,w:240,h:120, label:'DCT (Fig 1B)<small>NCC · CLCNKB · Na-K-ATPase<br>Ca²⁺ TRPV5 · Mg²⁺ TRPM6<br>장애: Gitelman · EAST</small>', cls:'fac'},
+ {id:'p_cd', x:G3[2],y:80,w:240,h:120, label:'집합관 (Fig 1C)<small>주세포 ENaC → ROMK·BK로 K⁺ 분비<br>α-사이세포 H⁺/K⁺-ATPase 재흡수<br>장애: Liddle · MR 과자극</small>', cls:'fac'},
+ {id:'p_na', x:10, y:220,w:740,h:50, label:'원위 Na⁺ 전달 ↑ → 주세포 K⁺ 분비 ↑', cls:'mal'},
+ {id:'p_an', x:G3[0],y:290,w:240,h:96, label:'안지오텐신 II (AT1R)<small>저혈량 · 나트륨 감소</small>', cls:'test fac'},
+ {id:'p_k',  x:G3[1],y:290,w:240,h:96, label:'혈장 K⁺ 상승<small>막 전기화학 경사 감소</small>', cls:'test fac'},
+ {id:'p_ac', x:G3[2],y:290,w:240,h:96, label:'ACTH (MC2R)<small>급성 자극 · 박동성은 지속 상승<br>PA에서 반응 증가</small>', cls:'test fac'},
+ {id:'p_zg', x:10, y:406,w:740,h:56, label:'사구대: 탈분극 → Ca²⁺ 유입 → CYP11B2 ↑ → 알도스테론', cls:'tx'},
+ {id:'p_mr', x:10, y:482,w:740,h:56, label:'주세포 MR: ENaC · ROMK · Na⁺/K⁺-ATPase ↑<small>Na⁺ 재흡수 · K⁺ 분비</small>', cls:'tx fac'}
+ ], edges:[...F3(60,80),V(130,200,220),V(380,200,220),V(630,200,220),V(130,386,406),V(380,386,406),V(630,386,406),V(380,462,482)], labels:[]},
+
+bg:{tab:'Bartter·Gitelman', fig:'Fig 3·4', aria:'Bartter, Gitelman, EAST 증후군의 특징, 진단, 치료', w:760, h:534, nodes:[
+ {id:'b_top',x:10, y:10, w:740,h:56, label:'고혈압 없음 + 신장 K⁺ 소실<small>저염소성 대사성 알칼리증 · 레닌·알도스테론↑ · 사구체옆장치 비대</small>', cls:'test fac'},
+ {id:'b_bs', x:G3[0],y:86,w:240,h:130, label:'Bartter (TAL)<small>고리이뇨제 유사 · 고칼슘뇨<br>요농축 장애 · PGE₂↑ · 신석회증<br>영아기 발병 · 성장 장애<br>약 100만 명당 1명</small>', cls:'fac'},
+ {id:'b_gs', x:G3[1],y:86,w:240,h:130, label:'Gitelman (DCT)<small>티아지드 유사 · 저칼슘뇨<br>저마그네슘혈증 · PG 정상<br>늦게 발견 · 성장 정상<br>4만–4천 명당 1명</small>', cls:'fac'},
+ {id:'b_ea', x:G3[2],y:86,w:240,h:130, label:'EAST (KCNJ10)<small>GS와 비슷한 전해질<br>뇌전증 · 운동실조<br>감각신경성 난청</small>', cls:'fac'},
+ {id:'b_ty', x:10, y:236,w:740,h:66, label:'Bartter 형 (Fig 3)<small>I SLC12A1(NKCC2) · II KCNJ1(ROMK) · III CLCNKB(가장 흔함)<br>IV CLC-Ka+Kb(난청) · V MAGED2(X연관) · CASR 활성(AD 저칼슘혈증)</small>', cls:'test fac'},
+ {id:'b_ds', x:10, y:322,w:365,h:76, label:'임상 감별<small>칼슘뇨 · 성장 · 신경 소견<br>이뇨제 검사: 제한적 · 용적 감소 위험</small>', cls:'test fac'},
+ {id:'b_gt', x:385,y:322,w:365,h:76, label:'유전자 검사 (가장 확정적)<small>NGS · CNV 분석 · 산전 진단</small>', cls:'test fac'},
+ {id:'b_k',  x:G3[0],y:418,w:240,h:106, label:'칼륨 보충<small>세뇨관 누출로 정상화 어려움<br>최적 투여 빈도 불확실</small>', cls:'tx fac'},
+ {id:'b_mg', x:G3[1],y:418,w:240,h:106, label:'염화마그네슘 (GS)<small>K⁺ · 산염기 · 저칼슘뇨도 개선<br>설사 주의</small>', cls:'tx fac'},
+ {id:'b_ra', x:G3[2],y:418,w:240,h:106, label:'RAS · PG 억제<small>ACEi · NSAID(BS)<br>아밀로라이드·트리암테렌·MRA<br>아세타졸아미드 보조</small>', cls:'tx fac'}
+ ], edges:[...F3(66,86),V(130,216,236),V(380,216,236),V(630,216,236),...F2(302,322),
+  [P([192,398],[192,408],[380,408]),0],[P([567,398],[567,408],[380,408]),0],[P([380,408],[130,408],[130,418]),1],[A(380,408,380,418),1],[P([380,408],[630,408],[630,418]),1]], labels:[]},
+
+pa:{tab:'원발성 알도스테론증', fig:'Fig 5', aria:'원발성 알도스테론증의 진단, 유전학, 치료', w:760, h:520, nodes:[
+ {id:'q_top',x:10, y:10, w:740,h:56, label:'고혈압 + 저칼륨혈증 · PRA↓ · PAC↑<small>고혈압의 5–10% · 저항성 고혈압 최대 20% · 저칼륨혈증은 PA의 9–37%</small>', cls:'mal fac'},
+ {id:'q_dx', x:10, y:86, w:740,h:56, label:'PAC/PRA(DRC) 선별 → PAC 억제 확진 → 부신정맥채혈<small>약물 영향 · 개인 내 PAC 변동</small>', cls:'test fac'},
+ {id:'q_nw', x:10, y:162,w:740,h:56, label:'새 비침습 도구<small>DNA 메틸화 서명 · 혈장 스테로이드 프로필(18-옥소·18-하이드록시코르티솔) · 기계학습</small>', cls:'fac'},
+ {id:'q_fh', x:10, y:238,w:365,h:96, label:'가족성 알도스테론증 (약 2%, AD)<small>FH-I CYP11B1/B2 융합(GC 반응) · II CLCN2<br>III KCNJ5 · IV CACNA1H · PASNA CACNA1D</small>', cls:'test fac'},
+ {id:'q_so', x:385,y:238,w:365,h:96, label:'체세포 변이 (일측성 &gt;90%)<small>KCNJ5 · CACNA1D · CACNA1H · CLCN2 · ATP1A1 · ATP2B3<br>CTNNB1 · GNA11/GNAQ · SLC30A1 · CADM1</small>', cls:'test fac'},
+ {id:'q_me', x:10, y:354,w:740,h:50, label:'사구대 탈분극 · Ca²⁺↑ → CYP11B2↑ → 알도스테론 합성 (Fig 5)', cls:'fac'},
+ {id:'q_un', x:10, y:424,w:365,h:86, label:'일측성 → 부신절제술<small>KCNJ5: 수술 결과 좋음<br>CACNA1D: 비완치군에 많음</small>', cls:'tx fac'},
+ {id:'q_bi', x:385,y:424,w:365,h:86, label:'양측성 · 비수술 → MRA<small>알도스테론 합성효소 억제제 기대</small>', cls:'tx fac'}
+ ], edges:[V(380,66,86),V(380,142,162),...F2(218,238),...J2(334,334,354),...F2(404,424)], labels:[]},
+
+ps:{tab:'위알도스테론증·CAH', fig:'본문', aria:'위알도스테론증과 선천부신과형성의 감별과 치료', w:760, h:428, nodes:[
+ {id:'r_top',x:10, y:10, w:740,h:56, label:'고혈압 + 저칼륨혈증 · PRA↓ · PAC↓<small>무기질코르티코이드 전구체 상승?</small>', cls:'test fac'},
+ {id:'r_ca', x:10, y:86, w:365,h:56, label:'예: CAH 의심<small>전구체 상승 · 성 발달 이상</small>', cls:'mal fac'},
+ {id:'r_no', x:385,y:86, w:365,h:56, label:'아니오<small>Liddle · AME · 이소성 ACTH</small>', cls:'mal fac'},
+ {id:'r_17', x:10, y:162,w:177,h:130, label:'17OHD<small>CYP17A1 · CAH &lt;1%<br>DOC·코르티코스테론↑<br>생식샘저하증</small>', cls:'fac'},
+ {id:'r_11', x:197,y:162,w:178,h:130, label:'11OHD<small>CYP11B1 · CAH 약 8%<br>DOC·11-데옥시코르티솔↑<br>안드로겐 과잉</small>', cls:'fac'},
+ {id:'r_ls', x:385,y:162,w:115,h:130, label:'Liddle<small>SCNN1A/B/G<br>MRA 무반응<br>요 F/E 정상</small>', cls:'fac'},
+ {id:'r_am', x:510,y:162,w:115,h:130, label:'AME<small>HSD11B2<br>감초·자몽·아졸<br>요 F/E 비↑</small>', cls:'fac'},
+ {id:'r_ea', x:635,y:162,w:115,h:130, label:'이소성 ACTH<small>코르티솔↑↑<br>기관지·흉선 유암종</small>', cls:'fac'},
+ {id:'r_tc', x:10, y:312,w:365,h:106, label:'글루코코르티코이드<small>17OHD: 성스테로이드 보충<br>11OHD: 과잉 치료 주의<br>필요 시 MRA · CCB</small>', cls:'tx fac'},
+ {id:'r_tl', x:385,y:312,w:115,h:106, label:'ENaC 억제<small>아밀로라이드<br>트리암테렌</small>', cls:'tx fac'},
+ {id:'r_ta', x:510,y:312,w:115,h:106, label:'MRA<small>± 아밀로라이드<br>트리암테렌</small>', cls:'tx fac'},
+ {id:'r_te', x:635,y:312,w:115,h:106, label:'종양 절제<small>스테로이드 합성 억제제</small>', cls:'tx fac'}
+ ], edges:[...F2(66,86),...B(192,142,98,286,162),[P([567,142],[567,152],[442,152],[442,162]),1],[A(567,152,567,162),1],[P([567,152],[692,152],[692,162]),1],
+  [P([98,292],[98,302],[192,302],[192,312]),1],[P([286,292],[286,302],[192,302]),0],V(442,292,312),V(567,292,312),V(692,292,312)], labels:[]}
+};
+
+const EXPMAP = Object.fromEntries(Object.entries(REC).map(([k,v])=>[k,v[2]]));
+const R = id => {
+  const [g, t] = REC[id];
+  const badge = `<span class="lv ${LVCLS[g]}" title="${LV[g]}">${LVTXT[g]}<span class="lv-ic" aria-hidden="true"></span></span>`;
+  return `<div class="rec has-exp" role="button" tabindex="0" aria-expanded="false" aria-controls="exp-${id}" data-rid="${id}"><span class="rid"><i>${id}</i></span><p>${t}</p>${badge}</div><div class="exp" id="exp-${id}" hidden></div>`;
+};
+const RR = (...ids) => ids.map(R).join('');
+const paraHTML = g => g.p.map(t => t.startsWith('#') ? `<h5>${t.slice(1)}</h5>` : `<p>${t}</p>`).join('');
+function renderExp(rid){
+  const g = EXP[EXPMAP[rid]];
+  return `<div class="exp-h"><b>본문 · ${g.t}</b><span class="exp-r">원문 ${g.r}</span><button type="button" class="exp-close" data-rid="${rid}" aria-label="설명 닫기">닫기 ✕</button></div>${paraHTML(g)}<p class="exp-src">Culver SA, Suleman N, Kavuru V, Siragy HM. J Clin Endocrinol Metab 2024;109:1694–1706 해당 절의 요약 번역. 참고문헌 번호는 생략하였다.</p><button type="button" class="exp-close exp-close-b" data-rid="${rid}">설명 접기 ▴</button>`;
+}
+const note = (label, t) => `<div class="box verify"><b>${label}</b>${t}</div>`;
+const tip = (label, t) => `<div class="box tip"><b>${label}</b>${t}</div>`;
+const tbl = (h, rows) => `<div class="tbl"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const ex = k => `<h5>본문 요약 · ${EXP[k].t}</h5>${paraHTML(EXP[k])}<p class="exp-src">원문 ${EXP[k].r} 요약.</p>`;
+const pp = (k,i,j) => paraHTML({p:EXP[k].p.slice(i,j===undefined?i+1:j)});
+const cap = t => `<p class="exp-src">${t}</p>`;
+
+const DISC_CA = note('원문 표현','BS·GS 진단 절은 주요 감별점을 “BS에서 저칼슘뇨와 고칼슘뇨의 존재”라고 적었다. 같은 논문의 다른 절과 Fig. 2(BS 요 Ca²⁺↑, GS 요 Ca²⁺↓)에 비추어 GS의 저칼슘뇨와 BS의 고칼슘뇨를 뜻하는 것으로 옮겼다.');
+const DISC_BS = note('원문 비교','본문은 BS I–IV형을 상염색체 열성이라 하면서 II형은 KCNJ1의 “이형접합” 기능 소실 변이에 의한다고 적었다. 또 본문은 IV형을 CLC-Kb와 CLC-Ka 동시 장애로만 설명하지만 Fig. 3은 4a형(BSND, 바르틴)과 4b형(CLCNKB + CLCNKA)으로 나눈다.');
+const DISC_GS = note('원문 비교','본문은 GS가 SLC12A3(NCC)와 “CLCNKB” 변이로 생긴다고 적었다. CLCNKB는 BS III형의 원인 유전자이기도 하며, III형은 GS와 비슷한 표현형(저마그네슘혈증 등)을 보일 수 있어 겹친다.');
+const DISC_SYM = note('원문 표기','유전자·단백 이름의 오기로 보이는 부분이 있다: 본문 “HD11B2”(HSD11B2), Fig. 5 “ATPA1”·“ATPB3”(ATP1A1·ATP2B3), Fig. 1 범례 “TRVP5”(TRPV5)와 TRPM6 설명(“cation carrier family 12 member 3”은 NCC의 명칭). 이 도구는 바른 이름으로 썼다.');
+const DISC_FN = note('원문 각주','Fig. 2의 AME 상자에는 ‘‡’ 표시가 있으나 그 설명(“음식과 약물에 의한 후천성 형태를 배제해야 한다”)은 Fig. 3 범례에 ‘†’로 실려 있다.');
+const NOTE_EV = tip('근거 수준','이 논문은 등급을 매긴 지침이 아니라 미니 종설이다. 배지는 본문 표현에 따른 구분(권고·제안·임상 자료)이며 근거 등급이 아니다.');
+const NOTE_PA = tip('함께 보기','PA 선별·확진·국소화 검사의 구체적 기준은 이 종설의 범위가 아니다. 포털의 원발성 알도스테론증(대한내분비학회 2023), 선천부신과형성(CAH) 도구를 함께 참고할 수 있다.');
+
+const TBS = tbl(['형','유전자','단백','유전','특징'],[
+ ['I (산전형)','SLC12A1','NKCC2','AR','NaCl 흡수 감소'],
+ ['II','KCNJ1','ROMK','AR','관강 K⁺ 재순환 장애'],
+ ['III (가장 흔함)','CLCNKB','CLC-Kb','AR','성인 발병 가능 · 전해질 손실 덜함 · 신석회증 약 20% · 저마그네슘혈증 가능'],
+ ['IV (Fig 3: 4a/4b)','BSND / CLCNKB+CLCNKA','바르틴 / CLC-Kb+Ka','AR','감각신경성 난청'],
+ ['V','MAGED2','MAGE-D2','X연관','NKCC2 NaCl 재흡수 감소'],
+ ['AD 저칼슘혈증 동반','CASR (활성)','CaSR','AD','KCNJ1·NKCC2·Na-K-ATPase 감소 → I형 유사']]) + cap('Bartter 증후군의 유형(본문과 Fig. 3).');
+const TCMP = tbl(['특징','Bartter','Gitelman','EAST'],[
+ ['부위','TAL','DCT','DCT (Kir4.1)'],['유사 약물','고리이뇨제','티아지드','티아지드'],['요 Ca²⁺','↑ (고칼슘뇨)','↓ (저칼슘뇨)','↓'],
+ ['혈청 Mg²⁺','대개 정상 (III형 감소 가능)','↓','↓'],['요농축','장애 (등장뇨)','—','—'],['프로스타글란딘','↑ (PGE₂)','대개 정상','—'],
+ ['발병·성장','영아기 · 성장 장애','늦게 · 정상 성장','소아 · 신경 증상'],['동반','양수과다 · 조산 · 신석회증 · 난청(IV)','—','뇌전증 · 운동실조 · 난청'],
+ ['공통','저칼륨혈증 · 저염소성 대사성 알칼리증 · 레닌·알도스테론↑ · 정상 혈압','','']]) + cap('본문 기술과 Fig. 2를 바탕으로 정리.');
+const TFH = tbl(['아형','유전자','기전'],[
+ ['FH-I','CYP11B1/CYP11B2 융합','ACTH가 CYP11B2 발현 유도 · 글루코코르티코이드로 억제'],
+ ['FH-II','CLCN2','염소 투과성 증가 → 탈분극'],['FH-III','KCNJ5','나트륨 유입 → 탈분극'],
+ ['FH-IV','CACNA1H','T형 칼슘 통로 활성 → Ca²⁺ 유입'],['PASNA','CACNA1D','L형 칼슘 통로 활성 · 경련·신경 이상']]) + cap('가족성 알도스테론증(모두 상염색체 우성, PA의 약 2%).');
+const TSOM = tbl(['유전자','기전 (Fig. 5)'],[
+ ['KCNJ5 · CLCN2 · CACNA1D · CACNA1H','막 이온 통로 → 탈분극·Ca²⁺ 유입'],['ATP1A1 · ATP2B3','Na⁺·H⁺·Ca²⁺ 투과성 증가'],
+ ['CTNNB1','Wnt/β-카테닌 신호 → 사구대 증식'],['GNA11 · GNAQ','AT1R 신호 연장 (CTNNB1과 동반, 상가 효과)'],
+ ['SLC30A1 (ZNT1)','Na⁺ 유입 → 탈분극'],['CADM1','간극 연접 감소 → 알도스테론 합성효소 활성 증가']]) + cap('체세포 변이(일측성 PA의 90% 이상).');
+const TCAH = tbl(['검사','17OHD','11OHD'],[
+ ['유전자 · 빈도','CYP17A1 · CAH &lt;1%','CYP11B1 · CAH 약 8%'],['레닌 · 코르티솔','낮음 · 낮음','낮음 · 낮음'],['ACTH','높음','높음'],
+ ['알도스테론','대개 낮음 (다양)','대개 낮음 (다양)'],['DOC','↑','↑'],['코르티코스테론','↑','↓'],['11-데옥시코르티솔','—','↑'],
+ ['성스테로이드','결핍 · 고생식샘자극호르몬성 생식샘저하증','안드로겐 과잉 · 남성화 · 성조숙증'],['치료','글루코코르티코이드 + 성스테로이드','글루코코르티코이드 (과잉 치료 주의)']]) + cap('본문 기술을 바탕으로 정리.');
+const TPS = tbl(['특징','Liddle','AME','이소성 ACTH'],[
+ ['기전','ENaC 자율 활성','11HSD2 결핍 → 코르티솔의 MR 자극','고코르티솔이 11HSD2 압도'],
+ ['유전','SCNN1A/B/G · AD','HSD11B2 · AR (후천성이 더 흔함)','대부분 산발성'],
+ ['MRA 반응','없음','있음','—'],['24시간 요 코르티솔/코르티손 비','정상','↑','—'],
+ ['확진','유전자 검사','유전자 검사 · 요 엑소좀 11HSD2 mRNA(연구)','코르티솔 검사 · IPSS · CT + 기능 영상'],
+ ['치료','아밀로라이드 · 트리암테렌','MRA ± 아밀로라이드·트리암테렌','종양 절제 · 스테로이드 합성 억제제 · 미페프리스톤 · 양측 부신절제']]) + cap('본문 기술을 바탕으로 정리.');
+
+const D = {
+ a_c:{kind:'Fig. 2', title:'신장 원인 확인', next:['a_bp'], body:`${RR('A1','O1','F1')}${pp('ddx',0)}${pp('intro',4)}`},
+ a_bp:{kind:'Fig. 2', title:'혈압 상승 여부', next:['a_no','a_yes'], body:`${R('A2')}${pp('ddx',1,4)}`},
+ a_no:{kind:'고혈압 없음', title:'혈청 Cl⁻·Mg²⁺, 요 Cl⁻·Ca²⁺', next:['a_bs','a_gs'], body:`${RR('B1','B7')}${TCMP}${DISC_CA}`},
+ a_yes:{kind:'고혈압', title:'PAC와 PRA 측정', next:['a_pa','a_mc'], body:`${R('P1')}${pp('pa',0,2)}`},
+ a_bs:{kind:'Fig. 2 · 3', title:'Bartter 증후군', next:['b_bs','b_ty'], body:`${RR('B2','B3')}${TBS}${DISC_BS}`},
+ a_gs:{kind:'Fig. 2 · 4', title:'Gitelman · EAST 증후군', next:['b_gs','b_ea'], body:`${RR('B4','B5','B6')}${TCMP}${DISC_GS}`},
+ a_pa:{kind:'Fig. 2 · 5', title:'원발성 알도스테론증', next:['q_top'], body:`${RR('P2','P6')}${pp('pa',3,5)}${NOTE_PA}`},
+ a_mc:{kind:'Fig. 2', title:'PRA↓·PAC↓: 전구체 상승 여부', next:['a_ca','a_ls'], body:`${RR('P1','C1','L1')}${pp('ls',0)}`},
+ a_ca:{kind:'Fig. 2', title:'17OHD · 11OHD', next:['r_17','r_11'], body:`${RR('C1','C4')}${TCAH}`},
+ a_ls:{kind:'Fig. 2', title:'AME · 이소성 ACTH · Liddle', next:['r_ls','r_am','r_ea'], body:`${RR('L1','L4','L6')}${TPS}${DISC_FN}`},
+
+ p_pt:{kind:'생리', title:'신장 칼륨 처리 개요', next:['p_tal','p_dct','p_cd'], body:`${R('O2')}${pp('phys',0)}`},
+ p_tal:{kind:'Fig. 1A', title:'굵은 오름가지 (TAL)', next:['b_bs'], body:`${R('O2')}${pp('phys',1,3)}${DISC_SYM}`},
+ p_dct:{kind:'Fig. 1B', title:'원위곡세관 (DCT)', next:['b_gs'], body:`${R('O2')}${pp('phys',3,5)}${DISC_SYM}`},
+ p_cd:{kind:'Fig. 1C', title:'집합관', next:['p_na'], body:`${RR('O2','O4')}${pp('phys',5,7)}`},
+ p_na:{kind:'생리', title:'원위 나트륨 전달과 칼륨 분비', next:['p_mr'], body:`${RR('O2','B1')}${pp('phys',6)}${pp('ddx',2)}`},
+ p_an:{kind:'알도스테론 조절', title:'안지오텐신 II', next:['p_zg'], body:`${R('O3')}${pp('ald',1)}`},
+ p_k:{kind:'알도스테론 조절', title:'혈장 칼륨', next:['p_zg'], body:`${R('O3')}${pp('ald',1)}`},
+ p_ac:{kind:'알도스테론 조절', title:'ACTH', next:['p_zg'], body:`${R('O3')}${pp('ald',2)}`},
+ p_zg:{kind:'알도스테론', title:'사구대의 알도스테론 합성', next:['p_mr'], body:`${R('O3')}${pp('ald',0)}${TSOM}`},
+ p_mr:{kind:'알도스테론', title:'주세포 MR 작용', next:[], body:`${R('O4')}${pp('ald',3)}`},
+
+ b_top:{kind:'고혈압 없음', title:'세뇨관병증 공통 소견', next:['b_bs','b_gs','b_ea'], body:`${R('B1')}${pp('ddx',2)}${TCMP}`},
+ b_bs:{kind:'Fig. 3', title:'Bartter 증후군', next:['b_ty'], body:`${RR('B2','B3')}${ex('bs')}${DISC_BS}`},
+ b_gs:{kind:'Fig. 4', title:'Gitelman 증후군', next:['b_ds'], body:`${RR('B4','B5')}${pp('gs',0,4)}${DISC_GS}`},
+ b_ea:{kind:'EAST', title:'EAST 증후군', next:['b_ds'], body:`${R('B6')}${pp('gs',4,6)}`},
+ b_ty:{kind:'Fig. 3', title:'Bartter 증후군 유형', next:['b_gt'], body:`${R('B2')}${TBS}${pp('bs',1)}${DISC_BS}`},
+ b_ds:{kind:'진단', title:'임상 감별과 이뇨제 검사', next:['b_gt'], body:`${RR('B7','B8')}${pp('bgd',0,3)}${TCMP}${DISC_CA}`},
+ b_gt:{kind:'진단', title:'유전자 검사', next:['b_k','b_mg','b_ra'], body:`${R('B9')}${pp('bgd',3)}`},
+ b_k:{kind:'치료', title:'칼륨 보충', next:[], body:`${RR('B10','B11')}${pp('bgt',0,2)}`},
+ b_mg:{kind:'치료', title:'염화마그네슘', next:[], body:`${R('B12')}${pp('bgt',2)}`},
+ b_ra:{kind:'치료', title:'RAS·프로스타글란딘 억제와 기타', next:[], body:`${RR('B13','B11')}${pp('bgt',3,5)}`},
+
+ q_top:{kind:'PA', title:'원발성 알도스테론증', next:['q_dx'], body:`${RR('P1','P2')}${ex('pa')}`},
+ q_dx:{kind:'PA 진단', title:'선별·확진·아형 판정', next:['q_nw'], body:`${R('P6')}${pp('pad',0)}${NOTE_PA}`},
+ q_nw:{kind:'PA 진단', title:'비침습 진단 도구', next:['q_fh','q_so'], body:`${R('P7')}${pp('pad',1,3)}`},
+ q_fh:{kind:'Fig. 5', title:'가족성 알도스테론증', next:['q_me'], body:`${R('P3')}${TFH}${pp('pag',0,2)}`},
+ q_so:{kind:'Fig. 5', title:'체세포 변이', next:['q_me'], body:`${RR('P4','P5')}${TSOM}${pp('pag',2,4)}${DISC_SYM}`},
+ q_me:{kind:'Fig. 5', title:'사구대 알도스테론 과잉의 기전', next:['q_un','q_bi'], body:`${RR('O3','P4')}${pp('ald',0)}${TSOM}`},
+ q_un:{kind:'PA 관리', title:'일측성: 부신절제술', next:[], body:`${RR('P8','P9')}${pp('pam',0,2)}`},
+ q_bi:{kind:'PA 관리', title:'양측성·비수술: MRA', next:[], body:`${RR('P8','P5')}${pp('pam',0)}`},
+
+ r_top:{kind:'위알도스테론증', title:'PRA↓·PAC↓ 저칼륨성 고혈압', next:['r_ca','r_no'], body:`${RR('P1','C1','L1')}${pp('pa',1)}`},
+ r_ca:{kind:'CAH', title:'CAH 의심', next:['r_17','r_11'], body:`${RR('C1','C4','C5')}${TCAH}`},
+ r_no:{kind:'전구체 정상', title:'Liddle · AME · 이소성 ACTH', next:['r_ls','r_am','r_ea'], body:`${RR('L1','L6')}${TPS}`},
+ r_17:{kind:'CAH', title:'17α-수산화효소 결핍', next:['r_tc'], body:`${RR('C2','C4')}${pp('cah',1,3)}`},
+ r_11:{kind:'CAH', title:'11β-수산화효소 결핍', next:['r_tc'], body:`${RR('C3','C4','C5')}${pp('cah',3,6)}`},
+ r_ls:{kind:'Liddle', title:'Liddle 증후군', next:['r_tl'], body:`${RR('L2','L6')}${pp('ls',1,3)}${pp('lad',0)}`},
+ r_am:{kind:'AME', title:'겉보기 무기질코르티코이드 과잉', next:['r_ta'], body:`${RR('L3','L4','L6')}${ex('ame')}${pp('lad',1)}${DISC_FN}${DISC_SYM}`},
+ r_ea:{kind:'이소성 ACTH', title:'고코르티솔증과 이소성 ACTH', next:['r_te'], body:`${RR('L5','L7')}${ex('eac')}${pp('lad',2)}`},
+ r_tc:{kind:'CAH 관리', title:'글루코코르티코이드', next:[], body:`${RR('C6','C7')}${ex('cahm')}`},
+ r_tl:{kind:'LS 관리', title:'ENaC 억제', next:[], body:`${R('L8')}${pp('lam',0)}`},
+ r_ta:{kind:'AME 관리', title:'MRA', next:[], body:`${RR('L8','L9')}${pp('lam',0)}`},
+ r_te:{kind:'이소성 ACTH 관리', title:'종양 절제와 스테로이드 합성 억제', next:[], body:`${RR('L10','L11')}${pp('lam',1,3)}`}
+};
+
+const ALL = Object.keys(REC);
+const GROUP = [['O','서론·생리'],['A','통합 진단 접근'],['B','Bartter·Gitelman·EAST'],['P','원발성 알도스테론증'],['C','17OHD·11OHD'],['L','Liddle·AME·이소성 ACTH'],['F','결론']];
+Object.assign(D, {
+ levels:{kind:'참고', title:'구분과 도구 설명', next:[], body:`${['STR','SUG','FACT'].map(g=>`<div class="rec"><span class="lv ${LVCLS[g]}">${LVTXT[g]}</span><p>${LV[g]}</p></div>`).join('')}${NOTE_EV}${note('구성',`핵심 진술 ${ALL.length}개를 절별로 번역해 수록했다. 진술을 누르면 해당 절 본문의 요약 번역이 펼쳐진다. ‘진단 (Fig 2)’ 탭은 원문 알고리즘을 재구성했고, 나머지 탭은 본문과 Fig. 1, 3–5를 흐름도로 만들었다.`)}${DISC_CA}${DISC_BS}${DISC_GS}${DISC_SYM}${DISC_FN}${NOTE_PA}`},
+ all:{kind:'전체', title:`핵심 진술 ${ALL.length}개`, next:[], body:GROUP.map(([g,t])=>`<h5>${t}</h5>${RR(...ALL.filter(k=>k.replace(/\d+$/,'')===g))}`).join('')},
+ tabs:{kind:'표', title:'요약 표', next:[], body:`<h5>Bartter 유형</h5>${TBS}<h5>Bartter · Gitelman · EAST 비교</h5>${TCMP}<h5>가족성 알도스테론증</h5>${TFH}<h5>PA 체세포 변이</h5>${TSOM}<h5>17OHD · 11OHD</h5>${TCAH}<h5>Liddle · AME · 이소성 ACTH</h5>${TPS}${cap('원문에는 표가 없어 본문과 그림 내용을 표로 정리했다.')}`},
+ intro:{kind:'서론', title:'초록·서론·결론', next:[], body:`${ex('intro')}${ex('conc')}${NOTE_EV}`}
+});
+
+const ABBR = [
+ ['11HSD2','11β-hydroxysteroid dehydrogenase 2'],['11OHD','11β-hydroxylase deficiency, 11β-수산화효소 결핍'],['17OHD','17α-hydroxylase deficiency, 17α-수산화효소 결핍'],
+ ['ACTH','Adrenocorticotropic hormone'],['AME','Apparent mineralocorticoid excess, 겉보기 무기질코르티코이드 과잉'],['APA','Aldosterone-producing adenoma'],['APM','Aldosterone-producing micronodule'],['APN','Aldosterone-producing nodule'],
+ ['AT1R','Angiotensin II type 1 receptor'],['AVS','Adrenal venous sampling, 부신정맥채혈'],['BS','Bartter syndrome'],['CAH','Congenital adrenal hyperplasia, 선천부신과형성'],['CaSR','Calcium-sensing receptor'],
+ ['CNV','Copy number variation, 복제수 변이'],['DCT','Distal convoluted tubule, 원위곡세관'],['DOC','Deoxycorticosterone, 데옥시코르티코스테론'],['DRC','Direct renin concentration'],
+ ['F/E','Cortisol(F)/cortisone(E) ratio, 24시간 요 코르티솔/코르티손 비'],['EAST','Epilepsy, ataxia, sensorineural deafness, tubulopathy'],['ENaC','Epithelial sodium channel, 상피 나트륨 통로'],['FH','Familial hyperaldosteronism, 가족성 알도스테론증'],['GS','Gitelman syndrome'],
+ ['IPSS','Inferior petrosal sinus sampling, 하추체정맥동 채혈'],['LS','Liddle syndrome'],['MC2R','Melanocortin type 2 receptor'],['MR','Mineralocorticoid receptor, 무기질코르티코이드 수용체'],
+ ['MRA','Mineralocorticoid receptor antagonist'],['NCC','Sodium-chloride cotransporter'],['NGS','Next-generation sequencing, 차세대 염기서열분석'],['NKCC2','Sodium-potassium-2 chloride cotransporter'],
+ ['PA','Primary aldosteronism, 원발성 알도스테론증'],['PAC','Plasma aldosterone concentration'],['PASNA','Primary aldosteronism, seizures, neurologic abnormalities'],['PGE₂','Prostaglandin E2'],
+ ['PRA','Plasma renin activity'],['RAS','Renin–angiotensin system'],['ROMK','Renal outer medullary potassium channel'],['TAL','Thick ascending limb, 굵은 오름가지'],['ZG','Zona glomerulosa, 사구대']
+];
+
+
+/* ---------- 렌더링 ---------- */
+const chartSize = document.getElementById('chartSize');
+const nodeEls = {}, NODE_CHART = {}, chartEls = {};
+const SVGNS = 'http://www.w3.org/2000/svg';
+Object.entries(CHARTS).forEach(([key, c])=>{
+  const el = document.createElement('div');
+  el.className = 'chart'; el.id = 'chart-' + key; el.hidden = true;
+  el.setAttribute('role','group'); el.setAttribute('aria-label', c.aria);
+  el.style.width = c.w + 'px'; el.style.height = c.h + 'px';
+  const svg = document.createElementNS(SVGNS,'svg');
+  svg.setAttribute('viewBox', `0 0 ${c.w} ${c.h}`); svg.setAttribute('aria-hidden','true');
+  svg.style.width = c.w + 'px'; svg.style.height = c.h + 'px';
+  svg.innerHTML = `<defs><marker id="ah-${key}" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker></defs>`;
+  c.edges.forEach(([d, arrow, cls, start])=>{
+    const p = document.createElementNS(SVGNS,'path');
+    p.setAttribute('d', d);
+    if (arrow) p.setAttribute('marker-end', `url(#ah-${key})`);
+    if (start) p.setAttribute('marker-start', `url(#ah-${key})`);
+    if (cls) p.setAttribute('class', cls);
+    svg.appendChild(p);
+  });
+  c.labels.forEach(([x,y,t,cls])=>{
+    const tx = document.createElementNS(SVGNS,'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y); tx.textContent = t;
+    if (cls) tx.setAttribute('class', cls);
+    svg.appendChild(tx);
+  });
+  el.appendChild(svg);
+  c.nodes.forEach(n=>{
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'node' + (n.cls ? ' ' + n.cls : '');
+    b.style.cssText = `left:${n.x}px;top:${n.y}px;width:${n.w}px;height:${n.h}px`;
+    let lab = n.label.replace(/ (mmHg|mL|ng)/g,'&nbsp;$1');
+    lab = lab.includes('<small>') ? lab.replace(/^(.*?)(<small>)/,'<span class="nt">$1</span>$2') : `<span class="nt">${lab}</span>`;
+    b.innerHTML = lab;
+    b.addEventListener('click', ()=>open(n.id, b));
+    el.appendChild(b);
+    nodeEls[n.id] = b; NODE_CHART[n.id] = key;
+  });
+  chartSize.appendChild(el);
+  chartEls[key] = el;
+});
+
+/* ---------- 순서도 탭 ---------- */
+let curChart = 'alg';
+const tabs = document.getElementById('ctabs');
+Object.entries(CHARTS).forEach(([key,c])=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'ctab'; b.dataset.key = key;
+  b.setAttribute('role','tab');
+  b.innerHTML = `${c.tab}<span>${c.fig}</span>`;
+  b.addEventListener('click', ()=>showChart(key));
+  tabs.appendChild(b);
+});
+function showChart(key){
+  curChart = key;
+  Object.entries(chartEls).forEach(([k,el])=>{ el.hidden = k !== key; });
+  tabs.querySelectorAll('.ctab').forEach(b=>{ const on = b.dataset.key === key; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  layout();
+}
+
+/* 약어 */
+D.abbr = {kind:'참고', title:'약어', next:[],
+  body:`<div class="abbr"><input class="abbr-search" id="abbrSearch" type="search" placeholder="약어 첫 글자 입력 (예: E, ENaC)" aria-label="약어 첫 글자로 검색" autocomplete="off" spellcheck="false"><dl id="abbrList"></dl></div>`,
+  onOpen(){
+    const inp = document.getElementById('abbrSearch'), dl = document.getElementById('abbrList');
+    const norm = t => t.replace(/<[^>]+>/g,'').toLowerCase().replace(/\s+/g,'');
+    const render = q => { q=(q||'').trim();
+      dl.innerHTML = ABBR.filter(([a])=>!q || norm(a).startsWith(norm(q))).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('') || '<dd>일치하는 약어가 없다.</dd>'; };
+    inp.addEventListener('input', e=>render(e.target.value)); render('');
+  }
+};
+document.getElementById('abbrToggle').addEventListener('click', e=>open('abbr', e.currentTarget));
+document.querySelectorAll('.below [data-id]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.id,b)));
+
+/* ---------- 범례 클릭: 해당 종류 박스 깜빡임 ---------- */
+let flashTimer = null;
+function flashLegend(cls, btn){
+  clearTimeout(flashTimer);
+  const chart = chartEls[curChart];
+  Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+  Object.values(chartEls).forEach(el=>el.classList.remove('hl'));
+  document.querySelectorAll('.legend .lg').forEach(b=>{ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
+  void chart.offsetWidth;
+  CHARTS[curChart].nodes.forEach(n=>{ if ((n.cls||'').split(' ').includes(cls)) nodeEls[n.id].classList.add('flash'); });
+  chart.classList.add('hl');
+  btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+  flashTimer = setTimeout(()=>{
+    Object.values(nodeEls).forEach(el=>el.classList.remove('flash'));
+    chart.classList.remove('hl');
+    btn.classList.remove('on'); btn.setAttribute('aria-pressed','false');
+  }, 2400);
+}
+document.querySelectorAll('.legend .lg').forEach(b=>b.addEventListener('click',()=>flashLegend(b.dataset.cls,b)));
+
+/* ---------- 세부 창 ---------- */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('backdrop');
+const dKind = document.getElementById('dKind');
+const dTitle = document.getElementById('dTitle');
+const dBody = document.getElementById('dBody');
+const dNext = document.getElementById('dNext');
+const dClose = document.getElementById('dClose');
+let lastFocus = null, current = null;
+
+function open(id, trigger){
+  const d = D[id]; if (!d) return;
+  if (trigger && !drawer.classList.contains('open')) lastFocus = trigger;
+  current = id;
+  if (NODE_CHART[id] && NODE_CHART[id] !== curChart) showChart(NODE_CHART[id]);
+  dKind.textContent = d.kind;
+  dTitle.textContent = d.title;
+  dBody.innerHTML = d.body;
+  /* 같은 소제목의 본문 설명은 패널 안에서 첫 권고문에만 남김 */
+  const seenExp = new Set();
+  dBody.querySelectorAll('.rec.has-exp').forEach(rec=>{
+    const g = EXPMAP[rec.dataset.rid];
+    if (!seenExp.has(g)) { seenExp.add(g); return; }
+    const box = document.getElementById(rec.getAttribute('aria-controls'));
+    if (box && dBody.contains(box)) box.remove();
+    rec.classList.remove('has-exp');
+    ['role','tabindex','aria-expanded','aria-controls','data-rid'].forEach(a=>rec.removeAttribute(a));
+    rec.querySelectorAll('.lv-ic').forEach(i=>i.remove());
+  });
+  dBody.scrollTop = 0;
+  dNext.innerHTML = '';
+  if (d.next && d.next.length){
+    const s = document.createElement('span'); s.className = 'lbl'; s.textContent = d.nextLabel || '다음 단계';
+    dNext.appendChild(s);
+    d.next.forEach(nid=>{
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = D[nid].title;
+      b.addEventListener('click', ()=>open(nid));
+      dNext.appendChild(b);
+    });
+  }
+  if (d.onOpen) d.onOpen();
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (nodeEls[id]) nodeEls[id].classList.add('is-active');
+  drawer.classList.add('open'); backdrop.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  dClose.focus({preventScroll:true});
+}
+function close(){
+  drawer.classList.remove('open'); backdrop.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  Object.values(nodeEls).forEach(el=>el.classList.remove('is-active'));
+  if (lastFocus) lastFocus.focus({preventScroll:true});
+  lastFocus = null; current = null;
+}
+dClose.addEventListener('click', close);
+function toggleExp(rid, force){
+  const key = rid.replace(/\./g,'-');
+  const rec = dBody.querySelector(`.rec.has-exp[data-rid="${rid}"]`);
+  const box = document.getElementById('exp-' + key);
+  if (!rec || !box) return;
+  const show = force !== undefined ? force : box.hidden;
+  if (show && !box.innerHTML){ box.innerHTML = renderExp(rid); }
+  box.hidden = !show; rec.setAttribute('aria-expanded', String(show));
+  const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  if (show) rec.scrollIntoView({behavior:smooth, block:'start'});
+  else { rec.scrollIntoView({behavior:smooth, block:'nearest'}); rec.focus({preventScroll:true}); }
+}
+dBody.addEventListener('click', e=>{
+  const c = e.target.closest('.exp-close');
+  if (c){ toggleExp(c.dataset.rid, false); return; }
+  const rec = e.target.closest('.rec.has-exp');
+  if (!rec) return;
+  if (String(window.getSelection && window.getSelection()).trim()) return;
+  toggleExp(rec.dataset.rid);
+});
+dBody.addEventListener('keydown', e=>{
+  const rec = e.target.closest('.rec.has-exp');
+  if (rec && e.target === rec && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); toggleExp(rec.dataset.rid); }
+});
+backdrop.addEventListener('click', close);
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+
+/* ---------- 한 화면 맞춤 ---------- */
+const wrap = document.getElementById('chartWrap');
+const NODE_PX = 15;
+const mainEl = document.querySelector('main');
+function fitWidth(){
+  /* 전체 폭을 하단 버튼 줄(약어 버튼까지) 길이에 맞춤 · 최소 900px */
+  const bl = document.querySelector('.below');
+  if (window.innerWidth <= 700){ mainEl.style.maxWidth = ''; return; }
+  bl.style.flexWrap = 'nowrap';
+  const w = bl.lastElementChild.getBoundingClientRect().right - bl.getBoundingClientRect().left;
+  bl.style.flexWrap = '';
+  const ms0 = getComputedStyle(mainEl);
+  mainEl.style.maxWidth = Math.ceil(Math.max(w, 900) + parseFloat(ms0.paddingLeft) + parseFloat(ms0.paddingRight) + 2) + 'px';
+}
+function layout(){
+  /* 버튼 글자 크기가 배율에 따라 바뀌므로 폭과 배율을 몇 차례 맞춤 */
+  for (let i = 0; i < 4; i++){
+    const before = mainEl.style.maxWidth;
+    fitWidth(); layoutOnce();
+    if (mainEl.style.maxWidth === before && i) break;
+  }
+}
+function layoutOnce(){
+  const c = CHARTS[curChart], chart = chartEls[curChart];
+  const ms = getComputedStyle(mainEl);
+  const cs = getComputedStyle(wrap);
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+  const leg = document.getElementById('legend');
+  const gap = parseFloat(cs.columnGap) || 0;
+  const mainW = mainEl.clientWidth - parseFloat(ms.paddingLeft) - parseFloat(ms.paddingRight);
+  const availW = mainW - padX - leg.offsetWidth - gap;
+  const top = wrap.getBoundingClientRect().top + window.scrollY;
+  const below = document.querySelector('.below').offsetHeight + 20;
+  const availH = window.innerHeight - top - padY - below - 4;
+  const scale = Math.min(1.3, availW / c.w, Math.max(availH, 320) / c.h);
+  chart.style.transform = `scale(${scale})`;
+  chartSize.style.width = (c.w * scale) + 'px';
+  chartSize.style.height = (c.h * scale) + 'px';
+  const ui = Math.max(11, Math.min(16, NODE_PX * scale));
+  document.documentElement.style.setProperty('--ui-font', ui.toFixed(2) + 'px');
+}
+window.addEventListener('resize', layout);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+showChart('alg');
+
+</script>
+</body>
+</html>
