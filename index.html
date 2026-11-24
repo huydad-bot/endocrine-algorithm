@@ -10,6 +10,21 @@
   gtag('js', new Date());
   gtag('config', 'G-0HC1J201FL');
 </script>
+<meta name="color-scheme" content="light dark">
+<script>
+/* 테마: auto(19시–7시 야간) · light · dark — localStorage 'ea-theme' */
+(function(){
+  function pick(){
+    var m='auto'; try{ m=localStorage.getItem('ea-theme')||'auto'; }catch(e){}
+    var t=m;
+    if(m==='auto'){ var h=new Date().getHours(); t=(h>=19||h<7)?'dark':'light'; }
+    document.documentElement.setAttribute('data-theme',t);
+    document.documentElement.setAttribute('data-mode',m);
+    return m;
+  }
+  window.__eaTheme=pick; pick();
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Endocrine Algorithm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,9 +71,18 @@ li a:focus-visible{outline:2px solid var(--c); outline-offset:-2px}
 @media (max-width:900px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
 @media (max-width:600px){ .grid{grid-template-columns:1fr} li a .t{white-space:normal} }
 @media (prefers-reduced-motion: reduce){ li a, li a::after{transition:none} }
+.theme-btn{position:fixed; top:calc(10px + env(safe-area-inset-top,0px)); right:12px; z-index:10; display:flex; align-items:center; gap:.35rem;
+  font:inherit; font-size:.8rem; font-weight:700; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:999px;
+  padding:.35rem .75rem; box-shadow:var(--shadow); cursor:pointer}
+.theme-btn:hover{border-color:var(--arrow)}
+.theme-btn:focus-visible{outline:2px solid var(--arrow); outline-offset:2px}
+:root[data-theme="dark"] .ic{filter:brightness(.85) saturate(.85)}
+:root[data-theme="dark"] body{color-scheme:dark}
+@media (max-width:600px){ .top{padding-top:2.2rem} }
 </style>
 </head>
 <body>
+<button type="button" class="theme-btn" id="themeBtn" aria-live="polite"></button>
 <main>
   <div class="top">
     <h1>Endocrine Algorithm</h1>
@@ -126,6 +150,23 @@ document.getElementById('grid').innerHTML = GROUPS.map(([g,ic,c,soft,ink,items])
    <div class="card-h"><div class="ic" aria-hidden="true">${ic}</div><div><h2>${g}</h2><small>${items.length} Algorithms</small></div></div>
    <ul>${items.map(([d,t,s])=>`<li><a href="${BASE}${d}/"><span class="t">${t}<span class="s">${s}</span></span></a></li>`).join('')}</ul>
   </section>`).join('');
+
+/* 테마 전환 버튼: 자동 → 주간 → 야간 */
+(function(){
+  var btn=document.getElementById('themeBtn'), order=['auto','light','dark'];
+  var LAB={auto:'🌗 자동',light:'☀️ 주간',dark:'🌙 야간'};
+  function paint(){ var m=window.__eaTheme(); var t=document.documentElement.getAttribute('data-theme');
+    btn.textContent=LAB[m]+(m==='auto'?(t==='dark'?' (야간)':' (주간)'):'');
+    btn.title='화면 모드: 자동(19시–7시 야간) → 주간 → 야간 순서로 바뀝니다'; }
+  btn.addEventListener('click',function(){
+    var m=document.documentElement.getAttribute('data-mode')||'auto';
+    var n=order[(order.indexOf(m)+1)%order.length];
+    try{ localStorage.setItem('ea-theme',n); }catch(e){}
+    paint();
+  });
+  paint(); setInterval(paint,60000);
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden) paint(); });
+})();
 </script>
 </body>
 </html>
