@@ -2,6 +2,38 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<!-- EA-THEME: 주간/야간 모드 (포털과 같은 설정 'ea-theme' 공유) -->
+<style>
+.ea-theme-btn{position:fixed; left:10px; top:calc(10px + env(safe-area-inset-top,0px)); z-index:2147483000; width:34px; height:34px; border-radius:50%;
+  display:grid; place-items:center; font-size:16px; line-height:1; padding:0; cursor:pointer;
+  background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.15); box-shadow:0 2px 8px rgba(0,0,0,.18)}
+:root[data-theme="dark"] .ea-theme-btn{background:rgba(30,40,50,.92); border-color:rgba(255,255,255,.18)}
+.ea-theme-btn:focus-visible{outline:2px solid #7FB7D6; outline-offset:2px}
+@media print{.ea-theme-btn{display:none}}
+
+</style>
+<script>
+(function(){
+  var D=document.documentElement, ORDER=['auto','light','dark'], ICON={auto:'🌗',light:'☀️',dark:'🌙'}, NAME={auto:'자동',light:'주간',dark:'야간'};
+  function mode(){ try{ return localStorage.getItem('ea-theme')||'auto'; }catch(e){ return 'auto'; } }
+  function apply(){ var m=mode(), t=m;
+    if(m==='auto'){ var h=new Date().getHours(); t=(h>=19||h<7)?'dark':'light'; }
+    D.setAttribute('data-theme',t); D.style.colorScheme=t; return [m,t]; }
+  apply();
+  function paint(b){ var r=apply(); b.textContent=ICON[r[0]];
+    var s='화면 모드: '+NAME[r[0]]+(r[0]==='auto'?' ('+NAME[r[1]]+', 19–7시 야간)':'')+' · 누르면 바뀜';
+    b.title=s; b.setAttribute('aria-label',s); }
+  function init(){ var b=document.createElement('button'); b.type='button'; b.className='ea-theme-btn';
+    b.addEventListener('click',function(){ var n=ORDER[(ORDER.indexOf(mode())+1)%3]; try{ localStorage.setItem('ea-theme',n); }catch(e){} paint(b); });
+    document.body.appendChild(b); paint(b);
+    setInterval(function(){ paint(b); },60000);
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden) paint(b); });
+    window.addEventListener('storage',function(e){ if(e.key==='ea-theme') paint(b); }); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+<!-- /EA-THEME -->
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HC1J201FL"></script>
 <script>
